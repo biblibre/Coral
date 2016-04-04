@@ -426,7 +426,7 @@ function submitWorkflow(){
 			 type:       "POST",
 			 url:        "ajax_processing.php?action=submitWorkflow",
 			 cache:      false,
-			 data:       { workflowID: $("#editWFID").val(), resourceTypeID: $("#resourceTypeID").val(), resourceFormatID: $("#resourceFormatID").val(), acquisitionTypeID: $("#acquisitionTypeID").val(), stepNames: stepNameList, userGroups: userGroupList, priorSteps: priorStepList, seqOrders: seqOrderList },
+			 data:       { workflowID: $("#editWFID").val(), workflowMailReminder: $("#workflowMailReminder").is(':checked'), workflowMailReminderDelay: $("#workflowMailReminderDelay").val(), resourceTypeID: $("#resourceTypeID").val(), resourceFormatID: $("#resourceFormatID").val(), acquisitionTypeID: $("#acquisitionTypeID").val(), stepNames: stepNameList, userGroups: userGroupList, priorSteps: priorStepList, seqOrders: seqOrderList },
 			 success:    function(html) {
 				if (html){
 					$("#span_errors").html(html);

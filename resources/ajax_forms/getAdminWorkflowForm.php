@@ -110,6 +110,16 @@
 
 			<div style='height:20px;'>&nbsp;</div>
 
+			<table class='surroundBox' style='width:700px;'>
+            <tr>
+            <td><label for="workflowMailReminder">Enable workflow mail reminder</label>
+            <input type="checkbox" id="workflowMailReminder"<?php if ($workflow->workflowMailReminder) echo ' checked="checked"'; ?>>
+            </td>
+            <td>
+            <label for="">Delay (day)</label>
+            <input type="text" id="workflowMailReminderDelay" value="<?php echo $workflow->workflowMailReminderDelay; ?>">
+            </td>
+            </table>
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='workflowSteps'><b><?php echo _("Workflow Steps");?></b></label>&nbsp;&nbsp;</span>
 
