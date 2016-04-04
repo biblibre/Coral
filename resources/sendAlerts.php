@@ -95,6 +95,9 @@ if ($config->settings->enableAlerts == 'Y'){
 	} else {
 		echo _("No Issues found fitting alert day criteria");
 	}
+
+    // Workflow alerts
+
 } else {
 	echo _("Alerts not enabled in configuration.ini file");
 }
