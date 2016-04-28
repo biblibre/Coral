@@ -2146,7 +2146,7 @@ class Resource extends DatabaseObject {
 
 		$query = "SELECT * FROM ResourceStep
 					WHERE resourceID = '" . $this->resourceID . "'
-					ORDER BY archivingDate DESC, displayOrderSequence, stepID";
+					ORDER BY (archivingDate IS NOT NULL), archivingDate DESC, displayOrderSequence, stepID";
 
 		$result = $this->db->processQuery($query, 'assoc');
 
@@ -2166,6 +2166,16 @@ class Resource extends DatabaseObject {
 		return $objects;
 
 	}
+
+    public function getCompletedWorkflowID() {
+        $query = "SELECT Step.workflowID FROM Step, ResourceStep 
+                    WHERE ResourceStep.resourceID = '" . $this->resourceID . "'
+                    AND ResourceStep.archivingDate IS NULL 
+                    AND ResourceStep.stepID = Step.stepID";
+
+		$result = $this->db->processQuery($query, 'assoc');
+        return $result['workflowID'];
+    }
 
     public function getCurrentWorkflowResourceSteps(){
 
