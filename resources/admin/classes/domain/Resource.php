@@ -2327,7 +2327,6 @@ class Resource extends DatabaseObject {
 
 			}
 
-
 			//Start the first step
 			//this handles updating the db and sending notifications for approval groups
 			foreach ($this->getFirstSteps() as $resourceStep){
