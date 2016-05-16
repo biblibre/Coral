@@ -2254,6 +2254,8 @@ class Resource extends DatabaseObject {
 				$resourceStep->stepName				= $step->stepName;
 				$resourceStep->userGroupID			= $step->userGroupID;
 				$resourceStep->displayOrderSequence	= $step->displayOrderSequence;
+                $resourceStep->mailReminder         = $workflow->workflowMailReminder;
+                $resourceStep->mailReminderDelay    = $workflow->workflowMailReminderDelay;
 
 				$resourceStep->save();
 
