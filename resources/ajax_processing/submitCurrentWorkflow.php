@@ -47,6 +47,8 @@
 					$step->resourceID = $resourceID;
 					$step->stepName = trim($value);
 					$step->userGroupID = $userGroupArray[$key];
+                    $step->mailReminder = ($_POST['workflowMailReminder'] == "on") ? 1 : 0;
+                    $step->mailReminderDelay = $_POST['workflowMailReminderDelay'];
                     if ($step->priorStepID == null) {
                         $step->priorStepID = $priorStepArray[$key];
                     }
