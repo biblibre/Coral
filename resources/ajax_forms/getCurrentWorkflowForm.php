@@ -12,7 +12,13 @@ if (!isset($_GET['resourceID'])){
     $parentSteps = $resource->getResourceSteps();
 
     // Get reminder, from the resourceSteps, or from the workflow
-    $step = new Step(new NamedArguments(array('primaryKey' => $resourceSteps[0]->stepID)));
+    foreach ($resourceSteps as $resourceStep) {
+        if ($resourceStep->stepID) {
+            $stepID = $resourceStep->stepID;
+            break;
+        }
+    }
+    $step = new Step(new NamedArguments(array('primaryKey' => $stepID)));
     $workflow = new Workflow(new NamedArguments(array('primaryKey' => $step->workflowID)));
     $workflowMailReminderDelay = $resourceSteps[0]->mailReminderDelay ? $resourceSteps[0]->mailReminderDelay : $workflow->workflowMailReminderDelay;
     $workflowMailReminder = $resourceSteps[0]->mailReminder != NULL ? $resourceSteps[0]->mailReminder : $workflow->workflowMailReminder;
