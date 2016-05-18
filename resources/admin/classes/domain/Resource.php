@@ -2326,6 +2326,8 @@ class Resource extends DatabaseObject {
                 $resourceStep->endLoginID           = '';
 				$resourceStep->userGroupID			= $step->userGroupID;
 				$resourceStep->displayOrderSequence	= $step->displayOrderSequence;
+                $resourceStep->mailReminder         = $workflow->workflowMailReminder;
+                $resourceStep->mailReminderDelay    = $workflow->workflowMailReminderDelay;
 
 				$resourceStep->save();
 

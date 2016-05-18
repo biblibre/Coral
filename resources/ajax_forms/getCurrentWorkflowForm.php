@@ -11,6 +11,18 @@ if (!isset($_GET['resourceID'])){
     $resourceSteps = $resource->getResourceSteps();
     $parentSteps = $resource->getResourceSteps();
 
+    // Get reminder, from the resourceSteps, or from the workflow
+    foreach ($resourceSteps as $resourceStep) {
+        if ($resourceStep->stepID) {
+            $stepID = $resourceStep->stepID;
+            break;
+        }
+    }
+    $step = new Step(new NamedArguments(array('primaryKey' => $stepID)));
+    $workflow = new Workflow(new NamedArguments(array('primaryKey' => $step->workflowID)));
+    $workflowMailReminderDelay = $resourceSteps[0]->mailReminderDelay ? $resourceSteps[0]->mailReminderDelay : $workflow->workflowMailReminderDelay;
+    $workflowMailReminder = $resourceSteps[0]->mailReminder != NULL ? $resourceSteps[0]->mailReminder : $workflow->workflowMailReminder;
+
     //make form
     ?>
     <div id='div_resourceStepForm'>
@@ -25,8 +37,24 @@ if (!isset($_GET['resourceID'])){
                 <tr style='vertical-align:top;'>
                     <td style='vertical-align:top;position:relative;'>
                         <span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='rule'><b>Workflow Steps</b></label>&nbsp;&nbsp;</span>
-
                         <table class='surroundBox' style='width:700px;'>
+                            <tr>
+                            <td>
+                            <table>
+                            <tr>
+                                <td>
+                                    <label for="workflowMailReminder"><?php echo _("Enable workflow mail reminder"); ?></label>
+                                    <input type="checkbox" id="workflowMailReminder"<?php if ($workflowMailReminder) echo ' checked="checked"'; ?>>
+                                </td>
+                                <td>
+                                <label for="workflowMailReminderDelay"><?php echo _("Delay (day)"); ?></label>
+                                    <input type="text" id="workflowMailReminderDelay" value="<?php echo $workflowMailReminderDelay; ?>">
+                                </td>
+                            </td>
+                            </tr>
+                            </table>
+                            </td>
+                            </tr>
                             <tr>
                                 <td>
                                     <table class='noBorder newStepTable' style='width:660px; margin:15px 20px 10px 20px;'>

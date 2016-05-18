@@ -81,7 +81,7 @@ function submitCurrentWorkflow() {
              type:       "POST",
              url:        "ajax_processing.php?action=submitCurrentWorkflow",
              cache:      false,
-             data:       { resourceID: $("#editRID").val(), stepNames: stepNameList, userGroups: userGroupList, priorSteps: priorStepList, stepIDs: stepIDList, actions: actionList },
+             data:       { resourceID: $("#editRID").val(), workflowMailReminder: $("#workflowMailReminder:checked").val(), workflowMailReminderDelay: $("#workflowMailReminderDelay").val(), stepNames: stepNameList, userGroups: userGroupList, priorSteps: priorStepList, stepIDs: stepIDList, actions: actionList },
              success:    function(html) {
                 if (html){
                     $("#span_errors").html(html);

@@ -24,6 +24,7 @@ $util = new Utility();
 $config = new Configuration();
 
 if ($config->settings->enableAlerts == 'Y'){
+
 	$alertDaysInAdvance = new AlertDaysInAdvance();
 	//returns array of all days in advance objects
 	$alertDaysArray = $alertDaysInAdvance->all();
@@ -95,6 +96,27 @@ if ($config->settings->enableAlerts == 'Y'){
 	} else {
 		echo _("No Issues found fitting alert day criteria");
 	}
+
+    // Workflow alerts
+    $workflowObj = new Workflow();
+    $query = "select * from ResourceStep where DATE_ADD(stepStartDate, INTERVAL mailReminderDelay DAY) BETWEEN DATE_ADD(NOW(), INTERVAL -1 DAY) AND NOW() AND mailReminder = 1";
+    $results = $workflowObj->db->processQuery($query, 'assoc');
+    foreach ($results as $result) {
+            $resource = new Resource(new NamedArguments(array('primaryKey' => $result['resourceID'])));
+            $userGroup = new UserGroup(new NamedArguments(array('primaryKey' => $result['userGroupID'])));
+            $sendToArray = array($userGroup->emailAddress);
+            $users = $userGroup->getUsers();
+            foreach ($users as $user) {
+                $sendToArray[] = $user->emailAddress;
+            }
+			$email = new Email();
+			$email->to = implode(", ", $sendToArray);
+			$email->message = _("The following step is due: ") . $result['stepName'] . _(" for resource ") . $resource->titleText;
+			$email->subject		= "CORAL Alert: workflow step for ressource " . $resource->titleText . " is due";
+			$email->send();
+    }
+
+
 } else {
 	echo _("Alerts not enabled in configuration.ini file");
 }
