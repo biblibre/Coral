@@ -112,7 +112,8 @@ if ($config->settings->enableAlerts == 'Y'){
 			$email = new Email();
 			$email->to = implode(", ", $sendToArray);
 			$email->message = _("The following step is due: ") . $result['stepName'] . _(" for resource ") . $resource->titleText;
-			$email->subject		= "CORAL Alert: workflow step for ressource " . $resource->titleText . " is due";
+			$email->message = $util->createMessageFromTemplate('DueStep', $resourceID, $resource->titleText, $result['stepName'], '', '');
+			$email->subject		= _("CORAL Alert: workflow step for ressource ") . $resource->titleText . _(" is due");
 			$email->send();
     }
 
