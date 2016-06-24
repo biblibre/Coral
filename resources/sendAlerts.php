@@ -100,7 +100,14 @@ if ($config->settings->enableAlerts == 'Y'){
     // Workflow alerts
     $workflowObj = new Workflow();
     $query = "select * from ResourceStep where DATE_ADD(stepStartDate, INTERVAL mailReminderDelay DAY) BETWEEN DATE_ADD(NOW(), INTERVAL -1 DAY) AND NOW() AND mailReminder = 1";
-    $results = $workflowObj->db->processQuery($query, 'assoc');
+    $dbresults = $workflowObj->db->processQuery($query, 'assoc');
+   
+    if (isset($dbresults['resourceID'])) {
+        $results[0] = $dbresults;
+    } else {
+        $results = $dbresults;
+    }
+
     foreach ($results as $result) {
             $resource = new Resource(new NamedArguments(array('primaryKey' => $result['resourceID'])));
             $userGroup = new UserGroup(new NamedArguments(array('primaryKey' => $result['userGroupID'])));
@@ -111,8 +118,7 @@ if ($config->settings->enableAlerts == 'Y'){
             }
 			$email = new Email();
 			$email->to = implode(", ", $sendToArray);
-			$email->message = _("The following step is due: ") . $result['stepName'] . _(" for resource ") . $resource->titleText;
-			$email->message = $util->createMessageFromTemplate('DueStep', $resourceID, $resource->titleText, $result['stepName'], '', '');
+			$email->message = $util->createMessageFromTemplate('DueStep', $resource->resourceID, $resource->titleText, $result['stepName'], '', '');
 			$email->subject		= _("CORAL Alert: workflow step for ressource ") . $resource->titleText . _(" is due");
 			$email->send();
     }
