@@ -9,6 +9,8 @@
 		}
 
 		$workflow->workflowName = '';
+        $workflow->workflowMailReminder = ($_POST['workflowMailReminder'] == 'true') ? 1 : 0;
+        $workflow->workflowMailReminderDelay = $_POST['workflowMailReminderDelay'];
 		$workflow->resourceFormatIDValue = $_POST['resourceFormatID'];
 		$workflow->resourceTypeIDValue = $_POST['resourceTypeID'];
 		$workflow->acquisitionTypeIDValue = $_POST['acquisitionTypeID'];
