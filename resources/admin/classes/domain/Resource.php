@@ -2336,13 +2336,16 @@ class Resource extends DatabaseObject {
 				$resourceStep->stepID 				= $step->stepID;
 				$resourceStep->priorStepID			= $step->priorStepID;
 				$resourceStep->stepName				= $step->stepName;
+                $resourceStep->stepStartDate        = '';
+                $resourceStep->stepEndDate          = '';
+                $resourceStep->archivingDate        = '';
+                $resourceStep->endLoginID           = '';
 				$resourceStep->userGroupID			= $step->userGroupID;
 				$resourceStep->displayOrderSequence	= $step->displayOrderSequence;
 
 				$resourceStep->save();
 
 			}
-
 
 			//Start the first step
 			//this handles updating the db and sending notifications for approval groups
