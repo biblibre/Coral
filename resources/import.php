@@ -183,13 +183,32 @@
 			<div id='configDiv'>
 				<?php include 'ajax_forms/getImportConfigForm.php';?>
 			</div>
+            <p>Save current configuration:</p>
+            <label for="saveName">Configuration name: </label> <input type="text" name="saveName" id="saveName" /> <input type="button" id="saveConfiguration" value="Save configuration" /><br />
+            <div id='saveDiv'></div><br />
 <?php
 			print "<input type=\"hidden\" name=\"delimiter\" value=\"$delimiter\" />";
 			print "<input type=\"hidden\" name=\"uploadfile\" value=\"$uploadfile\" />";
 			print "<input type=\"submit\" name=\"matchsubmit\" id=\"matchsubmit\" /></form>";
 ?>
 			<script type='text/javascript'>
-				$('#config_form').submit(function () {
+
+                $('#saveConfiguration').click(function() {
+				   var currentConfig = createJsonFromPage();
+				   $.ajax({
+					type:       "POST",
+					url:        "ajax_processing.php?action=updateImportConfig",
+					cache:      false,
+					data:       { shortName: $('#saveName').val(), configuration: currentConfig['configuration'], orgNameImported: currentConfig['orgNameImported'], orgNameMapped: currentConfig['orgNameMapped']},
+					success:    function(html) {
+                        $("#saveDiv").html(html == '' ? 'The import configuration has been successfully saved.' : 'The import configuration could not be saved: ' + html);
+					}
+				   });
+                });
+
+				$('#config_form').submit(createJsonFromPage());
+
+                function createJsonFromPage() {
 			        var jsonData = {};
 			        jsonData.title = $('#resource_titleCol').val();
 			        jsonData.description = $('#resource_descCol').val();
@@ -271,7 +290,13 @@
 			        newinput.type = "hidden";
 			        newinput.value = orgNameMapped;
 			        document.getElementById("config_form").appendChild(newinput);
-				});
+
+					var currentConfig = Object();
+					currentConfig['configuration'] = configuration;
+					currentConfig['orgNameImported'] = orgNameImported;
+					currentConfig['orgNameMapped'] = orgNameMapped;
+					return currentConfig;
+				}
 			</script>
 <?php
 		}
