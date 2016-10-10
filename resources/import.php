@@ -94,11 +94,12 @@
 					});
 				});
 			</script>
-            <p>Save current configuration:</p>
-            <label for="saveName">Configuration name</label> <input type="text" name="saveName" id="saveName" /> <input type="button" id="saveConfiguration" value="Save configuration" />
 			<div id='configDiv'>
 				<?php include 'ajax_forms/getImportConfigForm.php';?>
 			</div>
+            <p>Save current configuration:</p>
+            <label for="saveName">Configuration name: </label> <input type="text" name="saveName" id="saveName" /> <input type="button" id="saveConfiguration" value="Save configuration" /><br />
+            <div id='saveDiv'></div><br />
 <?php
 			print "<input type=\"hidden\" name=\"delimiter\" value=\"$delimiter\" />";
 			print "<input type=\"hidden\" name=\"uploadfile\" value=\"$uploadfile\" />";
@@ -114,7 +115,7 @@
 					cache:      false,
 					data:       { shortName: $('#saveName').val(), configuration: currentConfig['configuration'], orgNameImported: currentConfig['orgNameImported'], orgNameMapped: currentConfig['orgNameMapped']},
 					success:    function(html) {
-						alert('success');
+                        $("#saveDiv").html(html == '' ? 'The import configuration has been successfully saved.' : 'The import configuration could not be saved: ' + html);
 					}
 				   });
                 });
