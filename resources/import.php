@@ -103,6 +103,7 @@
 	include 'templates/header.php';
 ?>
 <div id="importPage"><h1><?php echo _("Delimited File Import");?></h1>
+<p><a href="importHistory.php">Imports history</a></p>
 <?php
 	// CSV configuration
 	$required_columns = array('titleText' => 0, 'resourceURL' => 0, 'resourceAltURL' => 0, 'parentResource' => 0, 'organization' => 0, 'role' => 0);
@@ -387,12 +388,12 @@
 			$aliasInserted = 0;
 			$noteInserted = 0;
 			$arrayOrganizationsCreated = array();
-
             showDedupingColumns($handle, $delimiter, $deduping_columns);
             showPreview($handle, $delimiter);
             showMappings($handle, $delimiter, $jsonData, $config_array);
             $proceed = $_POST['proceed'];
-
+            $resourceIDs = array();
+            rewind($handle);
 			while (($data = fgetcsv($handle, 0, $delimiter)) !== FALSE)
 			{
 		    	if ($row > 0)
@@ -583,6 +584,7 @@
                             $resource->statusID         = 1;
                             $resource->save();
                             $resource->setIsbnOrIssn($isbnIssn_values);
+                            array_push($resourceIDs, $resource->resourceID);
                         }
 						$inserted++;
 
@@ -834,6 +836,15 @@
 			print "<p>" . $generalSubjectInserted . _(" general subjects $verb created") . "</p>";
 			print "<p>" . $aliasInserted . _(" aliases $verb created") . "</p>";
 			print "<p>" . $noteInserted . _(" notes $verb created") . "</p>";
+
+            $importHistory = new ImportHistory();
+            $importHistory->importDate = date("Y-m-d H:i:s");
+            $importHistory->filename = basename($uploadfile);
+            $importHistory->resourcesCount = count($resourceIDs);
+            $importHistory->importedResources = json_encode($resourceIDs);
+            $importHistory->save();
+
+
 		}
         if (!$proceed) {
             print '<form enctype="multipart/form-data" action="import.php" method="post" id="importForm">';
@@ -844,6 +855,7 @@
             print '<input type="hidden" name="proceed" value="true" />';
             print '<input type="submit" name="submitproceed" value="proceed" class="submit-button" />';
             print '</form>';
+            
         }
 	}
 	else
