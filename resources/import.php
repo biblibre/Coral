@@ -837,14 +837,14 @@
 			print "<p>" . $aliasInserted . _(" aliases $verb created") . "</p>";
 			print "<p>" . $noteInserted . _(" notes $verb created") . "</p>";
 
-            $importHistory = new ImportHistory();
-            $importHistory->importDate = date("Y-m-d H:i:s");
-            $importHistory->filename = basename($uploadfile);
-            $importHistory->resourcesCount = count($resourceIDs);
-            $importHistory->importedResources = json_encode($resourceIDs);
-            $importHistory->save();
-
-
+            if ($proceed) {
+                $importHistory = new ImportHistory();
+                $importHistory->importDate = date("Y-m-d H:i:s");
+                $importHistory->filename = basename($uploadfile);
+                $importHistory->resourcesCount = count($resourceIDs);
+                $importHistory->importedResources = json_encode($resourceIDs);
+                $importHistory->save();
+            }
 		}
         if (!$proceed) {
             print '<form enctype="multipart/form-data" action="import.php" method="post" id="importForm">';
