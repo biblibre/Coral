@@ -224,7 +224,7 @@
 				   });
                 });
 
-				$('#config_form').submit(createJsonFromPage());
+				$('#config_form').submit(function() { createJsonFromPage() });
 
                 function createJsonFromPage() {
 			        var jsonData = {};
