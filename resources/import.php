@@ -119,6 +119,7 @@
         'isbnOrIssn' => 'ISBN or ISSN', 
         'resourceFormat' => 'Resource Format',
         'resourceType' => 'Resource Type',
+        'acquisitionType' => 'Acquisition Type',
         'subject' => 'Subject',
         'note' => 'Note',
         'organization' => 'Organization'
