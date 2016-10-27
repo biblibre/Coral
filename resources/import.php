@@ -256,6 +256,9 @@
 			        jsonData.resourceFormat = $("#resource_format").val();
 			        jsonData.resourceType = $("#resource_type").val();
 			        jsonData.acquisitionType = $("#acquisition_type").val();
+			        jsonData.fundCode = $("#fundCode").val();
+			        jsonData.cost = $("#cost").val();
+
 			        jsonData.subject = [];
 			        $('div.subject-record').each(function() {
 			            var subjectObject={};
@@ -336,6 +339,8 @@
 		$resourceTypeColumn=intval($jsonData['resourceType'])-1;
 		$acquisitionTypeColumn=intval($jsonData['acquisitionType'])-1;
 		$resourceFormatColumn=intval($jsonData['resourceFormat'])-1;
+		$fundCodeColumn=intval($jsonData['fundCode'])-1;
+		$costColumn=intval($jsonData['cost'])-1;
 
 		//get all resource formats
 		$resourceFormatArray = array();
@@ -588,6 +593,35 @@
                             array_push($resourceIDs, $resource->resourceID);
                         }
 						$inserted++;
+
+                        if ($proceed) {
+                            // Create an acquisition line if fund code and cost are defined
+                            $fundCode = trim($data[$fundCodeColumn]);
+                            $cost = trim($data[$costColumn]);
+                            if ($fundCode && $cost) {
+                                $resourcePayment = new ResourcePayment();
+                                $resourcePayment->resourceID = $resource->resourceID;
+                                $resourcePayment->paymentAmount = cost_to_integer($cost);
+                                $resourcePayment->currencyCode = $_POST['currency'];
+                                $resourcePayment->orderTypeID = $_POST['orderType'];
+                                
+                                // Check if the fund already exists
+                                $fundObj = new Fund();
+                                $fundID = $fundObj->getFundIDFromFundCode($fundCode);
+
+                                // Add it if not
+                                if (!$fundID) {
+                                   $fundObj->fundCode = $fundCode;
+                                   $fundObj->shortName = $fundCode;
+                                   $fundObj->save();
+                                   $fundID = $fundObj->fundID;
+                                }
+                                
+                                // Create the resourcePayment
+                                $resourcePayment->fundID = $fundID;
+                                $resourcePayment->save();
+                            }
+                        }
 
 						// If Alias is mapped, check to see if it exists
 						foreach($jsonData['alias'] as $alias)
