@@ -258,6 +258,8 @@
 			        jsonData.acquisitionType = $("#acquisition_type").val();
 			        jsonData.fundCode = $("#fundCode").val();
 			        jsonData.cost = $("#cost").val();
+				jsonData.currencyCode = $("#currency").val();
+				jsonData.orderTypeID = $("#orderType").val();
 
 			        jsonData.subject = [];
 			        $('div.subject-record').each(function() {
