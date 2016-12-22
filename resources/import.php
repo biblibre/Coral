@@ -638,7 +638,7 @@
 						$rformat = trim($data[$resourceFormatColumn]);
 						$atype = trim($data[$acquisitionTypeColumn]);
 						if ($rtype && $rformat && $atype) {
-							$resource->enterNewWorkflow();	
+							$resource->enterNewWorkflow(null, $_POST['sendemails']);
 						}
 
 						// If Alias is mapped, check to see if it exists

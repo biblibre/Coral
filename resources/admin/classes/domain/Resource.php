@@ -2299,7 +2299,7 @@ class Resource extends DatabaseObject {
     }
 
 	//enters resource into new workflow
-	public function enterNewWorkflow($workflowID = null){
+	public function enterNewWorkflow($workflowID = null, $sendEmail = true){
 		$config = new Configuration();
 
 		//make sure this resource is marked in progress in case it was archived
@@ -2369,8 +2369,7 @@ class Resource extends DatabaseObject {
 			$creator = "(unknown user)";
 		}
 
-
-		if (($config->settings->feedbackEmailAddress) || ($cUser->emailAddress)) {
+		if ($sendEmail && ($config->settings->feedbackEmailAddress) || ($cUser->emailAddress)) {
 			$email = new Email();
 			$util = new Utility();
 
