@@ -637,8 +637,9 @@
 						$rtype = trim($data[$resourceTypeColumn]);
 						$rformat = trim($data[$resourceFormatColumn]);
 						$atype = trim($data[$acquisitionTypeColumn]);
+						$sendemails = $_POST['sendemails'] == "on" ? true : false;
 						if ($rtype && $rformat && $atype) {
-							$resource->enterNewWorkflow(null, $_POST['sendemails']);
+							$resource->enterNewWorkflow(null, $sendemails);
 						}
 
 						// If Alias is mapped, check to see if it exists
