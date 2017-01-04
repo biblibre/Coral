@@ -2369,7 +2369,7 @@ class Resource extends DatabaseObject {
 			$creator = "(unknown user)";
 		}
 
-		if ($sendEmail && ($config->settings->feedbackEmailAddress) || ($cUser->emailAddress)) {
+		if ($sendEmail && ($config->settings->feedbackEmailAddress || $cUser->emailAddress)) {
 			$email = new Email();
 			$util = new Utility();
 
