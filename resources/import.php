@@ -631,7 +631,6 @@
                                 $resourcePayment->fundID = $fundID;
                                 $resourcePayment->save();
                             }
-                        }
 
 						// Try to start a workflow if resource type, resource format and acquisition type are defined
 						$rtype = trim($data[$resourceTypeColumn]);
@@ -642,6 +641,7 @@
 							$resource->enterNewWorkflow(null, $sendemails);
 						}
 
+                        }
 						// If Alias is mapped, check to see if it exists
 						foreach($jsonData['alias'] as $alias)
 						{
