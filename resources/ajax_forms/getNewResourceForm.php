@@ -82,15 +82,16 @@
 		<input type='hidden' id='organizationID' value='<?php echo $orgID; ?>' />
 		<input type='hidden' id='editResourceID' value='<?php echo $resourceID; ?>' />
 		<div class='formTitle' style='width:745px;'><span class='headerText'><?php if ($resourceID) { echo _("Edit Saved Resource"); }else{ echo _("Add New Resource"); } ?></span></div>
-		<div class='smallDarkRedText' style='height:14px;margin:3px 0px 0px 0px;'>&nbsp;* <?php echo _("required fields");?></div>
+		<div class='smallDarkRedText' style='height:14px;margin:3px 0px 0px 0px;'>&nbsp;* <?php echo _("required fields");?>
+		<span class="smallBlueText" id="searchFieldsText">  <img src= 'images/loupe.png'/> <?php echo _("search fields"); ?></span> </div>
 
 		<table class='noBorder'>
 		<tr style='vertical-align:top;'>
-		<td style='vertical-align:top; padding-right:35px;'>
+		<td style='vertical-align:top; padding-right:15px;'>
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<b><?php echo _("Product");?></b>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox' style='width:370px;'>
 			<tr>
 			<td>
 
@@ -99,6 +100,7 @@
 					<tr>
 					<td style='vertical-align:top;text-align:left;'><label for='titleText'><?php echo _("Name:");?>&nbsp;&nbsp;<span class='bigDarkRedText'>*</span></label></td>
 					<td><input type='text' id='titleText' style='width:220px;' class='changeInput' value="<?php echo $resource->titleText; ?>" /><span id='span_error_titleText' class='smallDarkRedText'></span></td>
+					<td ><img class="loupe" src= 'images/loupe.png'/></td/>
 					</tr>
 
 					<tr>
@@ -108,7 +110,14 @@
 
 					<tr>
 					<td style='vertical-align:top;text-align:left;'><label for='providerText'><?php echo _("Provider:");?></label></td>
+					<td style="vertical-align:top;text-align:left;"><label for="ISSNText">ISSN:</label></td>
+					<td><input type="text" id="ISSNText" style="width:220px;" class="changeInput ac_input idleField" value="" autocomplete="off"><span id="span_error_providerText" class="smallDarkRedText"></span></td>
+					<td ><img class="loupe" src= 'images/loupe.png'/></td/>
+					</tr>
+
+                    <tr>
 					<td><input type='text' id='providerText' style='width:220px;' class='changeInput' value='<?php echo $providerText; ?>' /><span id='span_error_providerText' class='smallDarkRedText'></span></td>
+					<td ><img class="loupe" src= 'images/loupe.png'/></td/>
 					</tr>
 
 					<tr>
@@ -130,7 +139,7 @@
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='resourceFormatID'><b><?php echo _("Format");?></b></label>&nbsp;<span class='bigDarkRedText'>*</span>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox' style='width:370px;'>
 			<tr>
 			<td>
 <span id='span_error_resourceFormatID' class='smallDarkRedText'></span>
@@ -175,7 +184,7 @@
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<b><?php echo _("Acquisition Type");?></b>&nbsp;<span class='bigDarkRedText'>*</span>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox' style='width:370px;'>
 			<tr>
 			<td>
 
@@ -242,7 +251,8 @@
 						if (strtoupper($resourceType['resourceTypeID']) == $resource->resourceTypeID) $checked = 'checked';
 					}
 
-					echo "<td><input type='radio' name='resourceTypeID' id='resourceTypeID' value='" . $resourceType['resourceTypeID'] . "' " . $checked . "/>" . $resourceType['shortName'] . "</td>\n";
+//					echo "<td><input type='radio' name='resourceTypeID' id='resourceTypeID' value=' " . $resourceType['resourceTypeID'] . "' " . $checked . "/>" . $resourceType['shortName'] . "</td>\n";
+            echo "<td><input type='radio' name='resourceTypeID' id='resourceTypeID' value=' " . $resourceType['resourceTypeID'] . "' " . $checked . "/><label for='resourceTypeID'> ".$resourceType['shortName'] . "</label></td>";
 
 					if(($i % 3)==0){
 						echo "</tr>\n";
@@ -291,9 +301,13 @@
 
 		<table class='noBorderTable' style='width:175px;'>
 			<tr>
+				<td style="text-align:left"><input type="button" value='<?php echo _("Search on GOKb"); ?>' class="searchGokb" id="search"></td>
 				<td style='text-align:left'><input type='button' value='<?php echo _("save");?>' id='save' class='submitResource save-button'></td>
 				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' id='progress' class='submitResource submit-button'></td>
 				<td style='text-align:left'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove()" class='cancel-button'></td>
+			</tr>
+			<tr>
+				<span id='span_error_search' class='smallDarkRedText'></span>
 			</tr>
 		</table>
 
@@ -302,4 +316,5 @@
 		</div>
 
 		<script type="text/javascript" src="js/forms/resourceNewForm.js?random=<?php echo rand(); ?>"></script>
+
 

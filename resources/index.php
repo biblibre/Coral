@@ -36,6 +36,7 @@ $search = Resource::getSearch();
 $pageTitle=_('Home');
 include 'templates/header.php';
 
+$_SESSION['ref_script']=$currentPage;
 
 ?>
 

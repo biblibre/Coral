@@ -26,7 +26,6 @@ $status = new Status(new NamedArguments(array('primaryKey' => $resource->statusI
 //used to get default email address for feedback link in the right side panel
 $config = new Configuration();
 
-
 //set referring page
 if ((isset($_GET['ref'])) && ($_GET['ref'] == 'new')){
   CoralSession::set('ref_script', 'new');

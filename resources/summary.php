@@ -292,7 +292,7 @@ if ($resource->titleText){
 			</tr>
 		<?php }
 
-		if ($resource->isbnOrISSN){
+		if ($resource->isbnOrISSN){ //this attribute doesn't exist anymore
 		?>
 		<tr>
 		<td style='vertical-align:top;width:150px;'><?php echo _("ISSN / ISBN:");?></td>

@@ -70,7 +70,6 @@
 					<?php if ($user->canEdit()) { ?>
 						<a href='ajax_forms.php?action=getUpdateProductForm&height=700&width=730&resourceID=<?php echo $resource->resourceID; ?>&modal=true'
 							class='thickbox'>
-
 							<img src='images/edit.gif'
 								alt='<?php echo _("edit");?>'
 								title='<?php echo _("edit resource");?>' /></a>
@@ -219,7 +218,7 @@
       <td style='width:345px;'>
       <?php 
         foreach ($isbnOrIssns as $isbnOrIssn) {
-          print $isbnOrIssn->isbnOrIssn . "<br />";
+              print $isbnOrIssn->identifier . "<br />";
         }
       ?></td>
 			</tr>

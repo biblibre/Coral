@@ -1,69 +1,69 @@
 <?php
-	$resourceID = $_GET['resourceID'];
-	$resource = new Resource(new NamedArguments(array('primaryKey' => $resourceID)));
+$resourceID = $_GET['resourceID'];
+$resource = new Resource(new NamedArguments(array('primaryKey' => $resourceID)));
 
 
-		if (!is_null_date($resource->archiveDate)) {
-			$archiveChecked = 'checked';
-		}else{
-			$archiveChecked = '';
-		}
+if (!is_null_date($resource->archiveDate)) {
+      $archiveChecked = 'checked';
+} else {
+      $archiveChecked = '';
+}
 
 
-		//get all resource formats for output in drop down
-		$resourceFormatArray = array();
-		$resourceFormatObj = new ResourceFormat();
-		$resourceFormatArray = $resourceFormatObj->sortedArray();
+//get all resource formats for output in drop down
+$resourceFormatArray = array();
+$resourceFormatObj = new ResourceFormat();
+$resourceFormatArray = $resourceFormatObj->sortedArray();
 
-		//get all resource types for output in drop down
-		$resourceTypeArray = array();
-		$resourceTypeObj = new ResourceType();
-		$resourceTypeArray = $resourceTypeObj->allAsArray();
+//get all resource types for output in drop down
+$resourceTypeArray = array();
+$resourceTypeObj = new ResourceType();
+$resourceTypeArray = $resourceTypeObj->allAsArray();
 
-    //get parents resources
-    $sanitizedInstance = array();
-    $instance = new Resource();
-    $parentResourceArray = array();
-    foreach ($resource->getParentResources() as $instance) {
+//get parents resources
+$sanitizedInstance = array();
+$instance = new Resource();
+$parentResourceArray = array();
+foreach ($resource->getParentResources() as $instance) {
       foreach (array_keys($instance->attributeNames) as $attributeName) {
-        $sanitizedInstance[$attributeName] = $instance->$attributeName;
+            $sanitizedInstance[$attributeName] = $instance->$attributeName;
       }
       $sanitizedInstance[$instance->primaryKeyName] = $instance->primaryKey;
       array_push($parentResourceArray, $sanitizedInstance);
-    }
+}
 
-		//get all alias types for output in drop down
-		$aliasTypeArray = array();
-		$aliasTypeObj = new AliasType();
-		$aliasTypeArray = $aliasTypeObj->allAsArray();
-
-
-		//get aliases
-		$sanitizedInstance = array();
-		$instance = new Alias();
-		$aliasArray = array();
-		foreach ($resource->getAliases() as $instance) {
-			foreach (array_keys($instance->attributeNames) as $attributeName) {
-				$sanitizedInstance[$attributeName] = $instance->$attributeName;
-			}
-
-			$sanitizedInstance[$instance->primaryKeyName] = $instance->primaryKey;
-
-			$aliasType = new AliasType(new NamedArguments(array('primaryKey' => $instance->aliasTypeID)));
-			$sanitizedInstance['aliasTypeShortName'] = $aliasType->shortName;
-
-			array_push($aliasArray, $sanitizedInstance);
-		}
+//get all alias types for output in drop down
+$aliasTypeArray = array();
+$aliasTypeObj = new AliasType();
+$aliasTypeArray = $aliasTypeObj->allAsArray();
 
 
-		//get all organization roles for output in drop down
-		$organizationRoleArray = array();
-		$organizationRoleObj = new OrganizationRole();
-		$organizationRoleArray = $organizationRoleObj->getArray();
+//get aliases
+$sanitizedInstance = array();
+$instance = new Alias();
+$aliasArray = array();
+foreach ($resource->getAliases() as $instance) {
+      foreach (array_keys($instance->attributeNames) as $attributeName) {
+            $sanitizedInstance[$attributeName] = $instance->$attributeName;
+      }
+
+      $sanitizedInstance[$instance->primaryKeyName] = $instance->primaryKey;
+
+      $aliasType = new AliasType(new NamedArguments(array('primaryKey' => $instance->aliasTypeID)));
+      $sanitizedInstance['aliasTypeShortName'] = $aliasType->shortName;
+
+      array_push($aliasArray, $sanitizedInstance);
+}
 
 
-		//get organizations (already returned in an array)
-		$orgArray = $resource->getOrganizationArray();
+//get all organization roles for output in drop down
+$organizationRoleArray = array();
+$organizationRoleObj = new OrganizationRole();
+$organizationRoleArray = $organizationRoleObj->getArray();
+
+
+//get organizations (already returned in an array)
+$orgArray = $resource->getOrganizationArray();
 ?>
 		<div id='div_resourceForm'>
 		<form id='resourceForm'>
@@ -160,7 +160,7 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
            foreach ($isbnOrIssns as $isbnOrIssn) {
              ?>
             <div class="oneIssnIsbn">
-             	<input type='text' class='isbnOrISSN' name='isbnOrISSN' value = '<?php echo $isbnOrIssn->isbnOrIssn; ?>' style='width:97px;' class='changeInput'  />
+             	<input type='text' class='isbnOrISSN' name='isbnOrISSN' value = '<?php echo $isbnOrIssn->identifier; ?>' style='width:97px;' class='changeInput'  />
 				<a href='javascript:void();'><img src='images/cross.gif' alt='<?php echo _("remove Issn/Isbn");?>' title='<?php echo _("remove Issn/Isbn");?>' class='removeIssnIsbn' /></a>
             </div>
             <?php
@@ -410,17 +410,24 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 
 				</table>
 
+                                                                        <td style='vertical-align:top;text-align:left;width:37px;'>
+                                                                              <a href='javascript:void();'><img src='images/cross.gif' alt='remove this alias' title='remove this alias' class='remove' /></a>
+                                                                        </td>
+                                                                  </tr>
+
+                                                                  <?php
+                                                            }
+                                                      }
+                                                      ?>
+
+                                                </table>
 
 
 
-			</td>
-			</tr>
-			</table>
 
-		</td>
-		</tr>
-		</table>
-
+                                          </td>
+                                    </tr>
+                              </table>
 
 		<hr style='width:715px;margin:15px 0px 10px 0px;' />
 
