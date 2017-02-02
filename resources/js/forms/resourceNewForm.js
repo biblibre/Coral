@@ -99,9 +99,9 @@ $(document).ready(function () {
 				}else{
 				  	$("#span_error_titleText").html("<br />"+_("Warning: this name already exists."));
 				}
-			 }
-		  });
-
+		  }
+        });
+    });
 
 
 
@@ -221,28 +221,6 @@ $(document).ready(function () {
             $(this).removeClass("focusField").addClass("idleField");
       });
 
-
-	//also perform same checks on the current record in case add button wasn't clicked
-	if (title == '' || title == null){
-		$('#span_error_titleText').html(_("A title must be entered to continue."));
-		myReturn=1;		
-	}
-	
-	if (fmtID == '' || fmtID == null){
-		$('#span_error_resourceFormatID').html(_("The resource format is required."));
-		myReturn=1;		
-	}
-	
-	if (typeID == '' || typeID == null){
-		$('#span_error_resourceTypeID').html(_("The resource type is required."));
-		myReturn=1;
-	}
-	
- 	if (myReturn == 1){
-		return false; 	
- 	}else{
- 		return true;
- 	}
 
       $(".remove").live('click', function () {
             $(this).parent().parent().parent().fadeTo(400, 0, function () {
