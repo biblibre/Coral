@@ -192,6 +192,8 @@
 	elseif ($_POST['matchsubmit'])
 	{
         $tool = new ImportTool();
+        $datas = array();
+        $identifiers = array();
 
 		//get the configuration as a php array
 		$jsonData = $_POST['jsonData'];
@@ -422,20 +424,19 @@
 
 
 						// Let's insert data
-						$resource->createLoginID    = $loginID;
-						$resource->createDate       = date( 'Y-m-d' );
-						$resource->updateLoginID    = '';
-						$resource->updateDate       = time();
-						$resource->titleText        = trim($data[$resourceTitleColumn]);
-						$resource->descriptionText  = trim($data[$resourceDescColumn]);
-						$resource->resourceURL      = trim($data[$resourceURLColumn]);
-						$resource->resourceAltURL   = trim($data[$resourceAltURLColumn]);
-						$resource->resourceTypeID   = $resourceTypeID;
-						$resource->resourceFormatID = $resourceFormatID;
+						$datas['createLoginID']    = $loginID;
+						$datas['createDate']     = date( 'Y-m-d' );
+						$datas['updateLoginID']    = '';
+						$datas['updateDate']       = time();
+						$datas['titleText']        = trim($data[$resourceTitleColumn]);
+						$datas['descriptionText']  = trim($data[$resourceDescColumn]);
+						$datas['resourceURL']      = trim($data[$resourceURLColumn]);
+						$datas['resourceAltURL']   = trim($data[$resourceAltURLColumn]);
+						$datas['resourceTypeID']   = $resourceTypeID;
+						$datas['resourceFormatID'] = $resourceFormatID;
 						//$resource->providerText     = $data[$_POST['providerText']];
-						$resource->statusID         = 1;
-						$resource->save();
-						$resource->setIsbnOrIssn($isbnIssn_values);
+						$datas['statusID']         = 1;
+                        $tool->addResource($datas, $isbnIssn_values);
 						$inserted++;
 
 						// If Alias is mapped, check to see if it exists
@@ -526,79 +527,7 @@
 							{
 								continue;
 							}
-
-							$organization = new Organization();
-							$organizationRole = new OrganizationRole();
-							$organizationID = false;
-							if ($config->settings->organizationsModule == 'Y') // If we use the Organizations module
-							{
-								$dbName = $config->settings->organizationsDatabaseName;
-								// Does the organization already exists?
-								$query = "SELECT count(*) AS count FROM $dbName.Organization WHERE UPPER(name) = '" . str_replace("'", "''", strtoupper($organizationName)) . "'";
-								$result = $organization->db->processQuery($query, 'assoc');
-								// If not, we try to create it
-								if ($result['count'] == 0)
-								{
-									$query = "INSERT INTO $dbName.Organization SET createDate=NOW(), createLoginID='$loginID', name='" . $organization->db->escapeString($organizationName) . "'";
-									try
-									{
-										$result = $organization->db->processQuery($query);
-										$organizationID = $result;
-										$organizationsInserted++;
-										array_push($arrayOrganizationsCreated, $organizationName);
-									}
-									catch (Exception $e)
-									{
-										print "<p>"._("Organization ").$organizationName._(" could not be added.")."</p>";
-									}
-              					}
-              					// If yes, we attach it to our resource
-              					elseif ($result['count'] == 1)
-              					{
-									$query = "SELECT name, organizationID FROM $dbName.Organization WHERE UPPER(name) = '" . str_replace("'", "''", strtoupper($organizationName)) . "'";
-									$result = $organization->db->processQuery($query, 'assoc');
-									$organizationID = $result['organizationID'];
-									$organizationsAttached++;
-								}
-								else
-								{
-									print "<p>"._("Error: more than one organization is called ").$organizationName._(". Please consider deduping.")."</p>";
-								}
-							}
-							else // If we do not use the Organizations module
-							{
-								// Search if such organization already exists
-								$organizationExists = $organization->alreadyExists($organizationName);
-								$parentID = null;
-								if (!$organizationExists)
-								{
-									// If not, create it
-									$organization->shortName = $organizationName;
-									$organization->save();
-									$organizationID = $organization->organizationID();
-									$organizationsInserted++;
-									array_push($arrayOrganizationsCreated, $organizationName);
-								}
-								elseif ($organizationExists == 1)
-								{
-									$organizationID = $organization->getOrganizationIDByName($organizationName);
-									$organizationsAttached++;
-								}
-								else
-								{
-									print "<p>"._("Error: more than one organization is called ").$organizationName._(" Please consider deduping.")."</p>";
-								}
-							}
-							// Let's link the resource and the organization.
-							// (this has to be done whether the module Organization is in use or not)
-							if($organizationID)
-							{
-								$organizationLink = new ResourceOrganizationLink();
-								$organizationLink->organizationRoleID = $roleID;
-								$organizationLink->resourceID = $resource->resourceID;
-								$organizationLink->organizationID = $organizationID;
-								$organizationLink->save();
-							}
+                            $datas['organization'] = array($roleID => $organizationRole);
 						}
 					}
 					elseif ($deduping_count == 1)
@@ -614,39 +543,7 @@
 						}
 						if ($data[intval($parent)-1] && ($deduping_count == 0 || $deduping_count == 1) ) // Do we have a parent resource to create?
 						{
-							// Search if such parent exists
-							$numberOfParents = count($resourceObj->getResourceByTitle($data[intval($parent)-1]));
-							$parentID = null;
-							if ($numberOfParents == 0)
-							{
-								// If not, create parent
-								$parentResource = new Resource();
-								$parentResource->createLoginID = $loginID;
-								$parentResource->createDate    = date( 'Y-m-d' );
-								$parentResource->titleText     = $data[intval($parent)-1];
-								$parentResource->statusID      = 1;
-								$parentResource->save();
-								$parentID = $parentResource->resourceID;
-								$parentInserted++;
-							}
-							elseif ($numberOfParents == 1)
-							{
-								// Else, attach the resource to its parent.
-								$parentResource = $resourceObj->getResourceByTitle($data[intval($parent)-1]);
-								$parentID = $parentResource[0]->resourceID;
-								$parentAttached++; 
-							}
-							if ($numberOfParents == 0 || $numberOfParents == 1)
-							{
-								$resourceRelationship = new ResourceRelationship();
-								$resourceRelationship->resourceID = $resource->resourceID;
-								$resourceRelationship->relatedResourceID = $parentID;
-								$resourceRelationship->relationshipTypeID = '1';  //hardcoded because we're only allowing parent relationships
-								if (!$resourceRelationship->exists())
-								{
-									$resourceRelationship->save();
-								}
-							}
+                            $datas['parentResource'] = $data[intval($parent)-1];
 						}
 					}
 
@@ -698,26 +595,11 @@
 		</form>
 <?php
 	}
+/*
 ?>
 =======
 <?php
 
-/*
-**************************************************************************************************************************
-** CORAL Resources Module v. 1.2
-**
-** Copyright (c) 2010 University of Notre Dame
-**
-** This file is part of CORAL.
-**
-** CORAL is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-**
-** CORAL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-**
-** You should have received a copy of the GNU General Public License along with CORAL.  If not, see <http://www.gnu.org/licenses/>.
-**
-**************************************************************************************************************************
-*/
 session_start();
 include_once 'directory.php';
 //print header
@@ -848,3 +730,6 @@ if ($_POST['submit']) {
 include 'templates/footer.php';
 ?>
 >>>>>>> gokb_old_repo/gokb
+*/
+
+?>

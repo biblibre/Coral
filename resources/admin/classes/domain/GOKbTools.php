@@ -1,7 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . "resources/admin/classes/domain/MyClient.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/admin/classes/domain/MyClient.php";
 
 use Phpoaipmh\Client,
     Phpoaipmh\Endpoint,
@@ -9,8 +9,8 @@ use Phpoaipmh\Client,
     Phpoaipmh\HttpAdapter\CurlAdapter,
     Phpoaipmh\HttpAdapter\GuzzleAdapter;
 
-define("OAI_HOST", "http://gokb.kuali.org/gokb/oai/");
-define("SPARQL_HOST", "http://test-gokb.kuali.org/sparql?default-graph-uri=&query=");
+define("OAI_HOST", "http://gokb-test.openlibraryfoundation.org/gokb/oai/");
+define("SPARQL_HOST", "https://gokb.openlibraryfoundation.org/sparql?default-graph-uri=&query=");
 /**
 * 
 */

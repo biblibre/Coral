@@ -1,15 +1,15 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . "resources/admin/classes/common/Configuration.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "resources/admin/classes/domain/Resource.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "resources/admin/classes/domain/ResourceRelationship.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "resources/admin/classes/domain/ResourceType.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "resources/admin/classes/domain/AliasType.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "resources/admin/classes/domain/Alias.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "organizations/admin/classes/domain/Organization.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "organizations/admin/classes/domain/OrganizationRole.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "resources/admin/classes/domain/ResourceOrganizationLink.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "organizations/admin/classes/domain/OrganizationHierarchy.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/admin/classes/common/Configuration.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/admin/classes/domain/Resource.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/admin/classes/domain/ResourceRelationship.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/admin/classes/domain/ResourceType.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/admin/classes/domain/AliasType.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/admin/classes/domain/Alias.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/organizations/admin/classes/domain/Organization.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/organizations/admin/classes/domain/OrganizationRole.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/admin/classes/domain/ResourceOrganizationLink.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/organizations/admin/classes/domain/OrganizationHierarchy.php";
 
 //include_once $_SERVER['DOCUMENT_ROOT'] . "resources/directory.php";
 
@@ -91,18 +91,18 @@ class ImportTool {
             $resourceType = null;
             $aliases = null;
 
-            /*             * *****************************************
-             * *     Has the resource to be inserted ?    **
-             * ***************************************** */
+            /***************************************
+             ** Has the resource to be inserted ? **
+             ***************************************/
             $hasToBeInserted = $this->hasResourceToBeInserted($datas, $identifiers);
 
-            /*             * **************************************
-             * *                     Datas insertion                **
-             * ************************************** */
+            /*********************
+             ** Datas insertion **
+             *********************/
             if ($hasToBeInserted) {
                   $res = $res_tmp->getNewInitializedResource();
 
-//Resource treatment
+                  //Resource treatment
                   foreach ($datas as $key => $value) {
                         switch ($key) {
                               case "organization":
@@ -123,22 +123,22 @@ class ImportTool {
                         }
                   }
 
-//ResourceType treatment
+                  //ResourceType treatment
                   if ($resourceType != NULL) {
                         $res->resourceTypeID = ResourceType::getResourceTypeID((string) $resourceType);
                   }
 
                   $res->save();
 
-//Resource identifiers treatment
+                  //Resource identifiers treatment
                   $res->setIdentifiers($identifiers);
 
-//Aliases treatment (history name change/ variant name) 
+                  //Aliases treatment (history name change/ variant name) 
                   if ($aliases != null) {
                         $this->aliasesTreatment($aliases, $res->resourceID);
                   }
 
-//Parent treatment
+                  //Parent treatment
                   if ($parentName != null) {
                         $parentID = $this->parentTreatment($parentName);
                         $this->setResourcesRelationship($res->resourceID, $parentID);
