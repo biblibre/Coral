@@ -2344,6 +2344,7 @@ class Resource extends DatabaseObject {
       }
 
       public function getResourceByIdentifiers($identifiers) {
+            if (!$identifiers) return;
             $query = "SELECT DISTINCT(resourceID) FROM Identifier";
             $i = 0;
             /*

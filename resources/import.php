@@ -330,99 +330,9 @@
 							}
 						}
 					}
-					$deduping_count = count($resourceObj->getResourceByIsbnOrISSN($deduping_values));
-					if ($deduping_count == 0)
-					{
-						// Convert to UTF-8
-						$data = array_map(function($row) { return mb_convert_encoding($row, 'UTF-8'); }, $data);
+                    // Convert to UTF-8
+                    $data = array_map(function($row) { return mb_convert_encoding($row, 'UTF-8'); }, $data);
 		        
-						// If Resource Type is mapped, check to see if it exists
-						$resourceTypeID = null;
-						if($jsonData['resourceType'] != '')
-						{
-							$index = searchForShortName($data[$resourceTypeColumn], $resourceTypeArray);
-							if($index !== null)
-							{
-								$resourceTypeID = $resourceTypeArray[$index]['resourceTypeID'];
-							}
-							else if($index === null && $data[$resourceTypeColumn] != '') //If Resource Type does not exist, add it to the database
-							{
-								$resourceTypeObj = new ResourceType();
-								$resourceTypeObj->shortName = $data[$resourceTypeColumn];
-								$resourceTypeObj->save();
-								$resourceTypeID = $resourceTypeObj->primaryKey;
-								$resourceTypeArray = $resourceTypeObj->allAsArray();
-								$resourceTypeInserted++;
-							}
-						}
-
-						// If Resource Format is mapped, check to see if it exists
-						$resourceFormatID = null;
-						if($jsonData['resourceFormat'] != '')
-						{
-							$index = searchForShortName($data[$resourceFormatColumn], $resourceFormatArray);
-							if($index !== null)
-							{
-								$resourceFormatID = $resourceFormatArray[$index]['resourceFormatID'];
-							}
-							else if($index === null && $data[$resourceFormatColumn] != '') //If Resource Format does not exist, add it to the database
-							{
-								$resourceFormatObj = new ResourceFormat();
-								$resourceFormatObj->shortName = $data[$resourceFormatColumn];
-								$resourceFormatObj->save();
-								$resourceFormatID = $resourceFormatObj->primaryKey;
-								$resourceFormatArray = $resourceFormatObj->allAsArray();
-								$resourceFormatInserted++;
-							}
-						}
-
-						// If Subject is mapped, check to see if it exists
-						$generalDetailSubjectLinkIDArray = array();
-						foreach($jsonData['subject'] as $subject)
-						{
-							$generalSubjectID = null;
-							if($subject['column'] === "") //Skip subject if column reference is blank
-							{
-								continue;
-							}
-							if($subject['delimiter'] !== "") //If the subjects in the column are delimited
-							{
-								$subjectArray = array_map('trim', explode($subject['delimiter'],$data[intval($subject['column'])-1]));
-							}
-							else
-							{
-								$subjectArray = array(trim($data[intval($subject['column'])-1]));
-							}
-							foreach($subjectArray as $currentSubject)
-							{
-								$index = searchForShortName($currentSubject, $generalSubjectArray);
-								if($index !== null)
-								{
-									$generalSubjectID = $generalSubjectArray[$index]['generalSubjectID'];
-								}
-								else if($index === null && $currentSubject != '') //If General Subject does not exist, add it to the database
-								{
-									$generalSubjectObj = new GeneralSubject();
-									$generalSubjectObj->shortName = $currentSubject;
-									$generalSubjectObj->save();
-									$generalSubjectID = $generalSubjectObj->primaryKey;
-									$generalSubjectArray = $generalSubjectObj->allAsArray();
-									$generalSubjectInserted++;
-								}
-								if($generalSubjectID !== null) //Find the generalDetailSubjectLinkID
-								{
-									$generalDetailSubjectLinkObj = new GeneralDetailSubjectLink();
-									$generalDetailID = $generalDetailSubjectLinkObj->getGeneralDetailID($generalSubjectID,-1);
-									if($generalDetailID !== -1)
-									{
-										array_push($generalDetailSubjectLinkIDArray, $generalDetailID);
-									}
-								}
-							}
-						}
-
-
-
 						// Let's insert data
 						$datas['createLoginID']    = $loginID;
 						$datas['createDate']     = date( 'Y-m-d' );
@@ -436,9 +346,7 @@
 						$datas['resourceFormatID'] = $resourceFormatID;
 						//$resource->providerText     = $data[$_POST['providerText']];
 						$datas['statusID']         = 1;
-                        $tool->addResource($datas, $isbnIssn_values);
-						$inserted++;
-
+/*
 						// If Alias is mapped, check to see if it exists
 						foreach($jsonData['alias'] as $alias)
 						{
@@ -506,6 +414,7 @@
 							$resourceSubject->generalDetailSubjectLinkID = $generalDetailID;
 							$resourceSubject->save();
 						}
+*/
 						// Do we have to create an organization or attach the resource to an existing one?
 						foreach($jsonData['organization'] as $importOrganization)
 						{
@@ -528,13 +437,8 @@
 								continue;
 							}
                             $datas['organization'] = array($roleID => $organizationRole);
-						}
-					}
-					elseif ($deduping_count == 1)
-					{
-						$resources = $resourceObj->getResourceByIsbnOrISSN($deduping_values);
-						$resource = $resources[0];
-					}
+                    }
+
 					foreach($jsonData['parent'] as $parent)
 					{
 						if($parent === "") //Skip parent if column reference is blank
@@ -547,7 +451,7 @@
 						}
 					}
 
-                $tool->addResource($datas, $identifiers);
+                $tool->addResource($datas, $identifiers, $deduping_values);
 				}
 				$row++;
 			}

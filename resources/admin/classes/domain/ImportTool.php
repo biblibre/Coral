@@ -84,7 +84,7 @@ class ImportTool {
        * @param 	$datas 	array		all datas about the resource
        * @param 	$identifiers 	array		list of identifiers (type =>identifier)
        */
-      public function addResource($datas, $identifiers) {
+      public function addResource($datas, $identifiers, $deduping_values) {
             $res_tmp = new Resource();
             $org = null;
             $parentName = null;
@@ -94,7 +94,7 @@ class ImportTool {
             /***************************************
              ** Has the resource to be inserted ? **
              ***************************************/
-            $hasToBeInserted = $this->hasResourceToBeInserted($datas, $identifiers);
+            $hasToBeInserted = $this->hasResourceToBeInserted($datas, $deduping_values);
 
             /*********************
              ** Datas insertion **
@@ -173,14 +173,14 @@ class ImportTool {
       /**
        *  Check if this resource already exist and if we have to add it in DB
        * @param type $datas		array, all resource datas
-       * @param type $identifiers	array, all resource's identifiers
+       * @param type $deduping_values	array, all resource's identifiers
        * @return boolean		true if the resource has to be inserterted, false else
        */
-      private function hasResourceToBeInserted($datas, $identifiers) {
+      private function hasResourceToBeInserted($datas, $deduping_values) {
             $res_tmp = new Resource();
             $hasToBeInserted = true;
 
-            $resource = $res_tmp->getResourceByIdentifiers($identifiers);
+            $resource = $res_tmp->getResourceByIdentifiers($deduping_values);
             $nbRes = count($resource);
             
             if ($nbRes == 0) { //resource doesn't exist, we have to create it

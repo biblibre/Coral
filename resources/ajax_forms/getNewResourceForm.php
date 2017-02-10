@@ -109,13 +109,13 @@
 					</tr>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;'><label for='providerText'><?php echo _("Provider:");?></label></td>
 					<td style="vertical-align:top;text-align:left;"><label for="ISSNText">ISSN:</label></td>
 					<td><input type="text" id="ISSNText" style="width:220px;" class="changeInput ac_input idleField" value="" autocomplete="off"><span id="span_error_providerText" class="smallDarkRedText"></span></td>
 					<td ><img class="loupe" src= 'images/loupe.png'/></td/>
 					</tr>
 
                     <tr>
+					<td style='vertical-align:top;text-align:left;'><label for='providerText'><?php echo _("Provider:");?></label></td>
 					<td><input type='text' id='providerText' style='width:220px;' class='changeInput' value='<?php echo $providerText; ?>' /><span id='span_error_providerText' class='smallDarkRedText'></span></td>
 					<td ><img class="loupe" src= 'images/loupe.png'/></td/>
 					</tr>
@@ -301,7 +301,7 @@
 
 		<table class='noBorderTable' style='width:175px;'>
 			<tr>
-				<td style="text-align:left"><input type="button" value='<?php echo _("Search on GOKb"); ?>' class="searchGokb" id="search"></td>
+				<td style="text-align:left"><input type="button" value='<?php echo _("Search on GOKb"); ?>' class="searchGokb submit-button" id="search"></td>
 				<td style='text-align:left'><input type='button' value='<?php echo _("save");?>' id='save' class='submitResource save-button'></td>
 				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' id='progress' class='submitResource submit-button'></td>
 				<td style='text-align:left'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove()" class='cancel-button'></td>
