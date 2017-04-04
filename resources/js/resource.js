@@ -20,6 +20,13 @@ $(document).ready(function(){
  	updateRightPanel();
  	updateAttachmentsNumber();
 
+    $("#resourceAcquisitionSelect").change(function () {
+        if (location.search.includes('resourceAcquisitionID')) {
+            location.search = location.search.replace(/resourceAcquisitionID=[^&$]*/i, 'resourceAcquisitionID=' + $(this).val());
+        } else {
+           location.search = location.search + "&resourceAcquisitionID=" + $(this).val(); 
+        }
+    });
     
 	$(".showProduct").click(function () {
 	  $('.resource_tab_content').hide();
@@ -29,6 +36,13 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$(".showOrders").click(function () {
+	  $('.resource_tab_content').hide();
+		$('#div_orders').show();
+		$('#div_fullRightPanel').show();
+		updateOrders();	
+		return false;
+	});
 
 	$(".showAcquisitions").click(function () {
 	  $('.resource_tab_content').hide();
@@ -299,7 +313,25 @@ function updateProduct(){
 
 }
 
+function updateOrders(){
+  $("#icon_orders").html("<img src='images/littlecircle.gif' />");
 
+  $.ajax({
+	 type:       "GET",
+	 url:        "ajax_htmldata.php",
+	 cache:      false,
+	 data:       "action=getOrdersDetails&resourceID=" + $("#resourceID").val(),
+	 success:    function(html) {
+		$("#div_orders .div_mainContent").html(html);
+		bind_removes();
+		tb_reinit();
+		$("#icon_orders").html("<img src='images/orders.gif' />");
+	 }
+
+
+  });
+
+}
 
 function updateAcquisitions(){
   $("#icon_acquisitions").html("<img src='images/littlecircle.gif' />");
