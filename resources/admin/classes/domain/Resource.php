@@ -50,6 +50,20 @@ class Resource extends DatabaseObject {
 	}
 
 
+    public function getResourceAcquisitions() {
+        $query = "SELECT * from ResourceAcquisition WHERE resourceID = " . $this->resourceID;
+		$result = $this->db->processQuery($query, 'assoc');
+        $objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourceAcquistionID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $row['resourceAcquisitionID'])));
+			array_push($objects, $object);
+		}
+		return $objects;
+    
+    }
 
 	//returns resource objects by title
 	public function getResourceByIsbnOrISSN($isbnOrISSN) {
@@ -155,9 +169,9 @@ class Resource extends DatabaseObject {
 
 
 	//returns array of purchase site objects
-	public function getResourcePurchaseSites() {
+	public function getResourcePurchaseSites($resourceAcquisitionID) {
 
-		$query = "SELECT PurchaseSite.* FROM PurchaseSite, ResourcePurchaseSiteLink RPSL where RPSL.purchaseSiteID = PurchaseSite.purchaseSiteID AND resourceID = '" . $this->resourceID . "'";
+		$query = "SELECT PurchaseSite.* FROM PurchaseSite, ResourcePurchaseSiteLink RPSL where RPSL.purchaseSiteID = PurchaseSite.purchaseSiteID AND resourceAcquisitionID = '" . $resourceAcquisitionID . "'";
 
 		$result = $this->db->processQuery($query, 'assoc');
 
