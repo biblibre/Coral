@@ -304,7 +304,7 @@ class Resource extends DatabaseObject {
 	}
 
 
-
+/*
 	//returns array of authorized site objects
 	public function getResourceAuthorizedSites() {
 
@@ -344,7 +344,7 @@ class Resource extends DatabaseObject {
 
 		return $objects;
 	}
-
+*/
 
 
 	//deletes all parent resources associated with this resource
@@ -1771,7 +1771,7 @@ class Resource extends DatabaseObject {
 	}
 */
 
-
+/*
 	//removes resource authorized sites
 	public function removeAuthorizedSites() {
 
@@ -1793,7 +1793,7 @@ class Resource extends DatabaseObject {
 
 		$result = $this->db->processQuery($query);
 	}
-
+*/
 
 
 	//removes payment records

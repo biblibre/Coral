@@ -1,3 +1,4 @@
+-- TODO: Update me
 CREATE TABLE `ResourceAcquisition` (
   `resourceAcquisitionID` int(11) NOT NULL AUTO_INCREMENT,
   `resourceID` int(11) NOT NULL,
@@ -23,3 +24,10 @@ ALTER TABLE `AuthorizedSiteAcquisition`
 
 ALTER TABLE `ResourcePurchaseSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `ResourcePayment` CHANGE `resourceID` `resourceAcquisitionID` INT(10) UNSIGNED NOT NULL;
+ALTER TABLE `ResourceAdministeringSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
+ALTER TABLE `ResourceAuthorizedSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
+
+
+-- IMPORT FROM OLD FIELDS
+
+-- REMOVE OLD FIELDS

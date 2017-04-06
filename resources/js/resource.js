@@ -361,7 +361,7 @@ function updateAccess(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getAccessDetails&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getAccessDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_access .div_mainContent").html(html);
 		bind_removes();
