@@ -96,6 +96,28 @@
 		$(this).removeClass("focusField").addClass("idleField");
 	});
 
+    $(".organizationName").autocomplete('ajax_processing.php?action=getOrganizationList', {
+        minChars: 2,
+        max: 20,
+        mustMatch: false,
+        width: 164,
+        delay: 10,
+        matchContains: true,
+        formatItem: function(row) {
+            return "<span style='font-size: 80%;'>" + row[0] + "</span>";
+        },
+        formatResult: function(row) {
+            return row[0].replace(/(<.+?>)/gi, '');
+        }
+
+    });
+
+
+    //once something has been selected, change the hidden input value
+    $(".organizationName").result(function(event, data, formatted) {
+        $(this).parent().children('.organizationID').val(data[1]);
+    });
+
 
 
 
@@ -190,12 +212,14 @@ function submitOrderForm(){
 			 type:  "POST",
 			 url:   "ajax_processing.php?action=submitAcquisitions",
 			 cache: false,
-			 data:  { resourceID: $("#editResourceID").val(),
+			 data:  { resourceAcquisitionID: $("#editResourceAcquisitionID").val(),
+                      resourceID: $("#editResourceID").val(),
                       acquisitionTypeID: $("#acquisitionTypeID").val(),
                       orderNumber: $("#orderNumber").val(),
                       systemNumber: $("#systemNumber").val(),
                       currentStartDate: $("#currentStartDate").val(),
                       currentEndDate: $("#currentEndDate").val(),
+                      organizationID: $("#organizationID").val(),
                       subscriptionAlertEnabledInd: $("#subscriptionAlertEnabledInd:checked").val(),
                       purchaseSites: purchaseSitesList,
                     },

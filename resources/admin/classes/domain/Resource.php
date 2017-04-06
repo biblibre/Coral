@@ -167,7 +167,8 @@ class Resource extends DatabaseObject {
 	}
 
 
-
+// OBSOLETE ?
+/*
 	//returns array of purchase site objects
 	public function getResourcePurchaseSites($resourceAcquisitionID) {
 
@@ -186,7 +187,7 @@ class Resource extends DatabaseObject {
 
 		return $objects;
 	}
-
+*/
 
 
 	//returns array of ResourcePayment objects
@@ -1757,7 +1758,8 @@ class Resource extends DatabaseObject {
 	}
 
 
-
+    // OBSOLETE?
+/*
 	//removes resource purchase sites
 	public function removePurchaseSites() {
 
@@ -1767,7 +1769,7 @@ class Resource extends DatabaseObject {
 
 		$result = $this->db->processQuery($query);
 	}
-
+*/
 
 
 	//removes resource authorized sites

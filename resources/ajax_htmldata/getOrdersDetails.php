@@ -5,14 +5,14 @@ $resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 	$resource = new Resource(new NamedArguments(array('primaryKey' => $resourceID)));
 	$resourceAcquisition = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $resourceAcquisitionID)));
 
-	$orderType = new OrderType(new NamedArguments(array('primaryKey' => $resource->orderTypeID)));
-		$acquisitionType = new AcquisitionType(new NamedArguments(array('primaryKey' => $resource->acquisitionTypeID)));
+	$orderType = new OrderType(new NamedArguments(array('primaryKey' => $resourceAcquisition->orderTypeID)));
+		$acquisitionType = new AcquisitionType(new NamedArguments(array('primaryKey' => $resourceAcquisition->acquisitionTypeID)));
 
 		//get purchase sites
 		$sanitizedInstance = array();
 		$instance = new PurchaseSite();
 		$purchaseSiteArray = array();
-		foreach ($resource->getResourcePurchaseSites($resourceAcquisitionID) as $instance) {
+		foreach ($resourceAcquisition->getPurchaseSites() as $instance) {
 			$purchaseSiteArray[]=$instance->shortName;
 		}
 
@@ -28,28 +28,28 @@ $resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 			</th>
 			</tr>
 
-			<?php if ($resource->acquisitionTypeID) { ?>
+			<?php if ($resourceAcquisition->acquisitionTypeID) { ?>
 				<tr>
 				<td style='vertical-align:top;width:110px;'><?php echo _("Acquisition Type:");?></td>
 				<td style='width:350px;'><?php echo $acquisitionType->shortName; ?></td>
 				</tr>
 			<?php } ?>
 
-			<?php if ($resource->orderNumber) { ?>
+			<?php if ($resourceAcquisition->orderNumber) { ?>
 				<tr>
 				<td style='vertical-align:top;width:110px;'><?php echo _("Order Number:");?></td>
-				<td style='width:350px;'><?php echo $resource->orderNumber; ?></td>
+				<td style='width:350px;'><?php echo $resourceAcquisition->orderNumber; ?></td>
 				</tr>
 			<?php } ?>
 
-			<?php if ($resource->systemNumber) { ?>
+			<?php if ($resourceAcquisition->systemNumber) { ?>
 				<tr>
 				<td style='vertical-align:top;width:110px;'><?php echo _("System Number:");?></td>
 				<td style='width:350px;'>
 				<?php
-					echo $resource->systemNumber;
+					echo $resourceAcquisition->systemNumber;
 					if ($config->settings->catalogURL != ''){
-						echo "&nbsp;&nbsp;<a href='" . $config->settings->catalogURL . $resource->systemNumber . "' target='_blank'>"._("catalog view")."</a>";
+						echo "&nbsp;&nbsp;<a href='" . $config->settings->catalogURL . $resourceAcquisition->systemNumber . "' target='_blank'>"._("catalog view")."</a>";
 					}
 				?>
 				</td>
@@ -63,24 +63,25 @@ $resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 				</tr>
 			<?php } ?>
 
-			<?php if (($resource->currentStartDate) && ($resource->currentStartDate != '0000-00-00')) { ?>
+			<?php if (($resourceAcquisition->subscriptionStartDate) && ($resourceAcquisition->subscriptionStartDate != '0000-00-00')) { ?>
 			<tr>
 			<td style='vertical-align:top;width:110px;'><?php echo _("Sub Start:");?></td>
-			<td style='width:350px;'><?php echo format_date($resource->currentStartDate); ?></td>
+			<td style='width:350px;'><?php echo format_date($resourceAcquisition->subscriptionStartDate); ?></td>
 			</tr>
 			<?php } ?>
 
-			<?php if (($resource->currentEndDate) && ($resource->currentEndDate != '0000-00-00')) { ?>
+			<?php if (($resourceAcquisition->subscriptionEndDate) && ($resourceAcquisition->subscriptionEndDate != '0000-00-00')) { ?>
 			<tr>
 			<td style='vertical-align:top;width:110px;'>Current Sub End:</td>
-			<td style='width:350px;'><?php echo format_date($resource->currentEndDate); ?>&nbsp;&nbsp;
-			<?php if ($resource->subscriptionAlertEnabledInd == "1") { echo "<i>"._("Expiration Alert Enabled")."</i>"; } ?>
+			<td style='width:350px;'><?php echo format_date($resourceAcquisition->subscriptionEndDate); ?>&nbsp;&nbsp;
+			<?php if ($resourceAcquisition->subscriptionAlertEnabledInd == "1") { echo "<i>"._("Expiration Alert Enabled")."</i>"; } ?>
 			</td>
 			</tr>
 			<?php } ?>
 
 			</table>
 			<?php if ($user->canEdit()){ ?>
-				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox'><?php echo _("edit order information");?></a>
+				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("create new order");?></a> - 
+				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("edit order information");?></a>
 			<?php } ?>
 
