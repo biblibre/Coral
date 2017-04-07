@@ -26,16 +26,18 @@ $util = new Utility();
 
 $config = new Configuration();
 $resourceID = $_GET['resourceID'];
+$resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 $resource = new Resource(new NamedArguments(array('primaryKey' => $resourceID)));
+$resourceAcquisition = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $resourceAcquisitionID)));
 
-$orderType = new OrderType(new NamedArguments(array('primaryKey' => $resource->orderTypeID)));
-$acquisitionType = new AcquisitionType(new NamedArguments(array('primaryKey' => $resource->acquisitionTypeID)));
+$orderType = new OrderType(new NamedArguments(array('primaryKey' => $resourceAcquisition->orderTypeID)));
+$acquisitionType = new AcquisitionType(new NamedArguments(array('primaryKey' => $resourceAcquisition->acquisitionTypeID)));
 
 //get purchase sites
 $sanitizedInstance = array();
 $instance = new PurchaseSite();
 $purchaseSiteArray = array();
-foreach ($resource->getResourcePurchaseSites() as $instance) {
+foreach ($resourceAcquisition->getResourcePurchaseSites() as $instance) {
 $purchaseSiteArray[]=$instance->shortName;
 }
 
@@ -44,7 +46,7 @@ $purchaseSiteArray[]=$instance->shortName;
 $sanitizedInstance = array();
 $instance = new ResourcePayment();
 $paymentArray = array();
-foreach ($resource->getResourcePayments() as $instance) {
+foreach ($resourceAcquisition->getResourcePayments() as $instance) {
 	foreach (array_keys($instance->attributeNames) as $attributeName) {
 		$sanitizedInstance[$attributeName] = $instance->$attributeName;
 	}
@@ -67,7 +69,7 @@ foreach ($resource->getResourcePayments() as $instance) {
 $sanitizedInstance = array();
 $instance = new ResourceLicenseStatus();
 $licenseStatusArray = array();
-foreach ($resource->getResourceLicenseStatuses() as $instance) {
+foreach ($resourceAcquisition->getLicenseStatuses() as $instance) {
 	foreach (array_keys($instance->attributeNames) as $attributeName) {
 		$sanitizedInstance[$attributeName] = $instance->$attributeName;
 	}
@@ -106,50 +108,50 @@ $licenseArray = $resource->getLicenseArray();
 
     </th>
   </tr>
-  <?php if ($resource->hasCatalogingInformation()) { ?>
-    <?php if ($resource->recordSetIdentifier) { ?>
+  <?php if ($resourceAcquisition->hasCatalogingInformation()) { ?>
+    <?php if ($resourceAcquisition->recordSetIdentifier) { ?>
   	<tr>
     	<td style='vertical-align:top;width:130px;'><?php echo _("Identifier:");?></td>
-    	<td style='width:350px;'><?php echo $resource->recordSetIdentifier ?></td>
+    	<td style='width:350px;'><?php echo $resourceAcquisition->recordSetIdentifier ?></td>
   	</tr>
   	<?php } ?>
-  	<?php if ($resource->bibSourceURL) { ?>
+  	<?php if ($resourceAcquisition->bibSourceURL) { ?>
   	<tr>
     	<td style='vertical-align:top;width:130px;'><?php echo _("Source URL:");?></td>
-    	<td style='width:350px;'><?php echo $resource->bibSourceURL ?><?php if ($resource->bibSourceURL) { ?> &nbsp;&nbsp;<a href='<?php echo $resource->bibSourceURL; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt='Visit Source URL' title='<?php echo _("Visit Source URL");?>' style='vertical-align:top;'></a><?php } ?></td>
+    	<td style='width:350px;'><?php echo $resourceAcquisition->bibSourceURL ?><?php if ($resourceAcquisition->bibSourceURL) { ?> &nbsp;&nbsp;<a href='<?php echo $resourceAcquisition->bibSourceURL; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt='Visit Source URL' title='<?php echo _("Visit Source URL");?>' style='vertical-align:top;'></a><?php } ?></td>
   	</tr>
   	<?php } ?>
-  	<?php if ($resource->catalogingTypeID) {
-      $catalogingType = new CatalogingType(new NamedArguments(array('primaryKey' => $resource->catalogingTypeID)));
+  	<?php if ($resourceAcquisition->catalogingTypeID) { 
+      $catalogingType = new CatalogingType(new NamedArguments(array('primaryKey' => $resourceAcquisition->catalogingTypeID)));
       ?>
   	<tr>
     	<td style='vertical-align:top;width:130px;'><?php echo _("Cataloging Type:");?></td>
     	<td style='width:350px;'><?php echo $catalogingType->shortName ?></td>
   	</tr>
   	<?php } ?>
-  	<?php if ($resource->catalogingStatusID) {
-      $catalogingStatus = new CatalogingStatus(new NamedArguments(array('primaryKey' => $resource->catalogingStatusID)));
+  	<?php if ($resourceAcquisition->catalogingStatusID) { 
+      $catalogingStatus = new CatalogingStatus(new NamedArguments(array('primaryKey' => $resourceAcquisition->catalogingStatusID)));
       ?>
   	<tr>
     	<td style='vertical-align:top;width:130px;'><?php echo _("Cataloging Status:");?></td>
     	<td style='width:350px;'><?php echo $catalogingStatus->shortName ?></td>
   	</tr>
   	<?php } ?>
-  	<?php if ($resource->numberRecordsAvailable) { ?>
+  	<?php if ($resourceAcquisition->numberRecordsAvailable) { ?>
   	<tr title="<?php echo _("Number of Records Available");?>">
     	<td style='vertical-align:top;width:130px;'><?php echo _("# Records Available:");?></td>
-    	<td style='width:350px;'><?php echo $resource->numberRecordsAvailable ?></td>
+    	<td style='width:350px;'><?php echo $resourceAcquisition->numberRecordsAvailable ?></td>
   	</tr>
   	<?php } ?>
-  	<?php if ($resource->numberRecordsLoaded) { ?>
+  	<?php if ($resourceAcquisition->numberRecordsLoaded) { ?>
   	<tr title="<?php echo _("Number of Records Loaded");?>">
     	<td style='vertical-align:top;width:130px;'><?php echo _("# Records Loaded:");?></td>
-    	<td style='width:350px;'><?php echo $resource->numberRecordsLoaded ?></td>
+    	<td style='width:350px;'><?php echo $resourceAcquisition->numberRecordsLoaded ?></td>
   	</tr>
   	<?php } ?>
   	<tr>
     	<td style='vertical-align:top;width:130px;'><?php echo _("OCLC Holdings:");?></td>
-    	<td style='width:350px;'><?php echo $resource->hasOclcHoldings ? _('Yes') : _('No') ?></td>
+    	<td style='width:350px;'><?php echo $resourceAcquisition->hasOclcHoldings ? _('Yes') : _('No') ?></td>
   	</tr>
   <?php } else { ?>
     <tr>
@@ -160,7 +162,7 @@ $licenseArray = $resource->getLicenseArray();
   <?php } ?>
 </table>
 <?php if ($user->canEdit()){ ?>
-<a href='resources/cataloging_edit.php?height=300&width=730&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox'><?php echo _("edit cataloging details");?></a><br />
+<a href='resources/cataloging_edit.php?height=300&width=730&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox'><?php echo _("edit cataloging details");?></a><br />
 <?php } ?>
 
 <br />
