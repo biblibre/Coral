@@ -4,8 +4,8 @@
 	$resourceAcquisition = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $resourceAcquisitionID)));
 	$resource = new Resource(new NamedArguments(array('primaryKey' => $resourceID)));
     if ($resourceAcquisition) {
-        $organization = new Organization(new NamedArguments(array('primaryKey' => $resourceAcquisition->organizationID)));
-        $organizationName = $organization->shortName;
+        $organization = $resourceAcquisition->getOrganization();
+        $organizationName = $organization['organization'];
     }
 
 		//used to get default currency

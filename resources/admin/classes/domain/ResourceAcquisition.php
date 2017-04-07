@@ -15,6 +15,24 @@ class ResourceAcquisition extends DatabaseObject {
 		$result = $this->db->processQuery($query);
 	}
 
+    public function getOrganization() {
+		$config = new Configuration;
+        $dbName = $config->settings->organizationsDatabaseName;
+
+		$query = ($config->settings->organizationsModule == 'Y') ?
+            "SELECT name FROM " . $dbName . ".Organization WHERE organizationID = " . $this->organizationID :
+            "SELECT shortName AS name FROM Organization WHERE organizationID = " . $this->organizationID;
+
+        if ($orgResult = $this->db->query($query)) {
+            while ($orgRow = $orgResult->fetch_assoc()) {
+                $orgArray['organization'] = $orgRow['name'];
+                $orgArray['organizationID'] = $this->organizationID;;
+            }
+        }
+
+        return $orgArray;
+    }
+
 	public function hasCatalogingInformation() {
 		return ($this->recordSetIdentifier || $this->recordSetIdentifier || $this->bibSourceURL || $this->catalogingTypeID || $this->catalogingStatusID || $this->numberRecordsAvailable || $this->numberRecordsLoaded || $this->hasOclcHoldings);
 	}
