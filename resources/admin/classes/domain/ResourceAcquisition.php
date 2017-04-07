@@ -15,7 +15,9 @@ class ResourceAcquisition extends DatabaseObject {
 		$result = $this->db->processQuery($query);
 	}
 
-
+	public function hasCatalogingInformation() {
+		return ($this->recordSetIdentifier || $this->recordSetIdentifier || $this->bibSourceURL || $this->catalogingTypeID || $this->catalogingStatusID || $this->numberRecordsAvailable || $this->numberRecordsLoaded || $this->hasOclcHoldings);
+	}
 
 	//removes resourceAcquisition administering sites
 	public function removeAdministeringSites() {

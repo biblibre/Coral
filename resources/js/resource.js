@@ -716,7 +716,7 @@ function updateCataloging(){
 	 type:       "GET",
 	 url:        "resources/cataloging.php",
 	 cache:      false,
-	 data:       "resourceID=" + $("#resourceID").val(),
+	 data:       "resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_cataloging .div_mainContent").html(html);
 		bind_removes();

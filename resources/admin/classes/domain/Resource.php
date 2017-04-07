@@ -1664,11 +1664,11 @@ class Resource extends DatabaseObject {
 	}
 
 
-
+/*
 	public function hasCatalogingInformation() {
 		return ($this->recordSetIdentifier || $this->recordSetIdentifier || $this->bibSourceURL || $this->catalogingTypeID || $this->catalogingStatusID || $this->numberRecordsAvailable || $this->numberRecordsLoaded || $this->hasOclcHoldings);
 	}
-
+*/
 
 
 	//removes this resource and its children
