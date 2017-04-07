@@ -16,6 +16,11 @@ $resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 			$purchaseSiteArray[]=$instance->shortName;
 		}
 
+        $organization = $resourceAcquisition->getOrganization();
+        $organizationName = $organization['organization'];
+        //$organization = new Organization(new NamedArguments(array('primaryKey' => $resourceAcquisition->organizationID)));
+        //$organizationName = $organization->shortName;
+
 ?>
 		<table class='linedFormTable' style='width:<?php echo $tableWidth; ?>px;padding:0x;margin:0px;height:100%;'>
 			<tr>
@@ -27,6 +32,13 @@ $resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 
 			</th>
 			</tr>
+
+            <?php if ($resourceAcquisition->organizationID) { ?>
+				<tr>
+				<td style='vertical-align:top;width:110px;'><?php echo _("Organization:");?></td>
+				<td style='width:350px;'><?php echo $organizationName; ?></td>
+				</tr>
+			<?php } ?>
 
 			<?php if ($resourceAcquisition->acquisitionTypeID) { ?>
 				<tr>
