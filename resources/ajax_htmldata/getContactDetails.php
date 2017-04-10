@@ -1,9 +1,11 @@
 <?php
 	$resourceID = $_GET['resourceID'];
+    $resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 	if (isset($_GET['archiveInd'])) $archiveInd = $_GET['archiveInd']; else $archiveInd='';
 	if (isset($_GET['showArchivesInd'])) $showArchivesInd = $_GET['showArchivesInd']; else $showArchivesInd='';
 
 	$resource = new Resource(new NamedArguments(array('primaryKey' => $resourceID)));
+    $resourceAcquisition = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $resourceAcquisitionID)));
 
 		$util = new Utility();
 

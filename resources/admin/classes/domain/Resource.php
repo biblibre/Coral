@@ -189,7 +189,7 @@ class Resource extends DatabaseObject {
 	}
 */
 
-
+/*
 	//returns array of ResourcePayment objects
 	public function getResourcePayments() {
 
@@ -208,7 +208,7 @@ class Resource extends DatabaseObject {
 
 		return $objects;
 	}
-
+*/
 
 
 	//returns array of associated licenses
@@ -1704,13 +1704,13 @@ class Resource extends DatabaseObject {
 	public function removeResource() {
 		//delete data from child linked tables
 		$this->removeResourceRelationships();
-		$this->removePurchaseSites();
-		$this->removeAuthorizedSites();
-		$this->removeAdministeringSites();
+		//$this->removePurchaseSites();
+		//$this->removeAuthorizedSites();
+		//$this->removeAdministeringSites();
 		$this->removeResourceLicenses();
 		$this->removeResourceLicenseStatuses();
 		$this->removeResourceOrganizations();
-		$this->removeResourcePayments();
+		//$this->removeResourcePayments();
 		$this->removeAllSubjects();
 		$this->removeAllIsbnOrIssn();
 
@@ -1795,7 +1795,7 @@ class Resource extends DatabaseObject {
 	}
 */
 
-
+/*
 	//removes payment records
 	public function removeResourcePayments() {
 
@@ -1805,7 +1805,7 @@ class Resource extends DatabaseObject {
 
 		$result = $this->db->processQuery($query);
 	}
-
+*/
 
 
 	//removes resource licenses
