@@ -26,6 +26,8 @@ ALTER TABLE `ResourcePurchaseSiteLink` CHANGE `resourceID` `resourceAcquisitionI
 ALTER TABLE `ResourcePayment` CHANGE `resourceID` `resourceAcquisitionID` INT(10) UNSIGNED NOT NULL;
 ALTER TABLE `ResourceAdministeringSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `ResourceAuthorizedSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
+ALTER TABLE `Attachment` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
+
 
 
 -- IMPORT FROM OLD FIELDS

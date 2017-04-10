@@ -733,7 +733,7 @@ class Resource extends DatabaseObject {
 	}
 
 
-
+/*
 	//returns array of attachments objects
 	public function getAttachments() {
 
@@ -755,7 +755,7 @@ class Resource extends DatabaseObject {
 
 		return $objects;
 	}
-
+*/
 
 
 	//returns array of contact objects

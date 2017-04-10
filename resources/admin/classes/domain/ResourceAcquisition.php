@@ -5,6 +5,29 @@ class ResourceAcquisition extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+	//returns array of attachments objects
+	public function getAttachments() {
+
+		$query = "SELECT * FROM Attachment A, AttachmentType AT
+					WHERE AT.attachmentTypeID = A.attachmentTypeID
+					AND resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'
+					ORDER BY AT.shortName";
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['attachmentID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new Attachment(new NamedArguments(array('primaryKey' => $row['attachmentID'])));
+			array_push($objects, $object);
+		}
+
+		return $objects;
+	}
+
+
 	//removes resourceAcquisition authorized sites
 	public function removeAuthorizedSites() {
 
