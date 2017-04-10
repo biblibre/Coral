@@ -20,12 +20,14 @@
 
 	$resourceID = $_GET['resourceID'];
 	$resource = new Resource(new NamedArguments(array('primaryKey' => $resourceID)));
+	$resourceAcquisitionID = $_GET['resourceAcquisitionID'];
+	$resourceAcquisition = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $resourceAcquisitionID)));
 
 		//get payments
 		$sanitizedInstance = array();
 		$instance = new ResourcePayment();
 		$paymentArray = array();
-		foreach ($resource->getResourcePayments() as $instance) {
+		foreach ($resourceAcquisition->getResourcePayments() as $instance) {
 				foreach (array_keys($instance->attributeNames) as $attributeName) {
 					$sanitizedInstance[$attributeName] = $instance->$attributeName;
 				}
@@ -90,7 +92,7 @@
 			<th colspan='<?php echo $numCols; ?>' style='vertical-align:bottom;'>
 			<span style='float:left;vertical-align:bottom;'><?php echo _("Cost History");?></span>
 			<?php if ($user->canEdit()){ ?>
-				<span style='float:right;vertical-align:bottom;'><a href='ajax_forms.php?action=getCostForm&height=400&width=<?php echo $formWidth; ?>&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox' id='editCost'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit cost history");?>'></a></span>
+				<span style='float:right;vertical-align:bottom;'><a href='ajax_forms.php?action=getCostForm&height=400&width=<?php echo $formWidth; ?>&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox' id='editCost'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit cost history");?>'></a></span>
 			<?php } ?>
 
 			</th>
@@ -185,7 +187,7 @@
 </tbody>
 			</table>
 			<?php if ($user->canEdit()){ ?>
-				<a href='ajax_forms.php?action=getCostForm&height=400&width=<?php echo $formWidth; ?>&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox'><?php echo _("edit cost history");?></a>
+				<a href='ajax_forms.php?action=getCostForm&height=400&width=<?php echo $formWidth; ?>&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox'><?php echo _("edit cost history");?></a>
 			<?php } ?>
 			<br />
 			<br />
@@ -244,9 +246,9 @@
 			</table>
 			<?php if ($user->canEdit()){ ?>
 				<?php if ($config->settings->licensingModule == "Y"){ ?>
-					<a href='ajax_forms.php?action=getLicenseForm&height=420&width=378&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox'><?php echo _("edit license and status");?></a>
+					<a href='ajax_forms.php?action=getLicenseForm&height=420&width=378&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquistionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox'><?php echo _("edit license and status");?></a>
 				<?php }else{ ?>
-					<a href='ajax_forms.php?action=getLicenseForm&height=300&width=378&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox'><?php echo _("edit license status");?></a>
+					<a href='ajax_forms.php?action=getLicenseForm&height=300&width=378&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquistionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox'><?php echo _("edit license status");?></a>
 				<?php } ?>
 			<?php } ?>
 			<br /><br /><br /><br />

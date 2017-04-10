@@ -5,6 +5,37 @@ class ResourceAcquisition extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+
+	//removes payment records
+	public function removeResourcePayments() {
+
+		$query = "DELETE
+			FROM ResourcePayment
+			WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'";
+
+		$result = $this->db->processQuery($query);
+	}
+
+	//returns array of ResourcePayment objects
+	public function getResourcePayments() {
+
+		$query = "SELECT * FROM ResourcePayment WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "' ORDER BY year DESC, subscriptionStartDate DESC";
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourcePaymentID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new ResourcePayment(new NamedArguments(array('primaryKey' => $row['resourcePaymentID'])));
+			array_push($objects, $object);
+		}
+
+		return $objects;
+	}
+
+
 	//returns array of attachments objects
 	public function getAttachments() {
 

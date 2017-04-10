@@ -340,7 +340,7 @@ function updateAcquisitions(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getAcquisitionsDetails&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getAcquisitionsDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_acquisitions .div_mainContent").html(html);
 		bind_removes();
