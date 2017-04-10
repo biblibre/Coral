@@ -384,7 +384,7 @@ function updateContacts(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getContactDetails&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getContactDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_contacts .div_mainContent").html(html);
 		bind_removes();
@@ -660,7 +660,7 @@ function updateAttachments(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getAttachmentDetails&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getAttachmentDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_attachments .div_mainContent").html(html);
 		bind_removes();
@@ -679,7 +679,7 @@ function updateAttachmentsNumber(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getAttachmentsNumber&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getAttachmentsNumber&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(remaining) {
 		if (remaining == "1"){
 			$(".span_AttachmentNumber").html("(" + remaining + _(" record)"));
