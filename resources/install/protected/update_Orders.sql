@@ -27,6 +27,7 @@ ALTER TABLE `ResourcePayment` CHANGE `resourceID` `resourceAcquisitionID` INT(10
 ALTER TABLE `ResourceAdministeringSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `ResourceAuthorizedSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `Attachment` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
+ALTER TABLE `Contact` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NOT NULL;
 
 
 

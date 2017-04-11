@@ -24,10 +24,10 @@
 				if (count($resource->getArchivedContacts()) > 0){
 					echo "<i><b>"._("The following are archived contacts:")."</b></i>";
 				}
-				$contactArray = $resource->getArchivedContacts();
+				$contactArray = $resourceAcquisition->getArchivedContacts();
 			}
 		}else{
-			$contactArray = $resource->getUnarchivedContacts();
+			$contactArray = $resourceAcquisition->getUnarchivedContacts();
 		}
 
 
@@ -42,7 +42,7 @@
 					}
 
 					if ($user->canEdit() && ($archiveInd != 1) && ($showArchivesInd != 1)){ ?>
-						<a href='ajax_forms.php?action=getContactForm&height=389&width=620&modal=true&type=named&resourceID=<?php echo $resourceID; ?>' class='thickbox' id='newNamedContact'><?php echo _("add contact");?></a>
+						<a href='ajax_forms.php?action=getContactForm&height=389&width=620&modal=true&type=named&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox' id='newNamedContact'><?php echo _("add contact");?></a>
 						<br /><br /><br />
 					<?php
 					}
