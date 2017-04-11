@@ -5,6 +5,119 @@ class ResourceAcquisition extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+	//returns array of contact objects
+	public function getUnarchivedContacts($moduleFilter=false) {
+		$config = new Configuration;
+		$contactsArray = array();
+
+		if (!$moduleFilter || $moduleFilter == 'resources') {
+			//get resource specific contacts first
+			$query = "SELECT C.*, GROUP_CONCAT(CR.shortName SEPARATOR '<br /> ') contactRoles
+				FROM Contact C, ContactRole CR, ContactRoleProfile CRP
+				WHERE (archiveDate = '0000-00-00' OR archiveDate is null)
+				AND C.contactID = CRP.contactID
+				AND CRP.contactRoleID = CR.contactRoleID
+				AND resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'
+				GROUP BY C.contactID
+				ORDER BY C.name";
+
+			$result = $this->db->processQuery($query, 'assoc');
+
+			//need to do this since it could be that there's only one request and this is how the dbservice returns result
+			if (isset($result['contactID'])) { $result = [$result]; }
+			foreach ($result as $row) {
+				array_push($contactsArray, $row);
+			}
+		}
+
+
+		//if the org module is installed also get the org contacts from org database
+		if ($config->settings->organizationsModule == 'Y' && (!$moduleFilter || $moduleFilter == 'organizations')) {
+			$dbName = $config->settings->organizationsDatabaseName;
+
+			$query = "SELECT distinct OC.*, O.name organizationName, GROUP_CONCAT(DISTINCT CR.shortName SEPARATOR '<br /> ') contactRoles
+					FROM " . $dbName . ".Contact OC, " . $dbName . ".ContactRole CR, " . $dbName . ".ContactRoleProfile CRP, " . $dbName . ".Organization O, Resource R, ResourceAcquisition RA, ResourceOrganizationLink ROL
+					WHERE (OC.archiveDate = '0000-00-00' OR OC.archiveDate is null)
+					AND R.resourceID = ROL.resourceID
+					AND ROL.organizationID = OC.organizationID
+					AND CRP.contactID = OC.contactID
+					AND CRP.contactRoleID = CR.contactRoleID
+					AND O.organizationID = OC.organizationID
+                    AND R.resourceID = RA.resourceID
+					AND RA.resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'
+					GROUP BY OC.contactID, O.name
+					ORDER BY OC.name";
+
+			$result = $this->db->processQuery($query, 'assoc');
+
+			//need to do this since it could be that there's only one request and this is how the dbservice returns result
+			if (isset($result['contactID'])) { $result = [$result]; }
+			foreach ($result as $row) {
+				array_push($contactsArray, $row);
+			}
+
+		}
+		return $contactsArray;
+	}
+
+
+	//returns array of contact objects
+	public function getArchivedContacts() {
+
+		$config = new Configuration;
+		$contactsArray = array();
+
+		//get resource specific contacts
+		$query = "SELECT C.*, GROUP_CONCAT(CR.shortName SEPARATOR '<br /> ') contactRoles
+			FROM Contact C, ContactRole CR, ContactRoleProfile CRP
+			WHERE (archiveDate != '0000-00-00' && archiveDate != '')
+			AND C.contactID = CRP.contactID
+			AND CRP.contactRoleID = CR.contactRoleID
+			AND resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'
+			GROUP BY C.contactID
+			ORDER BY C.name";
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['contactID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			array_push($contactsArray, $row);
+		}
+
+		//if the org module is installed also get the org contacts from org database
+		if ($config->settings->organizationsModule == 'Y') {
+			$dbName = $config->settings->organizationsDatabaseName;
+
+			$query = "SELECT DISTINCT OC.*, O.name organizationName, GROUP_CONCAT(DISTINCT CR.shortName SEPARATOR '<br /> ') contactRoles
+					FROM " . $dbName . ".Contact OC, " . $dbName . ".ContactRole CR, " . $dbName . ".ContactRoleProfile CRP, " . $dbName . ".Organization O, Resource R, ResourceAcquisition RA, ResourceOrganizationLink ROL
+					WHERE (OC.archiveDate != '0000-00-00' && OC.archiveDate is not null)
+					AND R.resourceID = ROL.resourceID
+					AND ROL.organizationID = OC.organizationID
+					AND CRP.contactID = OC.contactID
+					AND CRP.contactRoleID = CR.contactRoleID
+					AND O.organizationID = OC.organizationID
+                    AND R.resourceID = RA.resourceID
+					AND RA.resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'
+					GROUP BY OC.contactID, O.name
+					ORDER BY OC.name";
+
+
+			$result = $this->db->processQuery($query, 'assoc');
+
+
+			//need to do this since it could be that there's only one request and this is how the dbservice returns result
+			if (isset($result['contactID'])) { $result = [$result]; }
+			foreach ($result as $row) {
+				array_push($contactsArray, $row);
+			}
+
+		}
+		return $contactsArray;
+	}
+
+
 
 	//removes payment records
 	public function removeResourcePayments() {
@@ -170,6 +283,7 @@ class ResourceAcquisition extends DatabaseObject {
 
 		return $objects;
 	}
+
 
 	//returns array of notes objects
 	public function getNotes($tabName = NULL) {

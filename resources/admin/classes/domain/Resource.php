@@ -377,7 +377,7 @@ class Resource extends DatabaseObject {
 	}
 
 
-
+/*
 	//returns array of contact objects
 	public function getUnarchivedContacts($moduleFilter=false) {
 		$config = new Configuration;
@@ -431,9 +431,9 @@ class Resource extends DatabaseObject {
 		}
 		return $contactsArray;
 	}
+*/
 
-
-
+/*
 	//returns array of contact objects
 	public function getArchivedContacts() {
 
@@ -488,7 +488,7 @@ class Resource extends DatabaseObject {
 		}
 		return $contactsArray;
 	}
-
+*/
 
 
 	//returns array of contact objects
