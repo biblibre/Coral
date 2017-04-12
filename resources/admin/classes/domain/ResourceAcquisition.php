@@ -6,12 +6,8 @@ class ResourceAcquisition extends DatabaseObject {
 	protected function overridePrimaryKeyName() {}
 
     // Copy what was linked to the resourceAcquisition given in parameter to this one
-    public function dbClone($sourceID) {
+    public function cloneFrom($sourceID) {
         $source = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $sourceID)));
-
-        // Clone other fields from ResourceAcquisition
-
-
         // Copy acquisitions
         $this->cloneResourcePayments($source);
         
@@ -23,7 +19,7 @@ class ResourceAcquisition extends DatabaseObject {
 
     public function cloneResourcePayments($source) {
         foreach ($source->getResourcePayments() as $srp) {
-            error_log("Cloning RP from " . $source->resourceAcquisitionID . " to " . $srp->resourceAcquisitionID);
+            error_log("Cloning RP from " . $srp->resourceAcquisitionID . " to " . $this->resourceAcquisitionID);
            $srp->resourceAquisitionID = $this->resourceAcquisitionID;
            $srp->save(); 
         } 

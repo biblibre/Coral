@@ -241,11 +241,12 @@ class DatabaseObject extends DynamicObject {
 			//echo $query;
             //error_log($query);
 			$this->primaryKey = $this->db->processQuery($query);
+            if ($new) return $this->primaryKey;
 		}
 	}
 
     public function saveAsNew() {
-        $this->save(1);
+        return $this->save(1);
     }
 
 

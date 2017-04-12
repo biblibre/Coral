@@ -31,7 +31,10 @@
 		try {
             if ($op == 'clone') {
                 $resourceAcquisition->resourceAcquisitionID = null;
-                $resourceAcquisition->saveAsNew();
+                $newRAID = $resourceAcquisition->saveAsNew();
+                $resourceAcquisition = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $newRAID)));
+                $resourceAcquisition->cloneFrom($_POST['resourceAcquisitionID']);
+                $resourceAcquisition->save();
             } else {
                 $resourceAcquisition->save();
             }
