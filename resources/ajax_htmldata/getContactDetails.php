@@ -34,11 +34,11 @@
 		if (count($contactArray) > 0){
 			foreach ($contactArray as $contact){
 				if (($resContactFlag == 0) && (!isset($contact['organizationName']))){
-					echo "<div class='formTitle' style='padding:4px; font-weight:bold; margin-bottom:8px;'>"._("Resource Specific:")."</div>";
+					echo "<div class='formTitle' style='padding:4px; font-weight:bold; margin-bottom:8px;'>"._("Order Specific:")."</div>";
 					$resContactFlag = 1;
 				}else if (($orgContactFlag == 0) && (isset($contact['organizationName']))){
 					if ($resContactFlag == 0){
-						echo "<i>"._("No Resource Specific Contacts")."</i><br /><br />";
+						echo "<i>"._("No Order Specific Contacts")."</i><br /><br />";
 					}
 
 					if ($user->canEdit() && ($archiveInd != 1) && ($showArchivesInd != 1)){ ?>

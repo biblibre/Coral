@@ -1,6 +1,7 @@
 <?php
 		$resourceAcquisitionID = $_POST['resourceAcquisitionID'];
 		$resourceID = $_POST['resourceID'];
+        $op = $_POST['op'];
         
 		$resourceAcquisition = $resourceAcquisitionID ? 
                                 new ResourceAcquisition(new NamedArguments(array('primaryKey' => $resourceAcquisitionID))) :
@@ -28,7 +29,12 @@
 		$resourceAcquisition->organizationID    = $_POST['organizationID'];
 
 		try {
-			$resourceAcquisition->save();
+            if ($op == 'clone') {
+                $resourceAcquisition->resourceAcquisitionID = null;
+                $resourceAcquisition->saveAsNew();
+            } else {
+                $resourceAcquisition->save();
+            }
 
 			//first remove all administering sites, then we'll add them back
 			$resourceAcquisition->removePurchaseSites();
@@ -45,7 +51,7 @@
 					}
 				}
 			}
-
+        
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}

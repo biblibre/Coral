@@ -5,6 +5,30 @@ class ResourceAcquisition extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+    // Copy what was linked to the resourceAcquisition given in parameter to this one
+    public function dbClone($sourceID) {
+        $source = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $sourceID)));
+
+        // Clone other fields from ResourceAcquisition
+
+
+        // Copy acquisitions
+        $this->cloneResourcePayments($source);
+        
+        // Copy access
+        // Copy cataloging
+        // Copy contacts
+        // Copy attachments
+    }
+
+    public function cloneResourcePayments($source) {
+        foreach ($source->getResourcePayments() as $srp) {
+            error_log("Cloning RP from " . $source->resourceAcquisitionID . " to " . $srp->resourceAcquisitionID);
+           $srp->resourceAquisitionID = $this->resourceAcquisitionID;
+           $srp->save(); 
+        } 
+    }
+
 	//returns array of contact objects
 	public function getUnarchivedContacts($moduleFilter=false) {
 		$config = new Configuration;
