@@ -27,7 +27,7 @@ $resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 			<th colspan='2' style='vertical-align:bottom;'>
 			<span style='float:left;vertical-align:bottom;'><?php echo _("Order");?></span>
 			<?php if ($user->canEdit()){ ?>
-				<span style='float:right;vertical-align:bottom;'><a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox' id='editOrder'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit order information");?>'></a></span>
+				<span style='float:right;vertical-align:bottom;'><a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox' id='editOrder'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit order information");?>'></a></span>
 			<?php } ?>
 
 			</th>
@@ -94,6 +94,7 @@ $resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 			</table>
 			<?php if ($user->canEdit()){ ?>
 				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("create new order");?></a> - 
+				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>&op=clone' class='thickbox'><?php echo _("clone order");?></a> - 
 				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("edit order information");?></a>
 			<?php } ?>
 

@@ -214,6 +214,7 @@ function submitOrderForm(){
 			 cache: false,
 			 data:  { resourceAcquisitionID: $("#editResourceAcquisitionID").val(),
                       resourceID: $("#editResourceID").val(),
+                      op: $("#op").val(),
                       acquisitionTypeID: $("#acquisitionTypeID").val(),
                       orderNumber: $("#orderNumber").val(),
                       systemNumber: $("#systemNumber").val(),

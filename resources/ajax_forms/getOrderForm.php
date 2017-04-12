@@ -1,6 +1,7 @@
 <?php
 	$resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 	$resourceID = $_GET['resourceID'];
+    $op = $_GET['op'];
 	$resourceAcquisition = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $resourceAcquisitionID)));
 	$resource = new Resource(new NamedArguments(array('primaryKey' => $resourceID)));
     if ($resourceAcquisition) {
@@ -36,8 +37,9 @@
 		<form id='resourceForm'>
 		<input type='hidden' name='editResourceAcquisitionID' id='editResourceAcquisitionID' value='<?php echo $resourceAcquisitionID; ?>'>
 		<input type='hidden' name='editResourceID' id='editResourceID' value='<?php echo $resourceID; ?>'>
+		<input type='hidden' name='op' id='op' value='<?php echo $op; ?>'>
 
-		<div class='formTitle' style='width:420px; margin-bottom:5px;'><span class='headerText'><?php echo _("Edit Acquisitions Information");?></span></div>
+		<div class='formTitle' style='width:420px; margin-bottom:5px;'><span class='headerText'><?php echo ($op == 'clone') ? _("Clone Order") : _("Edit Order");?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 

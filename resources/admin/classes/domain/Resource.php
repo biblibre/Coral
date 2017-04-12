@@ -25,8 +25,7 @@ class Resource extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
-
-
+  
 	//returns resource objects by title
 	public function getResourceByTitle($title) {
 
