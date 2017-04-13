@@ -5,6 +5,117 @@ class ResourceAcquisition extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+	//returns array of associated licenses
+	public function getLicenseArray() {
+		$config = new Configuration;
+
+		//if the lic module is installed get the lic name from lic database
+		if ($config->settings->licensingModule == 'Y') {
+			$dbName = $config->settings->licensingDatabaseName;
+
+			$resourceLicenseArray = array();
+
+			$query = "SELECT * FROM ResourceLicenseLink WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'";
+
+			$result = $this->db->processQuery($query, 'assoc');
+
+			$objects = array();
+
+			//need to do this since it could be that there's only one request and this is how the dbservice returns result
+			if (isset($result['licenseID'])) {
+				$licArray = array();
+
+				//first, get the license name
+				$query = "SELECT shortName FROM " . $dbName . ".License WHERE licenseID = " . $result['licenseID'];
+
+				if ($licResult = $this->db->query($query)) {
+					while ($licRow = $licResult->fetch_assoc()) {
+						$licArray['license'] = $licRow['shortName'];
+						$licArray['licenseID'] = $result['licenseID'];
+					}
+				}
+
+				array_push($resourceLicenseArray, $licArray);
+			}else{
+				foreach ($result as $row) {
+					$licArray = array();
+
+					//first, get the license name
+					$query = "SELECT shortName FROM " . $dbName . ".License WHERE licenseID = " . $row['licenseID'];
+
+					if ($licResult = $this->db->query($query)) {
+						while ($licRow = $licResult->fetch_assoc()) {
+							$licArray['license'] = $licRow['shortName'];
+							$licArray['licenseID'] = $row['licenseID'];
+						}
+					}
+
+					array_push($resourceLicenseArray, $licArray);
+
+				}
+
+			}
+
+			return $resourceLicenseArray;
+		}
+	}
+
+	//returns array of resource license status objects
+	public function getResourceLicenseStatuses() {
+
+		$query = "SELECT * FROM ResourceLicenseStatus WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "' ORDER BY licenseStatusChangeDate desc;";
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourceLicenseStatusID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new ResourceLicenseStatus(new NamedArguments(array('primaryKey' => $row['resourceLicenseStatusID'])));
+			array_push($objects, $object);
+		}
+
+		return $objects;
+	}
+
+	//returns LicenseStatusID of the most recent resource license status
+	public function getCurrentResourceLicenseStatus() {
+
+		$query = "SELECT licenseStatusID FROM ResourceLicenseStatus RLS WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "' AND licenseStatusChangeDate = (SELECT MAX(licenseStatusChangeDate) FROM ResourceLicenseStatus WHERE ResourceLicenseStatus.resourceAcquisitionID = '" . $this->resourceAcquisitionID . "') LIMIT 0,1;";
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['licenseStatusID'])) {
+			return $result['licenseStatusID'];
+		}
+
+	}
+	//removes resource licenses
+	public function removeResourceLicenses() {
+
+		$query = "DELETE
+			FROM ResourceLicenseLink
+			WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'";
+
+		$result = $this->db->processQuery($query);
+	}
+
+
+
+	//removes resource license statuses
+	public function removeResourceLicenseStatuses() {
+
+		$query = "DELETE
+			FROM ResourceLicenseStatus
+			WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'";
+
+		$result = $this->db->processQuery($query);
+	}
+
+
+
     // Copy what was linked to the resourceAcquisition given in parameter to this one
     public function cloneFrom($sourceID) {
         $source = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $sourceID)));

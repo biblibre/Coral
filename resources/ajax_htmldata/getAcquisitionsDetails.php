@@ -58,7 +58,7 @@
 		$sanitizedInstance = array();
 		$instance = new ResourceLicenseStatus();
 		$licenseStatusArray = array();
-		foreach ($resource->getResourceLicenseStatuses() as $instance) {
+		foreach ($resourceAcquisition->getResourceLicenseStatuses() as $instance) {
 				foreach (array_keys($instance->attributeNames) as $attributeName) {
 					$sanitizedInstance[$attributeName] = $instance->$attributeName;
 				}
@@ -83,7 +83,7 @@
 
 
 		//get licenses (already returned in array)
-		$licenseArray = $resource->getLicenseArray();
+		$licenseArray = $resourceAcquisition->getLicenseArray();
 
 ?>
 			<table class='linedFormTable formTable' style='width:<?php echo $tableWidth; ?>px;margin-bottom:5px;'>
@@ -198,7 +198,7 @@
 			<th colspan='2'>
 			<span style='float:left;vertical-align:bottom;'><?php echo _("License");?></span>
 			<?php if ($user->canEdit()){ ?>
-				<span style='float:right;vertical-align:bottom;'><a href='ajax_forms.php?action=getLicenseForm&height=420&width=385&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox' id='editLicense'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit resource");?>'></a></span>
+				<span style='float:right;vertical-align:bottom;'><a href='ajax_forms.php?action=getLicenseForm&height=420&width=385&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox' id='editLicense'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit license");?>'></a></span>
 			<?php } ?>
 			</th>
 			</tr>

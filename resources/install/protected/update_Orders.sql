@@ -28,6 +28,9 @@ ALTER TABLE `ResourceAdministeringSiteLink` CHANGE `resourceID` `resourceAcquisi
 ALTER TABLE `ResourceAuthorizedSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `Attachment` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `Contact` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NOT NULL;
+ALTER TABLE `ResourceLicenseLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
+ALTER TABLE `ResourceLicenseStatus` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
+
 
 
 
