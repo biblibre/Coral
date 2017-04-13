@@ -32,6 +32,7 @@ class ResourceAcquisition extends DatabaseObject {
 					while ($licRow = $licResult->fetch_assoc()) {
 						$licArray['license'] = $licRow['shortName'];
 						$licArray['licenseID'] = $result['licenseID'];
+						$licArray['resourceLicenseLinkID'] = $result['resourceLicenseLinkID'];
 					}
 				}
 
@@ -47,6 +48,7 @@ class ResourceAcquisition extends DatabaseObject {
 						while ($licRow = $licResult->fetch_assoc()) {
 							$licArray['license'] = $licRow['shortName'];
 							$licArray['licenseID'] = $row['licenseID'];
+                            $licArray['resourceLicenseLinkID'] = $result['resourceLicenseLinkID'];
 						}
 					}
 
@@ -144,7 +146,7 @@ class ResourceAcquisition extends DatabaseObject {
     
             $s->attachmentID = null;
             $newID = $s->saveAsNew();
-            error_log("Cloning Attachment from source to " . $this->resourceAcquisitionID . " newID : $newID");
+            //error_log("Cloning Attachment from source to " . $this->resourceAcquisitionID . " newID : $newID");
             $query = "UPDATE Attachment SET ResourceAcquisitionID=" . $this->resourceAcquisitionID . " WHERE attachmentID=" . $newID;
             $result = $this->db->processQuery($query);
         }
@@ -188,23 +190,39 @@ class ResourceAcquisition extends DatabaseObject {
         foreach ($source->getAuthorizedSitesLinks() as $s) {
             $s->resourceAuthorizedSiteLinkID = null;
             $newID = $s->saveAsNew();
-            error_log("Cloning AdminsteringSite from source to " . $this->resourceAcquisitionID . " newID : $newID");
+            //error_log("Cloning AdminsteringSite from source to " . $this->resourceAcquisitionID . " newID : $newID");
             $query = "UPDATE ResourceAuthorizedSiteLink SET resourceAcquisitionID=" . $this->resourceAcquisitionID . " WHERE resourceAuthorizedSiteLinkID=" . $newID;
-            error_log($query);
+            //error_log($query);
            $result = $this->db->processQuery($query);
         }
+
+        // Not needed, they are already cloned in the order edit screen
+/*
         foreach ($source->getPurchaseSitesLinks() as $s) {
             $s->resourcePurchaseSiteLinkID = null;
             $newID = $s->saveAsNew();
-            error_log("Cloning AdminsteringSite from source to " . $this->resourceAcquisitionID . " newID : $newID");
+            //error_log("Cloning AdminsteringSite from source to " . $this->resourceAcquisitionID . " newID : $newID");
             $query = "UPDATE ResourcePurchaseSiteLink SET resourceAcquisitionID=" . $this->resourceAcquisitionID . " WHERE resourcePurchaseSiteLinkID=" . $newID;
-            error_log($query);
+            //error_log($query);
            $result = $this->db->processQuery($query);
         }
+*/
     }    
 
-    public function cloneLicences($source) {
-        // TODO
+    public function cloneLicenses($source) {
+        foreach ($source->getLicenseArray() as $s) {
+            $rll = new ResourceLicenseLink();
+            $rll->resourceAcquisitionID = $this->resourceAcquisitionID;;
+            $rll->licenseID = $s['licenseID'];
+            $rll->save;
+        }
+
+        foreach ($source->getResourceLicenseStatuses() as $s) {
+            $s->resourceLicenseStatusID = null;
+            $newID = $s->saveAsNew();
+            $query = "UPDATE ResourceLicenseStatus SET resourceAcquisitionID=" . $this->resourceAcquisitionID . " WHERE resourceLicenseStatusID=" . $newID;
+            $result = $this->db->processQuery($query);
+        } 
     }
 
 	//returns array of contact objects
