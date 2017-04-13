@@ -2066,7 +2066,6 @@ class Resource extends DatabaseObject {
 	}
 
     public function archiveWorkflow() {
-
         // And archive the workflow
         $query = "UPDATE ResourceStep SET archivingDate=NOW() WHERE archivingDate IS NULL AND resourceID = '" . $this->resourceID . "'";
 		$result = $this->db->processQuery($query);

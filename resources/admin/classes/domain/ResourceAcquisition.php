@@ -8,21 +8,92 @@ class ResourceAcquisition extends DatabaseObject {
     // Copy what was linked to the resourceAcquisition given in parameter to this one
     public function cloneFrom($sourceID) {
         $source = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $sourceID)));
-        // Copy acquisitions
+
+        // Copy cost history
         $this->cloneResourcePayments($source);
+
+        // Copy licenses
+        $this->cloneLicenses($source);
         
         // Copy access
+        $this->cloneAccess($source);
+
         // Copy cataloging
+        // Nothing to do, already cloned in ResourceAcquisition
+
         // Copy contacts
+        $this->cloneContacts($source);
+
         // Copy attachments
+        $this->cloneAttachments($source);
+    }
+
+    public function cloneAttachments($source) {
+        foreach ($source->getAttachments() as $s) {
+    
+            $s->attachmentID = null;
+            $newID = $s->saveAsNew();
+            error_log("Cloning Attachment from source to " . $this->resourceAcquisitionID . " newID : $newID");
+            $query = "UPDATE Attachment SET ResourceAcquisitionID=" . $this->resourceAcquisitionID . " WHERE attachmentID=" . $newID;
+            $result = $this->db->processQuery($query);
+        }
+    }
+
+    public function cloneContacts($source) {
+        foreach ($source->getUnarchivedContacts() as $s) {
+            $c = new Contact(new NamedArguments(array('primaryKey' => $s['contactID'])));
+            $contactRoles = $c->getContactRoles();
+            $c->contactID = null;
+            $newID = $c->saveAsNew();
+            $query = "UPDATE Contact SET ResourceAcquisitionID=" . $this->resourceAcquisitionID . " WHERE contactID=" . $newID;
+            $result = $this->db->processQuery($query);
+            foreach ($contactRoles as $contactRole) {
+                $query = "INSERT INTO ContactRoleProfile(contactID, contactRoleID) VALUES ($newID, " . $contactRole->contactRoleID . ")";
+                $result = $this->db->processQuery($query);
+            }
+            
+        }
     }
 
     public function cloneResourcePayments($source) {
         foreach ($source->getResourcePayments() as $srp) {
-            error_log("Cloning RP from " . $srp->resourceAcquisitionID . " to " . $this->resourceAcquisitionID);
-           $srp->resourceAquisitionID = $this->resourceAcquisitionID;
-           $srp->save(); 
+           //error_log("Cloning RP from " . $srp->resourceAcquisitionID . " to " . $this->resourceAcquisitionID);
+           $srp->resourcePaymentID = null;
+           $newRPID = $srp->saveAsNew(); 
+           $query = "UPDATE ResourcePayment SET resourceAcquisitionID=" . $this->resourceAcquisitionID . " WHERE resourcePaymentID=" . $newRPID;
+           $result = $this->db->processQuery($query);
         } 
+    }
+
+    public function cloneAccess($source) {
+        foreach ($source->getAdministeringSitesLinks() as $s) {
+            $s->resourceAdministeringSiteLinkID = null;
+            $newID = $s->saveAsNew();
+            //error_log("Cloning AdminsteringSite from source to " . $this->resourceAcquisitionID . " newID : $newID");
+            $query = "UPDATE ResourceAdministeringSiteLink SET resourceAcquisitionID=" . $this->resourceAcquisitionID . " WHERE resourceAdministeringSiteLinkID=" . $newID;
+            //error_log($query);
+           $result = $this->db->processQuery($query);
+        }
+        foreach ($source->getAuthorizedSitesLinks() as $s) {
+            $s->resourceAuthorizedSiteLinkID = null;
+            $newID = $s->saveAsNew();
+            error_log("Cloning AdminsteringSite from source to " . $this->resourceAcquisitionID . " newID : $newID");
+            $query = "UPDATE ResourceAuthorizedSiteLink SET resourceAcquisitionID=" . $this->resourceAcquisitionID . " WHERE resourceAuthorizedSiteLinkID=" . $newID;
+            error_log($query);
+           $result = $this->db->processQuery($query);
+        }
+        foreach ($source->getPurchaseSitesLinks() as $s) {
+            $s->resourcePurchaseSiteLinkID = null;
+            $newID = $s->saveAsNew();
+            error_log("Cloning AdminsteringSite from source to " . $this->resourceAcquisitionID . " newID : $newID");
+            $query = "UPDATE ResourcePurchaseSiteLink SET resourceAcquisitionID=" . $this->resourceAcquisitionID . " WHERE resourcePurchaseSiteLinkID=" . $newID;
+            error_log($query);
+           $result = $this->db->processQuery($query);
+        }
+    }    
+
+    public function cloneLicences($source) {
+        // TODO
     }
 
 	//returns array of contact objects
@@ -283,7 +354,56 @@ class ResourceAcquisition extends DatabaseObject {
 		return $objects;
 	}
 
+    public function getAuthorizedSitesLinks() {
+        $query = "SELECT * FROM ResourceAuthorizedSiteLink where resourceAcquisitionID=" . $this->resourceAcquisitionID;
 
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourceAuthorizedSiteLinkID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new ResourceAuthorizedSiteLink(new NamedArguments(array('primaryKey' => $row['resourceAuthorizedSiteLinkID'])));
+			array_push($objects, $object);
+		}
+
+		return $objects;
+    }
+
+    public function getPurchaseSitesLinks() {
+        $query = "SELECT * FROM ResourcePurchaseSiteLink where resourceAcquisitionID=" . $this->resourceAcquisitionID;
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourcePurchaseSiteLinkID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new ResourcePurchaseSiteLink(new NamedArguments(array('primaryKey' => $row['resourcePurchaseSiteLinkID'])));
+			array_push($objects, $object);
+		}
+
+		return $objects;
+    }
+
+    public function getAdministeringSitesLinks() {
+        $query = "SELECT * FROM ResourceAdministeringSiteLink where resourceAcquisitionID=" . $this->resourceAcquisitionID;
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourceAdministeringSiteLinkID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new ResourceAdministeringSiteLink(new NamedArguments(array('primaryKey' => $row['resourceAdministeringSiteLinkID'])));
+			array_push($objects, $object);
+		}
+
+		return $objects;
+    }
 
 	//returns array of administering site objects
 	public function getAdministeringSites() {
