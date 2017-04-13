@@ -209,7 +209,7 @@ class Resource extends DatabaseObject {
 	}
 */
 
-
+/*
 	//returns array of associated licenses
 	public function getLicenseArray() {
 		$config = new Configuration;
@@ -264,9 +264,9 @@ class Resource extends DatabaseObject {
 			return $resourceLicenseArray;
 		}
 	}
+*/
 
-
-
+/*
 	//returns array of resource license status objects
 	public function getResourceLicenseStatuses() {
 
@@ -285,9 +285,9 @@ class Resource extends DatabaseObject {
 
 		return $objects;
 	}
+*/
 
-
-
+/*
 	//returns LicenseStatusID of the most recent resource license status
 	public function getCurrentResourceLicenseStatus() {
 
@@ -301,7 +301,7 @@ class Resource extends DatabaseObject {
 		}
 
 	}
-
+*/
 
 /*
 	//returns array of authorized site objects
@@ -1706,8 +1706,8 @@ class Resource extends DatabaseObject {
 		//$this->removePurchaseSites();
 		//$this->removeAuthorizedSites();
 		//$this->removeAdministeringSites();
-		$this->removeResourceLicenses();
-		$this->removeResourceLicenseStatuses();
+		//$this->removeResourceLicenses();
+		//$this->removeResourceLicenseStatuses();
 		$this->removeResourceOrganizations();
 		//$this->removeResourcePayments();
 		$this->removeAllSubjects();
@@ -1806,7 +1806,7 @@ class Resource extends DatabaseObject {
 	}
 */
 
-
+/*
 	//removes resource licenses
 	public function removeResourceLicenses() {
 
@@ -1828,7 +1828,7 @@ class Resource extends DatabaseObject {
 
 		$result = $this->db->processQuery($query);
 	}
-
+*/
 
 
 	//removes resource organizations
