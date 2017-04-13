@@ -33,8 +33,8 @@
                 $resourceAcquisition->resourceAcquisitionID = null;
                 $newRAID = $resourceAcquisition->saveAsNew();
                 $resourceAcquisition = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $newRAID)));
-                $resourceAcquisition->cloneFrom($_POST['resourceAcquisitionID']);
                 $resourceAcquisition->save();
+                $resourceAcquisition->cloneFrom($_POST['resourceAcquisitionID']);
             } else {
                 $resourceAcquisition->save();
             }
