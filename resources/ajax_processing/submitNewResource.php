@@ -111,6 +111,8 @@
 			$costNoteArray      = array();  $costNoteArray      = explode(':::',$_POST['costNotes']);
 			$invoiceArray       = array();  $invoiceArray       = explode(':::',$_POST['invoices']);
 
+            // Is this really needed ?
+/*
 			//first remove all payment records, then we'll add them back
 			$resource->removeResourcePayments();
 
@@ -135,7 +137,7 @@
 					}
 				}
 			}
-
+*/
 
 
 			//next if the resource was submitted, enter into workflow
