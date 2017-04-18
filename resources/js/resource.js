@@ -735,7 +735,7 @@ function updateRightPanel(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getRightPanel&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getRightPanel&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_rightPanel").html(html + "&nbsp;");
 
