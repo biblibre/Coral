@@ -8,7 +8,7 @@ CREATE TABLE `ResourceAcquisition` (
   `subscriptionStartDate` date NOT NULL,
   `subscriptionEndDate` date NOT NULL,
   `subscriptionAlertEnabledInd` int(11) DEFAULT NULL,
-  `organizationID` int(11) NOT NULL,
+  `organizationID` int(11) DEFAULT NULL,
   `licenseID` int(11) DEFAULT NULL,
   `authenticationTypeID` int(10) DEFAULT NULL,
   `authenticationUserName` varchar(200) DEFAULT NULL,
@@ -29,6 +29,7 @@ CREATE TABLE `ResourceAcquisition` (
 ALTER TABLE `ResourceAcquisition`
   ADD PRIMARY KEY (`resourceAcquisitionID`);
 
+/*
 CREATE TABLE `AuthorizedSiteAcquisition` (
   `AuthorizedSiteAcquisitionID` int(11) NOT NULL AUTO_INCREMENT,
   `resourceAcquisitionID` int(11) NOT NULL,
@@ -36,6 +37,7 @@ CREATE TABLE `AuthorizedSiteAcquisition` (
 );
 ALTER TABLE `AuthorizedSiteAcquisition`
   ADD PRIMARY KEY (`AuthorizedSiteAcquisitionID`);
+*/
 
 ALTER TABLE `ResourcePurchaseSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `ResourcePayment` CHANGE `resourceID` `resourceAcquisitionID` INT(10) UNSIGNED NOT NULL;
@@ -48,7 +50,7 @@ ALTER TABLE `ResourceLicenseStatus` CHANGE `resourceID` `resourceAcquisitionID` 
 
 
 
-
 -- IMPORT FROM OLD FIELDS
+
 
 -- REMOVE OLD FIELDS
