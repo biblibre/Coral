@@ -1,6 +1,5 @@
--- TODO: Update me
 CREATE TABLE `ResourceAcquisition` (
-  `resourceAcquisitionID` int(11) NOT NULL AUTO_INCREMENT,
+  `resourceAcquisitionID` int(11) NOT NULL,
   `resourceID` int(11) NOT NULL,
   `parentResourceID` int(11) DEFAULT NULL,
   `orderNumber` varchar(45) DEFAULT NULL,
@@ -8,9 +7,25 @@ CREATE TABLE `ResourceAcquisition` (
   `acquisitionTypeID` int(11) DEFAULT NULL,
   `subscriptionStartDate` date NOT NULL,
   `subscriptionEndDate` date NOT NULL,
+  `subscriptionAlertEnabledInd` int(11) DEFAULT NULL,
   `organizationID` int(11) NOT NULL,
-  `licenseID` int(11) DEFAULT NULL
+  `licenseID` int(11) DEFAULT NULL,
+  `authenticationTypeID` int(10) DEFAULT NULL,
+  `authenticationUserName` varchar(200) DEFAULT NULL,
+  `authenticationPassword` varchar(200) DEFAULT NULL,
+  `accessMethodID` int(10) DEFAULT NULL,
+  `storageLocationID` int(11) DEFAULT NULL,
+  `userLimitID` int(11) DEFAULT NULL,
+  `coverageText` varchar(1000) DEFAULT NULL,
+  `bibSourceURL` varchar(2000) DEFAULT NULL,
+  `catalogingTypeID` int(11) DEFAULT NULL,
+  `catalogingStatusID` int(11) DEFAULT NULL,
+  `numberRecordsAvailable` varchar(45) DEFAULT NULL,
+  `numberRecordsLoaded` varchar(45) DEFAULT NULL,
+  `recordSetIdentifier` varchar(45) DEFAULT NULL,
+  `hasOclcHoldings` varchar(10) DEFAULT NULL
 );
+
 ALTER TABLE `ResourceAcquisition`
   ADD PRIMARY KEY (`resourceAcquisitionID`);
 
