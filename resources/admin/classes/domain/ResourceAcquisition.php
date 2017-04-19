@@ -5,6 +5,62 @@ class ResourceAcquisition extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+	private function getDownTimeResults($archivedOnly=false) {
+		$query = "SELECT d.*
+					FROM Downtime d
+					WHERE d.entityID='{$this->resourceAcquisitionID}' AND d.entityTypeID=2";
+		if ($archivedOnly) {
+			$query .= " AND d.endDate < CURDATE()";
+		} else {
+			$query .= " AND (d.endDate >= CURDATE() OR d.endDate IS NULL)";
+		}
+		$query .= "	ORDER BY d.dateCreated DESC";
+
+		return $this->db->processQuery($query, 'assoc');
+	}
+
+
+
+	public function getDowntime($archivedOnly=false) {
+		$result = $this->getDownTimeResults($archivedOnly);
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['downtimeID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new Downtime(new NamedArguments(array('primaryKey' => $row['downtimeID'])));
+			array_push($objects, $object);
+		}
+		return $objects;
+	}
+
+
+	public function getIssues($archivedOnly=false) {
+		$query = "SELECT i.*
+					FROM Issue i
+					LEFT JOIN IssueRelationship ir ON ir.issueID=i.issueID
+					WHERE ir.resourceAcquisitionID='$this->resourceAcquisitionID' AND ir.entityTypeID=2";
+		if ($archivedOnly) {
+			$query .= " AND i.dateClosed IS NOT NULL";
+		} else {
+			$query .= " AND i.dateClosed IS NULL";
+		}
+		$query .= "	ORDER BY i.dateCreated DESC";
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['issueID'])){ $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new Issue(new NamedArguments(array('primaryKey' => $row['issueID'])));
+			array_push($objects, $object);
+		}
+		return $objects;
+	}
+
 	//returns array of associated licenses
 	public function getLicenseArray() {
 		$config = new Configuration;
