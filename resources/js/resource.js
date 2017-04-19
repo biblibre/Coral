@@ -478,7 +478,7 @@ function updateIssues(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getIssues&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getIssues&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_issues .div_mainContent").html(html);
 		bind_removes();
