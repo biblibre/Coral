@@ -8,7 +8,7 @@ class ResourceAcquisition extends DatabaseObject {
 	private function getDownTimeResults($archivedOnly=false) {
 		$query = "SELECT d.*
 					FROM Downtime d
-					WHERE d.entityID='{$this->resourceAcquisitionID}' AND d.entityTypeID=2";
+					WHERE d.resourceAcquisitionID='{$this->resourceAcquisitionID}' AND d.entityTypeID=2";
 		if ($archivedOnly) {
 			$query .= " AND d.endDate < CURDATE()";
 		} else {
