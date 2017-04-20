@@ -52,6 +52,9 @@ if ($resource->titleText){
 
 		<div style='vertical-align:top; width:100%; height:35px; margin-left:5px;padding:0;'>
 			<span class="headerText" id='span_resourceName' style='float:left;vertical-align:text-top;'><?php echo $resource->titleText; ?>&nbsp;</span>
+            <?php
+                if ($resource->countResourceAcquisitions() > 1) {
+            ?>
             <label for="resourceAcquisitionSelect">Order: </label>
             <select id="resourceAcquisitionSelect">
             <?php
@@ -61,6 +64,9 @@ if ($resource->titleText){
                         echo ">$resourceAcquisition->subscriptionStartDate - $resourceAcquisition->subscriptionEndDate</option>";
                     }
                     echo "</select>";
+                } else {
+                    echo '<input type="hidden" id="resourceAcquisitionSelect" value="'.$resourceAcquisitions[0]->resourceAcquisitionID .'" />';
+                }
             ?>
 			<div id='div_new' style='float:left;vertical-align:bottom;font-weight:115%;margin-top:3px;' class='darkRedText'><?php if ($_GET['ref'] == 'new'){ ?>&nbsp;&nbsp;<img src='images/red_checkmark.gif' />
 				<span class='boldText'><?php echo _("Success!");?></span>&nbsp;&nbsp;<?php echo _("New resource added"); } ?>
