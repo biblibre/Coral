@@ -48,7 +48,7 @@ ALTER TABLE `Contact` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NOT NU
 ALTER TABLE `ResourceLicenseLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `ResourceLicenseStatus` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `IssueRelationship` ADD `resourceAcquisitionID` INT(11) NULL DEFAULT NULL AFTER `entityTypeID`;
-
+ALTER TABLE `Downtime` ADD `resourceAcquisitionID` INT(11) NULL DEFAULT NULL AFTER `note`;
 
 
 -- IMPORT FROM OLD FIELDS
