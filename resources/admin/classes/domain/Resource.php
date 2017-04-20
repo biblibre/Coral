@@ -64,6 +64,12 @@ class Resource extends DatabaseObject {
     
     }
 
+    public function countResourceAcquisitions() {
+        $query = "SELECT COUNT(*) AS count FROM ResourceAcquisition WHERE resourceID = " . $this->resourceID;
+		$result = $this->db->processQuery($query, 'assoc');
+        return ($result) ? $result['count'] : 0;
+    }
+
 	//returns resource objects by title
 	public function getResourceByIsbnOrISSN($isbnOrISSN) {
 		$query = "SELECT DISTINCT(resourceID)

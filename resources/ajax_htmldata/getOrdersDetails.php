@@ -2,6 +2,7 @@
 $resourceID = $_GET['resourceID'];
 $resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 
+if ($resourceAcquisitionID) {
 	$resource = new Resource(new NamedArguments(array('primaryKey' => $resourceID)));
 	$resourceAcquisition = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $resourceAcquisitionID)));
 
@@ -97,4 +98,8 @@ $resourceAcquisitionID = $_GET['resourceAcquisitionID'];
 				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>&op=clone' class='thickbox'><?php echo _("clone order");?></a> - 
 				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("edit order information");?></a>
 			<?php } ?>
-
+<?php } else {
+echo _("This resource does not seem to have an order. It should have one. Please "); ?><a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("create an order");?></a>
+<?php
+}
+?>
