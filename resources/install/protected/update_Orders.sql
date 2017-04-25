@@ -23,9 +23,10 @@ CREATE TABLE `ResourceAcquisition` (
   `numberRecordsAvailable` varchar(45) DEFAULT NULL,
   `numberRecordsLoaded` varchar(45) DEFAULT NULL,
   `recordSetIdentifier` varchar(45) DEFAULT NULL,
-  `hasOclcHoldings` varchar(10) DEFAULT NULL
+  `hasOclcHoldings` varchar(10) DEFAULT NULL,
+  `workflowRestartDate` date DEFAULT NULL,
+  `workflowRestartLoginID` varchar(45) DEFAULT NULL
 );
-
 ALTER TABLE `ResourceAcquisition`
   ADD PRIMARY KEY (`resourceAcquisitionID`);
 
@@ -49,6 +50,7 @@ ALTER TABLE `ResourceLicenseLink` CHANGE `resourceID` `resourceAcquisitionID` IN
 ALTER TABLE `ResourceLicenseStatus` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `IssueRelationship` ADD `resourceAcquisitionID` INT(11) NULL DEFAULT NULL AFTER `entityTypeID`;
 ALTER TABLE `Downtime` ADD `resourceAcquisitionID` INT(11) NULL DEFAULT NULL AFTER `note`;
+ALTER TABLE `ResourceStep` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 
 
 -- IMPORT FROM OLD FIELDS

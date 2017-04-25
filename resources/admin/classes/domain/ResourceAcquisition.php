@@ -5,6 +5,267 @@ class ResourceAcquisition extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+	//returns array of ResourceStep objects for this Resource
+	public function getResourceSteps() {
+
+
+		$query = "SELECT * FROM ResourceStep
+					WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'
+					ORDER BY (archivingDate IS NOT NULL), archivingDate DESC, displayOrderSequence, stepID";
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourceStepID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new ResourceStep(new NamedArguments(array('primaryKey' => $row['resourceStepID'])));
+			array_push($objects, $object);
+		}
+
+		return $objects;
+
+	}
+
+    public function getCurrentWorkflowID() {
+        $query = "SELECT Step.workflowID FROM Step, ResourceStep 
+                    WHERE ResourceStep.resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'
+                    AND ResourceStep.archivingDate IS NULL 
+                    AND ResourceStep.stepID = Step.stepID LIMIT 1";
+
+		$result = $this->db->processQuery($query, 'assoc');
+        return $result['workflowID'];
+    }
+
+    public function getCurrentWorkflowResourceSteps(){
+		$query = "SELECT * FROM ResourceStep
+					WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'
+                    AND archivingDate IS NULL ORDER BY displayOrderSequence, stepID";
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourceStepID'])){
+			$object = new ResourceStep(new NamedArguments(array('primaryKey' => $result['resourceStepID'])));
+			array_push($objects, $object);
+		}else{
+			foreach ($result as $row) {
+				$object = new ResourceStep(new NamedArguments(array('primaryKey' => $row['resourceStepID'])));
+				array_push($objects, $object);
+			}
+		}
+
+		return $objects;
+
+	}
+
+    public function isCurrentWorkflowComplete() {
+        $steps = $this->getCurrentWorkflowResourceSteps(); 
+        foreach ($steps as $step) {
+            if (!$step->isComplete()) return false;
+        }
+        return true;
+    }
+
+
+    public function getDistinctWorkflows() {
+        $query = "SELECT DISTINCT archivingDate FROM ResourceStep
+					WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'
+                    AND archivingDate IS NOT NULL
+					ORDER BY archivingDate ASC";
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		return $result;
+
+    }
+
+
+    public function getArchivedResourceSteps() {
+        return $this->getResourceSteps(true);
+    }
+
+
+	//returns first steps (object) in the workflow for this resource
+	public function getFirstSteps() {
+
+		$query = "SELECT * FROM ResourceStep
+					WHERE resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'
+					AND (priorStepID is null OR priorStepID = '0')
+                    AND archivingDate IS NULL
+					ORDER BY stepID";
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourceStepID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new ResourceStep(new NamedArguments(array('primaryKey' => $row['resourceStepID'])));
+			array_push($objects, $object);
+		}
+
+		return $objects;
+	}
+
+    public function archiveWorkflow() {
+        // And archive the workflow
+        $query = "UPDATE ResourceStep SET archivingDate=NOW() WHERE archivingDate IS NULL AND resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'";
+		$result = $this->db->processQuery($query);
+    }
+
+    public function deleteWorkflow() {
+        $query = "DELETE FROM ResourceStep WHERE archivingDate IS NULL AND resourceAcquisitionID = '" . $this->resourceAcquisitionID . "'";
+		$result = $this->db->processQuery($query);
+    }
+
+	//enters resource into new workflow
+	public function enterNewWorkflow($workflowID = null){
+		$config = new Configuration();
+
+        $resource = new Resource(new NamedArguments(array('primaryKey' => $this->resourceID)));
+
+		//make sure this resource is marked in progress in case it was archived
+		$status = new Status();
+		$resource->statusID = $status->getIDFromName('progress');
+		$resource->save();
+
+
+		//Determine the workflow this resource belongs to
+		$workflowObj = new Workflow();
+
+        if ($workflowID == null) {
+            $workflowID = $workflowObj->getWorkflowID($resource->resourceTypeID, $resource->resourceFormatID, $this->acquisitionTypeID);
+        }
+        error_log("workflow id : $workflowID");
+		if ($workflowID){
+
+			$workflow = new Workflow(new NamedArguments(array('primaryKey' => $workflowID)));
+			$resourceTypeObj = new ResourceType();
+            $resourceFormatObj = new ResourceFormat();
+            $acquisitionTypeObj = new AcquisitionType();
+
+            //set new resourceType, resourceFormat and acquisitionType for the resource, according to the selected workflow
+            $resource->resourceTypeID = ($workflow->resourceTypeIDValue != null) ? $workflow->resourceTypeIDValue : $resourceTypeObj->getResourceTypeIDByName('any');
+            $resource->resourceFormatID =  ($workflow->resourceFormatIDValue != null) ? $workflow->resourceFormatIDValue : $resourceFormatObj->getResourceFormatIDByName('any');
+            $this->acquisitionTypeID = ($workflow->acquisitionTypeIDValue != null) ? $workflow->acquisitionTypeIDValue : $acquisitionTypeObj->getAcquisitionTypeIDByName('any');
+
+            $resource->save();
+            $this->save();
+
+			//Copy all of the step attributes for this workflow to a new resource step
+			foreach ($workflow->getSteps() as $step) {
+				$resourceStep = new ResourceStep();
+
+				$resourceStep->resourceStepID 		= '';
+				$resourceStep->resourceAcquisitionID = $this->resourceAcquisitionID;
+				$resourceStep->stepID 				= $step->stepID;
+				$resourceStep->priorStepID			= $step->priorStepID;
+				$resourceStep->stepName				= $step->stepName;
+                $resourceStep->stepStartDate        = '';
+                $resourceStep->stepEndDate          = '';
+                $resourceStep->archivingDate        = '';
+                $resourceStep->endLoginID           = '';
+				$resourceStep->userGroupID			= $step->userGroupID;
+				$resourceStep->displayOrderSequence	= $step->displayOrderSequence;
+
+				$resourceStep->save();
+
+			}
+
+			//Start the first step
+			//this handles updating the db and sending notifications for approval groups
+			foreach ($this->getFirstSteps() as $resourceStep) {
+				$resourceStep->startStep();
+
+			}
+		}
+
+
+		//send an email notification to the feedback email address and the creator
+		$cUser = new User(new NamedArguments(array('primaryKey' => $this->createLoginID)));
+		$acquisitionType = new AcquisitionType(new NamedArguments(array('primaryKey' => $this->acquisitionTypeID)));
+
+		if ($cUser->firstName) {
+			$creator = $cUser->firstName . " " . $cUser->lastName;
+		}else if ($this->createLoginID) {  //for some reason user isn't set up or their firstname/last name don't exist
+			$creator = $this->createLoginID;
+		}else{
+			$creator = "(unknown user)";
+		}
+
+
+		if (($config->settings->feedbackEmailAddress) || ($cUser->emailAddress)) {
+			$email = new Email();
+			$util = new Utility();
+
+			$email->message = $util->createMessageFromTemplate('NewResourceMain', $this->resourceID, $resource->titleText, '', '', $creator);
+
+			if ($cUser->emailAddress) {
+				$emailTo[] 			= $cUser->emailAddress;
+			}
+
+			if ($config->settings->feedbackEmailAddress != '') {
+				$emailTo[] 			=  $config->settings->feedbackEmailAddress;
+			}
+
+			$email->to = implode(",", $emailTo);
+
+			if ($acquisitionType->shortName) {
+				$email->subject		= "CORAL Alert: New " . $acquisitionType->shortName . " Resource Added: " . $resource->titleText;
+			}else{
+				$email->subject		= "CORAL Alert: New Resource Added: " . $resource->titleText;
+			}
+
+			$email->send();
+
+		}
+
+	}
+
+	//completes a workflow (changes status to complete and sends notifications to creator and "master email")
+	public function completeWorkflow() {
+		$config = new Configuration();
+		$util = new Utility();
+		$status = new Status();
+		$statusID = $status->getIDFromName('complete');
+        $resource = new Resource(new NamedArguments(array('primaryKey' => $this->resourceID)));
+
+		if ($statusID) {
+			$resource->statusID = $statusID;
+			$resource->save();
+		}
+
+		//send notification to creator and master email address
+		$cUser = new User(new NamedArguments(array('primaryKey' => $resource->createLoginID)));
+
+		//formulate emil to be sent
+		$email = new Email();
+		$email->message = $util->createMessageFromTemplate('CompleteResource', $resource->resourceID, $resource->titleText, '', $resource->systemNumber, '');
+
+		if ($cUser->emailAddress) {
+			$emailTo[] 			= $cUser->emailAddress;
+		}
+
+		if ($config->settings->feedbackEmailAddress != '') {
+			$emailTo[] 			=	$config->settings->feedbackEmailAddress;
+		}
+
+		$email->to = implode(",", $emailTo);
+
+		$email->subject		= "CORAL Alert: Workflow completion for " . $resource->titleText;
+
+
+		$email->send();
+	}
+
+
+
+
 	private function getDownTimeResults($archivedOnly=false) {
 		$query = "SELECT d.*
 					FROM Downtime d

@@ -697,7 +697,7 @@ function updateRouting(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getRoutingDetails&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getRoutingDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_routing .div_mainContent").html(html);
 		tb_reinit();
@@ -928,17 +928,13 @@ function bind_routing(){
    });
 
 
-$("select").change(function() {
-    console.log($("#restartWorkflowForm select").val());
-});
-
    $(".restartWorkflowSubmit").unbind('click').click(function () {
 	  if (confirm(_("Warning!  You are about to remove any steps that have been started and completed.  Are you sure you wish to continue?")) == true) {
 		  $.ajax({
 			 type:       "GET",
 			 url:        "ajax_processing.php",
 			 cache:      false,
-			 data:       "action=restartWorkflow&resourceID=" + $(this).attr("id") + "&deleteWorkflow=" + $("#deleteWorkflow").is(':checked') + "&workflow=" + $("#workflowArchivingDate").val(),
+			 data:       "action=restartWorkflow&resourceAcquisitionID=" + $(this).attr("id") + "&deleteWorkflow=" + $("#deleteWorkflow").is(':checked') + "&workflow=" + $("#workflowArchivingDate").val(),
 			 success:    function(html) {
 				updateRouting();
 			 }
@@ -965,7 +961,7 @@ $("select").change(function() {
 			 type:       "GET",
 			 url:        "ajax_processing.php",
 			 cache:      false,
-			 data:       "action=markResourceComplete&resourceID=" + $(this).attr("id"),
+			 data:       "action=markResourceComplete&resourceAcquisitionID=" + $(this).attr("id"),
 			 success:    function(html) {
 				updateRouting();
 			 }
