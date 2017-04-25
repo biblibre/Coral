@@ -8,7 +8,7 @@ $results = $obj->db->processQuery($query, 'assoc');
 
 $fields = array('resourceID', 'orderNumber', 'systemNumber', 'acquisitionTypeID', 'subscriptionAlertEnabledInd', ' licenseID', 'authenticationTypeID', 'authenticationUserName', 'authenticationPassword', 'accessMethodID', 'storageLocationID', 'userLimitID', 'coverageText', 'bibSourceURL', 'catalogingTypeID', 'catalogingStatusID', 'numberRecordsAvailable', 'numberRecordsLoaded', 'recordSetIdentifier', 'hasOclcHoldings');
 
-$tables = array('ResourcePurchaseSiteLink', 'ResourcePayment', 'ResourceAdministeringSiteLink', 'ResourceAuthorizedSiteLink', 'Attachment', 'Contact', 'ResourceLicenseLink', 'ResourceLicenseStatus'); 
+$tables = array('ResourcePurchaseSiteLink', 'ResourcePayment', 'ResourceAdministeringSiteLink', 'ResourceAuthorizedSiteLink', 'Attachment', 'Contact', 'ResourceLicenseLink', 'ResourceLicenseStatus', 'IssueRelationship', 'Downtime', 'ResourceStep'); 
 
 foreach ($results as $row) {
     $rid = $row['resourceID'];
