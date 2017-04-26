@@ -6,9 +6,11 @@ $obj = new Resource();
 $query = "SELECT resourceID from Resource";
 $results = $obj->db->processQuery($query, 'assoc');
 
-$fields = array('resourceID', 'orderNumber', 'systemNumber', 'acquisitionTypeID', 'subscriptionAlertEnabledInd', ' licenseID', 'authenticationTypeID', 'authenticationUserName', 'authenticationPassword', 'accessMethodID', 'storageLocationID', 'userLimitID', 'coverageText', 'bibSourceURL', 'catalogingTypeID', 'catalogingStatusID', 'numberRecordsAvailable', 'numberRecordsLoaded', 'recordSetIdentifier', 'hasOclcHoldings');
+$fields = array('resourceID', 'orderNumber', 'systemNumber', 'acquisitionTypeID', 'subscriptionAlertEnabledInd', ' licenseID', 'authenticationTypeID', 'authenticationUserName', 'authenticationPassword', 'accessMethodID', 'storageLocationID', 'userLimitID', 'coverageText', 'bibSourceURL', 'catalogingTypeID', 'catalogingStatusID', 'numberRecordsAvailable', 'numberRecordsLoaded', 'recordSetIdentifier', 'hasOclcHoldings', 'workflowRestartDate', 'workflowRestartLoginID');
 
-$tables = array('ResourcePurchaseSiteLink', 'ResourcePayment', 'ResourceAdministeringSiteLink', 'ResourceAuthorizedSiteLink', 'Attachment', 'Contact', 'ResourceLicenseLink', 'ResourceLicenseStatus', 'IssueRelationship', 'Downtime', 'ResourceStep'); 
+$tables = array('ResourcePurchaseSiteLink', 'ResourcePayment', 'ResourceAdministeringSiteLink', 'ResourceAuthorizedSiteLink', 'Attachment', 'Contact', 'ResourceLicenseLink', 'ResourceLicenseStatus', 'ResourceStep'); 
+
+$entityTables = array('Downtime', 'IssueRelationship');
 
 foreach ($results as $row) {
     $rid = $row['resourceID'];
@@ -34,12 +36,18 @@ foreach ($results as $row) {
         print ("Updating table $table\n");
         $obj->db->processQuery($query);
     }
-    
+
+    foreach ($entityTables as $table) {
+        $query = "UPDATE $table SET resourceAcquisitionID = $raid WHERE entityID = $rid";
+        print ("Updating table $table: $query\n");
+        $obj->db->processQuery($query);
+    }
+ 
     // Notes
     $tabNames = array('Cataloging', 'Access', 'Acquisitions');
     foreach ($tabNames as $tabName) {
         print ("Updating $tabName notes\n");
-        $notes = $resource->getNotes($tabName);
+        $notes = $r->getNotes($tabName);
         foreach ($notes as $note) {
             $query = "UPDATE ResourceNote SET entityID = $raid WHERE resourceNoteID = " . $note->resourceNoteID;
             $obj->db->processQuery($query);

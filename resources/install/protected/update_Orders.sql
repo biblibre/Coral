@@ -28,7 +28,7 @@ CREATE TABLE `ResourceAcquisition` (
   `workflowRestartLoginID` varchar(45) DEFAULT NULL
 );
 ALTER TABLE `ResourceAcquisition`
-  ADD PRIMARY KEY (`resourceAcquisitionID`);
+CHANGE resourceAcquisitionID resourceAcquisitionID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY;
 
 /*
 CREATE TABLE `AuthorizedSiteAcquisition` (
