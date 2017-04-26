@@ -176,7 +176,7 @@ $licenseArray = $resource->getLicenseArray();
 //get notes for this tab
 $sanitizedInstance = array();
 $noteArray = array();
-foreach ($resource->getNotes('Cataloging') as $instance) {
+foreach ($resourceAcquisition->getNotes('Cataloging') as $instance) {
 foreach (array_keys($instance->attributeNames) as $attributeName) {
 	$sanitizedInstance[$attributeName] = $instance->$attributeName;
 }
@@ -209,7 +209,7 @@ if (count($noteArray) > 0){
 	<th><?php echo _("Additional Notes");?></th>
 	<th>
 	<?php if ($user->canEdit()){?>
-		<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Cataloging&resourceID=<?php echo $resourceID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo _("add new note");?></a>
+		<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Cataloging&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo _("add new note");?></a>
 	<?php } ?>
 	</th>
 	</tr>
@@ -217,7 +217,7 @@ if (count($noteArray) > 0){
 		<tr>
 		<td style='width:130px;'><?php echo $resourceNote['noteTypeName']; ?><br />
 		<?php if ($user->canEdit()){?>
-		<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Cataloging&resourceID=<?php echo $resourceID; ?>&resourceNoteID=<?php echo $resourceNote['resourceNoteID']; ?>&modal=true' class='thickbox'><img src='images/edit.gif' alt='edit' title='<?php echo _("edit note");?>'></a>  <a href='javascript:void(0);' class='removeNote' id='<?php echo $resourceNote['resourceNoteID']; ?>' tab='Cataloging'><img src='images/cross.gif' alt='remove note' title='<?php echo _("remove note");?>'></a>
+		<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Cataloging&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=<?php echo $resourceNote['resourceNoteID']; ?>&modal=true' class='thickbox'><img src='images/edit.gif' alt='edit' title='<?php echo _("edit note");?>'></a>  <a href='javascript:void(0);' class='removeNote' id='<?php echo $resourceNote['resourceNoteID']; ?>' tab='Cataloging'><img src='images/cross.gif' alt='remove note' title='<?php echo _("remove note");?>'></a>
 		<?php } ?>
 		</td>
 		<td><?php echo nl2br($resourceNote['noteText']); ?><br /><i><?php echo format_date($resourceNote['updateDate']) . _(" by ") . $resourceNote['updateUser']; ?></i></td>

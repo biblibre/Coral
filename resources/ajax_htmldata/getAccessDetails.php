@@ -161,7 +161,7 @@
 				<th><?php echo _("Additional Notes");?></th>
 				<th>
 				<?php if ($user->canEdit()){?>
-					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Access&resourceID=<?php echo $resourceID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo _("add new note");?></a>
+					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Access&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo _("add new note");?></a>
 				<?php } ?>
 				</th>
 				</tr>
@@ -169,7 +169,7 @@
 					<tr>
 					<td style='width:150px;'><?php echo $resourceNote['noteTypeName']; ?><br />
 					<?php if ($user->canEdit()){?>
-					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Access&resourceID=<?php echo $resourceID; ?>&resourceNoteID=<?php echo $resourceNote['resourceNoteID']; ?>&modal=true' class='thickbox'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit note");?>'></a>  <a href='javascript:void(0);' class='removeNote' id='<?php echo $resourceNote['resourceNoteID']; ?>' tab='Access'><img src='images/cross.gif' alt='<?php echo _("remove note");?>' title='<?php echo _("remove note");?>'></a>
+					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Access&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=<?php echo $resourceNote['resourceNoteID']; ?>&modal=true' class='thickbox'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit note");?>'></a>  <a href='javascript:void(0);' class='removeNote' id='<?php echo $resourceNote['resourceNoteID']; ?>' tab='Access'><img src='images/cross.gif' alt='<?php echo _("remove note");?>' title='<?php echo _("remove note");?>'></a>
 					<?php } ?>
 					</td>
 					<td><?php echo nl2br($resourceNote['noteText']); ?><br /><i><?php echo format_date($resourceNote['updateDate']) . _(" by ") . $resourceNote['updateUser']; ?></i></td>
@@ -180,7 +180,7 @@
 		}else{
 			if ($user->canEdit()){
 			?>
-				<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Access&resourceID=<?php echo $resourceID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo _("add new note");?></a>
+				<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Access&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo _("add new note");?></a>
 			<?php
 			}
 		}

@@ -51,6 +51,9 @@ ALTER TABLE `ResourceLicenseStatus` CHANGE `resourceID` `resourceAcquisitionID` 
 ALTER TABLE `IssueRelationship` ADD `resourceAcquisitionID` INT(11) NULL DEFAULT NULL AFTER `entityTypeID`;
 ALTER TABLE `Downtime` ADD `resourceAcquisitionID` INT(11) NULL DEFAULT NULL AFTER `note`;
 ALTER TABLE `ResourceStep` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
+ALTER TABLE `ResourceNote` CHANGE `resourceID` `entityID` INT(11) NULL DEFAULT NULL;
+
+
 
 
 -- IMPORT FROM OLD FIELDS
