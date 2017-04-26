@@ -619,7 +619,7 @@ if ($resource->titleText){
 	//get notes for this tab
 	$sanitizedInstance = array();
 	$noteArray = array();
-	foreach ($resource->getNotes('Acquisitions') as $instance) {
+	foreach ($resourceAcquisition->getNotes('Acquisitions') as $instance) {
 		foreach (array_keys($instance->attributeNames) as $attributeName) {
 			$sanitizedInstance[$attributeName] = $instance->$attributeName;
 		}
@@ -744,7 +744,7 @@ if ($resource->titleText){
 	//get notes for this tab
 	$sanitizedInstance = array();
 	$noteArray = array();
-	foreach ($resource->getNotes('Access') as $instance) {
+	foreach ($resourceAcquisition->getNotes('Access') as $instance) {
 		foreach (array_keys($instance->attributeNames) as $attributeName) {
 			$sanitizedInstance[$attributeName] = $instance->$attributeName;
 		}
@@ -857,7 +857,7 @@ if ($resource->titleText){
 	//get notes for this tab
 	$sanitizedInstance = array();
 	$noteArray = array();
-	foreach ($resource->getNotes('Cataloging') as $instance) {
+	foreach ($resourceAcquisition->getNotes('Cataloging') as $instance) {
 		foreach (array_keys($instance->attributeNames) as $attributeName) {
 			$sanitizedInstance[$attributeName] = $instance->$attributeName;
 		}

@@ -34,6 +34,17 @@ foreach ($results as $row) {
         print ("Updating table $table\n");
         $obj->db->processQuery($query);
     }
+    
+    // Notes
+    $tabNames = array('Cataloging', 'Access', 'Acquisitions');
+    foreach ($tabNames as $tabName) {
+        print ("Updating $tabName notes\n");
+        $notes = $resource->getNotes($tabName);
+        foreach ($notes as $note) {
+            $query = "UPDATE ResourceNote SET entityID = $raid WHERE resourceNoteID = " . $note->resourceNoteID;
+            $obj->db->processQuery($query);
+        } 
+    }
     print ("\n");
     die();
     

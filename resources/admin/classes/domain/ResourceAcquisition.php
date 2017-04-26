@@ -5,6 +5,57 @@ class ResourceAcquisition extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+	//returns array of notes objects
+	public function getNotes($tabName = NULL) {
+
+		if ($tabName) {
+			$query = "SELECT * FROM ResourceNote RN
+						WHERE entityID = '" . $this->resourceAcquisitionID . "'
+						AND UPPER(tabName) = UPPER('" . $tabName . "')
+						ORDER BY updateDate desc";
+		}else{
+			$query = "SELECT RN.*
+						FROM ResourceNote RN
+						LEFT JOIN NoteType NT ON NT.noteTypeID = RN.noteTypeID
+						WHERE entityID = '" . $this->resourceAcquisitionID . "'
+						ORDER BY updateDate desc, NT.shortName";
+		}
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		$objects = array();
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourceNoteID'])) { $result = [$result]; }
+		foreach ($result as $row) {
+			$object = new ResourceNote(new NamedArguments(array('primaryKey' => $row['resourceNoteID'])));
+			array_push($objects, $object);
+		}
+
+		return $objects;
+	}
+
+	//returns array of the initial note object
+	public function getInitialNote() {
+		$noteType = new NoteType();
+
+		$query = "SELECT * FROM ResourceNote RN
+					WHERE entityID = '" . $this->resourceAcquisitionID . "'
+					AND noteTypeID = " . $noteType->getInitialNoteTypeID() . "
+					ORDER BY noteTypeID desc LIMIT 0,1";
+
+
+		$result = $this->db->processQuery($query, 'assoc');
+
+		//need to do this since it could be that there's only one request and this is how the dbservice returns result
+		if (isset($result['resourceNoteID'])) {
+			return new ResourceNote(new NamedArguments(array('primaryKey' => $result['resourceNoteID'])));
+		} else{
+			return new ResourceNote();
+		}
+	}
+
+
 	//returns array of ResourceStep objects for this Resource
 	public function getResourceSteps() {
 
@@ -864,37 +915,6 @@ class ResourceAcquisition extends DatabaseObject {
 		if (isset($result['administeringSiteID'])) { $result = [$result]; }
 		foreach ($result as $row) {
 			$object = new AdministeringSite(new NamedArguments(array('primaryKey' => $row['administeringSiteID'])));
-			array_push($objects, $object);
-		}
-
-		return $objects;
-	}
-
-
-	//returns array of notes objects
-	public function getNotes($tabName = NULL) {
-
-		if ($tabName) {
-			$query = "SELECT * FROM ResourceNote RN
-						WHERE resourceID = '" . $this->resourceID . "'
-						AND UPPER(tabName) = UPPER('" . $tabName . "')
-						ORDER BY updateDate desc";
-		}else{
-			$query = "SELECT RN.*
-						FROM ResourceNote RN
-						LEFT JOIN NoteType NT ON NT.noteTypeID = RN.noteTypeID
-						WHERE resourceID = '" . $this->resourceID . "'
-						ORDER BY updateDate desc, NT.shortName";
-		}
-
-		$result = $this->db->processQuery($query, 'assoc');
-
-		$objects = array();
-
-		//need to do this since it could be that there's only one request and this is how the dbservice returns result
-		if (isset($result['resourceNoteID'])) { $result = [$result]; }
-		foreach ($result as $row) {
-			$object = new ResourceNote(new NamedArguments(array('primaryKey' => $row['resourceNoteID'])));
 			array_push($objects, $object);
 		}
 

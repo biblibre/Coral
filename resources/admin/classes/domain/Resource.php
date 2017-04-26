@@ -280,14 +280,14 @@ class Resource extends DatabaseObject {
 
 		if ($tabName) {
 			$query = "SELECT * FROM ResourceNote RN
-						WHERE resourceID = '" . $this->resourceID . "'
+						WHERE entityID = '" . $this->resourceID . "'
 						AND UPPER(tabName) = UPPER('" . $tabName . "')
 						ORDER BY updateDate desc";
 		}else{
 			$query = "SELECT RN.*
 						FROM ResourceNote RN
 						LEFT JOIN NoteType NT ON NT.noteTypeID = RN.noteTypeID
-						WHERE resourceID = '" . $this->resourceID . "'
+						WHERE entityID = '" . $this->resourceID . "'
 						ORDER BY updateDate desc, NT.shortName";
 		}
 
@@ -312,8 +312,8 @@ class Resource extends DatabaseObject {
 		$noteType = new NoteType();
 
 		$query = "SELECT * FROM ResourceNote RN
-					WHERE resourceID = '" . $this->resourceID . "'
-					AND noteTypeID = " . $noteType->getInitialNoteTypeID . "
+					WHERE entityID = '" . $this->resourceID . "'
+					AND noteTypeID = " . $noteType->getInitialNoteTypeID() . "
 					ORDER BY noteTypeID desc LIMIT 0,1";
 
 
