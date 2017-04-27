@@ -4,7 +4,7 @@
     $op = $_GET['op'];
 	$resourceAcquisition = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $resourceAcquisitionID)));
 	$resource = new Resource(new NamedArguments(array('primaryKey' => $resourceID)));
-    if ($resourceAcquisition) {
+    if ($resourceAcquisition->organizationID) {
         $organization = $resourceAcquisition->getOrganization();
         $organizationName = $organization['organization'];
     }

@@ -30,16 +30,6 @@ CREATE TABLE `ResourceAcquisition` (
 ALTER TABLE `ResourceAcquisition`
 CHANGE resourceAcquisitionID resourceAcquisitionID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY;
 
-/*
-CREATE TABLE `AuthorizedSiteAcquisition` (
-  `AuthorizedSiteAcquisitionID` int(11) NOT NULL AUTO_INCREMENT,
-  `resourceAcquisitionID` int(11) NOT NULL,
-  `authorizedSiteID` int(11) NOT NULL
-);
-ALTER TABLE `AuthorizedSiteAcquisition`
-  ADD PRIMARY KEY (`AuthorizedSiteAcquisitionID`);
-*/
-
 ALTER TABLE `ResourcePurchaseSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `ResourcePayment` CHANGE `resourceID` `resourceAcquisitionID` INT(10) UNSIGNED NOT NULL;
 ALTER TABLE `ResourceAdministeringSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;

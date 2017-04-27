@@ -229,10 +229,16 @@ function submitOrderForm(){
 					$("#span_errors").html(html);
 					$("#submitOrder").removeAttr("disabled");
 				}else{
-					kill();
-					window.parent.tb_remove();
-					window.parent.updateAcquisitions();
-					return false;
+                    if ($("#editResourceAcquisitionID").val() == '' || $("#op").val() == 'clone') {
+                        //TODO: it would be better to go directly to the newly created order
+                        window.location.reload();
+                    } else {
+                        kill();
+                        window.parent.tb_remove();
+                        window.parent.updateAcquisitions();
+                        window.parent.updateRightPanel();
+                        return false;
+                    }
 				}					
 
 			 }
