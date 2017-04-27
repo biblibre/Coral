@@ -20,6 +20,13 @@ $(document).ready(function(){
  	updateRightPanel();
  	updateAttachmentsNumber();
 
+    $("#resourceAcquisitionSelect").change(function () {
+        if (location.search.includes('resourceAcquisitionID')) {
+            location.search = location.search.replace(/resourceAcquisitionID=[^&$]*/i, 'resourceAcquisitionID=' + $(this).val());
+        } else {
+           location.search = location.search + "&resourceAcquisitionID=" + $(this).val(); 
+        }
+    });
     
 	$(".showProduct").click(function () {
 	  $('.resource_tab_content').hide();
@@ -29,6 +36,13 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$(".showOrders").click(function () {
+	  $('.resource_tab_content').hide();
+		$('#div_orders').show();
+		$('#div_fullRightPanel').show();
+		updateOrders();	
+		return false;
+	});
 
 	$(".showAcquisitions").click(function () {
 	  $('.resource_tab_content').hide();
@@ -299,7 +313,25 @@ function updateProduct(){
 
 }
 
+function updateOrders(){
+  $("#icon_orders").html("<img src='images/littlecircle.gif' />");
 
+  $.ajax({
+	 type:       "GET",
+	 url:        "ajax_htmldata.php",
+	 cache:      false,
+	 data:       "action=getOrdersDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
+	 success:    function(html) {
+		$("#div_orders .div_mainContent").html(html);
+		bind_removes();
+		tb_reinit();
+		$("#icon_orders").html("<img src='images/orders.gif' />");
+	 }
+
+
+  });
+
+}
 
 function updateAcquisitions(){
   $("#icon_acquisitions").html("<img src='images/littlecircle.gif' />");
@@ -308,7 +340,7 @@ function updateAcquisitions(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getAcquisitionsDetails&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getAcquisitionsDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_acquisitions .div_mainContent").html(html);
 		bind_removes();
@@ -329,7 +361,7 @@ function updateAccess(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getAccessDetails&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getAccessDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_access .div_mainContent").html(html);
 		bind_removes();
@@ -352,7 +384,7 @@ function updateContacts(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getContactDetails&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getContactDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_contacts .div_mainContent").html(html);
 		bind_removes();
@@ -446,7 +478,7 @@ function updateIssues(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getIssues&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getIssues&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_issues .div_mainContent").html(html);
 		bind_removes();
@@ -628,7 +660,7 @@ function updateAttachments(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getAttachmentDetails&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getAttachmentDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_attachments .div_mainContent").html(html);
 		bind_removes();
@@ -647,7 +679,7 @@ function updateAttachmentsNumber(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getAttachmentsNumber&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getAttachmentsNumber&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(remaining) {
 		if (remaining == "1"){
 			$(".span_AttachmentNumber").html("(" + remaining + _(" record)"));
@@ -665,7 +697,7 @@ function updateRouting(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getRoutingDetails&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getRoutingDetails&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_routing .div_mainContent").html(html);
 		tb_reinit();
@@ -684,7 +716,7 @@ function updateCataloging(){
 	 type:       "GET",
 	 url:        "resources/cataloging.php",
 	 cache:      false,
-	 data:       "resourceID=" + $("#resourceID").val(),
+	 data:       "resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_cataloging .div_mainContent").html(html);
 		bind_removes();
@@ -703,7 +735,7 @@ function updateRightPanel(){
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
 	 cache:      false,
-	 data:       "action=getRightPanel&resourceID=" + $("#resourceID").val(),
+	 data:       "action=getRightPanel&resourceID=" + $("#resourceID").val() + "&resourceAcquisitionID=" + $("#resourceAcquisitionSelect").val(),
 	 success:    function(html) {
 		$("#div_rightPanel").html(html + "&nbsp;");
 		
@@ -896,17 +928,13 @@ function bind_routing(){
    });
 
 
-$("select").change(function() {
-    console.log($("#restartWorkflowForm select").val());
-});
-
    $(".restartWorkflowSubmit").unbind('click').click(function () {
 	  if (confirm(_("Warning!  You are about to remove any steps that have been started and completed.  Are you sure you wish to continue?")) == true) {
 		  $.ajax({
 			 type:       "GET",
 			 url:        "ajax_processing.php",
 			 cache:      false,
-			 data:       "action=restartWorkflow&resourceID=" + $(this).attr("id") + "&deleteWorkflow=" + $("#deleteWorkflow").is(':checked') + "&workflow=" + $("#workflowArchivingDate").val(),
+			 data:       "action=restartWorkflow&resourceAcquisitionID=" + $(this).attr("id") + "&deleteWorkflow=" + $("#deleteWorkflow").is(':checked') + "&workflow=" + $("#workflowArchivingDate").val(),
 			 success:    function(html) {
 				updateRouting();
 			 }
@@ -933,7 +961,7 @@ $("select").change(function() {
 			 type:       "GET",
 			 url:        "ajax_processing.php",
 			 cache:      false,
-			 data:       "action=markResourceComplete&resourceID=" + $(this).attr("id"),
+			 data:       "action=markResourceComplete&resourceAcquisitionID=" + $(this).attr("id"),
 			 success:    function(html) {
 				updateRouting();
 			 }
