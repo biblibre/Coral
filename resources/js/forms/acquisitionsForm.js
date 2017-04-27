@@ -1,3 +1,4 @@
+<<<<<<< e34c22866c2a83f6599ca5b2c2058f6c38aa4940
 /*
 **************************************************************************************************************************
 ** CORAL Resources Module v. 1.0
@@ -192,6 +193,7 @@ function submitOrderForm(){
 			 cache: false,
 			 data:  { resourceAcquisitionID: $("#editResourceAcquisitionID").val(),
 			          resourceID: $("#editResourceID").val(),
+                      op: $("#op").val(),
                       acquisitionTypeID: $("#acquisitionTypeID").val(),
                       orderNumber: $("#orderNumber").val(),
                       systemNumber: $("#systemNumber").val(),
