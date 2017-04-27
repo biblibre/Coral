@@ -53,8 +53,6 @@ foreach ($results as $row) {
         } 
     }
     print ("\n");
-    die();
-    
 }
 
 ?>
