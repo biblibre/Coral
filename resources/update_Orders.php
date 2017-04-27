@@ -6,7 +6,7 @@ $obj = new Resource();
 $query = "SELECT resourceID from Resource";
 $results = $obj->db->processQuery($query, 'assoc');
 
-$fields = array('resourceID', 'orderNumber', 'systemNumber', 'acquisitionTypeID', 'subscriptionAlertEnabledInd', ' licenseID', 'authenticationTypeID', 'authenticationUserName', 'authenticationPassword', 'accessMethodID', 'storageLocationID', 'userLimitID', 'coverageText', 'bibSourceURL', 'catalogingTypeID', 'catalogingStatusID', 'numberRecordsAvailable', 'numberRecordsLoaded', 'recordSetIdentifier', 'hasOclcHoldings', 'workflowRestartDate', 'workflowRestartLoginID');
+$fields = array('resourceID', 'orderNumber', 'systemNumber', 'acquisitionTypeID', 'subscriptionAlertEnabledInd', 'authenticationTypeID', 'authenticationUserName', 'authenticationPassword', 'accessMethodID', 'storageLocationID', 'userLimitID', 'coverageText', 'bibSourceURL', 'catalogingTypeID', 'catalogingStatusID', 'numberRecordsAvailable', 'numberRecordsLoaded', 'recordSetIdentifier', 'hasOclcHoldings', 'workflowRestartDate', 'workflowRestartLoginID');
 
 $tables = array('ResourcePurchaseSiteLink', 'ResourcePayment', 'ResourceAdministeringSiteLink', 'ResourceAuthorizedSiteLink', 'Attachment', 'Contact', 'ResourceLicenseLink', 'ResourceLicenseStatus', 'ResourceStep'); 
 
@@ -17,7 +17,6 @@ foreach ($results as $row) {
     print ("Creating ResourceAcquisition for resource $rid\n");
     $r = new Resource(new NamedArguments(array('primaryKey' => $rid)));
     $ra = new ResourceAcquisition();
-    $ra->licenseID = 1;
     foreach ($fields as $field) {
         $ra->$field = $r->$field;
     }
