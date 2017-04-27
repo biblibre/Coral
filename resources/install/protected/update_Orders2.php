@@ -1,5 +1,5 @@
 <?php
-include_once 'directory.php';
+include_once '../../directory.php';
 
 $obj = new Resource();
 
