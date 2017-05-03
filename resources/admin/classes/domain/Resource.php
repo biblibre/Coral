@@ -588,7 +588,7 @@ class Resource extends DatabaseObject {
 		}
 
 		if ($search['acquisitionTypeID']) {
-			$whereAdd[] = "R.acquisitionTypeID = '" . $resource->db->escapeString($search['acquisitionTypeID']) . "'";
+			$whereAdd[] = "RA.acquisitionTypeID = '" . $resource->db->escapeString($search['acquisitionTypeID']) . "'";
 			$acquisitionType = new AcquisitionType(new NamedArguments(array('primaryKey' => $search['acquisitionTypeID'])));
 			$searchDisplay[] = _("Acquisition Type: ") . $acquisitionType->shortName;
 		}
@@ -774,7 +774,7 @@ class Resource extends DatabaseObject {
 		// These join statements will only be included in the query if the alias is referenced by the select and/or where.
 		$conditional_joins = explode("\n", "LEFT JOIN ResourceFormat RF ON R.resourceFormatID = RF.resourceFormatID
 									LEFT JOIN ResourceType RT ON R.resourceTypeID = RT.resourceTypeID
-									LEFT JOIN AcquisitionType AT ON R.acquisitionTypeID = AT.acquisitionTypeID
+									LEFT JOIN AcquisitionType AT ON RA.acquisitionTypeID = AT.acquisitionTypeID
 									LEFT JOIN Status S ON R.statusID = S.statusID
 									LEFT JOIN User CU ON R.createLoginID = CU.loginID
 									LEFT JOIN ResourcePurchaseSiteLink RPSL ON R.resourceID = RPSL.resourceID
@@ -802,6 +802,7 @@ class Resource extends DatabaseObject {
 
 		$query = $select . "
 								FROM Resource R
+                                    LEFT JOIN ResourceAcquisition RA ON R.resourceID = RA.resourceID
 									LEFT JOIN Alias A ON R.resourceID = A.resourceID
 									LEFT JOIN ResourceOrganizationLink ROL ON R.resourceID = ROL.resourceID
 									" . $orgJoinAdd . "
@@ -961,7 +962,7 @@ class Resource extends DatabaseObject {
 									LEFT JOIN GeneralDetailSubjectLink GDLINK ON RSUB.generalDetailSubjectLinkID = GDLINK.generalDetailSubjectLinkID
 									LEFT JOIN ResourceFormat RF ON R.resourceFormatID = RF.resourceFormatID
 									LEFT JOIN ResourceType RT ON R.resourceTypeID = RT.resourceTypeID
-									LEFT JOIN AcquisitionType AT ON R.acquisitionTypeID = AT.acquisitionTypeID
+									LEFT JOIN AcquisitionType AT ON RA.acquisitionTypeID = AT.acquisitionTypeID
 									LEFT JOIN ResourceStep RS ON R.resourceID = RS.resourceID
 									LEFT JOIN ResourcePayment RPAY ON R.resourceID = RPAY.resourceID
 									LEFT JOIN Fund F ON RPAY.fundID = F.fundID
