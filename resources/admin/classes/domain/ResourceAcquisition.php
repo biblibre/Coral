@@ -416,7 +416,7 @@ class ResourceAcquisition extends DatabaseObject {
 						while ($licRow = $licResult->fetch_assoc()) {
 							$licArray['license'] = $licRow['shortName'];
 							$licArray['licenseID'] = $row['licenseID'];
-                            $licArray['resourceLicenseLinkID'] = $result['resourceLicenseLinkID'];
+                            $licArray['resourceLicenseLinkID'] = $row['resourceLicenseLinkID'];
 						}
 					}
 
