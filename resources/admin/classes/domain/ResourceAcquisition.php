@@ -771,6 +771,9 @@ class ResourceAcquisition extends DatabaseObject {
 	}
 
     public function getOrganization() {
+
+        if (!$this->organizationID) return null;
+
 		$config = new Configuration;
         $dbName = $config->settings->organizationsDatabaseName;
 
