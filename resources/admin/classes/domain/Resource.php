@@ -55,7 +55,7 @@ class Resource extends DatabaseObject {
         $objects = array();
 
 		//need to do this since it could be that there's only one request and this is how the dbservice returns result
-		if (isset($result['resourceAcquistionID'])) { $result = [$result]; }
+		if (isset($result['resourceAcquisitionID'])) { $result = [$result]; }
 		foreach ($result as $row) {
 			$object = new ResourceAcquisition(new NamedArguments(array('primaryKey' => $row['resourceAcquisitionID'])));
 			array_push($objects, $object);
