@@ -25,6 +25,7 @@ include_once '../admin/classes/domain/User.php';
 include_once '../admin/classes/domain/Workflow.php';
 include_once '../admin/classes/domain/Step.php';
 include_once '../admin/classes/domain/ResourceStep.php';
+include_once '../admin/classes/domain/ResourceAcquisition.php';
 include_once '../admin/classes/domain/UserGroup.php';
 include_once '../admin/classes/domain/Fund.php';
 include_once '../admin/classes/domain/IsbnOrIssn.php';
@@ -331,14 +332,17 @@ Flight::route('GET /resources/@id/titles', function($id) {
 Flight::route('GET /resources/@id/licenses', function($id) {
     $db = DBService::getInstance();
     $r = new Resource(new NamedArguments(array('primaryKey' => $id)));
-	$licensesArray = array();
-    $rla = $r->getLicenseArray();
-    $db->changeDb('licensingDatabaseName');
-	foreach($rla as $license) {
-		$l = new License(new NamedArguments(array('primaryKey' => $license['licenseID'])));
-		array_push($licensesArray, $l->asArray());
-	}
-    $db->changeDb();
+    $raObjects = $r->getResourceAcquisitions();
+    foreach ($raObjects as $ra) {
+        $licensesArray = array();
+        $rla = $ra->getLicenseArray();
+        $db->changeDb('licensingDatabaseName');
+        foreach($rla as $license) {
+            $l = new License(new NamedArguments(array('primaryKey' => $license['licenseID'])));
+            array_push($licensesArray, $l->asArray());
+        }
+        $db->changeDb();
+    }
 	Flight::json($licensesArray);
 });
 
