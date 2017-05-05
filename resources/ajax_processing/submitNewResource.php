@@ -57,6 +57,13 @@
 			echo $resource->primaryKey;
 			$resourceID=$resource->primaryKey;
 
+            // Create the default order
+            $resourceAcquisition = new ResourceAcquisition();
+            $resourceAcquisition->resourceID = $resourceID;
+            $resourceAcquisition->subscriptionStartDate = date("Y-m-d");
+            $resourceAcquisition->subscriptionEndDate = date("Y-m-d");
+            $resourceAcquisition->save();
+
 			//get the provider ID in case we insert what was entered in the provider text box as an organization link
 			$organizationRole = new OrganizationRole();
 			$organizationRoleID = $organizationRole->getProviderID();
