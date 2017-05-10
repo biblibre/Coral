@@ -235,7 +235,7 @@ function submitOrderForm(){
                     } else {
                         kill();
                         window.parent.tb_remove();
-                        window.parent.updateAcquisitions();
+                        window.parent.updateOrders();
                         window.parent.updateRightPanel();
                         return false;
                     }
