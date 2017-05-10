@@ -28,9 +28,21 @@ CREATE TABLE `ResourceAcquisition` (
 );
 ALTER TABLE `ResourceAcquisition`
 CHANGE resourceAcquisitionID resourceAcquisitionID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY;
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`resourceID`);
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`organizationID`);
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`authenticationTypeID`);
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`licenseID`);
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`acquisitionTypeID`);
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`parentResourceID`);
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`accessMethodID`);
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`storageLocationID`);
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`userLimitID`);
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`catalogingTypeID`);
+ALTER TABLE `ResourceAcquisition` ADD INDEX(`catalogingStatusID`);
+
 
 ALTER TABLE `ResourcePurchaseSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
-ALTER TABLE `ResourcePayment` CHANGE `resourceID` `resourceAcquisitionID` INT(10) UNSIGNED NOT NULL;
+ALTER TABLE `ResourcePayment` CHANGE `resourceID` `resourceAcquisitionID` INT(11) UNSIGNED NOT NULL;
 ALTER TABLE `ResourceAdministeringSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `ResourceAuthorizedSiteLink` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `Attachment` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
@@ -41,6 +53,7 @@ ALTER TABLE `IssueRelationship` ADD `resourceAcquisitionID` INT(11) NULL DEFAULT
 ALTER TABLE `Downtime` ADD `resourceAcquisitionID` INT(11) NULL DEFAULT NULL AFTER `note`;
 ALTER TABLE `ResourceStep` CHANGE `resourceID` `resourceAcquisitionID` INT(11) NULL DEFAULT NULL;
 ALTER TABLE `ResourceNote` CHANGE `resourceID` `entityID` INT(11) NULL DEFAULT NULL;
+
 
 
 
