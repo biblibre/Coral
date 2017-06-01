@@ -493,11 +493,11 @@ class Resource extends DatabaseObject {
 			if ($config->settings->organizationsModule == 'Y') {
 				$dbName = $config->settings->organizationsDatabaseName;
 
-				$whereAdd[] = "((UPPER(R.titleText) LIKE " . $nameQueryString . ") OR (UPPER(A.shortName) LIKE " . $nameQueryString . ") OR (UPPER(O.name) LIKE " . $nameQueryString . ") OR (UPPER(OA.name) LIKE " . $nameQueryString . ") OR (UPPER(RP.titleText) LIKE " . $nameQueryString . ") OR (UPPER(RC.titleText) LIKE " . $nameQueryString . ") OR (UPPER(R.recordSetIdentifier) LIKE " . $nameQueryString . "))";
+				$whereAdd[] = "((UPPER(R.titleText) LIKE " . $nameQueryString . ") OR (UPPER(A.shortName) LIKE " . $nameQueryString . ") OR (UPPER(O.name) LIKE " . $nameQueryString . ") OR (UPPER(OA.name) LIKE " . $nameQueryString . ") OR (UPPER(RP.titleText) LIKE " . $nameQueryString . ") OR (UPPER(RC.titleText) LIKE " . $nameQueryString . ") OR (UPPER(RA.recordSetIdentifier) LIKE " . $nameQueryString . "))";
 
 			}else{
 
-				$whereAdd[] = "((UPPER(R.titleText) LIKE " . $nameQueryString . ") OR (UPPER(A.shortName) LIKE " . $nameQueryString . ") OR (UPPER(O.shortName) LIKE " . $nameQueryString . ") OR (UPPER(RP.titleText) LIKE " . $nameQueryString . ") OR (UPPER(RC.titleText) LIKE " . $nameQueryString . ") OR (UPPER(R.recordSetIdentifier) LIKE " . $nameQueryString . "))";
+				$whereAdd[] = "((UPPER(R.titleText) LIKE " . $nameQueryString . ") OR (UPPER(A.shortName) LIKE " . $nameQueryString . ") OR (UPPER(O.shortName) LIKE " . $nameQueryString . ") OR (UPPER(RP.titleText) LIKE " . $nameQueryString . ") OR (UPPER(RC.titleText) LIKE " . $nameQueryString . ") OR (UPPER(RA.recordSetIdentifier) LIKE " . $nameQueryString . "))";
 
 			}
 
@@ -903,7 +903,7 @@ class Resource extends DatabaseObject {
 						RT.shortName resourceType, RF.shortName resourceFormat, R.orderNumber, R.systemNumber, R.resourceURL, R.resourceAltURL,
 						R.currentStartDate, R.currentEndDate, R.subscriptionAlertEnabledInd, AUT.shortName authenticationType,
 						AM.shortName accessMethod, SL.shortName storageLocation, UL.shortName userLimit, R.authenticationUserName,
-						R.authenticationPassword, R.coverageText, CT.shortName catalogingType, CS.shortName catalogingStatus, R.recordSetIdentifier, R.bibSourceURL,
+						R.authenticationPassword, R.coverageText, CT.shortName catalogingType, CS.shortName catalogingStatus, RA.recordSetIdentifier, R.bibSourceURL,
 						R.numberRecordsAvailable, R.numberRecordsLoaded, R.hasOclcHoldings, I.isbnOrIssn,
 						" . $orgSelectAdd . ",
 						" . $licSelectAdd . "
