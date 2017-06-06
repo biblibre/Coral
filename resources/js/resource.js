@@ -15,19 +15,15 @@
 **************************************************************************************************************************
 */
 
-$(document).ready(function(){
- 	updateProduct();
- 	updateRightPanel();
- 	updateAttachmentsNumber();
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    return (results) ? results[1] : 0;
+}
 
-    $("#resourceAcquisitionSelect").change(function () {
-        if (location.search.includes('resourceAcquisitionID')) {
-            location.search = location.search.replace(/resourceAcquisitionID=[^&$]*/i, 'resourceAcquisitionID=' + $(this).val());
-        } else {
-           location.search = location.search + "&resourceAcquisitionID=" + $(this).val(); 
-        }
-    });
-    
+var currentTab = 'Product';
+
+$(document).ready(function(){
+        
 	$(".showProduct").click(function () {
 	  $('.resource_tab_content').hide();
 		$('#div_product').show();
@@ -76,6 +72,54 @@ $(document).ready(function(){
 		updateIssues();
 		return false;
 	});
+
+	$(".showAttachments").click(function () {
+	  $('.resource_tab_content').hide();
+		$('#div_attachments').show();
+		$('#div_fullRightPanel').show();
+		updateAttachments();
+		return false;
+	});
+
+	$(".showRouting").click(function () {
+	  $('.resource_tab_content').hide();
+		$('#div_routing').show();
+		$('#div_fullRightPanel').hide();
+		updateRouting();
+        $('#restartWorkflowDiv').hide();
+		return false;
+	});
+	
+	$(".showCataloging").click(function () {
+	  $('.resource_tab_content').hide();
+		$('#div_cataloging').show();
+		$('#div_fullRightPanel').show();
+		updateCataloging();
+		return false;
+	});
+	 
+
+    $("#resourceAcquisitionSelect").change(function () {
+        var newLoc = location.search;
+        if (newLoc.includes('resourceAcquisitionID')) {
+            newLoc = newLoc.replace(/resourceAcquisitionID=[^&$]*/i, 'resourceAcquisitionID=' + $(this).val());
+        } else {
+           newLoc += "&resourceAcquisitionID=" + $(this).val(); 
+        }
+        if (newLoc.includes('showTab')) {
+            newLoc = newLoc.replace(/showTab=[^&$]*/i, 'showTab=' + currentTab);    
+        } else {
+            newLoc += "&showTab=" + currentTab;
+        }
+        location.search = newLoc;
+    });
+
+    currentTab = $.urlParam('showTab') || "Product";
+    $(".show" + currentTab).click();
+
+ 	updateRightPanel();
+ 	updateAttachmentsNumber();
+
 
 	$(".issuesBtn").live("click", function(e) {
 		e.preventDefault();
@@ -293,7 +337,7 @@ $(document).ready(function(){
 var showArchivedContacts = 0;
 
 function updateProduct(){
-
+  currentTab = "Product";
   $("#icon_product").html("<img src='images/littlecircle.gif' />");
 
   $.ajax({
@@ -314,6 +358,7 @@ function updateProduct(){
 }
 
 function updateOrders(){
+  currentTab = "Orders";
   $("#icon_orders").html("<img src='images/littlecircle.gif' />");
 
   $.ajax({
@@ -334,6 +379,7 @@ function updateOrders(){
 }
 
 function updateAcquisitions(){
+  currentTab = "Acquisitions";
   $("#icon_acquisitions").html("<img src='images/littlecircle.gif' />");
 
   $.ajax({
@@ -355,6 +401,7 @@ function updateAcquisitions(){
 
 
 function updateAccess(){
+  currentTab = "Access";
   $("#icon_access").html("<img src='images/littlecircle.gif' />");
 
   $.ajax({
@@ -378,6 +425,7 @@ function updateAccess(){
 
 
 function updateContacts(){
+  currentTab = "Contacts";
   $("#icon_contacts").html("<img src='images/littlecircle.gif' />");
 
   $.ajax({
@@ -473,7 +521,11 @@ function getInlineContactForm() {
 }
 
 function updateIssues(){
+<<<<<<< a10524703e96d3f99703f2e2cccb4f4e768f50ac
 
+=======
+  currentTab = "Issues"; 
+>>>>>>> Resource acquisition: multiple ordering
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -655,6 +707,7 @@ function updateAccounts(){
 
 
 function updateAttachments(){
+  currentTab = "Attachments";
   $("#icon_attachments").html("<img src='images/littlecircle.gif' />");
   $.ajax({
 	 type:       "GET",
@@ -690,9 +743,15 @@ function updateAttachmentsNumber(){
  });
 }
 
+<<<<<<< a10524703e96d3f99703f2e2cccb4f4e768f50ac
 
 function updateWorkflow(){
   $("#icon_workflow").html("<img src='images/littlecircle.gif' />");
+=======
+function updateRouting(){
+  currentTab = "Routing";
+  $("#icon_routing").html("<img src='images/littlecircle.gif' />");
+>>>>>>> Resource acquisition: multiple ordering
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -711,6 +770,7 @@ function updateWorkflow(){
 }
 
 function updateCataloging(){
+  currentTab = "Cataloging";
   $("#icon_accounts").html("<img src='images/littlecircle.gif' />");
   $.ajax({
 	 type:       "GET",
