@@ -231,7 +231,14 @@ function submitOrderForm(){
 				}else{
                     if ($("#editResourceAcquisitionID").val() == '' || $("#op").val() == 'clone') {
                         //TODO: it would be better to go directly to the newly created order
-                        window.location.reload();
+                        var newLoc = location.search;
+                       	if (newLoc.includes('showTab')) {
+            				newLoc = newLoc.replace(/showTab=[^&$]*/i, 'showTab=Orders');
+        				} else {
+            				newLoc += "&showTab=Orders";
+        				}
+						location.search = newLoc;
+ 
                     } else {
                         kill();
                         window.parent.tb_remove();
