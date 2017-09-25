@@ -1,18 +1,15 @@
 <?php
 
     include_once 'directory.php';
+    include_once 'util.php';
 
-    $startYear = $_POST['startYear'];
-    if (!$startYear) $startYear = date('Y');
-
-    $endYear = $_POST['endYear'];
-    if (!$endYear) $endYear = date('Y');
-
+    $year = $_POST['year'];
+    if (!$year) $year = date('Y');
     $resourceTypeID = $_POST['resourceTypeID'];
     $acquisitionTypeID = $_POST['acquisitionTypeID'];
     $orderTypeID = $_POST['orderTypeID'];
     $subjectID = $_POST['subjectID'];
-    $costDetailsID = $_POST['costDetailsID'];
+    $groupBy = $_POST['groupBy'];
     $csv = $_POST['csv'];
 
     function escape_csv($value) {
@@ -35,59 +32,39 @@
     header("Content-type: text/csv");
     header("Content-Disposition: attachment; filename=\"" . $excelfile . "\"");
 
-    $filters = array();
-    if ($orderTypeID) {
-        $orderType = new OrderType(new NamedArguments(array('primaryKey' => $orderTypeID)));
-        $filters[] = _("Order Type") . ": " . $orderType->shortName;
-    }
-    if ($costDetailsID) {
-        $costDetails = new CostDetails(new NamedArguments(array('primaryKey' => $costDetailsID)));
-        $filters[] = _("Cost Details") . ": " . $costDetails->shortName;
-    }
-
-    echo "Dashboard Yearly Costs Export " . date('Y-m-d') . "\r\n";
-    echo "Filters on payments: ";
-    if (count($filters) > 0) {
-        echo join(" / ", $filters) . "\r\n";
-    } else {
-        echo "none\r\n";
-    }
-
     $columnHeaders = array(
       _("Record ID"),
       _("Name"),
       _("Resource Type"),
       _("Subject"),
       _("Acquisition Type"),
+      _("Order Type"),
+      _("Cost Details"),
+      _("Payment amount"),
     );
-    for ($i = $startYear; $i <= $endYear; $i++) {
-         $columnHeaders[] = $i;;
-    }
     echo array_to_csv_row($columnHeaders);
 
     $dashboard = new Dashboard();
-    $query = $dashboard->getQueryYearlyCosts($resourceTypeID, $startYear, $endYear, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID);
+    $query = $dashboard->getQuery($resourceTypeID, $year, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $groupBy);
     $results = $dashboard->getResults($query);
+    $total = 0;
     foreach ($results as $result) {
+        $total += $result['paymentAmount'];
         $subject = $result['generalSubject'] && $result['detailedSubject'] ? 
             $result['generalSubject'] . " / " . $result['detailedSubject'] : 
             $result['generalSubject'] . $result['detailedSubject'];
 
-        if ($result['resourceID'] != null) {
-            $dashboardValues = array(
-                $result['resourceID'],
-                $result['titleText'],
-                $result['resourceType'],
-                $subject,
-                $result['acquisitionType'],
-            );
-        } else {
-            $dashboardValues = array('', '', '', '', '');
-        }
-        for ($i = $startYear; $i <= $endYear; $i++) {
-            $dashboardValues[] =  integer_to_cost($result[$i]);
-        }
-
+        $dashboardValues = array(
+            $result['resourceID'],
+            $result['titleText'],
+            $result['resourceType'],
+            $subject,
+            $result['acquisitionType'],
+            $result['orderType'],
+            $result['costDetails'],
+            integer_to_cost($result['paymentAmount'])
+        );
         echo array_to_csv_row($dashboardValues);
     }
+    echo array_to_csv_row(array(_("Total"), null, null, null, null, null, null, integer_to_cost($total)));
 ?>
