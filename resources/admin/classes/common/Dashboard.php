@@ -40,8 +40,9 @@ class Dashboard {
                 $query .= " AND GDSL.generalSubjectID = $subjectID";
             }
         }
-        $query .= " GROUP BY $groupBy";
-        error_log(substr($query, -20));
+        $query .= " GROUP BY ";
+        if ($groupBy != '') $query .= "$groupBy, ";
+        $query .= "resourceID WITH ROLLUP";
         return $query;
     }
 
