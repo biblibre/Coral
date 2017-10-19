@@ -87,9 +87,10 @@ function cost_to_integer($price) {
 
 //commonly used to convert integer into a price for display
 function integer_to_cost($price) {
+    $nf = new NumberFormatter($_COOKIE["lang"], NumberFormatter::DECIMAL);
 	//we know this is an integer
 	if ($price > 0){
-    	return number_format(($price / 100),2,'.',',');
+    	return $nf->format(number_format(($price / 100), 2, '.', ''));
     }else{
     	return "";
     }
