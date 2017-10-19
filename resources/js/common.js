@@ -251,6 +251,8 @@ function validateDate(field,alerttxt) {
 
 
 function isAmount(pAmount){
+    return true;
+/*
         pAmount = pAmount.replace('$','');
 	pAmount = pAmount.replace(',','');
 
@@ -259,7 +261,7 @@ function isAmount(pAmount){
 	}else{
 		return true;
 	}
-
+*/
 
 }
 

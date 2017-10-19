@@ -89,7 +89,7 @@ $(function(){
 	    });
 	    return false;
 	});
-
+/*
 	$(".priceTaxExcluded").change(function() {
     	pte = $(this).val();
     	taxRate = $(this).parent().next().children(".taxRate").val();
@@ -109,7 +109,7 @@ $(function(){
       		$(this).parent().next().next().children(".paymentAmount").val(amount);
 	    }
 	});
-
+*/
 	$(".addPayment").click(function () {
 
 		var y         = $('.newPaymentTable').find('.year').val();
