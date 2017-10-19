@@ -64,25 +64,9 @@ if(function_exists("date_default_timezone_set") and function_exists("date_defaul
 
 //commonly used to convert price into integer for insert into database
 function cost_to_integer($price) {
-
-    $price = preg_replace("/[^0-9\.]/", "", $price);
-
-	$decimal_place = strpos($price,".");
-
-    if (strpos($price,".") > 0) {
-		$cents = '.' . substr($price, $decimal_place+1, 2);
-        $price = substr($price,0,$decimal_place);
-    }else{
-    	$cents = '.00';
-    }
-
-    $price = preg_replace("/[^0-9]/", "", $price);
-
-    if (is_numeric($price . $cents)){
-    	return ($price . $cents) * 100;
-    }else{
-    	return false;
-    }
+    $nf = new NumberFormatter($_COOKIE["lang"], NumberFormatter::DECIMAL);
+    $parsed = $nf->parse($price);
+    return $parsed * 100;
 }
 
 //commonly used to convert integer into a price for display
