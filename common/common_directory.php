@@ -76,25 +76,47 @@ function return_date_format() {
 
 function return_sql_locale() {
     $config = new Configuration();
-    $config_sql_locale = $config->database->sql_locale;
-    if (isset($config_sql_locale) && $config_sql_locale != '') {
-        $sql_locale = "'$config_sql_locale'";
+    $config_number_locale = $config->settings->number_locale;
+    if (isset($config_number_locale) && $config_number_locale != '') {
+        $number_locale = "'$config_number_locale'";
     } else {
         // If not set, setting to null will use MySQL/MariaDB default
-        $sql_locale = "NULL";
+        $number_locale = "NULL";
     }
-    return $sql_locale;
+    return $number_locale;
 }
 
-function return_sql_decimals() {
+function return_number_locale() {
     $config = new Configuration();
-    $config_sql_decimals = $config->database->sql_decimals;
-    if (isset($config_sql_decimals) && $config_sql_decimals != '') {
-        $sql_decimals = $config_sql_decimals;
+    $config_number_locale = $config->settings->number_locale;
+    if (isset($config_number_locale) && $config_number_locale != '') {
+        $number_locale = $config_number_locale;
     } else {
-        $sql_decimals = 2;
+        $number_locale = 'en_US';
     }
-    return $sql_decimals;
+    return $number_locale;
+}
+
+function return_number_decimals() {
+    $config = new Configuration();
+    $config_number_decimals = $config->settings->number_decimals;
+    if (isset($config_number_decimals) && $config_number_decimals != '') {
+        $number_decimals = $config_number_decimals;
+    } else {
+        $number_decimals = 2;
+    }
+    return $number_decimals;
+}
+
+function return_number_decimal_separator() {
+    $config = new Configuration();
+    $config_number_decimal_separator = $config->settings->number_decimal_separator;
+    if (isset($config_number_decimal_separator) && $config_number_decimal_separator != '') {
+        $number_decimal_separator = $config_number_decimal_separator;
+    } else {
+        $number_decimal_separator = '.';
+    }
+    return $number_decimal_separator;
 }
 
 

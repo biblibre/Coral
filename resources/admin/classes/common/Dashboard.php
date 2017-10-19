@@ -12,7 +12,7 @@ class Dashboard {
                         GS.shortName AS generalSubject,
                         DS.shortName AS detailedSubject,
                         RA.libraryNumber AS libraryNumber,
-                        FORMAT(SUM(COALESCE(RP.paymentAmount, 0) / 100), " . return_sql_decimals() . ", " . return_sql_locale() . ") as paymentAmount
+                        FORMAT(SUM(COALESCE(RP.paymentAmount, 0) / 100), " . return_number_decimals() . ", " . return_sql_locale() . ") as paymentAmount
                         ";
         $query .= "
                  FROM Resource R
@@ -72,7 +72,7 @@ class Dashboard {
 
                 if ($orderTypeID) $sum_query .= " AND RP.orderTypeID = $orderTypeID";
 
-                $sum_query .= ", COALESCE(RP.paymentAmount, 0) / 100, 0)), " . return_sql_decimals() . ", " . return_sql_locale() . ") AS `" . $costDetail['shortName'] . " / $i`";
+                $sum_query .= ", COALESCE(RP.paymentAmount, 0) / 100, 0)), " . return_number_decimals() . ", " . return_sql_locale() . ") AS `" . $costDetail['shortName'] . " / $i`";
 
                 $sum_parts[] = $sum_query;
             }
