@@ -23,7 +23,9 @@ $datas['titleText'] = $recordName;
 
 if ($_POST['type'] == 'package') {
       //resource parent (package lui meme)
-      $acqID = AcquisitionType::getAcquisitionTypeID($recordDetails->{"paymentType"});
+      $acType = new AcquisitionType();
+error_log(($recordDetails->{"paymentType"}));
+      $acqID = $acType->getAcquisitionTypeIDByName($recordDetails->{"paymentType"});
       if ($acqID != null) {
             $datas["acquisitionTypeID"] = $acqID;
       }
@@ -48,7 +50,7 @@ if ($_POST['type'] == 'package') {
 
       $identifiers['gokb']=$_POST['id'];
       
-      $importTool->addResource($datas, $identifiers);
+      $importTool->addResource($datas, $identifiers, null);
 
       //TIPPs (titles included in package)
       $tipps = $recordDetails->{'TIPPs'};
@@ -94,7 +96,7 @@ if ($_POST['type'] == 'package') {
             }
             $datas['coverageText'] = $covText;
             
-            $importTool->addResource($datas, $identifiers);
+            $importTool->addResource($datas, $identifiers, null);
             
             
       }
@@ -165,7 +167,7 @@ if ($_POST['type'] == 'package') {
       $identifiers['gokb'] = $_POST['id'];
 
 
-      $importTool->addResource($datas, $identifiers);
+      $importTool->addResource($datas, $identifiers, null);
 }
 
 $displayStat = function ($val, $word, $text){

@@ -16,7 +16,7 @@
  * *
  * *************************************************************************************************************************
  */
-#include_once $_SERVER['DOCUMENT_ROOT'] . "resources/admin/classes/domain/Identifier.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/admin/classes/domain/Identifier.php";
 #include_once $_SERVER['DOCUMENT_ROOT'] . "resources/admin/classes/domain/IsbnOrIssn.php";
 
 class Resource extends DatabaseObject {

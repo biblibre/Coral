@@ -93,7 +93,7 @@ class GOKbTools {
             $query .= '?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?o .';
             $query .= 'FILTER regex(?o, "'.$name.'", "i")} ORDER BY DESC(?o)';
             if($searchType == 0) $query .= 'LIMIT 5';
-            
+            error_log($query); 
             //send the request and get results
             $tmp = $this->sendSparqlQuery($query);
             $res = $tmp->{"results"}->{"result"};

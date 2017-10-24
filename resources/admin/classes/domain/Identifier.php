@@ -35,7 +35,7 @@ class Identifier extends DatabaseObject {
 			if (is_numeric($type)) { //this identifier type will be considered as "isxn" (come from csv import)
 				$id = 1;
 			} else { //we need to create this type
-				$query = "INSERT INTO $dbName.IdentifierType SET identifierName='" . mysql_escape_string($type) . "'"; //TODO_mysql_escape_string() OBSOLETE --> mysqli_escape_string
+				$query = "INSERT INTO $dbName.IdentifierType SET identifierName='" . $type . "'"; //TODO_mysql_escape_string() OBSOLETE --> mysqli_escape_string
 				$result = $this->db->processQuery($query);
 				$id = $result[0];
 			}

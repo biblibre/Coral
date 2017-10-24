@@ -299,7 +299,8 @@ class ImportTool {
 
                         if ($organizationID) {
 // Get role
-                              $query = "SELECT organizationRoleID from OrganizationRole WHERE shortName='" . mysql_escape_string($role) . "'";
+                              //TODO: Escape string
+                              $query = "SELECT organizationRoleID from OrganizationRole WHERE shortName='" . $role . "'";
                               $result = $organization->db->processQuery($query);
                               $roleID = ($result[0]) ? $result[0] : 1;
 // Does the organizationRole already exists?
@@ -384,7 +385,8 @@ class ImportTool {
             $loginID = $_SESSION['loginID'];
 
             $organization = new Organization();
-            $query = "INSERT INTO $dbName.Organization SET createDate=NOW(), createLoginID='$loginID', name='" . mysql_escape_string($orgName) . "'";
+            // TODO: Escape string
+            $query = "INSERT INTO $dbName.Organization SET createDate=NOW(), createLoginID='$loginID', name='" . $orgName . "'";
             try {
                   $result = $organization->db->processQuery($query);
                   $organizationID = $result;
