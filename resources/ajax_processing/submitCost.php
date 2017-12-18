@@ -53,13 +53,13 @@
                         $order['basketno'] = 3;
                         $order['quantity'] = 1;
                         $order['biblionumber'] = 4876;
-                        $order['budget_id'] = 6;
+                        $order['fundID'] = $resourcePayment->fundID;
                         $order['ilsOrderlineID'] = $resourcePayment->ilsOrderlineID;
                         $fields = array('priceTaxExcluded', 'taxRate', 'priceTaxIncluded');
                         foreach ($fields as $field) {
                             $order[$field] = integer_to_cost($resourcePayment->$field);
                         }
-                        error_log("Updating order " . $resourcePayment->ilsOrderlineID);
+                        error_log("Updating order " . $resourcePayment->ilsOrderlineID . " with fundID . " . $order['fundID']);
                         // Update
                         $success = $ilsClient->updateOrder($order);
                     }

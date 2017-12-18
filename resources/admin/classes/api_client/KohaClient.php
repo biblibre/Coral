@@ -16,15 +16,21 @@ class KohaClient implements ILSClient {
         $config = new Configuration();
         $this->api = $config->ils->ilsApiUrl;
         $this->coralToKohaKeys = array(
-            'shortName' => 'name',
-            'fundID' => 'id',
-            'fundCode' => 'code',
-            'ilsOrderlineID' => 'ordernumber',
-            'priceTaxExcluded' => 'rrp_tax_excluded',
-            'priceTaxIncluded' => 'rrp_tax_included',
-            'taxRate' => 'tax_rate_on_ordering'
+            'funds' => array(
+                'fundID' => 'id',
+                'shortName' => 'name',
+                'fundCode' => 'code'
+            ),
+            'orders' => array(
+                'fundID' => 'budget_id',
+                'ilsOrderlineID' => 'ordernumber',
+                'priceTaxExcluded' => 'rrp_tax_excluded',
+                'priceTaxIncluded' => 'rrp_tax_included',
+                'taxRate' => 'tax_rate_on_ordering'
+            )
         );
-        $this->kohaToCoralKeys = array_flip($this->coralToKohaKeys);
+        $this->kohaToCoralKeys['funds'] = array_flip($this->coralToKohaKeys['funds']);
+        $this->kohaToCoralKeys['orders'] = array_flip($this->coralToKohaKeys['orders']);
     }
 
     /**
@@ -39,7 +45,7 @@ class KohaClient implements ILSClient {
         $response = Unirest\Request::get($request);
         # Array of StdClass Objects to array of associative arrays
         $funds = json_decode(json_encode($response->body), TRUE);
-        $funds = array_map(array($this, '_vendorToCoral'), $funds);
+        $funds = $this->_arrayMapKohaToCoral($funds, 'funds');
         return $funds;
     }
 
@@ -47,9 +53,9 @@ class KohaClient implements ILSClient {
         $request = $this->api . "/acquisitions/funds/?id=$fundid";
         $response = Unirest\Request::get($request);
         # Array of StdClass Objects to array of associative arrays
-        $fund = json_decode(json_encode($response->body), TRUE);
-        $fund = $this->_vendorToCoral($fund);
-        return $fund[0];
+        $funds = json_decode(json_encode($response->body), TRUE);
+        $fund = $funds[0];
+        return $this->_kohaToCoral($fund, 'funds');
     }
 
     /**
@@ -74,7 +80,7 @@ class KohaClient implements ILSClient {
         $request = $this->api . "/acquisitions/orders/";
         // Koha expects tax rate in decimal rather than in percentage: 5.5% => 0.0550
         if ($order['taxRate']) $order['taxRate'] = $order['taxRate'] / 100;
-        $body = Unirest\Request\Body::json($this->_vendorToKoha($order));
+        $body = Unirest\Request\Body::json($this->_coralToKoha($order, 'orders'));
         $response = Unirest\Request::post($request, $headers, $body);
         return $response->body->ordernumber ? $response->body->ordernumber : null;
     }
@@ -84,7 +90,7 @@ class KohaClient implements ILSClient {
         $request = $this->api . "/acquisitions/orders/" . $order['ilsOrderlineID'];
         // Koha expects tax rate in decimal rather than in percentage: 5.5% => 0.0550
         if ($order['taxRate']) $order['taxRate'] = $order['taxRate'] / 100;
-        $body = Unirest\Request\Body::json($this->_vendorToKoha($order));
+        $body = Unirest\Request\Body::json($this->_coralToKoha($order, 'orders'));
         $response = Unirest\Request::put($request, $headers, $body);
     }
 
@@ -102,20 +108,28 @@ class KohaClient implements ILSClient {
     }
 
 
+    private function _ArrayMapKohaToCoral($values, $category) {
+        return array_map(array($this, '_kohaToCoral'), $values, array_fill(0,count($values),$category));
+    }
+
+    private function _ArrayMapCoralToKoha($values, $category) {
+        return array_map(array($this, '_coralToKoha'), $values, array_fill(0,count($values),$category));
+    }
+
     /**
      * Changes the keys of a fund array from Koha keys to Coral keys
      */
-    private function _vendorToCoral($vendor) {
+    private function _kohaToCoral($values, $category) {
         $kohaToCoralKeys = $this->kohaToCoralKeys;
-        return $this->_changeKeys($vendor, $kohaToCoralKeys);
+        return $this->_changeKeys($values, $kohaToCoralKeys[$category]);
     }
 
     /**
      * Changes the keys of a fund array from Coral keys to Koha keys
      */
-    private function _vendorToKoha($vendor) {
+    private function _coralToKoha($values, $category) {
         $coralToKohaKeys = $this->coralToKohaKeys;
-        return $this->_changeKeys($vendor, $coralToKohaKeys);
+        return $this->_changeKeys($values, $coralToKohaKeys[$category]);
     }
 
     /**

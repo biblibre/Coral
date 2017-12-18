@@ -93,7 +93,7 @@ class ResourceStep extends DatabaseObject {
                 $order['basketno'] = 3;
                 $order['quantity'] = 1;
                 $order['biblionumber'] = 4876;
-                $order['budget_id'] = 6;
+                $order['fundID'] = $rp->fundID;
                 $fields = array('priceTaxExcluded', 'taxRate', 'priceTaxIncluded');
                 foreach ($fields as $field) {
                     $order[$field] = integer_to_cost($rp->$field);
