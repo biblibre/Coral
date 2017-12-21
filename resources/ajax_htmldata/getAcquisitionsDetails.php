@@ -101,6 +101,8 @@
 		$licenseArray = $resource->getLicenseArray();
 
 ?>
+
+            <script type="text/javascript" src="js/htmldata/getAcquisitionsDetails.js?random=<?php echo rand(); ?>"></script>
 			<table class='linedFormTable' style='width:<?php echo $tableWidth; ?>px;padding:0x;margin:0px;height:100%;'>
 			<tr>
 			<th colspan='2' style='vertical-align:bottom;'>
@@ -394,7 +396,6 @@
 					</tr>
 				<?php } ?>
 			</table>
-            <script type="text/javascript" src="js/htmldata/getAcquisitionsDetails.js?random=<?php echo rand(); ?>"></script>
 		<?php
 		}else{
 			if ($user->canEdit()){
