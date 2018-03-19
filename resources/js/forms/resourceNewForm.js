@@ -19,7 +19,7 @@
 
 
 	 $(".submitResource").click(function () {
-		submitResource($(this).attr("id"));
+		submitResource();
 	 });
 
 
@@ -27,7 +27,7 @@
 	//do submit if enter is hit
 	$('#titleText').keyup(function(e) {
 	      if(e.keyCode == 13) {
-		submitResource('save');
+		submitResource();
 	      }
 	});
 
@@ -36,7 +36,7 @@
 	//do submit if enter is hit
 	$('#providerText').keyup(function(e) {
 	      if(e.keyCode == 13) {
-		submitResource('save');
+		submitResource();
 	      }
 	});
 
@@ -45,21 +45,21 @@
 	//do submit if enter is hit
 	$('#resourceURL').keyup(function(e) {
 	      if(e.keyCode == 13) {
-		submitResource('save');
+		submitResource();
 	      }
 	});
 
 	//do submit if enter is hit
 	$('#resourceAltURL').keyup(function(e) {
 	      if(e.keyCode == 13) {
-		submitResource('save');
+		submitResource();
 	      }
 	});
 
 	//do submit if enter is hit
 	$('#resourceFormatID').keyup(function(e) {
 	      if(e.keyCode == 13) {
-		submitResource('save');
+		submitResource();
 	      }
 	});
 
@@ -68,7 +68,7 @@
 	//do submit if enter is hit
 	$('#resourceTypeID').keyup(function(e) {
 	      if(e.keyCode == 13) {
-		submitResource('save');
+		submitResource();
 	      }
 	});
 
@@ -76,7 +76,7 @@
 	//do submit if enter is hit
 	$('#acquisitionTypeID').keyup(function(e) {
 	      if(e.keyCode == 13) {
-		submitResource('save');
+		submitResource();
 	      }
 	});
 
@@ -249,7 +249,7 @@
 
 
 
-function submitResource(status){
+function submitResource(){
 
 	orderTypeList ='';
 	$(".orderTypeID").each(function(id) {
@@ -276,6 +276,7 @@ function submitResource(status){
 
 
 	if (validateNewResource() === true) {
+        var status = $("#validate-resource-checkbox").is(':checked') ? 'progress' : 'save';
 		$('.submitResource').attr("disabled", "disabled");
 		$.ajax({
 			type:       "POST",
@@ -297,7 +298,7 @@ function submitResource(status){
 				fundNames: fundNameList,
 				paymentAmounts: paymentAmountList,
 				currencyCodes: currencyCodeList,
-				resourceStatus: status
+				resourceStatus: status,
 			},
 			success:    function(resourceID) {
 				//go to the new resource page if this was submitted

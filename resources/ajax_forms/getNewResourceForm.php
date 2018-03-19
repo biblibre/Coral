@@ -286,13 +286,12 @@
 		</td>
 		</tr>
 		</table>
-
 		<hr style='width:745px;margin:15px 0px 10px 0px;' />
 
+        <input type="checkbox" id="validate-resource-checkbox"> <label for="validate-resource-checkbox"><?php echo _('Validate this entry (the workflow will then be started)'); ?></label>
 		<table class='noBorderTable' style='width:175px;'>
 			<tr>
 				<td style='text-align:left'><input type='button' value='<?php echo _("save");?>' id='save' class='submitResource save-button'></td>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' id='progress' class='submitResource submit-button'></td>
 				<td style='text-align:left'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove()" class='cancel-button'></td>
 			</tr>
 		</table>
