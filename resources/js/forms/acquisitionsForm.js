@@ -201,6 +201,12 @@
 
 function submitOrderForm(){
 
+
+    if (!$("#currentEndDate").val()) {
+        $("#span_errors").html(_("Subscription end date must be provided"));
+        return false;
+    }
+
 	purchaseSitesList ='';
 	$(".check_purchaseSite:checked").each(function(id) {
 	      purchaseSitesList += $(this).val() + ":::";
