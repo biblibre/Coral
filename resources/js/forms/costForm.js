@@ -45,7 +45,7 @@ $(function(){
 
     $("#addFormulaButton").live('click', function(e){
 		e.preventDefault();
-		var values = $(e.currentTarget).parent().find("input[name^='field']").map(function() { return this.name + "=" + this.value }).get().join("&");
+		var values = $(e.currentTarget).parent().find("input[name^='field']").map(function() { return this.name + "=" + (this.value ? this.value : 0) }).get().join("&");
 		$.ajax({
 			type:       "GET",
 			url:        "ajax_processing.php",
