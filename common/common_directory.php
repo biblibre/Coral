@@ -77,7 +77,7 @@ function format_date($mysqlDate) {
 
 	//SUGGESTED: "m/d/Y" or "d-m-Y"
 
-	return date("m/d/Y", strtotime($mysqlDate));
+	return date("d-m-Y", strtotime($mysqlDate));
 
 }
 
