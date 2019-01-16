@@ -17,13 +17,13 @@ class KohaClient implements ILSClient {
         $this->api = $config->ils->ilsApiUrl;
         $this->coralToKohaKeys = array(
             'funds' => array(
-                'fundID' => 'id',
+                'fundID' => 'fund_id',
                 'shortName' => 'name',
                 'fundCode' => 'code'
             ),
             'orders' => array(
                 'fundID' => 'budget_id',
-                'ilsOrderlineID' => 'ordernumber',
+                'ilsOrderlineID' => 'order_id',
                 'priceTaxExcluded' => 'rrp_tax_excluded',
                 'priceTaxIncluded' => 'rrp_tax_included',
                 'taxRate' => 'tax_rate_on_ordering'
@@ -41,7 +41,7 @@ class KohaClient implements ILSClient {
         $loginID = CoralSession::get('loginID');
         $borrowernumber = $this->getBorrowernumber($loginID);
         $request = $this->api . "/acquisitions/funds/";
-        if ($borrowernumber) $request .= "?budget_owner_id=$borrowernumber";
+        if ($borrowernumber) $request .= "?fund_owner_id=$borrowernumber";
         $response = Unirest\Request::get($request);
         # Array of StdClass Objects to array of associative arrays
         $funds = json_decode(json_encode($response->body), TRUE);
@@ -82,7 +82,7 @@ class KohaClient implements ILSClient {
         if ($order['taxRate']) $order['taxRate'] = $order['taxRate'] / 100;
         $body = Unirest\Request\Body::json($this->_coralToKoha($order, 'orders'));
         $response = Unirest\Request::post($request, $headers, $body);
-        return $response->body->ordernumber ? $response->body->ordernumber : null;
+        return $response->body->order_id ? $response->body->order_id : null;
     }
 
     function updateOrder($order) {
@@ -98,13 +98,13 @@ class KohaClient implements ILSClient {
         error_log("getting order $orderid");
         $response = Unirest\Request::get($this->api . "/acquisitions/orders/$orderid");
         $order = json_decode(json_encode($response->body), TRUE);
-        return isset($order['ordernumber']) ? $order : null;
+        return isset($order['order_id']) ? $order : null;
     }
 
     private function getBorrowernumber($loginID) {
         $response = Unirest\Request::get($this->api . "/patrons/?userid=$loginID");
         $borrowers = json_decode(json_encode($response->body), TRUE);
-        return isset($borrowers[0]) ? $borrowers[0]['borrowernumber'] : null;
+        return isset($borrowers[0]) ? $borrowers[0]['patron_id'] : null;
     }
 
 

@@ -68,7 +68,6 @@ class ResourceStep extends DatabaseObject {
 		$this->save();
 
         // If we're linked to an ILS, we may have to place an order
-        error_log("startStep");
         $this->ilsProcessingOnStartStep();
 
 		//send notifications
@@ -77,9 +76,8 @@ class ResourceStep extends DatabaseObject {
 	}
 
     public function ilsProcessingOnStartStep() {
-        error_log("ilsProcessingOnStartStep");
         $config = new Configuration();
-        if ($config->ils->ilsConnector && 
+        if ($config->ils->ilsConnector &&
             $config->ils->ilsOrderStep == $this->stepName) {
             $ilsClient = (new ILSClientSelector())->select();
 
@@ -92,6 +90,7 @@ class ResourceStep extends DatabaseObject {
                 $order = array();
                 $order['basketno'] = 3;
                 $order['quantity'] = 1;
+                # FIXME: Use biblio endpoint when available
                 $order['biblionumber'] = 4876;
                 $order['fundID'] = $rp->fundID;
                 $fields = array('priceTaxExcluded', 'taxRate', 'priceTaxIncluded');
@@ -102,7 +101,6 @@ class ResourceStep extends DatabaseObject {
                 // Create
                 if (!$rp->ilsOrderlineID) {
                     // Place order
-                    error_log("Placing order");
                     $ilsOrderlineID = $ilsClient->placeOrder($order);
                     $rp->ilsOrderlineID = $ilsOrderlineID;
                     $rp->save();
