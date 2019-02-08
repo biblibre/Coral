@@ -14,10 +14,11 @@
     $orderTypeID = $_POST['orderTypeID'];
     $subjectID = $_POST['subjectID'];
     $costDetailsID = $_POST['costDetailsID'];
+    $fundID = $_POST['fundID'];
     $groupBy = $_POST['groupBy'];
 
     $dashboard = new Dashboard();
-    $query = $dashboard->getQueryYearlyCosts($resourceTypeID, $startYear, $endYear, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $groupBy);
+    $query = $dashboard->getQueryYearlyCosts($resourceTypeID, $startYear, $endYear, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $groupBy);
     $results = $dashboard->getResults($query);
     if ($groupBy == "GS.shortName") $groupBy = "generalSubject";
     $costDetails = new CostDetails();
@@ -29,6 +30,7 @@
     echo "<th>" . _("Resource Type") . "</th>";
     echo "<th>" . _("Subject") . "</th>";
     echo "<th>" . _("Acquisition Type") . "</th>";
+    echo "<th>" . _("Fund") . "</th>";
     echo "<th>" . _("Library Number") . "</th>";
     for ($i = $startYear; $i <= $endYear; $i++) {
         foreach ($costDetailsArray as $costDetail) {
@@ -50,6 +52,7 @@
                 $result['generalSubject'] . $result['detailedSubject'];
             echo "<td>" . $subject . "</td>";
             echo "<td>" . $result['acquisitionType'] . "</td>";
+            echo "<td>" . $result['fundName'] . "</td>";
             echo "<td>" . $result['libraryNumber'] . "</td>";
             for ($i = $startYear; $i <= $endYear; $i++) {
                 foreach ($costDetailsArray as $costDetail) {
@@ -59,7 +62,7 @@
             }
             echo "</tr>";
         } else {
-            echo "<tr><td colspan='5'><b>";
+            echo "<tr><td colspan='6'><b>";
             if ($currentCount == $count) { echo  _("Total"); } else { echo _("Sub-Total:") . " " . $result[$groupBy]; }
             echo "</b></td>";
             for ($i = $startYear; $i <= $endYear; $i++) {

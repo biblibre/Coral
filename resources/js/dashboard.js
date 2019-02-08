@@ -21,6 +21,7 @@ function submitDashboard() {
                         "orderTypeID": $("#orderTypeID").val(),
                         "subjectID": $("#subjectID").val(),
                         "costDetailsID": $("#costDetailsID").val(),
+                        "fundID": $("#fundID").val(),
                         "groupBy": $("#groupBy").val(),
                     },
 		success:    function(html) {
@@ -42,6 +43,7 @@ function submitDashboardYearlyCosts() {
                         "orderTypeID": $("#orderTypeID").val(),
                         "subjectID": $("#subjectID").val(),
                         "costDetailsID": $("#costDetailsID").val(),
+                        "fundID": $("#fundID").val(),
                         "groupBy": $("#groupBy").val(),
                     },
 		success:    function(html) {
