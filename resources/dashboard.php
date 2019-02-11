@@ -75,6 +75,7 @@
         <option value="acquisitionType"><?php echo _("Acquisition Type"); ?></option>
         <option value="fundName"><?php echo _("Fund"); ?></option>
         <option value="libraryNumber"><?php echo _("Library Number"); ?></option>
+        <option value="organizationName"><?php echo _("Organization"); ?></option>
     </select>
     </td>
 	</tr>

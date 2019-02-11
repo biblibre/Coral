@@ -2,6 +2,15 @@
 class Dashboard {
 
     public function getQuery($resourceTypeID, $year, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $groupBy) {
+        $config = new Configuration();
+        if ($config->settings->organizationsModule == 'Y' && $config->settings->organizationsDatabaseName) {
+            $orgDB = $config->settings->organizationsDatabaseName;
+            $orgField = 'name';
+        } else {
+            $orgDB = $config->database->name;
+            $orgField = 'shortName';
+        }
+
         $query = "SELECT
                         R.resourceID,
                         R.titleText,
@@ -13,6 +22,7 @@ class Dashboard {
                         DS.shortName AS detailedSubject,
                         RA.libraryNumber AS libraryNumber,
                         F.shortName AS fundName,
+                        GROUP_CONCAT(O.$orgField) AS organizationName,
                         SUM(ROUND(COALESCE(RP.paymentAmount, 0) / 100, 2)) as paymentAmount
                         ";
 
@@ -29,6 +39,8 @@ class Dashboard {
                     LEFT JOIN GeneralSubject GS ON GS.generalSubjectID = GDSL.generalSubjectID
                     LEFT JOIN DetailedSubject DS ON DS.detailedSubjectID = GDSL.detailedSubjectID
                     LEFT JOIN Fund F ON RP.fundID = F.FundID
+                    LEFT JOIN ResourceOrganizationLink ROL ON ROL.resourceID = R.resourceID
+                    LEFT JOIN $orgDB.Organization O on O.organizationID = ROL.organizationID
                 ";
 
         $query .= " WHERE RP.year=$year";
