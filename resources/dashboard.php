@@ -39,6 +39,21 @@
     </td>
 	</tr>
     </fieldset>
+    <fieldset>
+    <legend><?php echo _("Filter on organizations"); ?></legend>
+	<tr>
+	<td class='searchRow'>
+    <label for="organizationID"><b><?php echo _("Organization"); ?>:</b></label><br />
+    <?php $dashboard->getOrganizationsAsDropdown(); ?><br />
+    </td>
+	</tr>
+	<tr>
+	<td class='searchRow'>
+    <label for="roleID"><b><?php echo _("Role"); ?>:</b></label><br />
+    <?php //$dashboard->getOrganizationsRolesAsDropdown(); ?><br />
+    </td>
+	</tr>
+    </fieldset>
 	<tr>
 	<td class='searchRow'>
     <fieldset>

@@ -1,7 +1,7 @@
 <?php
 class Dashboard {
 
-    public function getQuery($resourceTypeID, $year, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $groupBy) {
+    public function getQuery($resourceTypeID, $year, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $organizationID, $groupBy) {
         $config = new Configuration();
         if ($config->settings->organizationsModule == 'Y' && $config->settings->organizationsDatabaseName) {
             $orgDB = $config->settings->organizationsDatabaseName;
@@ -22,7 +22,7 @@ class Dashboard {
                         DS.shortName AS detailedSubject,
                         RA.libraryNumber AS libraryNumber,
                         F.shortName AS fundName,
-                        GROUP_CONCAT(O.$orgField) AS organizationName,
+                        O.$orgField AS organizationName,
                         SUM(ROUND(COALESCE(RP.paymentAmount, 0) / 100, 2)) as paymentAmount
                         ";
 
@@ -292,8 +292,54 @@ class Dashboard {
 
     }
 
+    function getOrganizationsAsDropdown($currentID = null) {
+        $organizations = array();
+        $config = new Configuration();
+        $db = DBService::getInstance();
+        $orgField = '';
+
+        echo '<select name="organizationID" id="organizationID" style="width:150px;">';
+        echo "<option value=''>All</option>";
+
+        if ($config->settings->organizationsModule == 'Y') {
+            $db->changeDb('organizationsDatabaseName');
+            # SQL?
+            $organization = new Organization();
+            $organizations = $organization->allAsArray();
+            $db->changeDb();
+            $orgField = 'name';
+        } else {
+            $organization = new Organization();
+            $organizations = $organization->allAsArray();
+            $orgField = 'shortName';
+        }
+        foreach ($organizations as $display) {
+error_log(print_r($display, 1));
+            if ($display['organizationID'] == $currentID) {
+                echo "<option value='" . $display['organizationID'] . "' selected>" . $display[$orgField] . "</option>";
+            } else {
+                echo "<option value='" . $display['organizationID'] . "'>" . $display[$orgField] . "</option>";
+            }
+        }
+        echo '</select>';
+    }
 
 
+    function getOrganizationsRolesAsDropdown($currentID = null) {
+        $display = array();
+        $config = new Configuration();
+        $db = DBService::getInstance();
+
+        if ($config->settings->organizationsModule == 'Y') {
+            include_once '../organizations/admin/classes/domain/Organization.php';
+            $db->changeDb('organizationsDatabaseName');
+            $organization = new Organization(new NamedArguments(array('primaryKey' => $id)));
+            Flight::json($organization->asArray());
+            $db->changeDb();
+        } else {
+            return null;
+        }
+    }
 
 }
 ?>
