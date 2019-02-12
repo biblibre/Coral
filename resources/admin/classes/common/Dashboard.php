@@ -293,52 +293,38 @@ class Dashboard {
     }
 
     function getOrganizationsAsDropdown($currentID = null) {
-        $organizations = array();
-        $config = new Configuration();
-        $db = DBService::getInstance();
-        $orgField = '';
+        $resource = new Resource();
+        $organizations = $resource->getOrganizationList();
 
         echo '<select name="organizationID" id="organizationID" style="width:150px;">';
         echo "<option value=''>All</option>";
 
-        if ($config->settings->organizationsModule == 'Y') {
-            $db->changeDb('organizationsDatabaseName');
-            # SQL?
-            $organization = new Organization();
-            $organizations = $organization->allAsArray();
-            $db->changeDb();
-            $orgField = 'name';
-        } else {
-            $organization = new Organization();
-            $organizations = $organization->allAsArray();
-            $orgField = 'shortName';
-        }
         foreach ($organizations as $display) {
-error_log(print_r($display, 1));
             if ($display['organizationID'] == $currentID) {
-                echo "<option value='" . $display['organizationID'] . "' selected>" . $display[$orgField] . "</option>";
+                echo "<option value='" . $display['organizationID'] . "' selected>" . $display['name'] . "</option>";
             } else {
-                echo "<option value='" . $display['organizationID'] . "'>" . $display[$orgField] . "</option>";
+                echo "<option value='" . $display['organizationID'] . "'>" . $display['name'] . "</option>";
             }
         }
         echo '</select>';
     }
 
-
     function getOrganizationsRolesAsDropdown($currentID = null) {
-        $display = array();
-        $config = new Configuration();
-        $db = DBService::getInstance();
+        $organizationRole = new OrganizationRole();
+        $roles = $organizationRole->getArray();
 
-        if ($config->settings->organizationsModule == 'Y') {
-            include_once '../organizations/admin/classes/domain/Organization.php';
-            $db->changeDb('organizationsDatabaseName');
-            $organization = new Organization(new NamedArguments(array('primaryKey' => $id)));
-            Flight::json($organization->asArray());
-            $db->changeDb();
-        } else {
-            return null;
+        echo '<select name="roleID" id="roleID" style="width:150px;">';
+        echo "<option value=''>All</option>";
+
+        foreach ($roles as $roleID => $roleName) {
+            if ($roleID == $currentID) {
+                echo "<option value='" . $roleID . "' selected>" . $roleName . "</option>";
+            } else {
+                echo "<option value='" . $roleID . "'>" . $roleName. "</option>";
+            }
         }
+        echo '</select>';
+
     }
 
 }

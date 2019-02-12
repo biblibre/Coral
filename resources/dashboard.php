@@ -21,7 +21,7 @@
 	<td class='searchRow'>
     <form action="dashboard_export.php" method="POST">
     <fieldset>
-    <legend>Filter on resources:</legend>
+    <legend><?php echo _("Filter on resources:"); ?></legend>
     <label for="resourceTypeID"><b><?php echo _("Resource type"); ?>:</b></label><br />
     <?php $dashboard->getResourceTypesAsDropdown(); ?><br />
     </td>
@@ -39,10 +39,10 @@
     </td>
 	</tr>
     </fieldset>
+    <tr>
+    <td class="searchRow">
     <fieldset>
-    <legend><?php echo _("Filter on organizations"); ?></legend>
-	<tr>
-	<td class='searchRow'>
+    <legend><?php echo _("Filter on organizations:"); ?></legend>
     <label for="organizationID"><b><?php echo _("Organization"); ?>:</b></label><br />
     <?php $dashboard->getOrganizationsAsDropdown(); ?><br />
     </td>
@@ -50,14 +50,14 @@
 	<tr>
 	<td class='searchRow'>
     <label for="roleID"><b><?php echo _("Role"); ?>:</b></label><br />
-    <?php //$dashboard->getOrganizationsRolesAsDropdown(); ?><br />
+    <?php $dashboard->getOrganizationsRolesAsDropdown(); ?><br />
     </td>
 	</tr>
     </fieldset>
 	<tr>
 	<td class='searchRow'>
     <fieldset>
-    <legend>Filter on payments:</legend>
+    <legend><?php echo _("Filter on payments:"); ?></legend>
     <label for="orderTypeID"><b><?php echo _("Order Type"); ?>:</b></label><br />
     <?php $dashboard->getOrderTypesAsDropdown(); ?>
     </td>
