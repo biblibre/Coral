@@ -65,8 +65,17 @@ class Dashboard {
         return $query;
     }
 
-    public function getQueryYearlyCosts($resourceTypeID, $startYear, $endYear, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $groupBy) {
-     $query = "SELECT
+    public function getQueryYearlyCosts($resourceTypeID, $startYear, $endYear, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $organizationID, $roleID, $groupBy) {
+        $config = new Configuration();
+        if ($config->settings->organizationsModule == 'Y' && $config->settings->organizationsDatabaseName) {
+            $orgDB = $config->settings->organizationsDatabaseName;
+            $orgField = 'name';
+        } else {
+            $orgDB = $config->database->name;
+            $orgField = 'shortName';
+        }
+
+         $query = "SELECT
                         R.resourceID,
                         R.titleText,
                         RT.shortName AS resourceType,
@@ -75,7 +84,8 @@ class Dashboard {
                         GS.shortName AS generalSubject,
                         DS.shortName AS detailedSubject,
                         RA.libraryNumber AS libraryNumber,
-                        F.shortName as fundName
+                        F.shortName as fundName,
+                        O.$orgField AS organizationName
                         ";
 
         $costDetails = new CostDetails();
@@ -110,6 +120,8 @@ class Dashboard {
                     LEFT JOIN GeneralSubject GS ON GS.generalSubjectID = GDSL.generalSubjectID
                     LEFT JOIN DetailedSubject DS ON DS.detailedSubjectID = GDSL.detailedSubjectID
                     LEFT JOIN Fund F ON RP.fundID = F.FundID
+                    LEFT JOIN ResourceOrganizationLink ROL ON ROL.resourceID = R.resourceID
+                    LEFT JOIN $orgDB.Organization O on O.organizationID = ROL.organizationID
                 ";
 
         $query_parts = array();
@@ -118,6 +130,8 @@ class Dashboard {
         if ($orderTypeID) $query_parts[] = " RP.orderTypeID = $orderTypeID";
         if ($costDetailsID) $query_parts[] = " RP.costDetailsID = $costDetailsID";
         if ($fundID) $query_parts[] = " F.fundID = $fundID";
+        if ($organizationID) $query_parts[] .= " O.organizationID = $organizationID";
+        if ($roleID) $query_parts[] .= " ROL.organizationRoleID = $roleID";
         if ($subjectID) {
             if (substr($subjectID, 0, 1) == "d") {
                 $query_parts[] = " GDSL.detailedSubjectID = " . substr($subjectID, 1);

@@ -46,6 +46,8 @@ function submitDashboardYearlyCosts() {
                         "subjectID": $("#subjectID").val(),
                         "costDetailsID": $("#costDetailsID").val(),
                         "fundID": $("#fundID").val(),
+                        "organizationID": $("#organizationID").val(),
+                        "roleID": $("#roleID").val(),
                         "groupBy": $("#groupBy").val(),
                     },
 		success:    function(html) {

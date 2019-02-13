@@ -15,10 +15,12 @@
     $subjectID = $_POST['subjectID'];
     $costDetailsID = $_POST['costDetailsID'];
     $fundID = $_POST['fundID'];
+    $organizationID = $_POST['organizationID'];
+    $roleID = $_POST['roleID'];
     $groupBy = $_POST['groupBy'];
 
     $dashboard = new Dashboard();
-    $query = $dashboard->getQueryYearlyCosts($resourceTypeID, $startYear, $endYear, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $groupBy);
+    $query = $dashboard->getQueryYearlyCosts($resourceTypeID, $startYear, $endYear, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $organizationID, $roleID, $groupBy);
     $results = $dashboard->getResults($query);
     if ($groupBy == "GS.shortName") $groupBy = "generalSubject";
     $costDetails = new CostDetails();
@@ -32,6 +34,7 @@
     echo "<th>" . _("Acquisition Type") . "</th>";
     echo "<th>" . _("Fund") . "</th>";
     echo "<th>" . _("Library Number") . "</th>";
+    echo "<th>" . _("Organizations") . "</th>";
     for ($i = $startYear; $i <= $endYear; $i++) {
         foreach ($costDetailsArray as $costDetail) {
             if ($costDetailsID && $costDetail['costDetailsID'] != $costDetailsID) continue;
@@ -54,6 +57,7 @@
             echo "<td>" . $result['acquisitionType'] . "</td>";
             echo "<td>" . $result['fundName'] . "</td>";
             echo "<td>" . $result['libraryNumber'] . "</td>";
+            echo "<td>" . $result['organizationName'] . "</td>";
             for ($i = $startYear; $i <= $endYear; $i++) {
                 foreach ($costDetailsArray as $costDetail) {
                     if ($costDetailsID && $costDetail['costDetailsID'] != $costDetailsID) continue;
@@ -62,7 +66,7 @@
             }
             echo "</tr>";
         } else {
-            echo "<tr><td colspan='6'><b>";
+            echo "<tr><td colspan='7'><b>";
             if ($currentCount == $count) { echo  _("Total"); } else { echo _("Sub-Total:") . " " . $result[$groupBy]; }
             echo "</b></td>";
             for ($i = $startYear; $i <= $endYear; $i++) {
