@@ -11,10 +11,12 @@
     $subjectID = $_POST['subjectID'];
     $costDetailsID = $_POST['costDetailsID'];
     $fundID = $_POST['fundID'];
+    $organizationID = $_POST['organizationID'];
+    $roleID = $_POST['roleID'];
     $groupBy = $_POST['groupBy'];
 
     $dashboard = new Dashboard();
-    $query = $dashboard->getQuery($resourceTypeID, $year, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $groupBy);
+    $query = $dashboard->getQuery($resourceTypeID, $year, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $organizationID, $roleID, $groupBy);
     $results = $dashboard->getResults($query);
     if ($groupBy == "GS.shortName") $groupBy = "generalSubject";
     echo "<table id='dashboard_table' class='dataTable' style='width:840px;margin-top:0'>";

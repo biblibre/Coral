@@ -1,7 +1,7 @@
 <?php
 class Dashboard {
 
-    public function getQuery($resourceTypeID, $year, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $organizationID, $groupBy) {
+    public function getQuery($resourceTypeID, $year, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $fundID, $organizationID, $roleID, $groupBy) {
         $config = new Configuration();
         if ($config->settings->organizationsModule == 'Y' && $config->settings->organizationsDatabaseName) {
             $orgDB = $config->settings->organizationsDatabaseName;
@@ -50,6 +50,8 @@ class Dashboard {
         if ($orderTypeID) $query .= " AND RP.orderTypeID = $orderTypeID";
         if ($costDetailsID) $query .= " AND RP.costDetailsID = $costDetailsID";
         if ($fundID) $query .= " AND F.fundID = $fundID";
+        if ($organizationID) $query .= " AND O.organizationID = $organizationID";
+        if ($roleID) $query .= " AND ROL.organizationRoleID = $roleID";
         if ($subjectID) {
             if (substr($subjectID, 0, 1) == "d") {
                 $query .= " AND GDSL.detailedSubjectID = " . substr($subjectID, 1);
