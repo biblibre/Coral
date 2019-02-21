@@ -112,8 +112,8 @@ if ($resourceAcquisitionID) {
 
 			</table>
 			<?php if ($user->canEdit()){ ?>
-				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("create new order");?></a> - 
-				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>&op=clone' class='thickbox'><?php echo _("clone order");?></a> - 
+				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("create order");?></a> - 
+				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>&op=clone' class='thickbox'><?php echo _("clone order");?></a> -
 				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("edit order information");?></a>
 			<?php } ?>
 <?php } else {

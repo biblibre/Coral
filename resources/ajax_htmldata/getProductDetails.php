@@ -385,7 +385,7 @@
 
 		if ($user->canEdit()){
 		?>
-			<a href='ajax_forms.php?action=getResourceSubjectForm&height=700&width=425&tab=Product&resourceID=<?php echo $resourceID; ?>&modal=true' class='thickbox'><?php echo _("add new subject");?></a>
+			<a href='ajax_forms.php?action=getResourceSubjectForm&height=700&width=425&tab=Product&resourceID=<?php echo $resourceID; ?>&modal=true' class='thickbox'><?php echo _("add subject");?></a>
 		<?php
 		}
 
@@ -435,7 +435,7 @@
 				<th><?php echo _("Additional Notes");?></th>
 				<th>
 				<?php if ($user->canEdit()){ ?>
-					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Product&entityID=<?php echo $resourceID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo _("add new note");?></a>
+					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Product&entityID=<?php echo $resourceID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo _("add note");?></a>
 				<?php } ?>
 				</th>
 				</tr>
@@ -460,4 +460,3 @@
 		}
 
 ?>
-

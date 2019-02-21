@@ -35,7 +35,6 @@
 			echo "(none found)<br />";
 		}
 
-		echo "<a href='ajax_forms.php?action=getAdminCurrencyUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'>"._("add new currency")."</a>";
+		echo "<a href='ajax_forms.php?action=getAdminCurrencyUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'>"._("add currency")."</a>";
 
 ?>
-

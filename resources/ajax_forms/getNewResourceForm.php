@@ -7,7 +7,7 @@
 			$resource = new Resource();
 		}
 
-        // get resource acquisition for this resource 
+        // get resource acquisition for this resource
         // at this point, there are none (resource not saved yet)
         // or only one (resource saved as draft)
         if ($resource->resourceID) {
@@ -73,7 +73,7 @@
 
 		<input type='hidden' id='organizationID' value='<?php echo $orgID; ?>' />
 		<input type='hidden' id='editResourceID' value='<?php echo $resourceID; ?>' />
-		<div class='formTitle' style='width:745px;'><span class='headerText'><?php if ($resourceID) { echo _("Edit Saved Resource"); }else{ echo _("Add New Resource"); } ?></span></div>
+		<div class='formTitle' style='width:745px;'><span class='headerText'><?php if ($resourceID) { echo _("Edit Saved Resource"); }else{ echo _("Add Resource"); } ?></span></div>
 		<div class='smallDarkRedText' style='height:14px;margin:3px 0px 0px 0px;'>&nbsp;* <?php echo _("required fields");?></div>
 
 		<table class='noBorder'>
@@ -294,4 +294,3 @@
 		</div>
 
 		<script type="text/javascript" src="js/forms/resourceNewForm.js?random=<?php echo rand(); ?>"></script>
-
