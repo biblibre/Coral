@@ -47,7 +47,7 @@ switch ($_GET['action']) {
 		<?php
 
 		if ($user->canEdit()){?>
-			<a href='ajax_forms.php?action=getLicenseForm&licenseID=<?php echo $licenseID; ?>&height=260&width=260&modal=true' class='thickbox'><?php echo _("edit license");?></a>  |  <a href='javascript:deleteLicense("<?php echo $licenseID; ?>");'><?php echo _("remove license");?></a>
+			<a href='ajax_forms.php?action=getLicenseForm&licenseID=<?php echo $licenseID; ?>&height=260&width=260&modal=true' class='thickbox'><?php echo _("edit");?></a>  |  <a href='javascript:deleteLicense("<?php echo $licenseID; ?>");'><?php echo _("delete");?></a>
 		<?php }
 
 		echo "<div style='margin-top:10px;margin-bottom:20px;'>";
@@ -58,7 +58,7 @@ switch ($_GET['action']) {
 		if ($config->settings->organizationsModule == 'Y'){
 			$util = new Utility();
 
-			echo $license->getOrganizationName() . "  <a href='" . $util->getOrganizationURL() . $license->organizationID . "' target='_blank' style='text-decoration:none;'><i class='fa fa-pencil-square-o' style='margin-left:15px;'></i>"._("edit organization")."</a>";
+			echo $license->getOrganizationName() . "  <a href='" . $util->getOrganizationURL() . $license->organizationID . "' target='_blank' style='text-decoration:none;'>"._("display organization")."</a>";
 
 			if ($license->consortiumID) {
 				echo "<br />" . $license->getConsortiumName();
@@ -860,7 +860,7 @@ switch ($_GET['action']) {
 				echo "<td $classAdd>";
 				if (!$user->isRestricted()) {
 					if ($document->documentURL != ""){
-						echo "<a href='documents/" . $document->documentURL . "' target='_blank'>"._("view document")."</a><br />";
+						echo "<a href='documents/" . $document->documentURL . "' target='_blank'>"._("view")."</a><br />";
 					}else{
 						echo _("(none uploaded)")."<br />";
 					}
@@ -873,7 +873,7 @@ switch ($_GET['action']) {
 				echo "</td>";
 
 				if ($user->canEdit()){
-					echo "<td $classAdd><a href='ajax_forms.php?action=getUploadDocument&height=295&width=317&modal=true&licenseID=" . $licenseID . "&documentID=" . $document->documentID . "' class='thickbox' id='editDocument'>"._("edit document")."</a><br /><a href='javascript:deleteDocument(\"" . $document->documentID . "\");'>"._("remove document")."</a>";
+					echo "<td $classAdd><a href='ajax_forms.php?action=getUploadDocument&height=295&width=317&modal=true&licenseID=" . $licenseID . "&documentID=" . $document->documentID . "' class='thickbox' id='editDocument'>"._("edit")."</a><br /><a href='javascript:deleteDocument(\"" . $document->documentID . "\");'>"._("delete")."</a>";
 					echo "<br />" . $displayExpirationDate . "</td>";
 				}
 				echo "</tr>";
@@ -990,7 +990,7 @@ switch ($_GET['action']) {
 							echo "</td>";
 
 							if ($user->canEdit()){
-								echo "<td $classAdd><a href='ajax_forms.php?action=getUploadDocument&height=285&width=305&modal=true&licenseID=" . $licenseID . "&documentID=" . $childDocument->documentID . "' class='thickbox' id='editDocument'>"._("edit document")."</a><br /><a href='javascript:deleteDocument(\"" . $childDocument->documentID . "\");'>"._("remove document")."</a>";
+								echo "<td $classAdd><a href='ajax_forms.php?action=getUploadDocument&height=285&width=305&modal=true&licenseID=" . $licenseID . "&documentID=" . $childDocument->documentID . "' class='thickbox' id='editDocument'>"._("edit")."</a><br /><a href='javascript:deleteDocument(\"" . $childDocument->documentID . "\");'>"._("delete")."</a>";
 								//echo "<br />" . $displayExpirationDate . "</td>";
 							}
 							echo "</tr>";
