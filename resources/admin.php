@@ -125,5 +125,3 @@ if ($user->isAdmin()){
 
 include 'templates/footer.php';
 ?>
-
-

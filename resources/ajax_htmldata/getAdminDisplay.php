@@ -38,7 +38,6 @@
 			echo _("(none found)")."<br />";
 		}
 
-		echo "<a href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateID=&height=128&width=260&modal=true' class='thickbox'>"._("add new ") . _(trim(preg_replace("/[A-Z]/", " \\0" , $className))) . "</a>";
+		echo "<a href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateID=&height=128&width=260&modal=true' class='thickbox'>"._("add ") . _(trim(preg_replace("/[A-Z]/", " \\0" , $className))) . "</a>";
 
 ?>
-
