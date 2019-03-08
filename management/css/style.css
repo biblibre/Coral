@@ -1931,3 +1931,125 @@ table.titleTable {
 	margin-top: 0px !important;
 	overflow-x: hidden !important;
 }
+
+
+/*--- Align Menu in admin ---*/
+
+div.elementsAlign{
+	display: flex;
+	justify-content: space-around;
+
+}
+
+.displayedTables{
+	margin-left: 20px;
+}
+
+/* following is all for admin and queue pages (paste from resources style.css)
+*************************/
+div.adminRightHeader{font-size:135%; color:#3D545D; margin-bottom:5px; }
+div.adminMenuLink a {color:#707172;text-decoration:none;}
+div.adminMenuLink a:active {color:#3D545D;}
+div.adminMenuLink a:hover {color:#526972;text-decoration:underline;}
+div.adminMenuLink a:focus {color:#3D545D; outline: none; font-weight:bold;}
+
+
+table.adminMenuTable {
+	border-width: 0 0 1px 1px;
+	border-style: solid;
+	border-color: #e6e5e9;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size:95%;
+	background-color: #f6f8fa;
+	padding-left: 30px;
+
+}
+
+table.adminMenuTable td {
+	margin: 0;
+	padding: 3px 3px 3px 3px;
+	background-color: #f6f8fa;
+			border-top: 1px solid #e6e5e9;
+			vertical-align:top;
+	-moz-border-radius: 0px;
+}
+
+
+table.adminMenuTable td.selected {
+	margin: 0;
+	padding: 3px 3px 3px 3px;
+			border-top: 1px solid #e6e5e9;
+			background-color: #f2f5f7;
+			background-image:url('../images/tab.gif');
+			background-repeat:no-repeat;
+	background-position:right top;
+	-moz-border-radius: 0px;
+}
+
+
+table.adminMenuTable td.selected a {color:#526972;text-decoration:none; font-weight:bold;}
+table.adminMenuTable td.selected a:active {color:#526972;}
+table.adminMenuTable td.selected a:hover {color:#526972;text-decoration:underline;}
+table.adminMenuTable td.selected a:focus {color:#526972;outline: none;}
+
+
+
+table.adminMenuTable tr {
+	vertical-align:top;
+}
+
+
+td.adminRightPanel {
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #e6e5e9;
+	border-collapse: collapse;
+	border-spacing: 0;
+	background-color: white;
+	vertical-align:top;
+	padding: 15px 30px;
+	/*-*/width: auto !important;
+	/*-*/display: block;
+	/*-*/margin-left: 20px !important;
+}
+
+table.linedDataTable {
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	border-color: #e6e5e9;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size:95%;
+	margin-bottom:5px;
+	/*-*/width: 100% !important;
+}
+
+table.linedDataTable td {
+	margin: 0;
+	padding: 3px 3px 3px 3px;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: #e6e5e9;
+	background-color: white;
+	-moz-border-radius: 0px;
+}
+
+table.linedDataTable td.complete {
+	background-color: #f4f4f4;
+}
+
+
+table.linedDataTable th {
+	margin: 0;
+	padding: 2px 3px 2px 2px;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: #e6e5e9;
+	background-color: #f6f8fa;
+	-moz-border-radius: 0px;
+}
+
+table.linedDataTable tr {
+	vertical-align:top;
+}

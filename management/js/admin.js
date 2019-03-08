@@ -14,7 +14,25 @@
 **
 **************************************************************************************************************************
 */
+/* New ==> Add from resources admin.js */
+$(document).ready(function(){
 
+    updateUserTable();
+
+    $(".AdminLink").click(function () {
+        updateTable($(this).attr("id"));
+      console.log("test");
+    });
+
+    $(".UserAdminLink").click(function () {
+        updateUserTable();
+    });
+  }
+
+
+
+
+/* End New */
 
  $(document).ready(function(){
 
@@ -345,4 +363,3 @@ function showAdd(tableName){
 function emptyResponse(tableName){
 	$('#span_' + tableName + "_response").html("");
 }
-

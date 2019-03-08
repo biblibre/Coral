@@ -1,21 +1,14 @@
-<?php
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
 
-/*
-**************************************************************************************************************************
-** CORAL Management Module v. 1.0
-**
-** Copyright (c) 2010 University of Notre Dame
-**
-** This file is part of CORAL.
-**
-** CORAL is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-**
-** CORAL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-**
-** You should have received a copy of the GNU General Public License along with CORAL.  If not, see <http://www.gnu.org/licenses/>.
-**
-**************************************************************************************************************************
-*/
+
+
+
+<?php
 
 include_once 'directory.php';
 
@@ -28,51 +21,9 @@ $_SESSION['ref_script']=$currentPage;
 if ($user->isAdmin()){
 
 ?>
-<div class="elementsAlign">
-	<div class="menu">
-
-			<table class='adminMenuTable' style='width:170px;'>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='usersTab'><?php echo _("Users");?></a></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='docsTab'><?php echo _("Documents Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='notesTab' ><?php echo _("Notes Types");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='catTab'><?php echo _("Catégories");?></div></td></tr>
-			</table>
-
-	</div>
-
-
-
-<div class="displayedTables">
-	<table>
-		<tr>
-	<td class='adminRightPanel' style='width:530px;margin:0;'>
-		<p>Voici la table</p>
-		<div style='margin-top:5px;' id='parole'>
-		<img src = "images/circle.gif" /><?php echo _("Loading...");?>
-		</div>
-		<div style='margin-top:5px;' class='smallDarkRedText' id='div_error'></div>
-
-	</td>
-	</tr>
-	</table>
-
-
-
-
-
-
-
-
-
-	// old code
-
-
-
-
-
-
-
-<table class="headerTable" id="users">
+<body>
+<div id="bla">
+<table class="headerTable" id="">
 <tr><td>
 <span class="headerText"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response' class='redText'></span>
 <br /><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>
@@ -82,11 +33,12 @@ if ($user->isAdmin()){
 </div>
 </td></tr>
 </table>
+<div>
 
 <br />
 <br />
 
-<table class="headerTable">
+<table class="headerTable" id='docType'>
 <tr><td>
 <span class="headerText"><?php echo _("Document Types");?></span>&nbsp;&nbsp;<span id='span_DocumentType_response'></span>
 <br /><span id='span_newDocumentType' class='adminAddInput'><a href='javascript:showAdd("DocumentType");'><?php echo _("add new document type");?></a></span>
@@ -100,7 +52,7 @@ if ($user->isAdmin()){
 <br />
 <br />
 
-<table class="headerTable">
+<table class="headerTable" id="noteType">
 <tr><td>
 <span class="headerText"><?php echo _("Note Types");?></span>&nbsp;&nbsp;<span id='span_DocumentNoteType_response'></span>
 <br /><span id='span_newDocumentNoteType' class='adminAddInput'><a href='javascript:showAdd("DocumentNoteType");'><?php echo _("add new note type");?></a></span>
@@ -188,7 +140,7 @@ if ($config->settings->organizationsModule != 'Y'){ ?>
 	<br />
 	<br />
 
-	<table class="headerTable">
+	<table class="headerTable" id="Categories">
 	<tr><td>
 	<span class="headerText"><?php echo _("Categories");?></span>&nbsp;&nbsp;<span id='span_Consortium_response'></span>
 	<br /><span id='span_newConsortium' class='adminAddInput'><a href='javascript:showAdd("Consortium");'><?php echo _("add new category");?></a></span>
@@ -204,6 +156,7 @@ if ($config->settings->organizationsModule != 'Y'){ ?>
 
 	<br />
 	<br />
+
 <!--
 	<table class="headerTable">
 	<tr><td>
@@ -221,7 +174,12 @@ if ($config->settings->organizationsModule != 'Y'){ ?>
 <br />
 
 <script type="text/javascript" src="js/admin.js"></script>
-								</center>
+
+
+								S
+
+
+</html>
 
 <?php
 }else{
@@ -230,14 +188,5 @@ if ($config->settings->organizationsModule != 'Y'){ ?>
 
 include 'templates/footer.php';
 ?>
-
-
-<script>
-$(function() {
-	$('#usersTab').click(function(){
-		$('#parole').load('adminTab.php #bla',function(){;
-			alert('reussi!');})
-		});
-
-	});
-</script>
+</body>
+</html>

@@ -21,6 +21,7 @@ $(document).ready(function(){
 
     $(".AdminLink").click(function () {
         updateTable($(this).attr("id"));
+      
     });
 
     $(".UserAdminLink").click(function () {
