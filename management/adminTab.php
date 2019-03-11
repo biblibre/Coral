@@ -170,9 +170,11 @@ if ($config->settings->organizationsModule != 'Y'){ ?>
 
 
 
-								S
+
 
 </body>
+
+<script type="text/javascript" src="js/admin.js"></script>
 
 
 <?php

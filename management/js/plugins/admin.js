@@ -21,10 +21,6 @@
 
 
 
-   $(".AdminMenuLink").click(function () {
-       updateUserList($(this).attr("id"));
-
-   });
 
 
 
