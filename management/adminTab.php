@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-
-
-
-
 <?php
 
 include_once 'directory.php';
@@ -21,24 +11,27 @@ $_SESSION['ref_script']=$currentPage;
 if ($user->isAdmin()){
 
 ?>
+<html>
 <body>
 <div id="bla">
 <table class="headerTable" id="">
 <tr><td>
 <span class="headerText"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response' class='redText'></span>
-<br /><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>
+<br /><span id='span_newUser'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>
 <br /><br />
 <div id='div_User'>
 <img src = "images/circle.gif" /><?php echo _("Loading...");?>
 </div>
 </td></tr>
 </table>
-<div>
+</div>
+
 
 <br />
 <br />
 
-<table class="headerTable" id='docType'>
+<div id='docType'>
+<table class="headerTable">
 <tr><td>
 <span class="headerText"><?php echo _("Document Types");?></span>&nbsp;&nbsp;<span id='span_DocumentType_response'></span>
 <br /><span id='span_newDocumentType' class='adminAddInput'><a href='javascript:showAdd("DocumentType");'><?php echo _("add new document type");?></a></span>
@@ -48,6 +41,7 @@ if ($user->isAdmin()){
 </div>
 </td></tr>
 </table>
+</div>
 
 <br />
 <br />
@@ -173,13 +167,13 @@ if ($config->settings->organizationsModule != 'Y'){ ?>
 
 <br />
 
-<script type="text/javascript" src="js/admin.js"></script>
+
 
 
 								S
 
+</body>
 
-</html>
 
 <?php
 }else{
@@ -188,5 +182,3 @@ if ($config->settings->organizationsModule != 'Y'){ ?>
 
 include 'templates/footer.php';
 ?>
-</body>
-</html>

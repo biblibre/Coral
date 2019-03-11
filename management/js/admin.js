@@ -15,28 +15,24 @@
 **************************************************************************************************************************
 */
 /* New ==> Add from resources admin.js */
-$(document).ready(function(){
 
-    updateUserTable();
-
-    $(".AdminLink").click(function () {
-        updateTable($(this).attr("id"));
-      console.log("test");
-    });
-
-    $(".UserAdminLink").click(function () {
-        updateUserTable();
-    });
-  }
-
-
-
-
-/* End New */
 
  $(document).ready(function(){
 
-      updateUserList();
+
+
+   $(".AdminMenuLink").click(function () {
+       updateUserList($(this).attr("id"));
+
+   });
+
+
+
+
+
+
+
+      //updateUserList();
       updateForm('Organization');
       updateForm('Consortium');
       updateForm('DocumentType');
@@ -51,7 +47,9 @@ $(document).ready(function(){
  });
 
 
-
+function hello(){
+  alert("hello");
+};
 
  function updateForm(tableName){
 
@@ -71,20 +69,6 @@ $(document).ready(function(){
  }
 
 
- function updateUserList(){
-
-       $.ajax({
-          type:       "GET",
-          url:        "ajax_htmldata.php",
-          cache:      false,
-          data:       "action=getAdminUserList",
-          success:    function(html) { $('#div_User').html(html);
-          	tb_reinit();
-          }
-      });
-
-
- }
 
 
 

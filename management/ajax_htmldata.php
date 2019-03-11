@@ -29,6 +29,9 @@ include_once 'directory.php';
 include_once 'user.php';
 
 
+
+
+
 switch ($_GET['action']) {
 
 	//this is the head to license info on license.php
