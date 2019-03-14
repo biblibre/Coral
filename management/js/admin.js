@@ -29,8 +29,11 @@
       updateQualifierList();
 */
       $(".AdminLink").click(function () {
-        console.log("test");
           updateTable($(this).attr("id"));
+      });
+
+      $(".AdminUserLink").click(function () {
+          updateUserLink($(this).attr("id"));
       });
 
  });
@@ -49,7 +52,25 @@
              $('#div_AdminContent').html(html);
              tb_reinit();
          }
+
+
+
      });
+
+     function updateUserList(){
+
+           $.ajax({
+              type:       "GET",
+              url:        "ajax_htmldata.php",
+              cache:      false,
+              data:       "action=getAdminUserList",
+              success:    function(html) { $('#div_AdminContent').html(html);
+              	tb_reinit();
+              }
+          });
+
+
+     }
 
      //make sure error is empty
      $('#div_error').html("");
