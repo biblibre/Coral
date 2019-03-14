@@ -32,10 +32,10 @@ if ($user->isAdmin()){
 	<div class="menu">
 
 			<table class='adminMenuTable' style='width:170px;'>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='usersTab'><?php echo _("Users");?></a></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='docsTab'><?php echo _("Documents Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='notesTab' ><?php echo _("Notes Types");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='catTab'><?php echo _("Catégories");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='adminUsers'><?php echo _("Users");?></a></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='docsTab' class='adminDocType'><?php echo _("Documents Type");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='notesTab' class='adminNoteType' ><?php echo _("Notes Types");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='catTab' class='adminCat'><?php echo _("Catégories");?></div></td></tr>
 			</table>
 
 	</div>
@@ -60,7 +60,7 @@ if ($user->isAdmin()){
 $(function() {
 		$('#usersTab').click( function(){
 		$('#parole').load('adminTab.php #bla', function(){
-			hello();
+		
 		})
 		});
 		$('#docsTab').click(function(){

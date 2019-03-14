@@ -2,7 +2,6 @@
 
 include_once 'directory.php';
 
-$pageTitle=_('Administration');
 include 'templates/header.php';
 
 //set referring page
@@ -14,7 +13,7 @@ if ($user->isAdmin()){
 <html>
 <body>
 <div id="bla">
-<table class="headerTable" id="">
+<table class="headerTable">
 <tr><td>
 <span class="headerText"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response' class='redText'></span>
 <br /><span id='span_newUser'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>

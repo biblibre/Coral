@@ -17,7 +17,7 @@
 /* New ==> Add from resources admin.js */
 
 
- $(document).ready(function(){
+ /*$(document).ready(function(){
 
 
 
@@ -28,7 +28,7 @@
 
 
 
-      //updateUserList();
+      updateUserList();
       updateForm('Organization');
       updateForm('Consortium');
       updateForm('DocumentType');
@@ -40,11 +40,43 @@
 
 
 
+ });*/
+
+
+
+ $(document).ready(function(){
+
+
+
+
+
+
+ 		$(".adminUsers").click(function () {
+        hello();
+
+ 		});
+
+ 		$(".adminDocType").click(function () {
+
+ 				 hello();
+ 		});
+
+ 		$(".adminNoteType").click(function () {
+ 				
+ 				 hello();
+ 		});
+
+
+ 		$(".adminCat").click(function () {
+
+ 				 hello();
+ 		});
+
+
  });
 
-
-function hello(){
-  alert("hello");
+ function hello(){
+ 	alert("Hello");
 };
 
  function updateForm(tableName){
