@@ -40,7 +40,13 @@ if ($user->isAdmin()){
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='Consortium' class='AdminLink'><?php echo _("Categories");?></div></td></tr>
 	</table>
 
-	<div id="div_AdminContent"></div>
+
+
+
+
+	<div id='div_AdminContent'></div>
+
+
 
 <script type="text/javascript" src="js/admin.js"></script>
 
