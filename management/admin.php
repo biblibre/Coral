@@ -34,10 +34,12 @@ if ($user->isAdmin()){
 <td style='width:170px;vertical-align:top;'>
 	<table class='adminMenuTable' style='width:170px;'>
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class=''><?php echo _("Users");?></a></div></td></tr>
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class=''><?php echo _("Documents Type");?></div></td></tr>
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='' class='AdminLink'><?php echo _("Notes type");?></div></td></tr>
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='AdminLink' id='DocumentType'><?php echo _("Documents Type");?></div></td></tr>
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='' class=''><?php echo _("Notes type");?></div></td></tr>
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='' class='AdminLink'><?php echo _("Categories");?></div></td></tr>
 	</table>
+
+	<div id="div_AdminContent"></div>
 
 <script type="text/javascript" src="js/admin.js"></script>
 

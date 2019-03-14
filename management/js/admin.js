@@ -17,7 +17,7 @@
 
 
  $(document).ready(function(){
-
+/*
       updateUserList();
       updateForm('Organization');
       updateForm('Consortium');
@@ -27,10 +27,43 @@
       updateForm('SignatureType');
       updateForm('Status');
       updateQualifierList();
-
-
+*/
+      $(".AdminLink").click(function () {
+        console.log("test");
+          updateTable($(this).attr("id"));
+      });
 
  });
+
+ function updateTable(className){
+/*
+     removeSelectedClassFromNav();
+     $("#" + className).parent().parent().addClass('selected');
+*/
+     $.ajax({
+         type:       "GET",
+         url:        "ajax_htmldata.php",
+         cache:      false,
+         data:       "action=getAdminList&tableName=" + className,
+         success:    function(html) {
+             $('#div_AdminContent').html(html);
+             tb_reinit();
+         }
+     });
+
+     //make sure error is empty
+     $('#div_error').html("");
+
+
+ }
+
+
+
+
+
+
+
+
 
 
 
@@ -345,4 +378,3 @@ function showAdd(tableName){
 function emptyResponse(tableName){
 	$('#span_' + tableName + "_response").html("");
 }
-
