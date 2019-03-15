@@ -87,7 +87,7 @@ $coralURL = $util->getCORALURL();
 <div class="wrapper">
 <center>
 
-<table id="main-table">
+<div id="main-table">
 
 <tr>
 <td style='vertical-align:top;'>
@@ -95,7 +95,7 @@ $coralURL = $util->getCORALURL();
 
 <center>
 
-<table class="titleTable" style="width:1024px;text-align:left;">
+<table class="titleTable" style="container-fluid;text-align:left;">
 
     <tr style='vertical-align:top;'>
         <td style='height:53px;' colspan='3'>

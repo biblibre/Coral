@@ -1354,7 +1354,7 @@ switch ($_GET['action']) {
 
 			?>
 			<table class='dataTable' style='width:550px'>
-				<tr><?php echo "<span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'>". _("add new user")."</a>";?></tr>
+				<tr><?php echo "<span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'><button type='button' class='btn btn-primary btn-sm'>". _("Add user")."</button></a>";?></tr>
 				<tr>
 				<th><?php echo _("Login ID");?></th>
 				<th><?php echo _("First Name");?></th>

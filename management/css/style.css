@@ -1945,14 +1945,15 @@ table.titleTable {
 
 /*---Align Menu in Admin --*/
 
-div.container{
-
+div.elementsAlign{
 	display: flex;
+<<<<<<< e68292359af9d6504882677913b94a702599d0da
 
 }
 
 div.displayed{
 	width: 500px;
 	height: auto;
+
 
 }

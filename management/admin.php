@@ -32,6 +32,7 @@ if ($user->isAdmin()){
 ?>
 
 <div class="container-fluid">
+<<<<<<< e68292359af9d6504882677913b94a702599d0da
 	<div class="row ">
 		<div class="col-2">
 			<div class="list-group ButtonMenu" id="list-tab" role="tablist">
@@ -50,6 +51,29 @@ if ($user->isAdmin()){
 </div>
 
 
+=======
+
+		<div class="row">
+		<div class="col-4">
+
+	<table>
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id="User" class='AdminUserLink'><?php echo _("Users");?></a></div></td></tr>
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentType' class='AdminLink' ><?php echo _("Documents Type");?></div></td></tr>
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentNoteType' class='AdminLink'><?php echo _("Notes type");?></div></td></tr>
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='Consortium' class='AdminLink'><?php echo _("Categories");?></div></td></tr>
+	</table>
+</div>
+
+
+<div class= "col-8">
+	<div id='div_AdminContent'></div>
+
+</div>
+
+</div>
+</div>
+
+>>>>>>> align menu with displayed panel, testing bootstrap button for' add' wip
 
 
 <script type="text/javascript" src="js/admin.js"></script>
