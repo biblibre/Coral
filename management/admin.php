@@ -29,23 +29,30 @@ if ($user->isAdmin()){
 
 ?>
 
-
+<div class="container">
+	<div class="menu">
 <table style='width:700px; text-align:left; vertical-align:top;'>
 <tr>
 <td style='width:170px;vertical-align:top;'>
 	<table class='adminMenuTable' style='width:170px;'>
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id="User" class='AdminLink'><?php echo _("Users");?></a></div></td></tr>
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='AdminLink' id='DocumentType'><?php echo _("Documents Type");?></div></td></tr>
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id="User" class='AdminUserLink'><?php echo _("Users");?></a></div></td></tr>
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentType' class='AdminLink' ><?php echo _("Documents Type");?></div></td></tr>
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentNoteType' class='AdminLink'><?php echo _("Notes type");?></div></td></tr>
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='Consortium' class='AdminLink'><?php echo _("Categories");?></div></td></tr>
 	</table>
+</div>
 
 
 
+
+<div class="dispayed">
 
 
 	<div id='div_AdminContent'></div>
 
+</div>
+
+</div>
 
 
 <script type="text/javascript" src="js/admin.js"></script>

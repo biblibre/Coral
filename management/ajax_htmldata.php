@@ -1318,9 +1318,11 @@ switch ($_GET['action']) {
 		$instance = new $className();
 		$resultArray = $instance->allAsArray();
 		if (count($resultArray) > 0){
-			?>
-			<table class='dataTable' style='width:350px'>
-				<?php
+
+				echo "<table class='dataTable' style='width:350px'>";
+
+				echo "<tr><span id='span_new". $className ."' class='adminAddInput'><a href=\"javascript:showAdd('". $className ."')\">" . _("add new $className") ."</a></span></tr>";
+
 
 				foreach($resultArray as $result){
 					echo "<tr>";
@@ -1352,6 +1354,7 @@ switch ($_GET['action']) {
 
 			?>
 			<table class='dataTable' style='width:550px'>
+				<tr><?php echo "<span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'>". _("add new user")."</a>";?></tr>
 				<tr>
 				<th><?php echo _("Login ID");?></th>
 				<th><?php echo _("First Name");?></th>
@@ -1386,6 +1389,7 @@ switch ($_GET['action']) {
 
 				?>
 			</table>
+
 			<?php
 
 		}else{
@@ -1575,4 +1579,6 @@ switch ($_GET['action']) {
 
 
 
+
 ?>
+<script type="text/javascript" src="js/admin.js"></script>
