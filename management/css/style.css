@@ -1931,3 +1931,17 @@ table.titleTable {
 	margin-top: 0px !important;
 	overflow-x: hidden !important;
 }
+
+
+/*---Align Menu in Admin --*/
+
+div.container{
+
+	display: flex;
+	
+}
+
+div.displayed{
+	width: 500px;
+	height: auto;
+}

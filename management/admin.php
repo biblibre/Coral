@@ -17,6 +17,8 @@
 **************************************************************************************************************************
 */
 
+
+
 include_once 'directory.php';
 
 $pageTitle=_('Administration');
@@ -29,9 +31,11 @@ if ($user->isAdmin()){
 
 ?>
 
-<div class="container">
-	<div class="menu">
-<table style='width:700px; text-align:left; vertical-align:top;'>
+<div class="container-fluid">
+
+		<div>
+		
+<table>
 <tr>
 <td style='width:170px;vertical-align:top;'>
 	<table class='adminMenuTable' style='width:170px;'>
@@ -43,25 +47,24 @@ if ($user->isAdmin()){
 </div>
 
 
-
-
-<div class="dispayed">
-
-
-	<div id='div_AdminContent'></div>
+<div>
+	<div class= "displayed" id='div_AdminContent'></div>
 
 </div>
 
 </div>
+</div>
+
 
 
 <script type="text/javascript" src="js/admin.js"></script>
-
 
 <?php
 }else{
 	echo _("You don't have permission to access this page");
 }
+?>
 
+	<?php
 include 'templates/footer.php';
 ?>
