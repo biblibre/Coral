@@ -1932,6 +1932,7 @@ table.titleTable {
 	overflow-x: hidden !important;
 }
 
+
 /*--- Icon Align ---*/
 
 .addIcon {
@@ -1940,4 +1941,18 @@ table.titleTable {
 
 .addIconTab {
 	text-align: center;
+=======
+
+/*---Align Menu in Admin --*/
+
+div.container{
+
+	display: flex;
+
+}
+
+div.displayed{
+	width: 500px;
+	height: auto;
+
 }

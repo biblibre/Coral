@@ -58,6 +58,8 @@ if ($user->isAdmin()){
 }else{
 	echo _("You don't have permission to access this page");
 }
+?>
 
+	<?php
 include 'templates/footer.php';
 ?>
