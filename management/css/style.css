@@ -1935,13 +1935,12 @@ table.titleTable {
 
 /*---Align Menu in Admin --*/
 
-div.container{
-
+div.elementsAlign{
 	display: flex;
-	
+	justify-content: space-around;
+
 }
 
-div.displayed{
-	width: 500px;
-	height: auto;
+.displayedTables{
+	margin-left: 20px;
 }

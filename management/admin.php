@@ -33,12 +33,10 @@ if ($user->isAdmin()){
 
 <div class="container-fluid">
 
-		<div>
-		
-<table>
-<tr>
-<td style='width:170px;vertical-align:top;'>
-	<table class='adminMenuTable' style='width:170px;'>
+		<div class="row">
+		<div class="col-4">
+
+	<table>
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id="User" class='AdminUserLink'><?php echo _("Users");?></a></div></td></tr>
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentType' class='AdminLink' ><?php echo _("Documents Type");?></div></td></tr>
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentNoteType' class='AdminLink'><?php echo _("Notes type");?></div></td></tr>
@@ -47,8 +45,8 @@ if ($user->isAdmin()){
 </div>
 
 
-<div>
-	<div class= "displayed" id='div_AdminContent'></div>
+<div class= "col-8">
+	<div id='div_AdminContent'></div>
 
 </div>
 
