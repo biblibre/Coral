@@ -33,7 +33,7 @@
       });
 
       $(".AdminUserLink").click(function () {
-          updateUserLink($(this).attr("id"));
+          updateUserList($(this).attr("id"));
       });
 
  });
@@ -96,7 +96,7 @@
           url:        "ajax_htmldata.php",
           cache:      false,
           data:       "action=getAdminList&tableName=" + tableName,
-          success:    function(html) { $('#div_' + tableName).html(html);
+          success:    function(html) { $('#div_AdminContent').html(html);
           	tb_reinit();
           }
       });
@@ -114,7 +114,7 @@
           url:        "ajax_htmldata.php",
           cache:      false,
           data:       "action=getAdminUserList",
-          success:    function(html) { $('#div_User').html(html);
+          success:    function(html) { $('#div_AdminContent').html(html);
           	tb_reinit();
           }
       });
@@ -384,14 +384,19 @@ function validateUserForm() {
 
 function showAdd(tableName){
        $('#span_new' + tableName).html("<input type='text' name='new" + tableName + "' id='new" + tableName + "' class='adminAddInput' />  <a href='javascript:addData(\"" + tableName + "\");'>"+_("add") + "</a>");
-
+        //on peut remplacer le span + table
        //attach enter key event to new input and call add data when hit
        $('#new' + tableName).keyup(function(e) {
 
                if(e.keyCode == 13) {
                	   addData(tableName);
+
+
+
+
                }
         });
+
 
 }
 

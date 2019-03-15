@@ -17,6 +17,8 @@
 **************************************************************************************************************************
 */
 
+
+
 include_once 'directory.php';
 
 $pageTitle=_('Administration');
@@ -29,26 +31,28 @@ if ($user->isAdmin()){
 
 ?>
 
-<table style='width:700px; text-align:left; vertical-align:top;'>
-<tr>
-<td style='width:170px;vertical-align:top;'>
-	<table class='adminMenuTable' style='width:170px;'>
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id="User" class='AdminLink'><?php echo _("Users");?></a></div></td></tr>
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='AdminLink' id='DocumentType'><?php echo _("Documents Type");?></div></td></tr>
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentNoteType' class='AdminLink'><?php echo _("Notes type");?></div></td></tr>
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='Consortium' class='AdminLink'><?php echo _("Categories");?></div></td></tr>
-	</table>
+<div class="container-fluid">
+	<div class="row ">
+		<div class="col-2">
+			<div class="list-group ButtonMenu" id="list-tab" role="tablist">
+				<a href='javascript:void(0);' class='updateUserList'><button id="PreSelectedButton" type="button"><?php echo _("Users");?></button></a>
+				<a href='javascript:void(0);' id='DocumentType' class='updateTable' ><button type="button"><?php echo _("Document Types");?></button></a>
+				<a href='javascript:void(0);' id='DocumentNoteType' class='updateTable'><button type="button"><?php echo _("Note Types");?></button></a>
+				<a href='javascript:void(0);' id='Consortium' class='updateTable'><button type="button"><?php echo _("Categories");?></button></a>
+			<!-- disabled menu part
+			<a href='javascript:void(0);'  class='updateQualifierList'><php /*echo _("Qualifier");?></a>
+			<a href='javascript:void(0);'  class='updateExpressionTypeList'><php /*echo _("Expression");?></a>
+		-->
+			</div>
+		</div>
+			<div class="col-10" ><div class="adminContentAlign"><div id='div_AdminContent'></div></div></div>
+	</div>
+</div>
 
-
-
-
-
-	<div id='div_AdminContent'></div>
 
 
 
 <script type="text/javascript" src="js/admin.js"></script>
-
 
 <?php
 }else{
