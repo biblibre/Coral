@@ -33,19 +33,40 @@ if ($user->isAdmin()){
 <div class="elementsAlign">
 	<div class="menu">
 			<table class='adminMenuTable' style='width:170px;'>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class=''><?php echo _("Users");?></a></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='' class=''><?php echo _("Documents Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='' class='' ><?php echo _("Expression Types");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='' class=''><?php echo _("Qualifiers");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='' class=''><?php echo _("Signature Types");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateUserList'><?php echo _("Users");?></a></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentType' class='updateForm' ><?php echo _("Documents Type");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateExpressionTypeList' ><?php echo _("Expression Types");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateQualifierList'><?php echo _("Qualifiers");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='SignatureType' class='updateForm' ><?php echo _("Signature Types");?></div></td></tr>
 
 
+<?php
+
+$config = new Configuration;
+
+//if the Resources module is not installed, do not display calendar options
+if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?>
+
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateCalendarSettingsList'><?php echo _("Calendar Settings");?></div></td></tr>
+
+
+
+<?php
+}
+
+//if the org module is not installed, display provider list for updates
+if ($config->settings->organizationsModule != 'Y'){ ?>
+
+
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateForm' id='Consortium'><?php echo _("Consortia");?></div></td></tr>
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateForm' id='Organization'><?php echo _("Providers");?></div></td></tr>
 
 	</table>
 	</div>
 
-<br />
-<div id='div_AdminContent'></div>
+
+<div id='div_AdminContent'>Tableau</div>
+</br>
 
 <script type="text/javascript" src="js/admin.js"></script>
 

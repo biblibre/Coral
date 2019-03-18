@@ -18,31 +18,51 @@
 
  $(document).ready(function(){
 
-      updateUserList();
-      updateForm('Organization');
-      updateForm('Consortium');
-      updateForm('DocumentType');
-      updateExpressionTypeList();
-      updateForm('SignatureType');
-      updateForm('Status');
-      updateCalendarSettingsList();
-      updateQualifierList();
+      //updateUserList();
+      //updateForm('Organization');
+      //updateForm('Consortium');
+      //updateForm('DocumentType');
+      //updateExpressionTypeList();
+      //updateForm('SignatureType');
+      //updateForm('Status');
+      //updateCalendarSettingsList();
+      //updateQualifierList();
+
+      $(".updateForm").click(function () {
+          updateTable($(this).attr("id"));
+          alert("hello");
+      });
+
+      $(".updateUserList").click(function () {
+          updateUserList($(this).attr("id"));
+      });
+      $(".updateExpressionTypeList").click(function () {
+          updateExpressionTypeList($(this).attr("id"));
+      });
+      $(".updateCalendarSettingsList").click(function () {
+          updateCalendarSettingsList($(this).attr("id"));
+
+
+      $(".updateQualifierList").click(function () {
+          updateQualifierList($(this).attr("id"));
+      });
+
+    });
 
 
 
- });
 
 
 
-
- function updateForm(tableName){
+ function updateForm(className){
 
        $.ajax({
           type:       "GET",
           url:        "ajax_htmldata.php",
           cache:      false,
-          data:       "action=getAdminList&tableName=" + tableName,
-          success:    function(html) { $('#div_' + tableName).html(html);
+          data:       "action=getAdminList&tableName=" + className,
+          success:    function(html) {
+            $('#div_AdminContent').html(html);
           	tb_reinit();
           }
       });
@@ -60,7 +80,7 @@
           url:        "ajax_htmldata.php",
           cache:      false,
           data:       "action=getAdminUserList",
-          success:    function(html) { $('#div_User').html(html);
+          success:    function(html) { $('#div_AdminContent').html(html);
           	tb_reinit();
           }
       });
@@ -77,7 +97,7 @@
            url:        "ajax_htmldata.php",
            cache:      false,
            data:       "action=getExpressionTypeList",
-           success:    function(html) { $('#div_ExpressionType').html(html);
+           success:    function(html) { $('#div_AdminContent').html(html);
            	tb_reinit();
            }
        });
@@ -93,7 +113,7 @@
             url:        "ajax_htmldata.php",
             cache:      false,
             data:       "action=getQualifierList",
-            success:    function(html) { $('#div_Qualifier').html(html);
+            success:    function(html) { $('#div_AdminContent').html(html);
             	tb_reinit();
             }
         });
@@ -108,7 +128,7 @@
            url:        "ajax_htmldata.php",
            cache:      false,
            data:       "action=getCalendarSettingsList",
-           success:    function(html) { $('#div_CalendarSettings').html(html);
+           success:    function(html) { $('div_AdminContent').html(html);
            	tb_reinit();
            }
        });
