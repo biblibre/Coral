@@ -17,12 +17,21 @@
 
  $(document).ready(function(){
 
-      updateUserForm();
-      updateForm('OrganizationRole');
-      updateForm('ContactRole');
-      updateForm('AliasType');
-      updateForm('ExternalLoginType');
-      updateForm('IssueLogType');
+      //updateUserForm();
+      //updateForm('OrganizationRole');
+      //updateForm('ContactRole');
+      //updateForm('AliasType');
+      //updateForm('ExternalLoginType');
+      //updateForm('IssueLogType');
+
+      $(".updateUserForm").click(function () {
+          updateUserForm($(this).attr("id"));
+
+      });
+
+      $(".updateForm").click(function () {
+          updateForm($(this).attr("id"));
+      });
 
  });
 
@@ -34,7 +43,7 @@
           url:        "ajax_forms.php",
           cache:      false,
           data:       "action=getAdminUserForm",
-          success:    function(html) { $('#div_User').html(html);
+          success:    function(html) { $('#div_AdminContent').html(html);
           	tb_reinit();
           }
       });
@@ -65,7 +74,7 @@
           url:        "ajax_forms.php",
           cache:      false,
           data:       "action=getAdminDisplay&className=" + className,
-          success:    function(html) { $('#div_' + className).html(html);
+          success:    function(html) { $('#div_AdminContent').html(html);
           	tb_reinit();
           }
       });
