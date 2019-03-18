@@ -1219,12 +1219,14 @@ switch ($_GET['action']) {
 		$resultArray = $instance->allAsArray();
 
 		if (count($resultArray) > 0){
+
+
 			?>
 
-		<span><?php echo _("$className "); ?></span><span id='span_new". $className ."' class='adminAddInput'><a href=\"javascript:showAdd('". $className ."')\"><?php echo _("add new $className"); ?></a></span>
 			<table class='dataTable' style='width:350px'>
 
 				<?php
+				echo "<span>" . _("$className ") ."</span><span id='span_new". $className ."' class='adminAddInput'><a href=\"javascript:showAdd('". $className ."')\">" . _("add new $className") ."</a></span>";
 
 
 				foreach($resultArray as $result){
