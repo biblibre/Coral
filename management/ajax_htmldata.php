@@ -1413,6 +1413,11 @@ switch ($_GET['action']) {
 
 			?>
 			<table class='dataTable' style='width:400px'>
+				<tr><td>
+				<span class="headerText"><?php echo _("Document Types");?></span>&nbsp;&nbsp;<span id='span_DocumentType_response'></span>
+				<br /><span id='span_newDocumentType' class='adminAddInput'><a href='javascript:showAdd("DocumentType");'><?php echo _("add new document type");?></a></span>
+				<br /><br />
+				<tr>
 				<tr>
 				<th><?php echo _("Expression Type");?></th>
 				<th><?php echo _("Note Type");?></th>
