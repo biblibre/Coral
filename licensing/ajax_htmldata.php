@@ -1220,11 +1220,15 @@ switch ($_GET['action']) {
 
 		if (count($resultArray) > 0){
 			?>
+
+		<span><?php echo _("$className "); ?></span><span id='span_new". $className ."' class='adminAddInput'><a href=\"javascript:showAdd('". $className ."')\"><?php echo _("add new $className"); ?></a></span>
 			<table class='dataTable' style='width:350px'>
+
 				<?php
 
+
 				foreach($resultArray as $result){
-					echo "<tr>";
+
 					echo "<td>" . $result['shortName'] . "</td>";
 					echo "<td style='width:70px' class='icon'><a href='ajax_forms.php?action=getAdminUpdateForm&tableName=" . $className . "&updateID=" . $result[lcfirst($className) . 'ID'] . "&height=130&width=250&modal=true' class='thickbox' id='expression'><img id='Edit' src='images/edit.gif' title= '"._("Edit")."' /></a></td>";
 					echo "<td style='width:50px' class='icon'><a href='javascript:deleteData(\"" . $className . "\",\"" . $result[lcfirst($className) . 'ID'] . "\")'><img id='Remove'  src='images/cross.gif' title= '"._("Remove")."' /></a></td>";
@@ -1233,6 +1237,7 @@ switch ($_GET['action']) {
 
 				?>
 			</table>
+		</div>
 			<?php
 
 		}else{
@@ -1253,8 +1258,11 @@ switch ($_GET['action']) {
 		if (count($user->allAsArray()) > 0){
 
 			?>
+
+			<span class="headerText"><?php echo _("Users ");?></span><span id='span_User_response' class='redText'></span><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>
+
 			<table class='dataTable' style='width:550px'>
-				<tr>
+
 				<th><?php echo _("Login ID");?></th>
 				<th><?php echo _("First Name");?></th>
 				<th><?php echo _("Last Name");?></th>
@@ -1319,8 +1327,10 @@ switch ($_GET['action']) {
 		if (count($instanceArray) > 0){
 
 			?>
+			<br /><span class="headerText"><?php echo _("Expression Types");?></span>&nbsp;&nbsp;<span id='span_ExpressionType_response'></span><span id='span_newExpressionType' class='adminAddInput'><a href='ajax_forms.php?action=getExpressionTypeForm&height=148&width=265&modal=true' class='thickbox' id='expressionType'><?php echo _("add new expression type");?></a></span>
+
 			<table class='dataTable' style='width:400px'>
-				<tr>
+
 				<th><?php echo _("Expression Type");?></th>
 				<th><?php echo _("Note Type");?></th>
 				<th>&nbsp;</th>
@@ -1360,6 +1370,9 @@ switch ($_GET['action']) {
 		if (count($instanceArray) > 0){
 
 			?>
+
+			<span class="headerText"><?php echo _("Calendar Settings");?></span>&nbsp;&nbsp;<span id='span_CalendarSettings_response'></span>
+			<br /><br />
 			<table class='dataTable' style='width:400px'>
 				<tr>
 				<th><?php echo _("Setting");?></th>
@@ -1433,6 +1446,8 @@ switch ($_GET['action']) {
 
 
 		?>
+		<span class="headerText"><?php echo _("Qualifiers");?></span>&nbsp;&nbsp;<span id='span_Qualifier_response'></span><span id='span_newQualifier' class='adminAddInput'><a href='ajax_forms.php?action=getQualifierForm&height=148&width=295&modal=true' class='thickbox'><?php echo _("add new qualifier");?></a></span>
+		<br /><br />
 		<table class='dataTable' style='width:400px'>
 			<tr>
 			<th><?php echo _("For Expression Type");?></th>

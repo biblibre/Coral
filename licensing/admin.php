@@ -31,7 +31,7 @@ if ($user->isAdmin()){
 
 
 <div class="elementsAlign">
-	
+
 	<div class="menu">
 			<table class='adminMenuTable' style='width:170px;'>
 				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateUserList'><?php echo _("Users");?></a></div></td></tr>
@@ -66,7 +66,7 @@ if ($config->settings->organizationsModule != 'Y'){ ?>
 	</div>
 
 
-<div id='div_AdminContent'>Tableau</div>
+<div id='div_AdminContent'></div>
 </br>
 
 <script type="text/javascript" src="js/admin.js"></script>
