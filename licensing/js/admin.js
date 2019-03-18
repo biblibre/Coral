@@ -16,21 +16,14 @@
 */
 
 
+
  $(document).ready(function(){
 
-      //updateUserList();
-      //updateForm('Organization');
-      //updateForm('Consortium');
-      //updateForm('DocumentType');
-      //updateExpressionTypeList();
-      //updateForm('SignatureType');
-      //updateForm('Status');
-      //updateCalendarSettingsList();
-      //updateQualifierList();
+
 
       $(".updateForm").click(function () {
-          updateTable($(this).attr("id"));
-          alert("hello");
+          updateForm($(this).attr("id"));
+
       });
 
       $(".updateUserList").click(function () {
@@ -41,7 +34,7 @@
       });
       $(".updateCalendarSettingsList").click(function () {
           updateCalendarSettingsList($(this).attr("id"));
-
+        });
 
       $(".updateQualifierList").click(function () {
           updateQualifierList($(this).attr("id"));
@@ -384,9 +377,9 @@ function showAdd(tableName){
                }
         });
 
-}
+};
 
 
 function emptyResponse(tableName){
 	$('#span_' + tableName + "_response").html("");
-}
+};

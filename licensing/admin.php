@@ -31,6 +31,7 @@ if ($user->isAdmin()){
 
 
 <div class="elementsAlign">
+	
 	<div class="menu">
 			<table class='adminMenuTable' style='width:170px;'>
 				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateUserList'><?php echo _("Users");?></a></div></td></tr>
