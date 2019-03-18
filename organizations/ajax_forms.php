@@ -983,7 +983,9 @@ if ($issues) {
 		if (count($instanceArray) > 0){
 			?>
 			<table class='dataTable' style='width:350px'>
+
 				<?php
+          echo "<span>" . _("$className ") ."</span><span id='span_new". $className ."' class='adminAddInput'><a href=\"javascript:showAdd('". $className ."')\">" . _("add new $className") ."</a></span>";
 
 				foreach($instanceArray as $instance) {
 					echo "<tr>";
@@ -1077,6 +1079,8 @@ if ($issues) {
 
 		if (count($instanceArray) > 0){
 			?>
+      <span class="headerText"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=185&width=250&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>
+    	<br /><br />
 			<table class='dataTable' style='width:550px'>
 				<tr>
 				<th align='left'><?php echo _("Login ID");?></th>
@@ -1181,5 +1185,3 @@ if ($issues) {
 
 
 ?>
-
-
