@@ -1934,13 +1934,3 @@ table.titleTable {
 
 
 /*---Align Menu in Admin --*/
-
-div.elementsAlign{
-	display: flex;
-	justify-content: space-around;
-
-}
-
-.displayedTables{
-	margin-left: 20px;
-}
