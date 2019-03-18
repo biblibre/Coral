@@ -28,87 +28,22 @@ $_SESSION['ref_script']=$currentPage;
 //ensure user has admin permissions
 if ($user->isAdmin()){
 	?>
-	<table class="headerTable">
-	<tr><td align='left'>
-	<span class="headerText"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span>
-	<br /><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=185&width=250&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>
-	<br /><br />
-	<div id='div_User'>
-	<img src = "images/circle.gif"><?php echo _("Loading...");?>
+
+	<div class="menu">
+
+			<table class='adminMenuTable' style='width:170px;'>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateUserForm'><?php echo _("Users");?></a></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='OrganizationRole' class='updateForm'><?php echo _("Organization Role");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='ContactRole' class='updateForm' ><?php echo _("Contact Role");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='AliasType' class='updateForm'><?php echo _("Alias Type");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='ExternalLoginType' class='updateForm'><?php echo _("External Login Type");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='IssueLogType' class='updateForm'><?php echo _("Issue Type");?></div></td></tr>
+
+
+			</table>
+
 	</div>
-	</td></tr>
-	</table>
-
-	<br />
-	<br />
-
-
-	<table class="headerTable">
-	<tr><td align='left'>
-	<span class="headerText"><?php echo _("Organization Role");?></span>&nbsp;&nbsp;<span id='span_OrganizationRole_response'></span>
-	<br /><span id='span_newOrganizationRole' class='adminAddInput'><a href='javascript:showAdd("OrganizationRole");'><?php echo _("add new organization role");?></a></span>
-	<br /><br />
-	<div id='div_OrganizationRole'>
-	<img src = "images/circle.gif"><?php echo _("Loading...");?>
-	</div>
-	</td></tr>
-	</table>
-
-	<br />
-	<br />
-
-	<table class="headerTable">
-	<tr><td align='left'>
-	<span class="headerText"><?php echo _("Contact Role");?></span>&nbsp;&nbsp;<span id='span_ContactRole_response'></span>
-	<br /><span id='span_newContactRole' class='adminAddInput'><a href='javascript:showAdd("ContactRole");'><?php echo _("add new contact role");?></a></span>
-	<br />
-	<div id='div_ContactRole'>
-	<img src = "images/circle.gif"><?php echo _("Loading...");?>
-	</div>
-	</td></tr>
-	</table>
-
-
-	<br />
-	<br />
-
-	<table class="headerTable">
-	<tr><td align='left'>
-	<span class="headerText"><?php echo _("Alias Type");?></span>&nbsp;&nbsp;<span id='span_AliasType_response'></span>
-	<br /><span id='span_newAliasType' class='adminAddInput'><a href='javascript:showAdd("AliasType");'><?php echo _("add new alias type");?></a></span>
-	<br />
-	<div id='div_AliasType'>
-	<img src = "images/circle.gif"><?php echo _("Loading...");?>
-	</div>
-	</td></tr>
-	</table>
-
-	<br />
-	<br />
-
-	<table class="headerTable">
-	<tr><td align='left'>
-	<span class="headerText"><?php echo _("External Login Type");?></span>&nbsp;&nbsp;<span id='span_ExternalLoginType_response'></span>
-	<br /><span id='span_newExternalLoginType' class='adminAddInput'><a href='javascript:showAdd("ExternalLoginType");'><?php echo _("add new external login type");?></a></span>
-	<br />
-	<div id='div_ExternalLoginType'>
-	<img src = "images/circle.gif"><?php echo _("Loading...");?>
-	</div>
-	</td></tr>
-	</table>
-
-  <table class="headerTable">
-    <tr><td align='left'>
-      <span class="headerText"><?php echo _("Issue Type");?></span>&nbsp;&nbsp;<span id='span_IssueLogType_response'></span>
-      <br /><span id='span_newIssueLogType' class='adminAddInput'><a href='javascript:showAdd("IssueLogType");'><?php echo _("add new issue type");?></a></span>
-      <br />
-      <div id='div_IssueLogType'>
-        <img src = "images/circle.gif"><?php echo _("Loading...");?>
-      </div>
-    </td></tr>
-  </table>
-  <br />
-  <br />
+	<div id='div_AdminContent'></div>
 
 	<script type="text/javascript" src="js/admin.js"></script>
 	<?php
@@ -120,5 +55,3 @@ if ($user->isAdmin()){
 
 include 'templates/footer.php';
 ?>
-
-
