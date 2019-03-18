@@ -121,7 +121,7 @@
            url:        "ajax_htmldata.php",
            cache:      false,
            data:       "action=getCalendarSettingsList",
-           success:    function(html) { $('div_AdminContent').html(html);
+           success:    function(html) { $('#div_AdminContent').html(html);
            	tb_reinit();
            }
        });
