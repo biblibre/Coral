@@ -6,50 +6,22 @@ include 'templates/header.php';
 if ($user->isAdmin()){
 ?>
 
+<div class="elementsAlign">
+	<div class="menu">
 
-<table class="headerTable">
-<tr><td>
-<span class="headerText"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response' class='redText'></span>
-<br /><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=196&width=248&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>
-<br /><br />
-<div id='div_User'>
-<img src = "images/circle.gif"><?php echo _("Loading...");?>
-</div>
-</td></tr>
-</table>
+			<table class='adminMenuTable' style='width:170px;'>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='adminUsers'><?php echo _("Users");?></a></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='docsTab' class='adminDocType'><?php echo _("Email addresses for logs");?></div></td></tr>
+				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='notesTab' class='adminNoteType' ><?php echo _("Outlier Parameters   ");?></div></td></tr>
+			</table>
 
-
-<br />
-<br />
-
-<table class="headerTable">
-<tr><td>
-<span class="headerText"><?php echo _("Email addresses for logs");?></span>&nbsp;&nbsp;<span id='span_EmailAddress_response'></span>
-<br /><span id='span_newEmailAddress' class='adminAddInput'><a href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=238&modal=true' class='thickbox'><?php echo _("add new email address");?></a></span>
-<br /><br />
-<div id='div_emailAddresses'>
-<img src = "images/circle.gif"><?php echo _("Loading...");?>
-</div>
-</td></tr>
-</table>
-
-<br />
-<br />
+	</div>
 
 
 
-<table class="headerTable">
-<tr><td>
-<span class="headerText"><?php echo _("Outlier Parameters");?></span>&nbsp;&nbsp;<span id='span_Outlier_response'></span>
-<br /><br />
-<div id='div_outliers'>
-<img src = "images/circle.gif"><?php echo _("Loading...");?>
-</div>
-</td></tr>
-</table>
+<div id='div_AdminContent'></div>
 
-<br />
-<br />
+
 
 <script type="text/javascript" src="js/admin.js"></script>
 
