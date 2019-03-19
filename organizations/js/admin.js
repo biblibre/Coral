@@ -25,7 +25,7 @@
       //updateForm('IssueLogType');
 
       $(".updateUserForm").click(function () {
-          updateUserForm($(this).attr("id"));
+          updateUserForm();
 
       });
 

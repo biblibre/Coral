@@ -33,8 +33,18 @@
       });
 
       $(".AdminUserLink").click(function () {
-          updateUserList($(this).attr("id"));
+          updateUserList();
       });
+/* disabled functions call
+      $(".updateQualifierList").click(function () {
+          updateQualifierList();
+      });
+
+      $(".updateExpressionTypeList").click(function () {
+          updateExpressionTypeList();
+      });
+*/
+
 
  });
 
@@ -131,7 +141,7 @@
            url:        "ajax_htmldata.php",
            cache:      false,
            data:       "action=getExpressionTypeList",
-           success:    function(html) { $('#div_ExpressionType').html(html);
+           success:    function(html) { $('#div_AdminContent').html(html);
            	tb_reinit();
            }
        });
@@ -147,7 +157,7 @@
             url:        "ajax_htmldata.php",
             cache:      false,
             data:       "action=getQualifierList",
-            success:    function(html) { $('#div_Qualifier').html(html);
+            success:    function(html) { $('#div_AdminContent').html(html);
             	tb_reinit();
             }
         });

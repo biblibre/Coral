@@ -34,7 +34,7 @@
 
   		$(".updateOutlierTable").click(function () {
   				//updateAlertTable();
-  				    updateOutlierTable();
+  				 updateOutlierTable();
   		});
 
 
