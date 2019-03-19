@@ -982,11 +982,23 @@ if ($issues) {
 
 		if (count($instanceArray) > 0){
 			?>
+      <section class= "tabTitle">
+      <span class="headerText"><?php echo _("$className ") ;?></span>
+      </section>
+
 			<table class='dataTable' style='width:350px'>
-
+        <thead>
+          <tr>
 				<?php
-          echo "<span>" . _("$className ") ."</span><span id='span_new". $className ."' class='adminAddInput'><a href=\"javascript:showAdd('". $className ."')\">" . _("add new $className") ."</a></span>";
 
+          echo "<th></th>
+          <th></th>
+          <th><span id='span_new". $className ."' class='adminAddInput admTabHeader'><a href=\"javascript:showAdd('". $className ."')\">" . _("add new $className") ."</a></span></th>";
+          ?>
+
+        </tr>
+        </thead>
+          <?php
 				foreach($instanceArray as $instance) {
 					echo "<tr>";
 					echo "<td>" . $instance['shortName'] . "</td>";
@@ -1079,20 +1091,25 @@ if ($issues) {
 
 		if (count($instanceArray) > 0){
 			?>
-      <span class="headerText"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=185&width=250&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>
-    	<br /><br />
+      <section class= "tabTitleUser">
+      <span class="headerText"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span>
+      </section>
+
 			<table class='dataTable' style='width:550px'>
+        <thead>
 				<tr>
 				<th align='left'><?php echo _("Login ID");?></th>
 				<th align='left'><?php echo _("First Name");?></th>
 				<th align='left'><?php echo _("Last Name");?></th>
 				<th align='left'><?php echo _("Privilege");?></th>
 				<th>&nbsp;</th>
-				<th>&nbsp;</th>
+				<th><span id='span_newUser'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=185&width=250&modal=true' class='thickbox' id='expression'><?php echo _("add user");?></a></span></th>
 				</tr>
+        </thead>
 				<?php
 
 				foreach($instanceArray as $instance) {
+          echo "<tbody>";
 					echo "<tr>";
 					echo "<td>" . $instance['loginID'] . "</td>";
 					echo "<td>" . $instance['firstName'] . "</td>";
@@ -1101,6 +1118,8 @@ if ($issues) {
 					echo "<td><a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=" . $instance['loginID'] . "&height=185&width=250&modal=true' class='thickbox' id='expression'><img id='Edit' src='images/edit.gif' title= '"._("Edit")."' /></a></td>";
 					echo "<td class='icon'><a href='javascript:deleteUser(\"" . $instance['loginID'] . "\")'><img id='Remove'  src='images/cross.gif' title= '"._("Remove")."' /></a></td>";
 					echo "</tr>";
+          echo "</tbody>";
+
 				}
 
 				?>

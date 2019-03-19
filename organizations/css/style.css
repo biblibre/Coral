@@ -39,7 +39,7 @@ body {
 	text-align: center;
 }
 
-a {color:#4d4d4d;}
+a {color:#4d4d4d !important;}
 a:active {color:#94a9be;}
 a:focus {color:#94a9be; outline: none; -moz-outline-style: none;}
 
@@ -2041,6 +2041,7 @@ table.titleTable {
 	overflow-x: hidden !important;
 }
 
+
 /*--- Icons align in Admin ---*/
 .addIcon {
 	vertical-align: -2px;
@@ -2052,4 +2053,43 @@ table.titleTable {
 
 .editIcon  {
 	padding-left: 8px;
+
+/*--- Side menu in admin ---*/
+
+button{
+	background: linear-gradient(to right, #1B77AA, #ECECEC);
+	width: 160px;
+	height: 40px;
+	color: white;
+	font-weight: bold;
+	font-size: 0.8em !important;
+	text-align: left;
+	padding-left: 10px;
+	border-bottom: 1px;
+
+}
+
+button:focus{
+	background: linear-gradient(to right, #3999C2, #ECECEC);
+	outline-style: none !important;
+}
+
+#list-tab{
+	position: fixed;
+
+}
+
+.tabTitleUser{
+	text-align: left;
+	margin-left: 58px;
+}
+
+.tabTitle{
+	text-align: left;
+	margin-left: 166px;
+}
+
+.admTabHeader{
+	font-weight: bold;
+
 }

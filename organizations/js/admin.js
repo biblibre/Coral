@@ -17,7 +17,7 @@
 
  $(document).ready(function(){
 
-      //updateUserForm();
+      updateUserForm();
       //updateForm('OrganizationRole');
       //updateForm('ContactRole');
       //updateForm('AliasType');
