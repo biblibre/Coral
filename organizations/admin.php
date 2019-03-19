@@ -28,22 +28,24 @@ $_SESSION['ref_script']=$currentPage;
 //ensure user has admin permissions
 if ($user->isAdmin()){
 	?>
+<div class= "container-fluid">
+	<div class="row">
+		<div class="col-2">
 
-	<div class="menu">
-
-			<table class='adminMenuTable' style='width:170px;'>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateUserForm'><?php echo _("Users");?></a></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='OrganizationRole' class='updateForm'><?php echo _("Organization Role");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='ContactRole' class='updateForm' ><?php echo _("Contact Role");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='AliasType' class='updateForm'><?php echo _("Alias Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='ExternalLoginType' class='updateForm'><?php echo _("External Login Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='IssueLogType' class='updateForm'><?php echo _("Issue Type");?></div></td></tr>
-
-
-			</table>
-
+			<div class="list-group" id="list-tab" role="tablist">
+				<a href='javascript:void(0);' class='updateUserForm'><button type="button"><?php echo _("Users");?></button></a>
+				<a href='javascript:void(0);' id='OrganizationRole' class='updateForm'><button type="button"><?php echo _("Organization Role");?></button></a>
+				<a href='javascript:void(0);' id='ContactRole' class='updateForm' ><button type="button"><?php echo _("Contact Role");?></button></a>
+				<a href='javascript:void(0);' id='AliasType' class='updateForm'><button type="button"><?php echo _("Alias Type");?></button></a>
+				<a href='javascript:void(0);' id='ExternalLoginType' class='updateForm'><button type="button"><?php echo _("External Login Type");?></button></a>
+				<a href='javascript:void(0);' id='IssueLogType' class='updateForm'><button type="button"><?php echo _("Issue Type");?></button></a>
+			</div>
 	</div>
-	<div id='div_AdminContent'></div>
+
+
+	<div class="col-10" id='div_AdminContent'></div>
+</div>
+</div>
 
 	<script type="text/javascript" src="js/admin.js"></script>
 	<?php
