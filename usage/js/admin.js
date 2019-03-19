@@ -18,9 +18,24 @@
 
  $(document).ready(function(){
 
-      updateUserList();
-      updateLogEmailAddressTable();
-      updateOutlierTable();
+      //updateUserList();
+      //updateLogEmailAddressTable();
+      //updateOutlierTable();
+
+      $(".updateUserList").click(function () {
+  				//updateTable($(this).attr("id"));
+  				updateUserList();
+  		});
+
+  		$(".updateLogEmailAddressTable").click(function () {
+  				//updateUserTable();
+  				 updateLogEmailAddressTable();
+  		});
+
+  		$(".updateOutlierTable").click(function () {
+  				//updateAlertTable();
+  				    updateOutlierTable();
+  		});
 
 
  });
@@ -35,7 +50,7 @@
           url:        "ajax_htmldata.php",
           cache:      false,
           data:       "action=getAdminUserList",
-          success:    function(html) { $('#div_User').html(html);
+          success:    function(html) { $('#div_AdminContent').html(html);
           	tb_reinit();
           }
       });
@@ -91,7 +106,7 @@
           cache:      false,
           data:       "action=getLogEmailAddressTable",
           success:    function(html) {
-          	$('#div_emailAddresses').html(html);
+          	$('#div_AdminContent').html(html);
           	tb_reinit();
           }
       });
@@ -157,7 +172,7 @@ function validateLogEmail(){
           cache:      false,
           data:       "action=getOutlierTable",
           success:    function(html) {
-          	$('#div_outliers').html(html);
+          	$('#div_AdminContent').html(html);
           	tb_reinit();
           }
       });
@@ -205,5 +220,3 @@ function validateLogEmail(){
  		return true;
  	}
 }
-
-
