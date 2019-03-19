@@ -1412,6 +1412,9 @@ switch ($_GET['action']) {
 		if (count($instanceArray) > 0){
 
 			?>
+			<span class="headerText">Expression Types</span>&nbsp;&nbsp;<span id='span_ExpressionType_response'></span>
+			<br /><span id='span_newExpressionType' class='adminAddInput'><a href='ajax_forms.php?action=getExpressionTypeForm&height=148&width=265&modal=true' class='thickbox' id='expressionType'>add new expression type</a></span>
+			<br /><br />
 			<table class='dataTable' style='width:400px'>
 				<tr><td>
 				<span class="headerText"><?php echo _("Document Types");?></span>&nbsp;&nbsp;<span id='span_DocumentType_response'></span>
@@ -1457,6 +1460,8 @@ switch ($_GET['action']) {
 
 
 		?>
+		<span class="headerText">Qualifiers</span>&nbsp;&nbsp;<span id='span_Qualifier_response'></span>
+		<br /><span id='span_newQualifier' class='adminAddInput'><a href='ajax_forms.php?action=getQualifierForm&height=148&width=295&modal=true' class='thickbox'>add new qualifier</a></span>
 		<table class='dataTable' style='width:400px'>
 			<tr>
 			<th><?php echo _("For Expression Type");?></th>

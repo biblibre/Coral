@@ -27,17 +27,17 @@
       });
 
       $(".updateUserList").click(function () {
-          updateUserList($(this).attr("id"));
+          updateUserList();
       });
       $(".updateExpressionTypeList").click(function () {
-          updateExpressionTypeList($(this).attr("id"));
+          updateExpressionTypeList();
       });
       $(".updateCalendarSettingsList").click(function () {
-          updateCalendarSettingsList($(this).attr("id"));
+          updateCalendarSettingsList();
         });
 
       $(".updateQualifierList").click(function () {
-          updateQualifierList($(this).attr("id"));
+          updateQualifierList();
       });
 
     });

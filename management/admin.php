@@ -41,6 +41,12 @@ if ($user->isAdmin()){
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentType' class='AdminLink' ><?php echo _("Documents Type");?></div></td></tr>
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentNoteType' class='AdminLink'><?php echo _("Notes type");?></div></td></tr>
 		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='Consortium' class='AdminLink'><?php echo _("Categories");?></div></td></tr>
+			<!-- disabled menu part
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);'  class='updateQualifierList'><php /*echo _("Qualifier");?></div></td></tr>
+		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);'  class='updateExpressionTypeList'><php /*echo _("Expression");?></div></td></tr>
+		-->
+
+
 	</table>
 </div>
 
