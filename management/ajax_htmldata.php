@@ -1318,28 +1318,40 @@ switch ($_GET['action']) {
 		$instance = new $className();
 		$resultArray = $instance->allAsArray();
 		if (count($resultArray) > 0){
+			?>
+			<section class= "tabTitle">
+      	<span class="headerText"><?php echo _("$className ") ;?></span>
+      </section>
 
-				echo "<table class='dataTable' style='width:350px'>";
+			<table class='dataTable' style='width:350px'>
 
-				echo "<tr><span id='span_new". $className ."' class='adminAddInput'><a href=\"javascript:showAdd('". $className ."')\">" . _("add new $className") ."</a></span></tr>";
+          <tr>
+						<?php
+							echo "<th></th>
+							<th></th>
+							<th><span id='span_new". $className ."' class='adminAddInput admTabHeader'><a href=\"javascript:showAdd('". $className ."')\">" . _("add new $className") ."</a></span></th>";
+							?>
+
+						</tr>
 
 
-				foreach($resultArray as $result){
-					echo "<tr>";
-					echo "<td>" . $result['shortName'] . "</td>";
-					echo "<td style='width:30px; text-align: center;'><a href='ajax_forms.php?action=getAdminUpdateForm&tableName=" . $className . "&updateID=" . $result[lcfirst($className) . 'ID'] . "&height=130&width=250&modal=true' class='thickbox' id='expression'><img id='Edit' class='editIcon' src='images/edit.gif' title= '"._("Edit")."' /></a></td>";
-					echo "<td style='width:50px; text-align: center;'><a href='javascript:deleteData(\"" . $className . "\",\"" . $result[lcfirst($className) . 'ID'] . "\")'><img id='Remove' class='removeIcon' src='images/cross.gif' title= '"._("Remove")."' /></a></td>";
-					echo "</tr>";
-				}
+					<?php
 
-				?>
+						foreach($resultArray as $result){
+							echo "<tr>";
+							echo "<td>" . $result['shortName'] . "</td>";
+							echo "<td style='width:30px'><a href='ajax_forms.php?action=getAdminUpdateForm&tableName=" . $className . "&updateID=" . $result[lcfirst($className) . 'ID'] . "&height=130&width=250&modal=true' class='thickbox' id='expression'>" . _("edit") . "</a></td>";
+							echo "<td style='width:50px'><a href='javascript:deleteData(\"" . $className . "\",\"" . $result[lcfirst($className) . 'ID'] . "\")'>" . _("remove") . "</a></td>";
+							echo "</tr>";
+						}
+					?>
 			</table>
 			<?php
 
-		}else{
-			echo _("(none found)");
-		}
-		break;
+				}else{
+					echo _("(none found)");
+				}
+				break;
 
 
 	//display user info for admin screen
@@ -1351,24 +1363,27 @@ switch ($_GET['action']) {
 		$util = new Utility();
 
 		if (count($user->allAsArray()) > 0){
-
 			?>
+			<section class= "tabTitleUser">
+      <span class="sectionTitle"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span>
+      </section>
+
 			<table class='dataTable' style='width:550px'>
-				<tr><?php echo "<span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'><button type='button' class='btn btn-primary btn-sm'>". _("Add user")."</button></a>";?></tr>
-				<tr>
+
 				<th><?php echo _("Login ID");?></th>
 				<th><?php echo _("First Name");?></th>
 				<th><?php echo _("Last Name");?></th>
 				<th><?php echo _("Privilege");?></th>
+				<th>&nbsp;</th>
+				<th><?php echo "<span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'>". _("Add user")."</a>";?></th>
+
+
 				<?php
 				//if not configured to use terms tool, hide the Terms Tool Update Email
 				if ($util->useTermsTool()){
 					echo "<th>" . _("Terms Tool Update Email") . "</th>";
 				}
-				?>
-				<th>&nbsp;</th>
-				<th>&nbsp;</th>
-				<?php
+
 
 				foreach($user->allAsArray() as $instance) {
 					$privilege = new Privilege(new NamedArguments(array('primaryKey' => $instance['privilegeID'])));
@@ -1404,6 +1419,7 @@ switch ($_GET['action']) {
 		$instanceArray = array();
 		$expressionType = new ExpressionType();
 		$tempArray = array();
+
 
 		foreach ($expressionType->allAsArray() as $tempArray) {
 			array_push($instanceArray, $tempArray);

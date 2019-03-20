@@ -1951,7 +1951,7 @@ li.change-mod-item {
 
 li.change-mod-item a {
     display: block;
-    color: #fff;
+    color: #fff !important;
     font-size: 14px;
     padding: 10px !important;
     margin: 0;
@@ -2057,7 +2057,7 @@ table.titleTable {
 /*--- Side menu in admin ---*/
 
 button{
-	background: linear-gradient(to right, #1B77AA, #ECECEC);
+	background: #1B77AA;
 	width: 160px;
 	height: 40px;
 	color: white;
@@ -2070,7 +2070,7 @@ button{
 }
 
 button:focus{
-	background: linear-gradient(to right, #3999C2, #ECECEC);
+	background: #3999C2;
 	outline-style: none !important;
 }
 
@@ -2091,13 +2091,5 @@ button:focus{
 
 .admTabHeader{
 	font-weight: bold;
-
-}
-
-
-
-.sectionTitle{
-	font-family: "Open Sans";
-	color: #6098A7;
 
 }
