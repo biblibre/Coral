@@ -29,15 +29,16 @@ if ($user->isAdmin()){
 
 ?>
 
-<div class="elementsAlign">
+<div class= "container-fluid">
+	<div class="row">
+		<div class="col-2">
+			<div class="list-group" id="list-tab" role="tablist">
+				<a href='javascript:void(0);' class='updateUserList'><button type="button"><?php echo _("Users");?></button></a>
+				<a href='javascript:void(0);' id='DocumentType' class='updateForm' ><button type="button"><?php echo _("Documents Type");?></button></a>
+				<a href='javascript:void(0);' class='updateExpressionTypeList' ><button type="button"><?php echo _("Expression Types");?></button></a>
+				<a href='javascript:void(0);' class='updateQualifierList'><button type="button"><?php echo _("Qualifiers");?></button></a>
+				<a href='javascript:void(0);' id='SignatureType' class='updateForm' ><button type="button"><?php echo _("Signature Types");?></button></a>
 
-	<div class="menu">
-			<table class='adminMenuTable' style='width:170px;'>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateUserList'><?php echo _("Users");?></a></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='DocumentType' class='updateForm' ><?php echo _("Documents Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateExpressionTypeList' ><?php echo _("Expression Types");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateQualifierList'><?php echo _("Qualifiers");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='SignatureType' class='updateForm' ><?php echo _("Signature Types");?></div></td></tr>
 
 <?php
 
@@ -46,7 +47,7 @@ $config = new Configuration;
 //if the Resources module is not installed, do not display calendar options
 if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?>
 
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateCalendarSettingsList'><?php echo _("Calendar Settings");?></div></td></tr>
+		<a href='javascript:void(0);' class='updateCalendarSettingsList'><button type="button"><?php echo _("Calendar Settings");?></button></a>
 
 
 
@@ -57,17 +58,16 @@ if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->re
 if ($config->settings->organizationsModule != 'Y'){ ?>
 
 
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateForm' id='Consortium'><?php echo _("Consortia");?></div></td></tr>
-		<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='updateForm' id='Organization'><?php echo _("Providers");?></div></td></tr>
+		<a href='javascript:void(0);' class='updateForm' id='Consortium'><button type="button"><?php echo _("Consortia");?></button></a>
+		<a href='javascript:void(0);' class='updateForm' id='Organization'><button type="button"><?php echo _("Providers");?></button></a>
 
 
 <?php } ?>
-	</table>
-	</div>
-
-
-<div id='div_AdminContent'></div>
-</br>
+</div>
+</div>
+<div class="col-10" id='div_AdminContent'></div>
+</div>
+</div>
 
 <script type="text/javascript" src="js/admin.js"></script>
 
