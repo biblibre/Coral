@@ -1092,7 +1092,7 @@ if ($issues) {
 		if (count($instanceArray) > 0){
 			?>
       <section class= "tabTitleUser">
-      <span class="headerText"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span>
+      <span class="headerText sectionTitle"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span>
       </section>
 
 			<table class='dataTable' style='width:550px'>
