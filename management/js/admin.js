@@ -18,7 +18,7 @@
 
  $(document).ready(function(){
 /*
-      updateUserList();
+     updateUserList();
       updateForm('Organization');
       updateForm('Consortium');
       updateForm('DocumentType');

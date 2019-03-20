@@ -47,7 +47,7 @@ body {
 }
 
 a {
-	color: #4d4d4d;
+	color: black !important;
 	font-size:9pt;
 }
 
@@ -91,8 +91,8 @@ table.headerTable {
 	padding: 12px;
 }
 
-.headerText {font-size:125%;font-weight:bold; }
-.titleText {font-size:130%;font-weight:bold; }
+.headerText {font-size:125%;font-weight:bold; margin-left: 167px; }
+.titleText {font-size:130%;font-weight:bold;  }
 
 span.searchLetter {
 	margin: 0px;
@@ -1824,9 +1824,9 @@ span#divider {
 
 #change-mod-menu {
 	padding: 13px 0 12px;
-    color: #fff;
     height: initial;
     text-align: center;
+		color: white;
 }
 
 #change-mod-menu img {
@@ -1862,6 +1862,7 @@ li.change-mod-item a {
 .change-mod-item a span {
     position: relative;
     top: 1px;
+		color: white !important;
 }
 
 #change-mod-menu span {
@@ -1878,7 +1879,6 @@ li.change-mod-item:hover {
 #main-title {
     font-size: 36px;
     color: #6098A7;
-    font-family: "Open Sans";
     font-weight: 100;
     float: left;
 }
@@ -1932,5 +1932,59 @@ table.titleTable {
 	overflow-x: hidden !important;
 }
 
+/*--- Side menu in admin ---*/
 
-/*---Align Menu in Admin --*/
+button{
+	background: #1B77AA;
+	width: 160px;
+	height: 40px;
+	color: white;
+	font-weight: bold;
+	font-size: 0.8em !important;
+	text-align: left;
+	padding-left: 10px;
+	border-bottom: 1px;
+
+}
+
+button:focus{
+	background: #3999C2;
+	outline-style: none !important;
+}
+
+#list-tab{
+	position: fixed;
+
+}
+
+.tabTitleUser{
+	text-align: left;
+	margin-left: 100px;
+	padding-left: 136px;
+	font-weight: bold;
+	font-size:125%;
+	margin-top: -7px;
+
+}
+
+.tabTitle{
+	text-align: left;
+	margin-left: 166px;
+	margin-top: -7px;
+}
+
+.admTabHeader{
+	font-weight: bold;
+}
+
+
+.ButtonMenu{
+
+	margin-left: 77px;
+
+}
+
+#div_AdminContent{
+	margin-left: -151px;
+
+}

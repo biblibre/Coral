@@ -987,7 +987,7 @@ if ($issues) {
       </section>
 
 			<table class='dataTable' style='width:350px'>
-        <thead>
+
           <tr>
 				<?php
 
@@ -997,7 +997,7 @@ if ($issues) {
           ?>
 
         </tr>
-        </thead>
+
           <?php
 				foreach($instanceArray as $instance) {
 					echo "<tr>";
@@ -1096,7 +1096,7 @@ if ($issues) {
       </section>
 
 			<table class='dataTable' style='width:550px'>
-        <thead>
+
 				<tr>
 				<th align='left'><?php echo _("Login ID");?></th>
 				<th align='left'><?php echo _("First Name");?></th>
@@ -1105,7 +1105,7 @@ if ($issues) {
 				<th>&nbsp;</th>
 				<th><span id='span_newUser'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=185&width=250&modal=true' class='thickbox' id='expression'><?php echo _("add user");?></a></span></th>
 				</tr>
-        </thead>
+
 				<?php
 
 				foreach($instanceArray as $instance) {
