@@ -19,7 +19,7 @@
 
  $(document).ready(function(){
 
-
+      updateUserList();
 
       $(".updateForm").click(function () {
           updateForm($(this).attr("id"));

@@ -1820,6 +1820,7 @@ td.helpfulLinks {
 	overflow-x: hidden !important;
 }
 
+
 /*--- Icon Align ---*/
 
 
@@ -1829,4 +1830,42 @@ td.helpfulLinks {
 
 .icon{
 	text-align: center;
+
+
+/*--- Side menu in admin ---*/
+
+button{
+	background: #1B77AA;
+	width: 160px;
+	height: 40px;
+	color: white;
+	font-weight: bold;
+	font-size: 0.8em !important;
+	text-align: left;
+	padding-left: 10px;
+	border-bottom: 1px;
+
 }
+
+button:focus{
+	background: #3999C2;
+	outline-style: none !important;
+}
+
+#list-tab{
+	position: fixed;
+
+}
+
+.tabTitleUser{
+	text-align: left;
+	margin-left: 58px;
+}
+
+.tabTitle{
+	text-align: left;
+	margin-left: 166px;
+}
+
+.admTabHeader{
+	font-weight: bold;
