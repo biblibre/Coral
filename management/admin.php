@@ -33,8 +33,7 @@ if ($user->isAdmin()){
 
 <div class= "container-fluid">
 	<div class="row">
-		<div class="col-2">&nbsp;</div>
-		<div class="col-2">
+		<div class="col-4">
 			<div class="list-group ButtonMenu" id="list-tab" role="tablist">
 				<a href='javascript:void(0);' id="User" class='AdminUserLink'><button type="button"><?php echo _("Users");?></button></a>
 				<a href='javascript:void(0);' id='DocumentType' class='AdminLink' ><button type="button"><?php echo _("Documents Type");?></button></a>
@@ -46,7 +45,7 @@ if ($user->isAdmin()){
 		-->
 			</div>
 		</div>
-			<div class="col-8" id='div_AdminContent'></div>
+			<div class="adminContentAlign"><div class="col-8" id='div_AdminContent'></div></div>
 	</div>
 </div>
 

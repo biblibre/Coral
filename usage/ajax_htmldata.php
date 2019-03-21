@@ -893,13 +893,21 @@ switch ($action) {
 		$logEmailAddress = array();
 		$logEmailAddresses = new LogEmailAddress();
     ?>
-    <span class="headerText"><?php echo _("Email addresses for logs");?></span>&nbsp;&nbsp;<span id='span_EmailAddress_response'></span>
-    <br /><span id='span_newEmailAddress' class='adminAddInput'><a href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=238&modal=true' class='thickbox'><?php echo _("add new email address");?></a></span>
-    <br /><br />
+    <section class= "tabTitleUser">
+      <span class="headerText"><?php echo _("Email addresses for logs");?></span>&nbsp;&nbsp;<span id='span_EmailAddress_response'></span>
+    </section>
+
     <?php
 
-		echo "<b>" . _("Current Email Addresses") . "</b>";
-		echo "<table class='dataTable' style='width:400px'>";
+		e
+    ?>
+		<table class='dataTable' style='width:400px'>
+      <tr>
+      <th><?php echo _("Current Email Addresses");?></th>
+      <th></th>
+      <th><span id='span_newEmailAddress' class='adminAddInput'><a href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=238&modal=true' class='thickbox'><?php echo _("add email address");?></a></th>
+
+      <?php
 
 		foreach($logEmailAddresses->allAsArray as $logEmailAddress) {
 			echo "<tr><td>" . $logEmailAddress['emailAddress'] . "</td>";
@@ -923,8 +931,12 @@ switch ($action) {
 			$outlier = array();
 			$outliers = new Outlier();
       ?>
-      <span class="headerText"><?php echo _("Outlier Parameters");?></span>&nbsp;&nbsp;<span id='span_Outlier_response'></span>
+      <div class="outlierAlign">
+        <div class="outlierParamTitle">
+          <span class="headerText"><?php echo _("Outlier Parameters");?></span>&nbsp;&nbsp;<span id='span_Outlier_response'></span>
+        </div>
       <?php
+
 
 			echo "<b>" . _("Current Outlier Parameters") . "</b><br />";
 
@@ -939,6 +951,10 @@ switch ($action) {
 		}
 
         break;
+    ?>
+  </div>
+
+    <?php
 
 
 
@@ -1405,16 +1421,17 @@ switch ($action) {
 		if (count($user->allAsArray()) > 0){
 
 			?>
-      <span class="headerText"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response' class='redText'></span><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=196&width=248&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>
-      <br /><br />
+      <section class= "tabTitleUser">
+        <span class="headerText"><?php echo _("Users");?></span>
+      </section>
 			<table class='dataTable' style='width:550px'>
 				<tr>
-				<th><?php echo _("Login ID");?></th>
-				<th><?php echo _("First Name");?></th>
-				<th><?php echo _("Last Name");?></th>
-				<th><?php echo _("Privilege");?></th>
-				<th>&nbsp;</th>
-				<th>&nbsp;</th>
+				   <th><?php echo _("Login ID");?></th>
+				   <th><?php echo _("First Name");?></th>
+				   <th><?php echo _("Last Name");?></th>
+				   <th><?php echo _("Privilege");?></th>
+				   <th>&nbsp;</th>
+				   <th><span id='span_User_response' class='redText'></span><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=196&width=248&modal=true' class='thickbox' id='expression'><?php echo _("add user");?></a></span></th>
 				<?php
 
 				foreach($user->allAsArray() as $instance) {
