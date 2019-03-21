@@ -993,7 +993,7 @@ if ($issues) {
 
           echo "<th></th>
           <th></th>
-          <th><span id='span_new". $className ."' class='adminAddInput admTabHeader'><a href=\"javascript:showAdd('". $className ."')\">" . _("add new $className") ."</a></span></th>";
+          <th><span id='span_new". $className ."' class='adminAddInput admTabHeader'><a href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span></th>";
           ?>
 
         </tr>

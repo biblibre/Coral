@@ -25,7 +25,7 @@ include 'templates/header.php';
 //set referring page
 $_SESSION['ref_script']=$currentPage;
 
-if ($user->isAdmin()){
+	if ($user->isAdmin()){
 
 ?>
 
@@ -38,43 +38,37 @@ if ($user->isAdmin()){
 				<a href='javascript:void(0);' class='updateExpressionTypeList' ><button type="button"><?php echo _("Expression Types");?></button></a>
 				<a href='javascript:void(0);' class='updateQualifierList'><button type="button"><?php echo _("Qualifiers");?></button></a>
 				<a href='javascript:void(0);' id='SignatureType' class='updateForm' ><button type="button"><?php echo _("Signature Types");?></button></a>
-
-
 <?php
 
 $config = new Configuration;
 
 //if the Resources module is not installed, do not display calendar options
-if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?>
+	if (($config->settings->resourcesModule == 'Y') && (strlen($config->settings->resourcesDatabaseName) > 0)) { ?>
 
-		<a href='javascript:void(0);' class='updateCalendarSettingsList'><button type="button"><?php echo _("Calendar Settings");?></button></a>
-
-
+				<a href='javascript:void(0);' class='updateCalendarSettingsList'><button type="button"><?php echo _("Calendar Settings");?></button></a>
 
 <?php
 }
 
 //if the org module is not installed, display provider list for updates
-if ($config->settings->organizationsModule != 'Y'){ ?>
+	if ($config->settings->organizationsModule != 'Y'){ ?>
 
-
-		<a href='javascript:void(0);' class='updateForm' id='Consortium'><button type="button"><?php echo _("Consortia");?></button></a>
-		<a href='javascript:void(0);' class='updateForm' id='Organization'><button type="button"><?php echo _("Providers");?></button></a>
-
+				<a href='javascript:void(0);' class='updateForm' id='Consortium'><button type="button"><?php echo _("Consortia");?></button></a>
+				<a href='javascript:void(0);' class='updateForm' id='Organization'><button type="button"><?php echo _("Providers");?></button></a>
 
 <?php } ?>
-</div>
-</div>
-<div class="col-10" id='div_AdminContent'></div>
-</div>
+			</div>
+		</div>
+		<div class="col-10"><div class="AdminContentUsers" id='div_AdminContent'></div></div>
+	</div>
 </div>
 
 <script type="text/javascript" src="js/admin.js"></script>
 
 <?php
-}else{
-	echo _("You don't have permission to access this page");
-}
+	}else{
+		echo _("You don't have permission to access this page");
+	}
 
-include 'templates/footer.php';
+	include 'templates/footer.php';
 ?>
