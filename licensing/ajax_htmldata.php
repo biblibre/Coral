@@ -1340,7 +1340,7 @@ switch ($_GET['action']) {
 
 			?>
 			<section class= "tabTitleUser">
-			<br /><span class="headerText"><?php echo _("Expression Types");?></span>
+			<span class="headerText"><?php echo _("Expression Types");?></span>
 			</section>
 			<table class='dataTable' style='width:400px'>
 
