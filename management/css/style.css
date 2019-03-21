@@ -2001,8 +2001,8 @@ div.displayed{
 
 }
 
-#div_AdminContent{
-	margin-left: -151px;
+.adminContentAlign{
+	margin-left: 0px;
 
 
 }

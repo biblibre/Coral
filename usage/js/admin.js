@@ -18,22 +18,22 @@
 
  $(document).ready(function(){
 
-      //updateUserList();
+      updateUserList();
       //updateLogEmailAddressTable();
       //updateOutlierTable();
 
       $(".updateUserList").click(function () {
-  				//updateTable($(this).attr("id"));
+
   				updateUserList();
   		});
 
   		$(".updateLogEmailAddressTable").click(function () {
-  				//updateUserTable();
+
   				 updateLogEmailAddressTable();
   		});
 
   		$(".updateOutlierTable").click(function () {
-  				//updateAlertTable();
+  				
   				 updateOutlierTable();
   		});
 

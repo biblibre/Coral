@@ -34,8 +34,7 @@ if ($user->isAdmin()){
 
 <div class= "container-fluid">
 	<div class="row">
-		<div class="col-2">&nbsp;</div>
-		<div class="col-2">
+		<div class="col-4">
 			<div class="list-group ButtonMenu" id="list-tab" role="tablist">
 				<a href='javascript:void(0);' class='updateUserList'><button id="PreSelectedButton" type="button"><?php echo _("Users");?></button></a>
 				<a href='javascript:void(0);' id='DocumentType' class='updateTable' ><button type="button"><?php echo _("Document Types");?></button></a>
@@ -47,7 +46,9 @@ if ($user->isAdmin()){
 		-->
 			</div>
 		</div>
+
 			<div class="col-10" ><div class="adminContentAlign"><div id='div_AdminContent'></div></div></div>
+
 	</div>
 </div>
 
