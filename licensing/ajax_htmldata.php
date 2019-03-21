@@ -1222,13 +1222,19 @@ switch ($_GET['action']) {
 
 
 			?>
+			<section class= "tabTitle">
+				<span class="headerText"><?php echo _("$className ") ;?></span>
+			</section>
 
 			<table class='dataTable' style='width:350px'>
-
+				<tr>
 				<?php
-				echo "<span>" . _("$className ") ."</span><span id='span_new". $className ."' class='adminAddInput'><a href=\"javascript:showAdd('". $className ."')\">" . _("add new $className") ."</a></span>";
-
-
+				echo "<th></th>
+				<th></th>
+				<th><span id='span_new". $className ."' class='adminAddInput admTabHeader'><a href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span></th>";
+				?>
+				</tr>
+				<?php
 				foreach($resultArray as $result){
 
 					echo "<td>" . $result['shortName'] . "</td>";
@@ -1261,16 +1267,18 @@ switch ($_GET['action']) {
 
 			?>
 
-			<span class="headerText"><?php echo _("Users ");?></span><span id='span_User_response' class='redText'></span><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'><?php echo _("add new user");?></a></span>
+			<section class= "tabTitleUser">
+      <span class="headerText sectionTitle"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span>
+      </section>
+
 
 			<table class='dataTable' style='width:550px'>
-
+				<tr>
 				<th><?php echo _("Login ID");?></th>
 				<th><?php echo _("First Name");?></th>
 				<th><?php echo _("Last Name");?></th>
-				<th><?php echo _("Privilege");?>
+				<th><?php echo _("Privilege");?></th>
 
-				</th>
 				<?php
 				//if not configured to use terms tool, hide the Terms Tool Update Email
 				if ($util->useTermsTool()){
@@ -1278,7 +1286,9 @@ switch ($_GET['action']) {
 				}
 				?>
 				<th>&nbsp;</th>
-				<th>&nbsp;</th>
+				<th><span id='span_newUser'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=185&width=250&modal=true' class='thickbox' id='expression'><?php echo _("add user");?></a></span></th>
+
+
 				<?php
 
 				foreach($user->allAsArray() as $instance) {
@@ -1329,14 +1339,15 @@ switch ($_GET['action']) {
 		if (count($instanceArray) > 0){
 
 			?>
-			<br /><span class="headerText"><?php echo _("Expression Types");?></span>&nbsp;&nbsp;<span id='span_ExpressionType_response'></span><span id='span_newExpressionType' class='adminAddInput'><a href='ajax_forms.php?action=getExpressionTypeForm&height=148&width=265&modal=true' class='thickbox' id='expressionType'><?php echo _("add new expression type");?></a></span>
-
+			<section class= "tabTitleUser">
+			<br /><span class="headerText"><?php echo _("Expression Types");?></span>
+			</section>
 			<table class='dataTable' style='width:400px'>
 
 				<th><?php echo _("Expression Type");?></th>
 				<th><?php echo _("Note Type");?></th>
 				<th>&nbsp;</th>
-				<th>&nbsp;</th>
+				<th><span id='span_newExpressionType' class='adminAddInput'><a href='ajax_forms.php?action=getExpressionTypeForm&height=148&width=265&modal=true' class='thickbox' id='expressionType'><?php echo _("add expression type");?></a></span></th>
 				<?php
 
 				foreach($instanceArray as $instance) {
@@ -1372,9 +1383,9 @@ switch ($_GET['action']) {
 		if (count($instanceArray) > 0){
 
 			?>
-
+			<section class= "tabTitleUser">
 			<span class="headerText"><?php echo _("Calendar Settings");?></span>&nbsp;&nbsp;<span id='span_CalendarSettings_response'></span>
-			<br /><br />
+			</section>
 			<table class='dataTable' style='width:400px'>
 				<tr>
 				<th><?php echo _("Setting");?></th>
@@ -1448,14 +1459,15 @@ switch ($_GET['action']) {
 
 
 		?>
-		<span class="headerText"><?php echo _("Qualifiers");?></span>&nbsp;&nbsp;<span id='span_Qualifier_response'></span><span id='span_newQualifier' class='adminAddInput'><a href='ajax_forms.php?action=getQualifierForm&height=148&width=295&modal=true' class='thickbox'><?php echo _("add new qualifier");?></a></span>
-		<br /><br />
+		<section class= "tabTitleUser">
+		<span class="headerText"><?php echo _("Qualifiers");?></span>&nbsp;&nbsp;<span id='span_Qualifier_response'></span>
+		</section>
 		<table class='dataTable' style='width:400px'>
 			<tr>
 			<th><?php echo _("For Expression Type");?></th>
 			<th><?php echo _("Qualifier");?></th>
 			<th>&nbsp;</th>
-			<th>&nbsp;</th>
+			<th><span id='span_newQualifier' class='adminAddInput'><a href='ajax_forms.php?action=getQualifierForm&height=148&width=295&modal=true' class='thickbox'><?php echo _("add qualifier");?></a></span></th>
 			<?php
 
 			foreach($expressionType->all() as $expressionTypeObj) {
