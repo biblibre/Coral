@@ -297,7 +297,7 @@
 					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Acquisitions&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo "<div class='addIconTab'><img src='images/plus.gif' title= '"._("Add")."' /></div>";?></a>
 				<?php } ?>
 				<?php if ($user->canEdit()){?>
-
+					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Acquisitions&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo _("add note");?></a>
 				<?php } ?>
 
 				</th>

@@ -64,7 +64,9 @@ switch ($_GET['action']) {
 
 		<table class="thickboxTable" style="width:100%;">
 		<tr>
-		<td colspan='2' id='org-title'><span class='headerText'><?php if ($organizationID != "") { echo _("Edit Organization"); }else{ echo _("Add New Organization"); } ?></span>
+
+		<td colspan='2' id='org-title'><span class='headerText'><?php if ($organizationID != "") { echo _("Update Organization"); }else{ echo _("Add an Organization"); } ?></span>
+
 		<br /></td>
 		</tr>
 

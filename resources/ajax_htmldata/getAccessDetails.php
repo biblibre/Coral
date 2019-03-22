@@ -162,8 +162,10 @@
 				<th>
 
 				<?php if ($user->canEdit()){?>
+
 				<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Access&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo "<div class= 'addIconTab'><img id='Add' class='addIcon' src='images/plus.gif' title= '"._("Add")."' /></div>";?></a>
 				<?php }?>
+
 				</th>
 				</tr>
 				<?php foreach ($noteArray as $resourceNote){ ?>

@@ -19,7 +19,7 @@
 					}
 
 					if ($user->canEdit()){ ?>
-						<a href='ajax_forms.php?action=getAccountForm&height=314&width=403&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox' id='newAccount'><?php echo _("add new account");?></a>
+						<a href='ajax_forms.php?action=getAccountForm&height=314&width=403&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox' id='newAccount'><?php echo _("add account");?></a>
 						<br /><br /><br />
 					<?php
 					}
@@ -118,10 +118,9 @@
 		}
 
 		if ($user->canEdit() && ($orgELFlag == 0)){ ?>
-			<a href='ajax_forms.php?action=getAccountForm&height=314&width=403&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox' id='newAccount'><?php echo _("add new account");?></a>
+			<a href='ajax_forms.php?action=getAccountForm&height=314&width=403&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox' id='newAccount'><?php echo _("add account");?></a>
 			<br /><br /><br />
 		<?php
 		}
 
 ?>
-

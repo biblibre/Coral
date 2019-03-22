@@ -35,4 +35,6 @@
 			echo "(none found)<br />";
 		}
 
+		echo "<a href='ajax_forms.php?action=getAdminImportConfigUpdateForm&updateID=&height=760&width=1024&modal=true' class='thickbox'>" . _("add import configuration") . "</a><br/>";
+
 ?>

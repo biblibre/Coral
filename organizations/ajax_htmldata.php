@@ -261,7 +261,7 @@ switch ($_GET['action']) {
 		<?php
 		}
 
-        if ($organization->ilsID){ 
+        if ($organization->ilsID){
             $ilsClient = (new ILSClientSelector())->select();
         ?>
 			<tr>
@@ -642,7 +642,7 @@ switch ($_GET['action']) {
 
 		if ($user->canEdit()){
 		?>
-		<a href='ajax_forms.php?action=getAccountForm&height=254&width=342&modal=true&organizationID=<?php echo $organizationID; ?>' class='thickbox' id='newAlias'><?php echo _("add new external login");?></a><br />
+		<a href='ajax_forms.php?action=getAccountForm&height=254&width=342&modal=true&organizationID=<?php echo $organizationID; ?>' class='thickbox' id='newAlias'><?php echo _("add external login");?></a><br />
 		<?php
 		}
 
@@ -820,7 +820,7 @@ switch ($_GET['action']) {
 
 		if ($user->canEdit()){
 		?>
-			<a href='ajax_forms.php?action=getIssueLogForm&height=250&width=265&modal=true&organizationID=<?php echo $organizationID; ?>' class='thickbox' id='newIssue'><?php echo _("add new issue");?></a> -
+			<a href='ajax_forms.php?action=getIssueLogForm&height=250&width=265&modal=true&organizationID=<?php echo $organizationID; ?>' class='thickbox' id='newIssue'><?php echo _("add issue");?></a> -
 		<?php
 		}
     ?>
@@ -1096,4 +1096,3 @@ switch ($_GET['action']) {
 
 
 ?>
-

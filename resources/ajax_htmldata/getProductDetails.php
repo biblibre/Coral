@@ -436,6 +436,7 @@
 				<th>
 
 				<?php if ($user->canEdit()){ ?>
+
 					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Product&entityID=<?php echo $resourceID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo "<div class='addIconTab' ><img id='Add' src='images/plus.gif' title= '"._("Add")."' /></div>";?></a></div>
 
 

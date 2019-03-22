@@ -236,7 +236,7 @@ table.adminMenuTable td.selected {
 	padding: 3px 3px 3px 3px;
 			border-top: 1px solid #e6e5e9;
 			background-color: #f2f5f7;
-			background-image:url('../images/tab.gif');
+			/*background-image:url('../images/tab.gif'); */
 			background-repeat:no-repeat;
 	background-position:right top;
 	-moz-border-radius: 0px;

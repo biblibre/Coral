@@ -55,6 +55,8 @@
 				?>
 			</table>
 
+			<a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=&height=275&width=315&modal=true' class='thickbox' id='addUser'><?php echo _("add user");?></a>
+
 			<?php
 
 		}else{

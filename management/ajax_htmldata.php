@@ -172,7 +172,7 @@ switch ($_GET['action']) {
 		}
 
 		if ($user->canEdit()){
-			echo "<br /><br /><a href='ajax_forms.php?action=getSFXForm&licenseID=" . $licenseID . "&height=178&width=260&modal=true' class='thickbox' id='addSFXResource'>" . _("add new terms tool resource link") . "</a>";
+			echo "<br /><br /><a href='ajax_forms.php?action=getSFXForm&licenseID=" . $licenseID . "&height=178&width=260&modal=true' class='thickbox' id='addSFXResource'>" . _("add terms tool resource link") . "</a>";
 		}
 
 		break;
@@ -1305,7 +1305,7 @@ switch ($_GET['action']) {
 		}
 
 		if ($user->canEdit()){
-			echo "<br /><br /><a href='ajax_forms.php?action=getExpressionForm&licenseID=" . $licenseID . "&height=420&width=345&modal=true' class='thickbox' id='expression'>" . _("add new expression") . "</a>";
+			echo "<br /><br /><a href='ajax_forms.php?action=getExpressionForm&licenseID=" . $licenseID . "&height=420&width=345&modal=true' class='thickbox' id='expression'>" . _("add expression") . "</a>";
 		}
 		break;
 
@@ -1329,7 +1329,7 @@ switch ($_GET['action']) {
 						<?php
 							echo "<th></th>
 							<th></th>
-							<th><span id='span_new". $className ."' class='adminAddInput admTabHeader'><a href=\"javascript:showAdd('". $className ."')\">" . _("add new $className") ."</a></span></th>";
+							<th><span id='span_new". $className ."' class='adminAddInput admTabHeader'><a href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span></th>";
 							?>
 
 						</tr>
@@ -1429,12 +1429,12 @@ switch ($_GET['action']) {
 
 			?>
 			<span class="headerText">Expression Types</span>&nbsp;&nbsp;<span id='span_ExpressionType_response'></span>
-			<br /><span id='span_newExpressionType' class='adminAddInput'><a href='ajax_forms.php?action=getExpressionTypeForm&height=148&width=265&modal=true' class='thickbox' id='expressionType'>add new expression type</a></span>
+			<br /><span id='span_newExpressionType' class='adminAddInput'><a href='ajax_forms.php?action=getExpressionTypeForm&height=148&width=265&modal=true' class='thickbox' id='expressionType'>add expression type</a></span>
 			<br /><br />
 			<table class='dataTable' style='width:400px'>
 				<tr><td>
 				<span class="headerText"><?php echo _("Document Types");?></span>&nbsp;&nbsp;<span id='span_DocumentType_response'></span>
-				<br /><span id='span_newDocumentType' class='adminAddInput'><a href='javascript:showAdd("DocumentType");'><?php echo _("add new document type");?></a></span>
+				<br /><span id='span_newDocumentType' class='adminAddInput'><a href='javascript:showAdd("DocumentType");'><?php echo _("add document type");?></a></span>
 				<br /><br />
 				<tr>
 				<tr>
@@ -1477,7 +1477,7 @@ switch ($_GET['action']) {
 
 		?>
 		<span class="headerText">Qualifiers</span>&nbsp;&nbsp;<span id='span_Qualifier_response'></span>
-		<br /><span id='span_newQualifier' class='adminAddInput'><a href='ajax_forms.php?action=getQualifierForm&height=148&width=295&modal=true' class='thickbox'>add new qualifier</a></span>
+		<br /><span id='span_newQualifier' class='adminAddInput'><a href='ajax_forms.php?action=getQualifierForm&height=148&width=295&modal=true' class='thickbox'>add qualifier</a></span>
 		<table class='dataTable' style='width:400px'>
 			<tr>
 			<th><?php echo _("For Expression Type");?></th>
