@@ -1,3 +1,4 @@
+
 html {
 	height: 100%;
 	margin: 0;
@@ -2039,26 +2040,28 @@ table.titleTable {
 	top: 5vh !important;
 	margin-top: 0px !important;
 	overflow-x: hidden !important;
+	left: 79%;
 }
 
 /*--- Side menu in admin ---*/
 
 button{
-	background: #1B77AA;
+	background: #F2F5F7;
 	width: 160px;
 	height: 40px;
-	color: white;
-	font-weight: bold;
+	color: #666666;
 	font-size: 0.8em !important;
 	text-align: left;
 	padding-left: 10px;
 	border-bottom: 1px;
+	font-weight: normal;
 
 }
 
 button:focus{
-	background: #3999C2;
+	background: #EAEDEF;
 	outline-style: none !important;
+	font-weight:bold;
 }
 
 #list-tab{
