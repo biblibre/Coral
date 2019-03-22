@@ -1314,7 +1314,7 @@ switch ($_GET['action']) {
 
 	//generic admin data (lookup table) display - all tables have ID and shortName so we can simplify retrieving this data
 	case 'getAdminList':
-		$className = $_GET['tableName'];
+		$className = $_GET['className'];
 		$instance = new $className();
 		$resultArray = $instance->allAsArray();
 		if (count($resultArray) > 0){
