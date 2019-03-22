@@ -35,10 +35,10 @@ if ($user->isAdmin()){
 	<div class="row">
 		<div class="col-4">
 			<div class="list-group ButtonMenu" id="list-tab" role="tablist">
-				<a href='javascript:void(0);' id="User" class='AdminUserLink'><button type="button"><?php echo _("Users");?></button></a>
-				<a href='javascript:void(0);' id='DocumentType' class='AdminLink' ><button type="button"><?php echo _("Documents Type");?></button></a>
-				<a href='javascript:void(0);' id='DocumentNoteType' class='AdminLink'><button type="button"><?php echo _("Notes type");?></button></a>
-				<a href='javascript:void(0);' id='Consortium' class='AdminLink'><button type="button"><?php echo _("Categories");?></button></a>
+				<a href='javascript:void(0);' class='updateUserList'><button type="button"><?php echo _("Users");?></button></a>
+				<a href='javascript:void(0);' id='DocumentType' class='updateTable' ><button type="button"><?php echo _("Documents Type");?></button></a>
+				<a href='javascript:void(0);' id='DocumentNoteType' class='updateTable'><button type="button"><?php echo _("Notes type");?></button></a>
+				<a href='javascript:void(0);' id='Consortium' class='updateTable'><button type="button"><?php echo _("Categories");?></button></a>
 			<!-- disabled menu part
 			<a href='javascri		pt:void(0);'  class='updateQualifierList'><php /*echo _("Qualifier");?></a>
 			<a href='javascript:void(0);'  class='updateExpressionTypeList'><php /*echo _("Expression");?></a>
