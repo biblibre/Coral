@@ -1136,7 +1136,7 @@ if ($_GET['isArchived'] == 1) {
 			$update=_('Update');
 			$updateUser = new User(new NamedArguments(array('primaryKey' => $loginID)));
 		}else{
-			$update=_('Add New');
+			$update=_('Add');
 		}
 
 		$util = new Utility();
@@ -1219,7 +1219,7 @@ if ($_GET['isArchived'] == 1) {
 			$update=_('Update');
 			$expressionType = new ExpressionType(new NamedArguments(array('primaryKey' => $expressionTypeID)));
 		}else{
-			$update=_('Add New');
+			$update=_('Add');
 		}
 
 
@@ -1264,7 +1264,7 @@ if ($_GET['isArchived'] == 1) {
 			$update=_('Update');
 			$qualifier = new Qualifier(new NamedArguments(array('primaryKey' => $qualifierID)));
 		}else{
-			$update=_('Add New');
+			$update=_('Add');
 		}
 
 
