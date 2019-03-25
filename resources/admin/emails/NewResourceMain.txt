@@ -1,5 +1,5 @@
-For resource: <ResourceTitle>
+Pour la ressource: <ResourceTitle>
 
-A new resource has been added by <Creator>.
+Une nouvelle ressource a été ajoutée par <Creator>.
 
-Visit the record at <ResourceRecordURL><ResourceID>
+Afficher la ressource: <ResourceRecordURL><ResourceID>

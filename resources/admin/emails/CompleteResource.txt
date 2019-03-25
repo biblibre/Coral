@@ -1,8 +1,5 @@
-For resource: <ResourceTitle>
+Pour la ressource: <ResourceTitle>
 
-Resource has finished all of the workflow steps and is marked complete.
+Toutes les étapes de workflow ont été terminées pour cette resource, et celui-ci a été marqué comme terminé.
 
-Visit the record at <ResourceRecordURL><ResourceID>
-
-
-
+Afficher la ressource: <ResourceRecordURL><ResourceID>

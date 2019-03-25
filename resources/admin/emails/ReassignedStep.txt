@@ -1,7 +1,7 @@
-For resource: <ResourceTitle>
+Pour la ressource: <ResourceTitle>
 
-The step '<StepName>' has been reassigned to you. It is now in your queue.
+L'étape de workflow '<StepName>' vous a été réassignée. Elle est désormais dans votre file d'attente.
 
-Visit the record at <ResourceRecordURL><ResourceID>
+Afficher la ressource: <ResourceRecordURL><ResourceID>
 
 <Note>

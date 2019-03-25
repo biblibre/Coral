@@ -1,5 +1,5 @@
-For resource: <ResourceTitle>
+Pour la ressource: <ResourceTitle>
 
-<StepName> has been completed. Resource is now in your queue.
+L'étape de workflow <StepName> est terminée. La ressource est désormais dans votre file d'attente.
 
-Visit the record at <ResourceRecordURL><ResourceID>
+Afficher la ressource: <ResourceRecordURL><ResourceID>

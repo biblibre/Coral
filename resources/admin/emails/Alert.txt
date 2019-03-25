@@ -1,5 +1,5 @@
-For resource: <ResourceTitle>
+Pour la ressource: <ResourceTitle>
 
-The subscription end date for this resource is approaching or passing.
+La date de fin d'abonnement à cette ressource approche ou est passée.
 
-Visit the record at <ResourceRecordURL><ResourceID>
+Afficher la ressource: <ResourceRecordURL><ResourceID>

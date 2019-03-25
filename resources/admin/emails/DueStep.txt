@@ -1,6 +1,5 @@
-For resource: <ResourceTitle>
+Pour la ressource: <ResourceTitle>
 
-The following step is due: <StepName>
+L'étape de workflow suivante est en attente: <StepName>
 
-Visit the record at <ResourceRecordURL><ResourceID>
-
+Afficher la ressource: <ResourceRecordURL><ResourceID>

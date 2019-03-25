@@ -1,5 +1,5 @@
-For resource: <ResourceTitle>
+Pour la ressource: <ResourceTitle>
 
-The prior step has been deleted and now the resource is in your queue.
+L'étape de workflow précédente a été supprimée, et la ressource est maintenant dans votre file d'attente.
 
-Visit the record at <ResourceRecordURL><ResourceID>
+Afficher la ressource: <ResourceRecordURL><ResourceID>
