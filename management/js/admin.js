@@ -10,6 +10,8 @@ $(document).ready(function(){
      //updateForm('Status');
      //updateQualifierList();
 
+     updateUserList();
+
      $(".updateUserList").click(function () {
          updateUserList();
 

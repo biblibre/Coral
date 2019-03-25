@@ -1607,4 +1607,3 @@ switch ($_GET['action']) {
 
 
 ?>
-<script type="text/javascript" src="js/admin.js"></script>
