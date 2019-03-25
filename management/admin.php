@@ -40,7 +40,7 @@ if ($user->isAdmin()){
 				<a href='javascript:void(0);' id='DocumentNoteType' class='updateTable'><button type="button"><?php echo _("Notes type");?></button></a>
 				<a href='javascript:void(0);' id='Consortium' class='updateTable'><button type="button"><?php echo _("Categories");?></button></a>
 			<!-- disabled menu part
-			<a href='javascri		pt:void(0);'  class='updateQualifierList'><php /*echo _("Qualifier");?></a>
+			<a href='javascript:void(0);'  class='updateQualifierList'><php /*echo _("Qualifier");?></a>
 			<a href='javascript:void(0);'  class='updateExpressionTypeList'><php /*echo _("Expression");?></a>
 		-->
 			</div>
