@@ -880,6 +880,7 @@ td.searchRow textarea {
 	width: 170px;
 	float: left;
 	margin-right: 8px;
+	margin-left: 390px;
 }
 
 .linedFormTable {
@@ -2006,7 +2007,7 @@ div.displayed{
 .tabTitle{
 	text-align: left;
 	margin-left: 166px;
-	margin-top: -7px;
+
 }
 
 .admTabHeader{
@@ -2014,11 +2015,6 @@ div.displayed{
 }
 
 
-.ButtonMenu{
-
-	margin-left: 77px;
-
-}
 
 
 
@@ -2030,4 +2026,9 @@ div.displayed{
 
 .menuAdmin{
 	text-align: center;
+
+}
+
+div.col-10{
+	padding-left: 8%;
 }

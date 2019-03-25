@@ -47,7 +47,7 @@
           	tb_reinit();
           }
       });
-console.trace();
+
  }
 
 
@@ -227,5 +227,3 @@ function updateOrderGroups(){
 	});
 
 }
-
-console.trace();

@@ -59,9 +59,11 @@ $coralURL = $util->getCORALURL();
 <script type="text/javascript" src="../js/plugins/ajaxupload.3.5.js"></script>
 <script type="text/javascript" src="js/plugins/thickbox.js"></script>
 <script type="text/javascript" src="../js/plugins/Gettext.js"></script>
-<!-- Adding bootstrap CDN -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Adding bootstrap -->
+<!-- <script type="text/javascript" src="../js/plugins/boostrap-js/bootstrap.bundle.js"></script> -->
+<link rel="stylesheet" href="../css/boostrap-css/bootstrap.min.css" type="text/css" media="screen" />
+
 
 
 <?php
@@ -88,11 +90,11 @@ $coralURL = $util->getCORALURL();
 </head>
 <body>
 <noscript><font face='arial'><?php echo _("JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then ");?><a href=""><?php echo _("try again");?></a>. </font></noscript>
-<center>
+
 <div class="wrapper">
 <center>
 
-<div id="main-table">
+<table id="main-table">
 
 <tr>
 <td style='vertical-align:top;'>
@@ -100,7 +102,7 @@ $coralURL = $util->getCORALURL();
 
 <center>
 
-<table class="titleTable" style="container-fluid;text-align:left;">
+<table class="titleTable" style="width:1024px; text-align:left;">
 
     <tr style='vertical-align:top;'>
         <td style='height:53px;' colspan='3'>
@@ -319,6 +321,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 ?>
 
 </td>
+</tr>
 </table>
 	<script>
         $("#lang").change(function() {
