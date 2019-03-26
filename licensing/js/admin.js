@@ -20,27 +20,44 @@
  $(document).ready(function(){
 
       updateUserList();
+      buttonOn();
 
       $(".updateForm").click(function () {
           updateForm($(this).attr("id"));
+          buttonOff();
 
       });
 
       $(".updateUserList").click(function () {
           updateUserList();
+          buttonOn();
       });
       $(".updateExpressionTypeList").click(function () {
           updateExpressionTypeList();
+          buttonOff();
       });
       $(".updateCalendarSettingsList").click(function () {
           updateCalendarSettingsList();
+          buttonOff();
         });
 
       $(".updateQualifierList").click(function () {
           updateQualifierList();
+          buttonOff();
       });
 
     });
+
+
+/*Auto-Select the first button in side menu on arrival in the admin section */
+    function buttonOff(){
+      $("#PreSelectedButton").css({'background': '#F2F5F7', 'font-weight':'normal'});
+    };
+
+    function buttonOn(){
+      $("#PreSelectedButton").css({'background': '#EAEDEF', 'font-weight':'bold'});
+    }
+
 
 
 
