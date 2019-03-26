@@ -19,26 +19,39 @@
  $(document).ready(function(){
 
       updateUserList();
+      buttonOn();
       //updateLogEmailAddressTable();
       //updateOutlierTable();
 
       $(".updateUserList").click(function () {
 
   				updateUserList();
+          buttonOn();
   		});
 
   		$(".updateLogEmailAddressTable").click(function () {
 
   				 updateLogEmailAddressTable();
+            buttonOff();
   		});
 
   		$(".updateOutlierTable").click(function () {
-  				
+
   				 updateOutlierTable();
+          buttonOff();
   		});
 
 
  });
+
+ /*Auto-Select the first button in side menu on arrival in the admin section */
+ function buttonOff(){
+   $("#PreSelectedButton").css({'background': '#F2F5F7', 'font-weight':'normal'});
+ };
+
+ function buttonOn(){
+   $("#PreSelectedButton").css({'background': '#EAEDEF', 'font-weight':'bold'});
+ };
 
 
 

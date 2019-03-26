@@ -32,7 +32,7 @@ if ($user->isAdmin()){
 	<div class="row">
 		<div class="col-2">
 			<div class="list-group" id="list-tab" role="tablist">
-				<a href='javascript:void(0);' class='updateUserForm'><button type="button"><?php echo _("Users");?></button></a>
+				<a href='javascript:void(0);' class='updateUserForm'><button id="PreSelectedButton"  type="button"><?php echo _("Users");?></button></a>
 				<a href='javascript:void(0);' id='OrganizationRole' class='updateForm'><button type="button"><?php echo _("Organization Role");?></button></a>
 				<a href='javascript:void(0);' id='ContactRole' class='updateForm' ><button type="button"><?php echo _("Contact Role");?></button></a>
 				<a href='javascript:void(0);' id='AliasType' class='updateForm'><button type="button"><?php echo _("Alias Type");?></button></a>

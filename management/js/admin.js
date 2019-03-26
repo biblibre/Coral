@@ -10,19 +10,38 @@ $(document).ready(function(){
      //updateForm('Status');
      //updateQualifierList();
 
+
+
      updateUserList();
+     buttonOn();
+
+
 
      $(".updateUserList").click(function () {
          updateUserList();
+         buttonOn();
+
 
      });
 
      $(".updateTable").click(function () {
          updateTable($(this).attr("id"));
+         buttonOff();
+
+
      });
 
 });
 
+
+/*Auto-Select the first button in side menu on arrival in the admin section */
+function buttonOff(){
+  $("#PreSelectedButton").css({'background': '#F2F5F7', 'font-weight':'normal'});
+};
+
+function buttonOn(){
+  $("#PreSelectedButton").css({'background': '#EAEDEF', 'font-weight':'bold'});
+};
 
 
 

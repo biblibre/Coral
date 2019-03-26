@@ -18,6 +18,7 @@
  $(document).ready(function(){
 
       updateUserForm();
+      buttonOn()
       //updateForm('OrganizationRole');
       //updateForm('ContactRole');
       //updateForm('AliasType');
@@ -26,14 +27,26 @@
 
       $(".updateUserForm").click(function () {
           updateUserForm();
+          buttonOn()
 
       });
 
       $(".updateForm").click(function () {
           updateForm($(this).attr("id"));
+          buttonOff();
       });
 
  });
+
+ /*Auto-Select the first button in side menu on arrival in the admin section */
+ function buttonOff(){
+   $("#PreSelectedButton").css({'background': '#F2F5F7', 'font-weight':'normal'});
+ };
+
+ function buttonOn(){
+   $("#PreSelectedButton").css({'background': '#EAEDEF', 'font-weight':'bold'});
+ };
+
 
 
  function updateUserForm(){
