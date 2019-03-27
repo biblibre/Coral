@@ -5,8 +5,15 @@
 
 		$detailedSubject = new DetailedSubject();
 		$detailedSubjectArray = $detailedSubject->allAsArray();
-
-		echo "<div class='adminRightHeader'>" . _("General Subject") . "</div>";
+		?>
+			<section class= "tabTitle">
+			<?php
+				echo "<div class='adminRightHeader'>" . _("General Subject") . "</div>";
+				echo "<a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'>"._("add new ") . _(trim(strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst("GeneralSubject"))))) . "</a>";
+		?>
+			</section>
+			</br>
+		<?php
 
 		if (count($generalSubjectArray) > 0){
 			?>
@@ -18,7 +25,7 @@
 				</tr>
 				<?php
 
-				foreach($generalSubjectArray as $instance) {
+			foreach($generalSubjectArray as $instance) {
 					echo "<tr>";
 					echo "<td>" . $instance['shortName'] . "</td>";
 					echo "<td><a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=" . $instance[lcfirst("GeneralSubject") . 'ID'] . "&height=128&width=260&modal=true' class='thickbox'><img src='images/edit.gif' alt='edit' title='edit'></a></td>";
@@ -41,14 +48,19 @@
 			echo _("(none found)")."<br />";
 		}
 
-		echo "<a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'>"._("add new ") . _(trim(strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst("GeneralSubject"))))) . "</a>";
+
 
 		?>
 
 		<br /><br />
-
+		<section class= "tabTitle">
 		<?php
 		echo "<div class='adminRightHeader'>" . _("Detailed Subject") . "</div>";
+		echo "<a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'>"._("add new ") . _(trim(strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst("DetailedSubject"))))) . "</a>";
+		?>
+		</section>
+		</br>
+		<?php
 
 		if (count($detailedSubjectArray) > 0){
 			?>
@@ -81,27 +93,27 @@
 			echo _("(none found)")."<br />";
 		}
 
-		echo "<a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'>"._("add new ") . _(trim(strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst("DetailedSubject"))))) . "</a>";
 
 		?>
 
-		<br /><br />
-
+		 <br /><br />
+		 <section class= "tabTitle">
 		<?php
-
 		echo "<div class='adminRightHeader'>" . _("Subject Relationships") . "</div>";
-
+		?>
+		 </section>
+		<?php
 		if (count($generalSubjectArray) > 0){
 			?>
 			<table class='linedDataTable' style='width:100%'>
 				<tr>
-				<th><?php echo _("General Subject");?></th>
-				<th><?php echo _("Detailed Subject");?></th>
-				<th style='width:20px;'>&nbsp;</th>
+					<th><?php echo _("General Subject");?></th>
+					<th><?php echo _("Detailed Subject");?></th>
+					<th style='width:20px;'>&nbsp;</th>
 				</tr>
 				<?php
 
-				foreach($generalSubjectArray as $ug) {
+			foreach($generalSubjectArray as $ug) {
 					$generalSubject = new GeneralSubject(new NamedArguments(array('primaryKey' => $ug['generalSubjectID'])));
 
 					echo "<tr>";

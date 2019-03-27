@@ -16,7 +16,11 @@
 
 		if (count($instanceArray) > 0){
 			?>
+			<section class= "tabTitle">
 			<div class="adminRightHeader"><?php echo _("Users");?></div>
+			<a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=&height=275&width=315&modal=true' class='thickbox' id='addUser'><?php echo _("add user");?></a>
+			</section>
+			</br>
 			<table class='linedDataTable' style='width:570px;margin-bottom:5px;'>
 				<tr>
 				<th><?php echo _("Login ID");?></td>
@@ -51,7 +55,7 @@
 
 				?>
 			</table>
-			<a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=&height=275&width=315&modal=true' class='thickbox' id='addUser'><?php echo _("add user");?></a>
+
 			<?php
 
 		}else{

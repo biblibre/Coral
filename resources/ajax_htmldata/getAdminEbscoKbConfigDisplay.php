@@ -16,7 +16,6 @@
         <input type="text" name="apiKey" value="<?php echo $config->settings->ebscoKbApiKey; ?>" id="ebscoKbApiKey" style="width: 100%;">
     </div>
     <div style="margin-top: 10px;">
-        <button class="btn btn-primary" type="submit" >Save</button>
+        <button class="btn btn-light" type="submit">Save</button>
     </div>
 </form>
-

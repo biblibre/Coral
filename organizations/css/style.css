@@ -2082,3 +2082,7 @@ button:focus{
 .admTabHeader{
 	font-weight: bold;
 }
+
+button{
+	height: 25px;
+}

@@ -6,9 +6,15 @@
 
 		$emailAddressArray = $alertEmailAddress->allAsArray();
 		$daysInAdvanceArray = $alertDaysInAdvance->allAsArray();
-
+		?>
+		<section class= "tabTitle">
+		<?php
 		echo "<div class='adminRightHeader'>"._("Alert Settings")."</div>";
-
+		echo "<a href='ajax_forms.php?action=getAdminAlertEmailForm&alertEmailAddressID=&height=128&width=260&modal=true' class='thickbox'>"._("add email address")."</a>";
+		?>
+		</section>
+		?>
+		<?php
 		if (count($emailAddressArray) > 0){
 			?>
 			<table class='linedDataTable'>
@@ -29,14 +35,22 @@
 
 				?>
 			</table>
+			<br/>
 			<?php
 
 		}else{
 			echo _("(none found)")."<br />";
 		}
+		?>
 
-		echo "<a href='ajax_forms.php?action=getAdminAlertEmailForm&alertEmailAddressID=&height=128&width=260&modal=true' class='thickbox'>"._("add email address")."</a>";
-		echo "<br /><br /><br />";
+		<section class= "tabTitle">
+			<?php echo "<a href='ajax_forms.php?action=getAdminAlertDaysForm&alertDaysInAdvanceID=&height=128&width=260&modal=true' class='thickbox'>"._("add days")."</a>"; ?>
+		</section>
+		</br>
+
+
+
+		<?php
 
 
 		if (count($daysInAdvanceArray) > 0){
@@ -59,6 +73,7 @@
 
 				?>
 			</table>
+
 			<?php
 
 		}else{
@@ -68,7 +83,6 @@
 
 
 
-		echo "<a href='ajax_forms.php?action=getAdminAlertDaysForm&alertDaysInAdvanceID=&height=128&width=260&modal=true' class='thickbox'>"._("add days")."</a>";
+
 
 ?>
-

@@ -4,12 +4,18 @@
 		$obj = new Currency();
 
 		$instanceArray = $obj->allAsArray();
-
-		echo "<div class='adminRightHeader'>"._("Currency")."</div>";
-
-		if (count($instanceArray) > 0){
+		?>
+		<section class= "tabTitle">
+				<?php
+				echo "<div class='adminRightHeader'>"._("Currency")."</div>";
+				echo "<a href='ajax_forms.php?action=getAdminCurrencyUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'>"._("add currency")."</a>"
+				 ?>
+		</section>
+		</br>
+		<?php
+	if (count($instanceArray) > 0){
 			?>
-			<table class='linedDataTable'>
+		<table class='linedDataTable'>
 				<tr>
 				<th style='width:180px;'><?php echo _("Code");?></th>
 				<th style='width:100%;'><?php echo _("Name");?></th>
@@ -18,7 +24,7 @@
 				</tr>
 				<?php
 
-				foreach($instanceArray as $instance) {
+		foreach($instanceArray as $instance) {
 					echo "<tr>";
 					echo "<td>" . $instance['currencyCode'] . "</td>";
 					echo "<td>" . $instance['shortName'] . "</td>";
@@ -32,9 +38,8 @@
 			<?php
 
 		}else{
-			echo "(none found)<br />";
+					echo "(none found)<br />";
 		}
 
-		echo "<a href='ajax_forms.php?action=getAdminCurrencyUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'>"._("add currency")."</a>";
 
 ?>

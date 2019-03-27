@@ -5,10 +5,20 @@
 
 		$userGroup = new UserGroup();
 		$userGroupArray = $userGroup->allAsArray();
-
-
+		?>
+		<section class= "tabTitle">
+			<?php
 		echo "<div class='adminRightHeader'>"._("Workflow Setup")."</div>";
+		if (count($userGroupArray) >0){
+			echo "<div><a href='ajax_forms.php?action=getAdminWorkflowForm&workflowID=&height=528&width=750&modal=true' class='thickbox'>"._("add workflow")."</a></div>";
+		}else{
+			echo "<div><i>"._("You must set up at least one user group before you can add workflows")."</i></div>";
+		}
+			?>
+		  </section>
+		</br>
 
+			<?php
 		if (count($workflowArray) > 0){
 			?>
 			<table class='linedDataTable' style='width:100%'>
@@ -63,21 +73,21 @@
 		}
 
 		//user groups are required to set workflows up so display this message if there arent any
-		if (count($userGroupArray) >0){
-			echo "<a href='ajax_forms.php?action=getAdminWorkflowForm&workflowID=&height=528&width=750&modal=true' class='thickbox'>"._("add workflow")."</a>";
-		}else{
-			echo "<i>"._("You must set up at least one user group before you can add workflows")."</i>";
-		}
+
 
 		?>
 
 
 		<br /><br /><br /><br />
-
+		<section class= "tabTitle">
 		<?php
-
 		echo "<div class='adminRightHeader'>"._("User Group Setup")."</div>";
+		echo "<a href='ajax_forms.php?action=getAdminUserGroupForm&userGroupID=&height=400&width=305&modal=true' class='thickbox'>"._("add user group")."</a>";
 
+		?>
+		</section>
+		</br>
+		<?php
 		if (count($userGroupArray) > 0){
 			?>
 			<table class='linedDataTable' style='width:100%'>
@@ -114,7 +124,5 @@
 		}
 
 
-		echo "<a href='ajax_forms.php?action=getAdminUserGroupForm&userGroupID=&height=400&width=305&modal=true' class='thickbox'>"._("add user group")."</a>";
 
 ?>
-
