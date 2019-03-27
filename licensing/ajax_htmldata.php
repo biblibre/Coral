@@ -1224,6 +1224,9 @@ switch ($_GET['action']) {
 			?>
 			<section class= "tabTitle">
 				<span class="headerText"><?php echo _("$className ") ;?></span>
+				<?php
+				echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'><a href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span>";
+				?>
 			</section>
 
 			<table class='dataTable' style='width:350px'>
@@ -1231,7 +1234,7 @@ switch ($_GET['action']) {
 				<?php
 				echo "<th></th>
 				<th></th>
-				<th><span id='span_new". $className ."' class='adminAddInput admTabHeader'><a href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span></th>";
+				<th></th>";
 				?>
 				</tr>
 				<?php

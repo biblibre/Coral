@@ -32,86 +32,61 @@ $config = new Configuration;
 if ($user->isAdmin()){
 	?>
 
-	<table class='headerTable'>
-	<tr>
-	<td style='margin:0;padding:0;text-align:left;'>
-		<table style='width:100%; margin:0;padding:0;'>
-		<tr style='vertical-align:top'>
-		<td>
-		<span class="headerText"><?php echo _("Administration");?></span>
-		<br />
-		</td>
-		</tr>
-		</table>
 
-
-		<table style='width:700px; text-align:left; vertical-align:top;'>
-		<tr>
-		<td style='width:170px;vertical-align:top;'>
-			<table class='adminMenuTable' style='width:170px;'>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='UserAdminLink'><?php echo _("Users");?></a></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='WorkflowAdminLink'><?php echo _("Workflow / User Group");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='AccessMethod' class='AdminLink'><?php echo _("Access Method");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='AcquisitionType' class='AdminLink'><?php echo _("Acquisition Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='AdministeringSite' class='AdminLink'><?php echo _("Administering Site");?></div></td></tr>
-				<?php if ($config->settings->enableAlerts == 'Y'){ ?>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='AlertAdminLink'><?php echo _("Alert Settings");?></div></td></tr>
-				<?php } ?>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='AliasType' class='AdminLink'><?php echo _("Alias Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='AttachmentType' class='AdminLink'><?php echo _("Attachment Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='AuthenticationType' class='AdminLink'><?php echo _("Authentication Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='AuthorizedSite' class='AdminLink'><?php echo _("Authorized Site");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='CatalogingStatus' class='AdminLink'><?php echo _("Cataloging Status");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='CatalogingType' class='AdminLink'><?php echo _("Cataloging Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='ContactRole' class='AdminLink'><?php echo _("Contact Role");?></div></td></tr>
+	<div class= "container-fluid">
+		<div class="row">
+			<div class="col-2">
+				<div class="list-group" id="list-tab" role="tablist">
+					<a href='javascript:void(0);' class='UserAdminLink'><button id="PreSelectedButton" type="button"><?php echo _("Users");?></button></a>
+					<a href='javascript:void(0);' class='WorkflowAdminLink'><button type="button"><?php echo _("Workflow / User Group");?></button></a>
+					<a href='javascript:void(0);' id='AccessMethod' class='AdminLink'><button type="button"><?php echo _("Access Method");?></button></a>
+					<a href='javascript:void(0);' id='AcquisitionType' class='AdminLink'><button type="button"><?php echo _("Acquisition Type");?></button></a>
+					<a href='javascript:void(0);' id='AdministeringSite' class='AdminLink'><button type="button"><?php echo _("Administering Site");?></button></a>
+					<a href='javascript:void(0);' class='AlertAdminLink'><button type="button"><?php echo _("Alert Settings");?></button></a>
+					<a href='javascript:void(0);' id='AliasType' class='AdminLink'><button type="button"><?php echo _("Alias Type");?></button></a>
+					<a href='javascript:void(0);' id='AttachmentType' class='AdminLink'><button type="button"><?php echo _("Attachment Type");?></button></a>
+					<a href='javascript:void(0);' id='AuthenticationType' class='AdminLink'><button type="button"><?php echo _("Authentication Type");?></button></a>
+					<a href='javascript:void(0);' id='AuthorizedSite' class='AdminLink'><button type="button"><?php echo _("Authorized Site");?></button></a>
+					<a href='javascript:void(0);' id='CatalogingStatus' class='AdminLink'><button type="button"><?php echo _("Cataloging Status");?></button></a>
+					<a href='javascript:void(0);' id='CatalogingType' class='AdminLink'><button type="button"><?php echo _("Cataloging Type");?></button></a>
+					<a href='javascript:void(0);' id='ContactRole' class='AdminLink'><button type="button"><?php echo _("Contact Role");?></button></a>
 				<?php if ($config->settings->enhancedCostHistory == 'Y'){ ?>
-					<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='CostDetails' class='AdminLink'><?php echo _("Cost Details");?></div></td></tr>
+					<a href='javascript:void(0);' id='CostDetails' class='AdminLink'><button type="button"><?php echo _("Cost Details");?></button></a>
 				<?php } ?>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='CurrencyLink'><?php echo _("Currency");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='AdminLink' id="DowntimeType"><?php echo _("Downtime Type");?></div></td></tr>
-                <tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='EbscoKbConfigLink'><?php echo _("EBSCO Kb Config");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='ExternalLoginType' class='AdminLink'><?php echo _("External Login Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='FundLink'><?php echo _("Funds");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='ImportConfigLink'><?php echo _("Import Configuration");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='LicenseStatus' class='AdminLink'><?php echo _("License Status");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='NoteType' class='AdminLink'><?php echo _("Note Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='OrderType' class='AdminLink'><?php echo _("Order Type");?></div></td></tr>
+					<a href='javascript:void(0);' class='CurrencyLink'><button type="button"><?php echo _("Currency");?></button></a>
+					<a href='javascript:void(0);' class='AdminLink' id="DowntimeType"><button type="button"><?php echo _("Downtime Type");?></button></a>
+        	<a href='javascript:void(0);' class='EbscoKbConfigLink'><button type="button"><?php echo _("EBSCO Kb Config");?></button></a>
+					<a href='javascript:void(0);' id='ExternalLoginType' class='AdminLink'><button type="button"><?php echo _("External Login Type");?></button></a>
+					<a href='javascript:void(0);' class='FundLink'><button type="button"><?php echo _("Funds");?></button></a>
+					<a href='javascript:void(0);' class='ImportConfigLink'><button type="button"><?php echo _("Import Configuration");?></button></a>
+					<a href='javascript:void(0);' id='LicenseStatus' class='AdminLink'><button type="button"><?php echo _("License Status");?></button></a>
+					<a href='javascript:void(0);' id='NoteType' class='AdminLink'><button type="button"><?php echo _("Note Type");?></button></a>
+					<a href='javascript:void(0);' id='OrderType' class='AdminLink'><button type="button"><?php echo _("Order Type");?></button></a>
 				<?php
 
 				//For Organizations links
 				//if the org module is not installed, display provider list for updates
 				if ($config->settings->organizationsModule == 'N'){ ?>
 
-					<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='OrganizationRole' class='AdminLink'><?php echo _("Organization Role");?></div></td></tr>
-					<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='Organization' class='AdminLink'><?php echo _("Organizations");?></div></td></tr>
-
+					<a href='javascript:void(0);' id='OrganizationRole' class='AdminLink'><button type="button"><?php echo _("Organization Role");?></button></a>
+					<a href='javascript:void(0);' id='Organization' class='AdminLink'><button type="button"><?php echo _("Organizations");?></button></a>
 				<?php } ?>
 
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='PurchaseSite' class='AdminLink'><?php echo _("Purchasing Site");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='ResourceFormat' class='AdminLink'><?php echo _("Resource Format");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='ResourceType' class='AdminLink'><?php echo _("Resource Type");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='StorageLocation' class='AdminLink'><?php echo _("Storage Location");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='SubjectsAdminLink'><?php echo _("Subjects");?></div></td></tr>
-				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='UserLimit' class='AdminLink'><?php echo _("User Limit");?></div></td></tr>
-			</table>
-		</td>
-		<td class='adminRightPanel' style='width:530px;margin:0;'>
-			<div style='margin-top:5px;' id='div_AdminContent'>
-			<img src = "images/circle.gif" /><?php echo _("Loading...");?>
-			</div>
-			<div style='margin-top:5px;' class='smallDarkRedText' id='div_error'></div>
-
-		</td>
-		</tr>
-		</table>
+					<a href='javascript:void(0);' id='PurchaseSite' class='AdminLink'><button type="button"><?php echo _("Purchasing Site");?></button></a>
+					<a href='javascript:void(0);' id='ResourceFormat' class='AdminLink'><button type="button"><?php echo _("Resource Format");?></button></a>
+					<a href='javascript:void(0);' id='ResourceType' class='AdminLink'><button type="button"><?php echo _("Resource Type");?></button></a>
+					<a href='javascript:void(0);' id='StorageLocation' class='AdminLink'><button type="button"><?php echo _("Storage Location");?></button></a>
+					<a href='javascript:void(0);' class='SubjectsAdminLink'><button type="button"><?php echo _("Subjects");?></button></a>
+					<a href='javascript:void(0);' id='UserLimit' class='AdminLink'><button type="button"><?php echo _("User Limit");?></button></a>
+				</div>
+		</div>
+			<div class="col-10" id='div_AdminContent'></div>
+		</div>
+</div>
 
 
 
-	</td>
-	</tr>
-	</table>
 
-	<br />
 
 
 	<script type="text/javascript" src="js/admin.js"></script>
@@ -125,5 +100,3 @@ if ($user->isAdmin()){
 
 include 'templates/footer.php';
 ?>
-
-

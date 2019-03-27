@@ -10,11 +10,17 @@
 
 		$instanceArray = $obj->allAsArray();
 		?>
-		<div class= "adminHeader">
-			<div ><?php echo "<div class='adminRightHeader'>" . _($title) . "</div>";?></div>
-			<div class="addElement"><?php echo "<a href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateID=&height=128&width=260&modal=true' class='thickbox'><img id='addType' src='images/plus.gif' title='"._("add")."'/></a>";?></div>
-		</div>
+
+			<section class= "tabTitle">
+			<?php
+		echo "<div class='adminRightHeader'>" . _($title) . "</div>";
+		echo "<a href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateID=&height=128&width=260&modal=true' class='thickbox'><img id='addType' src='images/plus.gif' title='"._("add")."'/></a>";
+
+				?>
+			</section>
+			</br>
 		<?php
+
 		if (count($instanceArray) > 0){
 			?>
 			<table class='linedDataTable'>

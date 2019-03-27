@@ -53,6 +53,9 @@ $coralURL = $util->getCORALURL();
 <script type="text/javascript" src="js/plugins/thickbox.js"></script>
 <script type="text/javascript" src="../js/plugins/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="../js/plugins/Gettext.js"></script>
+<!-- Add bootstrap -->
+<!-- <script type="text/javascript" src="../js/plugins/boostrap-js/bootstrap.bundle.js"></script> -->
+<link rel="stylesheet" href="../css/boostrap-css/bootstrap.min.css" type="text/css" media="screen" />
 <?php
     // Add translation for the JavaScript files
     global $http_lang;
@@ -91,7 +94,7 @@ $coralURL = $util->getCORALURL();
 
     <tr style='vertical-align:top;'>
         <td style='height:53px;' colspan='3'>
-                
+
             <div id="main-title">
                 <img src="images/title-icon-resources.png" />
                 <span id="main-title-text"><?php echo _("Resources"); ?></span>
@@ -124,18 +127,18 @@ $coralURL = $util->getCORALURL();
                                 while (($file = readdir($dh)) !== false) {
                                     if (is_dir("$route/$file") && $file!="." && $file!=".."){
                                         $lang[]=$file;
-                                    } 
-                                } 
-                                closedir($dh); 
-                            } 
+                                    }
+                                }
+                                closedir($dh);
+                            }
                         }else {
-                            echo "<br>"._("Invalid translation route!"); 
+                            echo "<br>"._("Invalid translation route!");
                         }
                         // Get language of navigator
                         $defLang = $lang_name->getBrowserLanguage();
-                        
+
                         // Show an ordered list
-                        sort($lang); 
+                        sort($lang);
                         for($i=0; $i<count($lang); $i++){
                             if(isset($_COOKIE["lang"])){
                                 if($_COOKIE["lang"]==$lang[$i]){
@@ -152,7 +155,7 @@ $coralURL = $util->getCORALURL();
                             }
                         }
                         ?>
-                        
+
                     </select>
                 </span>
             </div>
@@ -278,7 +281,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->li
             setLanguage($("#lang").val());
             location.reload();
         });
-        
+
         function setLanguage(lang) {
 			var wl = window.location, now = new Date(), time = now.getTime();
             var cookievalid=2592000000; // 30 days (1000*60*60*24*30)

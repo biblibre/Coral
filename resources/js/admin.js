@@ -18,55 +18,88 @@
 $(document).ready(function(){
 
     updateUserTable();
+     buttonOn();
+
 
     $(".AdminLink").click(function () {
         updateTable($(this).attr("id"));
+        buttonOff();
+
     });
 
     $(".UserAdminLink").click(function () {
         updateUserTable();
+        buttonOn();
+
     });
 
     $(".AlertAdminLink").click(function () {
         updateAlertTable();
+        buttonOff();
+
     });
 
 
     $(".WorkflowAdminLink").click(function () {
         updateWorkflowTable();
+        buttonOff();
+
     });
 
     $(".SubjectsAdminLink").click(function () {
         updateSubjectsTable();
+        buttonOff();
+
     });
 
 
     $(".CurrencyLink").click(function () {
         updateCurrencyTable();
+        buttonOff();
+
     });
 
     $(".FundLink").click(function () {
         updateFundTable();
+        buttonOff();
+
     });
 
     $(".ImportConfigLink").click(function () {
         updateImportConfigTable();
+        buttonOff();
+
     });
 
     $(".EbscoKbConfigLink").click(function () {
         updateEbscoKbConfigTable();
+        buttonOff();
+
     });
 
     $("#ebscoKbConfig").live('submit', function(e){
         e.preventDefault();
         submitEbscoKbData();
+
     });
 
     $('.removeData').live('click', function () {
         deleteData($(this).attr("cn"), $(this).attr("id"));
+
     });
 
 });
+
+
+/*Auto-Select the first button in side menu on arrival in the admin section */
+function buttonOff(){
+  $("#PreSelectedButton").css({'background': '#F2F5F7', 'font-weight':'normal'});
+};
+
+function buttonOn(){
+  $("#PreSelectedButton").css({'background': '#EAEDEF', 'font-weight':'bold'});
+};
+
 
 function removeSelectedClassFromNav(){
   $(".AlertAdminLink").parent().parent().removeClass('selected');

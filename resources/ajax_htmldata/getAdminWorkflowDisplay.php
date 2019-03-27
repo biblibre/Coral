@@ -7,23 +7,19 @@
 		$userGroupArray = $userGroup->allAsArray();
 		?>
 
-		<div class='adminHeader'>
-			<div>
-				<?php
-					echo "<div class='adminRightHeader'>"._("Workflow Setup")."</div>";
-					//user groups are required to set workflows up so display this message if there arent any
-					?>
-				</div>
-				<div class='addElement'>
-					<?php
-					if (count($userGroupArray) >0){
-						echo "<a href='ajax_forms.php?action=getAdminWorkflowForm&workflowID=&height=528&width=750&modal=true' class='thickbox'><img id='addWorflowSetup' src='images/plus.gif' title='"._("add workflow")."' /></a>";
-					}else{
-						echo "<i>"._("You must set up at least one user group before you can add workflows")."</i>";
-					}
-					?>
-				</div>
-			</div>
+		<section class= "tabTitle">
+			<?php
+		echo "<div class='adminRightHeader'>"._("Workflow Setup")."</div>";
+		if (count($userGroupArray) >0){
+			echo "<div><a href='ajax_forms.php?action=getAdminWorkflowForm&workflowID=&height=528&width=750&modal=true' class='thickbox'><img id='addWorflowSetup' src='images/plus.gif' title='"._("add workflow")."' /></a></div>";
+		}else{
+			echo "<div><i>"._("You must set up at least one user group before you can add workflows")."</i></div>";
+		}
+			?>
+		  </section>
+		</br>
+
+
 			<?php
 		if (count($workflowArray) > 0){
 			?>
@@ -79,26 +75,25 @@
 		}
 
 
+		//user groups are required to set workflows up so display this message if there arent any
+
+
 
 		?>
 
 
 		<br /><br /><br /><br />
 
-
-		<div class='adminHeader'>
-			<div>
-				<?php
+		<section class= "tabTitle">
+		<?php
 		echo "<div class='adminRightHeader'>"._("User Group Setup")."</div>";
-				?>
-			</div>
-			<div class='addElement'>
-				<?php
-			echo "<a href='ajax_forms.php?action=getAdminUserGroupForm&userGroupID=&height=400&width=305&modal=true' class='thickbox'><img id='addUserGroup' src='images/plus.gif' title='"._("add user group")."' /></a>";
-			?>
-			</div>
-		</div>
-			<?php
+		echo "<a href='ajax_forms.php?action=getAdminUserGroupForm&userGroupID=&height=400&width=305&modal=true' class='thickbox'>"._("add user group")."</a>";
+
+		?>
+		</section>
+		</br>
+		<?php
+
 		if (count($userGroupArray) > 0){
 			?>
 			<table class='linedDataTable' style='width:100%'>
@@ -133,7 +128,6 @@
 		}else{
 			echo _("(none found)")."<br />";
 		}
-
 
 
 

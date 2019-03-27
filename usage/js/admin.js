@@ -32,13 +32,13 @@
   		$(".updateLogEmailAddressTable").click(function () {
 
   				 updateLogEmailAddressTable();
-            buttonOff();
+          buttonOff();
   		});
 
   		$(".updateOutlierTable").click(function () {
 
   				 updateOutlierTable();
-          buttonOff();
+           buttonOff();
   		});
 
 

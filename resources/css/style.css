@@ -37,14 +37,14 @@ table {
 .footer {
 	height: 3em;
 	font-size: 80%;
-	text-align: center;
+	text-align: hange-menter;
 	/*-*/width: 100%;
-	font-style: italic;
-	text-align: center;
+	font-style: italichange-m;
+	text-align: change-mode-itementer;
 }
 
 a {
-	color:#4d4d4d;
+	change-mode-itemolor:#4d4d4d;
 }
 
 a:active {color:#94a9be;}
@@ -200,15 +200,21 @@ table.queueDataTable tr {
 
 /* following is all for admin and queue pages
 *************************/
+
 div.ImportElement{margin-top: 5px; margin-right: 8px;}
 div.addElement{margin-top: 3px; margin-right: 8px;}
 div.adminHeader {display: flex;}
 div.adminHeaderAlert {display: flex; flex-direction: column;}
 div.adminRightHeader{font-size:135%; color:#3D545D; margin-bottom:5px; padding-right: 10px;}
+
+/*
+
+
 div.adminMenuLink a {color:#707172;text-decoration:none;}
 div.adminMenuLink a:active {color:#3D545D;}
 div.adminMenuLink a:hover {color:#526972;text-decoration:underline;}
 div.adminMenuLink a:focus {color:#3D545D; outline: none; font-weight:bold;}
+*/
 
 
 table.adminMenuTable {
@@ -3087,17 +3093,18 @@ span#divider {
     position: relative;
     top: -2px;
     margin-left: 8px;
+
 }
 
 li.change-mod-item {
-    background: #4d4d4d;
+    background: #4d4d4d ;
     height: initial !important;
     text-align: left;
 }
 
 li.change-mod-item a {
     display: block;
-    color: #fff;
+    color: #fff !important;
     font-size: 14px;
     padding: 10px !important;
     margin: 0;
@@ -3270,6 +3277,7 @@ input#archiveInd {
     margin-bottom: 10px;
 }
 
+<<<<<<< 36c268bcc1f1ef55c7c41e636d08f5866d395017
 /*--- Icons align in ProductsDetails ---*/
 .alignIcons{
 	display: flex;
@@ -3303,4 +3311,106 @@ input#archiveInd {
 
 .addIconAlert {
 	vertical-align: 3px;
+=======
+
+/*--- Side menu in admin ---*/
+button{
+	background: #F2F5F7;
+	width: 160px;
+	height: 40px;
+	color: #666666;
+	font-size: 0.9em !important;
+	text-align: left;
+	padding-left: 10px;
+	border-bottom: 1px;
+	font-weight: normal;
+
+}
+
+button:focus{
+	background: #EAEDEF;
+	outline-style: none !important;
+	font-weight:bold;
+}
+
+
+/*--- Menu in Blue
+button{
+	background: #1B77AA;
+	width: 160px;
+	height: 40px;
+	color: white;
+	font-weight: bold;
+	font-size: 1em !important;
+	text-align: left;
+	padding-left: 10px;
+	border-bottom: 1px;
+
+}
+
+button:focus{
+	background: #3999C2;
+	outline-style: none !important;
+}
+
+---*/
+/*--#list-tab{
+	position: fixed;
+
+} --*/
+
+.tabTitleUser{
+	text-align: left;
+	font-weight: bold;
+	font-size:125%;
+	margin-top: -7px;
+
+}
+
+.tabTitle{
+	text-align: left;
+	margin-left: 2px;
+
+}
+
+.admTabHeader{
+	font-weight: bold;
+}
+
+
+
+
+
+.adminContentAlign{
+	text-align: center;
+
+}
+
+.menuAdmin{
+	text-align: center;
+
+}
+
+div.col-10{
+	padding-left: 8%;
+}
+
+
+/* Formating boostrap button */
+
+button.btn{
+	height: 36px;
+
+}
+
+button{
+	height: 25px;
+}
+
+
+/*---  links in black ---*/
+a{
+	color: black !important;
+	font-weight: normal;
+>>>>>>> Align tabs title
 }

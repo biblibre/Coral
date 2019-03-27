@@ -5,15 +5,19 @@
 
 		$instanceArray = $obj->allAsArray();
 		?>
-		<div class='adminHeader'>
-			<div><?php echo "<div class='adminRightHeader'>"._("Currency")."</div>";?></div>
-			<div class='addElement' style="margin-right: 3px;"><?php echo "<a href='ajax_forms.php?action=getAdminCurrencyUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'><img id='addCurrency' src='images/plus.gif' title='"._("add Currency")."' /></a>";?></div>
-		</div>
 
+		<section class= "tabTitle">
+				<?php
+				echo "<div class='adminRightHeader'>"._("Currency")."</div>";
+				echo "<a href='ajax_forms.php?action=getAdminCurrencyUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'><img id='addCurrency' src='images/plus.gif' title='"._("add Currency")."' /></a>"
+				 ?>
+		</section>
+		</br>
 		<?php
-		if (count($instanceArray) > 0){
+	if (count($instanceArray) > 0){
+
 			?>
-			<table class='linedDataTable'>
+		<table class='linedDataTable'>
 				<tr>
 				<th style='width:180px;'><?php echo _("Code");?></th>
 				<th style='width:100%;'><?php echo _("Name");?></th>
@@ -22,7 +26,7 @@
 				</tr>
 				<?php
 
-				foreach($instanceArray as $instance) {
+		foreach($instanceArray as $instance) {
 					echo "<tr>";
 					echo "<td>" . $instance['currencyCode'] . "</td>";
 					echo "<td>" . $instance['shortName'] . "</td>";
@@ -36,7 +40,7 @@
 			<?php
 
 		}else{
-			echo "(none found)<br />";
+					echo "(none found)<br />";
 		}
 
 

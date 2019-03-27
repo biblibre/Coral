@@ -6,11 +6,17 @@
 		$detailedSubject = new DetailedSubject();
 		$detailedSubjectArray = $detailedSubject->allAsArray();
 		?>
-		<div class='adminHeader'>
-			<div><?php echo "<div class='adminRightHeader'>" . _("General Subject") . "</div>";?></div>
-			<div class='addElement' style="margin-right: 4px"><?php echo "<a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewGeneralSubject' src='images/plus.gif' title='"._("add new general subject")."'/></a>";?></div>
-		</div>
+
+			<section class= "tabTitle">
+			<?php
+				echo "<div class='adminRightHeader'>" . _("General Subject") . "</div>";
+				echo "<a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewGeneralSubject' src='images/plus.gif' title='"._("add new general subject")."'/></a>";
+		?>
+			</section>
+			</br>
 		<?php
+
+
 		if (count($generalSubjectArray) > 0){
 			?>
 			<table class='linedDataTable'>
@@ -21,7 +27,7 @@
 				</tr>
 				<?php
 
-				foreach($generalSubjectArray as $instance) {
+			foreach($generalSubjectArray as $instance) {
 					echo "<tr>";
 					echo "<td>" . $instance['shortName'] . "</td>";
 					echo "<td><a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=" . $instance[lcfirst("GeneralSubject") . 'ID'] . "&height=128&width=260&modal=true' class='thickbox'><img src='images/edit.gif' alt='edit' title='edit'></a></td>";
@@ -45,16 +51,21 @@
 		}
 
 
+
 		?>
 
 		<br /><br />
-		<div class='adminHeader'>
-			<div><?php echo "<div class='adminRightHeader'>" . _("Detailed Subject") . "</div>";?></div>
-			<div class='addElement' style="margin-right: 4px"><?php echo "<a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewDetailedSubject' src='images/plus.gif' title='"._("add new detailed subject")."'/></a>";?>
-				</div>
-		</div>
 
+		<section class= "tabTitle">
 		<?php
+		echo "<div class='adminRightHeader'>" . _("Detailed Subject") . "</div>";
+		echo "<a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'>"._("add new ") . _(trim(strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst("DetailedSubject"))))) . "</a>";
+		?>
+		</section>
+		</br>
+		<?php
+
+
 		if (count($detailedSubjectArray) > 0){
 			?>
 			<table class='linedDataTable'>
@@ -89,23 +100,24 @@
 
 		?>
 
-		<br /><br />
-
+		 <br /><br />
+		 <section class= "tabTitle">
 		<?php
-
 		echo "<div class='adminRightHeader'>" . _("Subject Relationships") . "</div>";
-
+		?>
+		 </section>
+		<?php
 		if (count($generalSubjectArray) > 0){
 			?>
 			<table class='linedDataTable' style='width:100%'>
 				<tr>
-				<th><?php echo _("General Subject");?></th>
-				<th><?php echo _("Detailed Subject");?></th>
-				<th style='width:20px;'>&nbsp;</th>
+					<th><?php echo _("General Subject");?></th>
+					<th><?php echo _("Detailed Subject");?></th>
+					<th style='width:20px;'>&nbsp;</th>
 				</tr>
 				<?php
 
-				foreach($generalSubjectArray as $ug) {
+			foreach($generalSubjectArray as $ug) {
 					$generalSubject = new GeneralSubject(new NamedArguments(array('primaryKey' => $ug['generalSubjectID'])));
 
 					echo "<tr>";

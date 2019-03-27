@@ -2678,6 +2678,10 @@ button:focus{
 	padding-bottom: 15px;
 }
 
+button{
+	height: 25px;
+}
+
 /*---  links in black ---*/
 
 a{

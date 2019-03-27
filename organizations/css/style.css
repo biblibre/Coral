@@ -2096,3 +2096,7 @@ button:focus{
 	font-weight: bold;
 
 }
+
+button{
+	height: 25px;
+}

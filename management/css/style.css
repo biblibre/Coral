@@ -2032,3 +2032,7 @@ div.displayed{
 div.col-10{
 	padding-left: 8%;
 }
+
+button{
+	height: 25px;
+}

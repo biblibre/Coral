@@ -7,10 +7,15 @@
 		$emailAddressArray = $alertEmailAddress->allAsArray();
 		$daysInAdvanceArray = $alertDaysInAdvance->allAsArray();
 		?>
-		<div class="adminHeaderAlert">
-		<?php echo "<div class='adminRightHeader'>"._("Alert Settings")."</div><br>";?>
-		<div class="addElement"><?php echo "<div><span class= 'addIconAlert'>"._("Add an email:")."  &nbsp;</span><a href='ajax_forms.php?action=getAdminAlertEmailForm&alertEmailAddressID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertEmail' src='images/plus.gif' title='"._("add Email")."' /></a></div>";?></div></br>
-		</div>
+
+		<section class= "tabTitle">
+		<?php
+		echo "<div class='adminRightHeader'>"._("Alert Settings")."</div>";
+		echo "<a href='ajax_forms.php?action=getAdminAlertEmailForm&alertEmailAddressID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertEmail' src='images/plus.gif' title='"._("add Email")."' /></a>";
+		?>
+		</section>
+		?>
+
 		<?php
 		if (count($emailAddressArray) > 0){
 			?>
@@ -32,15 +37,22 @@
 
 				?>
 			</table>
+			<br/>
 			<?php
 
 		}else{
 			echo _("(none found)")."<br />";
 		}
-
-
-
 		?>
+
+		<section class= "tabTitle">
+			<?php echo "<a href='ajax_forms.php?action=getAdminAlertDaysForm&alertDaysInAdvanceID=&height=128&width=260&modal=true' class='thickbox'>"._("add days")."</a>"; ?>
+		</section>
+		</br>
+
+
+
+		
 		<div class="adminHeader">
 			</div>
 			<div class="addElement" style= "padding-bottom: 8px;"><?php echo "<div><span class= 'addIconAlert'> "._("Add a day:")." &nbsp;</span><a href='ajax_forms.php?action=getAdminAlertDaysForm&alertDaysInAdvanceID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertDay' src='images/plus.gif' title='"._("add day")."'/></a></div>";?></div>
@@ -67,6 +79,7 @@
 
 				?>
 			</table>
+
 			<?php
 
 		}else{
