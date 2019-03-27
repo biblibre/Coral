@@ -2083,6 +2083,20 @@ button:focus{
 	font-weight: bold;
 }
 
+span.adminRightHeader{
+	font-size:135%; color:#3D545D;
+}
+
 button{
 	height: 25px;
+}
+
+a.addLink{
+	font-size: 1em;
+	color: black !important;
+
+}
+
+a{
+	font-weight: normal;
 }

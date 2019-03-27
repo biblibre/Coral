@@ -200,7 +200,10 @@ table.queueDataTable tr {
 
 /* following is all for admin and queue pages
 *************************/
-div.adminRightHeader{font-size:135%; color:#3D545D; margin-bottom:5px; }
+div.adminRightHeader{font-size:135%; color:#3D545D;}
+span.adminRightHeader{font-size:135%; color:#3D545D;}
+span.adminAdd{display: inline-block; margin-left:2%;}
+
 /*
 div.adminMenuLink a {color:#707172;text-decoration:none;}
 div.adminMenuLink a:active {color:#3D545D;}
@@ -3273,7 +3276,7 @@ input#archiveInd {
 /*--- Side menu in admin ---*/
 button{
 	background: #F2F5F7;
-	width: 160px;
+	width: 170px;
 	height: 40px;
 	color: #666666;
 	font-size: 0.9em !important;

@@ -8,8 +8,8 @@
 		?>
 		<section class= "tabTitle">
 			<?php
-		echo "<div class='adminRightHeader'>" . _("Fund") . "</div>";
-		echo "<span><a href='ajax_forms.php?action=getAdminFundUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'>" . _("add fund") . "</a><br/><a href='importFunds.php?action=getAdminFundUpdateForm&updateID=&height=175&width=300&modal=true' class='thickbox'>" . _("import funds") . "</a></span>";
+		echo "<span class='adminRightHeader'>" . _("Fund") . "</span>";
+		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getAdminFundUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'>" . _("add fund") . "</a></span><span class='adminAdd'><a href='importFunds.php?action=getAdminFundUpdateForm&updateID=&height=175&width=300&modal=true' class='thickbox'>" . _("import funds") . "</a></span>";
 		?>
 		</section>
 

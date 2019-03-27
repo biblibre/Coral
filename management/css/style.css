@@ -1979,17 +1979,10 @@ button:focus{
 
 }
 
-.tabTitleUser{
-	text-align: left;
-	font-weight: bold;
-	font-size:125%;
-	margin-top: -7px;
 
-}
 
 .tabTitle{
 	text-align: left;
-	margin-left: 166px;
 
 }
 
@@ -2011,10 +2004,23 @@ button:focus{
 
 }
 
+span.adminRightHeader{
+	font-size:135%; color:#3D545D;
+}
+
 div.col-10{
 	padding-left: 8%;
 }
 
 button{
 	height: 25px;
+}
+
+a.addLink{
+	font-size: 1em;
+
+}
+
+a {
+	font-weight:normal;
 }
