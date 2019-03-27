@@ -627,7 +627,7 @@ table.sample td.bottom {
 
 .sidemenu a:link {
 		text-decoration: none;
-		color: #fff;
+		color: #fff !important;
 }
 
 .sidemenu a:hover {
@@ -644,7 +644,7 @@ table.sample td.bottom {
 		padding: 10px;
 		border-bottom: 1px solid #1b77aa;
 		background-color: #DAE6EA;
-		width: 150px !important;
+		width: 170px !important;
 }
 
 .sidemenuselected:last-child {

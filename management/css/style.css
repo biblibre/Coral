@@ -880,8 +880,10 @@ td.searchRow textarea {
 	width: 170px;
 	float: left;
 	margin-right: 8px;
-	margin-left: 390px;
+
 }
+
+
 
 .linedFormTable {
 	width: 430px !important;
@@ -1931,7 +1933,11 @@ table.titleTable {
 	top: 5vh !important;
 	margin-top: 0px !important;
 	overflow-x: hidden !important;
+	left: 80% !important;
+
 }
+
+
 
 /*--- Side menu in admin ---*/
 button{

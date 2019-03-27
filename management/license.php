@@ -143,4 +143,3 @@ if ($license->shortName){
 
 include 'templates/footer.php';
 ?>
-
