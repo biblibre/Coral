@@ -894,7 +894,8 @@ switch ($action) {
 		$logEmailAddresses = new LogEmailAddress();
     ?>
     <section class= "tabTitleUser">
-      <span class="headerText"><?php echo _("Email addresses for logs");?></span>&nbsp;&nbsp;<span id='span_EmailAddress_response'></span>
+      <span class="adminRightHeader"><?php echo _("Email addresses for logs");?></span>&nbsp;&nbsp;<span id='span_EmailAddress_response'></span>
+      <span id='span_newEmailAddress' class='adminAddInput'><a href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=238&modal=true' class='thickbox addLink'><?php echo _("add email address");?></a></span>
     </section>
 
     <?php
@@ -905,7 +906,7 @@ switch ($action) {
       <tr>
       <th><?php echo _("Current Email Addresses");?></th>
       <th></th>
-      <th><span id='span_newEmailAddress' class='adminAddInput'><a href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=238&modal=true' class='thickbox'><?php echo _("add email address");?></a></th>
+      <th></th>
 
       <?php
 
@@ -934,7 +935,7 @@ switch ($action) {
       ?>
       <div class="outlierAlign">
         <div class="outlierParamTitle">
-          <span class="headerText"><?php echo _("Outlier Parameters");?></span>&nbsp;&nbsp;<span id='span_Outlier_response'></span>
+          <span class="adminRightHeader"><?php echo _("Outlier Parameters");?></span>&nbsp;&nbsp;<span id='span_Outlier_response'></span>
         </div>
       <?php
 
@@ -1423,7 +1424,8 @@ switch ($action) {
 
 			?>
       <section class= "tabTitleUser">
-        <span class="headerText"><?php echo _("Users");?></span>
+        <span class="adminRightHeader"><?php echo _("Users");?></span>
+        <span id='span_User_response' class='redText'></span><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=196&width=248&modal=true' class='thickbox addLink' id='expression'><?php echo _("add user");?></a></span>
       </section>
 			<table class='dataTable' style='width:550px'>
 				<tr>
@@ -1432,7 +1434,7 @@ switch ($action) {
 				   <th><?php echo _("Last Name");?></th>
 				   <th><?php echo _("Privilege");?></th>
 				   <th>&nbsp;</th>
-				   <th><span id='span_User_response' class='redText'></span><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=196&width=248&modal=true' class='thickbox' id='expression'><?php echo _("add user");?></a></span></th>
+				   <th>&nbsp;</th>
 				<?php
 
 				foreach($user->allAsArray() as $instance) {

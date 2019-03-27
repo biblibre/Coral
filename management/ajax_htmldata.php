@@ -1320,17 +1320,18 @@ switch ($_GET['action']) {
 		if (count($resultArray) > 0){
 			?>
 			<section class= "tabTitle">
-      	<span class="headerText"><?php echo _("$className ") ;?></span>
+      	<span class="adminRightHeader"><?php echo _("$className ") ;?></span>
+				<?php echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'><a class='addLink' href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span>" ?>
       </section>
 
 			<table class='dataTable' style='width:350px'>
 
           <tr>
-						<?php
-							echo "<th></th>
+
 							<th></th>
-							<th><span id='span_new". $className ."' class='adminAddInput admTabHeader'><a href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span></th>";
-							?>
+							<th></th>
+							<th></th>
+
 
 						</tr>
 
@@ -1364,8 +1365,9 @@ switch ($_GET['action']) {
 
 		if (count($user->allAsArray()) > 0){
 			?>
-			<section class= "tabTitleUser">
-      <span class="sectionTitle"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span>
+			<section class= "tabTitle">
+      <span class="adminRightHeader"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span>
+			<span><?php echo "<span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox addLink' id='expression'>". _("Add user")."</a>";?></span>
       </section>
 
 			<table class='dataTable' style='width:550px'>
@@ -1375,7 +1377,7 @@ switch ($_GET['action']) {
 				<th><?php echo _("Last Name");?></th>
 				<th><?php echo _("Privilege");?></th>
 				<th>&nbsp;</th>
-				<th><?php echo "<span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox' id='expression'>". _("Add user")."</a>";?></th>
+				<th></th>
 
 
 				<?php

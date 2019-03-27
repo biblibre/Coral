@@ -487,6 +487,7 @@ input.dp-applied {
 
 
 
+
 table.borderedFormTable {
 	border-width: 0;
 	border-style: solid;
@@ -1837,9 +1838,9 @@ td.helpfulLinks {
 button{
 	background: #F2F5F7;
 	width: 160px;
-	height: 40px;
+	height: 25px;
 	color: #666666;
-	font-size: 0.9em !important;
+	font-size: 1em !important;
 	text-align: left;
 	padding-left: 10px;
 	border-bottom: 1px;
@@ -1898,8 +1899,22 @@ button:focus{
 	padding-left: 70px;
 }
 
-button{
-	height: 25px;
+
+
+
+span.adminRightHeader{
+	font-size:135%;
+	color:#3D545D;
+}
+
+span.adminAdd{
+	display: inline-block;
+	margin-left:2%;
+}
+
+a.addLink{
+	font-size: 1em;
+
 }
 
 /*---  links in black ---*/

@@ -9,8 +9,9 @@
 
 			<section class= "tabTitle">
 			<?php
-				echo "<div class='adminRightHeader'>" . _("General Subject") . "</div>";
-				echo "<a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewGeneralSubject' src='images/plus.gif' title='"._("add new general subject")."'/></a>";
+
+				echo "<span class='adminRightHeader'>" . _("General Subject") . "</span>";
+				echo "<span class='adminAdd'><a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewGeneralSubject' src='images/plus.gif' title='"._("add new general subject")."'/></a></span>";
 		?>
 			</section>
 			</br>
@@ -58,8 +59,8 @@
 
 		<section class= "tabTitle">
 		<?php
-		echo "<div class='adminRightHeader'>" . _("Detailed Subject") . "</div>";
-		echo "<a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'>"._("add new ") . _(trim(strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst("DetailedSubject"))))) . "</a>";
+		echo "<span class='adminRightHeader'>" . _("Detailed Subject") . "</span>";
+		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'>"._("add new ") . _(trim(strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst("DetailedSubject"))))) . "</a></span>";
 		?>
 		</section>
 		</br>

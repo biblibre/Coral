@@ -10,8 +10,9 @@
 
 		<section class= "tabTitle">
 		<?php
-		echo "<div class='adminRightHeader'>"._("Alert Settings")."</div>";
-		echo "<a href='ajax_forms.php?action=getAdminAlertEmailForm&alertEmailAddressID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertEmail' src='images/plus.gif' title='"._("add Email")."' /></a>";
+
+		echo "<span class='adminRightHeader'>"._("Alert Settings")."</span>";
+		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getAdminAlertEmailForm&alertEmailAddressID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertEmail' src='images/plus.gif' title='"._("add Email")."' /></a></span>";
 		?>
 		</section>
 		?>
@@ -52,7 +53,7 @@
 
 
 
-		
+
 		<div class="adminHeader">
 			</div>
 			<div class="addElement" style= "padding-bottom: 8px;"><?php echo "<div><span class= 'addIconAlert'> "._("Add a day:")." &nbsp;</span><a href='ajax_forms.php?action=getAdminAlertDaysForm&alertDaysInAdvanceID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertDay' src='images/plus.gif' title='"._("add day")."'/></a></div>";?></div>

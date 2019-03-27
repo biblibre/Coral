@@ -9,7 +9,7 @@ body {
 	height: 100%;
 	text-decoration: none;
 	color:  #666;
-	font-family: Arial, sans-serif;
+	font-family: Arial, sans-serif !important;
 	font-size: 14px;
 	font-weight: 30;
 	background: #E7E8E8;
@@ -80,10 +80,10 @@ img {border:0;}
 fieldset {border:0;}
 
 
-select option { color: #3D545D; font-family: "arial"; font-size: 95%; margin:1px; }
-.optionStyle { color: #3D545D; font-family: "arial"; font-size: 8pt; font-weight: medium; }
+select option { color: #3D545D; font-family: "arial" !important; font-size: 95%; margin:1px; }
+.optionStyle { color: #3D545D; font-family: "arial" !important; font-size: 8pt; font-weight: medium; }
 
-input, select, multiple, textarea {color: #3D545D; font-family: "arial"; font-size: 8pt; font-weight: medium;}
+input, select, multiple, textarea {color: #3D545D; font-family: "arial" !important; font-size: 8pt; font-weight: medium;}
 
 /* following is for the right panel (helpful links) in the resource page
 *************************/
@@ -208,7 +208,8 @@ table.queueDataTable tr {
 
 /* following is all for admin and queue pages
 *************************/
-div.adminRightHeader{font-size:135%; color:#3D545D; margin-bottom:5px; }
+
+span.adminRightHeader{font-size:135%; color:#3D545D; display: inline-block; margin-right: 3%}
 div.adminMenuLink a {color:#707172;text-decoration:none;}
 div.adminMenuLink a:active {color:#3D545D;}
 div.adminMenuLink a:hover {color:#526972;text-decoration:underline;}
@@ -592,7 +593,7 @@ table.thickboxTable{
  padding:6px;
  text-decoration: none;
  color:  #2c3c42;
- font-family: "arial";
+ font-family: "arial" !important;
  font-size: 8pt;
  font-weight: heavy;
 }
@@ -758,7 +759,7 @@ span.searchLetter {
 	padding-left: 1px;
 	padding-right: 1px;
 	color: #fff;
-	font-family: Courier, monospace;
+	font-family: Courier, monospace !important;
 }
 
 span.searchLetter a {
@@ -1245,7 +1246,7 @@ table.thickboxTable{
 	padding:6px;
 	text-decoration: none;
 	color:  #2c3c42;
-	font-family: "arial";
+	font-family: "arial" !important;
 	font-size: 8pt;
 	font-weight: heavy;
 }
@@ -1489,7 +1490,7 @@ a.setPage:hover {
 /*--- Links with Icons ---*/
 
 a.newSearch:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f00e";
 	font-size: 11px;
 	margin-right: 3px;
@@ -1505,7 +1506,7 @@ a.newSearch:hover {
 }
 
 a#logout:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f007";
 	font-size: 11px;
 	margin-right: 3px;
@@ -1524,7 +1525,7 @@ a#logout:hover {
 }
 
 a#showMoreOptions:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f055";
 	font-size: 11px;
 	margin-right: 3px;
@@ -1540,7 +1541,7 @@ a#showMoreOptions:hover {
 }
 
 #print-view a:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f02f";
 	font-size: 11px;
 	margin-right: 3px;
@@ -1558,7 +1559,7 @@ a#showMoreOptions:hover {
 /*--- Resources Side Menu Icons ---*/
 
 a.showProduct:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f02d";
 	font-size: 11px;
 	margin-right: 5px;
@@ -1574,7 +1575,7 @@ a.showProduct:hover {
 }
 
 a.showAcquisitions:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f12e";
 	font-size: 11px;
 	margin-right: 5px;
@@ -1590,7 +1591,7 @@ a.showAcquisitions:hover {
 }
 
 a.showAccess:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f13e";
 	font-size: 11px;
 	margin-right: 5px;
@@ -1606,7 +1607,7 @@ a.showAccess:hover {
 }
 
 a.showCataloging:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f00b";
 	font-size: 11px;
 	margin-right: 5px;
@@ -1622,7 +1623,7 @@ a.showCataloging:hover {
 }
 
 a.showContacts:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f234";
 	font-size: 11px;
 	margin-right: 5px;
@@ -1638,7 +1639,7 @@ a.showContacts:hover {
 }
 
 a.showAttachments:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f0c6";
 	font-size: 11px;
 	margin-right: 5px;
@@ -1654,7 +1655,7 @@ a.showAttachments:hover {
 }
 
 a.showWorkflow:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f064";
 	font-size: 11px;
 	margin-right: 5px;
@@ -1673,7 +1674,7 @@ a.showWorkflow:hover {
 /*-- Add New Platform SUSHI ---*/
 
 a#uploadDocument:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f0fe";
 	font-size: 12px;
 	margin-right: 5px;
@@ -1771,7 +1772,7 @@ table.surroundBox table.noBorder {
 
 #resourcePromptForm table.noBorderTable input {
 	color: #FFFFFF;
-	font-family: "Arial", sans-serif;
+	font-family: "Arial", sans-serif !important;
 	font-size: 11px;
 	font-weight: normal;
 	background: #1b76a9;
@@ -1782,7 +1783,7 @@ table.surroundBox table.noBorder {
 /*--- My Queue Page Side Menu ---*/
 
 a#OutstandingTasks:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f192";
 	font-size: 11px;
 	margin-right: 5px;
@@ -1798,7 +1799,7 @@ a#OutstandingTasks:hover {
 }
 
 a#SavedRequests:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f0fe";
 	font-size: 11px;
 	margin-right: 5px;
@@ -1814,7 +1815,7 @@ a#SavedRequests:hover {
 }
 
 a#SubmittedRequests:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f045";
 	font-size: 11px;
 	margin-right: 5px;
@@ -1886,7 +1887,7 @@ a.helpfulLink {
 
 .headerTable input#submitFile {
 	color: #FFFFFF;
-	font-family: "Arial", sans-serif;
+	font-family: "Arial", sans-serif !important;
 	font-size: 11px;
 	font-weight: normal;
 	background: #1b76a9;
@@ -1906,7 +1907,7 @@ a.helpfulLink {
 
 input#submitPlatformForm {
 	color: #FFFFFF;
-	font-family: "Arial", sans-serif;
+	font-family: "Arial", sans-serif !important;
 	font-size: 11px;
 	font-weight: normal;
 	background: #1b76a9;
@@ -2204,7 +2205,7 @@ table.thickboxTable .headerText {
 /*--- Side Menu Icons ---*/
 
 a.showImports:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f019";
 	font-size: 11px;
 	margin-right: 5px;
@@ -2216,7 +2217,7 @@ a.showImports {
 }
 
 a.showTitles:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f0c9";
 	font-size: 11px;
 	margin-right: 5px;
@@ -2228,7 +2229,7 @@ a.showTitles {
 }
 
 a.showStatistics:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f080";
 	font-size: 11px;
 	margin-right: 5px;
@@ -2240,7 +2241,7 @@ a.showStatistics {
 }
 
 a.showLogins:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f007";
 	font-size: 11px;
 	margin-right: 5px;
@@ -2253,7 +2254,7 @@ a.showLogins {
 
 
 a.showSushi:before {
-	font-family: FontAwesome;
+	font-family: FontAwesome !important;
 	content: "\f192";
 	font-size: 11px;
 	margin-right: 5px;
@@ -2368,7 +2369,7 @@ a#help:hover {
 }
 
 a#help:before {
-    font-family: FontAwesome;
+    font-family: FontAwesome !important;
     content: "\f059";
     font-size: 11px;
     margin-right: 3px;
@@ -2396,7 +2397,7 @@ select#lang {
 .save-button
  {
     color: #FFFFFF;
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", sans-serif !important;
     font-size: 11px;
     font-weight: normal;
     background: #1b76a9;
@@ -2534,7 +2535,7 @@ li.change-mod-item:hover {
 #main-title {
     font-size: 36px;
     color: #6098A7;
-    font-family: "Open Sans";
+    font-family: "Open Sans" !important;
     font-weight: 100;
     float: left;
 }
@@ -2680,6 +2681,13 @@ button:focus{
 
 button{
 	height: 25px;
+}
+
+a.addLink{
+	font-size: 1em;
+	color: black !important;
+
+
 }
 
 /*---  links in black ---*/

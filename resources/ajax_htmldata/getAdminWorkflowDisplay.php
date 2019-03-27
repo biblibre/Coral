@@ -9,11 +9,12 @@
 
 		<section class= "tabTitle">
 			<?php
-		echo "<div class='adminRightHeader'>"._("Workflow Setup")."</div>";
+		echo "<span class='adminRightHeader'>"._("Workflow Setup")."</span>";
 		if (count($userGroupArray) >0){
-			echo "<div><a href='ajax_forms.php?action=getAdminWorkflowForm&workflowID=&height=528&width=750&modal=true' class='thickbox'><img id='addWorflowSetup' src='images/plus.gif' title='"._("add workflow")."' /></a></div>";
+
+			echo "<span class='adminAdd'><a href='ajax_forms.php?action=getAdminWorkflowForm&workflowID=&height=528&width=750&modal=true' class='thickbox'><img id='addWorflowSetup' src='images/plus.gif' title='"._("add workflow")."' /></a></span>";
 		}else{
-			echo "<div><i>"._("You must set up at least one user group before you can add workflows")."</i></div>";
+			echo "<span class='adminAdd'><i>"._("You must set up at least one user group before you can add workflows")."</i></span>";
 		}
 			?>
 		  </section>
@@ -86,8 +87,8 @@
 
 		<section class= "tabTitle">
 		<?php
-		echo "<div class='adminRightHeader'>"._("User Group Setup")."</div>";
-		echo "<a href='ajax_forms.php?action=getAdminUserGroupForm&userGroupID=&height=400&width=305&modal=true' class='thickbox'>"._("add user group")."</a>";
+		echo "<span class='adminRightHeader'>"._("User Group Setup")."</span>";
+		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getAdminUserGroupForm&userGroupID=&height=400&width=305&modal=true' class='thickbox'>"._("add user group")."</a></span>";
 
 		?>
 		</section>

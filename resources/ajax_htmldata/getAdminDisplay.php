@@ -13,8 +13,9 @@
 
 			<section class= "tabTitle">
 			<?php
-		echo "<div class='adminRightHeader'>" . _($title) . "</div>";
-		echo "<a href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateID=&height=128&width=260&modal=true' class='thickbox'><img id='addType' src='images/plus.gif' title='"._("add")."'/></a>";
+
+		echo "<span class='adminRightHeader'>" . _($title) . "</span>";
+		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateID=&height=128&width=260&modal=true' class='thickbox'><img id='addType' src='images/plus.gif' title='"._("add")."'/></span>";
 
 				?>
 			</section>

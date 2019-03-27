@@ -17,8 +17,9 @@
 		if (count($instanceArray) > 0){
 			?>
 			<section class= "tabTitle">
-			<div class="adminRightHeader"><?php echo _("Users");?></div>
-			<?php echo "<a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=&height=275&width=315&modal=true' class='thickbox' id='addUser'><img id='addUserGroup' src='images/plus.gif' title='" . _("add") . "'/>";?></a>
+
+			<span class="adminRightHeader"><?php echo _("Users");?></span>
+			<span class="adminAdd"><a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=&height=275&width=315&modal=true' class='thickbox' id='addUser'><?php echo "<img id='addUserGroup' src='images/plus.gif' title='" . _("add") . "'/>";?></a></span>
 			</section>
 			</br>
 
