@@ -37,7 +37,7 @@ if ($user->isAdmin()){
 			<div class="list-group ButtonMenu" id="list-tab" role="tablist">
 				<a href='javascript:void(0);' class='updateUserList'><button id="PreSelectedButton" type="button"><?php echo _("Users");?></button></a>
 				<a href='javascript:void(0);' id='DocumentType' class='updateTable' ><button type="button"><?php echo _("Document Type");?></button></a>
-				<a href='javascript:void(0);' id='DocumentNoteType' class='updateTable'><button type="button"><?php echo _("Notes type");?></button></a>
+				<a href='javascript:void(0);' id='DocumentNoteType' class='updateTable'><button type="button"><?php echo _("Document Notes type");?></button></a>
 				<a href='javascript:void(0);' id='Consortium' class='updateTable'><button type="button"><?php echo _("Categories");?></button></a>
 			<!-- disabled menu part
 			<a href='javascript:void(0);'  class='updateQualifierList'><php /*echo _("Qualifier");?></a>
