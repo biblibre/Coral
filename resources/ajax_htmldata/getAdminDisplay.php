@@ -13,7 +13,7 @@
 			<section class= "tabTitle">
 			<?php
 		echo "<span class='adminRightHeader'>" . _($title) . "</span>";
-		echo "<span class='adminAdd' href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateID=&height=128&width=260&modal=true' class='thickbox'>"._("add ") . _(trim(preg_replace("/[A-Z]/", " \\0" , $className))) . "</span>";
+		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateID=&height=128&width=260&modal=true' class='thickbox'>"._("add ") . _(trim(preg_replace("/[A-Z]/", " \\0" , $className))) . "</a></span>";
 
 				?>
 			</section>

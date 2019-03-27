@@ -8,7 +8,7 @@
 		<section class= "tabTitle">
 				<?php
 				echo "<span class='adminRightHeader'>"._("Currency")."</span>";
-				echo "<span class='adminAdd'<a href='ajax_forms.php?action=getAdminCurrencyUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'>"._("add currency")."</a></span>";
+				echo "<span class='adminAdd'><a href='ajax_forms.php?action=getAdminCurrencyUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'>"._("add currency")."</a></span>";
 				 ?>
 		</section>
 		</br>
