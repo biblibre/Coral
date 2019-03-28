@@ -2604,7 +2604,7 @@ table.titleTable {
 button{
 	background: #F2F5F7;
 	width: 160px;
-	height: 40px;
+	height: 40px !important;
 	color: #666666;
 	font-size: 0.9em !important;
 	text-align: left;

@@ -48,6 +48,10 @@ $coralURL = $util->getCORALURL();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Licensing Module - <?php echo $pageTitle; ?></title>
+<!-- Adding bootstrap -->
+<!-- <script type="text/javascript" src="../js/plugins/boostrap-js/bootstrap.bundle.js"></script> -->
+<link rel="stylesheet" href="../css/boostrap-css/bootstrap.min.css" type="text/css" media="screen" />
+<!-- Others stylesheet -->
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../css/datePicker.css" type="text/css" media="screen" />
@@ -82,9 +86,7 @@ $coralURL = $util->getCORALURL();
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 
-<!-- Adding bootstrap -->
-<!-- <script type="text/javascript" src="../js/plugins/boostrap-js/bootstrap.bundle.js"></script> -->
-<link rel="stylesheet" href="../css/boostrap-css/bootstrap.min.css" type="text/css" media="screen" />
+
 
 </head>
 <body id="licensing">
