@@ -1902,7 +1902,7 @@ button:focus{
 
 
 
-span.adminRightHeader{
+div.adminRightHeader{
 	font-size:135%;
 	color:#3D545D;
 }
