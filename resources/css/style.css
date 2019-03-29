@@ -310,7 +310,8 @@ table.linedDataTable th {
 	border-width: 1px 0 0 0;
 	border-style: solid;
 	border-color: #e6e5e9;
-	background-color: #f6f8fa;
+	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+
 	-moz-border-radius: 0px;
 }
 
