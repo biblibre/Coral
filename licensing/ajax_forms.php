@@ -171,7 +171,7 @@ switch ($_GET['action']) {
 		</tr>
 
 		<tr>
-		<td style='text-align:right;vertical-align:top;'><label for="documentType" class="formText"><?php echo _("Document Type:");?></label><br /><span id='span_error_documentTypeID' class='errorText'></span></td>
+		<td style='text-align:right;vertical-align:top;'><label for="documentType" class="formText"><?php echo _("Document type");?></label><br /><span id='span_error_documentTypeID' class='errorText'></span></td>
 		<td>
 		<span id='span_documentType'>
 		<select name='documentTypeID' id='documentTypeID' style='width:185px;'>

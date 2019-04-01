@@ -22,6 +22,7 @@
       updateUserList();
       buttonOn();
 
+
       $(".updateForm").click(function () {
           updateForm($(this).attr("id"));
           buttonOff();
@@ -56,6 +57,10 @@
 
     function buttonOn(){
       $("#PreSelectedButton").css({'background': '#EAEDEF', 'font-weight':'bold'});
+    }
+
+    function getBtnTitle(){
+
     }
 
 
