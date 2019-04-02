@@ -990,7 +990,7 @@ if ($issues) {
 			<table class='dataTable' style='width:350px'>
 
           <tr>
-          <th></th>
+          <th><?php echo _("$className ") ;?></th>
           <th></th>
           <th></th>
         </tr>
