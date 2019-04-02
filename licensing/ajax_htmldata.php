@@ -1224,8 +1224,8 @@ switch ($_GET['action']) {
 
 			?>
 			<section class= "tabTitle">
-				<div class="adminRightHeader"><?php echo _("$className ") ;?></div>
-				<div><?php echo _("$menuTitle"); ?></div>
+				<div class="adminRightHeader"><?php echo _("$menuTitle"); ?></div>
+				
 
 				<?php
 				echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'><a class='addLink' href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span>";
