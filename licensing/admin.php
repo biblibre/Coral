@@ -34,12 +34,13 @@ $_SESSION['ref_script']=$currentPage;
 		<div class="col-2">
 			<div class="list-group" id="list-tab" role="tablist">
 				<a href='javascript:void(0);' class='updateUserList'><button id="PreSelectedButton" type="button"><?php echo _("Users");?></button></a>
-				<a href='javascript:void(0);' id='DocumentType' class='updateForm' ><button type="button"><?php echo _("Document Type");?></button></a>
+				<a href='javascript:void(0);' id='DocumentType' class='updateForm' ><button type="button" class="getTitle"><?php echo _("Document Type");?></button></a>
 				<a href='javascript:void(0);' class='updateExpressionTypeList' ><button type="button"><?php echo _("Expression Types");?></button></a>
 				<a href='javascript:void(0);' class='updateQualifierList'><button type="button"><?php echo _("Qualifiers");?></button></a>
 				<a href='javascript:void(0);' id='SignatureType' class='updateForm' ><button type="button"><?php echo _("Signature Types");?></button></a>
 <?php
 $getBtnDoc = _("Document Type");
+
 
 $config = new Configuration;
 

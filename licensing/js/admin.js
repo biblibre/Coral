@@ -26,6 +26,10 @@
       $(".updateForm").click(function () {
           updateForm($(this).attr("id"));
           buttonOff();
+          
+
+
+
 
       });
 
@@ -47,7 +51,13 @@
           buttonOff();
       });
 
+
     });
+
+
+
+
+
 
 
 /*Auto-Select the first button in side menu on arrival in the admin section */
@@ -67,15 +77,23 @@
 
 
 
+    /* Get the selected menu title to display it on the top of tab */
 
 
- function updateForm(className){
+
+
+
+
+
+
+ function updateForm(className, menuTitle){
+
 
        $.ajax({
           type:       "GET",
           url:        "ajax_htmldata.php",
           cache:      false,
-          data:       "action=getAdminList&tableName=" + className,
+          data:       "action=getAdminList&tableName=" + className + "&menuTitle=" + menuTitle,
           success:    function(html) {
             $('#div_AdminContent').html(html);
           	tb_reinit();
