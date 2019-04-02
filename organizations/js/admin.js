@@ -32,6 +32,7 @@
       });
 
       $(".updateForm").click(function () {
+          getBtnTitle($(this));
           updateForm($(this).attr("id"));
           buttonOff();
       });
@@ -45,6 +46,11 @@
 
  function buttonOn(){
    $("#PreSelectedButton").css({'background': '#EAEDEF', 'font-weight':'bold'});
+ };
+
+ function getBtnTitle(id){
+
+   menuTitle = $(id).text();
  };
 
 
@@ -86,7 +92,7 @@
           type:       "GET",
           url:        "ajax_forms.php",
           cache:      false,
-          data:       "action=getAdminDisplay&className=" + className,
+          data:       "action=getAdminDisplay&className=" + className + "&menuTitle=" + menuTitle,
           success:    function(html) { $('#div_AdminContent').html(html);
           	tb_reinit();
           }

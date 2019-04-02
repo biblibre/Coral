@@ -971,6 +971,7 @@ if ($issues) {
 
 	case 'getAdminDisplay':
 		$className = $_GET['className'];
+    $menuTitle = $_GET['menuTitle'];
 
 
 		$instanceArray = array();
@@ -983,14 +984,14 @@ if ($issues) {
 		if (count($instanceArray) > 0){
 			?>
       <section class= "tabTitle">
-      <span class="adminRightHeader"><?php echo _("$className ") ;?></span>
+      <span class="adminRightHeader"><?php echo _("$menuTitle") ;?></span>
       <?php echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'><a class='addLink' href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span>"; ?>
       </section>
 
 			<table class='dataTable' style='width:350px'>
 
           <tr>
-          <th><?php echo _("$className ") ;?></th>
+          <th><?php echo _("$menuTitle") ;?></th>
           <th></th>
           <th></th>
         </tr>

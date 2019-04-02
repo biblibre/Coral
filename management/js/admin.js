@@ -25,6 +25,7 @@ $(document).ready(function(){
      });
 
      $(".updateTable").click(function () {
+        getBtnTitle($(this));
          updateTable($(this).attr("id"));
          buttonOff();
 
@@ -43,6 +44,12 @@ function buttonOn(){
   $("#PreSelectedButton").css({'background': '#EAEDEF', 'font-weight':'bold'});
 };
 
+function getBtnTitle(id){
+
+  menuTitle = $(id).text();
+
+};
+
 
 
 function updateTable(className){
@@ -51,7 +58,7 @@ function updateTable(className){
          type:       "GET",
          url:        "ajax_htmldata.php",
          cache:      false,
-         data:       "action=getAdminList&className=" + className,
+         data:       "action=getAdminList&className=" + className + "&menuTitle=" + menuTitle,
          success:    function(html) { $('#div_AdminContent').html(html);
            tb_reinit();
          }
