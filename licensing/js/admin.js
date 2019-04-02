@@ -16,6 +16,9 @@
 */
 
 
+var menuTitle = "test";
+
+
 
  $(document).ready(function(){
 
@@ -23,11 +26,13 @@
       buttonOn();
 
 
+
+
+
       $(".updateForm").click(function () {
+          getBtnTitle($(this));
           updateForm($(this).attr("id"));
           buttonOff();
-
-
 
 
 
@@ -60,7 +65,11 @@
 
 
 
+
+
+
 /*Auto-Select the first button in side menu on arrival in the admin section */
+
     function buttonOff(){
       $("#PreSelectedButton").css({'background': '#F2F5F7', 'font-weight':'normal'});
     };
@@ -69,9 +78,13 @@
       $("#PreSelectedButton").css({'background': '#EAEDEF', 'font-weight':'bold'});
     }
 
-    function getBtnTitle(){
 
-    }
+    function getBtnTitle(id){
+
+      menuTitle = $(id).text();
+
+    };
+
 
 
 
@@ -86,7 +99,7 @@
 
 
 
- function updateForm(className, menuTitle){
+ function updateForm(className){
 
 
        $.ajax({
