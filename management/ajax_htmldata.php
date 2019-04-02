@@ -1328,7 +1328,7 @@ switch ($_GET['action']) {
 
           <tr>
 
-							<th></th>
+							<th><?php echo _("$className ") ;?></th>
 							<th></th>
 							<th></th>
 
