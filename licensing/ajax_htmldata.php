@@ -1214,6 +1214,7 @@ switch ($_GET['action']) {
 	//generic admin data (lookup table) display - all tables have ID and shortName so we can simplify retrieving this data
 	case 'getAdminList':
 		$className = $_GET['tableName'];
+		$menuTitle = $_GET['menuTitle'];
 		$instance = new $className();
 
 		$resultArray = $instance->allAsArray();
@@ -1224,6 +1225,8 @@ switch ($_GET['action']) {
 			?>
 			<section class= "tabTitle">
 				<div class="adminRightHeader"><?php echo _("$className ") ;?></div>
+				<div><?php echo _("$menuTitle"); ?></div>
+
 				<?php
 				echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'><a class='addLink' href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span>";
 				?>
