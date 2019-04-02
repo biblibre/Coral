@@ -1224,8 +1224,8 @@ switch ($_GET['action']) {
 
 			?>
 			<section class= "tabTitle">
-				<div class="adminRightHeader"><?php echo _("$menuTitle"); ?></div>
-				
+				<span class="adminRightHeader"><?php echo _("$menuTitle"); ?></span>
+
 
 				<?php
 				echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'><a class='addLink' href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span>";
@@ -1273,7 +1273,7 @@ switch ($_GET['action']) {
 			?>
 
 			<section class= "tabTitleUser">
-      <div class="adminRightHeader"><?php echo _("Users");?></div><span id='span_User_response'></span>
+      <span class="adminRightHeader"><?php echo _("Users");?></span><span id='span_User_response'></span>
 			<span id='span_newUser'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=185&width=250&modal=true' class='thickbox addLink' id='expression'><?php echo _("add user");?></a></span>
       </section>
 
@@ -1346,7 +1346,7 @@ switch ($_GET['action']) {
 
 			?>
 			<section class= "tabTitleUser">
-			<div class="adminRightHeader"><?php echo _("Expression Types");?></div>
+			<span class="adminRightHeader"><?php echo _("Expression Types");?></span>
 			<span  id='span_newExpressionType' class='adminAddInput'><a href='ajax_forms.php?action=getExpressionTypeForm&height=148&width=265&modal=true' class='thickbox addLink' id='expressionType'><?php echo _("add expression type");?></a></span>
 			</section>
 			<table class='dataTable' style='width:400px'>
@@ -1391,7 +1391,7 @@ switch ($_GET['action']) {
 
 			?>
 			<section class= "tabTitleUser">
-			<div class="adminRightHeader"><?php echo _("Calendar Settings");?></div>&nbsp;&nbsp;<span id='span_CalendarSettings_response'></span>
+			<span class="adminRightHeader"><?php echo _("Calendar Settings");?></span>&nbsp;&nbsp;<span id='span_CalendarSettings_response'></span>
 			</section>
 			<table class='dataTable' style='width:400px'>
 				<tr>
@@ -1467,7 +1467,7 @@ switch ($_GET['action']) {
 
 		?>
 		<section class= "tabTitleUser">
-		<div class="adminRightHeader"><?php echo _("Qualifiers");?></div><span id='span_Qualifier_response'></span>
+		<span class="adminRightHeader"><?php echo _("Qualifiers");?></span><span id='span_Qualifier_response'></span>
 		<span id='span_newQualifier' class='adminAddInput'><a href='ajax_forms.php?action=getQualifierForm&height=148&width=295&modal=true' class='thickbox addLink'><?php echo _("add qualifier");?></a></span>
 		</section>
 		<table class='dataTable' style='width:400px'>
