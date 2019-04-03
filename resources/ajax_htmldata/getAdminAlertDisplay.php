@@ -15,7 +15,9 @@
 		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getAdminAlertEmailForm&alertEmailAddressID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertEmail' src='images/plus.gif' title='"._("add Email")."' /></a></span>";
 		?>
 		</section>
-		?>
+
+	</br>
+
 
 		<?php
 		if (count($emailAddressArray) > 0){

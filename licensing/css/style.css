@@ -578,7 +578,7 @@ td.tableIcons{
 .noBorder > tbody > tr > td:nth-child(1) {
 	width: 130px !important;
 	padding-bottom: 20px;
-	padding-left: 20px;
+	padding-left: 1px;
 }
 
 a.newSearch:hover {
@@ -774,6 +774,7 @@ a.showDocuments:before {
 a.showDocuments {
 			text-decoration: none;
 			font-size: 12px;
+			color: white !important;
 }
 
 a.showDocuments:hover {
@@ -790,6 +791,7 @@ a.showExpressions:before {
 a.showExpressions {
 			text-decoration: none;
 			font-size: 12px;
+			color: white !important;
 }
 
 a.showExpressions:hover {
@@ -806,6 +808,7 @@ a.showAttachments:before {
 a.showAttachments {
 			text-decoration: none;
 			font-size: 12px;
+			color: white !important;
 }
 
 a.showAttachments:hover {
@@ -822,6 +825,7 @@ a.showSFXProviders:before {
 a.showSFXProviders {
 	text-decoration: none;
 	font-size: 12px;
+	color: white !important;
 }
 
 /*--- Licensing  Expression Comparison Section Icons ---*/
@@ -1902,9 +1906,11 @@ button:focus{
 
 
 
-div.adminRightHeader{
+span.adminRightHeader{
 	font-size:135%;
 	color:#3D545D;
+	margin-right: 10px;
+
 }
 
 span.adminAdd{

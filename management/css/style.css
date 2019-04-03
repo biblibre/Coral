@@ -1441,13 +1441,23 @@ a.showAttachments:before {
 	content: "\f0c6";
 	font-size: 11px;
 	margin-right: 5px;
+
 }
+
+a.showAttachments{
+	color: white !important;
+}
+
 
 a.showDocuments:before {
 	font-family: FontAwesome;
 	content: "\f15b";
 	font-size: 11px;
 	margin-right: 5px;
+}
+
+a.showDocuments{
+	color: white !important;
 }
 
 /*--- New Note Modal ---*/
@@ -1933,7 +1943,7 @@ table.titleTable {
 	top: 5vh !important;
 	margin-top: 0px !important;
 	overflow-x: hidden !important;
-	left: 80% !important;
+	left: 50% !important;
 
 }
 
