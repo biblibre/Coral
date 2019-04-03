@@ -3277,8 +3277,8 @@ input#archiveInd {
 /*--- Side menu in admin ---*/
 button{
 	background: #F2F5F7;
-	width: 170px;
-	height: 40px;
+	width: 210px;
+	height: 22px;
 	color: #666666;
 	font-size: 0.9em !important;
 	text-align: left;
@@ -3364,9 +3364,7 @@ button.btn{
 
 }
 
-button{
-	height: 25px;
-}
+
 
 
 /*---  links in black ---*/

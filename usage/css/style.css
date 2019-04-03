@@ -1648,6 +1648,7 @@ a.showAttachments:before {
 a.showAttachments {
 	text-decoration: none;
 	font-size: 12px;
+	
 }
 
 a.showAttachments:hover {

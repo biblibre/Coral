@@ -985,7 +985,7 @@ if ($issues) {
 			?>
       <section class= "tabTitle">
       <span class="adminRightHeader"><?php echo _("$menuTitle") ;?></span>
-      <?php echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'><a class='addLink' href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span>"; ?>
+      <?php echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'>&nbsp;&nbsp;<a class='addLink' href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span>"; ?>
       </section>
 
 			<table class='dataTable' style='width:350px'>

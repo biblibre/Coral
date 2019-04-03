@@ -1042,6 +1042,7 @@ a.showOrganization:before {
 a.showOrganization {
 			text-decoration: none;
 			font-size: 12px;
+			color: white !important;
 }
 
 a.showOrganization:hover {
@@ -1065,6 +1066,7 @@ a.showAliases:before {
 a.showAliases {
 			text-decoration: none;
 			font-size: 12px;
+			color: white !important;
 }
 
 a.showAliases:hover {
@@ -1088,6 +1090,7 @@ a.showContacts:before {
 a.showContacts {
 			text-decoration: none;
 			font-size: 12px;
+			color: white !important;
 }
 
 a.showContacts:hover {
@@ -1111,6 +1114,7 @@ a.showAccount:before {
 a.showAccount {
 			text-decoration: none;
 			font-size: 12px;
+			color: white !important;
 }
 
 a.showAccount:hover {
@@ -1134,6 +1138,7 @@ a.showIssues:before {
 a.showIssues {
 			text-decoration: none;
 			font-size: 12px;
+			color: white !important;
 }
 
 a.showIssues:hover {
@@ -1157,6 +1162,7 @@ a.showLicenses:before {
 a.showLicenses {
 			text-decoration: none;
 			font-size: 12px;
+			color: white !important;
 }
 
 a.showLicenses:hover {
