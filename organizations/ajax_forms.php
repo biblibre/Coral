@@ -1044,7 +1044,7 @@ if ($issues) {
 
 
 		</td>
-		<td colspan='2'><p><a href='#' onclick='window.parent.tb_remove(); return false' id='closeButton' class='cancel-button'><?php echo _("close");?></a></td>
+		<td colspan='2'><a href='#' onclick='window.parent.tb_remove(); return false' id='closeButton' class='cancel-button'><?php echo _("close");?></a></td>
 		</tr>
 		</table>
 		</div>
