@@ -52,7 +52,7 @@ switch ($action) {
 		<input type='hidden' id='updateLogEmailAddressID' name='updateLogEmailAddressID' value='<?php echo $logEmailAddressID; ?>'>
 		<table class="thickboxTable" style="width:230px;">
 		<tr>
-		<td colspan='3'><span class='headerText'><?php echo $addUpdate; ?> <?php echo _("Email Address");?></span><br /><span id='span_errors' style='color:red;'></span></td>
+		<td colspan='3'><span class='headerText'><?php echo $addUpdate; ?><?php echo _("Email Address");?></span><br /><span id='span_errors' style='color:red;'></span></td>
 		</tr>
 		<tr>
 		<td>
@@ -61,7 +61,9 @@ switch ($action) {
 		<td>
 		<a href='javascript:doSubmitLogEmailAddress();' id='addButton' class='submit-button'><?php echo ($addUpdate); ?></a>
 		</td>
-		<td colspan='2'><p><a href='#' onclick='window.parent.tb_remove(); return false' id='closeButton' class='cancel-button'><?php echo _("Close");?></a></td>
+
+		<td colspan='2'><a href='#' onclick='window.parent.tb_remove(); return false' id='closeButton' class='cancel-button'><?php echo _("close");?></a></td>
+
 		</tr>
 		</table>
 		</div>

@@ -1648,7 +1648,7 @@ a.showAttachments:before {
 a.showAttachments {
 	text-decoration: none;
 	font-size: 12px;
-	
+
 }
 
 a.showAttachments:hover {
@@ -1943,6 +1943,7 @@ input#submitPlatformForm:hover {
 
 #TB_ajaxContent {
 	height: auto !important;
+
 }
 
 #div_addPlatformForm .thickboxTable {
@@ -1967,8 +1968,8 @@ div#div_searchResults > i {
 
 table.thickboxTable .headerText {
 	width: auto !important;
-	margin: 0;
-	padding: 6px;
+	margin: 1px;
+	padding: 10px;
 	border-width: 1px 0 0 0;
 	border-style: solid;
 	border-color: #e6e5e9;
@@ -1982,6 +1983,8 @@ table.thickboxTable .headerText {
 	height: 16px;
 	margin-bottom: 10px;
 }
+
+
 
 
 /*--- Adjust Add Login Form Modal Window ---*/
