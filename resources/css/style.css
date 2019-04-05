@@ -280,13 +280,14 @@ td.adminRightPanel {
 
 table.linedDataTable {
 	border-width: 0 1px 1px 1px;
+	width: 550px;
 	border-style: solid;
 	border-color: #e6e5e9;
 	border-collapse: collapse;
 	border-spacing: 0;
 	font-size:95%;
 	margin-bottom:5px;
-	/*-*/width: 100% !important;
+
 }
 
 table.linedDataTable td {
@@ -550,7 +551,6 @@ table.dataTable th {
 	border-width: 1px 1px 0 0;
 	border-style: solid;
 	border-color: #C9C9C9;
-	background-color: #CAD7E1;
 	-moz-border-radius: 0px;
 	vertical-align: middle;
 	font-weight: 300;
@@ -3363,7 +3363,7 @@ button:focus{
 } --*/
 
 .tabTitleUser{
-	text-align: left;
+
 	font-weight: bold;
 	font-size:125%;
 	margin-top: -7px;
@@ -3372,7 +3372,8 @@ button:focus{
 
 .tabTitle{
 	text-align: left;
-	margin-left: 2px;
+	margin-left: 13;
+	width: 543px;
 
 }
 
@@ -3384,18 +3385,23 @@ button:focus{
 
 
 
-.adminContentAlign{
+/*.adminContentAlign{
 	text-align: center;
 
-}
+} */
 
 .menuAdmin{
 	text-align: center;
 
 }
 
-div.col-10{
-	padding-left: 8%;
+div.col-9{
+	text-align: left;
+
+}
+
+div.col-3{
+	text-align: left;
 }
 
 
