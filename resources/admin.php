@@ -35,7 +35,7 @@ if ($user->isAdmin()){
 
 	<div class= "container-fluid">
 		<div class="row">
-			<div class="col-2">
+			<div class="col-3">
 				<div class="list-group" id="list-tab" role="tablist">
 					<a href='javascript:void(0);' class='UserAdminLink'><button id="PreSelectedButton" type="button"><?php echo _("Users");?></button></a>
 					<a href='javascript:void(0);' class='WorkflowAdminLink'><button type="button"><?php echo _("Workflow / User Group");?></button></a>
@@ -80,7 +80,7 @@ if ($user->isAdmin()){
 					<a href='javascript:void(0);' id='UserLimit' class='AdminLink'><button type="button"><?php echo _("User Limit");?></button></a>
 				</div>
 		</div>
-			<div class="col-10" id='div_AdminContent'></div>
+			<div class="col-9" id='div_AdminContent'></div>
 		</div>
 </div>
 

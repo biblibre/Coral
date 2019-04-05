@@ -24,7 +24,7 @@
 			?>
 			<table class='linedDataTable'>
 				<tr>
-				<th style='width:100%;'><?php echo _("Value");?></th>
+				<th><?php echo _("Value");?></th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 				</tr>

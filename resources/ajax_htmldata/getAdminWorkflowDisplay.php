@@ -21,7 +21,7 @@
 			<?php
 		if (count($workflowArray) > 0){
 			?>
-			<table class='linedDataTable' style='width:100%'>
+			<table class='linedDataTable'>
 				<tr>
 				<th><?php echo _("Acquisition Type");?></th>
 				<th><?php echo _("Resource Format");?></th>
@@ -90,7 +90,7 @@
 		<?php
 		if (count($userGroupArray) > 0){
 			?>
-			<table class='linedDataTable' style='width:100%'>
+			<table class='linedDataTable'>
 				<tr>
 				<th><?php echo _("Group Name");?></th>
 				<th><?php echo _("Email Address");?></th>

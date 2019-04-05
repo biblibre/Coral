@@ -66,7 +66,7 @@
 			?>
 			<table class='linedDataTable'>
 				<tr>
-				<th style='width:100%;'><?php echo _("Value");?></th>
+				<th><?php echo _("Value");?></th>
 				<th style='width:20px;'>&nbsp;</th>
 				<th style='width:20px;'>&nbsp;</th>
 				</tr>
@@ -105,7 +105,7 @@
 		<?php
 		if (count($generalSubjectArray) > 0){
 			?>
-			<table class='linedDataTable' style='width:100%'>
+			<table class='linedDataTable'>
 				<tr>
 					<th><?php echo _("General Subject");?></th>
 					<th><?php echo _("Detailed Subject");?></th>

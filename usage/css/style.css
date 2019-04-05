@@ -1980,8 +1980,8 @@ table.thickboxTable .headerText {
 }
 
 #div_updateForm table.thickboxTable .headerText {
-	height: 16px;
-	margin-bottom: 10px;
+	height: -14px;
+	
 }
 
 
