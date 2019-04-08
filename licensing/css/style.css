@@ -1839,6 +1839,7 @@ td.helpfulLinks {
 
 /*--- Side menu in admin ---*/
 
+
 button{
 	background: #F2F5F7;
 	width: 160px;
@@ -1857,7 +1858,6 @@ button:focus{
 	outline-style: none !important;
 	font-weight:bold;
 }
-
 /*--- Menu in blue
 button{
 	background: #1B77AA;
