@@ -29,7 +29,7 @@ $_SESSION['ref_script']=$currentPage;
 
 ?>
 
-<div class= "container-fluid">t
+<div class= "container-fluid">
 	<div class="row">
 		<div class="col-2">
 			<div class="list-group" id="list-tab" role="tablist">

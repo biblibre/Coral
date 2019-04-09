@@ -60,7 +60,7 @@
 		<section class= "tabTitle">
 		<?php
 		echo "<span class='adminRightHeader'>" . _("Detailed Subject") . "</span>";
-		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'>"._("add new ") . _(trim(strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst("DetailedSubject"))))) . "</a></span>";
+		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addUserGroup' src='images/plus.gif' title='" . _("add detailed subject") . "'/></a></span>";
 		?>
 		</section>
 		</br>

@@ -203,7 +203,7 @@ table.queueDataTable tr {
 <<<<<<< 85d5755b28a26e6d402758f455eebacde467be2d
 
 div.ImportElement{margin-top: 5px; margin-right: 8px;}
-div.addElement{margin-top: 3px; margin-right: 8px;}
+div.addElement{margin-top: 3px; margin-right: 8px; padding-bottom: 8px;}
 div.adminHeader {display: flex;}
 div.adminHeaderAlert {display: flex; flex-direction: column;}
 div.adminRightHeader{font-size:135%; color:#3D545D;}
@@ -3314,7 +3314,7 @@ input#archiveInd {
 
 .addIconAlert {
 	vertical-align: 3px;
-
+}
 
 /*--- Side menu in admin ---*/
 button{

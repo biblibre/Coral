@@ -209,7 +209,7 @@ table.queueDataTable tr {
 /* following is all for admin and queue pages
 *************************/
 
-span.adminRightHeader{font-size:135%; color:#3D545D; display: inline-block; margin-right: 3%}
+span.adminRightHeader{font-size:135%; color:#3D545D; display: inline-block;}
 div.adminMenuLink a {color:#707172;text-decoration:none;}
 div.adminMenuLink a:active {color:#3D545D;}
 div.adminMenuLink a:hover {color:#526972;text-decoration:underline;}
@@ -2604,7 +2604,7 @@ table.titleTable {
 
 .addIcon {
 	vertical-align: -2px;
-
+}
 
 
 

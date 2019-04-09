@@ -987,7 +987,7 @@ if ($issues) {
 			?>
       <section class= "tabTitle">
       <span class="adminRightHeader"><?php echo _("$menuTitle") ;?></span>
-      <?php echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'>&nbsp;&nbsp;<a class='addLink' href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span>"; ?>
+      <?php echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'>&nbsp;&nbsp;<a class='addLink' href=\"javascript:showAdd('". $className ."')\"><img id='addUserGroup' src='images/plus.gif' title='" . _("add $className ") . "'/></a></span>"; ?>
       </section>
 
 			<table class='dataTable' style='width:350px'>
@@ -1091,9 +1091,9 @@ if ($issues) {
 
 		if (count($instanceArray) > 0){
 			?>
-      <section class= "tabTitleUser">
+      <section class= "tabTitleUsers">
       <span class="adminRightHeader"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span>
-      <span id='span_newUser'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=185&width=250&modal=true' class='thickbox addLink' id='expression'><?php echo _("add user");?></a></span>
+      <span id='span_newUser'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=185&width=250&modal=true' class='thickbox addLink' id='expression'><?php echo "<img id='addUser' src='images/plus.gif' title='" . _("add user") . "'/>";?></a></span>
       </section>
 
 			<table class='dataTable' style='width:550px'>

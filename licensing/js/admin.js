@@ -76,7 +76,7 @@
 
     function buttonOn(){
       $("#PreSelectedButton").css({'background': '#EAEDEF', 'font-weight':'bold'});
-    }
+    };
 
 
 /* Get title in the side menu to display the title of the table to facilitate translation */

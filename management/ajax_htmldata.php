@@ -1322,7 +1322,7 @@ switch ($_GET['action']) {
 			?>
 			<section class= "tabTitle">
       	<span class="adminRightHeader"><?php echo _("$menuTitle ") ;?></span>
-				<?php echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'><a class='addLink' href=\"javascript:showAdd('". $className ."')\">" . _("add $className") ."</a></span>" ?>
+				<?php echo "<span id='span_new". $className ."' class='adminAddInput admTabHeader'><a class='addLink' href=\"javascript:showAdd('". $className ."')\"><img id='addUserGroup' src='images/plus.gif' title='" . _("add . $className") . "'/></a></span>" ?>
       </section>
 
 			<table class='dataTable' style='width:350px'>
@@ -1342,8 +1342,8 @@ switch ($_GET['action']) {
 						foreach($resultArray as $result){
 							echo "<tr>";
 							echo "<td>" . $result['shortName'] . "</td>";
-							echo "<td style='width:30px'><a href='ajax_forms.php?action=getAdminUpdateForm&tableName=" . $className . "&updateID=" . $result[lcfirst($className) . 'ID'] . "&height=130&width=250&modal=true' class='thickbox' id='expression'>" . _("edit") . "</a></td>";
-							echo "<td style='width:50px'><a href='javascript:deleteData(\"" . $className . "\",\"" . $result[lcfirst($className) . 'ID'] . "\")'>" . _("remove") . "</a></td>";
+							echo "<td style='width:30px'><a href='ajax_forms.php?action=getAdminUpdateForm&tableName=" . $className . "&updateID=" . $result[lcfirst($className) . 'ID'] . "&height=130&width=250&modal=true' class='thickbox' id='expression'><img id='Edit' class='EditIcon' src='images/edit.gif' title= '"._("Edit")."' /></a></td>";
+							echo "<td style='width:50px'><a href='javascript:deleteData(\"" . $className . "\",\"" . $result[lcfirst($className) . 'ID'] . "\")'><img id='Remove' class='removeIcon' src='images/cross.gif' title= '"._("Remove")."' /></a></td>";
 							echo "</tr>";
 						}
 					?>
@@ -1368,7 +1368,7 @@ switch ($_GET['action']) {
 			?>
 			<section class= "tabTitle">
       <span class="adminRightHeader"><?php echo _("Users");?></span>&nbsp;&nbsp;<span id='span_User_response'></span>
-			<span><?php echo "<span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox addLink' id='expression'>". _("Add user")."</a>";?></span>
+			<span><?php echo "<span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=202&width=288&modal=true' class='thickbox addLink' id='expression'><img id='add' src='images/plus.gif' title='" . _("add user") . "'/></a>";?></span>
       </section>
 
 			<table class='dataTable' style='width:550px'>

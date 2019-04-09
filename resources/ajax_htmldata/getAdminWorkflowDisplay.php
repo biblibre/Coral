@@ -88,7 +88,7 @@
 		<section class= "tabTitle">
 		<?php
 		echo "<span class='adminRightHeader'>"._("User Group Setup")."</span>";
-		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getAdminUserGroupForm&userGroupID=&height=400&width=305&modal=true' class='thickbox'>"._("add user group")."</a></span>";
+		echo "<span class='adminAdd'><a href='ajax_forms.php?action=getAdminUserGroupForm&userGroupID=&height=400&width=305&modal=true' class='thickbox'><img id='addUserGroup' src='images/plus.gif' title='" . _("add user group setup") . "'/></a></span>";
 
 		?>
 		</section>

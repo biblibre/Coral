@@ -2061,7 +2061,7 @@ table.titleTable {
 
 .editIcon  {
 	padding-left: 8px;
-
+}
 /*--- Side menu in admin ---*/
 
 button{
@@ -2088,9 +2088,9 @@ button:focus{
 
 }
 
-.tabTitleUser{
+.tabTitleUsers{
 	text-align: left;
-	margin-left: 58px;
+	margin-left: 87px;
 }
 
 .tabTitle{

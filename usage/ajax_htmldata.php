@@ -894,8 +894,8 @@ switch ($action) {
 		$logEmailAddresses = new LogEmailAddress();
     ?>
     <section class= "tabTitleUser">
-      <span class="adminRightHeader"><?php echo _("Email addresses for logs");?></span>&nbsp;&nbsp;<span id='span_EmailAddress_response'></span>
-      <span id='span_newEmailAddress' class='adminAddInput'><a href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=238&modal=true' class='thickbox addLink'><?php echo _("add email address");?></a></span>
+      <span class="adminRightHeader"><?php echo _("Email addresses for logs");?></span><span id='span_EmailAddress_response'></span>
+      <span id='span_newEmailAddress' class='adminAddInput'><a href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=238&modal=true' class='thickbox addLink'><?php echo "<img id='add' src='images/plus.gif' title='" . _("add email") . "'/>";?></a></span>
     </section>
 
     <?php
@@ -912,7 +912,7 @@ switch ($action) {
 
 		foreach($logEmailAddresses->allAsArray as $logEmailAddress) {
 			echo "<tr><td>" . $logEmailAddress['emailAddress'] . "</td>";
-			echo "<td class='icon'><a  href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=248&logEmailAddressID=" . $logEmailAddress['logEmailAddressID'] . "&modal=true' class='thickbox'><img id='Edit'  src='images/edit.gif' title= '"._("Edit")."' /></a></td>";
+			echo "<td class='icon'><a href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=248&logEmailAddressID=" . $logEmailAddress['logEmailAddressID'] . "&modal=true' class='thickbox'><img id='Edit' src='images/edit.gif' title= '"._("Edit")."' /></a></td>";
 			echo "<td class='icon'><a href='javascript:deleteLogEmailAddress(" . $logEmailAddress['logEmailAddressID'] . ");'><img id='Remove'  src='images/cross.gif' title= '"._("Delete")."' /></a></td></tr>";
 		}
 
@@ -944,7 +944,7 @@ switch ($action) {
 
 			foreach($outliers->allAsArray as $outlier) {
 				echo _("Level ") . $outlier['outlierLevel'] . ": " . $outlier['overageCount'] . _(" over plus ") .  $outlier['overagePercent'] . _("% over - displayed ") . $outlier['color'];
-				echo "&nbsp;&nbsp;<a href='ajax_forms.php?action=getOutlierForm&height=162&width=308&outlierID=" . $outlier['outlierID'] . "&modal=true' class='thickbox'>" . _("edit") . "</a>";
+				echo "&nbsp;&nbsp;<a href='ajax_forms.php?action=getOutlierForm&height=162&width=308&outlierID=" . $outlier['outlierID'] . "&modal=true' class='thickbox'><img id='Edit'  src='images/edit.gif' title= '"._("Edit")."' /></a>";
 				echo "<br />";
 			}
 		}else{
@@ -1425,7 +1425,7 @@ switch ($action) {
 			?>
       <section class= "tabTitleUser">
         <span class="adminRightHeader"><?php echo _("Users");?></span>
-        <span id='span_User_response' class='redText'></span><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=196&width=248&modal=true' class='thickbox addLink' id='expression'><?php echo _("add user");?></a></span>
+        <span id='span_User_response' class='redText'></span><span id='span_newUser' class='adminAddInput'><a href='ajax_forms.php?action=getAdminUserUpdateForm&height=196&width=248&modal=true' class='thickbox addLink' id='expression'><?php echo "<img id='add' src='images/plus.gif' title='" . _("add user") . "'/>";?></a></span>
       </section>
 			<table class='dataTable' style='width:550px'>
 				<tr>
