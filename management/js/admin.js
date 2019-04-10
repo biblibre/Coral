@@ -140,7 +140,7 @@ function addData(tableName){
                  setTimeout("emptyResponse('" + tableName + "');",3000);
 
                  showAdd(tableName);
-                 updateForm(tableName);
+                 updateTable(tableName);
 
                  }
                    });

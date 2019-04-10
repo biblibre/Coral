@@ -107,6 +107,7 @@
 		echo "<div class='adminRightHeader'>" . _("Subject Relationships") . "</div>";
 		?>
 		 </section>
+		 </br>
 		<?php
 		if (count($generalSubjectArray) > 0){
 			?>

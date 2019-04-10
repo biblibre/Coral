@@ -5,7 +5,7 @@
 		$instanceArray = $obj->allAsArray();
 		?>
 		<div class='adminHeader'>
-		<div><?php echo "<div class='adminRightHeader'>" . _("Import Configuration") . "</div>";?></div>
+		<div><?php echo "<div class='adminRightHeader'>" . _("Import Configuration") ." &nbsp;</div>";?></div>
 		<div class='addElement'><?php 	echo "<a href='ajax_forms.php?action=getAdminImportConfigUpdateForm&updateID=&height=760&width=1024&modal=true' class='thickbox'><img id='addImportConfig' src='images/plus.gif' title='"._("add import configuration")."' /></a><br/>";?></div>
 		</div>
 		<?php

@@ -203,7 +203,7 @@ table.queueDataTable tr {
 <<<<<<< 85d5755b28a26e6d402758f455eebacde467be2d
 
 div.ImportElement{margin-top: 5px; margin-right: 8px;}
-div.addElement{margin-top: 3px; margin-right: 8px; padding-bottom: 8px;}
+div.addElement{margin-top: 8px; margin-right: 8px; padding-bottom: 8px;}
 div.adminHeader {display: flex;}
 div.adminHeaderAlert {display: flex; flex-direction: column;}
 div.adminRightHeader{font-size:135%; color:#3D545D;}
@@ -292,13 +292,14 @@ table.linedDataTable {
 
 table.linedDataTable td {
 	margin: 0;
-	padding: 3px 3px 3px 3px;
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	border-color: #e6e5e9;
-	background-color: white;
-	-moz-border-radius: 0px;
-}
+	    padding: 6px;
+	    border-width: 1px 1px 0 0;
+	    border-style: solid;
+	    border-color: #e0dfe3;
+	    background-color: #f3f3f3;
+	    -moz-border-radius: 0px;
+	    vertical-align: middle;
+		}
 
 table.linedDataTable td.complete {
 	background-color: #f4f4f4;

@@ -18,7 +18,7 @@
 
 	<section>
 		<?php
-		echo "<div class='addElement'><span class= 'addIconAlert'>"._('Add email'). "<a href='ajax_forms.php?action=getAdminAlertEmailForm&alertEmailAddressID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertEmail' src='images/plus.gif' title='"._("add Email")."' /></a></span></div>";
+		echo "<div class='addElement'><span class= 'addIconAlert'>"._('Add email')." &nbsp;<a href='ajax_forms.php?action=getAdminAlertEmailForm&alertEmailAddressID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertEmail' src='images/plus.gif' title='"._("add Email")."' /></a></span></div>";
 		?>
 	</section>
 
