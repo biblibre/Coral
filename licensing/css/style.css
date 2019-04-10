@@ -291,18 +291,18 @@ table.dataTable td.alt {
 
 table.dataTable th {
 	margin: 0;
-	padding: 6px;
-	border-width: 1px 1px 0 0;
-	border-style: solid;
-	border-color: #C9C9C9;
-	background-color: #CAD7E1;
-	-moz-border-radius: 0px;
-	vertical-align: middle;
-	font-weight: 300;
-	color: #000;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
-	border-bottom: 1px solid #C9C9C9 !important;
-}
+    padding: 6px;
+    border-width: 1px 1px 0 0;
+    border-style: solid;
+    border-color: #C9C9C9;
+    background-color: #CAD7E1;
+    -moz-border-radius: 0px;
+    vertical-align: middle;
+    font-weight: 300;
+    color: #000;
+    background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+    border-bottom: 1px solid #C9C9C9 !important;
+	}
 
 table.dataTable td.agreement { background-color:#fdf2e7; }
 

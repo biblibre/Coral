@@ -1234,7 +1234,7 @@ switch ($_GET['action']) {
 
 			<table class='dataTable' style='width:350px'>
 				<tr>
-					<th><?php echo _("$className ") ;?></th>
+					<th><?php echo _("$menuTitle") ;?></th>
 					<th></th>
 					<th></th>
 				</tr>
