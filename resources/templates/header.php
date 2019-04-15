@@ -166,7 +166,7 @@ $coralURL = $util->getCORALURL();
     </tr>
 
 <tr style='vertical-align:top'>
-<td style='width:870px;height:19px;' id="main-menu-titles" colspan="2">
+<td  id="main-menu-titles" colspan="2">
 
     <a href='index.php' title="<?php echo _("Home") ?>">
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">

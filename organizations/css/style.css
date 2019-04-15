@@ -1902,6 +1902,8 @@ span#divider {
     float: left;
     padding: 13px 10px 12px;
     border-left: solid 1px #5295BA;
+		height: 40px;
+		margin-top: 0px;
 }
 
 #main-menu-titles a:first-child .main-menu-link {
@@ -2067,7 +2069,7 @@ table.titleTable {
 button{
 	background: #F2F5F7;
 	width: 160px;
-	height: 40px;
+	height: 40px !important;
 	color: #666666;
 	font-size: 0.8em !important;
 	text-align: left;

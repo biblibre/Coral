@@ -1674,6 +1674,8 @@ span#divider {
     float: left;
     padding: 13px 10px 12px;
     border-left: solid 1px #5295BA;
+		height: 40px;
+		margin-top: 0px;
 }
 
 #main-menu-titles a:first-child .main-menu-link {
@@ -1845,7 +1847,7 @@ td.helpfulLinks {
 button{
 	background: #F2F5F7;
 	width: 160px;
-	height: 25px;
+	height: 40px !important;
 	color: #666666;
 	font-size: 1em !important;
 	text-align: left;

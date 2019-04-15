@@ -3056,10 +3056,20 @@ span#divider {
     float: left;
     padding: 13px 10px 12px;
     border-left: solid 1px #5295BA;
+		height: 40px;
+		margin-top: 0px;
+}
+
+#main-menu-titles{
+	width:870px;
+	height: 20px !important;
+	border: none;
+
 }
 
 #main-menu-titles a:first-child .main-menu-link {
     border: none;
+
 }
 
 .main-menu-link:hover {
