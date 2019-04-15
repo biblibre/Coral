@@ -34,7 +34,7 @@ $(function(){
 	$('.date-pick').datePicker({startDate:'01/01/1996'});
 
 	//preload images
-	jQuery.preLoadImages("images/menu/menu-home-over.gif", "images/menu/menu-newlicense-over.gif", "images/menu/menu-licensesinprogress-over.gif", "images/menu/menu-expressioncomparison-over.gif", "images/menu/menu-termstoolreport-over.gif", "images/menu/menu-admin-over.gif", "images/menu/menu-end-over.gif");
+	jQuery.preLoadImages("../images/menu/menu-home-over.gif", "../images/menu/menu-newlicense-over.gif", "../images/menu/menu-licensesinprogress-over.gif", "../images/menu/menu-expressioncomparison-over.gif", "../images/menu/menu-termstoolreport-over.gif", "../images/menu/menu-admin-over.gif", "../images/menu/menu-end-over.gif");
 
 	 //for swapping menu images
 	$('.rollover').hover(function() {

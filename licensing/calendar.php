@@ -110,7 +110,7 @@ $result = mysqli_query($link, $query) or die(_("Bad Query Failure: ".mysqli_erro
 ?>
 
 <div style='text-align:left;'>
-	<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
+	<table class="headerTable" style="background-image:url('../images/header.gif');background-repeat:no-repeat;">
 		<tr style='vertical-align:top;'>
 			<td>
 				<b><?php echo _("Upcoming License Renewals");?></b>

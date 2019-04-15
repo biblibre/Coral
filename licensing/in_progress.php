@@ -28,14 +28,14 @@ $_SESSION['ref_script']=$currentPage;
 
 ?>
 
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
+<table class="headerTable" style="background-image:url('../images/header.gif');background-repeat:no-repeat;">
 <tr><td>
 <span class="headerText"><?= _("Licenses In Progress");?>&nbsp;&nbsp;<a href='index.php'><?= _("Browse All");?></a></span>
 <br />
 <br />
 <div id='div_licenses'>
 
-<img src = "images/circle.gif"><?php echo _("Loading...");?>
+<img src = "../images/circle.gif"><?php echo _("Loading...");?>
 
 </div>
 </td></tr>
@@ -44,5 +44,3 @@ $_SESSION['ref_script']=$currentPage;
 <?php
 include 'templates/footer.php';
 ?>
-
-

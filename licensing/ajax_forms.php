@@ -396,7 +396,7 @@ switch ($_GET['action']) {
 
 		?>
 		<div id='div_signatureForm'>
-		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:100%;">
+		<table class="thickboxTable" style="background-image:url('../images/tbtitle.gif');width:100%;">
 		<tr>
             <td><span class='headerText'><?php echo _("Signatures");?></span><br /><span id='span_errors' style='color:#F00;'></span></td>
 		</tr>
@@ -717,11 +717,11 @@ switch ($_GET['action']) {
 					}else{
 						//calculate which arrows to show for reordering
 						if ($rowNumber == "1"){
-							echo "<td style='text-align:right;'><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"down\");'><img src='images/arrowdown.png' border=0></a></td>";
+							echo "<td style='text-align:right;'><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"down\");'><img src='../images/arrowdown.png' border=0></a></td>";
 						}else if($rowNumber == $rowCount){
-							echo "<td><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"up\");'><img src='images/arrowup.png' border=0></a></td>";
+							echo "<td><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"up\");'><img src='../images/arrowup.png' border=0></a></td>";
 						}else{
-							echo "<td><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"up\");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"down\");'><img src='images/arrowdown.png' border=0></a></td>";
+							echo "<td><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"up\");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"down\");'><img src='../images/arrowdown.png' border=0></a></td>";
 						}
 						echo "<td>" .  nl2br($expressionNote->note) . "</td>";
 						echo "<td><a href='javascript:updateExpressionNoteForm(\"" . $expressionNote->expressionNoteID . "\");'>"._("edit")."</a></td>";
@@ -914,7 +914,7 @@ switch ($_GET['action']) {
             <tr><td><label for='privilegeID'><b><?php echo _("Privilege"); ?></b></label></td>
 		<td>
 				<fieldset id="fieldsetPrivilege">
-				<a title = "<?php echo _("Add/Edit users can add, edit, or remove licenses and associated fields")."<br /><br />"._("Admin users have access to the Admin page and the SFX tab.")."<br /><br />"._("Restricted users do not have the ability to view documents")."<br /><br />"._("View only users can view all license information, including the license pdf");?>" href=""><img src='images/help.gif'></a>
+				<a title = "<?php echo _("Add/Edit users can add, edit, or remove licenses and associated fields")."<br /><br />"._("Admin users have access to the Admin page and the SFX tab.")."<br /><br />"._("Restricted users do not have the ability to view documents")."<br /><br />"._("View only users can view all license information, including the license pdf");?>" href=""><img src='../images/help.gif'></a>
 				</fieldset>
 
 				<div id="footnote_priv" style='display:none;'><?php echo _("Add/Edit users can add, edit, or remove licenses and associated fields")."<br /><br />"._("Admin users have access to the Admin page and the SFX tab.")."<br /><br />"._("Restricted users do not have the ability to view documents")."<br /><br />"._("View only users can view all license information, including the license pdf");?></div>
@@ -949,7 +949,7 @@ switch ($_GET['action']) {
             <tr><td><label for='emailAddressForTermsTool'><b><?php echo _("Terms Tool Email");?></b></label></td>
 		<td>
 				<fieldset id="fieldsetEmail">
-				<a title = "<?php echo _("Enter email address if you wish this user to receive email notifications when the terms tool box is checked on the Expressions tab.")."<br /><br />"._("Leave this field blank if the user shouldn't receive emails.");?>" href=""><img src='images/help.gif'></a>
+				<a title = "<?php echo _("Enter email address if you wish this user to receive email notifications when the terms tool box is checked on the Expressions tab.")."<br /><br />"._("Leave this field blank if the user shouldn't receive emails.");?>" href=""><img src='../images/help.gif'></a>
 				</fieldset>
 
 		</td>

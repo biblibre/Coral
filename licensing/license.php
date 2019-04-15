@@ -67,7 +67,7 @@ if ($license->shortName){
 			<td class='mainContent'>
 
 				<div id='div_documents'>
-				<img src = "images/circle.gif"><?php echo _("Loading...");?>
+				<img src = "../images/circle.gif"><?php echo _("Loading...");?>
 				</div>
 				<br />
 				<div id='div_archives'>
@@ -109,7 +109,7 @@ if ($license->shortName){
 			<td class='mainContent'>
 
 				<div id='div_expressions'>
-				<img src = "images/circle.gif"><?php echo _("Loading...");?>
+				<img src = "../images/circle.gif"><?php echo _("Loading...");?>
 				</div>
 			</td>
 		</tr>
@@ -128,7 +128,7 @@ if ($license->shortName){
 			</td>
 			<td class='mainContent'>
 				<div id='div_sfxProviders'>
-				<img src = "images/circle.gif"><?php echo _("Loading...");?>
+				<img src = "../images/circle.gif"><?php echo _("Loading...");?>
 				</div>
 			</td>
 		</tr>
@@ -148,7 +148,7 @@ if ($license->shortName){
 			<td class='mainContent'>
 
 				<div id='div_attachments'>
-				<img src = "images/circle.gif"><?php echo _("Loading...");?>
+				<img src = "../images/circle.gif"><?php echo _("Loading...");?>
 				</div>
 			</td>
 		</tr>
@@ -163,4 +163,3 @@ if ($license->shortName){
 
 include 'templates/footer.php';
 ?>
-

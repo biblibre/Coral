@@ -156,7 +156,7 @@ $(document).ready(function(){
  }
 
 function updateRightPanel(){
-  $("#div_rightPanel").append("<img src='images/circle.gif' />  "+_("Refreshing Contents..."));
+  $("#div_rightPanel").append("<img src='../images/circle.gif' />  "+_("Refreshing Contents..."));
   $.ajax({
    type:       "GET",
    url:        "ajax_htmldata.php",
@@ -454,7 +454,7 @@ function hideFullAttachmentText(attachmentID){
  					if (exists == "1"){
  						$("#div_file_message").html("  <font color='red'>"+_("File name is already being used.")+"</font>");
  					}else{
- 						$("#div_uploadFile").html("<img src='images/paperclip.gif'>" + fileName + _(" successfully uploaded."));
+ 						$("#div_uploadFile").html("<img src='../images/paperclip.gif'>" + fileName + _(" successfully uploaded."));
 
  					}
 
