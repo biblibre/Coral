@@ -35,7 +35,7 @@
  var pageStart = '1';
 
  function updateImportTable(){
-       $('#span_feedback').html("<img src = 'images/circle.gif'>&nbsp;&nbsp;" + _("Loading..."));
+       $('#span_feedback').html("<img src = '../../images/circle.gif'>&nbsp;&nbsp;" + _("Loading..."));
        $.ajax({
           type:       "GET",
           url:        "ajax_htmldata.php",
@@ -70,4 +70,3 @@ function validateForm(){
 	  }
 
 }
-

@@ -77,7 +77,7 @@ $(document).ready(function(){
 
   if (confirm(_("Do you really want to delete this import?")) == true) {
 
-         $('#span_outstanding_feedback').html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
+         $('#span_outstanding_feedback').html("<img src = '../../images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
          $.ajax({
       type:       "GET",
       url:        "ajax_processing.php",
@@ -101,7 +101,7 @@ $(document).ready(function(){
 function runService(sushiServiceID, el){
   //$("html, body").scrollTop($('#div_run_feedback').offset().top);
 
-  $(el).parent().html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Running...")+"<br />");
+  $(el).parent().html("<img src = '../../images/circle.gif'>&nbsp;&nbsp;"+_("Running...")+"<br />");
 
 	$.ajax({
           type:       "GET",
@@ -122,5 +122,3 @@ function runService(sushiServiceID, el){
 
 
 }
-
-

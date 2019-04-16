@@ -33,7 +33,7 @@ if ($publisherPlatformID) {
 ?>
 
 
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
+<table class="headerTable" style="background-image:url('../images/header.gif');background-repeat:no-repeat;">
 <tr><td>
 	<table style='width:897px;'>
 	<tr style='vertical-align:top'>

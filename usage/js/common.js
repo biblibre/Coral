@@ -74,7 +74,7 @@ function toggleDivs(platformID)
 {
 
     imageName = "document.image_" + platformID;
-    imageName.src = "images/arrowdown.gif";
+    imageName.src = "../../images/arrowdown.gif";
 
     divID = 'div_' + platformID;
 

@@ -31,11 +31,11 @@ function showPublisherList(platformID){
 	toggleDivState(divID, displayInds[divID]);
 
 	if (displayInds[divID] == 0) {
-		$('#image_' + platformID).attr('src', "images/arrowright.gif");
+		$('#image_' + platformID).attr('src', "../../images/arrowright.gif");
 		$('#link_' + platformID).text(_("show Publisher list"));
 		displayInds[divID]=1;
 	} else {
-		$('#image_' + platformID).attr('src', "images/arrowdown.gif");
+		$('#image_' + platformID).attr('src', "../../images/arrowdown.gif");
 		$('#link_' + platformID).text(_("hide Publisher list"));
 		displayInds[divID]=0;
 	}
@@ -187,5 +187,3 @@ function updatePublisherDropDown(publisherPlatformID){
  function emptyResponse(tableName){
  	$('#span_' + tableName + "_response").html("");
  }
-
-

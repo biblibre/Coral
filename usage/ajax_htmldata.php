@@ -480,7 +480,7 @@ switch ($action) {
 		}
 
 
-		echo "<br /><br /><img src='images/help.gif' style='float:left;'>&nbsp;&nbsp;";
+		echo "<br /><br /><img src='../images/help.gif' style='float:left;'>&nbsp;&nbsp;";
 		echo _("Visit the ") . "<a href='https://groups.niso.org/workrooms/sushi/registry_server/' target='_blank'>" . _("SUSHI Server Registry") . "</a>" . _(" for information about adding your provider.");
 
         break;
@@ -898,8 +898,8 @@ switch ($action) {
 
 		foreach($logEmailAddresses->allAsArray as $logEmailAddress) {
 			echo "<tr><td>" . $logEmailAddress['emailAddress'] . "</td>";
-			echo "<td class='icon'><a  href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=248&logEmailAddressID=" . $logEmailAddress['logEmailAddressID'] . "&modal=true' class='thickbox'><img id='Edit'  src='images/edit.gif' title= '"._("Edit")."' /></a></td>";
-			echo "<td class='icon'><a href='javascript:deleteLogEmailAddress(" . $logEmailAddress['logEmailAddressID'] . ");'><img id='Remove'  src='images/cross.gif' title= '"._("Delete")."' /></a></td></tr>";
+			echo "<td class='icon'><a  href='ajax_forms.php?action=getLogEmailAddressForm&height=122&width=248&logEmailAddressID=" . $logEmailAddress['logEmailAddressID'] . "&modal=true' class='thickbox'><img id='Edit'  src='../images/edit.gif' title= '"._("Edit")."' /></a></td>";
+			echo "<td class='icon'><a href='javascript:deleteLogEmailAddress(" . $logEmailAddress['logEmailAddressID'] . ");'><img id='Remove'  src='../images/cross.gif' title= '"._("Delete")."' /></a></td></tr>";
 		}
 
 		echo "</table>";
@@ -1416,8 +1416,8 @@ switch ($action) {
 					echo "<td>" . $instance['firstName'] . "</td>";
 					echo "<td>" . $instance['lastName'] . "</td>";
 					echo "<td>" . $privilege->shortName . "</td>";
-					echo "<td style='width:30px' class='icon'><a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=" . $instance['loginID'] . "&height=196&width=248&modal=true' class='thickbox' id='expression'><img id='Edit'  src='images/edit.gif' title= '"._("Edit")."' /></a></td>";
-					echo "<td style='width:50px' class='icon'><a href='javascript:deleteUser(\"" . $instance['loginID'] . "\")'><img id='Remove' src='images/cross.gif' title= '"._("Remove")."' /></a></td>";
+					echo "<td style='width:30px' class='icon'><a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=" . $instance['loginID'] . "&height=196&width=248&modal=true' class='thickbox' id='expression'><img id='Edit'  src='../images/edit.gif' title= '"._("Edit")."' /></a></td>";
+					echo "<td style='width:50px' class='icon'><a href='javascript:deleteUser(\"" . $instance['loginID'] . "\")'><img id='Remove' src='../images/cross.gif' title= '"._("Remove")."' /></a></td>";
 					echo "</tr>";
 				}
 
@@ -1512,12 +1512,12 @@ switch ($action) {
 			?>
 			<table class='dataTable' style='width:727px'>
 			<tr>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Platform Name");?></td><td class='arrow'><a href='javascript:setOrder("P.name","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("P.name","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Publishers");?></td><td class='arrow'><a href='javascript:setOrder("publishers","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("publishers","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Next Run");?></td><td class='arrow'><a href='javascript:setOrder("serviceDayOfMonth","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("serviceDayOfMonth","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Latest Run");?></td><td class='arrow'><a href='javascript:setOrder("importDateTime","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("ImportDateTime","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Latest Status");?></td><td class='arrow'><a href='javascript:setOrder("details","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("details","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("By");?></td><td class='arrow'><a href='javascript:setOrder("loginID","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("loginID","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Platform Name");?></td><td class='arrow'><a href='javascript:setOrder("P.name","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("P.name","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Publishers");?></td><td class='arrow'><a href='javascript:setOrder("publishers","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("publishers","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Next Run");?></td><td class='arrow'><a href='javascript:setOrder("serviceDayOfMonth","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("serviceDayOfMonth","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Latest Run");?></td><td class='arrow'><a href='javascript:setOrder("importDateTime","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("ImportDateTime","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Latest Status");?></td><td class='arrow'><a href='javascript:setOrder("details","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("details","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("By");?></td><td class='arrow'><a href='javascript:setOrder("loginID","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("loginID","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
 			</tr>
 
 			<?php
@@ -1539,7 +1539,7 @@ switch ($action) {
 						$publisherPlatformArray = explode(":", $platform['publishers']);
 
 					 	if (count($publisherPlatformArray) > 5){
-							echo "<a href=\"javascript:showPublisherList('" . $platform['platformID'] . "');\"><img src='images/arrowright.gif' style='border:0px' alt='" . _("show publisher list") . "' id='image_" . $platform['platformID'] . "'></a>&nbsp;<a href=\"javascript:showPublisherList('" . $platform['platformID'] . "');\" id='link_" . $platform['platformID'] . "'>" . _("show publisher list") . "</a><br />";
+							echo "<a href=\"javascript:showPublisherList('" . $platform['platformID'] . "');\"><img src='../images/arrowright.gif' style='border:0px' alt='" . _("show publisher list") . "' id='image_" . $platform['platformID'] . "'></a>&nbsp;<a href=\"javascript:showPublisherList('" . $platform['platformID'] . "');\" id='link_" . $platform['platformID'] . "'>" . _("show publisher list") . "</a><br />";
 							echo "<div id='div_" . $platform['platformID'] . "' style='display:none;width:300px;margin-left:5px'>";
 
 							foreach($publisherPlatformArray as $publisherPlatformID){

@@ -42,7 +42,7 @@ $coralURL = $util->getCORALURL();
 <link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/jquery.tooltip.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../css/jquery.autocomplete.css" type="text/css" media="screen" />
-<link rel="SHORTCUT ICON" href="images/favicon.ico" />
+<link rel="SHORTCUT ICON" href="../images/favicon.ico" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="../js/plugins/jquery-1.3.2.js"></script>
@@ -88,9 +88,9 @@ $coralURL = $util->getCORALURL();
         <td style='height:53px;' colspan='3'>
 
             <div id="main-title">
-                <img src="images/title-icon-usage.png" />
+                <img src="../images/title-icon-usage.png" />
                 <span id="main-title-text"><?php echo _("Usage Statistics"); ?></span>
-                <span id="powered-by-text"><?php echo _("Powered by");?><img src="images/logo-coral.jpg" /></span>
+                <span id="powered-by-text"><?php echo _("Powered by");?><img src="../images/logo-coral.jpg" /></span>
             </div>
 
             <div id="menu-login" style='margin-top:1px;'>
@@ -163,35 +163,35 @@ $coralURL = $util->getCORALURL();
 ?>
     <a href='index.php'>
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-home.png" />
+            <img src="../images/menu/icon-home.png" />
             <span><?php echo _("Home");?></span>
         </div>
     </a>
 
     <a href='import.php'>
         <div class="main-menu-link <?php if ($currentPage == 'import.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-import.png" />
+            <img src="../images/menu/icon-import.png" />
             <span><?php echo _("File Import");?></span>
         </div>
     </a>
 
     <a href='sushi.php'>
         <div class="main-menu-link <?php if ($currentPage == 'sushi.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-sushi.png" />
+            <img src="../images/menu/icon-sushi.png" />
             <span><?php echo _("SUSHI");?></span>
         </div>
     </a>
 
     <a href='admin.php'>
         <div class="main-menu-link <?php if ($currentPage == 'admin.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-admin.png" />
+            <img src="../images/menu/icon-admin.png" />
             <span><?php echo _("Admin");?></span>
         </div>
     </a>
 
     <a href='reporting.php'>
         <div class="main-menu-link <?php if ($currentPage == 'reporting.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-report-options.png" />
+            <img src="../images/menu/icon-report-options.png" />
             <span><?php echo _("Report Options");?></span>
         </div>
     </a>
@@ -200,7 +200,7 @@ $coralURL = $util->getCORALURL();
     ?>
     <a href='../reports/' target='_blank'>
         <div class="main-menu-link">
-            <img src="images/menu/icon-usage.png" />
+            <img src="../images/menu/icon-usage.png" />
             <span><?php echo _("Usage Reports");?></span>
         </div>
     </a>
@@ -212,28 +212,28 @@ else
 ?>
     <a href='index.php'>
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-home.png" />
+            <img src="../images/menu/icon-home.png" />
             <span><?php echo _("Home");?></span>
         </div>
     </a>
 
     <a href='import.php'>
         <div class="main-menu-link <?php if ($currentPage == 'import.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-import.png" />
+            <img src="../images/menu/icon-import.png" />
             <span><?php echo _("File Import");?></span>
         </div>
     </a>
 
     <a href='sushi.php'>
         <div class="main-menu-link <?php if ($currentPage == 'sushi.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-sushi.png" />
+            <img src="../images/menu/icon-sushi.png" />
             <span><?php echo _("SUSHI");?></span>
         </div>
     </a>
 
     <a href='reporting.php'>
         <div class="main-menu-link <?php if ($currentPage == 'reporting.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-report-options.png" />
+            <img src="../images/menu/icon-report-options.png" />
             <span><?php echo _("Report Options");?></span>
         </div>
     </a>
@@ -242,7 +242,7 @@ else
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href='../reports/' target='_blank' id='usage-reports'>
         <div class="main-menu-link">
-            <img src="images/menu/icon-usage.png" />
+            <img src="../images/menu/icon-usage.png" />
             <span><?php echo _("Usage Reports");?></span>
         </div>
     </a>
@@ -265,27 +265,27 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
         <li id="change-mod-menu"><span><?php echo _("Change Module");?></span><i class="fa fa-chevron-down"></i>
             <ul class="coraldropdown">
                 <?php if (file_exists($util->getCORALPath() . "index.php")) {?>
-                <li class="change-mod-item"><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/icon-mod-main.png'><span><?php echo _("Main Menu");?></span></a></li>
+                <li class="change-mod-item"><a href="<?php echo $coralURL; ?>" target='_blank'><img src='../images/change/icon-mod-main.png'><span><?php echo _("Main Menu");?></span></a></li>
                 <?php
                 }
                 if ($config->settings->resourcesModule == 'Y') {
                 ?>
-                <li class="change-mod-item"><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='images/change/icon-mod-resources.png'><span><?php echo _("Resources");?></span></a></li>
+                <li class="change-mod-item"><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='../images/change/icon-mod-resources.png'><span><?php echo _("Resources");?></span></a></li>
                 <?php
                 }
                 if ($config->settings->organizationsModule == 'Y') {
                 ?>
-                <li class="change-mod-item"><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='images/change/icon-mod-organizations.png'><span><?php echo _("Organizations");?></span></a></li>
+                <li class="change-mod-item"><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='../images/change/icon-mod-organizations.png'><span><?php echo _("Organizations");?></span></a></li>
                 <?php
                 }
                 if ($config->settings->licensingModule == 'Y') {
                 ?>
-                <li class="change-mod-item"><a href="<?php echo $coralURL; ?>licensing/" target='_blank'><img src='images/change/icon-mod-licensing.png'><span><?php echo _("Licensing");?></span></a></li>
+                <li class="change-mod-item"><a href="<?php echo $coralURL; ?>licensing/" target='_blank'><img src='../images/change/icon-mod-licensing.png'><span><?php echo _("Licensing");?></span></a></li>
                 <?php
                 }
                 if ($config->settings->managementModule == 'Y') {
                 ?>
-                <li class="change-mod-item"><a href="<?php echo $coralURL; ?>management/" target='_blank'><img src='images/change/icon-mod-management.png'><span><?php echo _("Management");?></span></a></li>
+                <li class="change-mod-item"><a href="<?php echo $coralURL; ?>management/" target='_blank'><img src='../images/change/icon-mod-management.png'><span><?php echo _("Management");?></span></a></li>
                 <?php } ?>
             </ul>
         </li>

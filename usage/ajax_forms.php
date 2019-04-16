@@ -672,7 +672,7 @@ switch ($action) {
 		?>
 
 		<div id='div_outlierForm'>
-		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:410px;">
+		<table class="thickboxTable" style="background-image:url('../images/tbtitle.gif');width:410px;">
 		<tr>
 		<td><span class='headerText'><?php echo $nameDisplay; ?></span><br /></td>
 		</tr>
@@ -748,7 +748,7 @@ switch ($action) {
 		?>
 
 		<div id='div_overrideForm'>
-		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:410px;">
+		<table class="thickboxTable" style="background-image:url('../images/tbtitle.gif');width:410px;">
 		<tr>
 			<td><span class='headerText'><?php echo $nameDisplay; ?></span><br /><?php echo _("(showing only titles for which there were outliers during the year)");?></td>
 		</tr>
@@ -992,7 +992,7 @@ switch ($action) {
 		<tr><td><label for='privilegeID'><b><?php echo _("Privilege");?></b></label></td>
 		<td>
 				<fieldset id="foottip">
-				<a href="#footnote_priv"><img src='images/help.gif'></a>
+				<a href="#footnote_priv"><img src='../images/help.gif'></a>
 				<div id="footnote_priv" style='display:none;'><?php echo _("Add/Edit users have access to everything") . "<br />" . _("except the Admin tab and admin users") . "<br />" . _("have access to everything");?></div>
 				</fieldset>
 

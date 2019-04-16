@@ -38,7 +38,7 @@ var startWith = '';
 
 function updateSearch()
 {
-    $("#div_feedback").html("<img src='images/circle.gif'>  <span style='font-size:90%'>" + _("Processing...") + "</span>");
+    $("#div_feedback").html("<img src='../../images/circle.gif'>  <span style='font-size:90%'>" + _("Processing...") + "</span>");
     $.ajax(
     {
         type: "GET",
@@ -129,13 +129,13 @@ function showPublisherList(platformID)
 
     if (displayInds[divID] == 0)
     {
-        $('#image_' + platformID).attr('src', "images/arrowright.gif");
+        $('#image_' + platformID).attr('src', "../../images/arrowright.gif");
         $('#link_' + platformID).text(_('show publisher list'));
         displayInds[divID] = 1;
     }
     else
     {
-        $('#image_' + platformID).attr('src', "images/arrowdown.gif");
+        $('#image_' + platformID).attr('src', "../../images/arrowdown.gif");
         $('#link_' + platformID).text(_('hide publisher list'));
         displayInds[divID] = 0;
     }

@@ -38,7 +38,7 @@ if (count($platformArray) > 0){
 		echo "<span id='span_platform_" . $platform->platformID . "_response' style='color:red'></span>";
 
 
-		echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:showPublisherList('" . $platform->platformID . "');\"><img src='images/arrowright.gif' style='border:0px' alt='show publisher list' name='image_" . $platform->platformID . "' id='image_" . $platform->platformID . "'></a>&nbsp;<a href=\"javascript:showPublisherList('" . $platform->platformID . "');\" name='link_" . $platform->platformID . "' id='link_" . $platform->platformID . "'>" . _("show publisher list") . "</a><br />";
+		echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:showPublisherList('" . $platform->platformID . "');\"><img src='../images/arrowright.gif' style='border:0px' alt='show publisher list' name='image_" . $platform->platformID . "' id='image_" . $platform->platformID . "'></a>&nbsp;<a href=\"javascript:showPublisherList('" . $platform->platformID . "');\" name='link_" . $platform->platformID . "' id='link_" . $platform->platformID . "'>" . _("show publisher list") . "</a><br />";
 
 		echo "\n<div id='div_" . $platform->platformID . "' style='display:none;max-width:600px;margin-left:50px;'>";
 

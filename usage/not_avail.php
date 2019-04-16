@@ -39,7 +39,7 @@ $pageTitle=_('Not Available');
 <div style="text-align:left;">
 
 <center>
-<table class="titleTable" style="background-image:url('images/usagetitle.jpg');background-repeat:no-repeat;width:900px;height:120px;text-align:left;">
+<table class="titleTable" style="background-image:url('../images/usagetitle.jpg');background-repeat:no-repeat;width:900px;height:120px;text-align:left;">
 <tr style='vertical-align:bottom'>
 <td>
 &nbsp;
