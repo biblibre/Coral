@@ -40,7 +40,7 @@ $_SESSION['ref_script']=$currentPage;
 ?>
 
 
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
+<table class="headerTable" style="background-image:url('../images/header.gif');background-repeat:no-repeat;">
 <tr style='vertical-align:top;'>
 <td style="width:155px;padding-right:10px;">
 	<table class='noBorder'>

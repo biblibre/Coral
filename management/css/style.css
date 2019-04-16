@@ -16,7 +16,7 @@ body {
 	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
 	padding: 0;
 	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
-	background: #E7E8E8 url(../images/bg-gray-texture.jpg) repeat top left;
+	background: #E7E8E8 url(../../images/bg-gray-texture.jpg) repeat top left;
 	-webkit-font-smoothing: antialiased;
 
 }
@@ -29,7 +29,7 @@ body {
 	height: 100%;
 	---*/
 	margin: 0 auto -2em;
-	background-image: url("../images/back-header.jpg");
+	background-image: url("../../images/back-header-management.jpg");
 	background-repeat: repeat-x;
 }
 
@@ -263,7 +263,7 @@ table.dataTable th {
 	vertical-align: middle;
 	font-weight: 300;
 	color: #000;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 	border-bottom: 1px solid #C9C9C9 !important;
 }
 
@@ -473,7 +473,7 @@ a.dp-choose-date {
 	display: block;
 	text-indent: -2000px;
 	overflow: hidden;
-	background: url('../images/calendar.gif') no-repeat;
+	background: url('../../images/calendar.gif') no-repeat;
 }
 a.dp-choose-date.dp-disabled {
 	background-position: 0 -20px;
@@ -941,7 +941,7 @@ td#org-title {
 	border-color: #e6e5e9;
 	background-color: #cad7e1;
 	-moz-border-radius: 0px;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 }
 
 #organizationForm table.thickboxTable table.noBorderTable input {
@@ -1197,7 +1197,7 @@ a.helpfulLink {
 	vertical-align: middle;
 	font-weight: 300;
 	color: #000;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 	border-bottom: 1px solid #C9C9C9 !important;
 }
 
@@ -1274,7 +1274,7 @@ div#searchResults > i {
 	border-color: #e6e5e9;
 	background-color: #cad7e1;
 	-moz-border-radius: 0px;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 }
 
 #div_licenseForm .headerText {
@@ -1369,7 +1369,7 @@ div#TB_window {
 	border-color: #e6e5e9;
 	background-color: #cad7e1;
 	-moz-border-radius: 0px;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 	position: relative;
 	top: -15px;
 }
@@ -1462,7 +1462,7 @@ a.showDocuments:before {
 	border-color: #e6e5e9;
 	background-color: #cad7e1;
 	-moz-border-radius: 0px;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 	display: block;
 	margin-bottom: -18px;
 }
@@ -1508,7 +1508,7 @@ a.showDocuments:before {
 	border-color: #e6e5e9;
 	background-color: #cad7e1;
 	-moz-border-radius: 0px;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 	display: block;
 	margin-bottom: -18px;
 }
@@ -1573,7 +1573,7 @@ a.showDocuments:before {
 	border-color: #e6e5e9;
 	background-color: #cad7e1;
 	-moz-border-radius: 0px;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 	display: block;
 	margin-bottom: -18px;
 }
@@ -1628,7 +1628,7 @@ a.showDocuments:before {
 	border-color: #c9c9c9;
 	background-color: #cad7e1;
 	-moz-border-radius: 0px;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 	margin-bottom: -18px;
 }
 

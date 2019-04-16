@@ -94,16 +94,16 @@ $coralURL = $util->getCORALURL();
 <div style="text-align:left;">
 
 <center>
-    
+
 <table class="titleTable" style="width:1024px;text-align:left;">
 
     <tr style='vertical-align:top;'>
         <td style='height:53px;' colspan='3'>
-                
+
             <div id="main-title">
-                <img src="images/title-icon-management.png" />
+                <img src="../images/title-icon-management.png" />
                 <span id="main-title-text"><?php echo _("Management"); ?></span>
-                <span id="powered-by-text"><?php echo _("Powered by");?><img src="images/logo-coral.jpg" /></span>
+                <span id="powered-by-text"><?php echo _("Powered by");?><img src="../images/logo-coral.jpg" /></span>
             </div>
 
             <div id="menu-login" style='margin-top:1px;'>
@@ -132,18 +132,18 @@ $coralURL = $util->getCORALURL();
                                 while (($file = readdir($dh)) !== false) {
                                     if (is_dir("$route/$file") && $file!="." && $file!=".."){
                                         $lang[]=$file;
-                                    } 
-                                } 
-                                closedir($dh); 
-                            } 
+                                    }
+                                }
+                                closedir($dh);
+                            }
                         }else {
-                            echo "<br>"._("Invalid translation route!"); 
+                            echo "<br>"._("Invalid translation route!");
                         }
                         // Get language of navigator
                         $defLang = $lang_name->getBrowserLanguage();
-                        
+
                         // Show an ordered list
-                        sort($lang); 
+                        sort($lang);
                         for($i=0; $i<count($lang); $i++){
                             if(isset($_COOKIE["lang"])){
                                 if($_COOKIE["lang"]==$lang[$i]){
@@ -160,7 +160,7 @@ $coralURL = $util->getCORALURL();
                             }
                         }
                         ?>
-                        
+
                     </select>
                 </span>
             </div>
@@ -207,37 +207,37 @@ echo '</div>';
 
     <a href='index.php'>
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-home.png" />
+            <img src="../images/menu/icon-home.png" />
             <span><?php echo _("Home");?></span>
         </div>
     </a>
 
     <a href='ajax_forms.php?action=getLicenseForm&height=350&width=300&modal=true&newLicenseID=' class='thickbox' id='newLicense'>
         <div class="main-menu-link">
-            <img src="images/menu/icon-new-doc.png" />
+            <img src="../images/menu/icon-new-doc.png" />
             <span><?php echo _("New Document");?></span>
         </div>
     </a>
 
     <a href='admin.php'>
         <div class="main-menu-link <?php if ($currentPage == 'admin.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-admin.png" />
+            <img src="../images/menu/icon-admin.png" />
             <span><?php echo _("Admin");?></span>
         </div>
-    </a>   
+    </a>
 
 <?php }else if ($user->canEdit()){ ?>
-	
+
     <a href='index.php'>
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-home.png" />
+            <img src="../images/menu/icon-home.png" />
             <span><?php echo _("Home");?></span>
         </div>
     </a>
 
     <a href='ajax_forms.php?action=getLicenseForm&height=350&width=300&modal=true&newLicenseID=' class='thickbox' id='newLicense'>
         <div class="main-menu-link">
-            <img src="images/menu/icon-new-doc.png" />
+            <img src="../images/menu/icon-new-doc.png" />
             <span><?php echo _("New Document");?></span>
         </div>
     </a>
@@ -246,14 +246,14 @@ echo '</div>';
 
     <a href='index.php'>
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-home.png" />
+            <img src="../images/menu/icon-home.png" />
             <span><?php echo _("Home");?></span>
         </div>
     </a>
 
     <a href='ajax_forms.php?action=getLicenseForm&height=350&width=300&modal=true&newLicenseID=' class='thickbox' id='newLicense'>
         <div class="main-menu-link">
-            <img src="images/menu/icon-new-doc.png" />
+            <img src="../images/menu/icon-new-doc.png" />
             <span><?php echo _("New Document");?></span>
         </div>
     </a>
@@ -278,27 +278,27 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 			<li id="change-mod-menu"><span><?php echo _("Change Module");?></span><i class="fa fa-chevron-down"></i>
 				<ul class="coraldropdown">
 					<?php if (file_exists($util->getCORALPath() . "index.php")) {?>
-					<li class="change-mod-item"><a href="<?php echo $coralURL; ?>" target='_blank'><img src='images/change/icon-mod-main.png'><span><?php echo _("Main Menu");?></span></a></li>
+					<li class="change-mod-item"><a href="<?php echo $coralURL; ?>" target='_blank'><img src='../images/change/icon-mod-main.png'><span><?php echo _("Main Menu");?></span></a></li>
 					<?php
 					}
 					if ($config->settings->resourcesModule == 'Y') {
 					?>
-					<li class="change-mod-item"><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='images/change/icon-mod-resources.png'><span><?php echo _("Resources");?></span></a></li>
+					<li class="change-mod-item"><a href="<?php echo $coralURL; ?>resources/" target='_blank'><img src='../images/change/icon-mod-resources.png'><span><?php echo _("Resources");?></span></a></li>
 					<?php
 					}
 					if ($config->settings->organizationsModule == 'Y') {
 					?>
-					<li class="change-mod-item"><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='images/change/icon-mod-organizations.png'><span><?php echo _("Organizations");?></span></a></li>
+					<li class="change-mod-item"><a href="<?php echo $coralURL; ?>organizations/" target='_blank'><img src='../images/change/icon-mod-organizations.png'><span><?php echo _("Organizations");?></span></a></li>
 					<?php
 					}
 					if ($config->settings->licensingModule == 'Y') {
 					?>
-					<li class="change-mod-item"><a href="<?php echo $coralURL; ?>licensing/" target='_blank'><img src='images/change/icon-mod-licensing.png'><span><?php echo _("Licensing");?></span></a></li>
+					<li class="change-mod-item"><a href="<?php echo $coralURL; ?>licensing/" target='_blank'><img src='../images/change/icon-mod-licensing.png'><span><?php echo _("Licensing");?></span></a></li>
 					<?php
 					}
 					if ($config->settings->usageModule == 'Y') {
 					?>
-					<li class="change-mod-item"><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='images/change/icon-mod-usage.png'><span><?php echo _("Usage Statistics");?></span></a></li>
+					<li class="change-mod-item"><a href="<?php echo $coralURL; ?>usage/" target='_blank'><img src='../images/change/icon-mod-usage.png'><span><?php echo _("Usage Statistics");?></span></a></li>
 					<?php } ?>
 				</ul>
 			</li>
@@ -320,7 +320,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
             setLanguage($("#lang").val());
             location.reload();
         });
-        
+
         function setLanguage(lang) {
 			var wl = window.location, now = new Date(), time = now.getTime();
             var cookievalid=2592000000; // 30 days (1000*60*60*24*30)
