@@ -21,7 +21,7 @@ if ($organizationData['organizationID']) {
 	<input type="hidden" id="sourceOrganizationID" name="sourceOrganizationID" value="<?php echo $organizationData['organizationID'];?>" />
 	<input type="hidden" name="sourceResourceID" value="<?php echo $resourceID;?>" />
 	<input type="hidden" name="sourceResourceAcquisitionID" value="<?php echo $resourceAcquisitionID;?>" />
-	<table class="thickboxTable" style="width:98%;background-image:url('images/title.gif');background-repeat:no-repeat;">
+	<table class="thickboxTable" style="width:98%;background-image:url('../images/title.gif');background-repeat:no-repeat;">
 		<tr>
 			<td colspan="2">
 				<h1><?php echo _("Report New Problem");?></h1>
@@ -145,5 +145,3 @@ if ($config->settings->organizationsModule == 'Y') {
 	echo '<input type="button" value="' . _("cancel") . '" onclick="tb_remove();">';
 }
 ?>
-
-

@@ -42,7 +42,7 @@ $coralURL = $util->getCORALURL();
 <link rel="stylesheet" href="../css/datePicker.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../css/jquery.autocomplete.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/jquery.tooltip.css" type="text/css" media="screen" />
-<link rel="SHORTCUT ICON" href="images/favicon.ico" />
+<link rel="SHORTCUT ICON" href="../images/favicon.ico" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="../js/plugins/jquery-1.4.4.js"></script>
@@ -88,9 +88,9 @@ $coralURL = $util->getCORALURL();
 
 
             <div id="main-title">
-                <img src="images/title-icon-resources.png" />
+                <img src="../images/title-icon-resources.png" />
                 <span id="main-title-text"><?php echo _("Resources"); ?></span>
-                <span id="powered-by-text"><?php echo _("Powered by");?><img src="images/logo-coral.jpg" /></span>
+                <span id="powered-by-text"><?php echo _("Powered by");?><img src="../images/logo-coral.jpg" /></span>
             </div>
 
             <div id="menu-login" style='margin-top:1px;'>
@@ -149,7 +149,7 @@ $coralURL = $util->getCORALURL();
 
             <a href='index.php' title="<?php echo _("Home") ?>">
                 <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
-                    <img src="images/menu/icon-home.png" />
+                    <img src="../images/menu/icon-home.png" />
                     <span><?php echo _("Home");?></span>
                 </div>
             </a>

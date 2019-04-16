@@ -198,7 +198,7 @@ switch ($_GET['action']) {
 		<input type='hidden' name='showTab' id='showTab' value='alias'>
 
 
-		<table class="thickboxTable" style="background-image:url('images/title.gif');background-repeat:no-repeat;width:280px;">
+		<table class="thickboxTable" style="background-image:url('../images/title.gif');background-repeat:no-repeat;width:280px;">
 		<tr>
 		<td colspan='2'><span class='headerText'><?php if ($aliasID){ echo _("Edit Alias"); } else { echo _("Add Alias"); } ?></span>
 		<span id='span_errors' style='color:red;'></span><br />
@@ -318,7 +318,7 @@ switch ($_GET['action']) {
 		<input type='hidden' name='editOrganizationID' id='editOrganizationID' value='<?php echo $organizationID; ?>'>
 		<input type='hidden' name='editContactID' id='editContactID' value='<?php echo $contactID; ?>'>
 
-		<table class="thickboxTable" style="background-image:url('images/title.gif');background-repeat:no-repeat;width:340px;">
+		<table class="thickboxTable" style="background-image:url('../images/title.gif');background-repeat:no-repeat;width:340px;">
 		<tr>
 		<td colspan='2'><span class='headerText'><?php if ($contactID){ echo _("Edit Contact"); } else { echo _("Add Contact"); } ?></span>
 		<span id='span_errors' style='color:red;'></span>
@@ -470,7 +470,7 @@ switch ($_GET['action']) {
 		<input type='hidden' name='editOrganizationID' id='editOrganizationID' value='<?php echo $organizationID; ?>'>
 		<input type='hidden' name='editExternalLoginID' id='editExternalLoginID' value='<?php echo $externalLoginID; ?>'>
 
-		<table class="thickboxTable" style="background-image:url('images/title.gif');background-repeat:no-repeat;width:340px;">
+		<table class="thickboxTable" style="background-image:url('../images/title.gif');background-repeat:no-repeat;width:340px;">
 		<tr>
 		<td colspan='2'><span class='headerText'><?php if ($externalLoginID){ echo _("Edit Login"); } else { echo _("Add Login"); } ?></span>
 		<span id='span_errors' style='color:red;'></span><br />
@@ -558,7 +558,7 @@ switch ($_GET['action']) {
 		<div id="closeIssue">
 			<form>
 				<input type="hidden" id="issueID" name="issueID" value="<?php echo $issueID; ?>">
-				<table class="thickboxTable" style="width:98%;background-image:url('images/title.gif');background-repeat:no-repeat;">
+				<table class="thickboxTable" style="width:98%;background-image:url('../images/title.gif');background-repeat:no-repeat;">
 					<tr>
 						<td colspan='2'>
 							<span id='headerText' class='headerText'>Issue Resolution</span><br />
@@ -710,7 +710,7 @@ switch ($_GET['action']) {
 ?>
 <form id="resolveDowntimeForm">
 	<input name="downtimeID" type="hidden" value="<?php echo $downtime->downtimeID;?>" />
-	<table class="thickboxTable" style="width:98%;background-image:url('images/title.gif');background-repeat:no-repeat;">
+	<table class="thickboxTable" style="width:98%;background-image:url('../images/title.gif');background-repeat:no-repeat;">
 		<tr>
 			<td colspan="2">
 				<h1>Resolve Downtime</h1>
@@ -779,7 +779,7 @@ echo buildTimeForm("endTime");
 
 <form id='newDowntimeForm'>
 	<input type="hidden" name="sourceOrganizationID" value="<?php echo $organization->organizationID;?>" />
-	<table class="thickboxTable" style="width:98%;background-image:url('images/title.gif');background-repeat:no-repeat;">
+	<table class="thickboxTable" style="width:98%;background-image:url('../images/title.gif');background-repeat:no-repeat;">
 		<tr>
 			<td colspan="2">
 				<h1> <?php echo _("Resource Downtime Report");?></h1>
@@ -897,7 +897,7 @@ if ($issues) {
 		<input type='hidden' name='editOrganizationID' id='editOrganizationID' value='<?php echo $organizationID; ?>'>
 		<input type='hidden' name='editIssueLogID' id='editIssueLogID' value='<?php echo $issueLogID; ?>'>
 
-		<table class="thickboxTable" style="background-image:url('images/title.gif');background-repeat:no-repeat;width:260px;">
+		<table class="thickboxTable" style="background-image:url('../images/title.gif');background-repeat:no-repeat;width:260px;">
 		<tr>
 		<td colspan='2'><span class='headerText'><?php if ($issueLogID){ echo _("Edit Issue"); } else { echo _("Add Issue"); } ?></span>
 		<span id='span_errors' style='color:red;'></span><br />
@@ -988,8 +988,8 @@ if ($issues) {
 				foreach($instanceArray as $instance) {
 					echo "<tr>";
 					echo "<td>" . $instance['shortName'] . "</td>";
-					echo "<td style='width:30px'><a href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateId=" . $instance[lcfirst($className) . 'ID'] . "&height=130&width=250&modal=true' class='thickbox' id='expression'><img id='Edit' class='editIcon' src='images/edit.gif' title= '"._("Edit")."' /></a></td>";
-					echo "<td style='width:50px'><a href='javascript:deleteData(\"" . $className . "\",\"" . $instance[lcfirst($className) . 'ID'] . "\")'><img id='Remove' class='removeIcon' src='images/cross.gif' title= '"._("Remove")."' /></a></td>";
+					echo "<td style='width:30px'><a href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateId=" . $instance[lcfirst($className) . 'ID'] . "&height=130&width=250&modal=true' class='thickbox' id='expression'><img id='Edit' class='editIcon' src='../images/edit.gif' title= '"._("Edit")."' /></a></td>";
+					echo "<td style='width:50px'><a href='javascript:deleteData(\"" . $className . "\",\"" . $instance[lcfirst($className) . 'ID'] . "\")'><img id='Remove' class='removeIcon' src='../images/cross.gif' title= '"._("Remove")."' /></a></td>";
 					echo "</tr>";
 				}
 
@@ -1014,7 +1014,7 @@ if ($issues) {
 
 		?>
 		<div id='div_updateForm'>
-		<table class="thickboxTable" style="background-image:url('images/title.gif');background-repeat:no-repeat;width:200px;">
+		<table class="thickboxTable" style="background-image:url('../images/title.gif');background-repeat:no-repeat;width:200px;">
 		<tr>
 		<td colspan='3'><span class='headerText'><?php echo _("Edit");?></span><br /><span id='span_errors' style='color:#F00;'></span><br /></td>
 		</tr>
@@ -1094,8 +1094,8 @@ if ($issues) {
 					echo "<td>" . $instance['firstName'] . "</td>";
 					echo "<td>" . $instance['lastName'] . "</td>";
 					echo "<td>" . $instance['priv'] . "</td>";
-					echo "<td><a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=" . $instance['loginID'] . "&height=185&width=250&modal=true' class='thickbox' id='expression'><img id='Edit' src='images/edit.gif' title= '"._("Edit")."' /></a></td>";
-					echo "<td class='icon'><a href='javascript:deleteUser(\"" . $instance['loginID'] . "\")'><img id='Remove'  src='images/cross.gif' title= '"._("Remove")."' /></a></td>";
+					echo "<td><a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=" . $instance['loginID'] . "&height=185&width=250&modal=true' class='thickbox' id='expression'><img id='Edit' src='../images/edit.gif' title= '"._("Edit")."' /></a></td>";
+					echo "<td class='icon'><a href='javascript:deleteUser(\"" . $instance['loginID'] . "\")'><img id='Remove'  src='../images/cross.gif' title= '"._("Remove")."' /></a></td>";
 					echo "</tr>";
 				}
 
@@ -1130,7 +1130,7 @@ if ($issues) {
 
 		?>
 		<div id='div_updateForm'>
-		<table class="thickboxTable" style="background-image:url('images/title.gif');background-repeat:no-repeat;width:240px;padding:2px;">
+		<table class="thickboxTable" style="background-image:url('../images/title.gif');background-repeat:no-repeat;width:240px;padding:2px;">
 		<tr><td colspan='2'><span class='headerText'><?php echo $update._(" User"); ?></span><br /><br /></td></tr>
             <tr><td><label for='loginID'><b><?php echo _("Login ID");?></b></label></td><td><?php if (!$loginID) { ?><input type='text' id='loginID' name='loginID' value='<?php echo $loginID; ?>' style='width:150px;'/> <?php } else { echo $loginID; } ?></td></tr>
             <tr><td><label for='firstName'><b><?php echo _("First Name");?></b></label></td><td><input type='text' id='firstName' name='firstName' value="<?php echo $user->firstName; ?>" style='width:150px;'/></td></tr>

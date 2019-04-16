@@ -7,7 +7,7 @@ if ($downtimeID) {
 ?>
 <form id="resolveDowntimeForm">
 	<input name="downtimeID" type="hidden" value="<?php echo $downtime->downtimeID;?>" />
-	<table class="thickboxTable" style="width:98%;background-image:url('images/title.gif');background-repeat:no-repeat;">
+	<table class="thickboxTable" style="width:98%;background-image:url('../images/title.gif');background-repeat:no-repeat;">
 		<tr>
 			<td colspan="2">
 				<h1>Resolve Downtime</h1>

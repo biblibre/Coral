@@ -233,7 +233,7 @@ $(function(){
             //it's too confusing to chain all of the children.
             $('.newAliasTR').appendTo('.aliasTable');
 
-            $('.newAliasTR').children().children().children('.addAlias').replaceWith("<img src='images/cross.gif' class='remove' alt='" + _("remove this alias") + "' title='" + _("remove this alias") + "'/>");
+            $('.newAliasTR').children().children().children('.addAlias').replaceWith("<img src='../../images/cross.gif' class='remove' alt='" + _("remove this alias") + "' title='" + _("remove this alias") + "'/>");
             $('.aliasTypeID').addClass('changeSelect');
             $('.aliasTypeID').addClass('idleField');
             $('.aliasTypeID').css("background-color","");
@@ -260,7 +260,7 @@ $(function(){
         newIsbn.removeClass('isbnOrISSN_new');
         var newIssnIsbnStr = "<div class='oneIssnIsbn'></div>";
         var newIssnIsbnObj = $(newIssnIsbnStr);
-        var newIssnIsbnEnd = "<a href='javascript:void();'><img src='images/cross.gif' alt='"+_('remove Issn/Isbn')+"' title='"+_('remove Issn/Isbn')+"' class='removeIssnIsbn' /></a>"
+        var newIssnIsbnEnd = "<a href='javascript:void();'><img src='../../images/cross.gif' alt='"+_('remove Issn/Isbn')+"' title='"+_('remove Issn/Isbn')+"' class='removeIssnIsbn' /></a>"
         newIssnIsbnObj.append(newIsbn);
         newIssnIsbnObj.append(newIssnIsbnEnd);
         $('#existingIsbn').append(newIssnIsbnObj);
@@ -289,7 +289,7 @@ $(".addParent").live('click', function() {
     newParentValue.attr('disabled', 'disabled');
     var newParentStr = "<div class='oneParent'></div>";
     var newParentObj = $(newParentStr);
-    var newParentEnd = "<a href='javascript:void();'><img src='images/cross.gif' alt='"+_("remove parent")+"' title='"+_("remove parent")+"' class='removeParent' /></a></div>";
+    var newParentEnd = "<a href='javascript:void();'><img src='../../images/cross.gif' alt='"+_("remove parent")+"' title='"+_("remove parent")+"' class='removeParent' /></a></div>";
     newParentObj.append(newParentValue);
     newParentObj.append(newParentEnd);
     $('#existingParent').append(newParentObj);
@@ -322,7 +322,7 @@ $(".addOrganization").live('click', function () {
         //it's too confusing to chain all of the children.
         $('.newOrganizationTR').appendTo('.organizationTable');
 
-        $('.newOrganizationTR').children().children().children('.addOrganization').replaceWith("<img src='images/cross.gif' class='remove' alt='" + _("remove this organization") + "' title='" + _("remove this organization") + "'/>");
+        $('.newOrganizationTR').children().children().children('.addOrganization').replaceWith("<img src='../../images/cross.gif' class='remove' alt='" + _("remove this organization") + "' title='" + _("remove this organization") + "'/>");
         $('.organizationRoleID').addClass('changeSelect');
         $('.organizationRoleID').addClass('idleField');
         $('.organizationRoleID').css("background-color","");

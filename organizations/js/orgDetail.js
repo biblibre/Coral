@@ -244,7 +244,7 @@
 var showArchivedContacts = 0;
 
 function updateOrganization(){
-  $("#div_organizationDetails").append("<img src='images/circle.gif'>  "+_("Refreshing Contents..."));
+  $("#div_organizationDetails").append("<img src='../images/circle.gif'>  "+_("Refreshing Contents..."));
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -278,7 +278,7 @@ function updateOrganizationName(){
 
 
 function updateAliases(){
-  $("#div_aliasDetails").append("<img src='images/circle.gif'>  "+_("Refreshing Contents..."));
+  $("#div_aliasDetails").append("<img src='../images/circle.gif'>  "+_("Refreshing Contents..."));
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -297,7 +297,7 @@ function updateAliases(){
 
 
 function updateContacts(){
-  $("#div_contactDetails").append("<img src='images/circle.gif'>  "+_("Refreshing Contents..."));
+  $("#div_contactDetails").append("<img src='../images/circle.gif'>  "+_("Refreshing Contents..."));
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -321,7 +321,7 @@ function updateArchivedContacts(showArchivedPassed){
   }
 
 
-  $("#div_archivedContactDetails").append("<img src='images/circle.gif'>  "+_("Refreshing Contents..."));
+  $("#div_archivedContactDetails").append("<img src='../images/circle.gif'>  "+_("Refreshing Contents..."));
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -339,7 +339,7 @@ function updateArchivedContacts(showArchivedPassed){
 
 
 function updateAccount(){
-  $("#div_accountDetails").append("<img src='images/circle.gif'>  "+_("Refreshing Contents..."));
+  $("#div_accountDetails").append("<img src='../images/circle.gif'>  "+_("Refreshing Contents..."));
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -438,7 +438,7 @@ function submitUpdatedDowntime() {
 }
 
 function updateResourceIssues(){
-  $("#div_resourceissueDetails").append("<img src='images/circle.gif'>  Refreshing Contents...");
+  $("#div_resourceissueDetails").append("<img src='../images/circle.gif'>  Refreshing Contents...");
  $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -501,7 +501,7 @@ function getDowntime(element) {
 }
 
 function updateIssues(){
-  $("#div_issueDetails").append("<img src='images/circle.gif'>  "+_("Refreshing Contents..."));
+  $("#div_issueDetails").append("<img src='../images/circle.gif'>  "+_("Refreshing Contents..."));
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -557,7 +557,7 @@ $("#createContact").live("click",function(e) {
 
 
 function updateLicenses(){
-  $("#div_licenseDetails").append("<img src='images/circle.gif'>  "+_("Refreshing Contents..."));
+  $("#div_licenseDetails").append("<img src='../images/circle.gif'>  "+_("Refreshing Contents..."));
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",

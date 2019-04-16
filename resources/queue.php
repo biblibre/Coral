@@ -66,7 +66,7 @@ foreach ($tabs as $tab) {
 		</td>
 		<td class='queueRightPanel' style='width:720px;margin:0;'>
 			<div id='div_QueueContent'>
-			<img src = "images/circle.gif" /><?php echo _("Loading...");?>
+			<img src = "../images/circle.gif" /><?php echo _("Loading...");?>
 			</div>
 			<div style='margin-top:5px;' class='darkRedText' id='div_error'></div>
 
@@ -89,5 +89,3 @@ foreach ($tabs as $tab) {
 <?php
 include 'templates/footer.php';
 ?>
-
-

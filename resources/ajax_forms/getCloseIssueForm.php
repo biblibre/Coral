@@ -5,7 +5,7 @@
 <div id="closeIssue">
 	<form>
 		<input type="hidden" id="issueID" name="issueID" value="<?php echo $issueID; ?>">
-		<table class="thickboxTable" style="width:98%;background-image:url('images/title.gif');background-repeat:no-repeat;">
+		<table class="thickboxTable" style="width:98%;background-image:url('../images/title.gif');background-repeat:no-repeat;">
 			<tr>
 				<td colspan='2'>
 					<span id='headerText' class='headerText'>Issue Resolution</span><br />
@@ -27,4 +27,3 @@
 
 	</form>
 </div>
-

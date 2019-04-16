@@ -103,7 +103,7 @@ $licenseArray = $resourceAcquisition->getLicenseArray();
       <span style='float:left;vertical-align:bottom;'><?php echo _("Cataloging");?></span>
 
       <?php if ($user->canEdit()){ ?>
-      	<span style='float:right;vertical-align:bottom;'><a href='resources/cataloging_edit.php?height=300&width=730&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox' id='editOrder'><img src='images/edit.gif' alt='edit' title='<?php echo _("edit order information");?>'></a></span>
+      	<span style='float:right;vertical-align:bottom;'><a href='resources/cataloging_edit.php?height=300&width=730&modal=true&resourceID=<?php echo $resourceID; ?>' class='thickbox' id='editOrder'><img src='../images/edit.gif' alt='edit' title='<?php echo _("edit order information");?>'></a></span>
       <?php } ?>
 
     </th>
@@ -118,7 +118,7 @@ $licenseArray = $resourceAcquisition->getLicenseArray();
   	<?php if ($resourceAcquisition->bibSourceURL) { ?>
   	<tr>
     	<td style='vertical-align:top;width:130px;'><?php echo _("Source URL:");?></td>
-    	<td style='width:350px;'><?php echo $resourceAcquisition->bibSourceURL ?><?php if ($resourceAcquisition->bibSourceURL) { ?> &nbsp;&nbsp;<a href='<?php echo $resourceAcquisition->bibSourceURL; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt='Visit Source URL' title='<?php echo _("Visit Source URL");?>' style='vertical-align:top;'></a><?php } ?></td>
+    	<td style='width:350px;'><?php echo $resourceAcquisition->bibSourceURL ?><?php if ($resourceAcquisition->bibSourceURL) { ?> &nbsp;&nbsp;<a href='<?php echo $resourceAcquisition->bibSourceURL; ?>' target='_blank'><img src='../images/arrow-up-right.gif' alt='Visit Source URL' title='<?php echo _("Visit Source URL");?>' style='vertical-align:top;'></a><?php } ?></td>
   	</tr>
   	<?php } ?>
   	<?php if ($resourceAcquisition->catalogingTypeID) {
@@ -210,7 +210,7 @@ if (count($noteArray) > 0){
 	<th>
 
 	<?php if ($user->canEdit()){?>
-	<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Cataloging&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo "<div class='addIconTab'><img id='Add' class='addIcon' src='images/plus.gif' title= '"._("Add")."' /></div>";?></a>
+	<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Cataloging&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo "<div class='addIconTab'><img id='Add' class='addIcon' src='../images/plus.gif' title= '"._("Add")."' /></div>";?></a>
 	<?php } ?>
 	</th>
 	</tr>
@@ -218,8 +218,8 @@ if (count($noteArray) > 0){
 		<tr>
 		<td style='width:130px;'><?php echo $resourceNote['noteTypeName']; ?><br />
 			<?php if ($user->canEdit()){?>
-			<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Cataloging&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=<?php echo $resourceNote['resourceNoteID']; ?>&modal=true' class='thickbox'><img src='images/edit.gif' alt='edit' title='<?php echo _("edit note");?>'></a>
-			<a href='javascript:void(0);' class='removeNote' id='<?php echo $resourceNote['resourceNoteID']; ?>' tab='Cataloging'><img src='images/cross.gif'  alt='remove note' title='<?php echo _("remove note");?>'></a>
+			<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Cataloging&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=<?php echo $resourceNote['resourceNoteID']; ?>&modal=true' class='thickbox'><img src='../images/edit.gif' alt='edit' title='<?php echo _("edit note");?>'></a>
+			<a href='javascript:void(0);' class='removeNote' id='<?php echo $resourceNote['resourceNoteID']; ?>' tab='Cataloging'><img src='../images/cross.gif'  alt='remove note' title='<?php echo _("remove note");?>'></a>
 			<?php } ?>
 		</td>
 		<td><?php echo nl2br($resourceNote['noteText']); ?><br /><i><?php echo format_date($resourceNote['updateDate']) . _(" by ") . $resourceNote['updateUser']; ?></i></td>

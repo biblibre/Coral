@@ -130,7 +130,7 @@
 
 				<tr class='newStepTR' id=''>
 
-				<td style='vertical-align:top;text-align:left;width:48px;' class='seqOrder' key=''><img src='images/transparent.gif' style='width:43px;height:20px;' /></td>
+				<td style='vertical-align:top;text-align:left;width:48px;' class='seqOrder' key=''><img src='../images/transparent.gif' style='width:43px;height:20px;' /></td>
 
 				<td style='vertical-align:top;text-align:left;width:218px;'>
 					<input type='text' value = '' style='width:200px;' class='stepName changeInput' />
@@ -187,15 +187,15 @@
 						<td style='vertical-align:top;text-align:left;width:48px;' class='seqOrder <?php if ($key == ($stepCount)){ echo "lastClass"; } ?>' id='<?php echo $step->stepID; ?>' key='<?php echo $key; ?>'>
 							<?php
 
-								$arrowDown = "<a href='javascript:void(0);' class='moveArrow' direction='down'><img src='images/arrow_down.gif'></a>";
-								$arrowUp = "<a href='javascript:void(0);' class='moveArrow' direction='up' ><img src='images/arrow_up.gif'></a>";
-								$trans = "<img src='images/transparent.gif' style='width:20px;height:20px;' />";
+								$arrowDown = "<a href='javascript:void(0);' class='moveArrow' direction='down'><img src='../images/arrow_down.gif'></a>";
+								$arrowUp = "<a href='javascript:void(0);' class='moveArrow' direction='up' ><img src='../images/arrow_up.gif'></a>";
+								$trans = "<img src='../images/transparent.gif' style='width:20px;height:20px;' />";
 
 								if ($key == 1){
 
 									//if this is the only step, display the large transparent gif instead of arrows
 									if (($stepCount) == 1){
-										echo "<img src='images/transparent.gif' style='width:43px;height:10px;' />";
+										echo "<img src='../images/transparent.gif' style='width:43px;height:10px;' />";
 									}else{
 										echo $trans . "&nbsp;" . $arrowDown;
 									}
@@ -237,7 +237,7 @@
 
 
 						<td style='vertical-align:top;text-align:center;width:40px;'>
-							<a href='javascript:void();'><img src='images/cross.gif' alt="<?php echo _("remove this step");?>" title="<?php echo _("remove this step");?>" class='removeStep' /></a>
+							<a href='javascript:void();'><img src='../images/cross.gif' alt="<?php echo _("remove this step");?>" title="<?php echo _("remove this step");?>" class='removeStep' /></a>
 						</td>
 
 						</tr>
@@ -273,4 +273,3 @@
 		<input type='hidden' id='finalKey' value='<?php echo $key; ?>' />
 
 		<script type="text/javascript" src="js/forms/workflowForm.js?random=<?php echo rand(); ?>"></script>
-

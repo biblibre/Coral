@@ -8,7 +8,7 @@
 		?>
 		<div class='adminHeader'>
 			<div><?php echo "<div class='adminRightHeader'>" . _("General Subject") . "</div>";?></div>
-			<div class='addElement' style="margin-right: 4px"><?php echo "<a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewGeneralSubject' src='images/plus.gif' title='"._("add new general subject")."'/></a>";?></div>
+			<div class='addElement' style="margin-right: 4px"><?php echo "<a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewGeneralSubject' src='../images/plus.gif' title='"._("add new general subject")."'/></a>";?></div>
 		</div>
 		<?php
 		if (count($generalSubjectArray) > 0){
@@ -24,13 +24,13 @@
 				foreach($generalSubjectArray as $instance) {
 					echo "<tr>";
 					echo "<td>" . $instance['shortName'] . "</td>";
-					echo "<td><a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=" . $instance[lcfirst("GeneralSubject") . 'ID'] . "&height=128&width=260&modal=true' class='thickbox'><img src='images/edit.gif' alt='edit' title='edit'></a></td>";
+					echo "<td><a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=" . $instance[lcfirst("GeneralSubject") . 'ID'] . "&height=128&width=260&modal=true' class='thickbox'><img src='../images/edit.gif' alt='edit' title='edit'></a></td>";
 
 						$generalSubject = new GeneralSubject();
 						if ($generalSubject->inUse($instance[lcfirst("GeneralSubject") . 'ID']) == 0) {
-							echo "<td><a href='javascript:deleteGeneralSubject(\"GeneralSubject\", " . $instance[lcfirst("GeneralSubject") . 'ID'] . ");'><img src='images/cross.gif' alt='"._("remove")."' title='"._("remove")."'></a></td>";
+							echo "<td><a href='javascript:deleteGeneralSubject(\"GeneralSubject\", " . $instance[lcfirst("GeneralSubject") . 'ID'] . ");'><img src='../images/cross.gif' alt='"._("remove")."' title='"._("remove")."'></a></td>";
 						} else {
-							echo "<td><img src='images/do_not_enter.png' alt='"._("subject in use")."' title='"._("subject in use")."' /></td>";
+							echo "<td><img src='../images/do_not_enter.png' alt='"._("subject in use")."' title='"._("subject in use")."' /></td>";
 						}
 
 					echo "</tr>";
@@ -50,7 +50,7 @@
 		<br /><br />
 		<div class='adminHeader'>
 			<div><?php echo "<div class='adminRightHeader'>" . _("Detailed Subject") . "</div>";?></div>
-			<div class='addElement' style="margin-right: 4px"><?php echo "<a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewDetailedSubject' src='images/plus.gif' title='"._("add new detailed subject")."'/></a>";?>
+			<div class='addElement' style="margin-right: 4px"><?php echo "<a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewDetailedSubject' src='../images/plus.gif' title='"._("add new detailed subject")."'/></a>";?>
 				</div>
 		</div>
 
@@ -68,12 +68,12 @@
 				foreach($detailedSubjectArray as $instance) {
 					echo "<tr>";
 					echo "<td>" . $instance['shortName'] . "</td>";
-					echo "<td><a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=" . $instance[lcfirst("DetailedSubject") . 'ID'] . "&height=128&width=260&modal=true' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit")."'></a></td>";
+					echo "<td><a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=" . $instance[lcfirst("DetailedSubject") . 'ID'] . "&height=128&width=260&modal=true' class='thickbox'><img src='../images/edit.gif' alt='"._("edit")."' title='"._("edit")."'></a></td>";
 						$detailedSubject = new DetailedSubject();
 						if ($detailedSubject->inUse($instance[lcfirst("DetailedSubject") . 'ID'], -1) == 0) {
-									echo "<td><a href='javascript:deleteDetailedSubject(\"DetailedSubject\", " . $instance[lcfirst("DetailedSubject") . 'ID'] . ");'><img src='images/cross.gif' alt='"._("remove")."' title='"._("remove")."'></a></td>";
+									echo "<td><a href='javascript:deleteDetailedSubject(\"DetailedSubject\", " . $instance[lcfirst("DetailedSubject") . 'ID'] . ");'><img src='../images/cross.gif' alt='"._("remove")."' title='"._("remove")."'></a></td>";
 						} else {
-							echo "<td><img src='images/do_not_enter.png' alt='"._("subject in use")."' title='"._("subject in use")."' /></td>";
+							echo "<td><img src='../images/do_not_enter.png' alt='"._("subject in use")."' title='"._("subject in use")."' /></td>";
 						}
 					echo "</tr>";
 				}
@@ -115,7 +115,7 @@
 						echo $detailedSubjects->shortName . "<br />";
 					}
 					echo "</td>";
-					echo "<td><a href='ajax_forms.php?action=getGeneralDetailSubjectForm&generalSubjectID=" . $generalSubject->generalSubjectID . "&height=400&width=305&modal=true' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit")."'></a></td>";
+					echo "<td><a href='ajax_forms.php?action=getGeneralDetailSubjectForm&generalSubjectID=" . $generalSubject->generalSubjectID . "&height=400&width=305&modal=true' class='thickbox'><img src='../images/edit.gif' alt='"._("edit")."' title='"._("edit")."'></a></td>";
 					echo "</tr>";
 				}
 

@@ -87,7 +87,7 @@ function resetSearch(callback) {
 }
 
 function updateSearch(page, callback) {
-  $("#div_feedback").html("<img src='images/circle.gif'>  <span style='font-size:90%'>"+_("Processing...")+"</span>");
+  $("#div_feedback").html("<img src='../images/circle.gif'>  <span style='font-size:90%'>"+_("Processing...")+"</span>");
   $("#div_searchResults").html("");
   $('#searchOffset').val(page)
   var form = $('#ebscoKbSearchForm');
@@ -150,4 +150,3 @@ function setNumberOfRecords(recordsPerPageNumber){
   $("#searchRecordsPerPage").val(recordsPerPageNumber);
   updateSearch();
 }
-

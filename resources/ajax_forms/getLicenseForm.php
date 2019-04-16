@@ -102,7 +102,7 @@
 						</td>
 
 						<td style='vertical-align:top;text-align:left;width:40px;'>
-							<a href='javascript:void();'><img src='images/cross.gif' alt='<?php echo _("remove license link");?>' title='<?php echo _("remove ").$license['license']._(" license"); ?>' class='remove' /></a>
+							<a href='javascript:void();'><img src='../images/cross.gif' alt='<?php echo _("remove license link");?>' title='<?php echo _("remove ").$license['license']._(" license"); ?>' class='remove' /></a>
 						</td>
 
 						</tr>
@@ -200,4 +200,3 @@
 		<?php }else{ ?>
 		<script type="text/javascript" src="js/forms/licenseStatusOnlyForm.js?random=<?php echo rand(); ?>"></script>
 		<?php } ?>
-

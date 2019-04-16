@@ -196,7 +196,7 @@
 			//it's too confusing to chain all of the children.
 			$('.newStepTR').appendTo('.stepTable');
 
-			$('.newStepTR').children().children().children('.addStep').replaceWith('<img src="images/cross.gif" class="removeStep" alt="' + _("remove this step") + '" title="' + _("remove this step") + '" />');
+			$('.newStepTR').children().children().children('.addStep').replaceWith('<img src="../../images/cross.gif" class="removeStep" alt="' + _("remove this step") + '" title="' + _("remove this step") + '" />');
 			$('.stepName').addClass('changeInput');
 			$('.stepName').addClass('idleField');
 			$('.userGroupID').addClass('changeSelect');
@@ -212,7 +212,7 @@
 
 			//next put the original clone back, we just need to reset the values
 			originalTR.appendTo('.newStepTable');
-			$('.newStepTable').children().children().children('.seqOrder').html("<img src='images/transparent.gif' style='width:43px;height:10px;' />");
+			$('.newStepTable').children().children().children('.seqOrder').html("<img src='../../images/transparent.gif' style='width:43px;height:10px;' />");
 			$('.newStepTable').children().children().children().children('.stepName').val('');
 			$('.newStepTable').children().children().children().children('.userGroupID').val('');
 			$('.newStepTable').children().children().children().children('.priorStepID').val('');
@@ -330,19 +330,19 @@ function setArrows(){
 		if (thisKey != ''){
 			//this is the only row so it shuld be transparent
 			if(lastKey == 1){
-				$('.seqOrder[key="1"]').html("<img src='images/transparent.gif' style='width:43px;height:20px;' />");
+				$('.seqOrder[key="1"]').html("<img src='../../images/transparent.gif' style='width:43px;height:20px;' />");
 			}else{
 				//first gets down arrow only
 				if (thisKey == 1){
-					$('.seqOrder[key="1"]').html("<img src='images/transparent.gif' style='width:20px;height:20px;' />&nbsp;<a href='javascript:void(0);' class='moveArrow' direction='down'><img src='images/arrow_down.gif' /></a>");
+					$('.seqOrder[key="1"]').html("<img src='../../images/transparent.gif' style='width:20px;height:20px;' />&nbsp;<a href='javascript:void(0);' class='moveArrow' direction='down'><img src='../../images/arrow_down.gif' /></a>");
 
 				//if this is the last one it gets up arrow only
 				}else if (thisKey == lastKey){
-					$(".seqOrder[key='" + thisKey + "']").html("<a href='javascript:void(0);' class='moveArrow' direction='up'><img src='images/arrow_up.gif' /></a>&nbsp;<img src='images/transparent.gif' style='width:20px;height:20px;' />");
+					$(".seqOrder[key='" + thisKey + "']").html("<a href='javascript:void(0);' class='moveArrow' direction='up'><img src='../../images/arrow_up.gif' /></a>&nbsp;<img src='../../images/transparent.gif' style='width:20px;height:20px;' />");
 
 				//otherwise display both arrows
 				}else{
-					$(".seqOrder[key='" + thisKey + "']").html("<a href='javascript:void(0);' class='moveArrow' direction='up'><img src='images/arrow_up.gif' /></a>&nbsp;<a href='javascript:void(0);' class='moveArrow' direction='down'><img src='images/arrow_down.gif' /></a>");
+					$(".seqOrder[key='" + thisKey + "']").html("<a href='javascript:void(0);' class='moveArrow' direction='up'><img src='../../images/arrow_up.gif' /></a>&nbsp;<a href='javascript:void(0);' class='moveArrow' direction='down'><img src='../../images/arrow_down.gif' /></a>");
 
 
 				}

@@ -66,7 +66,7 @@ $html = new Html();
 ?>
 
 <div style='text-align:left;'>
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
+<table class="headerTable" style="background-image:url('../images/header.gif');background-repeat:no-repeat;">
 <tr style='vertical-align:top;'>
 <td style="width:155px;padding-right:10px;">
   <form method="get" action="pig_ajax_htmldata.php?action=getPigSearchResources" id="resourcePigSearchForm">

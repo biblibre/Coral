@@ -81,7 +81,7 @@ new AjaxUpload('upload_attachment_button',
   					arrayLocation = URLArray.length;
   					URLArray.push(fileName);
 
-  					$("#div_file_success").append("<div id='div_" + arrayLocation + "'><img src='images/paperclip.gif'>" + fileName + _(" successfully uploaded.")+"  <a class='smallLink' href='javascript:removeFile(\"" + arrayLocation + "\");'>"+_("remove")+"</a><br /></div>");
+  					$("#div_file_success").append("<div id='div_" + arrayLocation + "'><img src='../images/paperclip.gif'>" + fileName + _(" successfully uploaded.")+"  <a class='smallLink' href='javascript:removeFile(\"" + arrayLocation + "\");'>"+_("remove")+"</a><br /></div>");
           }
 				}
 
@@ -146,6 +146,3 @@ $("#submitAttachment").click(function () {
    });
    return false;
 });
-
-
-

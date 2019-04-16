@@ -36,7 +36,7 @@ $(document).ready(function(){
 	  $('.resource_tab_content').hide();
 		$('#div_orders').show();
 		$('#div_fullRightPanel').show();
-		updateOrders();	
+		updateOrders();
 		return false;
 	});
 
@@ -97,17 +97,17 @@ $(document).ready(function(){
 		updateCataloging();
 		return false;
 	});
-	 
+
 
     $("#resourceAcquisitionSelect").change(function () {
         var newLoc = location.search;
         if (newLoc.includes('resourceAcquisitionID')) {
             newLoc = newLoc.replace(/resourceAcquisitionID=[^&$]*/i, 'resourceAcquisitionID=' + $(this).val());
         } else {
-           newLoc += "&resourceAcquisitionID=" + $(this).val(); 
+           newLoc += "&resourceAcquisitionID=" + $(this).val();
         }
         if (newLoc.includes('showTab')) {
-            newLoc = newLoc.replace(/showTab=[^&$]*/i, 'showTab=' + currentTab);    
+            newLoc = newLoc.replace(/showTab=[^&$]*/i, 'showTab=' + currentTab);
         } else {
             newLoc += "&showTab=" + currentTab;
         }
@@ -293,7 +293,7 @@ $(document).ready(function(){
 		$(this).hide();
 	});
 
-	
+
 	$(function(){
 		$('.date-pick').datePicker({startDate:'01/01/1996'});
 	});
@@ -310,7 +310,7 @@ var showArchivedContacts = 0;
 
 function updateProduct(){
   currentTab = "Product";
-  $("#icon_product").html("<img src='images/littlecircle.gif' />");
+  $("#icon_product").html("<img src='../images/littlecircle.gif' />");
 
   $.ajax({
 	 type:       "GET",
@@ -321,7 +321,7 @@ function updateProduct(){
 		$("#div_product .div_mainContent").html(html);
 		bind_removes();
 		tb_reinit();
-		$("#icon_product").html("<img src='images/butterflyfishicon.jpg' />");
+		$("#icon_product").html("<img src='../images/butterflyfishicon.jpg' />");
 	 }
 
 
@@ -331,7 +331,7 @@ function updateProduct(){
 
 function updateOrders(){
   currentTab = "Orders";
-  $("#icon_orders").html("<img src='images/littlecircle.gif' />");
+  $("#icon_orders").html("<img src='../images/littlecircle.gif' />");
 
   $.ajax({
 	 type:       "GET",
@@ -342,7 +342,7 @@ function updateOrders(){
 		$("#div_orders .div_mainContent").html(html);
 		bind_removes();
 		tb_reinit();
-		$("#icon_orders").html("<img src='images/orders.gif' />");
+		$("#icon_orders").html("<img src='../images/orders.gif' />");
 	 }
 
 
@@ -352,7 +352,7 @@ function updateOrders(){
 
 function updateAcquisitions(){
   currentTab = "Acquisitions";
-  $("#icon_acquisitions").html("<img src='images/littlecircle.gif' />");
+  $("#icon_acquisitions").html("<img src='../images/littlecircle.gif' />");
 
   $.ajax({
 	 type:       "GET",
@@ -363,7 +363,7 @@ function updateAcquisitions(){
 		$("#div_acquisitions .div_mainContent").html(html);
 		bind_removes();
 		tb_reinit();
-		$("#icon_acquisitions").html("<img src='images/acquisitions.gif' />");
+		$("#icon_acquisitions").html("<img src='../images/acquisitions.gif' />");
 	 }
 
 
@@ -374,7 +374,7 @@ function updateAcquisitions(){
 
 function updateAccess(){
   currentTab = "Access";
-  $("#icon_access").html("<img src='images/littlecircle.gif' />");
+  $("#icon_access").html("<img src='../images/littlecircle.gif' />");
 
   $.ajax({
 	 type:       "GET",
@@ -385,7 +385,7 @@ function updateAccess(){
 		$("#div_access .div_mainContent").html(html);
 		bind_removes();
 		tb_reinit();
-		$("#icon_access").html("<img src='images/key.gif' />");
+		$("#icon_access").html("<img src='../images/key.gif' />");
 	 }
 
 
@@ -398,7 +398,7 @@ function updateAccess(){
 
 function updateContacts(){
   currentTab = "Contacts";
-  $("#icon_contacts").html("<img src='images/littlecircle.gif' />");
+  $("#icon_contacts").html("<img src='../images/littlecircle.gif' />");
 
   $.ajax({
 	 type:       "GET",
@@ -409,7 +409,7 @@ function updateContacts(){
 		$("#div_contacts .div_mainContent").html(html);
 		bind_removes();
 		tb_reinit();
-		$("#icon_contacts").html("<img src='images/contacts.gif' />");
+		$("#icon_contacts").html("<img src='../images/contacts.gif' />");
 	 }
 
 
@@ -425,7 +425,7 @@ function updateArchivedContacts(showArchivedPassed){
   }
 
 
-  $("#div_archivedContactDetails").append("<img src='images/circle.gif' />  "+_("Refreshing Contents..."));
+  $("#div_archivedContactDetails").append("<img src='../images/circle.gif' />  "+_("Refreshing Contents..."));
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -493,7 +493,7 @@ function getInlineContactForm() {
 }
 
 function updateIssues(){
-  currentTab = "Issues"; 
+  currentTab = "Issues";
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -656,7 +656,7 @@ function submitCloseIssue() {
 
 function updateAccounts(){
   currentTab = "Accounts";
-  $("#icon_accounts").html("<img src='images/littlecircle.gif' />");
+  $("#icon_accounts").html("<img src='../images/littlecircle.gif' />");
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -666,7 +666,7 @@ function updateAccounts(){
 		$("#div_accounts .div_mainContent").html(html);
 		bind_removes();
 		tb_reinit();
-		$("#icon_accounts").html("<img src='images/lock.gif' />");
+		$("#icon_accounts").html("<img src='../images/lock.gif' />");
 	 }
 
 
@@ -677,7 +677,7 @@ function updateAccounts(){
 
 function updateAttachments(){
   currentTab = "Attachments";
-  $("#icon_attachments").html("<img src='images/littlecircle.gif' />");
+  $("#icon_attachments").html("<img src='../images/littlecircle.gif' />");
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -687,7 +687,7 @@ function updateAttachments(){
 		$("#div_attachments .div_mainContent").html(html);
 		bind_removes();
 		tb_reinit();
-		$("#icon_attachments").html("<img src='images/attachment.gif' />");
+		$("#icon_attachments").html("<img src='../images/attachment.gif' />");
 	 }
 
 
@@ -714,7 +714,7 @@ function updateAttachmentsNumber(){
 
 
 function updateWorkflow(){
-  $("#icon_workflow").html("<img src='images/littlecircle.gif' />");
+  $("#icon_workflow").html("<img src='../images/littlecircle.gif' />");
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -724,7 +724,7 @@ function updateWorkflow(){
 		$("#div_workflow .div_mainContent").html(html);
 		tb_reinit();
 		bind_workflow();
-		$("#icon_workflow").html("<img src='images/workflow.gif' />");
+		$("#icon_workflow").html("<img src='../images/workflow.gif' />");
 	 }
 
 
@@ -734,7 +734,7 @@ function updateWorkflow(){
 
 function updateCataloging(){
   currentTab = "Cataloging";
-  $("#icon_accounts").html("<img src='images/littlecircle.gif' />");
+  $("#icon_accounts").html("<img src='../images/littlecircle.gif' />");
   $.ajax({
 	 type:       "GET",
 	 url:        "resources/cataloging.php",
@@ -744,7 +744,7 @@ function updateCataloging(){
 		$("#div_cataloging .div_mainContent").html(html);
 		bind_removes();
 		tb_reinit();
-		$("#icon_cataloging").html("<img src='images/cataloging.gif' />");
+		$("#icon_cataloging").html("<img src='../images/cataloging.gif' />");
 	 }
 
   });
@@ -753,7 +753,7 @@ function updateCataloging(){
 
 
 function updateRightPanel(){
-  $("#div_rightPanel").append("<img src='images/circle.gif' />  "+_("Refreshing Contents..."));
+  $("#div_rightPanel").append("<img src='../images/circle.gif' />  "+_("Refreshing Contents..."));
   $.ajax({
 	 type:       "GET",
 	 url:        "ajax_htmldata.php",
@@ -986,10 +986,10 @@ function bind_workflow(){
       $(".archivedWorkflow").toggle();
       if ($(".archivedWorkflow").is(":visible")) {
         $(this).html(_("hide archived workflows"));
-        $("#displayArchivedWorkflowsIcon").attr("src", "images/minus_12.gif");
+        $("#displayArchivedWorkflowsIcon").attr("src", "../images/minus_12.gif");
       } else {
         $(this).html(_("display archived workflows"));
-        $("#displayArchivedWorkflowsIcon").attr("src", "images/plus_12.gif");
+        $("#displayArchivedWorkflowsIcon").attr("src", "../images/plus_12.gif");
       }
    });
 

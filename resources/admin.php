@@ -97,7 +97,7 @@ if ($user->isAdmin()){
 		</td>
 		<td class='adminRightPanel' style='width:530px;margin:0;'>
 			<div style='margin-top:5px;' id='div_AdminContent'>
-			<img src = "images/circle.gif" /><?php echo _("Loading...");?>
+			<img src = "../images/circle.gif" /><?php echo _("Loading...");?>
 			</div>
 			<div style='margin-top:5px;' class='smallDarkRedText' id='div_error'></div>
 
@@ -125,5 +125,3 @@ if ($user->isAdmin()){
 
 include 'templates/footer.php';
 ?>
-
-

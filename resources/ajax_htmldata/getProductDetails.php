@@ -71,7 +71,7 @@
 						<a href='ajax_forms.php?action=getUpdateProductForm&height=700&width=730&resourceID=<?php echo $resource->resourceID; ?>&modal=true'
 							class='thickbox'>
 
-							<img src='images/edit.gif'
+							<img src='../images/edit.gif'
 								alt='<?php echo _("edit");?>'
 								title='<?php echo _("edit resource");?>' /></a>
 					<?php } ?>
@@ -80,14 +80,14 @@
 							class='removeResource'
 							id='<?php echo $resourceID; ?>'>
 
-							<img src='images/cross.gif'
+							<img src='../images/cross.gif'
 								alt='<?php echo _("remove resource");?>'
 								title='<?php echo _("remove resource");?>' /></a>
 						<a href='javascript:void(0);'
 							class='removeResourceAndChildren'
 							id='<?php echo $resourceID; ?>'>
 
-							<img src='images/deleteall.png'
+							<img src='../images/deleteall.png'
 								alt='<?php echo _("remove resource and its children");?>'
 								title='<?php echo _("remove resource and its children");?>' />
 						</a>
@@ -191,7 +191,7 @@
         if (count($parentResourceArray) > 0) {
            foreach ($parentResourceArray as $parentResource){
               $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $parentResource['relatedResourceID'])));
-            echo $parentResourceObj->titleText . "&nbsp;&nbsp;(Parent)&nbsp;&nbsp;<a href='resource.php?resourceID=" . $parentResourceObj->resourceID . "' target='_BLANK'><img src='images/arrow-up-right.gif' alt='"._("view resource")."' title='"._("View ") . $parentResourceObj->titleText . "' style='vertical-align:top;'></a><br />";
+            echo $parentResourceObj->titleText . "&nbsp;&nbsp;(Parent)&nbsp;&nbsp;<a href='resource.php?resourceID=" . $parentResourceObj->resourceID . "' target='_BLANK'><img src='../images/arrow-up-right.gif' alt='"._("view resource")."' title='"._("View ") . $parentResourceObj->titleText . "' style='vertical-align:top;'></a><br />";
             }
          }
 
@@ -199,7 +199,7 @@
 					<?php
 					foreach ($childResourceArray as $childResource){
 						$childResourceObj = new Resource(new NamedArguments(array('primaryKey' => $childResource['resourceID'])));
-            echo $childResourceObj->titleText . "<a href='resource.php?resourceID=" . $childResourceObj->resourceID . "' target='_BLANK'><img src='images/arrow-up-right.gif' alt='"._("view resource")."' title='"._("View ") . $childResourceObj->titleText . "' style='vertical-align:top;'></a><br />";
+            echo $childResourceObj->titleText . "<a href='resource.php?resourceID=" . $childResourceObj->resourceID . "' target='_BLANK'><img src='../images/arrow-up-right.gif' alt='"._("view resource")."' title='"._("View ") . $childResourceObj->titleText . "' style='vertical-align:top;'></a><br />";
 
 					}
 
@@ -253,7 +253,7 @@
 				foreach ($orgArray as $organization){
 					//if organizations is installed provide a link
 					if ($config->settings->organizationsModule == 'Y'){
-						echo "<span style='float:left; width:75px;'>" . $organization['organizationRole'] . ":</span><span style='width:270px;'>" . $organization['organization'] . "&nbsp;&nbsp;<a href='" . $util->getOrganizationURL() . $organization['organizationID'] . "' target='_blank'><img src='images/arrow-up-right.gif' alt='"._("View ") . $organization['organization'] . "' title='"._("View ") . $organization['organization'] . "' style='vertical-align:top;'></a></span><br />";
+						echo "<span style='float:left; width:75px;'>" . $organization['organizationRole'] . ":</span><span style='width:270px;'>" . $organization['organization'] . "&nbsp;&nbsp;<a href='" . $util->getOrganizationURL() . $organization['organizationID'] . "' target='_blank'><img src='../images/arrow-up-right.gif' alt='"._("View ") . $organization['organization'] . "' title='"._("View ") . $organization['organization'] . "' style='vertical-align:top;'></a></span><br />";
 					}else{
 						echo "<span style='float:left; width:75px;'>" . $organization['organizationRole'] . ":</span><span style='width:270px;'>" . $organization['organization'] . "</span><br />";
 					}
@@ -268,7 +268,7 @@
 			if ($resource->resourceURL) { ?>
 				<tr>
 				<td style='vertical-align:top;width:115px;'><?php echo _("Resource URL:");?></td>
-				<td style='max-width:400px;'><?php echo $resource->resourceURL; ?>&nbsp;&nbsp;<a href='<?php echo $resource->resourceURL; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt="<?php echo _("Visit Resource URL");?>" title="<?php echo _("Visit Resource URL");?>" style='vertical-align:top;'></a></td>
+				<td style='max-width:400px;'><?php echo $resource->resourceURL; ?>&nbsp;&nbsp;<a href='<?php echo $resource->resourceURL; ?>' target='_blank'><img src='../images/arrow-up-right.gif' alt="<?php echo _("Visit Resource URL");?>" title="<?php echo _("Visit Resource URL");?>" style='vertical-align:top;'></a></td>
 				</tr>
 			<?php
 			}
@@ -276,7 +276,7 @@
 			if ($resource->resourceAltURL) { ?>
 				<tr>
 				<td style='vertical-align:top;width:115px;'><?php echo _("Alt URL:");?></td>
-				<td style='width:345px;'><?php echo $resource->resourceAltURL; ?>&nbsp;&nbsp;<a href='<?php echo $resource->resourceAltURL; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt="<?php echo _("Visit Secondary Resource URL");?>" title="<?php echo _("Visit Secondary Resource URL");?>" style='vertical-align:top;'></a></td>
+				<td style='width:345px;'><?php echo $resource->resourceAltURL; ?>&nbsp;&nbsp;<a href='<?php echo $resource->resourceAltURL; ?>' target='_blank'><img src='../images/arrow-up-right.gif' alt="<?php echo _("Visit Secondary Resource URL");?>" title="<?php echo _("Visit Secondary Resource URL");?>" style='vertical-align:top;'></a></td>
 				</tr>
 			<?php
 			}
@@ -362,7 +362,7 @@
 									generalDetailSubjectID='<?php echo $generalDetailSubjectID['generalDetailSubjectLinkID']; ?>'
 									resourceID='<?php echo $resourceID; ?>'>
 
-									<img src='images/cross.gif'
+									<img src='../images/cross.gif'
 										alt='<?php echo _("remove subject");?>'
 										title='<?php echo _("remove subject");?>' /></a>
 							<?php } ?>
@@ -436,7 +436,7 @@
 				<th>
 
 				<?php if ($user->canEdit()){ ?>
-					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Product&entityID=<?php echo $resourceID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo "<div class='addIconTab' ><img id='Add' src='images/plus.gif' title= '"._("Add")."' /></div>";?></a></div>
+					<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Product&entityID=<?php echo $resourceID; ?>&resourceNoteID=&modal=true' class='thickbox'><?php echo "<div class='addIconTab' ><img id='Add' src='../images/plus.gif' title= '"._("Add")."' /></div>";?></a></div>
 
 
 				<?php } ?>
@@ -446,8 +446,8 @@
 					<tr>
 					<td style="vertical-align: auto;"><?php echo $resourceNote['noteTypeName']; ?>
 						<?php if ($user->canEdit()){ ?>
-						<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Product&entityID=<?php echo $resourceID; ?>&resourceNoteID=<?php echo $resourceNote['resourceNoteID']; ?>&modal=true' class='thickbox'><img  src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit note");?>'></a>
-						<a href='javascript:void(0);' class='removeNote' id='<?php echo $resourceNote['resourceNoteID']; ?>' tab='Product'><img src='images/cross.gif' alt='<?php echo _("remove note");?>' title='<?php echo _("remove note");?>'></a>
+						<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Product&entityID=<?php echo $resourceID; ?>&resourceNoteID=<?php echo $resourceNote['resourceNoteID']; ?>&modal=true' class='thickbox'><img  src='../images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit note");?>'></a>
+						<a href='javascript:void(0);' class='removeNote' id='<?php echo $resourceNote['resourceNoteID']; ?>' tab='Product'><img src='../images/cross.gif' alt='<?php echo _("remove note");?>' title='<?php echo _("remove note");?>'></a>
 						<?php } ?>
 					</td>
 					<td><?php echo nl2br($resourceNote['noteText']); ?><br /><i><?php echo format_date($resourceNote['updateDate']) . _(" by ") . $resourceNote['updateUser']; ?></i></td>

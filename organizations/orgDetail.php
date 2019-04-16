@@ -53,7 +53,7 @@ if ($organization->name){
 
 	?>
 
-	<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
+	<table class="headerTable" style="background-image:url('../images/header.gif');background-repeat:no-repeat;">
 	<tr><td align='left'>
 		<table style='width:100%;'>
 		<tr style='vertical-align:top'>

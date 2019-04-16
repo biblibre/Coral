@@ -191,7 +191,7 @@ switch ($_GET['action']) {
 		<th colspan='2'>
 
 			<span style='float:left; max-width:400px;'>&nbsp;<?php echo $organization->name; ?></span>
-			<span style='float:right; vertical-align:top;'><?php if ($user->canEdit()){ ?><a href='ajax_forms.php?action=getOrganizationForm&height=363&width=345&modal=true&organizationID=<?php echo $organizationID; ?>' class='thickbox' id='editOrganization'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit resource");?>'></a><?php } ?>  <?php if ($user->isAdmin){ ?><a href='javascript:removeOrganization(<?php echo $organizationID; ?>);'><img src='images/cross.gif' alt='<?php echo _("remove resource");?>' title='<?php echo _("remove resource");?>'></a><?php } ?></span>
+			<span style='float:right; vertical-align:top;'><?php if ($user->canEdit()){ ?><a href='ajax_forms.php?action=getOrganizationForm&height=363&width=345&modal=true&organizationID=<?php echo $organizationID; ?>' class='thickbox' id='editOrganization'><img src='../images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit resource");?>'></a><?php } ?>  <?php if ($user->isAdmin){ ?><a href='javascript:removeOrganization(<?php echo $organizationID; ?>);'><img src='../images/cross.gif' alt='<?php echo _("remove resource");?>' title='<?php echo _("remove resource");?>'></a><?php } ?></span>
 		</th>
 		</tr>
 
@@ -202,7 +202,7 @@ switch ($_GET['action']) {
 			<?php
 			foreach ($parentOrganizationArray as $parentOrganization){
 				echo $parentOrganization['name'] . "&nbsp;&nbsp;";
-				echo "<a href='orgDetail.php?organizationID=" . $parentOrganization['organizationID'] . "'><img src='images/arrow-up-right.gif' alt='"._("view organization")."' title='"._("View")."' style='vertical-align:top;'></a><br />";
+				echo "<a href='orgDetail.php?organizationID=" . $parentOrganization['organizationID'] . "'><img src='../images/arrow-up-right.gif' alt='"._("view organization")."' title='"._("View")."' style='vertical-align:top;'></a><br />";
 			}
 			?>
 			</td>
@@ -218,7 +218,7 @@ switch ($_GET['action']) {
 			<?php
 			foreach ($childOrganizationArray as $childOrganization){
 				echo $childOrganization['name'] . "&nbsp;&nbsp;";
-				echo "<a href='orgDetail.php?organizationID=" . $childOrganization['organizationID'] . "'><img src='images/arrow-up-right.gif' alt='".("view organization")."' title='".("View")."' style='vertical-align:top;'></a><br />";
+				echo "<a href='orgDetail.php?organizationID=" . $childOrganization['organizationID'] . "'><img src='../images/arrow-up-right.gif' alt='".("view organization")."' title='".("View")."' style='vertical-align:top;'></a><br />";
 			}
 			?>
 			</td>
@@ -261,7 +261,7 @@ switch ($_GET['action']) {
 		<?php
 		}
 
-        if ($organization->ilsID){ 
+        if ($organization->ilsID){
             $ilsClient = (new ILSClientSelector())->select();
         ?>
 			<tr>
@@ -347,8 +347,8 @@ switch ($_GET['action']) {
 				echo "<td>" . $organizationAlias['name'] . "</td>\n";
 				echo "<td>" . $organizationAlias['aliasTypeShortName'];
 				if ($user->canEdit()){
-					echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getAliasForm&height=124&width=285&modal=true&organizationID=" .  $organizationID . "&aliasID=" . $organizationAlias['aliasID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit alias")."'></a>";
-					echo "&nbsp;<a href='javascript:removeAlias(" . $organizationAlias['aliasID'] . ")'><img src='images/cross.gif' alt='"._("remove alias")."' title='"._("remove alias")."'></a>";
+					echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getAliasForm&height=124&width=285&modal=true&organizationID=" .  $organizationID . "&aliasID=" . $organizationAlias['aliasID'] . "' class='thickbox'><img src='../images/edit.gif' alt='"._("edit")."' title='"._("edit alias")."'></a>";
+					echo "&nbsp;<a href='javascript:removeAlias(" . $organizationAlias['aliasID'] . ")'><img src='../images/cross.gif' alt='"._("remove alias")."' title='"._("remove alias")."'></a>";
 					echo "</span>";
 				}
 				echo "</td>\n</tr>\n";
@@ -435,8 +435,8 @@ switch ($_GET['action']) {
 				}
 
 				if ($user->canEdit()){
-					echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getContactForm&height=463&width=345&modal=true&organizationID=" . $organizationID . "&contactID=" . $contact['contactID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit contact")."'></a>";
-					echo "&nbsp;<a href='javascript:removeContact(" . $contact['contactID'] . ")'><img src='images/cross.gif' alt='"._("remove contact")."' title='"._("remove contact")."'></a>";
+					echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getContactForm&height=463&width=345&modal=true&organizationID=" . $organizationID . "&contactID=" . $contact['contactID'] . "' class='thickbox'><img src='../images/edit.gif' alt='"._("edit")."' title='"._("edit contact")."'></a>";
+					echo "&nbsp;<a href='javascript:removeContact(" . $contact['contactID'] . ")'><img src='../images/cross.gif' alt='"._("remove contact")."' title='"._("remove contact")."'></a>";
 					echo "</span>";
 				}
 
@@ -570,8 +570,8 @@ switch ($_GET['action']) {
 				<th>
 				<?php
 					if ($user->canEdit()){
-						echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getAccountForm&height=254&width=342&modal=true&organizationID=" . $organizationID . "&externalLoginID=" . $externalLogin['externalLoginID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit external login")."'></a>";
-						echo "&nbsp;<a href='javascript:removeExternalLogin(" . $externalLogin['externalLoginID'] . ")'><img src='images/cross.gif' alt='"._("remove external login")."' title='"._("remove external login")."'></a>";
+						echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getAccountForm&height=254&width=342&modal=true&organizationID=" . $organizationID . "&externalLoginID=" . $externalLogin['externalLoginID'] . "' class='thickbox'><img src='../images/edit.gif' alt='"._("edit")."' title='"._("edit external login")."'></a>";
+						echo "&nbsp;<a href='javascript:removeExternalLogin(" . $externalLogin['externalLoginID'] . ")'><img src='../images/cross.gif' alt='"._("remove external login")."' title='"._("remove external login")."'></a>";
 						echo "</span>";
 					}
 				?>
@@ -585,7 +585,7 @@ switch ($_GET['action']) {
 					if (strpos($externalLogin['loginURL'], '://') === false) {
 						$externalLogin['loginURL'] = "http://" . $externalLogin['loginURL'];
 					}
-				?>&nbsp;&nbsp;<a href='<?php echo $externalLogin['loginURL']; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt='<?php echo _("Visit Login URL");?>' title='<?php echo _("Visit Login URL");?>' style='vertical-align:top;'></a></td>
+				?>&nbsp;&nbsp;<a href='<?php echo $externalLogin['loginURL']; ?>' target='_blank'><img src='../images/arrow-up-right.gif' alt='<?php echo _("Visit Login URL");?>' title='<?php echo _("Visit Login URL");?>' style='vertical-align:top;'></a></td>
 				</tr>
 				<?php
 				}
@@ -667,14 +667,14 @@ switch ($_GET['action']) {
 			<tr>
 				<td>
 					<a href="<?php echo $getIssuesFormData; ?>" class="issuesBtn" id="openIssuesBtn"><?php echo _("view open issues");?></a>
-					<a target="_blank" href="<?php echo $exportIssueUrl;?>"><img src="images/xls.gif" /></a>
+					<a target="_blank" href="<?php echo $exportIssueUrl;?>"><img src="../images/xls.gif" /></a>
 					<div class="issueList" id="openIssues" style="display:none;"></div>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<a href="<?php echo $getIssuesFormData."&archived=1"; ?>" class="issuesBtn" id="archivedIssuesBtn"><?php echo _("view archived issues");?></a>
-					<a target="_blank" href="<?php echo $exportIssueUrl;?>&archived=1"><img src="images/xls.gif" /></a>
+					<a target="_blank" href="<?php echo $exportIssueUrl;?>&archived=1"><img src="../images/xls.gif" /></a>
 					<div class="issueList" id="archivedIssues"></div>
 				</td>
 			</tr>
@@ -690,14 +690,14 @@ switch ($_GET['action']) {
 			<tr>
 				<td>
 					<a href="<?php echo $getDowntimeFormData; ?>" class="downtimeBtn" id="openDowntimeBtn"><?php echo _("view current/upcoming downtime");?></a>
-					<a target="_blank" href="<?php echo $exportDowntimeUrl;?>"><img src="images/xls.gif" /></a>
+					<a target="_blank" href="<?php echo $exportDowntimeUrl;?>"><img src="../images/xls.gif" /></a>
 					<div class="downtimeList" id="currentDowntime" style="display:none;"></div>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<a href="<?php echo $getDowntimeFormData."&archived=1"; ?>" class="downtimeBtn" id="archiveddowntimeBtn"><?php echo _("view archived downtime");?></a>
-					<a target="_blank" href="<?php echo $exportDowntimeUrl;?>&archived=1"><img src="images/xls.gif" /></a>
+					<a target="_blank" href="<?php echo $exportDowntimeUrl;?>&archived=1"><img src="../images/xls.gif" /></a>
 					<div class="downtimeList" id="archivedDowntime"></div>
 				</td>
 			</tr>
@@ -803,8 +803,8 @@ switch ($_GET['action']) {
 			<td style='width:360px;'><?php echo nl2br(str_replace($charsToRemove, "", $issueLog['noteText'])); ?>
 			<?php
 			if ($user->canEdit()){
-				echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getIssueLogForm&height=250&width=265&modal=true&organizationID=" . $organizationID . "&issueLogID=" . $issueLog['issueLogID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit issue")."'></a>";
-				echo "&nbsp;<a href='javascript:removeIssueLog(" . $issueLog['issueLogID'] . ")'><img src='images/cross.gif' alt='"._("remove issue")."' title='"._("remove issue")."'></a>";
+				echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getIssueLogForm&height=250&width=265&modal=true&organizationID=" . $organizationID . "&issueLogID=" . $issueLog['issueLogID'] . "' class='thickbox'><img src='../images/edit.gif' alt='"._("edit")."' title='"._("edit issue")."'></a>";
+				echo "&nbsp;<a href='javascript:removeIssueLog(" . $issueLog['issueLogID'] . ")'><img src='../images/cross.gif' alt='"._("remove issue")."' title='"._("remove issue")."'></a>";
 				echo "</span>";
 			}
 			?>
@@ -967,17 +967,17 @@ switch ($_GET['action']) {
 			<table class='dataTable' style='width:840px'>
 			<tr>
 			<?php if ($_GET['contactName']) { ?>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Contact Name(s)");?></td><td class='arrow'><a href='javascript:setOrder("C.name","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("C.name","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Contact Role(s)");?></td><td class='arrow'><a href='javascript:setOrder("O.name","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("O.name","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Organization Name");?></td><td class='arrow'><a href='javascript:setOrder("O.name","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("O.name","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Parent Organization");?></td><td class='arrow'><a href='javascript:setOrder("OP.name","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("OP.name","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Organization Role(s)");?></td><td class='arrow'><a href='javascript:setOrder("orgRoles","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("orgRoles","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Contact Name(s)");?></td><td class='arrow'><a href='javascript:setOrder("C.name","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("C.name","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Contact Role(s)");?></td><td class='arrow'><a href='javascript:setOrder("O.name","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("O.name","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Organization Name");?></td><td class='arrow'><a href='javascript:setOrder("O.name","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("O.name","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Parent Organization");?></td><td class='arrow'><a href='javascript:setOrder("OP.name","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("OP.name","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Organization Role(s)");?></td><td class='arrow'><a href='javascript:setOrder("orgRoles","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("orgRoles","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
 
 			<?php } else{ ?>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Organization Name");?></td><td class='arrow'><a href='javascript:setOrder("O.name","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("O.name","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Alias");?></td><td class='arrow'><a href='javascript:setOrder("Aliases","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("Aliases","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Parent Organization");?></td><td class='arrow'><a href='javascript:setOrder("OP.name","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("OP.name","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
-				<th><table class='noBorderTable'><tr><td><?php echo _("Role(s)");?></td><td class='arrow'><a href='javascript:setOrder("orgRoles","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("orgRoles","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Organization Name");?></td><td class='arrow'><a href='javascript:setOrder("O.name","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("O.name","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Alias");?></td><td class='arrow'><a href='javascript:setOrder("Aliases","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("Aliases","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Parent Organization");?></td><td class='arrow'><a href='javascript:setOrder("OP.name","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("OP.name","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
+				<th><table class='noBorderTable'><tr><td><?php echo _("Role(s)");?></td><td class='arrow'><a href='javascript:setOrder("orgRoles","asc");'><img src='../images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("orgRoles","desc");'><img src='../images/arrowdown.png' border=0></a></td></tr></table></th>
 			<?php } ?>
 			</tr>
 
@@ -1096,4 +1096,3 @@ switch ($_GET['action']) {
 
 
 ?>
-

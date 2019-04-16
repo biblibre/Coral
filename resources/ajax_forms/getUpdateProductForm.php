@@ -134,7 +134,7 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
               <div class="oneParent">
               <input type='text' name='parentResourceName' disabled='disabled' value = '<?php echo $parentResourceObj->titleText; ?>' style='width:180px;' class='changeInput'  />
               <input type='hidden' name='parentResourceID' value = '<?php echo $parentResourceObj->resourceID; ?>' />
-              <a href='javascript:void();'><img src='images/cross.gif' alt='<?php echo _("remove parent");?>' title='<?php echo _("remove parent");?>' class='removeParent' /></a>
+              <a href='javascript:void();'><img src='../images/cross.gif' alt='<?php echo _("remove parent");?>' title='<?php echo _("remove parent");?>' class='removeParent' /></a>
             </div>
 <?php
              $i++;
@@ -161,7 +161,7 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
              ?>
             <div class="oneIssnIsbn">
              	<input type='text' class='isbnOrISSN' name='isbnOrISSN' value = '<?php echo $isbnOrIssn->isbnOrIssn; ?>' style='width:97px;' class='changeInput'  />
-				<a href='javascript:void();'><img src='images/cross.gif' alt='<?php echo _("remove Issn/Isbn");?>' title='<?php echo _("remove Issn/Isbn");?>' class='removeIssnIsbn' /></a>
+				<a href='javascript:void();'><img src='../images/cross.gif' alt='<?php echo _("remove Issn/Isbn");?>' title='<?php echo _("remove Issn/Isbn");?>' class='removeIssnIsbn' /></a>
             </div>
             <?php
              $i++;
@@ -303,7 +303,7 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 						</td>
 
 						<td style='vertical-align:top;text-align:left;width:40px;'>
-							<a href='javascript:void();'><img src='images/cross.gif' alt="<?php echo _("remove organization");?>" title="<?php echo _("remove organization");?>" class='remove' /></a>
+							<a href='javascript:void();'><img src='../images/cross.gif' alt="<?php echo _("remove organization");?>" title="<?php echo _("remove organization");?>" class='remove' /></a>
 						</td>
 
 						</tr>
@@ -397,7 +397,7 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 						</td>
 
 						<td style='vertical-align:top;text-align:left;width:37px;'>
-							<a href='javascript:void();'><img src='images/cross.gif' alt='<?php echo _("remove this alias");?>' title='<?php echo _("remove this alias");?>' class='remove' /></a>
+							<a href='javascript:void();'><img src='../images/cross.gif' alt='<?php echo _("remove this alias");?>' title='<?php echo _("remove this alias");?>' class='remove' /></a>
 						</td>
 						</tr>
 
@@ -431,4 +431,3 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 			</tr>
 		</table>
 		<script type="text/javascript" src="js/forms/resourceUpdateForm.js?random=<?php echo rand(); ?>"></script>
-

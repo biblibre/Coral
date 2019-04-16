@@ -113,7 +113,7 @@ $(document).ready(function(){
 			$('.newUserTR').appendTo('.userTable');
 
 			$('.newUserTR').children().children().children('.addUser').attr({
-			  src: 'images/cross.gif',
+			  src: '../../images/cross.gif',
 			  alt: _("remove user from group"),
 			  title: _("remove from group")
 			});

@@ -50,17 +50,17 @@
                     $archivingDate = $resourceStep->archivingDate;
                     $stepIndication = $resourceStep->archivingDate ? _("Workflow archived on") . " $archivingDate" : _("Current workflow");
                     if ($resourceStep->archivingDate && $archivedWorkflow == false) {
-                        $archivedWorkflow = true; 
+                        $archivedWorkflow = true;
                         echo "<td colspan='6'><em><strong>Archived Workflows</strong></em></td></tr><tr$stepClass>";
                     }
 
                     echo "<td colspan='6'><em><strong>$stepIndication</strong></em></td></tr><tr$stepClass>";
                 }
-                ?> 
+                ?>
 
 				<td <?php echo $classAdd; ?> ><?php echo $resourceStep->stepName; ?></td>
 				<td <?php echo $classAdd; ?> ><?php if (is_null_date($resourceStep->stepEndDate)){
-						echo '<a href="ajax_forms.php?action=getResourceStepForm&amp;resourceStepID='.$resourceStep->resourceStepID.'&amp;height=250&amp;width=750&amp;modal=true" class="thickbox"><img src="images/edit.gif" alt="edit" title="edit"></a>';
+						echo '<a href="ajax_forms.php?action=getResourceStepForm&amp;resourceStepID='.$resourceStep->resourceStepID.'&amp;height=250&amp;width=750&amp;modal=true" class="thickbox"><img src="../images/edit.gif" alt="edit" title="edit"></a>';
 					} ?></td>
 				<td <?php echo $classAdd; ?> ><?php echo $userGroup->groupName; ?></td>
 				<td <?php echo $classAdd; ?> ><?php if ($resourceStep->stepStartDate) { echo format_date($resourceStep->stepStartDate); } ?></td>
@@ -84,7 +84,7 @@
 				<td style="text-align:center;"> <?php
 					//add a delete step option, there will be a modal confirmation before delete.
 					if (!$resourceStep->stepEndDate){
-						echo '<a href="javascript:void(0);" class="removeResourceStep" id="'. $resourceStep->resourceStepID .'"><img src="images/cross.gif" alt="delete" title="delete"></a>';
+						echo '<a href="javascript:void(0);" class="removeResourceStep" id="'. $resourceStep->resourceStepID .'"><img src="../images/cross.gif" alt="delete" title="delete"></a>';
 					} ?>
 				</td>
 				</tr>
@@ -120,12 +120,12 @@
 		echo "<br /><br />";
 
 		if ($user->canEdit()){
-            echo "<img src='images/pencil.gif' />&nbsp;&nbsp;<a href='javascript:void(0);' class='restartWorkflow'>"._("restart workflow")."</a><br />";
+            echo "<img src='../images/pencil.gif' />&nbsp;&nbsp;<a href='javascript:void(0);' class='restartWorkflow'>"._("restart workflow")."</a><br />";
         ?>
                 <div class="restartWorkflowDiv" id="restartWorkflowDiv" style="display:none;padding:20px;">
                     <form name="restartWorkflowForm" id="restartWorkflowForm">
 
-                        <label for="workflowArchivingDate"><?php echo _("Select a workflow to restart"); ?></label>: 
+                        <label for="workflowArchivingDate"><?php echo _("Select a workflow to restart"); ?></label>:
                         <select id="workflowArchivingDate">
                             <option value="<?php echo $resource->getCurrentWorkflowID(); ?>"><?php echo _("Current workflow"); ?></option>
                             <?php
@@ -161,11 +161,10 @@
                     <br />
                 </div>
                 <?php
-				echo "<img id='displayArchivedWorkflowsIcon' src='images/plus_12.gif' />&nbsp;&nbsp;<a href='javascript:void(0);' class='displayArchivedWorkflows' id='" . $resourceAcquisitionID . "'>"._("display archived workflows")."</a><br />";
-				echo "<img src='images/pencil.gif' />&nbsp;&nbsp;<a href='ajax_forms.php?action=getCurrentWorkflowForm&height=450&width=750&modal=true&resourceAcquisitionID=$resourceAcquisitionID' class='thickbox'>"._("edit the current workflow")."</a><br />";
+				echo "<img id='displayArchivedWorkflowsIcon' src='../images/plus_12.gif' />&nbsp;&nbsp;<a href='javascript:void(0);' class='displayArchivedWorkflows' id='" . $resourceAcquisitionID . "'>"._("display archived workflows")."</a><br />";
+				echo "<img src='../images/pencil.gif' />&nbsp;&nbsp;<a href='ajax_forms.php?action=getCurrentWorkflowForm&height=450&width=750&modal=true&resourceAcquisitionID=$resourceAcquisitionID' class='thickbox'>"._("edit the current workflow")."</a><br />";
 
-				echo "<img src='images/pencil.gif' />&nbsp;&nbsp;<a href='javascript:void(0);' class='markResourceComplete' id='" . $resourceAcquisitionID . "'>"._("mark entire workflow complete")."</a><br />";
+				echo "<img src='../images/pencil.gif' />&nbsp;&nbsp;<a href='javascript:void(0);' class='markResourceComplete' id='" . $resourceAcquisitionID . "'>"._("mark entire workflow complete")."</a><br />";
 		}
 
 ?>
-

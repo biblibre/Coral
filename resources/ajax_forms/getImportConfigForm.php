@@ -227,18 +227,18 @@
 								if ( $orgMappingsNamed[$i] && $orgMappingsImported[$i]) {
 									echo "<tr><td><input class='ic-org-imported' value='" . $orgMappingsImported[$i] . "' /></td>";
 									echo "<td><input class='ic-org-mapped' value='" . $orgMappingsNamed[$i] . "' /></td>";
-									echo "<td><img class='remove' src='images/cross.gif' /></td></tr>";
+									echo "<td><img class='remove' src='../images/cross.gif' /></td></tr>";
 								}
 							}
 						} elseif (isset($orgMappings) ? count($orgMappings)>0 : '') {
 							foreach($orgMappings as $orgMapping) {
 								echo "<tr><td><input class='ic-org-imported' value='" . $orgMapping->orgNameImported . "' /></td>";
 								echo "<td><input class='ic-org-mapped' value='" . $orgMapping->orgNameMapped . "' /></td>";
-								echo "<td><img class='remove' src='images/cross.gif' /></td></tr>";
+								echo "<td><img class='remove' src='../images/cross.gif' /></td></tr>";
 							}
 						}
 						else {
-							echo "<tr><td><input class='ic-org-imported' /></td><td><input class='ic-org-mapped' /></td><td><img class='remove' src='images/cross.gif' /></td></tr>";
+							echo "<tr><td><input class='ic-org-imported' /></td><td><input class='ic-org-mapped' /></td><td><img class='remove' src='../images/cross.gif' /></td></tr>";
 						}
 					?>
 				</table>
@@ -332,7 +332,7 @@
    $('#add_mapping').click(function (e) {
    		e.preventDefault();
    		$('#org_mapping_table').append (
-   			"<tr><td><input class='ic-org-imported' /></td><td><input class='ic-org-mapped' /></td><td><img class='remove' src='images/cross.gif' /></td></tr>"
+   			"<tr><td><input class='ic-org-imported' /></td><td><input class='ic-org-mapped' /></td><td><img class='remove' src='../images/cross.gif' /></td></tr>"
    		);
    });
 </script>

@@ -479,7 +479,7 @@ function hideFullNoteText(noteID){
  					if (exists == "1"){
  						$("#div_file_message").html("  <font color='red'>" + _("File name is already being used.") + "</font>");
  					}else{
- 						$("#div_uploadFile").html("<img src='images/paperclip.gif'>" + fileName + _(" successfully uploaded."));
+ 						$("#div_uploadFile").html("<img src='../images/paperclip.gif'>" + fileName + _(" successfully uploaded."));
 
  					}
 

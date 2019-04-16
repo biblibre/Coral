@@ -387,7 +387,7 @@ new AjaxUpload('upload_button',
           if (errorMessage.size() > 0) {
             $("#div_file_message").html("<font color='red'>" + errorMessage.html() + "</font>");
           } else {
-  					$("#div_file_message").html("<img src='images/paperclip.gif'>" + fileName + _(" successfully uploaded."));
+  					$("#div_file_message").html("<img src='../images/paperclip.gif'>" + fileName + _(" successfully uploaded."));
 					$("#span_error_licenseuploadDocument").html('');
   					$("#div_uploadFile").html("<br />");
           }

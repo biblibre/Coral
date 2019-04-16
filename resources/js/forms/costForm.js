@@ -144,7 +144,7 @@ $(function(){
 			duplicateTR.find('.dp-choose-date').remove(); //remove date pickers from clone
 			duplicateTR.find('.date-pick').datePicker({startDate:'01/01/1996'}); //add new date pickers to clone
 			replaceInputWithImage=duplicateTR.children().last().find('.addPayment');
-			replaceInputWithImage.replaceWith("<img src='images/cross.gif' class='remove' alt='" + _("remove this payment") + "' title='" + _("remove this payment") + "'/>");
+			replaceInputWithImage.replaceWith("<img src='../../images/cross.gif' class='remove' alt='" + _("remove this payment") + "' title='" + _("remove this payment") + "'/>");
 
 			duplicateTR.appendTo('.paymentTable');
                         $('<tr><td colspan="11"><div class="smallDarkRedText div_errorPayment" style="margin:0px 20px 0px 26px;"></div></td></tr>').appendTo('.paymentTable');

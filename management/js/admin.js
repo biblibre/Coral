@@ -103,7 +103,7 @@
  function addData(tableName){
 
        if ($('#new' + tableName).val()) {
-       		$('#span_' + tableName + "_response").html("<img src='images/circle.gif'>&nbsp;&nbsp;" + _("Processing..."));
+       		$('#span_' + tableName + "_response").html("<img src='../images/circle.gif'>&nbsp;&nbsp;" + _("Processing..."));
 			  $.ajax({
 				 type:       "POST",
 				 url:        "ajax_processing.php?action=checkForDuplicates",
@@ -229,7 +229,7 @@ function validateUserForm() {
 
  	if (confirm(_("Do you really want to delete this data?")) == true) {
 
-	       $('#span_' + tableName + "_response").html("<img src = 'images/circle.gif'>&nbsp;&nbsp;" + _("Processing..."));
+	       $('#span_' + tableName + "_response").html("<img src = '../images/circle.gif'>&nbsp;&nbsp;" + _("Processing..."));
 	       $.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",
@@ -254,7 +254,7 @@ function validateUserForm() {
 
  	if (confirm(_("Do you really want to delete this user?")) == true) {
 
-	       $('#span_User_response').html("<img src = 'images/circle.gif'>&nbsp;&nbsp;" + _("Processing..."));
+	       $('#span_User_response').html("<img src = '../images/circle.gif'>&nbsp;&nbsp;" + _("Processing..."));
 	       $.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",
@@ -280,7 +280,7 @@ function validateUserForm() {
 
  	if (confirm(_("Do you really want to delete this expression type?  Any associated Qualifiers will be deleted as well.")) == true) {
 
-	       $("#span_ExpressionType_response").html("<img src='images/circle.gif'>&nbsp;&nbsp;" + _("Processing..."));
+	       $("#span_ExpressionType_response").html("<img src='../images/circle.gif'>&nbsp;&nbsp;" + _("Processing..."));
 	       $.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",
@@ -307,7 +307,7 @@ function validateUserForm() {
 
  	if (confirm(_("Do you really want to delete this data?")) == true) {
 
-	       $("#span_Qualifier_response").html("<img src = 'images/circle.gif'>&nbsp;&nbsp;" + _("Processing..."));
+	       $("#span_Qualifier_response").html("<img src = '../images/circle.gif'>&nbsp;&nbsp;" + _("Processing..."));
 	       $.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",
@@ -345,4 +345,3 @@ function showAdd(tableName){
 function emptyResponse(tableName){
 	$('#span_' + tableName + "_response").html("");
 }
-

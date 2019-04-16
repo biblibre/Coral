@@ -51,7 +51,7 @@ if ($isOrgDowntime) {
 	echo '<input type="hidden" name="sourceResourceAcquisitionID" value="'.$resourceAcquisitionID.'" />';
 }
 ?>
-	<table class="thickboxTable" style="width:98%;background-image:url('images/title.gif');background-repeat:no-repeat;">
+	<table class="thickboxTable" style="width:98%;background-image:url('../images/title.gif');background-repeat:no-repeat;">
 		<tr>
 			<td colspan="2">
 				<h1><?php echo _("Resource Downtime Report");?></h1>
@@ -145,5 +145,3 @@ if ($issues) {
 	echo '<input type="button" value="' . _("cancel") . '" onclick="tb_remove();">';
 }
 ?>
-
-

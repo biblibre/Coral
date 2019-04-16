@@ -329,7 +329,7 @@ if ($enhancedCostFlag){
 								<?php } ?>
 								<td class='costHistoryAction'>
 									<a href='javascript:void();'>
-										<img src='images/cross.gif' alt='remove this payment' title='remove this payment' class='remove' />
+										<img src='../images/cross.gif' alt='remove this payment' title='remove this payment' class='remove' />
 									</a>
 								</td>
 							</tr>

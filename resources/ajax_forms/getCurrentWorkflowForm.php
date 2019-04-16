@@ -40,7 +40,7 @@ if (!isset($_GET['resourceAcquisitionID'])){
                                         </tr>
                                         <tr class="newStepTR">
 
-                                            <td style='vertical-align:top;text-align:left;width:48px;' class='seqOrder' key=''><img src='images/transparent.gif' style='width:43px;height:20px;' /></td>
+                                            <td style='vertical-align:top;text-align:left;width:48px;' class='seqOrder' key=''><img src='../images/transparent.gif' style='width:43px;height:20px;' /></td>
 											<td><input type="text" class="mailReminderDelay" size="2" /></td>
                                             <td>
                                             <input type="hidden" class="stepID" value="-1">
@@ -64,7 +64,7 @@ if (!isset($_GET['resourceAcquisitionID'])){
                                                     ?>
                                                 </select>
                                             </td>
-                                            <td><a href="javascript:void(0)"><img src="images/add.gif" class="addStep" alt="Add" /></a></td>
+                                            <td><a href="javascript:void(0)"><img src="../images/add.gif" class="addStep" alt="Add" /></a></td>
                                         </tr>
                                     </table>
 
@@ -94,15 +94,15 @@ if (!isset($_GET['resourceAcquisitionID'])){
 <td style='vertical-align:top;text-align:left;width:48px;' class='seqOrder <?php if ($key == ($stepCount)){ echo "lastClass"; } ?>' id='<?php echo $step->stepID; ?>' key='<?php echo $key; ?>'>
 							<?php
 
-								$arrowDown = "<a href='javascript:void(0);' class='moveArrow' direction='down'><img src='images/arrow_down.gif'></a>";
-								$arrowUp = "<a href='javascript:void(0);' class='moveArrow' direction='up' ><img src='images/arrow_up.gif'></a>";
-								$trans = "<img src='images/transparent.gif' style='width:20px;height:20px;' />";
+								$arrowDown = "<a href='javascript:void(0);' class='moveArrow' direction='down'><img src='../images/arrow_down.gif'></a>";
+								$arrowUp = "<a href='javascript:void(0);' class='moveArrow' direction='up' ><img src='../images/arrow_up.gif'></a>";
+								$trans = "<img src='../images/transparent.gif' style='width:20px;height:20px;' />";
 
 								if ($key == 1){
 
 									//if this is the only step, display the large transparent gif instead of arrows
 									if (($stepCount) == 1){
-										echo "<img src='images/transparent.gif' style='width:43px;height:10px;' />";
+										echo "<img src='../images/transparent.gif' style='width:43px;height:10px;' />";
 									}else{
 										echo $trans . "&nbsp;" . $arrowDown;
 									}
@@ -144,7 +144,7 @@ if (!isset($_GET['resourceAcquisitionID'])){
 							<input type='hidden' class='priorStepKey' key='<?php echo $key; ?>' value='<?php echo $priorStep->displayOrderSequence; ?>'>
 
                                             </td>
-                                            <td><a href="javascript:void(0)"><img src="images/cross.gif" class="removeStep" alt="Delete" /></a></td>
+                                            <td><a href="javascript:void(0)"><img src="../images/cross.gif" class="removeStep" alt="Delete" /></a></td>
                                         </tr>
                                         <?php
                                         }

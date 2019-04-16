@@ -9,7 +9,7 @@
 <script type="text/javascript" src="js/dashboard.js"></script>
 <div id="dashboardPage"><h1><?php echo _("Dashboard: Statistics");?></h1>
 <div style='text-align:left;'>
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
+<table class="headerTable" style="background-image:url('../images/header.gif');background-repeat:no-repeat;">
 <tr style='vertical-align:top;'>
 <td style="width:155px;padding-right:10px;">
 <table class='noBorder' id='title-search'>
@@ -86,4 +86,3 @@
 </td></tr>
 </table>
 </div>
-

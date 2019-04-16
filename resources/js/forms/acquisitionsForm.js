@@ -166,7 +166,7 @@
 			$('.newPaymentTR').appendTo('.paymentTable');
 
 			$('.newPaymentTR').children().children().children('.addPayment').attr({
-			  src: 'images/cross.gif',
+			  src: '../../images//cross.gif',
 			  alt: _("remove this payment"),
 			  title: _("remove this payment")
 			});
@@ -208,7 +208,7 @@ function submitOrderForm(){
 	});
 
 	if (validateForm() === true) {
-		$('#submitOrder').attr("disabled", "disabled"); 
+		$('#submitOrder').attr("disabled", "disabled");
 		  $.ajax({
 			 type:  "POST",
 			 url:   "ajax_processing.php?action=submitAcquisitions",
@@ -274,12 +274,12 @@ function submitOrderForm(){
 	}
 
  	if (myReturn == "1"){
-		return false; 	
+		return false;
  	}else{
  		return true;
  	}
 }
- 
+
 
 
 

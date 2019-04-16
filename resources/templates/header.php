@@ -45,7 +45,7 @@ $coralURL = $util->getCORALURL();
 <link rel="stylesheet" href="../css/datePicker.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../css/jquery.autocomplete.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/jquery.tooltip.css" type="text/css" media="screen" />
-<link rel="SHORTCUT ICON" href="images/favicon.ico" />
+<link rel="SHORTCUT ICON" href="../images/favicon.ico" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="../js/plugins/jquery-1.4.4.js"></script>
@@ -91,11 +91,11 @@ $coralURL = $util->getCORALURL();
 
     <tr style='vertical-align:top;'>
         <td style='height:53px;' colspan='3'>
-                
+
             <div id="main-title">
-                <img src="images/title-icon-resources.png" />
+                <img src="../images/title-icon-resources.png" />
                 <span id="main-title-text"><?php echo _("Resources"); ?></span>
-                <span id="powered-by-text"><?php echo _("Powered by");?><img src="images/logo-coral.jpg" /></span>
+                <span id="powered-by-text"><?php echo _("Powered by");?><img src="../images/logo-coral.jpg" /></span>
             </div>
 
             <div id="menu-login" style='margin-top:1px;'>
@@ -124,18 +124,18 @@ $coralURL = $util->getCORALURL();
                                 while (($file = readdir($dh)) !== false) {
                                     if (is_dir("$route/$file") && $file!="." && $file!=".."){
                                         $lang[]=$file;
-                                    } 
-                                } 
-                                closedir($dh); 
-                            } 
+                                    }
+                                }
+                                closedir($dh);
+                            }
                         }else {
-                            echo "<br>"._("Invalid translation route!"); 
+                            echo "<br>"._("Invalid translation route!");
                         }
                         // Get language of navigator
                         $defLang = $lang_name->getBrowserLanguage();
-                        
+
                         // Show an ordered list
-                        sort($lang); 
+                        sort($lang);
                         for($i=0; $i<count($lang); $i++){
                             if(isset($_COOKIE["lang"])){
                                 if($_COOKIE["lang"]==$lang[$i]){
@@ -152,7 +152,7 @@ $coralURL = $util->getCORALURL();
                             }
                         }
                         ?>
-                        
+
                     </select>
                 </span>
             </div>
@@ -165,7 +165,7 @@ $coralURL = $util->getCORALURL();
 
     <a href='index.php' title="<?php echo _("Home") ?>">
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-home.png" />
+            <img src="../images/menu/icon-home.png" />
             <span><?php echo _("Home");?></span>
         </div>
     </a>
@@ -173,28 +173,28 @@ $coralURL = $util->getCORALURL();
 <?php if ($user->isAdmin() || $user->canEdit()){ ?>
     <a href='ajax_forms.php?action=getNewResourceForm&height=503&width=775&resourceID=&modal=true' class='thickbox' id='newResource' title="<?php echo _("New Resource"); ?>">
         <div class="main-menu-link">
-            <img src="images/menu/icon-plus-square.png" />
+            <img src="../images/menu/icon-plus-square.png" />
             <span><?php echo _("New Resource");?></span>
         </div>
     </a>
 
     <a href='queue.php' title="<?php echo _("My Queue");?>">
         <div class="main-menu-link <?php if ($currentPage == 'queue.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-queue.png" />
+            <img src="../images/menu/icon-queue.png" />
             <span><?php echo _("My Queue");?></span>
         </div>
     </a>
 
     <a href='import.php' title="<?php echo _("Import");?>">
         <div class="main-menu-link <?php if ($currentPage == 'import.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-import.png" />
+            <img src="../images/menu/icon-import.png" />
             <span><?php echo _("File Import");?></span>
         </div>
     </a>
     <?php if ($config->settings->ebscoKbEnabled == 'Y'): ?>
         <a href='ebsco_kb.php' title="<?php echo _("EBSCO Kb");?>">
             <div class="main-menu-link <?php if ($currentPage == 'ebsco_kb.php') { echo "active"; } ?>">
-                <img src="images/menu/icon-ebsco.png" />
+                <img src="../images/menu/icon-ebsco.png" />
                 <span><?php echo _("EBSCO Kb");?></span>
             </div>
         </a>
@@ -204,7 +204,7 @@ $coralURL = $util->getCORALURL();
 <?php if ($config->settings->enhancedCostHistory == "Y") { ?>
     <a href='dashboard_menu.php' title="<?php echo _("Dashboards");?>">
         <div class="main-menu-link <?php if (substr($currentPage, 0, 9) === 'dashboard') { echo "active"; } ?>">
-            <img src="images/menu/icon-dashboards.png" />
+            <img src="../images/menu/icon-dashboards.png" />
             <span><?php echo _("Dashboards");?></span>
         </div>
     </a>
@@ -213,7 +213,7 @@ $coralURL = $util->getCORALURL();
 	<?php if ($user->isAdmin()) { ?>
     <a href='admin.php' title="<?php echo _("Admin");?>">
         <div class="main-menu-link <?php if ($currentPage == 'admin.php') { echo "active"; } ?>">
-            <img src="images/menu/icon-admin.png" />
+            <img src="../images/menu/icon-admin.png" />
             <span><?php echo _("Admin");?></span>
         </div>
     </a>
@@ -236,27 +236,27 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->li
 	        <li id="change-mod-menu"><span><?php echo _("Change Module");?></span><i class="fa fa-chevron-down"></i>
 			<ul class="coraldropdown">
 				<?php if (file_exists($util->getCORALPath() . "index.php")) {?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>" target='_blank' title="<?php echo _("Main Menu"); ?>"><img src='images/change/icon-mod-main.png'><span><?php echo _("Main Menu");?></span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>" target='_blank' title="<?php echo _("Main Menu"); ?>"><img src='../images/change/icon-mod-main.png'><span><?php echo _("Main Menu");?></span></a></li>
 				<?php
 				}
 				if ($config->settings->organizationsModule == 'Y') {
 				?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>organizations/" target='_blank' title="<?php echo _("Organizations module"); ?>"><img src='images/change/icon-mod-organizations.png'><span><?php echo _("Organizations");?></span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>organizations/" target='_blank' title="<?php echo _("Organizations module"); ?>"><img src='../images/change/icon-mod-organizations.png'><span><?php echo _("Organizations");?></span></a></li>
 				<?php
 				}
 				if ($config->settings->licensingModule == 'Y') {
 				?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>licensing/" target='_blank' title="<?php echo _("Licensing module"); ?>"><img src='images/change/icon-mod-licensing.png'><span><?php echo _("Licensing");?></span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>licensing/" target='_blank' title="<?php echo _("Licensing module"); ?>"><img src='../images/change/icon-mod-licensing.png'><span><?php echo _("Licensing");?></span></a></li>
 				<?php
 				}
 				if ($config->settings->usageModule == 'Y') {
 				?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>usage/" target='_blank' title="<?php echo _("Usage Statistics module"); ?>"><img src='images/change/icon-mod-usage.png'><span><?php echo _("Usage Statistics");?></span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>usage/" target='_blank' title="<?php echo _("Usage Statistics module"); ?>"><img src='../images/change/icon-mod-usage.png'><span><?php echo _("Usage Statistics");?></span></a></li>
 				<?php
 				}
 				if ($config->settings->managementModule == 'Y') {
 				?>
-				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>management/" target='_blank' title="<?php echo _("Management module"); ?>"><img src='images/change/icon-mod-management.png'><span><?php echo _("Management");?></span></a></li>
+				<li class="change-mod-item"><a href="<?php echo $coralURL; ?>management/" target='_blank' title="<?php echo _("Management module"); ?>"><img src='../images/change/icon-mod-management.png'><span><?php echo _("Management");?></span></a></li>
 				<?php } ?>
 			</ul>
 		</li>
@@ -278,7 +278,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->li
             setLanguage($("#lang").val());
             location.reload();
         });
-        
+
         function setLanguage(lang) {
 			var wl = window.location, now = new Date(), time = now.getTime();
             var cookievalid=2592000000; // 30 days (1000*60*60*24*30)

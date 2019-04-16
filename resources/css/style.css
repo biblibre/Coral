@@ -16,13 +16,13 @@ body {
 	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
 	padding: 0;
 	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
-	background: #E7E8E8 url(../images/bg-gray-texture.jpg) repeat top left;
+	background: #E7E8E8 url(../../images/bg-gray-texture.jpg) repeat top left;
 	-webkit-font-smoothing: antialiased;
 }
 
 .wrapper {
 	margin: 0 auto -2em;
-	background-image: url("../images/back-header.jpg");
+	background-image: url("../../images/back-header-resources.jpg");
 	background-repeat: repeat-x;
 }
 
@@ -236,7 +236,7 @@ table.adminMenuTable td.selected {
 	padding: 3px 3px 3px 3px;
 			border-top: 1px solid #e6e5e9;
 			background-color: #f2f5f7;
-			background-image:url('../images/tab.gif');
+			background-image:url('../../images/tab.gif');
 			background-repeat:no-repeat;
 	background-position:right top;
 	-moz-border-radius: 0px;
@@ -336,7 +336,7 @@ div.f3 { clear: both; }
 		vertical-align: middle;
 }
 
-table#title {padding:0px; background-image:url('../images/organizationstitle.jpg');background-repeat:no-repeat;height:120px;width:900px;}
+table#title {padding:0px; background-image:url('../../images/organizationstitle.jpg');background-repeat:no-repeat;height:120px;width:900px;}
 
 table.headerTable {
 	padding: 1px;
@@ -386,7 +386,7 @@ span.searchLetterSelected a:active{color:#3D545D;}
 #search_box {
 		width: 170px;
 		height: 19px;
-		background: url('../images/searchbox.gif');
+		background: url('../../images/searchbox.gif');
 }
 #search_box #search_organization {
 		float: left;
@@ -545,7 +545,7 @@ table.dataTable th {
 	vertical-align: middle;
 	font-weight: 300;
 	color: #000;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 	border-bottom: 1px solid #C9C9C9 !important;
 }
 
@@ -768,7 +768,7 @@ table.linedFormTable th {
 	border: solid 1px #e6e5e9;
 	background-color: #e9edf0;
 	-moz-border-radius: 0px;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 }
 
 
@@ -795,7 +795,7 @@ div.formTitle {
 	border-color: #e6e5e9;
 	background-color: #cad7e1;
 	-moz-border-radius: 0px;
-	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+	background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
 	font-size: 125%
 	font-weight: bold;
 }
@@ -990,7 +990,7 @@ a.dp-choose-date {
 	display: block;
 	text-indent: -2000px;
 	overflow: hidden;
-	background: url('../images/calendar.gif') no-repeat;
+	background: url('../../images/calendar.gif') no-repeat;
 }
 a.dp-choose-date.dp-disabled {
 	background-position: 0 -20px;
@@ -2387,7 +2387,7 @@ div#archivedDowntime {
     border-color: #e6e5e9;
     -moz-border-radius: 0px;
     background-image: none;
-    background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+    background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
     display: block;
     font-size: 14px;
     color: #3D545D;
@@ -2468,7 +2468,7 @@ div#archivedDowntime {
     border-color: #e6e5e9;
     -moz-border-radius: 0px;
     background-image: none;
-    background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
+    background: rgba(200, 200, 200, 0.5) url(../../images/bg-diagonal-stripes.png) repeat top left !important;
     display: block;
     font-size: 14px;
     color: #3D545D;

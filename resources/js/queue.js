@@ -42,7 +42,7 @@
 function updatePage(activeTab,requestAction) {
 	$(".queueMenuLink a").parent().parent().removeClass('selected');
  	$('#'+activeTab).parent().parent().addClass('selected');
-	$('#div_feedback').html("<img src = 'images/circle.gif' />"+_("Refreshing..."));
+	$('#div_feedback').html("<img src = '../images/circle.gif' />"+_("Refreshing..."));
 	$.ajax({
 	  type:       "GET",
 	  url:        "ajax_htmldata.php",
@@ -90,7 +90,7 @@ function completeTabUpdate() {
  //currently you can only delete saved requests
  function deleteRequest(deleteID){
  	if (confirm(_("Do you really want to delete this request?")) == true) {
-		$('#div_feedback').html("<img src = 'images/circle.gif' />"+_("Refreshing..."));
+		$('#div_feedback').html("<img src = '../images/circle.gif' />"+_("Refreshing..."));
 		$.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",

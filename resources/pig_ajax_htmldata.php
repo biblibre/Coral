@@ -38,11 +38,11 @@ switch ($_GET['action']) {
             }
         echo "<span style='float:right;'><a href='" . "pig_htmldata.php?action=getPigSearchResources" . $queryString . "'>HTML Feed</a>";
         echo "&nbsp;";
-        echo "<a class='thickbox' href='" . 'javascript:alert("Copy the URL below:\n\nhttp://' . $_SERVER['SERVER_NAME'] . str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['SCRIPT_NAME']) . 'pig_htmldata.php?action=getPigSearchResources' . $queryString . '")' . "'><img title='PIG url' alt='PIG url' src='images/pig_balloon_icon.png'/></a>";
+        echo "<a class='thickbox' href='" . 'javascript:alert("Copy the URL below:\n\nhttp://' . $_SERVER['SERVER_NAME'] . str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['SCRIPT_NAME']) . 'pig_htmldata.php?action=getPigSearchResources' . $queryString . '")' . "'><img title='PIG url' alt='PIG url' src='../images/pig_balloon_icon.png'/></a>";
         echo "&nbsp;&nbsp;";
         echo "<a href='" . "pig_xmldata.php?action=getPigSearchResources" . $queryString . "'>XML Feed</a>";
         echo "&nbsp;";
-        echo "<a class='thickbox' href='" . 'javascript:alert("Copy the URL below:\n\nhttp://' . $_SERVER['SERVER_NAME'] . str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['SCRIPT_NAME']) . 'pig_xmldata.php?action=getPigSearchResources' . $queryString . '")' . "'><img title='PIG XML url' alt='PIG XML url' src='images/pig_XML_icon.png'/></a></span>";
+        echo "<a class='thickbox' href='" . 'javascript:alert("Copy the URL below:\n\nhttp://' . $_SERVER['SERVER_NAME'] . str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['SCRIPT_NAME']) . 'pig_xmldata.php?action=getPigSearchResources' . $queryString . '")' . "'><img title='PIG XML url' alt='PIG XML url' src='../images/pig_XML_icon.png'/></a></span>";
 
         $queryDetails = PigResource::getPigSearchDetails();
         $whereAdd = $queryDetails["where"];
@@ -154,9 +154,9 @@ switch ($_GET['action']) {
                 <table class='dataTable' style='width:727px'>
                 <tr>
                 <?php if ($_POST['search']['titleTextckbox'] == 'ON') { ?>
-                <th><table class='noBorderTable' style='width:100%'><tr><td>Name</td><td style='width:10px;'><a href='javascript:setOrder("R.titleText","asc");'><img src='images/arrowup.gif' border=0></a></td><td style='width:10px;'><a href='javascript:setOrder("R.titleText","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
+                <th><table class='noBorderTable' style='width:100%'><tr><td>Name</td><td style='width:10px;'><a href='javascript:setOrder("R.titleText","asc");'><img src='../images/arrowup.gif' border=0></a></td><td style='width:10px;'><a href='javascript:setOrder("R.titleText","desc");'><img src='../images/arrowdown.gif' border=0></a></td></tr></table></th>
                 <?php } if ($_POST['search']['providerTextckbox'] == 'ON') { ?>
-                <th><table class='noBorderTable' style='width:100%'><tr><td>Publisher</td><td style='width:10px;'><a href='javascript:setOrder("R.providerText","asc");'><img src='images/arrowup.gif' border=0></a></td><td style='width:10px;'><a href='javascript:setOrder("CU.loginID","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
+                <th><table class='noBorderTable' style='width:100%'><tr><td>Publisher</td><td style='width:10px;'><a href='javascript:setOrder("R.providerText","asc");'><img src='../images/arrowup.gif' border=0></a></td><td style='width:10px;'><a href='javascript:setOrder("CU.loginID","desc");'><img src='../images/arrowdown.gif' border=0></a></td></tr></table></th>
                 <?php } if ($_POST['search']['descriptionTextckbox'] == 'ON') { ?>
                 <th><table class='noBorderTable' style='width:100%'><tr><td>Description</td><td style='width:10px;vertical-align:top;'>&nbsp;</td><td style='width:10px;vertical-align:top;'></td></tr></table></th>
                 <?php } if ($_POST['search']['generalSubjectckbox'] == 'ON') { ?>

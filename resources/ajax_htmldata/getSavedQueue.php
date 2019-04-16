@@ -43,8 +43,8 @@
 					<td <?php echo $classAdd; ?>><?php echo format_date($resource['createDate']); ?></td>
 					<td <?php echo $classAdd; ?>><?php echo $status->shortName; ?></td>
 					<td <?php echo $classAdd; ?> style='text-align:right; width:40px;'>
-					<a href='ajax_forms.php?action=getNewResourceForm&height=483&width=775&resourceID=<?php echo $resource['resourceID']; ?>&modal=true' class='thickbox'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit request");?>'></a>&nbsp;
-					<a href='javascript:void(0);' class='deleteRequest' id='<?php echo $resource['resourceID']; ?>'><img src='images/cross.gif' alt='<?php echo _("remove request");?>' title='<?php echo _("remove request");?>'></a>
+					<a href='ajax_forms.php?action=getNewResourceForm&height=483&width=775&resourceID=<?php echo $resource['resourceID']; ?>&modal=true' class='thickbox'><img src='../images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit request");?>'></a>&nbsp;
+					<a href='javascript:void(0);' class='deleteRequest' id='<?php echo $resource['resourceID']; ?>'><img src='../images/cross.gif' alt='<?php echo _("remove request");?>' title='<?php echo _("remove request");?>'></a>
 					</td>
 				</tr>
 
@@ -58,4 +58,3 @@
 		}
 
 ?>
-

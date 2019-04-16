@@ -78,7 +78,7 @@
  function addData(className){
 
        if ($('#new' + className).val()) {
-       	       $('#span_' + className + "_response").html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
+       	       $('#span_' + className + "_response").html("<img src = '../images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
 
 	       $.ajax({
 		  type:       "GET",
@@ -130,7 +130,7 @@ function validateUpdateData(){
 
  	if (confirm(_("Do you really want to delete this data?")) == true) {
 
-	       $('#span_' + className + "_response").html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
+	       $('#span_' + className + "_response").html("<img src = '../images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
 	       $.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",
@@ -156,7 +156,7 @@ function validateUpdateData(){
 
  	if (confirm(_("Do you really want to delete this user?")) == true) {
 
-	       $('#span_User_response').html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
+	       $('#span_User_response').html("<img src = '../images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
 	       $.ajax({
 		  type:       "GET",
 		  url:        "ajax_processing.php",
@@ -197,7 +197,7 @@ function emptyResponse(className){
 
 
 function updateOrderGroups(){
-       $('#span_CancelReason_response').html("<img src = 'images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
+       $('#span_CancelReason_response').html("<img src = '../images/circle.gif'>&nbsp;&nbsp;"+_("Processing..."));
 
 
        $.ajax({
