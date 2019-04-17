@@ -1830,3 +1830,78 @@ td.helpfulLinks {
 .icon{
 	text-align: center;
 }
+
+
+/*--- Ex style tags in HTML are now in CSS folder---*/
+
+p.fontLarge {
+	font-size:130%;
+	font-weight:bold;
+}
+
+p.fontMedium{
+	font-size:110%;
+	font-weight:bold;
+}
+
+p.fontColor{
+	color: red;
+}
+
+td.rightTop{
+	text-align:right;
+	vertical-align:top;
+}
+
+td.wSixty{
+	width:60px;
+}
+
+td.centerWHundred{
+text-align:center;
+width:100%;
+}
+
+td.alignRight{
+	text-align:right;
+}
+
+td.wHundred{
+	width:100%;
+}
+
+tr.vMiddle{
+	vertical-align:middle;
+}
+
+span.error{
+	color:#F00;
+}
+
+input.wEighty{
+	width:80px;
+}
+ input.WHundEigteen{
+	 width:118px
+ }
+
+ input.wHundNinety{
+	 width:190px;
+ }
+
+ input.WHundForty{
+	 width:140px;
+ }
+
+ input.wHundThirty{
+	 width:130px;
+ }
+
+ input.wHundFifty{
+	 width:150px;
+
+ }
+
+ input.hundPercent{
+	 width:100%;
+ }

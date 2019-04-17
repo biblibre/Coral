@@ -42,7 +42,7 @@ switch ($_GET['action']) {
 
 		<table class="headerTable">
 		<tr style='vertical-align:top'><td style='padding-left:20px;'>
-		<font style='font-size:130%;font-weight:bold;'><?php echo $license->shortName; ?></font>
+		<p class="fontLarge"><?php echo $license->shortName; ?></p>
 
 		<?php
 
@@ -739,7 +739,7 @@ switch ($_GET['action']) {
 		}else if ($displayArchiveInd == '1'){
 			$documentArray = $license->getArchivedDocumentsWithoutParents($parentArchivedOrderBy);
 			if (count($documentArray) > 0){
-				echo "<font style='font-size:110%;font-weight:bold;'>"._("Archived Documents")."</font>  <i><a href='javascript:updateArchivedDocuments(2)'>"._("hide archives")."</a></i>";
+				echo "<p class='fontMedium'>"._("Archived Documents")."</p>  <i><a href='javascript:updateArchivedDocuments(2)'>"._("hide archives")."</a></i>";
 			}
 
 			$chJSFunction = "setChildArchivedOrder";

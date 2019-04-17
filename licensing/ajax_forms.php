@@ -54,7 +54,7 @@ switch ($_GET['action']) {
 
 		<tr>
 		<td colspan='2'><label for="licenseOrganizationID" class="formText"><?php echo _("Publisher / Provider:");?></label>  <span id='span_error_organizationName' class='errorText'></span><br />
-		<input type='textbox' id='organizationName' name='organizationName' value="<?php echo $organizationName; ?>" style='width:100%;' />
+		<input type='textbox' id='organizationName' name='organizationName' value="<?php echo $organizationName; ?>" class='hundPercent'/>
 		<input type='hidden' id='licenseOrganizationID' name='licenseOrganizationID' value='<?php echo $license->organizationID; ?>'>
 		<span id='span_error_organizationNameResult' class='errorText'></span>
 		<br />
@@ -91,7 +91,7 @@ switch ($_GET['action']) {
 			</select>
 		<?php
 		}catch(Exception $e){
-			echo "<span style='color:red'>"._("There was an error processing this request - please verify configuration.ini is set up for organizations correctly and the database and tables have been created.")."</span>";
+			echo "<span class='error'>"._("There was an error processing this request - please verify configuration.ini is set up for organizations correctly and the database and tables have been created.")."</span>";
 		}
 		?>
 		</span>
@@ -109,8 +109,8 @@ switch ($_GET['action']) {
 		</td>
 		</tr>
 
-		<tr style="vertical-align:middle;">
-		<td style="width:60px;"><input type='button' value='<?php echo _("submit");?>' name='submitLicense' id ='submitLicense' class='submit-button'></td>
+		<tr class="vMiddle">
+		<td class="wSixty"><input type='button' value='<?php echo _("submit");?>' name='submitLicense' id ='submitLicense' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
 		</tr>
 		</table>
@@ -164,14 +164,14 @@ switch ($_GET['action']) {
 		<td colspan='2'><span class='headerText'><?php echo _("Document Upload");?></span><br /><span id='span_errors'></span><br /></td>
 		</tr>
 		<tr>
-		<td style='text-align:right;vertical-align:top;'><label for="effectiveDate" class="formText"><?php echo _("Effective Date:");?></label><br /><span id='span_error_effectiveDate' class='errorText'></span></td>
+		<td class="rightTop"><label for="effectiveDate" class="formText"><?php echo _("Effective Date:");?></label><br /><span id='span_error_effectiveDate' class='errorText'></span></td>
 		<td>
-		<input class='date-pick' id='effectiveDate' name='effectiveDate' style='width:80px' value='<?php echo $effectiveDate; ?>' />
+		<input class='date-pick' id='effectiveDate' name='effectiveDate' class="wEighty" value='<?php echo $effectiveDate; ?>' />
 		</td>
 		</tr>
 
 		<tr>
-		<td style='text-align:right;vertical-align:top;'><label for="documentType" class="formText"><?php echo _("Document Type:");?></label><br /><span id='span_error_documentTypeID' class='errorText'></span></td>
+		<td class="rightTop"><label for="documentType" class="formText"><?php echo _("Document Type:");?></label><br /><span id='span_error_documentTypeID' class='errorText'></span></td>
 		<td>
 		<span id='span_documentType'>
 		<select name='documentTypeID' id='documentTypeID' style='width:185px;'>
@@ -200,7 +200,7 @@ switch ($_GET['action']) {
 
 
 		<tr>
-		<td style='text-align:right;vertical-align:top;'><label for="documentType" class="formText"><?php echo _("Parent:");?></label></td>
+		<td class='rightTop'><label for="documentType" class="formText"><?php echo _("Parent:");?></label></td>
 		<td>
 		<div>
 		<select name='parentDocumentID' id='parentDocumentID' style='width:185px;'>
@@ -232,13 +232,13 @@ switch ($_GET['action']) {
 		</tr>
 
 		<tr>
-		<td style='text-align:right;vertical-align:top;'><label for="shortName" class="formText"><?php echo _("Name:");?></label><br /><span id='span_error_shortName' class='errorText'></span></td>
+		<td class='rightTop'><label for="shortName" class="formText"><?php echo _("Name:");?></label><br /><span id='span_error_shortName' class='errorText'></span></td>
 		<td>
 		<textarea name='shortName' id = 'shortName' cols='28' rows='2' style='width:185px;'><?php echo $document->shortName; ?></textarea>
 		</td>
 		</tr>
 		<tr>
-		<td style='text-align:right;vertical-align:top;'><label for="uploadDocument" class="formText"><?php echo _("File:");?></label></td>
+		<td class="rightTop"><label for="uploadDocument" class="formText"><?php echo _("File:");?></label></td>
 		<td>
 		<?php
 
@@ -260,14 +260,14 @@ switch ($_GET['action']) {
 
 		<?php if (($document->parentDocumentID == "0") || ($document->parentDocumentID == "")){ ?>
 		<tr>
-		<td style='text-align:right;vertical-align:top;'><label for="archiveInd" class="formText"><?php echo _("Archived:");?></label></td>
+		<td class="rightTop"><label for="archiveInd" class="formText"><?php echo _("Archived:");?></label></td>
 		<td><input type='checkbox' id='archiveInd' name='archiveInd' <?php echo $archiveChecked; ?> />
 		</td>
 		</tr>
 		<?php } ?>
 
-		<tr style="vertical-align:middle;">
-		<td style="width:60px;"><input type='button' value='<?php echo _("submit");?>' name='submitDocument' id='submitDocument' class='submit-button'></td>
+		<tr class="vMiddle">
+		<td class="wSixty"><input type='button' value='<?php echo _("submit");?>' name='submitDocument' id='submitDocument' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
 		</tr>
 		</table>
@@ -299,10 +299,10 @@ switch ($_GET['action']) {
 		<tr>
 		<td>
 		<input type='hidden' name='documentID' id='documentID' value='<?php echo $documentID; ?>' />
-		<?php echo _("Archive Date:");?>  <input class='date-pick' id='expirationDate' name='expirationDate' style='width:80px' value='<?php echo format_date(date); ?>' />
+		<?php echo _("Archive Date:");?>  <input class='date-pick wEighty' id='expirationDate' name='expirationDate'  value='<?php echo format_date(date); ?>' />
 		</td>
 		</tr>
-		<tr><td style='text-align:center;width:100%;'><br /><br /><a href='javascript:void(0)' name='submitArchive' id='submitArchive'><?php echo _("Continue");?></a></td></tr>
+		<tr><td class="centerWHundred"><br /><br /><a href='javascript:void(0)' name='submitArchive' id='submitArchive'><?php echo _("Continue");?></a></td></tr>
 		</table>
 
 
@@ -361,12 +361,12 @@ switch ($_GET['action']) {
 		<tr>
 		<td>
 		<label for="shortName" class="formText"><?php echo _("Terms Tool Resource:");?></label>  <span id='span_error_shortName' class='errorText'></span><br />
-		<input id='shortName' name='shortName' style='width:190px' value='<?php echo $sfxProvider->shortName; ?>' />
+		<input id='shortName' name='shortName' class='wHundNinety' value='<?php echo $sfxProvider->shortName; ?>' />
 		</td>
 		</tr>
 
 		<tr>
-		<td style="width:60px;"><input type='button' value='<?php echo _("submit");?>' name='submitSFX' id='submitSFX' class='submit-button'></td>
+		<td class="wSixty"><input type='button' value='<?php echo _("submit");?>' name='submitSFX' id='submitSFX' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove()" class='cancel-button'></td>
 		</tr>
 
@@ -398,7 +398,8 @@ switch ($_GET['action']) {
 		<div id='div_signatureForm'>
 		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:100%;">
 		<tr>
-            <td><span class='headerText'><?php echo _("Signatures");?></span><br /><span id='span_errors' style='color:#F00;'></span></td>
+            <td><span class='headerText'><?php echo _("Signatures");?></span><br /><span id='span_errors' class="error"'></span></td>
+
 		</tr>
 		<tr>
 
@@ -423,8 +424,8 @@ switch ($_GET['action']) {
 
 				//used for in-line editing (since this is already a form, can't make another form to edit sigs!)
 				if ($signatureID == $display['signatureID']){
-					echo "<td><input type='textbox' id='signerName' value=\"" . $display['signerName'] . "\" style='width:118px;' /></td>";
-					echo "<td><input class='date-pick' id='signatureDate' name='signatureDate' style='width:80px' value=\"" . format_date($display['signatureDate']) . "\" /></td>";
+					echo "<td><input type='textbox' id='signerName' value=\"" . $display['signerName'] . "\" class='wEighty' /></td>";
+					echo "<td><input class='date-pick wEighty' id='signatureDate' name='signatureDate'  value=\"" . format_date($display['signatureDate']) . "\" /></td>";
 					echo "<td><span id='span_signatureType'><select id='signatureTypeID' name='signatureTypeID'>";
 
 					$stdisplay = array();
@@ -466,8 +467,8 @@ switch ($_GET['action']) {
 
 			if ($signatureID == ""){
 				echo "<tr>";
-				echo "<td><input type='text' id='signerName' style='width:118px;' /></td>";
-				echo "<td><input class='date-pick' id='signatureDate' name='signatureDate' style='width:80px' /></td>";
+				echo "<td><input type='text' id='signerName' class='WHundEigteen' /></td>";
+				echo "<td><input class='date-pick' id='signatureDate' name='signatureDate' class='wEighty' /></td>";
 				echo "<td><span id='span_signatureType'><select id='signatureTypeID' name='signatureTypeID'>";
 				$stdisplay = array();
 				$signatureType = new SignatureType();
@@ -487,7 +488,7 @@ switch ($_GET['action']) {
 		</table>
 		</td>
 		</tr>
-		<tr><td style='text-align:center;width:100%;'><br /><br /><a href='#' onclick='window.parent.tb_remove();  window.parent.updateDocuments();  window.parent.updateArchivedDocuments(); return false' class='cancel-button'><?php echo _("Close");?></a></td></tr>
+		<tr><td class="centerWHundred"><br /><br /><a href='#' onclick='window.parent.tb_remove();  window.parent.updateDocuments();  window.parent.updateArchivedDocuments(); return false' class='cancel-button'><?php echo _("Close");?></a></td></tr>
 		</table>
 		<input type="hidden" id='documentID' name='documentID' value='<?php echo $documentID; ?>'>
 
@@ -635,8 +636,8 @@ switch ($_GET['action']) {
 		<td colspan='2'><label for="documentText" class="formText"><?php echo _("Document Text:");?></label><br /><textarea name='documentText' id = 'documentText' cols='48' rows='10'><?php echo $expression->documentText; ?></textarea></td>
 		</tr>
 
-		<tr style="vertical-align:middle;">
-		<td style="width:60px;"><input type='button' value='<?php echo _("submit");?>' name='submitExpression' id='submitExpression' class='submit-button'></td>
+		<tr class="vMiddle">
+		<td class="wSixty"><input type='button' value='<?php echo _("submit");?>' name='submitExpression' id='submitExpression' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
 		</tr>
 		</table>
@@ -672,7 +673,7 @@ switch ($_GET['action']) {
 		<tr>
 		<td><span class='headerText'><?php echo ucfirst($noteType); ?> <?php echo _("Notes");?></span><br />
 		<b><?php echo _("For Document Text:");?></b>  <?php echo $documentText; ?><br />
-		<span id='span_errors' style='color:#F00;'></span>
+		<span id='span_errors' class='error'></span>
 		<br /><br /></td>
 		</tr>
 		<tr>
@@ -714,10 +715,11 @@ switch ($_GET['action']) {
 						echo "<td>&nbsp;</td>";
 						echo "<td>&nbsp;</td>";
 
+
 					}else{
 						//calculate which arrows to show for reordering
 						if ($rowNumber == "1"){
-							echo "<td style='text-align:right;'><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"down\");'><img src='images/arrowdown.png' border=0></a></td>";
+							echo "<td class='alignRight'><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"down\");'><img src='images/arrowdown.png' border=0></a></td>";
 						}else if($rowNumber == $rowCount){
 							echo "<td><a href='javascript:reorder(\"" . $expressionNote->expressionNoteID . "\", \"" . $expressionNote->displayOrderSeqNumber . "\",\"up\");'><img src='images/arrowup.png' border=0></a></td>";
 						}else{
@@ -750,7 +752,7 @@ switch ($_GET['action']) {
 		</table>
 		</td>
 		</tr>
-		<tr><td style='width:100%;'><br /><br /><a href='#' onclick='window.parent.tb_remove();  window.parent.<?php if ($_GET['org'] == "compare") { echo "updateSearch()"; } else { echo "updateExpressions()"; } ?>; return false' class='cancel-button'><?php echo _("Close");?></a></td></tr>
+		<tr><td class="wHundred"><br /><br /><a href='#' onclick='window.parent.tb_remove();  window.parent.<?php if ($_GET['org'] == "compare") { echo "updateSearch()"; } else { echo "updateExpressions()"; } ?>; return false' class='cancel-button'><?php echo _("Close");?></a></td></tr>
 		</table>
 		<input type="hidden" id='documentID' name='documentID' value='<?php echo $documentID; ?>'>
 		<input type="hidden" id='org' name='org' value='<?php echo $_GET['org']; ?>'>
@@ -792,7 +794,7 @@ switch ($_GET['action']) {
 		<tr>
 		<td colspan='2'><label for="sentDate" class="formText"><?php echo _("Date:");?></label><br />
 
-		<input class='date-pick' id='sentDate' name='sentDate' style='width:80px' value='<?php echo $sentDate; ?>' />
+		<input class='date-pick wEighty' id='sentDate' name='sentDate' value='<?php echo $sentDate; ?>' />
 
 		</tr>
 
@@ -827,8 +829,8 @@ switch ($_GET['action']) {
 		</td>
 		</tr>
 
-		<tr style="vertical-align:middle;">
-		<td style="width:60px;"><input type='button' value='<?php echo _("submit");?>' name='submitAttachment' id='submitAttachment'class='submit-button'></td>
+		<tr class="vMiddle">
+		<td class="wSixty"><input type='button' value='<?php echo _("submit");?>' name='submitAttachment' id='submitAttachment'class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove();window.parent.updateAttachments();" class='cancel-button'></td>
 		</tr>
 		</table>
@@ -857,12 +859,12 @@ switch ($_GET['action']) {
 		<div id='div_updateForm'>
 		<table class="thickboxTable" style="width:400px;">
 		<tr>
-		<td colspan='3'><span class='headerText'><?php echo _("Edit");?></span><br /><span id='span_errors' style='color:#F00;'></span><br /></td>
+		<td colspan='3'><span class='headerText'><?php echo _("Edit");?></span><br /><span id='span_errors' class='error'></span><br /></td>
 		</tr>
 		<tr>
 		<td>
 		<?php
-		echo "<input type='text' id='updateVal' name='updateVal' value='" . $instance->shortName . "' style='width:190px;'/></td><td><a href='javascript:updateData(\"" . $className . "\", \"" . $updateID . "\");' id='updateButton' class='submit-button'>"._("Edit")."</a>";
+		echo "<input type='text' id='updateVal' name='updateVal' value='" . $instance->shortName . "' class='wHundNinety'/></td><td><a href='javascript:updateData(\"" . $className . "\", \"" . $updateID . "\");' id='updateButton' class='submit-button'>"._("Edit")."</a>";
 		?>
 
 
@@ -907,10 +909,10 @@ switch ($_GET['action']) {
 		?>
 		<div id='div_updateForm'>
 		<table class="thickboxTable" style="width:285px;padding:2px;">
-		<tr><td colspan='3'><span class='headerText'><?php echo $update.' '. _("User"); ?></span><br /><span id='span_errors' style='color:#F00;'></span><br /></td></tr>
-            <tr><td colspan='2' style='width:135px;'><label for='loginID'><b><?php echo _("Login ID");?></b></label></td><td><input type='text' id='loginID' name='loginID' value='<?php echo $loginID; ?>' style='width:140px;' /></td></tr>
-            <tr><td colspan='2'><label for='firstName'><b><?php echo _("First Name");?></b></label></td><td><input type='text' id='firstName' name='firstName' value="<?php if (isset($updateUser)) echo $updateUser->firstName; ?>" style='width:140px;' /></td></tr>
-            <tr><td colspan='2'><label for='lastName'><b><?php echo _("Last Name"); ?></b></label></td><td><input type='text' id='lastName' name='lastName' value="<?php if (isset($updateUser)) echo $updateUser->lastName; ?>" style='width:140px;' /></td></tr>
+		<tr><td colspan='3'><span class='headerText'><?php echo $update.' '. _("User"); ?></span><br /><span id='span_errors' class='error'></span><br /></td></tr>
+            <tr><td colspan='2' style='width:135px;'><label for='loginID'><b><?php echo _("Login ID");?></b></label></td><td><input type='text' id='loginID' name='loginID' value='<?php echo $loginID; ?>' class='WHundForty' /></td></tr>
+            <tr><td colspan='2'><label for='firstName'><b><?php echo _("First Name");?></b></label></td><td><input type='text' id='firstName' name='firstName' value="<?php if (isset($updateUser)) echo $updateUser->firstName; ?>" class='WHundForty' /></td></tr>
+            <tr><td colspan='2'><label for='lastName'><b><?php echo _("Last Name"); ?></b></label></td><td><input type='text' id='lastName' name='lastName' value="<?php if (isset($updateUser)) echo $updateUser->lastName; ?>" class='WHundForty' /></td></tr>
             <tr><td><label for='privilegeID'><b><?php echo _("Privilege"); ?></b></label></td>
 		<td>
 				<fieldset id="fieldsetPrivilege">
@@ -953,12 +955,12 @@ switch ($_GET['action']) {
 				</fieldset>
 
 		</td>
-		<td><input type='text' id='emailAddressForTermsTool' name='emailAddressForTermsTool' value='<?php if (isset($updateUser)) echo $updateUser->emailAddressForTermsTool; ?>' style='width:140px;' /></td>
+		<td><input type='text' id='emailAddressForTermsTool' name='emailAddressForTermsTool' value='<?php if (isset($updateUser)) echo $updateUser->emailAddressForTermsTool; ?>' class= 'wHundForty' /></td>
 		</tr>
 
 		<?php } else { echo "<input type='hidden' id='emailAddressForTermsTool' name='emailAddressForTermsTool' value='' /><br />"; }?>
 
-		<tr style="vertical-align:middle;">
+		<tr class="vMiddle">
 		<td colspan='2' style="width:60px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitUserData("<?php echo $loginID; ?>");' class='submit-button'></td>
 		<td><input type='button' value="<?php echo _("Close");?>" onclick="window.parent.tb_remove(); return false" id='update-user-cancel' class='cancel-button'></td>
 		</tr>
@@ -990,8 +992,8 @@ switch ($_GET['action']) {
 		<div id='div_updateForm'>
 		<input type='hidden' name='expressionTypeID' id='expressionTypeID' value='<?php echo $expressionTypeID; ?>' />
 		<table class="thickboxTable" style="width:260px;padding:2px;">
-		<tr><td colspan='2'><span class='headerText'><?php echo $update.' '. _("Expression Type");?></span><br /><span id='span_errors' style='color:#F00;'></span><br /></td></tr>
-            <tr><td><label for='shortName'><b><?php echo _("Expression Type");?></b></label></td><td><input type='text' id='shortName' name='shortName' value='<?php if (isset($expressionType)) echo $expressionType->shortName; ?>' style='width:130px;'/></td></tr>
+		<tr><td colspan='2'><span class='headerText'><?php echo $update.' '. _("Expression Type");?></span><br /><span id='span_errors' class='error'></span><br /></td></tr>
+            <tr><td><label for='shortName'><b><?php echo _("Expression Type");?></b></label></td><td><input type='text' id='shortName' class= 'wHunderT' name='shortName' value='<?php if (isset($expressionType)) echo $expressionType->shortName; ?>' /></td></tr>
             <tr><td><label for='noteType'><b><?php echo _("Note Type");?></b></label></td>
 		<td>
 		<select name='noteType' id='noteType' style='width:135px'>
@@ -1005,7 +1007,7 @@ switch ($_GET['action']) {
 
 
 		<tr>
-		<td style="width:60px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitExpressionType();' id='update-expression-type' class='submit-button'></td>
+		<td class="wSixty"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitExpressionType();' id='update-expression-type' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("Close");?>' onclick="window.parent.tb_remove(); return false;" id='cancel-expression-type' class='cancel-button'></td>
 		</tr>
 		</table>
@@ -1100,7 +1102,7 @@ switch ($_GET['action']) {
 		?>
             <tr><td><label for='shortName'><b><?php echo _("Variable Name");?></b></label></td><td><?php if (isset($calendarSettings)) echo $calendarSettings->shortName; ?></td></tr>
             <tr><td><label for='value'><b><?php echo _("Value");?></b></label></td>
-			<td><input type='text' id='value' name='value' value='<?php if (isset($calendarSettings)) echo $calendarSettings->value; ?>' style='width:130px;'/></td>
+			<td><input type='text' id='value' name='value' value='<?php if (isset($calendarSettings)) echo $calendarSettings->value; ?>' class='wHundThirty'/></td>
 			</tr>
 
 		<?php
@@ -1113,7 +1115,7 @@ switch ($_GET['action']) {
 
 
 		<tr>
-		<td style="width:60px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitCalendarSettings();' class='submit-button'></td>
+		<td class='wSixty'><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitCalendarSettings();' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("Close");?>' onclick="window.parent.tb_remove(); return false" class='cancel-button'></td>
 		</tr>
 		</table>
@@ -1141,7 +1143,7 @@ switch ($_GET['action']) {
 		<div id='div_updateForm'>
 		<input type='hidden' name='qualifierID' id='qualifierID' value='<?php echo $qualifierID; ?>' />
 		<table class="thickboxTable" style="width:290px;padding:2px;">
-		<tr><td colspan='2'><span class='headerText'><?php echo $update.' '. _("Qualifier"); ?></span><br /><span id='span_errors' style='color:#F00;'></span><br /></td></tr>
+		<tr><td colspan='2'><span class='headerText'><?php echo $update.' '. _("Qualifier"); ?></span><br /><span id='span_errors' class='error'></span><br /></td></tr>
 
             <tr><td><label for='expressionTypeID'><b><?php echo _("For Expression Type");?></b></label></td>
 		<td>
@@ -1164,10 +1166,10 @@ switch ($_GET['action']) {
 		</td>
 		</tr>
 
-            <tr><td><label for='shortName'><b><?php echo _("Qualifier");?></b></label></td><td><input type='text' id='shortName' name='shortName' value='<?php if (isset($qualifier)) echo $qualifier->shortName; ?>' style='width:150px;'/></td></tr>
+            <tr><td><label for='shortName'><b><?php echo _("Qualifier");?></b></label></td><td><input type='text' id='shortName' name='shortName' value='<?php if (isset($qualifier)) echo $qualifier->shortName; ?>' class='wHundFifty'/></td></tr>
 
 		<tr>
-		<td style="width:60px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitQualifier();' id='submitQualifier' class='submit-button'></td>
+		<td class="wSixty"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitQualifier();' id='submitQualifier' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("Close");?>' onclick="window.parent.tb_remove(); return false" class='cancel-button'></td>
 		</tr>
 		</table>

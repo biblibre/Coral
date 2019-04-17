@@ -725,13 +725,13 @@ switch ($_GET['action']) {
 		$instance = new $className();
 		$instance->shortName = $shortName;
 
-		echo "<font color='red'>";
+		echo "<p class='fontColor'>";
 		try {
 			$instance->save();
 		} catch (Exception $e) {
 			echo $e->POSTMessage();
 		}
-		echo "</font>";
+		echo "</p>";
 
  		break;
 
@@ -765,7 +765,7 @@ switch ($_GET['action']) {
 		$instance = new $className(new NamedArguments(array('primaryKey' => $deleteID)));
 		$numberOfChildren = $instance->getNumberOfChildren();
 
-		echo "<font color='red'>";
+		echo "<p class='fontColor'>";
 
 		if ($numberOfChildren > 0){
 			//print out a friendly message...
@@ -778,7 +778,8 @@ switch ($_GET['action']) {
 				echo _("Unable to delete.  Please make sure no licenses are set up with this information.");
 			}
 		}
-		echo "</font>";
+		echo "</p>";
+
 
  		break;
 
@@ -875,13 +876,13 @@ switch ($_GET['action']) {
 
 		$user = new User(new NamedArguments(array('primaryKey' => $loginID)));
 
-		echo "<font color='red'>";
+		echo "<p class='fontColor'>";
 		try {
 			$user->delete();
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
-		echo "</font>";
+		echo "</p>";
 
  		break;
 
