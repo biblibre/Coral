@@ -64,12 +64,14 @@ span.normalText{color:#3D545D}
 a.smallLink {
 	font-size: 12px;
 	text-decoration: none;
-	color: #1B76A9;
+	color: #1B76A9 !important;
+
 }
 
 a.smallLink:hover {
 	text-decoration: none;
-	color: #ccc;
+	color: #ccc !important;
+	font-weight:lighter !important;
 }
 
 span.smallGreyText {
@@ -737,7 +739,8 @@ hr {
 }
 
 .noBorder > tbody > tr > td:nth-child(1) {
-			/*-*/width: 100px !important;
+			width: 100px !important;
+			padding-bottom: 10px;
 }
 
 a.newSearch:hover {
@@ -2119,6 +2122,8 @@ a.addLink{
 
 }
 
+/*---  links in black ---*/
 a{
-	font-weight: normal;
+	color: black !important;
+	text-decoration: underline;
 }

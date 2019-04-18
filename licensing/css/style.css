@@ -62,7 +62,7 @@ a:focus {color:#94a9be;outline: none;}
 a.smallLink {
 	font-size: 12px;
 	text-decoration: none;
-	color: #1B76A9;
+	color: #1B76A9 !important;
 }
 
 span.smallText{font-size:90%;}
@@ -577,7 +577,7 @@ td.tableIcons{
 
 .noBorder > tbody > tr > td:nth-child(1) {
 	width: 130px !important;
-	padding-bottom: 20px;
+	padding-bottom: 16px;
 	padding-left: 1px;
 }
 

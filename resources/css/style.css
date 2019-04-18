@@ -200,7 +200,7 @@ table.queueDataTable tr {
 
 /* following is all for admin and queue pages
 *************************/
-<<<<<<< 85d5755b28a26e6d402758f455eebacde467be2d
+
 
 div.ImportElement{margin-top: 5px; margin-right: 8px;}
 div.addElement{margin-top: 8px; margin-right: 8px; padding-bottom: 8px;}
@@ -1104,7 +1104,7 @@ select option.changeSelect{
 
 .noBorder > tbody > tr > td:nth-child(1) {
 	width: 100px !important;
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 	padding-left: 5px;
 }
 
@@ -1428,7 +1428,7 @@ td.searchRow input,
 td.searchRow select,
 td.searchRow multiple,
 td.searchRow textarea {
-	margin-top: 5px;
+	margin-top: 0px;
 }
 
 #div_additionalSearch > table > tbody > tr:nth-child(3) > td a.dp-choose-date {
@@ -2223,7 +2223,7 @@ input#stats {
 a.smallLink {
 	font-size: 12px;
 	text-decoration: none;
-	color: #1B76A9;
+	color: #1B76A9 !important;
 }
 
 .pagination > span, .pagination > a {
@@ -3432,8 +3432,9 @@ button.btn{
 
 
 /*---  links in black ---*/
+
 a{
 	color: black !important;
 	font-weight: normal;
-
+	text-decoration: underline;
 }

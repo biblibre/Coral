@@ -707,7 +707,8 @@ a {
 a.smallLink {
 	font-size: 12px;
 	text-decoration: none;
-	color: #1B76A9;
+	color: #1B76A9 !important;
+	
 }
 
 table.queueMenuTable {
@@ -2669,22 +2670,11 @@ button:focus{
 	padding-bottom: 15px;
 }
 
-button{
-	height: 25px;
-}
+
 
 a.addLink{
 	font-size: 1em;
 	color: black !important;
-
-
-}
-
-/*---  links in black ---*/
-
-a{
-	color: black !important;
-	font-weight: normal;
 
 }
 
@@ -2706,3 +2696,14 @@ button:focus{
 	outline-style: none !important;
 	font-weight:bold;
 }
+
+
+/*---  links in black ---*/
+
+a{
+	color: black !important;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+/*---  Button design ---*/
