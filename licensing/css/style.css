@@ -1933,4 +1933,5 @@ a.addLink{
 a{
 	color: black !important;
 	font-weight: normal;
+	text-decoration: underline;
 }
