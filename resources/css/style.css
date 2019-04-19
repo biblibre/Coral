@@ -883,6 +883,8 @@ table.borderedFormTable {
 }
 
 table.borderedFormTable td {
+
+
 	margin:3px;
 	padding:3px;
 	border-width: 1px 1px 0 0;
@@ -903,7 +905,7 @@ table.borderedFormTable td.alt {
 
 table.borderedFormTable td.searchRow {
 	margin: 3px;
-	padding: 10px;
+	padding: 6px;
 	background-color: #1B77AA;
 	-moz-border-radius: 0px;
 }
@@ -1154,7 +1156,7 @@ a#showMoreOptions:hover {
 }
 
 #searchCreateDateEnd {
-			margin-left: 7px;
+			margin-left: 3px;
 			margin-bottom: 10px;
 }
 
@@ -3437,4 +3439,9 @@ a{
 	color: black !important;
 	font-weight: normal;
 	text-decoration: underline;
+}
+
+/*---  over bootstrap formating ---*/
+label{
+	margin-bottom: 0rem !important;
 }
