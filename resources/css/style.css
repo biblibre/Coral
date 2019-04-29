@@ -3445,3 +3445,7 @@ a{
 label{
 	margin-bottom: 0rem !important;
 }
+ span.exportXLS{
+	 float:right;
+	 width: 42px;
+ }
