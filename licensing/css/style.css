@@ -1832,7 +1832,7 @@ td.helpfulLinks {
 }
 
 
-/*--- Ex style tags in HTML are now in CSS folder---*/
+/*--- Ex-style tags in HTML are now in CSS folder---*/
 
 p.fontLarge {
 	font-size:130%;
@@ -1866,7 +1866,7 @@ td.alignRight{
 	text-align:right;
 }
 
-td.wHundred{
+.wHundred{
 	width:100%;
 }
 
@@ -1902,6 +1902,189 @@ input.wEighty{
 
  }
 
+
  input.hundPercent{
 	 width:100%;
  }
+
+ /*--- ThickBox CSS---*/
+ .19 {
+ 	width: 19px;
+
+ }
+
+ .30 {
+ 	width: px;
+
+ }
+
+ .50 {
+ 	width: 50px;
+
+ }
+
+ .60{
+ 	width: 60px;
+ }
+
+ .65{
+ 	width: 65px;
+ }
+
+ .70{
+ 	width: 70px;
+ }
+
+ .80{
+ 	width: 80px;
+ }
+
+ .100{
+ 	width: 100px;
+ }
+
+ .115{
+ 	width: 115px;
+ }
+
+ .120{
+	 width: 120px;
+ }
+
+ .135 {
+ 	width: 135px;
+
+ }
+
+ .145 {
+ 	width: 145px;
+
+ }
+
+ .150{
+ 	width: 150px;
+ }
+
+ .155 {
+ 	width: 155px;
+
+ }
+
+ .180 {
+	 width: 180px;
+
+ }
+
+ .185 {
+ 	width: 185px;
+
+ }
+
+.200 {
+	width: 200px;
+
+}
+
+.240{
+	width: 240px;
+}
+
+.255{
+	width: 255px;
+}
+
+.280 {
+	width: 280px;
+
+}
+
+.285 {
+	width: 285px;
+
+}
+
+.290 {
+	width: 290px;
+
+}
+
+.300 {
+	width: 300px;
+
+}
+
+.310 {
+	width: 310px;
+
+}
+
+.340 {
+	width: 340px;
+
+}
+
+.350 {
+	width: 350px;
+
+}
+
+.400 {
+	width: 400px;
+
+}
+
+.420 {
+	width: 420px;
+
+}
+
+
+.448 {
+	width: 448px;
+
+}
+
+.450 {
+	width: 450px;
+
+}
+
+.540{
+ width: 540px;
+}
+
+.550{
+ width: 550px;
+}
+
+.840{
+ width: 840px;
+}
+
+.900{
+ width: 900px;
+}
+
+
+
+.padding2 {
+	padding:2px;
+}
+
+.marginL2{
+	margin-left:2px;
+}
+
+.marginT4{
+	margin-top:4px
+}
+
+.thickboxTitleImg
+{
+	background-image:url('images/tbtitle.gif');
+	width:100%;
+}
+
+.lightGreyBack{
+	background-color: #e5ebef;
+}

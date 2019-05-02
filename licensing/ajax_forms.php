@@ -159,7 +159,7 @@ switch ($_GET['action']) {
 		<form id="uploadDoc" action="ajax_processing.php?action=submitDocument" method="POST" enctype="multipart/form-data">
 		<input type='hidden' id='licenseID' name='licenseID' value='<?php echo $licenseID; ?>'>
 		<input type='hidden' id='documentID' name='documentID' value='<?php echo $documentID; ?>'>
-		<table class="thickboxTable" style="width:310px;">
+		<table class='thickboxTable .310' >
 		<tr>
 		<td colspan='2'><span class='headerText'><?php echo _("Document Upload");?></span><br /><span id='span_errors'></span><br /></td>
 		</tr>
@@ -174,7 +174,7 @@ switch ($_GET['action']) {
 		<td class="rightTop"><label for="documentType" class="formText"><?php echo _("Document Type:");?></label><br /><span id='span_error_documentTypeID' class='errorText'></span></td>
 		<td>
 		<span id='span_documentType'>
-		<select name='documentTypeID' id='documentTypeID' style='width:185px;'>
+		<select name='documentTypeID' id='documentTypeID' class="185">
 		<?php
 
 		$display = array();
@@ -203,7 +203,7 @@ switch ($_GET['action']) {
 		<td class='rightTop'><label for="documentType" class="formText"><?php echo _("Parent:");?></label></td>
 		<td>
 		<div>
-		<select name='parentDocumentID' id='parentDocumentID' style='width:185px;'>
+		<select name='parentDocumentID' id='parentDocumentID' class="185">
 		<option value=''></option>
 		<?php
 
@@ -234,7 +234,7 @@ switch ($_GET['action']) {
 		<tr>
 		<td class='rightTop'><label for="shortName" class="formText"><?php echo _("Name:");?></label><br /><span id='span_error_shortName' class='errorText'></span></td>
 		<td>
-		<textarea name='shortName' id = 'shortName' cols='28' rows='2' style='width:185px;'><?php echo $document->shortName; ?></textarea>
+		<textarea name='shortName' id = 'shortName' cols='28' rows='2' class="185"><?php echo $document->shortName; ?></textarea>
 		</td>
 		</tr>
 		<tr>
@@ -292,7 +292,7 @@ switch ($_GET['action']) {
 
 		?>
 		<div id='div_archiveDocumentForm'>
-		<table class="thickboxTable" style="width:200px;">
+		<table class="thickboxTable 200" >
 		<tr>
 		<td><span class='headerText'><?php echo _("Archive Document Date");?></span><br /><br /><span id='span_errors'></span></td>
 		</tr>
@@ -330,7 +330,7 @@ switch ($_GET['action']) {
 		<div id='div_sfxForm'>
 		<input type='hidden' id='sfxProviderID' name='sfxProviderID' value='<?php echo $sfxProviderID; ?>'>
 
-		<table class="thickboxTable" style="width:240px;">
+		<table class="thickboxTable 240">
 		<tr>
 		<td colspan='2'><span class='headerText'><?php echo _("Terms Tool Resource Link");?></span><br /><span id='span_errors'></span><br /></td>
 		</tr>
@@ -338,7 +338,7 @@ switch ($_GET['action']) {
 
 		<tr>
 		<td colspan='2'><label for="documentID" class="formText"><?php echo _("For Document:");?></label>  <span id='span_error_documentID' class='errorText'></span><br />
-		<select name='documentID' id='documentID' style='width:200px;'>
+		<select name='documentID' id='documentID' class='200'>
 		<option value=''></option>
 		<?php
 
@@ -396,14 +396,14 @@ switch ($_GET['action']) {
 
 		?>
 		<div id='div_signatureForm'>
-		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:100%;">
+		<table class="thickboxTable thickboxTitleImg">
 		<tr>
             <td><span class='headerText'><?php echo _("Signatures");?></span><br /><span id='span_errors' class="error"'></span></td>
 
 		</tr>
 		<tr>
 
-		<table class='dataTable' style='width:448px;margin-left:2px;'>
+		<table class='dataTable' class='448 marginL2'>
 		<tr>
 		<th><?php echo _("Signer Name");?></th>
 		<th><?php echo _("Date");?></th>
@@ -542,7 +542,7 @@ switch ($_GET['action']) {
 		<div id='div_expressionForm'>
 		<input type='hidden' id='expressionID' name='expressionID' value='<?php echo $expressionID; ?>'>
 
-		<table class="thickboxTable" style="width:340px;">
+		<table class="thickboxTable 340" >
 		<tr>
 		<td colspan='2'><span class='headerText'><?php echo _("Expressions");?></span><br /><span id='span_errors'></span><br /></td>
 		</tr>
@@ -550,7 +550,7 @@ switch ($_GET['action']) {
 
 		<tr>
 		<td colspan='2'><label for="documentID" class="formText"><?php echo _("Document:");?></label><br />
-		<select name='documentID' id='documentID' style='width:280px;'>
+		<select name='documentID' id='documentID' class='280'>
 		<?php
 
 		$display = array();
@@ -669,7 +669,7 @@ switch ($_GET['action']) {
 		?>
 		<div id='div_expressionNotesForm'>
 		<input type='hidden' name='expressionID' id='expressionID' value='<?php echo $expressionID; ?>'>
-		<table class="thickboxTable" style="width:420px;">
+		<table class="thickboxTable 420" >
 		<tr>
 		<td><span class='headerText'><?php echo ucfirst($noteType); ?> <?php echo _("Notes");?></span><br />
 		<b><?php echo _("For Document Text:");?></b>  <?php echo $documentText; ?><br />
@@ -679,9 +679,9 @@ switch ($_GET['action']) {
 		<tr>
 		<td>
 
-		<table class='dataTable' style='width:420px;'>
+		<table class='dataTable 420'>
 		<tr>
-		<th style='width:19px;'>&nbsp;</th>
+		<th class='19'>&nbsp;</th>
 		<th><b><?php echo ucfirst($noteType); ?> <?php echo _("Notes");?></b></th>
 		<th>&nbsp;</th>
 		<th>&nbsp;</th>
@@ -786,7 +786,7 @@ switch ($_GET['action']) {
 		<form id='attachmentForm'>
 		<input type='hidden' id='attachmentID' name='attachmentID' value='<?php echo $attachmentID; ?>'>
 		<input type='hidden' id='licenseID' name='licenseID' value='<?php echo $_GET['licenseID']; ?>'>
-		<table class="thickboxTable" style="width:300px;">
+		<table class="thickboxTable 300">
 		<tr>
 		<td colspan='2'><span class='headerText'><?php echo _("Attachments");?></span><br /><span id='span_errors'></span><br /></td>
 		</tr>
@@ -805,7 +805,7 @@ switch ($_GET['action']) {
 
 		</tr>
 		<tr>
-		<td colspan='2' style="width:300px;"><label for="upload_attachment_button" class="formText"><?php echo _("Attachments:");?></label><span id='div_file_message'></span>
+		<td colspan='2' class='300'><label for="upload_attachment_button" class="formText"><?php echo _("Attachments:");?></label><span id='div_file_message'></span>
 		<br /><span id='div_file_success'></span>
 		<?php
 
@@ -857,7 +857,7 @@ switch ($_GET['action']) {
 
 		?>
 		<div id='div_updateForm'>
-		<table class="thickboxTable" style="width:400px;">
+		<table class="thickboxTable 400">
 		<tr>
 		<td colspan='3'><span class='headerText'><?php echo _("Edit");?></span><br /><span id='span_errors' class='error'></span><br /></td>
 		</tr>
@@ -908,9 +908,9 @@ switch ($_GET['action']) {
 
 		?>
 		<div id='div_updateForm'>
-		<table class="thickboxTable" style="width:285px;padding:2px;">
+		<table class="thickboxTable 285 padding2" >
 		<tr><td colspan='3'><span class='headerText'><?php echo $update.' '. _("User"); ?></span><br /><span id='span_errors' class='error'></span><br /></td></tr>
-            <tr><td colspan='2' style='width:135px;'><label for='loginID'><b><?php echo _("Login ID");?></b></label></td><td><input type='text' id='loginID' name='loginID' value='<?php echo $loginID; ?>' class='WHundForty' /></td></tr>
+            <tr><td colspan='2' class='135'><label for='loginID'><b><?php echo _("Login ID");?></b></label></td><td><input type='text' id='loginID' name='loginID' value='<?php echo $loginID; ?>' class='WHundForty' /></td></tr>
             <tr><td colspan='2'><label for='firstName'><b><?php echo _("First Name");?></b></label></td><td><input type='text' id='firstName' name='firstName' value="<?php if (isset($updateUser)) echo $updateUser->firstName; ?>" class='WHundForty' /></td></tr>
             <tr><td colspan='2'><label for='lastName'><b><?php echo _("Last Name"); ?></b></label></td><td><input type='text' id='lastName' name='lastName' value="<?php if (isset($updateUser)) echo $updateUser->lastName; ?>" class='WHundForty' /></td></tr>
             <tr><td><label for='privilegeID'><b><?php echo _("Privilege"); ?></b></label></td>
@@ -923,7 +923,7 @@ switch ($_GET['action']) {
 
 		</td>
 		<td>
-		<select name='privilegeID' id='privilegeID' style='width:145px'>
+		<select name='privilegeID' id='privilegeID' class='145'>
 		<?php
 
 
@@ -960,8 +960,8 @@ switch ($_GET['action']) {
 
 		<?php } else { echo "<input type='hidden' id='emailAddressForTermsTool' name='emailAddressForTermsTool' value='' /><br />"; }?>
 
-		<tr class="vMiddle">
-		<td colspan='2' style="width:60px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitUserData("<?php echo $loginID; ?>");' class='submit-button'></td>
+		<tr class='vMiddle'>
+		<td colspan='2' class='60'><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitUserData("<?php echo $loginID; ?>");' class='submit-button'></td>
 		<td><input type='button' value="<?php echo _("Close");?>" onclick="window.parent.tb_remove(); return false" id='update-user-cancel' class='cancel-button'></td>
 		</tr>
 
@@ -991,12 +991,12 @@ switch ($_GET['action']) {
 		?>
 		<div id='div_updateForm'>
 		<input type='hidden' name='expressionTypeID' id='expressionTypeID' value='<?php echo $expressionTypeID; ?>' />
-		<table class="thickboxTable" style="width:260px;padding:2px;">
+		<table class='thickboxTable 260 padding2'>
 		<tr><td colspan='2'><span class='headerText'><?php echo $update.' '. _("Expression Type");?></span><br /><span id='span_errors' class='error'></span><br /></td></tr>
             <tr><td><label for='shortName'><b><?php echo _("Expression Type");?></b></label></td><td><input type='text' id='shortName' class= 'wHunderT' name='shortName' value='<?php if (isset($expressionType)) echo $expressionType->shortName; ?>' /></td></tr>
             <tr><td><label for='noteType'><b><?php echo _("Note Type");?></b></label></td>
 		<td>
-		<select name='noteType' id='noteType' style='width:135px'>
+		<select name='noteType' id='noteType' class='135'>
 		<option value='Internal' <?php if ((isset($expressionType)) && ($expressionType->noteType == 'Internal')) echo "selected"; ?> ><?php echo _("Internal");?></option>
 		<option value='Display' <?php if ((isset($expressionType)) && ($expressionType->noteType == 'Display')) echo "selected"; ?> ><?php echo _("Display");?></option>
 		</select>
@@ -1007,7 +1007,7 @@ switch ($_GET['action']) {
 
 
 		<tr>
-		<td class="wSixty"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitExpressionType();' id='update-expression-type' class='submit-button'></td>
+		<td class='wSixty'><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitExpressionType();' id='update-expression-type' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("Close");?>' onclick="window.parent.tb_remove(); return false;" id='cancel-expression-type' class='cancel-button'></td>
 		</tr>
 		</table>
@@ -1031,7 +1031,7 @@ switch ($_GET['action']) {
 		?>
 		<div id='div_updateForm'>
 		<input type='hidden' name='calendarSettingsID' id='calendarSettingsID' value='<?php echo $calendarSettingsID; ?>' />
-		<table class="thickboxTable" style="width:260px;padding:2px;">
+		<table class='thickboxTable 260 padding2'>
 		<tr><td colspan='2'><span class='headerText'><?php echo $update.' '._("Calendar Settings"); ?></span><br /><br /></td></tr>
 
 		<?php
@@ -1044,7 +1044,7 @@ switch ($_GET['action']) {
 			<td>
 
 
-			<select multiple name='value' id='value' style='width:155px'>
+			<select multiple name='value' id='value' class='155'>
 			<?php
 
 			$display = array();
@@ -1072,7 +1072,7 @@ switch ($_GET['action']) {
 
                 <td><label for='value'><b><?php echo _("Value");?></b></label></td>
 			<td>
-			<select multiple name='value' id='value' style='width:155px'>
+			<select multiple name='value' id='value' class='155'>
 			<?php
 
 			$authorizedSite = new AuthorizedSite();
@@ -1142,12 +1142,12 @@ switch ($_GET['action']) {
 		?>
 		<div id='div_updateForm'>
 		<input type='hidden' name='qualifierID' id='qualifierID' value='<?php echo $qualifierID; ?>' />
-		<table class="thickboxTable" style="width:290px;padding:2px;">
+		<table class='thickboxTable 290 padding2'>
 		<tr><td colspan='2'><span class='headerText'><?php echo $update.' '. _("Qualifier"); ?></span><br /><span id='span_errors' class='error'></span><br /></td></tr>
 
             <tr><td><label for='expressionTypeID'><b><?php echo _("For Expression Type");?></b></label></td>
 		<td>
-		<select name='expressionTypeID' id='expressionTypeID' style='width:155px'>
+		<select name='expressionTypeID' id='expressionTypeID' class='155'>
 		<?php
 
 		$display = array();
@@ -1169,7 +1169,7 @@ switch ($_GET['action']) {
             <tr><td><label for='shortName'><b><?php echo _("Qualifier");?></b></label></td><td><input type='text' id='shortName' name='shortName' value='<?php if (isset($qualifier)) echo $qualifier->shortName; ?>' class='wHundFifty'/></td></tr>
 
 		<tr>
-		<td class="wSixty"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitQualifier();' id='submitQualifier' class='submit-button'></td>
+		<td class='wSixty'><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitQualifier();' id='submitQualifier' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("Close");?>' onclick="window.parent.tb_remove(); return false" class='cancel-button'></td>
 		</tr>
 		</table>
