@@ -35,17 +35,17 @@ $pageTitle=_('Not Available');
 <center>
 <table>
 <tr>
-<td style='vertical-align:top;'>
-<div style="text-align:left;">
+<td class='verticalAlignT'>
+<div class='textAlignL'>
 
 <center>
-<table class="titleTable" style="background-image:url('images/licensingtitle.jpg');background-repeat:no-repeat;width:900px;text-align:left;">
-<tr style='vertical-align:bottom'>
+<table class="titleTable titleTableBackgroundImage">
+<tr class='verticalAlignB'>
 <td>
 &nbsp;
 </td>
 
-<td style='text-align:right;'>
+<td class='textAlignR'>
 &nbsp;
 </td>
 

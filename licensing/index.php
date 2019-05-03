@@ -40,24 +40,24 @@ $_SESSION['ref_script']=$currentPage;
 ?>
 
 
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
-<tr style='vertical-align:top;'>
-<td style="width:155px;padding-right:10px;">
+<table class="headerTable backgroundTableImage">
+<tr class="verticalAlignT">
+<td class='widthPadMedium'>
 	<table class='noBorder'>
-	<tr><td style="width:75px;">
-	<span style='font-size:130%;font-weight:bold;'><?php echo _("Search");?></span><br />
+	<tr><td class='75'>
+	<span class='titleText'><?php echo _("Search");?></span><br />
 	<a href='javascript:void(0)' class='newSearch'><?php echo _("new search");?></a>
 	</td>
 	<td><div id='div_feedback'>&nbsp;</div>
 	</td></tr>
 	</table>
 
-	<table class='borderedFormTable' style="width:150px">
+	<table class='borderedFormTable 150'>
 
 	<tr>
 	<td class='searchRow'><label for='searchName'><b><?php echo _("Name (contains)");?></b></label>
 	<br />
-	<input type='text' name='searchName' id='searchName' style='width:145px' value="<?php if (isset($_SESSION['license_shortName']) && ($reset != 'Y')) echo $_SESSION['license_shortName']; ?>" /><br />
+	<input type='text' name='searchName' id='searchName' class='145' value="<?php if (isset($_SESSION['license_shortName']) && ($reset != 'Y')) echo $_SESSION['license_shortName']; ?>" /><br />
 	<div id='div_searchName' style='<?php if ((!isset($_SESSION['license_shortName'])) || ($reset == 'Y')) echo "display:none;"; ?>margin-left:123px;'><input type='button' name='searchName' value='<?php echo _("go!");?>' class='searchButton' /></div>
 	</td>
 	</tr>
@@ -74,7 +74,7 @@ $_SESSION['ref_script']=$currentPage;
 			$orgArray = $license->getOrganizationList();
 			?>
 
-			<select name='organizationID' id='organizationID' style='width:150px' onchange='javsacript:updateSearch();'>
+			<select name='organizationID' id='organizationID' class='150' onchange='javsacript:updateSearch();'>
 			<option value=''><?php echo _("All");?></option>
 
 			<?php
@@ -89,7 +89,7 @@ $_SESSION['ref_script']=$currentPage;
 			</select>
 			<?php
 		}catch (Exception $e){
-			echo "<span style='color:red'>"._("There was an error processing this request - please verify configuration.ini is set up for organizations correctly and the database and tables have been created.")."</span>";
+			echo "<span class='redText'>"._("There was an error processing this request - please verify configuration.ini is set up for organizations correctly and the database and tables have been created.")."</span>";
 		}
 	?>
 
@@ -100,7 +100,7 @@ $_SESSION['ref_script']=$currentPage;
 	<tr>
 	<td class='searchRow'><label for='consortium'><b><?php echo _("Consortium");?></b></label>
 	<br />
-	<select name='consortiumID' id='consortiumID' style='width:150px' onchange='javsacript:updateSearch();'>
+	<select name='consortiumID' id='consortiumID' class='150' onchange='javsacript:updateSearch();'>
 	<option value=''><?php echo _("All");?></option>
 	<option value='0'><?php echo _("(none)");?></option>
 	<?php
@@ -123,7 +123,7 @@ $_SESSION['ref_script']=$currentPage;
 	<tr>
 	<td class='searchRow'><label for='statusID'><b><?php echo _("Status");?></b></label>
 	<br />
-	<select name='statusID' id='statusID' style='width:150px' onchange='javsacript:updateSearch();'>
+	<select name='statusID' id='statusID' class='150' onchange='javsacript:updateSearch();'>
 	<option value='' selected></option>
 	<?php
 
@@ -148,7 +148,7 @@ $_SESSION['ref_script']=$currentPage;
 	<tr>
 	<td class='searchRow'><label for='documentTypeID'><b><?php echo _("Document Type");?></b></label>
 	<br />
-	<select name='documentTypeID' id='documentTypeID' style='width:150px' onchange='javsacript:updateSearch();'>
+	<select name='documentTypeID' id='documentTypeID' class='150' onchange='javsacript:updateSearch();'>
 	<option value='' selected></option>
 	<?php
 
@@ -179,7 +179,7 @@ $_SESSION['ref_script']=$currentPage;
 	<tr>
 	<td class='searchRow'><label for='expressionTypeID'><b><?php echo _("Expression Type");?></b></label>
 	<br />
-	<select name='expressionTypeID' id='expressionTypeID' style='width:150px'>
+	<select name='expressionTypeID' id='expressionTypeID' class='150'>
 	<option value='' selected></option>
 	<?php
 
@@ -280,5 +280,3 @@ $_SESSION['ref_script']=$currentPage;
 <?php
 include 'templates/footer.php';
 ?>
-
-

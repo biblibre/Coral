@@ -46,7 +46,7 @@ $calendarSettings = new CalendarSettings();
 try{
 	$calendarSettingsArray = $calendarSettings->allAsArray();
 }catch(Exception $e){
-	echo "<span style='color:red'>"._("There was an error with the CalendarSettings Table please verify the table has been created.")."</span>";
+	echo "<span class='redText'>"._("There was an error with the CalendarSettings Table please verify the table has been created.")."</span>";
 	exit;
 }
 
@@ -80,7 +80,7 @@ $endDateName = "subscriptionEndDate";
 
 	// Validate the config settings
 	if ($config_error) {
-		echo "<span style='color:red'>"._("There was an error with the CalendarSettings Configuration.")."</span>";
+		echo "<span class='redText'>"._("There was an error with the CalendarSettings Configuration.")."</span>";
 		exit;
 	}
 
@@ -109,9 +109,9 @@ $query = $query . "ORDER BY `sortdate`, `$resource_databaseName`.`Resource`.`tit
 $result = mysqli_query($link, $query) or die(_("Bad Query Failure: ".mysqli_error($link)));
 ?>
 
-<div style='text-align:left;'>
-	<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
-		<tr style='vertical-align:top;'>
+<div class='textAlignL'>
+	<table class="headerTable backgroundTableImage" >
+		<tr class='verticalAlignT'>
 			<td>
 				<b><?php echo _("Upcoming License Renewals");?></b>
 			</td>
@@ -119,7 +119,7 @@ $result = mysqli_query($link, $query) or die(_("Bad Query Failure: ".mysqli_erro
 	</table>
 
 	<div id="searchResults">
-		<table style="width: 100%;" class="dataTable">
+		<table class="dataTable wHundred">
 			<tbody>
 			<?php
 				$mYear = "";
@@ -207,12 +207,12 @@ $result = mysqli_query($link, $query) or die(_("Bad Query Failure: ".mysqli_erro
 						}
 					$html = $html . " ] - " . $row["resourceTypeName"] . " ";
                     if ($interval->invert) {
-                        $html = $html . "- <strong style='color:red'>"._("Expired ").$num_days._(" days ago")."</strong>";
+                        $html = $html . "- <strong class='redText'>"._("Expired ").$num_days._(" days ago")."</strong>";
                     } else {
 					    $html = $html . _("- Expires in ");
 
 						if ($date1 > $date2) {
-							$html = $html . "<span style='color:red'>(" . $num_days . _(" days)")."</span>";
+							$html = $html . "<span class='redText'>(" . $num_days . _(" days)")."</span>";
 						} else {
 							$html = $html . $num_days . _(" days ");
 						}

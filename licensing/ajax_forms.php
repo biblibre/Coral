@@ -596,7 +596,7 @@ switch ($_GET['action']) {
 		</tr>
 
 
-		<tr id='tr_Qualifiers' <?php if (count($expressionQualifierArray) == 0) echo "style='display:none;'"; ?> >
+		<tr id='tr_Qualifiers' <?php if (count($expressionQualifierArray) == 0) echo "class='noDislpaying'"; ?> >
 		<td colspan='2'><label for="qualifierID" class="formText"><?php echo _("Qualifier:");?></label><br />
 		<div id='div_Qualifiers'>
 
@@ -919,7 +919,7 @@ switch ($_GET['action']) {
 				<a title = "<?php echo _("Add/Edit users can add, edit, or remove licenses and associated fields")."<br /><br />"._("Admin users have access to the Admin page and the SFX tab.")."<br /><br />"._("Restricted users do not have the ability to view documents")."<br /><br />"._("View only users can view all license information, including the license pdf");?>" href=""><img src='images/help.gif'></a>
 				</fieldset>
 
-				<div id="footnote_priv" style='display:none;'><?php echo _("Add/Edit users can add, edit, or remove licenses and associated fields")."<br /><br />"._("Admin users have access to the Admin page and the SFX tab.")."<br /><br />"._("Restricted users do not have the ability to view documents")."<br /><br />"._("View only users can view all license information, including the license pdf");?></div>
+				<div id="footnote_priv" class='noDislpaying'><?php echo _("Add/Edit users can add, edit, or remove licenses and associated fields")."<br /><br />"._("Admin users have access to the Admin page and the SFX tab.")."<br /><br />"._("Restricted users do not have the ability to view documents")."<br /><br />"._("View only users can view all license information, including the license pdf");?></div>
 
 		</td>
 		<td>

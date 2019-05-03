@@ -32,7 +32,7 @@ $currentPage = $parts[count($parts) - 1];
 //this will redirect back to the actual license record
 if ((isset($_GET['editLicenseForm'])) && ($_GET['editLicenseForm'] == "Y")){
 	if (((isset($_GET['licenseShortName'])) && ($_GET['licenseShortName'] == "")) && ((isset($_GET['licenseOrganizationID'])) && ($_GET['licenseOrganizationID'] == ""))){
-		$err="<span style='color:red;text-align:left;'>"._("Both license name and organization must be filled out.  Please try again.")."</span>";
+		$err="<span class='redErrMessage'>"._("Both license name and organization must be filled out.  Please try again.")."</span>";
 	}else{
 		$util->fixLicenseFormEnter($_GET['editLicenseID']);
 	}
@@ -91,17 +91,17 @@ $coralURL = $util->getCORALURL();
 <table id="main-table">
 
 <tr>
-<td style='vertical-align:top;'>
-<div style="text-align:left;">
+<td class='verticalAlignT'>
+<div class="textAlignL">
 
 <center>
 
 <center>
 
-<table class="titleTable" style="width:1125px;text-align:left;">
+<table class="titleTable titleTableStyle">
 
-    <tr style='vertical-align:top;'>
-        <td style='height:53px;' colspan='3'>
+    <tr class='verticalAlignT'>
+        <td class='h53' colspan='3'>
 
             <div id="main-title">
                 <img src="images/title-icon-licensing.png" />
@@ -109,8 +109,8 @@ $coralURL = $util->getCORALURL();
                 <span id="powered-by-text"><?php echo _("Powered by");?><img src="images/logo-coral.jpg" /></span>
             </div>
 
-            <div id="menu-login" style='margin-top:1px;'>
-                <span class='smallText' style='color:#526972;'>
+            <div id="menu-login" class='menuLoginStyle'>
+                <span class='smallText blueGrey'>
                 <?php
                     echo _("Hello") . ", ";
                     //user may not have their first name / last name set up
@@ -171,8 +171,8 @@ $coralURL = $util->getCORALURL();
         </td>
     </tr>
 
-<tr style='vertical-align:top'>
-<td style='width:870px;height:19px;' id='main-menu-titles' colspan="2">
+<tr class="verticalAlignT">
+<td class='mainMenuTitleStyle' id='main-menu-titles' colspan="2">
 <?php
 if ($user->isAdmin()) { ?>
 
@@ -327,7 +327,7 @@ else { ?>
 } ?>
 </td>
 
-<td style='width:130px;height:19px;' align='right'>
+<td class="wrapTitleMenu">
 <?php
 
 //only show the 'Change Module' if there are other modules installed or if there is an index to the main CORAL page
@@ -337,7 +337,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 
 	?>
 
-	<div style='text-align:left;'>
+	<div class="textAlignL">
 		<ul class="tabs">
 <!-- 		<li style="background: url('images/change/<?php echo $http_lang?>/coral-change.gif') no-repeat right;">
  -->        <li id="change-mod-menu"><span><?php echo _("Change Module");?></span><i class="fa fa-chevron-down"></i>
@@ -394,4 +394,4 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 			document.cookie ='lang='+lang+';path=/'+';domain='+wl.hostname+';expires='+now;
 	    }
     </script>
-<span id='span_message' style='color:red;text-align:left;'><?php if (isset($err)) echo $err; ?></span>
+<span id='span_message' class='redErrMessage'><?php if (isset($err)) echo $err; ?></span>
