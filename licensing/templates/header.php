@@ -327,7 +327,7 @@ else { ?>
 } ?>
 </td>
 
-<td class="wrapTitleMenu">
+<td class='wrapTitleMenu' align='right'>
 <?php
 
 //only show the 'Change Module' if there are other modules installed or if there is an index to the main CORAL page
