@@ -31,7 +31,7 @@ $currentPage = $parts[count($parts) - 1];
 //this will redirect back to the actual license record
 if ((isset($_GET['editLicenseForm'])) && ($_GET['editLicenseForm'] == "Y")){
 	if (((isset($_GET['licenseShortName'])) && ($_GET['licenseShortName'] == "")) && ((isset($_GET['licenseOrganizationID'])) && ($_GET['licenseOrganizationID'] == ""))){
-		$err="<span style='color:red;text-align:left;'>" . _("Both license name and organization must be filled out.  Please try again.") . "</span>";
+		$err="<span class='redErrMessage'>" . _("Both license name and organization must be filled out.  Please try again.") . "</span>";
 	}else{
 		$util->fixLicenseFormEnter($_GET['editLicenseID']);
 	}
@@ -42,7 +42,7 @@ $coralURL = $util->getCORALURL();
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE htmborderedl PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -90,24 +90,24 @@ $coralURL = $util->getCORALURL();
 <table id="main-table">
 
 <tr>
-<td style='vertical-align:top;'>
-<div style="text-align:left;">
+<td class='verticalAlignT'>
+<div class='textAlignL'>
 
 <center>
-    
-<table class="titleTable" style="width:1024px;text-align:left;">
 
-    <tr style='vertical-align:top;'>
-        <td style='height:53px;' colspan='3'>
-                
+<table class="titleTable titleTableStyle">
+
+    <tr class='verticalAlignT'>
+        <td class='h53' colspan='3'>
+
             <div id="main-title">
                 <img src="images/title-icon-management.png" />
                 <span id="main-title-text"><?php echo _("Management"); ?></span>
                 <span id="powered-by-text"><?php echo _("Powered by");?><img src="images/logo-coral.jpg" /></span>
             </div>
 
-            <div id="menu-login" style='margin-top:1px;'>
-                <span class='smallText' style='color:#526972;'>
+            <div id="menu-login" class='marginT1'>
+                <span class='smallText blueGrey'>
                 <?php
                 	echo _("Hello") . ", ";
                 	//user may not have their first name / last name set up
@@ -132,18 +132,18 @@ $coralURL = $util->getCORALURL();
                                 while (($file = readdir($dh)) !== false) {
                                     if (is_dir("$route/$file") && $file!="." && $file!=".."){
                                         $lang[]=$file;
-                                    } 
-                                } 
-                                closedir($dh); 
-                            } 
+                                    }
+                                }
+                                closedir($dh);
+                            }
                         }else {
-                            echo "<br>"._("Invalid translation route!"); 
+                            echo "<br>"._("Invalid translation route!");
                         }
                         // Get language of navigator
                         $defLang = $lang_name->getBrowserLanguage();
-                        
+
                         // Show an ordered list
-                        sort($lang); 
+                        sort($lang);
                         for($i=0; $i<count($lang); $i++){
                             if(isset($_COOKIE["lang"])){
                                 if($_COOKIE["lang"]==$lang[$i]){
@@ -160,7 +160,7 @@ $coralURL = $util->getCORALURL();
                             }
                         }
                         ?>
-                        
+
                     </select>
                 </span>
             </div>
@@ -168,8 +168,8 @@ $coralURL = $util->getCORALURL();
         </td>
     </tr>
 
-<tr style='vertical-align:top'>
-<td style='width:870px;height:19px;' id="main-menu-titles" colspan="2">
+<tr class='verticalAlignT'>
+<td class='mainMenuTitleStyle' id="main-menu-titles" colspan="2">
 <?php
 
 /*---
@@ -224,10 +224,10 @@ echo '</div>';
             <img src="images/menu/icon-admin.png" />
             <span><?php echo _("Admin");?></span>
         </div>
-    </a>   
+    </a>
 
 <?php }else if ($user->canEdit()){ ?>
-	
+
     <a href='index.php'>
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
             <img src="images/menu/icon-home.png" />
@@ -263,7 +263,7 @@ echo '</div>';
 
 </td>
 
-<td style='width:130px;height:19px;' align='right'>
+<td class ='wrapTitleMenu' align='right'>
 <?php
 
 //only show the 'Change Module' if there are other modules installed or if there is an index to the main CORAL page
@@ -273,7 +273,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 
 	?>
 
-	<div style='text-align:left;'>
+	<div class='textAlignL'>
 		<ul class="tabs">
 			<li id="change-mod-menu"><span><?php echo _("Change Module");?></span><i class="fa fa-chevron-down"></i>
 				<ul class="coraldropdown">
@@ -320,7 +320,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
             setLanguage($("#lang").val());
             location.reload();
         });
-        
+
         function setLanguage(lang) {
 			var wl = window.location, now = new Date(), time = now.getTime();
             var cookievalid=2592000000; // 30 days (1000*60*60*24*30)
@@ -329,4 +329,4 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->or
 			document.cookie ='lang='+lang+';path=/'+';domain='+wl.hostname+';expires='+now;
 	    }
     </script>
-<span id='span_message' style='color:red;text-align:left;'><?php if (isset($err)) echo $err; ?></span>
+<span id='span_message' class='redErrMessage'><?php if (isset($err)) echo $err; ?></span>
