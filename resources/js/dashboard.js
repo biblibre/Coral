@@ -1,13 +1,15 @@
 $(document).ready(function(){
 
 
-  $("#submitDashboard").live("click", function() {
+  $("#submitDashboard").on("click", function() {
         submitDashboard();
     });
 
-  $("#submitDashboardYearlyCosts").live("click", function() {
+  $("#submitDashboardYearlyCosts").on("click", function() {
         submitDashboardYearlyCosts();
     });
+
+  $("select").bsMultiSelect();
 
 });
 

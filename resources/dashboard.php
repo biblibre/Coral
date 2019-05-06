@@ -1,9 +1,12 @@
 <?php
 	include_once 'directory.php';
 	$pageTitle=_('Dashboard');
-    $customJSInclude =  '<script type="text/javascript" src="../js/plugins/jquery-1.8.0.js"></script>' . "\n";
+    $customJSInclude =  '<script type="text/javascript" src="../js/plugins/jquery-3.4.1.min.js"></script>' . "\n";
     $customJSInclude .= '<script type="text/javascript" src="../js/plugins/datatables.min.js"></script>' . "\n";
     $customJSInclude .= '<script type="text/javascript" src="../js/plugins/datatables_defaults.js"></script>' . "\n";
+    $customJSInclude .= '<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>' . "\n";
+    $customJSInclude .= '<script type="text/javascript" src="../js/plugins/popper.min.js"></script>' . "\n";
+    $customJSInclude .= '<script type="text/javascript" src="../js/plugins/bsmultiselect/js/BsMultiSelect.min.js"></script>' . "\n";
 	include 'templates/header.php';
     $dashboard = new Dashboard();
 
