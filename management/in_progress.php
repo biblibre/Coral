@@ -28,7 +28,7 @@ $_SESSION['ref_script']=$currentPage;
 
 ?>
 
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
+<table class="headerTable MngtHeaderImg">
 <tr><td>
 <span class="headerText"><?php echo _("Licenses In Progress");?>&nbsp;&nbsp;<a href='index.php'><?php echo _("Browse All");?></a></span>
 <br />
@@ -44,5 +44,3 @@ $_SESSION['ref_script']=$currentPage;
 <?php
 include 'templates/footer.php';
 ?>
-
-

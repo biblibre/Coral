@@ -28,7 +28,7 @@ $_SESSION['ref_script']=$currentPage;
 ?>
 
 
-<table class="headerTable" style='text-align:left;'>
+<table class="headerTable textAlignL" >
 <tr>
 <td>
 
@@ -38,7 +38,7 @@ $_SESSION['ref_script']=$currentPage;
 
 			<b><?php echo _("Limit by Expression Type:");?></b>&nbsp;
 
-			<select name='expressionTypeID' id='expressionTypeID' style='width:200px;'>
+			<select name='expressionTypeID' id='expressionTypeID' class='200'>
 
 			<?php
 
@@ -111,4 +111,3 @@ $_SESSION['ref_script']=$currentPage;
 <?php
 include 'templates/footer.php';
 ?>
-

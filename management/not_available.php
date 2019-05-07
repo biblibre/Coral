@@ -35,13 +35,13 @@ $pageTitle=_('Not Available');
         <center>
           <table>
             <tr>
-              <td style='vertical-align:top;'>
-                <div style="text-align:left;">
+              <td class='verticalAlignT'>
+                <div class='textAlignL'>
                   <center>
-                    <table class="titleTable" style="background-image:url('images/management-title.jpg');background-repeat:no-repeat;width:900px;text-align:left;">
-                      <tr style='vertical-align:bottom'>
+                    <table class="titleTable titleTableImg">
+                      <tr class='verticalAlignB'>
                         <td>&nbsp;</td>
-                        <td style='text-align:right;'>&nbsp;</td>
+                        <td class='textAlignR'>&nbsp;</td>
                       </tr>
                     </table>
 					<table class="headerTable">

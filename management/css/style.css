@@ -1950,7 +1950,7 @@ p.fontLarge {
 	font-weight:bold;
 }
 
-p.fontMedium{
+.fontMedium{
 	font-size:110%;
 	font-weight:bold;
 }
@@ -2019,8 +2019,17 @@ input.wEighty{
  }
 
  /*--- ThickBox CSS---*/
+ .15 {
+ 	width: 15px;
+
+ }
  .19 {
  	width: 19px;
+
+ }
+
+ .25 {
+ 	width: 25px;
 
  }
 
@@ -2197,8 +2206,13 @@ input.wEighty{
  width: 550px;
 }
 
+
 .840{
  width: 840px;
+}
+
+.899{
+ width: 899px;
 }
 
 .900{
@@ -2224,9 +2238,14 @@ input.wEighty{
 .marginT1{
 	margin-top:1px
 }
+
+.marginT3{
+	margin-top:3px
+}
 .marginT4{
 	margin-top:4px
 }
+
 
 .marginT15{
 	margin-top:15px
@@ -2239,6 +2258,10 @@ input.wEighty{
 
 .marginR15{
 	margin-right: 15px;
+}
+
+.marginB8{
+	margin-bottom: 8px;
 }
 
 .thickboxTitleImg
@@ -2433,7 +2456,7 @@ height:19px;
 	text-align:left;
 }
 
-.wrapTitleMenu{style=
+.wrapTitleMenu{
 	width:130px;
 	height:19px;
 }
@@ -2455,4 +2478,50 @@ height:19px;
 .tabStyleMngt{
 	text-align:right;
 	vertical-align:top;
+}
+
+.expressionTypeDiv{
+	margin-top:10px;
+	margin-bottom:20px;
+	padding:5px; border-width:1px;
+	border-color: #e0dfe3;
+	border-style: solid;
+}
+
+.expressionDataTable{
+	max-width:955px;
+	width:900px;
+	text-align:left;'
+}
+
+.expressionInsTabStyle{
+	float: right;
+	text-align:right;
+}
+
+.MngtHeaderImg{
+	background-image:url('images/header.gif');
+	background-repeat:no-repeat;
+}
+
+.MngtHeaderTd{
+	width:155px;
+	padding-right:10px;
+}
+
+.divDisplayingLic{
+	display:none;
+	width:899px
+}
+
+.sideMenuStyle{
+	position: relative;
+	width: 91px
+}
+
+.titleTableImg{
+	background-image:url('images/management-title.jpg');
+	background-repeat:no-repeat;
+	width:900px;
+	text-align:left;
 }
