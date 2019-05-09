@@ -494,7 +494,7 @@ table.borderedFormTable {
 	border-collapse: collapse;
 	border-spacing: 0;
 	font-size:90%;
-	
+
 }
 
 table.borderedFormTable td {
@@ -2074,9 +2074,17 @@ input.wEighty{
 .h53{
 	height:53px;
 }
+
+
+.padding1 {
+	padding:1px;
+}
+
 .padding2 {
 	padding:2px;
 }
+
+
 
 .marginL2{
 	margin-left:2px;
