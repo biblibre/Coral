@@ -186,23 +186,23 @@ switch ($_GET['action']) {
 		}
 
 		?>
-		<table class='linedFormTable' style='width:440px;'>
+		<table class='linedFormTable 440'>
 		<tr>
 		<th colspan='2'>
 
-			<span style='float:left; max-width:400px;'>&nbsp;<?php echo $organization->name; ?></span>
-			<span style='float:right; vertical-align:top;'><?php if ($user->canEdit()){ ?><a href='ajax_forms.php?action=getOrganizationForm&height=363&width=345&modal=true&organizationID=<?php echo $organizationID; ?>' class='thickbox' id='editOrganization'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit resource");?>'></a><?php } ?>  <?php if ($user->isAdmin){ ?><a href='javascript:removeOrganization(<?php echo $organizationID; ?>);'><img src='images/cross.gif' alt='<?php echo _("remove resource");?>' title='<?php echo _("remove resource");?>'></a><?php } ?></span>
+			<span class='floatL 400'>&nbsp;<?php echo $organization->name; ?></span>
+			<span class="floatRVerticalT"><?php if ($user->canEdit()){ ?><a href='ajax_forms.php?action=getOrganizationForm&height=363&width=345&modal=true&organizationID=<?php echo $organizationID; ?>' class='thickbox' id='editOrganization'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit resource");?>'></a><?php } ?>  <?php if ($user->isAdmin){ ?><a href='javascript:removeOrganization(<?php echo $organizationID; ?>);'><img src='images/cross.gif' alt='<?php echo _("remove resource");?>' title='<?php echo _("remove resource");?>'></a><?php } ?></span>
 		</th>
 		</tr>
 
 		<?php if (count($parentOrganizationArray) > 0){ ?>
 			<tr>
-			<td style='vertical-align:top;text-align:left;width:140px;'><?php echo _("Parent Organization:");?></td>
-			<td style='width:320px;'>
+			<td class='textTopLeft 140'><?php echo _("Parent Organization:");?></td>
+			<td class='320'>
 			<?php
 			foreach ($parentOrganizationArray as $parentOrganization){
 				echo $parentOrganization['name'] . "&nbsp;&nbsp;";
-				echo "<a href='orgDetail.php?organizationID=" . $parentOrganization['organizationID'] . "'><img src='images/arrow-up-right.gif' alt='"._("view organization")."' title='"._("View")."' style='vertical-align:top;'></a><br />";
+				echo "<a href='orgDetail.php?organizationID=" . $parentOrganization['organizationID'] . "'><img src='images/arrow-up-right.gif' alt='"._("view organization")."' title='"._("View")."' class='verticalAlignT'></a><br />";
 			}
 			?>
 			</td>
@@ -213,12 +213,12 @@ switch ($_GET['action']) {
 
 		if (count($childOrganizationArray) > 0){ ?>
 			<tr>
-			<td style='vertical-align:top;text-align:left;width:140px;'><?php echo _("Child Organizations:");?></td>
-			<td style='width:320px;'>
+			<td class='textTopLeft 140'><?php echo _("Child Organizations:");?></td>
+			<td class='320'>
 			<?php
 			foreach ($childOrganizationArray as $childOrganization){
 				echo $childOrganization['name'] . "&nbsp;&nbsp;";
-				echo "<a href='orgDetail.php?organizationID=" . $childOrganization['organizationID'] . "'><img src='images/arrow-up-right.gif' alt='".("view organization")."' title='".("View")."' style='vertical-align:top;'></a><br />";
+				echo "<a href='orgDetail.php?organizationID=" . $childOrganization['organizationID'] . "'><img src='images/arrow-up-right.gif' alt='".("view organization")."' title='".("View")."' class='verticalAlignT'></a><br />";
 			}
 			?>
 			</td>
@@ -229,9 +229,9 @@ switch ($_GET['action']) {
 
 		if ($organization->companyURL){ ?>
 			<tr>
-			<td style='vertical-align:top;text-align:left;width:140px;'><?php echo _("Company URL:");?></td>
-			<td style='width:320px; word-break: break-all;'>
-                <a href='<?php echo $companyURL; ?>' target='_blank' style="text-transform: none;"><?php echo $organization->companyURL; ?></a>
+			<td class='textTopLeft 140'><?php echo _("Company URL:");?></td>
+			<td class='wordBreakAll 320'>
+                <a href='<?php echo $companyURL; ?>' target='_blank' class='textTransform'><?php echo $organization->companyURL; ?></a>
             </td>
 			</tr>
 		<?php
@@ -239,34 +239,34 @@ switch ($_GET['action']) {
 
 		if (count($organizationRoleArray) > 0){ ?>
 			<tr>
-			<td style='vertical-align:top;text-align:left;width:140px;'><?php echo _("Role(s):");?></td>
-			<td style='width:320px;'><?php echo implode(", ", $organizationRoleArray); ?></td>
+			<td class='textTopLeft 140'><?php echo _("Role(s):");?></td>
+			<td class='320'><?php echo implode(", ", $organizationRoleArray); ?></td>
 			</tr>
 		<?php
 		}
 
 		if ($organization->accountDetailText){ ?>
 			<tr>
-			<td style='vertical-align:top;text-align:left;width:140px;'><?php echo _("Account Details:");?></td>
-			<td style='width:320px;'><?php echo nl2br($organization->accountDetailText); ?></td>
+			<td class='textTopLeft 140'><?php echo _("Account Details:");?></td>
+			<td class='320'><?php echo nl2br($organization->accountDetailText); ?></td>
 			</tr>
 		<?php
 		}
 
 		if ($organization->noteText){ ?>
 			<tr>
-			<td style='vertical-align:top;text-align:left;width:140px;'><?php echo _("Notes:");?></td>
-			<td style='width:320px;'><?php echo nl2br($organization->noteText); ?></td>
+			<td class='textTopLeft 140'><?php echo _("Notes:");?></td>
+			<td class='320'><?php echo nl2br($organization->noteText); ?></td>
 			</tr>
 		<?php
 		}
 
-        if ($organization->ilsID){ 
+        if ($organization->ilsID){
             $ilsClient = (new ILSClientSelector())->select();
         ?>
 			<tr>
-			<td style='vertical-align:top;text-align:left;width:140px;'><?php echo _("ILS:");?></td>
-			<td style='width:320px;'><a href="<?php echo $ilsClient->getVendorURL() . $organization->ilsID; ?>">Open vendor in <?php echo $ilsClient->getILSName(); ?></a></td>
+			<td class='textTopLeft 140'><?php echo _("ILS:");?></td>
+			<td class='320'><a href="<?php echo $ilsClient->getVendorURL() . $organization->ilsID; ?>">Open vendor in <?php echo $ilsClient->getILSName(); ?></a></td>
 			</tr>
 		<?php
 		}
@@ -335,7 +335,7 @@ switch ($_GET['action']) {
 
 		?>
 		<?php if (count($aliasArray) > 0){ ?>
-			<table class='linedFormTable' style='width:440px;'>
+			<table class='linedFormTable 440'>
 			<tr>
 			<th><?php echo _("Alias");?></th>
 			<th><?php echo _("Alias Type");?></th>
@@ -347,7 +347,7 @@ switch ($_GET['action']) {
 				echo "<td>" . $organizationAlias['name'] . "</td>\n";
 				echo "<td>" . $organizationAlias['aliasTypeShortName'];
 				if ($user->canEdit()){
-					echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getAliasForm&height=124&width=285&modal=true&organizationID=" .  $organizationID . "&aliasID=" . $organizationAlias['aliasID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit alias")."'></a>";
+					echo "<span class='floatRVerticalT'><a href='ajax_forms.php?action=getAliasForm&height=124&width=285&modal=true&organizationID=" .  $organizationID . "&aliasID=" . $organizationAlias['aliasID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit alias")."'></a>";
 					echo "&nbsp;<a href='javascript:removeAlias(" . $organizationAlias['aliasID'] . ")'><img src='images/cross.gif' alt='"._("remove alias")."' title='"._("remove alias")."'></a>";
 					echo "</span>";
 				}
@@ -424,9 +424,9 @@ switch ($_GET['action']) {
 		if (count($contactArray) > 0){
 			foreach ($contactArray as $contact){
 			?>
-				<table class='linedFormTable' style='width:440px;'>
+				<table class='linedFormTable 440'>
 				<tr>
-				<th style='width:150px;vertical-align:top;text-align:left'><?php echo $contact['contactRoles']; ?></th>
+				<th class='textTopLeft 150'><?php echo $contact['contactRoles']; ?></th>
 				<th>
 				<?php
 
@@ -435,7 +435,7 @@ switch ($_GET['action']) {
 				}
 
 				if ($user->canEdit()){
-					echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getContactForm&height=463&width=345&modal=true&organizationID=" . $organizationID . "&contactID=" . $contact['contactID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit contact")."'></a>";
+					echo "<span class='floatRVerticalT'><a href='ajax_forms.php?action=getContactForm&height=463&width=345&modal=true&organizationID=" . $organizationID . "&contactID=" . $contact['contactID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit contact")."'></a>";
 					echo "&nbsp;<a href='javascript:removeContact(" . $contact['contactID'] . ")'><img src='images/cross.gif' alt='"._("remove contact")."' title='"._("remove contact")."'></a>";
 					echo "</span>";
 				}
@@ -446,15 +446,15 @@ switch ($_GET['action']) {
 
 				<?php if (($contact['archiveDate'] != '0000-00-00') && ($contact['archiveDate'])) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;background-color:#ebebeb'><?php echo _("No longer valid:");?></td>
-				<td style='background-color:#ebebeb'><i><?php echo format_date($contact['archiveDate']); ?></i></td>
+				<td class='textTopLeft GreyBackg'><?php echo _("No longer valid:");?></td>
+				<td class='GreyBackg'><i><?php echo format_date($contact['archiveDate']); ?></i></td>
 				</tr>
 				<?php
 				}
 
 				if ($contact['title']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Title:");?></td>
+				<td class='textTopLeft'><?php echo _("Title:");?></td>
 				<td><?php echo $contact['title']; ?></td>
 				</tr>
 				<?php
@@ -462,7 +462,7 @@ switch ($_GET['action']) {
 
 				if ($contact['addressText']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Address:");?></td>
+				<td class='textTopLeft'><?php echo _("Address:");?></td>
 				<td><?php echo nl2br($contact['addressText']); ?></td>
 				</tr>
 				<?php
@@ -470,7 +470,7 @@ switch ($_GET['action']) {
 
 				if ($contact['phoneNumber']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Phone:");?></td>
+				<td class='textTopLeft'><?php echo _("Phone:");?></td>
 				<td><?php echo $contact['phoneNumber']; ?></td>
 				</tr>
 				<?php
@@ -478,7 +478,7 @@ switch ($_GET['action']) {
 
 				if ($contact['altPhoneNumber']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Alt Phone:");?></td>
+				<td class='textTopLeft'><?php echo _("Alt Phone:");?></td>
 				<td><?php echo $contact['altPhoneNumber']; ?></td>
 				</tr>
 				<?php
@@ -486,7 +486,7 @@ switch ($_GET['action']) {
 
 				if ($contact['faxNumber']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Fax:");?></td>
+				<td class='textTopLeft'><?php echo _("Fax:");?></td>
 				<td><?php echo $contact['faxNumber']; ?></td>
 				</tr>
 				<?php
@@ -494,7 +494,7 @@ switch ($_GET['action']) {
 
 				if ($contact['emailAddress']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Email:");?></td>
+				<td class='textTopLeft'<?php echo _("Email:");?></td>
 				<td><a href='mailto:<?php echo $contact['emailAddress']; ?>'><?php echo $contact['emailAddress']; ?></a></td>
 				</tr>
 				<?php
@@ -502,7 +502,7 @@ switch ($_GET['action']) {
 
 				if ($contact['noteText']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Notes:");?></td>
+				<td class='textTopLeft'><?php echo _("Notes:");?></td>
 				<td><?php echo nl2br($contact['noteText']); ?></td>
 				</tr>
 				<?php
@@ -510,7 +510,7 @@ switch ($_GET['action']) {
 
 				if ($contact['lastUpdateDate']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Last Updated:");?></td>
+				<td class='textTopLeft'><?php echo _("Last Updated:");?></td>
 				<td><i><?php echo format_date($contact['lastUpdateDate']); ?></i></td>
 				</tr>
 				<?php
@@ -564,13 +564,13 @@ switch ($_GET['action']) {
 		if (count($externalLoginArray) > 0){
 			foreach ($externalLoginArray as $externalLogin){
 			?>
-				<table class='linedFormTable' style='width:440px;max-width:440px;'>
+				<table class='linedFormTable 440 max440'>
 				<tr>
-				<th style='width:150px;vertical-align:top;text-align:left;'><?php echo $externalLogin['externalLoginTypeShortName']; ?></th>
+				<th class='textTopLeft 150'><?php echo $externalLogin['externalLoginTypeShortName']; ?></th>
 				<th>
 				<?php
 					if ($user->canEdit()){
-						echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getAccountForm&height=254&width=342&modal=true&organizationID=" . $organizationID . "&externalLoginID=" . $externalLogin['externalLoginID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit external login")."'></a>";
+						echo "<span class='floatRVerticalT'><a href='ajax_forms.php?action=getAccountForm&height=254&width=342&modal=true&organizationID=" . $organizationID . "&externalLoginID=" . $externalLogin['externalLoginID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit external login")."'></a>";
 						echo "&nbsp;<a href='javascript:removeExternalLogin(" . $externalLogin['externalLoginID'] . ")'><img src='images/cross.gif' alt='"._("remove external login")."' title='"._("remove external login")."'></a>";
 						echo "</span>";
 					}
@@ -580,19 +580,19 @@ switch ($_GET['action']) {
 
 				<?php if ($externalLogin['loginURL']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Login URL:");?></td>
-				<td style="word-break: break-all;"><?php echo $externalLogin['loginURL'];
+				<td class='textTopLeft'><?php echo _("Login URL:");?></td>
+				<td class='wordBreakAll'><?php echo $externalLogin['loginURL'];
 					if (strpos($externalLogin['loginURL'], '://') === false) {
 						$externalLogin['loginURL'] = "http://" . $externalLogin['loginURL'];
 					}
-				?>&nbsp;&nbsp;<a href='<?php echo $externalLogin['loginURL']; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt='<?php echo _("Visit Login URL");?>' title='<?php echo _("Visit Login URL");?>' style='vertical-align:top;'></a></td>
+				?>&nbsp;&nbsp;<a href='<?php echo $externalLogin['loginURL']; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt='<?php echo _("Visit Login URL");?>' title='<?php echo _("Visit Login URL");?>' class='verticalAlignT'></a></td>
 				</tr>
 				<?php
 				}
 
 				if ($externalLogin['emailAddress']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Local email on account:");?></td>
+				<td class='textTopLeft'><?php echo _("Local email on account:");?></td>
 				<td><?php echo $externalLogin['emailAddress']; ?></td>
 				</tr>
 				<?php
@@ -600,7 +600,7 @@ switch ($_GET['action']) {
 
 				if ($externalLogin['username']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("User Name:");?></td>
+				<td class='textTopLeft'><?php echo _("User Name:");?></td>
 				<td><?php echo $externalLogin['username']; ?></td>
 				</tr>
 				<?php
@@ -608,7 +608,7 @@ switch ($_GET['action']) {
 
 				if ($externalLogin['password']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Password:");?></td>
+				<td class='textTopLeft'><?php echo _("Password:");?></td>
 				<td><?php echo $externalLogin['password']; ?></td>
 				</tr>
 				<?php
@@ -616,7 +616,7 @@ switch ($_GET['action']) {
 
 				if ($externalLogin['updateDate']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Last Updated:");?></td>
+				<td class='textTopLeft'><?php echo _("Last Updated:");?></td>
 				<td><i><?php echo format_date($externalLogin['updateDate']); ?></i></td>
 				</tr>
 				<?php
@@ -624,7 +624,7 @@ switch ($_GET['action']) {
 
 				if ($externalLogin['noteText']) { ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><?php echo _("Notes:");?></td>
+				<td class='textTopLeft'><?php echo _("Notes:");?></td>
 				<td><?php echo nl2br($externalLogin['noteText']); ?></td>
 				</tr>
 				<?php
@@ -668,7 +668,7 @@ switch ($_GET['action']) {
 				<td>
 					<a href="<?php echo $getIssuesFormData; ?>" class="issuesBtn" id="openIssuesBtn"><?php echo _("view open issues");?></a>
 					<a target="_blank" href="<?php echo $exportIssueUrl;?>"><img src="images/xls.gif" /></a>
-					<div class="issueList" id="openIssues" style="display:none;"></div>
+					<div class="issueList noDislpaying" id="openIssues"></div>
 				</td>
 			</tr>
 			<tr>
@@ -691,7 +691,7 @@ switch ($_GET['action']) {
 				<td>
 					<a href="<?php echo $getDowntimeFormData; ?>" class="downtimeBtn" id="openDowntimeBtn"><?php echo _("view current/upcoming downtime");?></a>
 					<a target="_blank" href="<?php echo $exportDowntimeUrl;?>"><img src="images/xls.gif" /></a>
-					<div class="downtimeList" id="currentDowntime" style="display:none;"></div>
+					<div class="downtimeList noDislpaying" id="currentDowntime"></div>
 				</td>
 			</tr>
 			<tr>
@@ -766,7 +766,7 @@ switch ($_GET['action']) {
 
 		if (count($issueLogArray) > 0){
 		?>
-		<table class='linedFormTable' style='width:440px;'>
+		<table class='linedFormTable 440'>
 		<tr>
 		<th><?php echo _("Added");?></th>
 		<th><?php echo _("Date");?></th>
@@ -788,7 +788,7 @@ switch ($_GET['action']) {
 
 			?>
 			<tr>
-			<td style='width:80px;'><?php echo format_date($issueLog['updateDate']); ?><br /><?php echo _("by ");?><i><?php echo $issueLog['updateUser']; ?></i></td>
+			<td class='80'><?php echo format_date($issueLog['updateDate']); ?><br /><?php echo _("by ");?><i><?php echo $issueLog['updateUser']; ?></i></td>
 			<td><?php
         if ($issueStartDate && $issueEndDate) {
           echo $issueStartDate._(" to ").$issueEndDate;
@@ -800,10 +800,10 @@ switch ($_GET['action']) {
       ?>
       </td>
       <td><?php echo $issueLog['issueLogType'] ?></td>
-			<td style='width:360px;'><?php echo nl2br(str_replace($charsToRemove, "", $issueLog['noteText'])); ?>
+			<td class='360'><?php echo nl2br(str_replace($charsToRemove, "", $issueLog['noteText'])); ?>
 			<?php
 			if ($user->canEdit()){
-				echo "<span style='float:right; vertical-align:top;'><a href='ajax_forms.php?action=getIssueLogForm&height=250&width=265&modal=true&organizationID=" . $organizationID . "&issueLogID=" . $issueLog['issueLogID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit issue")."'></a>";
+				echo "<span class='floatRVerticalT'><a href='ajax_forms.php?action=getIssueLogForm&height=250&width=265&modal=true&organizationID=" . $organizationID . "&issueLogID=" . $issueLog['issueLogID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit issue")."'></a>";
 				echo "&nbsp;<a href='javascript:removeIssueLog(" . $issueLog['issueLogID'] . ")'><img src='images/cross.gif' alt='"._("remove issue")."' title='"._("remove issue")."'></a>";
 				echo "</span>";
 			}
@@ -849,7 +849,7 @@ switch ($_GET['action']) {
 				$licenseArray = $organization->getLicenses();
 
 				if (count($licenseArray) > 0){ ?>
-					<table class='linedFormTable' style='width:440px;'>
+					<table class='linedFormTable 440'>
 					<tr>
 					<th><?php echo _("License");?></th>
 					<th><?php echo _("Consortium");?></th>
@@ -876,7 +876,7 @@ switch ($_GET['action']) {
 				}
 
 			}catch(Exception $e){
-				echo "<span style='color:red;'>"._("Unable to access the licensing database.  Make sure the configuration.ini is pointing to the correct place and that the database and associated tables have been set up.")."</span>";
+				echo "<span class='redText'>"._("Unable to access the licensing database.  Make sure the configuration.ini is pointing to the correct place and that the database and associated tables have been set up.")."</span>";
 			}
 		}
 
@@ -922,7 +922,7 @@ switch ($_GET['action']) {
 			$i=0;
 		}else{
 			$thisPageNum = count($organizationArray) + $pageStart - 1;
-			echo "<span style='font-weight:bold;'>"._("Displaying ") . $pageStart . _(" to ") . $thisPageNum . _(" of ") . $totalRecords . _(" Organization Records")."</span><br />";
+			echo "<span class='formText'>"._("Displaying ") . $pageStart . _(" to ") . $thisPageNum . _(" of ") . $totalRecords . _(" Organization Records")."</span><br />";
 
 			//print out page selectors
 			if ($totalRecords > $numberOfRecords){
@@ -964,7 +964,7 @@ switch ($_GET['action']) {
 
 
 			?>
-			<table class='dataTable' style='width:840px'>
+			<table class='dataTable 840'>
 			<tr>
 			<?php if ($_GET['contactName']) { ?>
 				<th><table class='noBorderTable'><tr><td><?php echo _("Contact Name(s)");?></td><td class='arrow'><a href='javascript:setOrder("C.name","asc");'><img src='images/arrowup.png' border=0></a>&nbsp;<a href='javascript:setOrder("C.name","desc");'><img src='images/arrowdown.png' border=0></a></td></tr></table></th>
@@ -1014,9 +1014,9 @@ switch ($_GET['action']) {
 			?>
 			</table>
 
-			<table style='width:100%;margin-top:4px'>
+			<table class='marginT4 wHundred'>
 			<tr>
-			<td style='text-align:left'>
+			<td class='textAlignL'>
 			<?php
 			//print out page selectors
 			if ($totalRecords > $numberOfRecords){
@@ -1054,8 +1054,8 @@ switch ($_GET['action']) {
 			</td>
 			</tr>
 			<tr>
-			<td style="text-align:left;padding-top:10px;">
-			<select id='numberOfRecords' name='numberOfRecords' onchange='javascript:setNumberOfRecords();' style='width:50px;'>
+			<td class='textAlignL paddingT10'>
+			<select id='numberOfRecords' name='numberOfRecords' onchange='javascript:setNumberOfRecords();' class='50'>
 				<?php
 				for ($i=5; $i<=50; $i=$i+5){
 					if ($i == $numberOfRecords){
@@ -1096,4 +1096,3 @@ switch ($_GET['action']) {
 
 
 ?>
-

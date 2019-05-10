@@ -40,25 +40,25 @@ $_SESSION['ref_script']=$currentPage;
 
 ?>
 
-<div style='text-align:left;'>
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
-<tr style='vertical-align:top;'>
-<td style="width:155px;padding-right:10px;">
+<div class='textAlignL'>
+<table class="headerTable backgroundTableImage">
+<tr class='verticalAlignT'>
+	<td class='MngtHeaderTd'>
 	<table class='noBorder' id='title-search'>
-	<tr><td style='text-align:left;width:75px;' align='left'>
-	<span style='font-size:130%;font-weight:bold;'><?php echo _("Search");?></span><br />
+	<tr><td class='textAlignL 75' align='left'>
+	<span class='fontLarge'><?php echo _("Search");?></span><br />
 	<a href='javascript:void(0)' class='newSearch'><?php echo _("new search");?></a>
 	</td>
 	<td><div id='div_feedback'>&nbsp;</div>
 	</td></tr>
 	</table>
 
-	<table class='borderedFormTable' style="width:150px">
+	<table class='borderedFormTable 150'>
 
 	<tr>
 	<td class='searchRow'><label for='searchName'><b><?php echo _("Name (contains)");?></b></label>
 	<br />
-	<input type='text' name='searchOrganizationName' id='searchOrganizationName' style='width:145px' value="<?php if ($reset != 'Y' && isset($_SESSION['org_organizationName'])) echo $_SESSION['org_organizationName']; ?>" /><br />
+	<input type='text' name='searchOrganizationName' id='searchOrganizationName' class='145' value="<?php if ($reset != 'Y' && isset($_SESSION['org_organizationName'])) echo $_SESSION['org_organizationName']; ?>" /><br />
 	<div id='div_searchName' style='<?php if ((!isset($_SESSION['org_organizationName'])) || ($reset == 'Y')) echo "display:none;"; ?>margin-left:123px;'><input type='button' name='btn_searchOrganizationName' value='<?php echo _("go!");?>' class='searchButton' /></div>
 	</td>
 	</tr>
@@ -67,7 +67,7 @@ $_SESSION['ref_script']=$currentPage;
 	<tr>
 	<td class='searchRow'><label for='searchOrganizationRoleID'><b><?php echo _("Role");?></b></label>
 	<br />
-	<select name='searchOrganizationRoleID' id='searchOrganizationRoleID' style='width:150px' onchange='javsacript:updateSearch();'>
+	<select name='searchOrganizationRoleID' id='searchOrganizationRoleID' class='150' onchange='javsacript:updateSearch();'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 
@@ -91,7 +91,7 @@ $_SESSION['ref_script']=$currentPage;
 	<tr>
 	<td class='searchRow'><label for='searchContact'><b><?php echo _("Contact Name (contains)");?></b></label>
 	<br />
-	<input type='text' name='searchContactName' id='searchContactName' style='width:145px' value="<?php if ($reset != 'Y' && isset($_SESSION['org_contactName'])) echo $_SESSION['org_contactName']; ?>" /><br />
+	<input type='text' name='searchContactName' id='searchContactName' class='145' value="<?php if ($reset != 'Y' && isset($_SESSION['org_contactName'])) echo $_SESSION['org_contactName']; ?>" /><br />
 	<div id='div_searchContact' style='<?php if ((!isset($_SESSION['org_contactName'])) || ($reset == 'Y')) echo "display:none;"; ?>margin-left:123px;'><input type='button' name='btn_searchContactName' value='<?php echo _("go!");?>' class='searchButton' /></div>
 	</td>
 	</tr>

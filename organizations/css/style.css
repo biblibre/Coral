@@ -57,7 +57,13 @@ span.smallerText {
 	font-weight: bold;
 }
 
-span.redText{color:red}
+.redText{color:red}
+
+.greyText{
+	color:grey;
+	font-size:80%;
+}
+
 span.normalText{color:#3D545D}
 
 a.smallLink {
@@ -71,10 +77,10 @@ a.smallLink:hover {
 	color: #ccc;
 }
 
-span.smallGreyText {
+.smallGreyText {
 	font-size: 85%;
 	font-weight: normal;
-	color: gray
+	color: grey
 }
 
 img {border:0;}
@@ -2056,7 +2062,7 @@ table.titleTable {
 
 /*--- Ex-style tags in HTML are now in CSS folder---*/
 
-p.fontLarge {
+.fontLarge {
 	font-size:130%;
 	font-weight:bold;
 }
@@ -2301,6 +2307,11 @@ input.wEighty{
 
 }
 
+.320 {
+	width: 320px;
+
+}
+
 .340 {
 	width: 340px;
 
@@ -2308,6 +2319,11 @@ input.wEighty{
 
 .350 {
 	width: 350px;
+
+}
+
+.360 {
+	width: 360px;
 
 }
 
@@ -2321,11 +2337,22 @@ input.wEighty{
 
 }
 
+.440 {
+	width: 440px;
+
+}
+
+.max440{
+	max-width: 440px;
+
+}
 
 .448 {
 	width: 448px;
 
 }
+
+
 
 .450 {
 	width: 450px;
@@ -2338,6 +2365,10 @@ input.wEighty{
 
 .550{
  width: 550px;
+}
+
+.625{
+ width: 625px;
 }
 
 
@@ -2547,6 +2578,12 @@ input.wEighty{
 	position: relative;
 	width: 91px;
 }
+
+.sidemenuselectedStyleAlt{
+	position: relative;
+	width: 99px;
+}
+
 .rightPanelStyle{
 	float:right;
 	vertical-align:top;
@@ -2612,6 +2649,10 @@ height:19px;
 	color:#526972;
 }
 
+.GreyBackg{
+	background-color:#ebebeb;
+}
+
 .thickboxTableStyleMngt{
 	width:285px;
 	padding:2px;
@@ -2642,10 +2683,7 @@ height:19px;
 	text-align:right;
 }
 
-.MngtHeaderImg{
-	background-image:url('images/header.gif');
-	background-repeat:no-repeat;
-}
+
 
 .MngtHeaderTd{
 	width:155px;
@@ -2723,4 +2761,45 @@ text-align:left;
 
 .minHeight60{
 	min-height: 60px;
+}
+
+.floatRVerticalT{
+	float:right;
+	vertical-align:top
+}
+
+.floatL{
+	float:left
+}
+
+.paddingT10{
+	padding-top: 10px;
+}
+
+.wordBreakAll{
+	word-break: break-all;
+}
+
+.textTransform{
+	text-transform: none;
+}
+
+
+.clearMargL8{
+	clear:right;
+	margin-left:8px;
+
+}
+
+.floatLFont115MaxW400{
+	float:left;
+	font-size:115%;
+	max-width:400px;
+}
+
+.thOrgArray{
+height:30px;
+margin-top: 7px;
+ margin-bottom: 5px;
+ vertical-align:middle;
 }

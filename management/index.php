@@ -40,7 +40,7 @@ $_SESSION['ref_script']=$currentPage;
 ?>
 
 
-<table class="headerTable MngtHeaderImg">
+<table class="headerTable backgroundTableImage">
 <tr class='verticalAlignT'>
 <td class='MngtHeaderTd'>
 	<table class='noBorder'>
