@@ -12,20 +12,20 @@
 
 		<input type='hidden' id='fundID' value='<?php echo $updateID; ?>'>
 
-		<div class='formTitle' style='width:245px;'><span class='headerText' style='margin-left:7px;'><?php if ($updateID){ echo _("Edit Fund"); } else { echo _("Add Fund"); } ?></span></div>
+		<div class='formTitle 245'><span class='headerText marginL7'><?php if ($updateID){ echo _("Edit Fund"); } else { echo _("Add Fund"); } ?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class="surroundBox" style="width:250px;">
+		<table class="surroundBox 250">
 		<tr>
 		<td>
 
-			<table class='noBorder' style='width:200px; margin:10px;'>
+			<table class='noBorder 200 margin10'>
 			<tr>
-			<td><?php echo _("Code");?></td><td><input type='text' id='fundCode' value='<?php echo $instance->fundCode; ?>' style='width:150px;'/></td>
+			<td><?php echo _("Code");?></td><td><input type='text' id='fundCode' value='<?php echo $instance->fundCode; ?>' class='150'/></td>
 			</tr>
 			<tr>
-			<td><?php echo _("Name");?></td><td><input type='text' id='shortName' value='<?php echo $instance->shortName; ?>' style='width:150px;'/></td>
+			<td><?php echo _("Name");?></td><td><input type='text' id='shortName' value='<?php echo $instance->shortName; ?>' class='150'/></td>
 			</tr>
 			<?php	{
 								if($instance->archived == 1){$archive = 'checked';}else{$archive='';}
@@ -40,10 +40,10 @@
 		</table>
 
 		<br />
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' id ='submitAddUpdate' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' id ='submitAddUpdate' class='submit-button'></td>
+				<td class='textAlignR'<input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'></td>
 			</tr>
 		</table>
 

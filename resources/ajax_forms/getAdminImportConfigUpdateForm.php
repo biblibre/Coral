@@ -13,10 +13,10 @@
 
 	$configuration=json_decode($instance->configuration,true);
 ?>
-<div id='div_updateForm' style='height: 700px;'>
+<div id='div_updateForm' class='700'>
 	<input type='hidden' id='importConfigID' value='<?php echo $updateID; ?>'>
-	<div class='formTitle' style='min-width:1000px;'>
-		<span class='headerText' style='margin-left:7px;'>
+	<div class='formTitle minW1000'>
+		<span class='headerText marginL7'>
 			<?php
 				if ($updateID) {
 					echo _("Edit Import Configuration");
@@ -35,10 +35,10 @@
 		<?php include 'getImportConfigForm.php';?>
 	</div>
 	<br />
-	<table class='noBorderTable' style='width:125px;'>
+	<table class='noBorderTable 125'>
 		<tr>
-			<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' id ='submitAddUpdate' class='submit-button'></td>
-			<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'></td>
+			<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' id ='submitAddUpdate' class='submit-button'></td>
+			<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'></td>
 		</tr>
 	</table>
 </div>

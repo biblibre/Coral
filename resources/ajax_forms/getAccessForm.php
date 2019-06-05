@@ -59,25 +59,25 @@
 		<input type='hidden' name='editResourceID' id='editResourceID' value='<?php echo $resourceID; ?>'>
 		<input type='hidden' name='editResourceAcquisitionID' id='editResourceAcquisitionID' value='<?php echo $resourceAcquisitionID; ?>'>
 
-		<div class='formTitle' style='width:617px; margin-bottom:5px;'><span class='headerText'><?php echo _("Edit Access");?></span></div>
+		<div class='formTitle 617 marginB5'><span class='headerText'><?php echo _("Edit Access");?></span></div>
 
-		<span class='smallDarkRedText' id='span_errors'></span>
+		<span class='smallDarkRedText' verticalAlignTid='span_errors'></span>
 
-		<table class='noBorder' style='width:610px;'>
-		<tr style='vertical-align:top;'>
-		<td style='vertical-align:top;' colspan='2'>
+		<table class='noBorder 610'>
+		<tr class='verticalAlignT'>
+		<td class='verticalAlignT' colspan='2'>
 
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='accessHead'><b><?php echo _("Access");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:610px;'>
+			<table class='surroundBox 610'>
 			<tr>
 			<td>
-				<table class='noBorder' style='width:570px; margin:15px 20px 10px 20px;'>
+				<table class='noBorder 570 margin15201020'>
 				<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;white-space: nowrap;'><label for='authenticationTypeID'><?php echo _("Authentication Type:");?></label></td>
+					<td class='surroundBoxTdStyle'><label for='authenticationTypeID'><?php echo _("Authentication Type:");?></label></td>
 					<td>
-						<select name='authenticationTypeID' id='authenticationTypeID' style='width:100px;' class='changeSelect'>
+						<select name='authenticationTypeID' id='authenticationTypeID' class='changeSelect 100'>
 						<option value=''></option>
 						<?php
 						foreach ($authenticationTypeArray as $authenticationType){
@@ -90,13 +90,13 @@
 						?>
 						</select>
 					</td>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;white-space: nowrap;'><label for='authenticationUserName'><?php echo _("Username:");?></label></td>
-					<td><input type='text' id='authenticationUserName' name='authenticationUserName' value = '<?php echo $resourceAcquisition->authenticationUserName; ?>' style='width:95px;' class='changeInput'  /></td>
+					<td class='surroundBoxTdStyle'><label for='authenticationUserName'><?php echo _("Username:");?></label></td>
+					<td><input type='text' id='authenticationUserName' name='authenticationUserName' value = '<?php echo $resourceAcquisition->authenticationUserName; ?>' class='changeInput 95'  /></td>
 				</tr>
 				<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;white-space: nowrap;'><label for='accessMethodID'><?php echo _("Access Method:");?></label></td>
+					<td class='surroundBoxTdStyle'><label for='accessMethodID'><?php echo _("Access Method:");?></label></td>
 					<td>
-						<select name='accessMethodID' id='accessMethodID' style='width:100px;' class='changeSelect'>
+						<select name='accessMethodID' id='accessMethodID' class='changeSelect 100'>
 						<option value=''></option>
 						<?php
 						foreach ($accessMethodArray as $accessMethod){
@@ -109,13 +109,13 @@
 						?>
 						</select>
 					</td>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;white-space: nowrap;'><label for='authenticationPassword'><?php echo _("Password:");?></label></td>
-					<td><input type='text' id='authenticationPassword' name='authenticationPassword' value = '<?php echo $resourceAcquisition->authenticationPassword; ?>' style='width:95px;' class='changeInput'  /></td>
+					<td class='surroundBoxTdStyle'><label for='authenticationPassword'><?php echo _("Password:");?></label></td>
+					<td><input type='text' id='authenticationPassword' name='authenticationPassword' value = '<?php echo $resourceAcquisition->authenticationPassword; ?>' class='changeInput 95'  /></td>
 				</tr>
 				<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;white-space: nowrap;'><label for='storageLocationID'><?php echo _("Storage Location:");?></label></td>
+					<td class='surroundBoxTdStyle'><label for='storageLocationID'><?php echo _("Storage Location:");?></label></td>
 					<td>
-						<select name='storageLocationID' id='storageLocationID' style='width:100px;' class='changeSelect'>
+						<select name='storageLocationID' id='storageLocationID'  class='changeSelect 100'>
 						<option value=''></option>
 						<?php
 						foreach ($storageLocationArray as $storageLocation){
@@ -128,9 +128,9 @@
 						?>
 						</select>
 					</td>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;white-space: nowrap;'><label for='userLimitID'><?php echo _("Simultaneous User Limit:");?></label></td>
+					<td class='surroundBoxTdStyle'><label for='userLimitID'><?php echo _("Simultaneous User Limit:");?></label></td>
 					<td>
-						<select name='userLimitID' id='userLimitID' style='width:100px;' class='changeSelect' >
+						<select name='userLimitID' id='userLimitID' class='changeSelect 100' >
 						<option value=''></option>
 						<?php
 						foreach ($userLimitArray as $userLimit){
@@ -145,9 +145,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;white-space: nowrap;'><label for='coverageText'><?php echo _("Coverage:");?></label></td>
+					<td class='surroundBoxTdStyle'><label for='coverageText'><?php echo _("Coverage:");?></label></td>
 					<td colspan='3'>
-						<input type='text' id='coverageText' name='coverageText' value = "<?php echo $resourceAcquisition->coverageText; ?>" style='width:405px;' class='changeInput'  />
+						<input type='text' id='coverageText' name='coverageText' value = "<?php echo $resourceAcquisition->coverageText; ?>" class='changeInput 405'  />
 					</td>
 				</tr>
 				</table>
@@ -158,20 +158,20 @@
 		</td>
 		</tr>
 
-		<tr style='vertical-align:top;'>
+		<tr class='verticalAlignT'>
 		<td>
 
 
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='authorizedSiteID'><b><?php echo _("Authorized Site(s)");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:295px;'>
+			<table class='surroundBox 295'>
 			<tr>
 			<td>
 				<?php
 				$i=0;
 				if (count($authorizedSiteArray) > 0){
-					echo "<table class='noBorder' style='width:255px; margin:15px 20px;'>";
+					echo "<table class='noBorder 255 margin1520'>";
 					foreach ($authorizedSiteArray as $authorizedSiteIns){
 						$i++;
 						if(($i % 2)==1){
@@ -210,13 +210,13 @@
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='authorizedSiteID'><b><?php echo _("Administering Site(s)");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:295px;'>
+			<table class='surroundBox 295'>
 			<tr>
 			<td>
 				<?php
 				$i=0;
 				if (count($administeringSiteArray) > 0){
-					echo "<table class='noBorder' style='width:255px; margin:15px 20px;'>";
+					echo "<table class='noBorder 255 margin1520'>";
 					foreach ($administeringSiteArray as $administeringSiteIns){
 						$i++;
 						if(($i % 2)==1){
@@ -247,15 +247,14 @@
 		</table>
 
 
-		<hr style='width:620px;margin:15px 0px 10px 0px;' />
+		<hr class='620 margin150100' />
 
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitAccessChanges' id ='submitAccessChanges' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitAccessChanges' id ='submitAccessChanges' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
 			</tr>
 		</table>
 
 
 		<script type="text/javascript" src="js/forms/accessForm.js?random=<?php echo rand(); ?>"></script>
-

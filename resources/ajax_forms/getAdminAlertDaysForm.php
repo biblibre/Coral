@@ -11,16 +11,16 @@
 
 		<input type='hidden' id='editAlertDaysInAdvanceID' value='<?php echo $alertDaysInAdvanceID; ?>'>
 
-		<div class='formTitle' style='width:245px;'><span class='headerText' style='margin-left:7px;'><?php if ($alertDaysInAdvanceID){ echo _("Edit Alert Days In Advance"); } else { echo _("Add Alert Days In Advance"); } ?></span></div>
+		<div class='formTitle 245'><span class='headerText marginL7'><?php if ($alertDaysInAdvanceID){ echo _("Edit Alert Days In Advance"); } else { echo _("Add Alert Days In Advance"); } ?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class="surroundBox" style="width:250px;">
+		<table class="surroundBox 250">
 		<tr>
 		<td>
 
-			<table class='noBorder' style='width:200px; margin:10px;'>
-			<td><input type='text' id='daysInAdvanceNumber' value='<?php echo $instance->daysInAdvanceNumber; ?>' style='width:190px;'/></td>
+			<table class='noBorder 200 margin10'>
+			<td><input type='text' id='daysInAdvanceNumber' value='<?php echo $instance->daysInAdvanceNumber; ?>' class='190'/></td>
 			</td>
 			</tr>
 			</table>
@@ -29,10 +29,10 @@
 		</tr>
 		</table>
 		<div class='smallDarkRedText' id='div_form_error'>&nbsp;</div>
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' id ='submitAddUpdate' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' id ='submitAddUpdate' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'></td>
 			</tr>
 		</table>
 
@@ -55,4 +55,3 @@
 
 
 	</script>
-

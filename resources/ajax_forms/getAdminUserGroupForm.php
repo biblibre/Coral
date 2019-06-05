@@ -14,59 +14,59 @@
 		<form id='userGroupForm'>
 		<input type='hidden' name='editUserGroupID' id='editUserGroupID' value='<?php echo $userGroupID; ?>'>
 
-		<div class='formTitle' style='width:280px; margin-bottom:5px;position:relative;'><span class='headerText'><?php if ($userGroupID){ echo _("Edit User Group"); } else { echo _("Add User Group"); } ?></span></div>
+		<div class='formTitle 280 relativeP marginB5'><span class='headerText'><?php if ($userGroupID){ echo _("Edit User Group"); } else { echo _("Add User Group"); } ?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class='noBorder' style='width:100%;'>
-		<tr style='vertical-align:top;'>
-		<td style='vertical-align:top;position:relative;'>
+		<table class='noBorder hundPercent'>
+		<tr class='verticalAlignT'>
+		<td class='verticalAlignT relativeP'>
 
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='rule'><b><?php echo _("User Group");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:275px;'>
+			<table class='surroundBox 275'>
 			<tr>
 			<td>
 
-				<table class='noBorder' style='width:335px; margin:15px 20px 10px 20px;'>
+				<table class='noBorder 335 margin15201020'>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><label for='groupName'><b><?php echo _("Group Name:");?></b></label></td>
+				<td class='verticalAlignT textAlignL'><label for='groupName'><b><?php echo _("Group Name:");?></b></label></td>
 				<td>
-				<input type='text' id='groupName' name='groupName' value = '<?php echo $userGroup->groupName; ?>' style='width:210px' class='changeInput' /><span id='span_error_groupName' class='smallDarkRedText'></span>
+				<input type='text' id='groupName' name='groupName' value = '<?php echo $userGroup->groupName; ?>' class='changeInput 210' /><span id='span_error_groupName' class='smallDarkRedText'></span>
 				</td>
 				</tr>
 
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><label for='emailAddress' style="white-space: nowrap;"><b><?php echo _("Email Addresses:");?></b></label></td>
+				<td class='verticalAlignT textAlignL'><label for='emailAddress' class='noWrap'><b><?php echo _("Email Addresses:");?></b></label></td>
 				<td>
-				<input type='text' id='emailAddress' name='emailAddress' value = '<?php echo $userGroup->emailAddress; ?>' style='width:210px' class='changeInput' />
+				<input type='text' id='emailAddress' name='emailAddress' value = '<?php echo $userGroup->emailAddress; ?>' class='changeInput 210' />
 				</td>
 				</tr>
-                <tr><td colspan="2"><?php echo _("(use comma and a space between each email address)"); ?></td></tr>
+        <tr><td colspan="2"><?php echo _("(use comma and a space between each email address)"); ?></td></tr>
 				</table>
 			</td>
 			</tr>
 			</table>
 
-			<div style='height:10px;'>&nbsp;</div>
+			<div class='h10'>&nbsp;</div>
 
 			</td>
 			</tr>
-			<tr style='vertical-align:top;'>
+			<tr class='verticalAlignT'>
 			<td>
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='loginID'><b><?php echo _("Assigned Users");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:275px;'>
+			<table class='surroundBox 275'>
 			<tr>
 			<td>
 
-				<table class='noBorder smallPadding newUserTable' style='width:205px; margin:15px 35px 0px 35px;'>
+				<table class='noBorder smallPadding newUserTable 205 margin1535035'>
 
 				<tr class='newUserTR'>
 				<td>
-				<select class='changeSelect loginID' style='width:145px;'>
+				<select class='changeSelect loginID 145'>
 				<option value=''></option>
 				<?php
 
@@ -79,7 +79,7 @@
 				</select>
 				</td>
 
-				<td style='vertical-align:top;text-align:left;width:40px;'>
+				<td class='verticalAlignT textAlignL 40'>
 				<a href='javascript:void();'><input class='addUser add-button' title='<?php echo _("add user");?>' type='button' value='<?php echo _("Add");?>'/></a>
 				</td>
 				</tr>
@@ -89,7 +89,7 @@
 				<table class='noBorder smallPadding userTable' style='width:205px; margin:0px 35px 0px 35px;'>
 				<tr>
 				<td colspan='2'>
-					<hr style='width:200px;' />
+					<hr class='200' />
 				</td>
 				</tr>
 
@@ -100,7 +100,7 @@
 					?>
 						<tr class='newUser'>
 						<td>
-						<select class='changeSelect loginID' style='width:145px;'>
+						<select class='changeSelect loginID 145'>
 						<option value=''></option>
 						<?php
 						foreach ($allUserArray as $userGroupUser){
@@ -118,7 +118,7 @@
 						</select>
 						</td>
 
-						<td style='vertical-align:top;text-align:left;width:40px;'>
+						<td class='verticalAlignT textAlignL 40'>
 							<a href='javascript:void();'><img src='images/cross.gif' alt="<?php echo _("remove user from group");?>" title="<?php echo _("remove user from group");?>" class='remove' /></a>
 						</td>
 						</tr>
@@ -143,10 +143,10 @@
 
 		<hr style='width:283px;margin-top:15px; margin-bottom:10px;' />
 
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitUserGroupForm' id ='submitUserGroupForm' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitUserGroupForm' id ='submitUserGroupForm' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
 			</tr>
 		</table>
 
@@ -154,4 +154,3 @@
 		</div>
 
 		<script type="text/javascript" src="js/forms/userGroupForm.js?random=<?php echo rand(); ?>"></script>
-
