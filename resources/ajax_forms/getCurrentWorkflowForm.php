@@ -17,19 +17,19 @@ if (!isset($_GET['resourceAcquisitionID'])){
         <form id='resourceStepForm'>
             <input type='hidden' name='editRAID' id='editRAID' value='<?php echo $resourceAcquisitionID; ?>'>
 
-            <div class='formTitle' style='width:705px; margin-bottom:5px;position:relative;'><span class='headerText'>Edit Workflow</span></div>
+            <div class='formTitle 705 marginB5 relativeP'><span class='headerText'>Edit Workflow</span></div>
 
             <span class='smallDarkRedText' id='span_errors'></span>
 
-            <table class='noBorder' style='width:100%;'>
-                <tr style='vertical-align:top;'>
-                    <td style='vertical-align:top;position:relative;'>
+            <table class='noBorder wHundred'>
+                <tr class='verticalAlignT'>
+                    <td class='verticalAlignT RPosition'>
                         <span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='rule'><b>Workflow Steps</b></label>&nbsp;&nbsp;</span>
 
-                        <table class='surroundBox' style='width:700px;'>
+                        <table class='surroundBox 700'>
                             <tr>
                                 <td>
-                                    <table class='noBorder newStepTable' style='width:660px; margin:15px 20px 10px 20px;'>
+                                    <table class='noBorder newStepTable 660 margin15201020'>
                                         <tr>
                                             <td><?php echo _("Order"); ?></td>
                                             <td><?php echo _("Reminder delay (in days)"); ?></td>
@@ -40,13 +40,13 @@ if (!isset($_GET['resourceAcquisitionID'])){
                                         </tr>
                                         <tr class="newStepTR">
 
-                                            <td style='vertical-align:top;text-align:left;width:48px;' class='seqOrder' key=''><img src='images/transparent.gif' style='width:43px;height:20px;' /></td>
+                                            <td class='seqOrder 48 verticalAlignT textAlignL' key=''><img src='images/transparent.gif' class='43 h20' /></td>
 											<td><input type="text" class="mailReminderDelay" size="2" /></td>
                                             <td>
                                             <input type="hidden" class="stepID" value="-1">
                                             <input type="text" class="stepName"></td>
                                             <td>
-                                                <select name='userGroupID' id='userGroupID' style='width:150px;' class='changeSelect userGroupID'>
+                                                <select name='userGroupID' id='userGroupID' class='changeSelect userGroupID 150'>
                                                         <?php
                                                         foreach ($userGroupArray as $userGroup){
                                                             echo "<option value='" . $userGroup['userGroupID'] . "'>" . $userGroup['groupName'] . "</option>\n";
@@ -55,7 +55,7 @@ if (!isset($_GET['resourceAcquisitionID'])){
                                                 </select>
                                             </td>
                                             <td>
-                                               <select name='priorStepID' id='priorStepID' style='width:150px;' class='changeSelect priorStepID'>
+                                               <select name='priorStepID' id='priorStepID' class='changeSelect priorStepID 150'>
                                                     <option value=""></option>
                                                     <?php
                                                     foreach ($parentSteps as $parentStep) {
@@ -70,7 +70,7 @@ if (!isset($_GET['resourceAcquisitionID'])){
 
                                         <hr />
 
-                                    <table class='noBorder stepTable' style='width:660px; margin:15px 20px 10px 20px;'>
+                                    <table class='noBorder stepTable 660 margin15201020'>
                                         <?php
                                         $count = count($resourceSteps);
                                         $i = 0;
@@ -96,13 +96,13 @@ if (!isset($_GET['resourceAcquisitionID'])){
 
 								$arrowDown = "<a href='javascript:void(0);' class='moveArrow' direction='down'><img src='images/arrow_down.gif'></a>";
 								$arrowUp = "<a href='javascript:void(0);' class='moveArrow' direction='up' ><img src='images/arrow_up.gif'></a>";
-								$trans = "<img src='images/transparent.gif' style='width:20px;height:20px;' />";
+								$trans = "<img src='images/transparent.gif' class='20 h20'/>";
 
 								if ($key == 1){
 
 									//if this is the only step, display the large transparent gif instead of arrows
 									if (($stepCount) == 1){
-										echo "<img src='images/transparent.gif' style='width:43px;height:10px;' />";
+										echo "<img src='images/transparent.gif' class='43 h10'/>";
 									}else{
 										echo $trans . "&nbsp;" . $arrowDown;
 									}
@@ -121,8 +121,8 @@ if (!isset($_GET['resourceAcquisitionID'])){
                                             <input type="hidden" class="action" value="keep">
                                             <input type="hidden" class="stepID" value="<?php echo $resourceStep->resourceStepID; ?>">
                                             <input type="text" class="stepName changeInput" value="<?php echo $resourceStep->stepName; ?>"></td>
-                                            <td style='vertical-align:top;text-align:left;'>
-                                                <select name='userGroupID' id='userGroupID' style='width:150px;' class='changeSelect userGroupID' <?php echo $disabled; ?>>
+                                            <td class='verticalAlignT textAlignL'>
+                                                <select name='userGroupID' id='userGroupID'  class='changeSelect userGroupID 150' <?php echo $disabled; ?>>
                                                     <?php
                                                     foreach ($userGroupArray as $userGroup){
                                                         $selected = ($userGroup['userGroupID'] == $resourceStep->userGroupID)? 'selected':'';
@@ -132,7 +132,7 @@ if (!isset($_GET['resourceAcquisitionID'])){
                                                 </select>
                                             </td>
                                             <td>
-                                                <select name='priorStepID' id='priorStepID' style='width:150px;' class='changeSelect priorStepID'>
+                                                <select name='priorStepID' id='priorStepID'  class='changeSelect priorStepID 150'>
                                                     <option value=""></option>
                                                     <?php
                                                     foreach ($parentSteps as $parentStep) {
@@ -157,10 +157,10 @@ if (!isset($_GET['resourceAcquisitionID'])){
                 </tr>
             </table>
 
-            <table class='noBorderTable' style='width:125px;'>
+            <table class='noBorderTable 125'>
                 <tr>
-                    <td style='text-align:left'><input type='button' value='submit' name='submitCurrentWorkflowForm' id ='submitCurrentWorkflowForm'></td>
-                    <td style='text-align:right'><input type='button' value='cancel' onclick="kill(); tb_remove();"></td>
+                    <td class='textAlignL'><input type='button' value='submit' name='submitCurrentWorkflowForm' id ='submitCurrentWorkflowForm'></td>
+                    <td class='textAlignR'><input type='button' value='cancel' onclick="kill(); tb_remove();"></td>
                 </tr>
             </table>
 

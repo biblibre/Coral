@@ -84,9 +84,9 @@
 				</td>
 				</tr>
 				</table>
-				<div class='smallDarkRedText' id='div_errorUser' style='margin:0px 35px 7px 35px;'></div>
+				<div class='smallDarkRedText margin035735' id='div_errorUser'></div>
 
-				<table class='noBorder smallPadding userTable' style='width:205px; margin:0px 35px 0px 35px;'>
+				<table class='noBorder smallPadding userTable 205 margin035035'>
 				<tr>
 				<td colspan='2'>
 					<hr class='200' />
@@ -141,7 +141,7 @@
 		</table>
 
 
-		<hr style='width:283px;margin-top:15px; margin-bottom:10px;' />
+		<hr class='283 marginT15 marginB10' />
 
 		<table class='noBorderTable 125'>
 			<tr>

@@ -18,24 +18,24 @@
 
 		<input type='hidden' id='editLoginID' value='<?php echo $loginID; ?>'>
 
-		<div class='formTitle' style='width:295px;'><span class='headerText' style='margin-left:7px;'><?php if ($loginID){ echo _("Edit User"); } else { echo _("Add New User"); } ?></span></div>
+		<div class='formTitle 295'><span class='headerText marginL7'><?php if ($loginID){ echo _("Edit User"); } else { echo _("Add New User"); } ?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class="surroundBox" style="width:300px;">
+		<table class="surroundBox 300">
 		<tr>
 		<td>
 
-			<table class='noBorder' style='width:260px; margin:10px;'>
+			<table class='noBorder 260 margin10'>
 
 
-				<tr><td><label for='loginID'><b><?php echo _("Login ID");?></b></label</td><td><?php if (!$loginID) { ?><input type='text' id='loginID' value='<?php echo $loginID; ?>' style='width:150px;'/> <?php } else { echo $loginID; } ?></td></tr>
-				<tr><td><label for='firstName'><b><?php echo _("First Name");?></b></label</td><td><input type='text' id='firstName' value="<?php echo $user->firstName; ?>" style='width:150px;'/></td></tr>
-				<tr><td><label for='lastName'><b><?php echo _("Last Name");?></b></label</td><td><input type='text' id='lastName' value="<?php echo $user->lastName; ?>" style='width:150px;'/></td></tr>
-				<tr><td><label for='emailAddress'><b><?php echo _("Email Address");?></b></label</td><td><input type='text' id='emailAddress' value="<?php echo $user->emailAddress; ?>" style='width:150px;'/></td></tr>
+				<tr><td><label for='loginID'><b><?php echo _("Login ID");?></b></label</td><td><?php if (!$loginID) { ?><input type='text' id='loginID' value='<?php echo $loginID; ?>' class='150'/> <?php } else { echo $loginID; } ?></td></tr>
+				<tr><td><label for='firstName'><b><?php echo _("First Name");?></b></label</td><td><input type='text' id='firstName' value="<?php echo $user->firstName; ?>" class='150'/></td></tr>
+				<tr><td><label for='lastName'><b><?php echo _("Last Name");?></b></label</td><td><input type='text' id='lastName' value="<?php echo $user->lastName; ?>" class='150'/></td></tr>
+				<tr><td><label for='emailAddress'><b><?php echo _("Email Address");?></b></label</td><td><input type='text' id='emailAddress' value="<?php echo $user->emailAddress; ?>" class='150'/></td></tr>
 				<tr><td><label for='privilegeID'><b><?php echo _("Privilege");?></b></label</td>
 				<td>
-				<select id='privilegeID' style='width:155px'>
+				<select id='privilegeID' class="155">
 				<?php
 
 				foreach ($privilegeArray as $privilege){
@@ -61,10 +61,10 @@
 		</table>
 
 		<br />
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' id ='submitAddUpdate' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' id ='submitAddUpdate' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'></td>
 			</tr>
 		</table>
 
@@ -110,4 +110,3 @@
 
 
 	</script>
-

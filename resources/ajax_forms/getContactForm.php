@@ -29,69 +29,69 @@
 		<input type='hidden' name='editResourceAcquisitionID' id='editResourceAcquisitionID' value='<?php echo $resourceAcquisitionID; ?>'>
 		<input type='hidden' name='editContactID' id='editContactID' value='<?php echo $contactID; ?>'>
 
-		<div class='formTitle' style='width:603px;'><span class='headerText' style='margin-left:7px;'><?php if ($contactID){ echo _("Edit Contact"); } else { echo _("Add Contact"); } ?></span></div>
+		<div class='formTitle 603'><span class='headerText marginL7' ><?php if ($contactID){ echo _("Edit Contact"); } else { echo _("Add Contact"); } ?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class="surroundBox" style="width:600;">
+		<table class="surroundBox 600">
 		<tr>
 		<td>
-			<table class='noBorder' style='width:560px; margin:15px 20px 10px 20px;'>
+			<table class='noBorder 560 margin15201020'>
 			<tr>
 			<td>
 
 				<table class='noBorder'>
 					<tr>
-					<td style='text-align:left'><label for='contactName'><b><?php echo _("Name:");?></b></label></td>
+					<td class='textAlignL'><label for='contactName'><b><?php echo _("Name:");?></b></label></td>
 					<td>
-					<input type='text' id='contactName' name='contactName' value = '<?php echo $contact->name; ?>' style='width:150px' class='changeInput' /><span id='span_error_contactName' class='smallDarkRedText'>
+					<input type='text' id='contactName' name='contactName' value = '<?php echo $contact->name; ?>' class='changeInput 150' /><span id='span_error_contactName' class='smallDarkRedText'>
 					</td>
 					</tr>
 
 					<tr>
-					<td style='text-align:left'><label for='contactTitle'><b><?php echo _("Title:");?></b></label></td>
+					<td class='textAlignL'><label for='contactTitle'><b><?php echo _("Title:");?></b></label></td>
 					<td>
-					<input type='text' id='contactTitle' name='contactTitle' value = '<?php echo $contact->title; ?>' style='width:150px' class='changeInput' />
+					<input type='text' id='contactTitle' name='contactTitle' value = '<?php echo $contact->title; ?>' class='changeInput 150' />
 					</td>
 					</tr>
 
 					<tr>
-					<td style='text-align:left'><label for='phoneNumber'><b><?php echo _("Phone:");?></b></label></td>
+					<td class='textAlignL'><label for='phoneNumber'><b><?php echo _("Phone:");?></b></label></td>
 					<td>
-					<input type='text' id='phoneNumber' name='phoneNumber' value = '<?php echo $contact->phoneNumber; ?>' style='width:150px' class='changeInput' />
+					<input type='text' id='phoneNumber' name='phoneNumber' value = '<?php echo $contact->phoneNumber; ?>' class='changeInput 150' />
 					</td>
 					</tr>
 
 					<tr>
-					<td style='text-align:left'><label for='altPhoneNumber'><b><?php echo _("Alt Phone:");?></b></label></td>
+					<td class='textAlignL'><label for='altPhoneNumber'><b><?php echo _("Alt Phone:");?></b></label></td>
 					<td>
-					<input type='text' id='altPhoneNumber' name='altPhoneNumber' value = '<?php echo $contact->altPhoneNumber; ?>' style='width:150px' class='changeInput' />
+					<input type='text' id='altPhoneNumber' name='altPhoneNumber' value = '<?php echo $contact->altPhoneNumber; ?>' class='changeInput 150' />
 					</td>
 					</tr>
 
 					<tr>
-					<td style='text-align:left'><label for='faxNumber'><b><?php echo _("Fax:");?></b></label></td>
+					<td class='textAlignL'><label for='faxNumber'><b><?php echo _("Fax:");?></b></label></td>
 					<td>
-					<input type='text' id='faxNumber' name='faxNumber' value = '<?php echo $contact->faxNumber; ?>' style='width:150px' class='changeInput' />
+					<input type='text' id='faxNumber' name='faxNumber' value = '<?php echo $contact->faxNumber; ?>' class='changeInput 150' />
 					</td>
 					</tr>
 
 					<tr>
-					<td style='text-align:left'><label for='emailAddress'><b><?php echo _("Email:");?></b></label></td>
+					<td class='textAlignL'><label for='emailAddress'><b><?php echo _("Email:");?></b></label></td>
 					<td>
-					<input type='text' id='emailAddress' name='emailAddress' value = '<?php echo $contact->emailAddress; ?>' style='width:150px' class='changeInput' />
+					<input type='text' id='emailAddress' name='emailAddress' value = '<?php echo $contact->emailAddress; ?>' class='changeInput 150' />
 					</td>
 					</tr>
 
 					<tr>
-					<td style='text-align:left'><label for='addressText'><b><?php echo _("Address:");?></b></label></td>
+					<td cxlass='textAlignL'><label for='addressText'><b><?php echo _("Address:");?></b></label></td>
 					<td>
-					<textarea rows='3' id='addressText' style='width:150px'><?php echo $contact->addressText; ?></textarea>
+					<textarea rows='3' id='addressText' class='150'><?php echo $contact->addressText; ?></textarea>
 					</td>
 					</tr>
 
 					<tr>
-					<td style='text-align:left'><label for='invalidInd'><b><?php echo _("Archived:");?></b></label></td>
+					<td class='textAlignL'><label for='invalidInd'><b><?php echo _("Archived:");?></b></label></td>
 					<td>
 					<input type='checkbox' id='invalidInd' name='invalidInd' <?php echo $invalidChecked; ?> />
 					</td>
@@ -101,7 +101,7 @@
 			<td>
 				<table class='noBorder'>
 				<tr>
-				<td style='vertical-align:top;text-align:left;'><label for='orgRoles'><b><?php echo _("Role(s):");?></b></label></td>
+				<td class='verticalAlignT textAlignL'><label for='orgRoles'><b><?php echo _("Role(s):");?></b></label></td>
 				<td>
 
 					<table>
@@ -114,9 +114,9 @@
 								echo "<tr>\n";
 							}
 							if (in_array($contactRoleIns['contactRoleID'],$contactRoleProfileArray)){
-								echo "<td style='vertical-align:top;text-align:left;'><input class='check_roles' type='checkbox' name='" . $contactRoleIns['contactRoleID'] . "' id='" . $contactRoleIns['contactRoleID'] . "' value='" . $contactRoleIns['contactRoleID'] . "' checked />   <span class='smallText'>" . $contactRoleIns['shortName'] . "</span></td>\n";
+								echo "<td class='verticalAlignT textAlignL'><input class='check_roles' type='checkbox' name='" . $contactRoleIns['contactRoleID'] . "' id='" . $contactRoleIns['contactRoleID'] . "' value='" . $contactRoleIns['contactRoleID'] . "' checked />   <span class='smallText'>" . $contactRoleIns['shortName'] . "</span></td>\n";
 							}else{
-								echo "<td style='vertical-align:top;text-align:left;'><input class='check_roles' type='checkbox' name='" . $contactRoleIns['contactRoleID'] . "' id='" . $contactRoleIns['contactRoleID'] . "' value='" . $contactRoleIns['contactRoleID'] . "' />   <span class='smallText'>" . $contactRoleIns['shortName'] . "</span></td>\n";
+								echo "<td class='verticalAlignT textAlignL'><input class='check_roles' type='checkbox' name='" . $contactRoleIns['contactRoleID'] . "' id='" . $contactRoleIns['contactRoleID'] . "' value='" . $contactRoleIns['contactRoleID'] . "' />   <span class='smallText'>" . $contactRoleIns['shortName'] . "</span></td>\n";
 							}
 							if(($i % 3)==0){
 								echo "</tr>\n";
@@ -137,9 +137,9 @@
 
 
 				<tr>
-				<td style='text-align:left'><label for='addressText'><b><?php echo _("Notes:");?></b></label></td>
+				<td class='textAlignL'><label for='addressText'><b><?php echo _("Notes:");?></b></label></td>
 				<td>
-				<textarea rows='3' id='noteText' style='width:220px'><?php echo $contact->noteText; ?></textarea>
+				<textarea rows='3' id='noteText' class='220'><?php echo $contact->noteText; ?></textarea>
 				</td>
 				</tr>
 
@@ -156,12 +156,12 @@
 
 
 
-		<hr style='width:610px;margin:15px 0px 10px 0px;' />
+		<hr class="610 margin150100" />
 
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitContactForm' id ='submitContactForm' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove();" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitContactForm' id ='submitContactForm' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove();" class='cancel-button'></td>
 			</tr>
 		</table>
 
@@ -170,4 +170,3 @@
 
 
 		<script type="text/javascript" src="js/forms/contactForm.js?random=<?php echo rand(); ?>"></script>
-

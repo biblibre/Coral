@@ -49,24 +49,24 @@
 		<form id='licenseForm'>
 		<input type='hidden' name='editResourceAcquisitionID' id='editResourceAcquisitionID' value='<?php echo $resourceAcquisitionID; ?>'>
 
-		<div class='formTitle' style='width:360px; margin-bottom:5px;'><span class='headerText'><?php echo _("Edit Licenses");?></span></div>
+		<div class='formTitle 360 marginB5'><span class='headerText'><?php echo _("Edit Licenses");?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class='noBorder' style='width:360px;'>
-		<tr style='vertical-align:top;'>
-		<td style='vertical-align:top;'>
+		<table class='noBorder 360'>
+		<tr class='verticalAlignT'>
+		<td class='verticalAlignT'>
 
 
 			<?php if ($config->settings->licensingModule == 'Y'){ ?>
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='licenseRecords'><b><?php echo _("License Records");?></b></label>&nbsp;&nbsp;</span>
 
 
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox 350'>
 			<tr>
 			<td>
 
-				<table class='noBorder smallPadding newLicenseTable' style='width:310px; margin:15px 20px 0px 20px'>
+				<table class='noBorder smallPadding newLicenseTable 310 margin1520020'>
 				<tr class='newLicenseTR'>
 
 				<td style='vertical-align:top;text-align:left;'>
@@ -200,4 +200,3 @@
 		<?php }else{ ?>
 		<script type="text/javascript" src="js/forms/licenseStatusOnlyForm.js?random=<?php echo rand(); ?>"></script>
 		<?php } ?>
-

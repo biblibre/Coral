@@ -73,7 +73,7 @@ if ($orgModule) {
 
 ?>
 <?php include_once __DIR__.'/../css/ebscoKbCss.php'; ?>
-<div class="ebsco-layout" style="width:745px; height: 650px;">
+<div class="ebsco-layout 745 h650">
 
     <div id="div_ebscoKbPackageImportForm" class="ebsco-layout">
         <div class="formTitle">
@@ -162,7 +162,7 @@ if ($orgModule) {
                                         <p id="span_error_organization" class="smallDarkRedText"></p>
                                         <label for="providerText">Selected Provider</label>
                                         <br>
-                                        <input type="text" id="providerText" style="width:220px;" class="changeInput" value="" />
+                                        <input type="text" id="providerText"  class="changeInput 220" value="" />
                                     </div>
                                 </div>
                                 <?php else: ?>
@@ -330,7 +330,7 @@ if ($orgModule) {
                             </div>
                             <div class="card-body">
                                 <p class="smallGreyText"><?php echo _("Include any additional information");?></p>
-                                <textarea rows="5" id="noteText" name="noteText" style="width: 100%;"></textarea>
+                                <textarea rows="5" id="noteText" name="noteText" class='w100'></textarea>
                             </div>
                         </div>
                     </div>
@@ -350,7 +350,7 @@ if ($orgModule) {
     <div id="importOverlay">
         <div class="container mt-5">
             <div class="row">
-                <div class="col-12" style="text-align: center" id="importingMessage">
+                <div class="col-12 text-alignC"  id="importingMessage">
                     <h1>Importing</h1>
                     <p class="mt-1">
                         <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
@@ -361,7 +361,7 @@ if ($orgModule) {
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body" id="importLog">
-                            <p>Adding package...<i class="fa fa-check-circle-o text-success" style="display: none" id="packageSuccessfullyImported"></i></p>
+                            <p>Adding package...<i class="fa fa-check-circle-o text-success noDislpaying" id="packageSuccessfullyImported"></i></p>
                         </div>
                     </div>
                 </div>

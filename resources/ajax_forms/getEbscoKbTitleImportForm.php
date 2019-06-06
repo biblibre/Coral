@@ -22,7 +22,7 @@ $resourceFormatArray = $resourceFormatObj->sortedArray();
 
 ?>
 <?php include_once __DIR__.'/../css/ebscoKbCss.php'; ?>
-<div id="div_ebscoKbTitleImportForm" class="ebsco-layout" style="width:745px;">
+<div id="div_ebscoKbTitleImportForm" class="ebsco-layout 745" >
     <div class="formTitle">
         <span class="headerText"><?php echo _('Import').' '.$title->titleName.' '._(' from EBSCO Kb'); ?></span>
     </div>
@@ -48,7 +48,7 @@ $resourceFormatArray = $resourceFormatObj->sortedArray();
                         </div>
                         <div class="card-body">
                             <label for="providerText"><?php echo _('Provider'); ?></label>
-                            <input type="text" id="providerText" style="width:220px;" class="changeInput" value="" />
+                            <input type="text" id="providerText" class="changeInput 220" value="" />
                             <span id="span_error_providerText" class="smallDarkRedText"></span>
                         </div>
                     </div>
@@ -113,7 +113,7 @@ $resourceFormatArray = $resourceFormatObj->sortedArray();
                         </div>
                         <div class="card-body">
                             <p class="smallGreyText"><?php echo _("Include any additional information");?></p>
-                            <textarea rows="5" id="noteText" name="noteText" style="width: 100%;"></textarea>
+                            <textarea rows="5" id="noteText" name="noteText" class="w100"></textarea>
                         </div>
                     </div>
 
@@ -135,4 +135,3 @@ $resourceFormatArray = $resourceFormatObj->sortedArray();
     </div>
 </div>
 <script type="text/javascript" src="js/forms/importEbscoKbForm.js?random=<?php echo rand(); ?>"></script>
-

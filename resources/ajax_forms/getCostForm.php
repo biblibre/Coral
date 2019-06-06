@@ -59,13 +59,13 @@ if ($enhancedCostFlag){
 		<span class='smallDarkRedText' id='span_errors'></span>
 
 		<table class='noBorder' style='width:<?php echo $baseWidth + 45 ?>px;'>
-		<tr style='vertical-align:top;'>
+		<tr class='verticalAlignT'>
 		<td>
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='resourcePayments'><b><?php echo _("Cost History");?></b></label>&nbsp;&nbsp;</span>
 			<table class='surroundBox' style='width:<?php echo $baseWidth - 65; ?>px;'>
 			<tr>
 			<td>
-				<table class='newPaymentTable' style='margin:7px 15px 0 15px;'>
+				<table class='newPaymentTable margin715015'>
 					<thead>
 						<tr>
 							<?php if ($enhancedCostFlag){ ?>
@@ -123,13 +123,13 @@ if ($enhancedCostFlag){
 							</td>
 							<?php if ($enhancedCostFlag){ ?>
 						    <td>
-								<input type='text' value='' style='width:60px;' class='changeDefaultWhite changeInput priceTaxExcluded' />
+								<input type='text' value=''  class='changeDefaultWhite changeInput priceTaxExcluded 60' />
 							</td>
 						    <td>
-								<input type='text' value='' style='width:60px;' class='changeDefaultWhite changeInput taxRate' />
+								<input type='text' value=''  class='changeDefaultWhite changeInput taxRate 60' />
 							</td>
 						    <td>
-								<input type='text' value='' style='width:60px;' class='changeDefaultWhite changeInput priceTaxIncluded' />
+								<input type='text' value=''  class='changeDefaultWhite changeInput priceTaxIncluded 60' />
 							</td>
 							<?php } ?>
 							<td>
@@ -194,7 +194,7 @@ if ($enhancedCostFlag){
 						</tr>
 						<tr>
 							<td colspan='<?php echo $numCols; ?>'>
-								<div class='smallDarkRedText div_errorPayment' style='margin:0px 20px 0px 26px;'>
+								<div class='smallDarkRedText div_errorPayment margin200026'>
 								</div>
 								<hr style='width:<?php echo $baseWidth; ?>px;margin:0px 0px 5px 5px;' />
 							</td>
@@ -202,7 +202,7 @@ if ($enhancedCostFlag){
 					</tbody>
 				</table>
 				<div class='paymentTableDiv'>
-					<table class='paymentTable' style='margin:7px 15px 0 15px; max-height: 100px; overflow: auto;'>
+					<table class='paymentTable margin715015 MaxH100 overFlowAuto'>
 						<tbody>
 						<?php
 							if (count($paymentArray) > 0){
@@ -252,13 +252,13 @@ if ($enhancedCostFlag){
 								</td>
 								<?php if ($enhancedCostFlag){ ?>
 						        <td>
-									<input type='text' value='<?php echo integer_to_cost($payment['priceTaxExcluded']); ?>' style='width:60px;' class='changeInput priceTaxExcluded' />
+									<input type='text' value='<?php echo integer_to_cost($payment['priceTaxExcluded']); ?>' class='changeInput priceTaxExcluded 60' />
 								</td>
 						        <td>
-									<input type='text' value='<?php echo integer_to_cost($payment['taxRate']); ?>' style='width:60px;' class='changeInput taxRate' />
+									<input type='text' value='<?php echo integer_to_cost($payment['taxRate']); ?>'  class='changeInput taxRate 60' />
 								</td>
 						        <td>
-									<input type='text' value='<?php echo integer_to_cost($payment['priceTaxIncluded']); ?>' style='width:60px;' class='changeInput priceTaxIncluded' />
+									<input type='text' value='<?php echo integer_to_cost($payment['priceTaxIncluded']); ?>' class='changeInput priceTaxIncluded 60' />
 								</td>
 								<?php } ?>
 								<td>
@@ -335,7 +335,7 @@ if ($enhancedCostFlag){
 							</tr>
 							<tr>
 								<td colspan='<?php echo $numCols; ?>'>
-									<div class='smallDarkRedText div_errorPayment' style='margin:0px 20px 0px 26px;'></div>
+									<div class='smallDarkRedText div_errorPayment margin020026'></div>
 								</td>
 							</tr>
 						<tbody>
@@ -360,12 +360,12 @@ if ($enhancedCostFlag){
 		</table>
 
 
-		<hr style='width:100%;margin:15px 0px 10px 0px;' />
+		<hr class='margin150100 wHundred'/>
 
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitCost' id ='submitCost' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitCost' id ='submitCost' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
 			</tr>
 		</table>
 

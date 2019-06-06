@@ -15,27 +15,27 @@
 		<input type='hidden' name='editResourceAcquisitionID' id='editResourceAcquisitionID' value='<?php echo isset($resourceAcquisitionID) ? $resourceAcquisitionID : $attachment->resourceAcquisitionID; ?>'>
 		<input type='hidden' name='editAttachmentID' id='editAttachmentID' value='<?php echo $attachmentID; ?>'>
 
-		<div class='formTitle' style='width:345px;'><span class='headerText' style='margin-left:7px;'><?php if ($attachmentID){ echo _("Edit Attachment"); } else { echo _("Add Attachment"); } ?></span></div>
+		<div class='formTitle 345'><span class='headerText marginL7'><?php if ($attachmentID){ echo _("Edit Attachment"); } else { echo _("Add Attachment"); } ?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class="surroundBox" style="width:350px;">
+		<table class="surroundBox 350">
 		<tr>
 		<td>
 
-			<table class='noBorder' style='width:310px; margin:10px 15px;'>
+			<table class='noBorder 310 margin1015'>
 
 			<tr>
-			<td style='vertical-align:top;text-align:left;'><label for='shortName'><b><?php echo _("Name:");?></b></label></td>
+			<td class="verticalAlignT textAlignL"><label for='shortName'><b><?php echo _("Name:");?></b></label></td>
 			<td>
-			<input type='text' class='changeInput' id='shortName' name='shortName' value = '<?php echo $attachment->shortName; ?>' style='width:230px' /><span id='span_error_shortName' class='smallDarkRedText'></span>
+			<input type='text' class='changeInput' id='shortName' name='shortName' value = '<?php echo $attachment->shortName; ?>' class='230'/><span id='span_error_shortName' class='smallDarkRedText'></span>
 			</td>
 			</tr>
 
 			<tr>
 
-			<td style='vertical-align:top;text-align:left;border:0px;'><label for='attachmentTypeID'><b><?php echo _("Type:");?></b></label></td>
-			<td style='vertical-align:top;text-align:left;border:0px;'>
+			<td class='verticalAlignT textAlignL border0'><label for='attachmentTypeID'><b><?php echo _("Type:");?></b></label></td>
+			<td >
 
 			<select name='attachmentTypeID' id='attachmentTypeID'>
 			<option value=''></option>
@@ -54,7 +54,7 @@
 			</tr>
 
 			<tr>
-			<td style='text-align:left;vertical-align:top;'><label for="uploadAttachment"><b><?php echo _("File:");?></b></label></td>
+			<td class='textAlignL verticalAlignT'><label for="uploadAttachment"><b><?php echo _("File:");?></b></label></td>
 			<td>
 			<?php
 
@@ -75,8 +75,8 @@
 			</tr>
 
 			<tr>
-			<td style='vertical-align:top;text-align:left;'><label for='descriptionText'><b><?php echo _("Details:");?></b></label></td>
-			<td><textarea rows='5' class='changeInput' id='descriptionText' name='descriptionText' style='width:230px'><?php echo $attachment->descriptionText; ?></textarea></td>
+			<td class='textAlignL verticalAlignT'><label for='descriptionText'><b><?php echo _("Details:");?></b></label></td>
+			<td><textarea rows='5' class='changeInput 230' id='descriptionText' name='descriptionText'><?php echo $attachment->descriptionText; ?></textarea></td>
 			</td>
 			</tr>
 			</table>
@@ -86,10 +86,10 @@
 		</table>
 
 		<br />
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitAttachmentForm' id ='submitAttachmentForm' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
+				<td class="textAlignL"><input type='button' value='<?php echo _("submit");?>' name='submitAttachmentForm' id ='submitAttachmentForm' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
 			</tr>
 		</table>
 
@@ -98,4 +98,3 @@
 		</div>
 
 		<script type="text/javascript" src="js/forms/attachmentForm.js?random=<?php echo rand(); ?>"></script>
-

@@ -285,7 +285,7 @@
 
 		</div>
 	</div>
-	<div style='clear: both;'></div>
+	<div class='clearingBoth'></div>
 </div>
 <script type='text/javascript'>
 	$(".remove").live('click', function () {

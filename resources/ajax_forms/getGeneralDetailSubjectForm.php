@@ -15,26 +15,26 @@
 		<form id='detailedSubjectForm'>
 		<input type='hidden' name='editgeneralSubjectID' id='editgeneralSubjectID' value='<?php echo $generalSubjectID; ?>'>
 
-		<div class='formTitle' style='width:280px; margin-bottom:5px;position:relative;'><span class='headerText'><?php echo _("Add / Edit Subject Relationships"); ?></span></div>
+		<div class='formTitle 280 marginB5 relativeP'><span class='headerText'><?php echo _("Add / Edit Subject Relationships"); ?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class='noBorder' style='width:100%;'>
-		<tr style='vertical-align:top;'>
-		<td style='vertical-align:top;position:relative;'>
+		<table class='noBorder w100'>
+		<tr class='verticalAlignT'>
+		<td class='verticalAlignT relativeP'>
 
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='rule'><b><?php echo _("General Subject");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:275px;'>
+			<table class='surroundBox 275'>
 			<tr>
 			<td>
 
-				<table class='noBorder' style='width:235px; margin:15px 20px 10px 20px;'>
+				<table class='noBorder 235 margin15201020'>
 				<tr>
 				<td>&nbsp;</td>
 				<td>
-				<input type='text' id='shortName' name='shortName' value = '<?php echo $generalSubject->shortName; ?>' style='width:110px' class='changeInput' /><span id='span_error_groupName' class='smallDarkRedText'></span>
+				<input type='text' id='shortName' name='shortName' value = '<?php echo $generalSubject->shortName; ?>'  class='changeInput 110' /><span id='span_error_groupName' class='smallDarkRedText'></span>
 				</td>
 				</tr>
 
@@ -43,24 +43,24 @@
 			</tr>
 			</table>
 
-			<div style='height:10px;'>&nbsp;</div>
+			<div class='h10'>&nbsp;</div>
 
 			</td>
 			</tr>
-			<tr style='vertical-align:top;'>
+			<tr class='verticalAlignT'>
 			<td>
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='detailedSubjectID'><b><?php echo _("Detailed Subjects");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:275px;'>
+			<table class='surroundBox 275'>
 			<tr>
 			<td>
 
-				<table class='noBorder smallPadding newdetailedSubjectTable' style='width:205px; margin:15px 35px 0px 35px;'>
+				<table class='noBorder smallPadding newdetailedSubjectTable 205 margin1535035'>
 
 					<tr class='newdetailedSubjectTR'>
 						<td>
-							<select class='changeSelect detailedSubjectID' style='width:145px;'>
+							<select class='changeSelect detailedSubjectID 145'>
 								<option value=''></option>
 								<?php
 
@@ -71,19 +71,19 @@
 							</select>
 						</td>
 
-				<td style='vertical-align:top;text-align:left;width:40px;'>
+				<td class='verticalAlignT textAlignL 40'>
 				<a href='javascript:void();'>
 					<input class='adddetailedSubject add-button' title='<?php echo _("add detail subject");?>' type='button' value='<?php echo _("Add");?>'/>
 				</a>
 				</td>
 				</tr>
 				</table>
-				<div class='smallDarkRedText' id='div_errordetailedSubject' style='margin:0px 35px 7px 35px;'></div>
+				<div class='smallDarkRedText margin035735' id='div_errordetailedSubject'></div>
 
-				<table class='noBorder smallPadding detailedSubjectTable' style='width:205px; margin:0px 35px 0px 35px;'>
+				<table class='noBorder smallPadding detailedSubjectTable 205 margin035035'>
 				<tr>
 				<td colspan='2'>
-					<hr style='width:200px;' />
+					<hr class='200' />
 				</td>
 				</tr>
 
@@ -94,12 +94,12 @@
 					?>
 						<tr class='newdetailedSubject'>
 						<td>
-						<select class='changeSelect detailedSubjectID' style='width:145px;'>
+						<select class='changeSelect detailedSubjectID 145'>
 						<option value='<?php echo $dsSubject->detailedSubjectID ?>'><?php echo $dsSubject->shortName ?></option>
 						</select>
 						</td>
 
-						<td style='vertical-align:top;text-align:left;width:40px;'>
+						<td class='40 verticalAlignT textAlignL' >
 						<?php
 							// Check to see if detail subject is in use.  If not allow removal.
 							$subjectObj = new DetailedSubject();
@@ -123,12 +123,12 @@
 		</table>
 
 
-		<hr style='width:283px;margin-top:15px; margin-bottom:10px;' />
+		<hr class='283 marginT15 marginB10' />
 
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitDetailSubjectForm' id ='submitDetailSubjectForm' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitDetailSubjectForm' id ='submitDetailSubjectForm' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
 			</tr>
 		</table>
 
@@ -136,4 +136,3 @@
 		</div>
 
 		<script type="text/javascript" src="js/forms/generalDetailSubjectForm.js?random=<?php echo rand(); ?>"></script>
-
