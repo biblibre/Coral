@@ -7,7 +7,7 @@
 			$resource = new Resource();
 		}
 
-        // get resource acquisition for this resource 
+        // get resource acquisition for this resource
         // at this point, there are none (resource not saved yet)
         // or only one (resource saved as draft)
         if ($resource->resourceID) {
@@ -73,44 +73,44 @@
 
 		<input type='hidden' id='organizationID' value='<?php echo $orgID; ?>' />
 		<input type='hidden' id='editResourceID' value='<?php echo $resourceID; ?>' />
-		<div class='formTitle' style='width:745px;'><span class='headerText'><?php if ($resourceID) { echo _("Edit Saved Resource"); }else{ echo _("Add New Resource"); } ?></span></div>
-		<div class='smallDarkRedText' style='height:14px;margin:3px 0px 0px 0px;'>&nbsp;* <?php echo _("required fields");?></div>
+		<div class='formTitle 745'><span class='headerText'><?php if ($resourceID) { echo _("Edit Saved Resource"); }else{ echo _("Add New Resource"); } ?></span></div>
+		<div class='smallDarkRedText margin3000 h14'>&nbsp;* <?php echo _("required fields");?></div>
 
 		<table class='noBorder'>
-		<tr style='vertical-align:top;'>
-		<td style='vertical-align:top; padding-right:35px;'>
+		<tr class='verticalAlignT'>
+		<td class='verticalAlignT paddingR35'>
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<b><?php echo _("Product");?></b>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox 350'>
 			<tr>
 			<td>
 
-				<table class='noBorder' style='width:310px; margin:5px 15px;'>
+				<table class='noBorder 310 margin515'>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;'><label for='titleText'><?php echo _("Name:");?>&nbsp;&nbsp;<span class='bigDarkRedText'>*</span></label></td>
-					<td><input type='text' id='titleText' style='width:220px;' class='changeInput' value="<?php echo $resource->titleText; ?>" /><span id='span_error_titleText' class='smallDarkRedText'></span></td>
+					<td class='verticalAlignT ext-align:left'><label for='titleText'><?php echo _("Name:");?>&nbsp;&nbsp;<span class='bigDarkRedText'>*</span></label></td>
+					<td><input type='text' id='titleText' class='changeInput 220' value="<?php echo $resource->titleText; ?>" /><span id='span_error_titleText' class='smallDarkRedText'></span></td>
 					</tr>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;'><label for='descriptionText'><?php echo _("Description:");?></label></td>
-					<td><textarea rows='3' id='descriptionText' style='width:223px'><?php echo $resource->descriptionText; ?></textarea></td>
+					<td class='verticalAlignT textAlignL'><label for='descriptionText'><?php echo _("Description:");?></label></td>
+					<td><textarea rows='3' id='descriptionText' class='223'><?php echo $resource->descriptionText; ?></textarea></td>
 					</tr>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;'><label for='providerText'><?php echo _("Provider:");?></label></td>
-					<td><input type='text' id='providerText' style='width:220px;' class='changeInput' value='<?php echo $providerText; ?>' /><span id='span_error_providerText' class='smallDarkRedText'></span></td>
+					<td class='verticalAlignT textTopLeft'><label for='providerText'><?php echo _("Provider:");?></label></td>
+					<td><input type='text' id='providerText' class='changeInput 220' value='<?php echo $providerText; ?>' /><span id='span_error_providerText' class='smallDarkRedText'></span></td>
 					</tr>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;'><label for='resourceURL'><?php echo _("URL:");?></label></td>
-					<td><input type='text' id='resourceURL' style='width:220px;' class='changeInput' value='<?php echo $resource->resourceURL; ?>' /><span id='span_error_resourceURL' class='smallDarkRedText'></span></td>
+					<td class='verticalAlignT textAlignL'><label for='resourceURL'><?php echo _("URL:");?></label></td>
+					<td><input type='text' id='resourceURL'  class='changeInput 220' value='<?php echo $resource->resourceURL; ?>' /><span id='span_error_resourceURL' class='smallDarkRedText'></span></td>
 					</tr>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;'><label for='resourceAltURL'><?php echo _("Alt URL:");?></label></td>
-					<td><input type='text' id='resourceAltURL' style='width:220px;' class='changeInput' value='<?php echo $resource->resourceAltURL; ?>' /><span id='span_error_resourceAltURL' class='smallDarkRedText'></span></td>
+					<td class='verticalAlignT textAlignL'><label for='resourceAltURL'><?php echo _("Alt URL:");?></label></td>
+					<td><input type='text' id='resourceAltURL' class='changeInput 220' value='<?php echo $resource->resourceAltURL; ?>' /><span id='span_error_resourceAltURL' class='smallDarkRedText'></span></td>
 					</tr>
 
 				</table>
@@ -122,12 +122,12 @@
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='resourceFormatID'><b><?php echo _("Format");?></b></label>&nbsp;<span class='bigDarkRedText'>*</span>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox 350'>
 			<tr>
 			<td>
 <span id='span_error_resourceFormatID' class='smallDarkRedText'></span>
 
-				<table class='noBorder' style='width:310px; margin:5px 15px;'>
+				<table class='noBorder 310 margin515'>
 				<?php
 				$i=0;
 
@@ -167,11 +167,11 @@
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<b><?php echo _("Acquisition Type");?></b>&nbsp;<span class='bigDarkRedText'>*</span>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox 350'>
 			<tr>
 			<td>
 
-				<table class='noBorder smallPadding' style='width:310px; margin:5px 15px;'>
+				<table class='noBorder smallPadding 310 margin515'>
 				<?php
 				$i=0;
 
@@ -214,11 +214,11 @@
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='resourceTypeID'><b><?php echo _("Resource Type");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:350px;' id='resource-type'>
+			<table class='surroundBox 350'  id='resource-type'>
 			<tr>
 			<td>
 
-				<table class='noBorder' style='width:320px; margin:5px 15px;'>
+				<table class='noBorder 320 margin515'>
 				<?php
 				$i=0;
 
@@ -260,15 +260,15 @@
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='resourceFormatID'><b><?php echo _("Notes");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox 350'>
 			<tr>
 			<td>
 
-				<table class='noBorder smallPadding' style='width:320px; margin:7px 15px;'>
+				<table class='noBorder smallPadding 320 margin715'>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;'><span class='smallGreyText'><?php echo _("Include any additional information");?></span><br />
-					<textarea rows='5' id='noteText' name='noteText' style='width:310px'><?php echo $resourceNote->noteText; ?></textarea></td>
+					<td classe='verticalAlignT textAlignL'><span class='smallGreyText'><?php echo _("Include any additional information");?></span><br />
+					<textarea rows='5' id='noteText' name='noteText' class='310'><?php echo $resourceNote->noteText; ?></textarea></td>
 					</tr>
 				</table>
 			</td>
@@ -279,13 +279,13 @@
 		</tr>
 		</table>
 
-		<hr style='width:745px;margin:15px 0px 10px 0px;' />
+		<hr class='745 margin150100'/>
 
-		<table class='noBorderTable' style='width:175px;'>
+		<table class='noBorderTable 175'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("save");?>' id='save' class='submitResource save-button'></td>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' id='progress' class='submitResource submit-button'></td>
-				<td style='text-align:left'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove()" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("save");?>' id='save' class='submitResource save-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' id='progress' class='submitResource submit-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove()" class='cancel-button'></td>
 			</tr>
 		</table>
 
@@ -294,4 +294,3 @@
 		</div>
 
 		<script type="text/javascript" src="js/forms/resourceNewForm.js?random=<?php echo rand(); ?>"></script>
-

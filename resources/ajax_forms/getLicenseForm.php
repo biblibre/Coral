@@ -69,23 +69,23 @@
 				<table class='noBorder smallPadding newLicenseTable 310 margin1520020'>
 				<tr class='newLicenseTR'>
 
-				<td style='vertical-align:top;text-align:left;'>
-				<input type='text' value = '' style='width:260px;background:#f5f8fa;' class='changeAutocomplete licenseName' />
+				<td class='verticalAlignT textAlignL'>
+				<input type='text' value = '' class='changeAutocomplete licenseName lightGrey 260' />
 				<input type='hidden' class='licenseID' value = '' />
 				</td>
 
-				<td style='vertical-align:top;text-align:left;width:40px;'>
+				<td class='verticalAlignT textAlignL 40'>
 				<a href='javascript:void();' class='addLicense'><input class='addLicense add-button' title='<?php echo _("add license");?>' type='button' value='<?php echo _("Add");?>'/></a>
 				</td>
 				</tr>
 				</table>
-				<div class='smallDarkRedText' id='div_errorLicense' style='margin:0px 20px 7px 26px;'></div>
+				<div class='smallDarkRedText margin020726' id='div_errorLicense'></div>
 
 
-				<table class='noBorder smallPadding licenseTable' style='width:310px; margin:0px 20px 15px 20px;'>
+				<table class='noBorder smallPadding licenseTable 310 margin0201520'>
 				<tr>
 				<td colspan='2'>
-					<hr style='width:290px;margin:0px 0px 5px 5px;' />
+					<hr class='290 margin0055'/>
 				</td>
 				</tr>
 
@@ -96,12 +96,12 @@
 					?>
 						<tr>
 
-						<td style='vertical-align:top;text-align:left;'>
-						<input type='text' class='changeInput licenseName' value = '<?php echo $license['license']; ?>' style='width:260px;' class='changeInput' />
+						<td class='verticalAlignT textAlignL'>
+						<input type='text' class='changeInput licenseName' value = '<?php echo $license['license']; ?>' class='changeInput 260' />
 						<input type='hidden' class='licenseID' value = '<?php echo $license['licenseID']; ?>' />
 						</td>
 
-						<td style='vertical-align:top;text-align:left;width:40px;'>
+						<td class='verticalAlignT textAlignL 40'>
 							<a href='javascript:void();'><img src='images/cross.gif' alt='<?php echo _("remove license link");?>' title='<?php echo _("remove ").$license['license']._(" license"); ?>' class='remove' /></a>
 						</td>
 
@@ -123,20 +123,20 @@
 			</table>
 
 
-			<div style='height:15px;'>&nbsp;</div>
+			<div class='h15'>&nbsp;</div>
 
 			<?php } ?>
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='licenseStatus'><b><?php echo _("Licensing Status");?></b></label></span>
 
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox 350'>
 			<tr>
 			<td>
 
-				<table class='noBorder smallPadding' style='width:310px; margin:15px 20px 0px 20px'>
+				<table class='noBorder smallPadding 310 margin1520020 '>
 				<tr>
-				<td style='vertical-align:top;text-align:left;width:60px;'><?php echo _("Status:");?></td>
-				<td style='vertical-align:top;text-align:left;'>
+				<td class='verticalAlignT textAlignL 60'><?php echo _("Status:");?></td>
+				<td class='verticalAlignT textAlignL'>
 				<select class='changeSelect' id='licenseStatusID'>
 				<option value=''></option>
 				<?php
@@ -154,12 +154,12 @@
 				</tr>
 				</table>
 
-				<hr style='width:310px;margin:8px 20px 7px 20px;' />
+				<hr class='margin820720 310' />
 
 
-				<table class='noBorder' style='width:310px; margin:5px 15px;'>
+				<table class='noBorder 310 margin515'>
 				<tr>
-				<td style='vertical-align:top;width:60px;'><?php echo _("History:");?></td>
+				<td class='verticalAlignT 60'><?php echo _("History:");?></td>
 				<td>
 
 				<?php
@@ -188,10 +188,10 @@
 
 		<br />
 
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitLicense' id ='submitLicense' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitLicense' id ='submitLicense' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
 			</tr>
 		</table>
 

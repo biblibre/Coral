@@ -39,22 +39,22 @@
 		<input type='hidden' name='editResourceID' id='editResourceID' value='<?php echo $resourceID; ?>'>
 		<input type='hidden' name='op' id='op' value='<?php echo $op; ?>'>
 
-		<div class='formTitle' style='width:420px; margin-bottom:5px;'><span class='headerText'><?php echo ($op == 'clone') ? _("Clone Order") : _("Edit Order");?></span></div>
+		<div class='formTitle 420 marginB5'><span class='headerText'><?php echo ($op == 'clone') ? _("Clone Order") : _("Edit Order");?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class='noBorder' style='width:435px;'>
-		<tr style='vertical-align:top;'>
-		<td style='vertical-align:top; padding-right:35px;'>
+		<table class='noBorder 435'>
+		<tr class='verticalAlignT'>
+		<td class='verticalAlignT paddingR35'>
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='orderInformation'><b><?php echo _("Order");?></b></label>&nbsp;&nbsp;</span>
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox 350'>
 			<tr>
 			<td>
-				<table class='noBorder' style='width:310px; margin:15px 20px;'>
+				<table class='noBorder 310 margin1520'>
 				<tr>
-				<td style='vertical-align:top;text-align:left;font-weight:bold'><label for='acquisitionTypeID'><?php echo _("Acquisition Type:");?></label></td>
+				<td class='verticalAlignT textAlignL boldText'><label for='acquisitionTypeID'><?php echo _("Acquisition Type:");?></label></td>
 				<td>
-				<select name='acquisitionTypeID' id='acquisitionTypeID' style='width:100px;' class='changeSelect'>
+				<select name='acquisitionTypeID' id='acquisitionTypeID' class='changeSelect 100'>
 				<option value=''></option>
 				<?php
 				foreach ($acquisitionTypeArray as $acquisitionType){
@@ -70,33 +70,33 @@
 				</tr>
 
 				<tr>
-				<td style='vertical-align:top;text-align:left;font-weight:bold'><label for='orderNumber'><?php echo _("Order Number:");?></label></td>
-				<td><input type='text' id='orderNumber' name='orderNumber' value = '<?php echo $resourceAcquisition->orderNumber; ?>' style='width:95px;' class='changeInput' /></td>
+				<td class='verticalAlignT textAlignL boldText'><label for='orderNumber'><?php echo _("Order Number:");?></label></td>
+				<td><input type='text' id='orderNumber' name='orderNumber' value = '<?php echo $resourceAcquisition->orderNumber; ?>' class='changeInput 95' /></td>
 				</tr>
 
 				<tr>
-				<td style='vertical-align:top;text-align:left;font-weight:bold'><label for='systemNumber'><?php echo _("System Number:");?></label></td>
-				<td><input type='text' id='systemNumber' name='systemNumber' value = '<?php echo $resourceAcquisition->systemNumber; ?>' style='width:95px;' class='changeInput' /></td>
+				<td class='verticalAlignT textAlignL boldText'><label for='systemNumber'><?php echo _("System Number:");?></label></td>
+				<td><input type='text' id='systemNumber' name='systemNumber' value = '<?php echo $resourceAcquisition->systemNumber; ?>' class='changeInput 95' /></td>
 				</tr>
 
 				<tr>
-				<td style='vertical-align:top;text-align:left;font-weight:bold'><label for='libraryNumber'><?php echo _("Library Number:");?></label></td>
-				<td><input type='text' id='libraryNumber' name='libraryNumber' value = '<?php echo $resourceAcquisition->libraryNumber; ?>' style='width:95px;' class='changeInput' /></td>
+				<td class='verticalAlignT textAlignL boldText'><label for='libraryNumber'><?php echo _("Library Number:");?></label></td>
+				<td><input type='text' id='libraryNumber' name='libraryNumber' value = '<?php echo $resourceAcquisition->libraryNumber; ?>' class='changeInput 95' /></td>
 				</tr>
 
 				<tr>
-				<td style='vertical-align:top;text-align:left;font-weight:bold'><label for='currentStartDate'><?php echo _("Sub Start:");?></label></td>
-				<td><input class='date-pick' id='currentStartDate' name='currentStartDate' value = '<?php echo $startDate; ?>' placeholder='mm/dd/yyyy' style='width:75px;' /></td>
+				<td class='verticalAlignT textAlignL boldText' ><label for='currentStartDate'><?php echo _("Sub Start:");?></label></td>
+				<td><input class='date-pick' id='currentStartDate' name='currentStartDate' value = '<?php echo $startDate; ?>' placeholder='mm/dd/yyyy' class='75' /></td>
 				</tr>
 
 				<tr>
-				<td style='vertical-align:top;text-align:left;font-weight:bold'><label for='currentEndDate'><?php echo _("Current Sub End:");?></label></td>
-				<td><input class='date-pick' id='currentEndDate' name='currentEndDate' value = '<?php echo $endDate; ?>' placeholder='mm/dd/yyyy' style='width:75px;' />
+				<td class='verticalAlignT textAlignL boldText'><label for='currentEndDate'><?php echo _("Current Sub End:");?></label></td>
+				<td><input class='date-pick' id='currentEndDate' name='currentEndDate' value = '<?php echo $endDate; ?>' placeholder='mm/dd/yyyy' class='75'/>
 				</td>
 				</tr>
 
                 <tr>
-				<td style='vertical-align:top;text-align:left;font-weight:bold'><label for='organizationName'><?php echo _("Organization");?></label></td>
+				<td class='verticalAlignT textAlignL boldText'><label for='organizationName'><?php echo _("Organization");?></label></td>
 				<td>
                 <input type='text' value='<?php if (isset($organizationName)) echo $organizationName; ?>' id="organizationName" class='changeAutocomplete organizationName' />
                 <input type='hidden' id="organizationID" class='organizationID' value = '<?php echo $resourceAcquisition->organizationID; ?>' />
@@ -105,10 +105,10 @@
 
 <?php if ($config->settings->enableAlerts == 'Y'){ ?>
 				<tr>
-				<td style='vertical-align:top;text-align:left;font-weight:bold'>&nbsp;</td>
+				<td class='verticalAlignT textAlignL boldText'>&nbsp;</td>
 				<td>
-				<div class="checkboxes" style='text-align:left;'>
-					<label><input id='subscriptionAlertEnabledInd' type='checkbox' style='text-align:bottom' value='1' <?php if($resourceAcquisition->subscriptionAlertEnabledInd == 1) { echo "checked"; } ?> />&nbsp;<span><?php echo _("Enable Alert");?></span></label>
+				<div class="checkboxes textAlignL">
+					<label><input id='subscriptionAlertEnabledInd' type='checkbox' class='text-alignB' value='1' <?php if($resourceAcquisition->subscriptionAlertEnabledInd == 1) { echo "checked"; } ?> />&nbsp;<span><?php echo _("Enable Alert");?></span></label>
 				</div>
 				</td>
 				</tr>
@@ -130,10 +130,10 @@
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='sitePurchaserID'><b><?php echo _("Purchasing Site(s)");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:350px;'>
+			<table class='surroundBox 350'>
 			<tr>
 			<td>
-				<table class='noBorder' style='width:310px; margin:15px 20px;'>
+				<table class='noBorder 310 margin1520'>
 				<?php
 				$i=0;
 				if (count($purchaseSiteArray) > 0){
@@ -173,15 +173,14 @@
 		</table>
 
 
-		<hr style='width:100%;margin:15px 0px 10px 0px;' />
+		<hr class='wHundred margin150100' />
 
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitOrder' id ='submitOrder' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitOrder' id ='submitOrder' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
 			</tr>
 		</table>
 
 
 		<script type="text/javascript" src="js/forms/acquisitionsForm.js?random=<?php echo rand(); ?>"></script>
-

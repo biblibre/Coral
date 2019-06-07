@@ -51,7 +51,7 @@ if ($isOrgDowntime) {
 	echo '<input type="hidden" name="sourceResourceAcquisitionID" value="'.$resourceAcquisitionID.'" />';
 }
 ?>
-	<table class="thickboxTable" style="width:98%;background-image:url('images/title.gif');background-repeat:no-repeat;">
+	<table class="thickboxTable thickboxTitleImgAlt w98">
 		<tr>
 			<td colspan="2">
 				<h1><?php echo _("Resource Downtime Report");?></h1>
@@ -65,7 +65,7 @@ if ($isOrgDowntime) {
 					<input class="date-pick" type="text" name="startDate" id="startDate" />
 					<span id='span_error_startDate' class='smallDarkRedText addDowntimeError'></span>
 				</div>
-				<div style="clear:both;">
+				<div class='clearingBoth'>
 					<div><i><?php echo _("Time");?></i></div>
 <?php
 echo buildTimeForm("startTime");
@@ -82,7 +82,7 @@ echo buildTimeForm("startTime");
 					<input class="date-pick" type="text" name="endDate" id="endDate" />
 					<span id='span_error_endDate' class='smallDarkRedText addDowntimeError'></span>
 				</div>
-				<div style="clear:both;">
+				<div class='clearingBoth'>
 					<div><i><?php echo _("Time");?></i></div>
 <?php
 echo buildTimeForm("endTime");
@@ -130,10 +130,10 @@ if ($issues) {
 		</tr>
 	</table>
 
-	<table class='noBorderTable' style='width:125px;'>
+	<table class='noBorderTable 125'>
 		<tr>
-			<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitNewDowntime' id='submitNewDowntime' class='submit-button'></td>
-			<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove();" class='submit-button'></td>
+			<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitNewDowntime' id='submitNewDowntime' class='submit-button'></td>
+			<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove();" class='submit-button'></td>
 		</tr>
 	</table>
 
@@ -145,5 +145,3 @@ if ($issues) {
 	echo '<input type="button" value="' . _("cancel") . '" onclick="tb_remove();">';
 }
 ?>
-
-

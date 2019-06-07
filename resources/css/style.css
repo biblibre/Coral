@@ -3512,6 +3512,12 @@ input.wEighty{
 
  }
 
+ .175 {
+ 	width: 175px;
+
+ }
+
+
  .180 {
 	 width: 180px;
 
@@ -3547,8 +3553,18 @@ input.wEighty{
 
 }
 
+.218 {
+	width: 218px;
+
+}
+
 .220 {
 	width: 220px;
+
+}
+
+.223 {
+	width: 223px;
 
 }
 
@@ -3659,8 +3675,19 @@ input.wEighty{
 	width: 390px;
 
 }
+
+.395 {
+	width: 395px;
+
+}
+
 .400 {
 	width: 400px;
+
+}
+
+.403 {
+	width: 403px;
 
 }
 
@@ -3671,6 +3698,11 @@ input.wEighty{
 
 .420 {
 	width: 420px;
+
+}
+
+.435 {
+	width: 435px;
 
 }
 
@@ -3747,6 +3779,10 @@ input.wEighty{
  width: 705px;
 }
 
+.708{
+ width: 708px;
+}
+
 .745{
  width: 745px;
 }
@@ -3767,6 +3803,13 @@ input.wEighty{
 	height: 10px;
 }
 
+.h14{
+	height: 14px;
+}
+
+.h15{
+	height: 15px;
+}
 .h20{
 	height: 20px;
 }
@@ -3869,9 +3912,16 @@ input.wEighty{
 }
 
 .margin1520020{
- margin:15px 20px 0px 20px;	
+ margin:15px 20px 0px 20px;
 }
 
+.margin820720{
+	margin:8px 20px 7px 20px;
+}
+
+.margin515{
+	margin:5px 15px;
+}
 .thickboxTitleImg
 {
 	background-image:url('images/tbtitle.gif');
@@ -3910,6 +3960,10 @@ input.wEighty{
 	text-align: center;
 }
 
+.text-alignB{
+	text-align: bottom;
+}
+
 .verticalAlignT{
 	vertical-align: top;
 }
@@ -3936,6 +3990,9 @@ input.wEighty{
 	padding:7px;
 }
 
+.paddingR35{
+	padding-right:35px;
+}
 .noDislpaying
 {
 	display:none;
@@ -4273,6 +4330,19 @@ margin-top: 7px;
 .margin715015{
 	margin:7px 15px 0 15px;
 }
+
+.margin020526{
+	margin:0px 20px 5px 26px;
+}
+
+.margin0201020{
+	margin:0px 20px 10px 20px;
+}
+
+.margin00155{
+	margin:0px 0px 15px 5px;
+}
+
 .border0{
 	border: 0px;
 }
@@ -4281,10 +4351,38 @@ margin-top: 7px;
 	margin:0px 20px 0px 26px
 }
 
+.margin020726{
+	margin:0px 20px 7px 26px
+}
+
+.margin0201520{
+	margin:0px 20px 15px 20px;
+}
+
+.margin0055{
+	margin:0px 0px 5px 5px;
+}
+
+.margin3000{
+	margin:3px 0px 0px 0px;
+}
+
+.margin715{
+	margin:7px 15px;
+}
+
 .overFlowAuto{
 	overflow: auto;
 }
 
 .RPosition{
 	position: relative;
+}
+
+.lightGrey{
+	background:#f5f8fa;
+}
+
+.border0{
+	border:0px
 }

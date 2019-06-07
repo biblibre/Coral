@@ -15,18 +15,18 @@
 		<input type='hidden' name='editResourceNoteID' id='editResourceNoteID' value='<?php echo $resourceNoteID; ?>'>
 		<input type='hidden' name='tab' id='tab' value='<?php echo $tabName; ?>'>
 
-		<div class='formTitle' style='width:395px;'><span class='headerText' style='margin-left:7px;'><?php if ($resourceNoteID){ echo _("Edit Note"); } else { echo _("Add Note"); } ?></span></div>
+		<div class='formTitle 395'><span class='headerText marginL7'><?php if ($resourceNoteID){ echo _("Edit Note"); } else { echo _("Add Note"); } ?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class="surroundBox" style="width:400px;">
+		<table class="surroundBox 400">
 		<tr>
 		<td>
 
-			<table class='noBorder' style='width:360px; margin:10px 15px;'>
+			<table class='noBorder 360 margin1015'>
 			<tr>
-			<td style='vertical-align:top;text-align:left;border:0px;'><label for='noteTypeID'><b><?php echo _("Note Type:");?></b></label></td>
-			<td style='vertical-align:top;text-align:left;border:0px;'>
+			<td class='verticalAlignT textAlignL border0'><label for='noteTypeID'><b><?php echo _("Note Type:");?></b></label></td>
+			<td class='verticalAlignT textAlignL border0'>
 
 			<select name='noteTypeID' id='noteTypeID'>
 			<option value=''></option>
@@ -45,8 +45,8 @@
 			</tr>
 
 			<tr>
-			<td style='vertical-align:top;text-align:left;'><label for='noteText'><b><?php echo _("Notes:");?></b></label></td>
-			<td><textarea rows='5' id='noteText' name='noteText' style='width:270px'><?php echo $resourceNote->noteText; ?></textarea><span class='smallDarkRedText' id='span_error_noteText'></span></td>
+			<td class='verticalAlignT textAlignL'><label for='noteText'><b><?php echo _("Notes:");?></b></label></td>
+			<td><textarea rows='5' id='noteText' name='noteText' class='270'><?php echo $resourceNote->noteText; ?></textarea><span class='smallDarkRedText' id='span_error_noteText'></span></td>
 			</td>
 			</tr>
 			</table>
@@ -56,10 +56,10 @@
 		</table>
 
 		<br />
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitResourceNoteForm' id ='submitResourceNoteForm' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitResourceNoteForm' id ='submitResourceNoteForm' class='submit-button'></td>
+				<td class='textAlignL' ><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
 			</tr>
 		</table>
 
@@ -68,4 +68,3 @@
 		</div>
 
 		<script type="text/javascript" src="js/forms/resourceNoteForm.js?random=<?php echo rand(); ?>"></script>
-

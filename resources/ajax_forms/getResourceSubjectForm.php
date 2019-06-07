@@ -4,12 +4,12 @@
 	$generalSubjectArray = $generalSubject->allAsArray();
 ?>
 		<div id='div_updateForm'>
-		<div class='formTitle' style='width:403px;'><span class='headerText' style='margin-left:7px;'></span><?php echo _("Add General / Detail Subject Link");?></div>
+		<div class='formTitle 403'><span class='headerText marginL7'></span><?php echo _("Add General / Detail Subject Link");?></div>
 
 	<?php
 		if (count($generalSubjectArray) > 0){
 			?>
-			<table class='linedDataTable' style='width:100%'>
+			<table class='linedDataTable wHundred'>
 				<tr>
 				<th><?php echo _("General Subject Name");?></th>
 				<th><?php echo _("Detail Subject Name");?></th>
@@ -45,7 +45,7 @@
 		}
 		?>
 
-		<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'></td>
+		<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'></td>
 		</div>
 
 		<script type="text/javascript" src="js/forms/resourceSubject.js?random=<?php echo rand(); ?>"></script>

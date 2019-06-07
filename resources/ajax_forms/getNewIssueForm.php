@@ -21,7 +21,7 @@ if ($organizationData['organizationID']) {
 	<input type="hidden" id="sourceOrganizationID" name="sourceOrganizationID" value="<?php echo $organizationData['organizationID'];?>" />
 	<input type="hidden" name="sourceResourceID" value="<?php echo $resourceID;?>" />
 	<input type="hidden" name="sourceResourceAcquisitionID" value="<?php echo $resourceAcquisitionID;?>" />
-	<table class="thickboxTable" style="width:98%;background-image:url('images/title.gif');background-repeat:no-repeat;">
+	<table class="thickboxTable thickboxTitleImgAlt w98 ">
 		<tr>
 			<td colspan="2">
 				<h1><?php echo _("Report New Problem");?></h1>
@@ -38,7 +38,7 @@ if ($organizationData['organizationID']) {
 		<tr>
 			<td><label><?php echo _("Contact:");?>&nbsp;&nbsp;<span class='bigDarkRedText'>*</span></label></td>
 			<td>
-				<select multiple style="min-height: 60px;" type='text' id='contactIDs' name='contactIDs[]'>
+				<select class='minHeight60' type='text' id='contactIDs' name='contactIDs[]'>
 <?php
 
 	foreach ($contactsArray as $contact) {
@@ -130,10 +130,10 @@ if ($config->settings->organizationsModule == 'Y') {
 		</select> <?php echo _("day(s)");?>
 	</p>
 
-	<table class='noBorderTable' style='width:125px;'>
+	<table class='noBorderTable 125'>
 		<tr>
-			<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitNewIssue' id='submitNewIssue' class='submit-button'></td>
-			<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove();" class='cancel-button'></td>
+			<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitNewIssue' id='submitNewIssue' class='submit-button'></td>
+			<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove();" class='cancel-button'></td>
 		</tr>
 	</table>
 
@@ -145,5 +145,3 @@ if ($config->settings->organizationsModule == 'Y') {
 	echo '<input type="button" value="' . _("cancel") . '" onclick="tb_remove();">';
 }
 ?>
-
-

@@ -7,7 +7,7 @@ if ($downtimeID) {
 ?>
 <form id="resolveDowntimeForm">
 	<input name="downtimeID" type="hidden" value="<?php echo $downtime->downtimeID;?>" />
-	<table class="thickboxTable" style="width:98%;background-image:url('images/title.gif');background-repeat:no-repeat;">
+	<table class="thickboxTable thickboxTitleImgAlt w98">
 		<tr>
 			<td colspan="2">
 				<h1>Resolve Downtime</h1>
@@ -23,7 +23,7 @@ if ($downtimeID) {
 					<input class="date-pick" type="text" name="endDate" id="endDate" />
 					<span id='span_error_endDate' class='smallDarkRedText updateDowntimeError'></span>
 				</div>
-				<div style="clear:both;">
+				<div class='clearingBoth'>
 					<div><i>Time</i></div>
 <?php
 echo buildTimeForm("endTime");
@@ -39,10 +39,10 @@ echo buildTimeForm("endTime");
 			</td>
 		</tr>
 	</table>
-	<table class='noBorderTable' style='width:125px;'>
+	<table class='noBorderTable 125'>
 		<tr>
-			<td style='text-align:left'><input type='button' value='submit' name='submitUpdatedDowntime' id='submitUpdatedDowntime'></td>
-			<td style='text-align:right'><input type='button' value='cancel' onclick="tb_remove();"></td>
+			<td class='textAlignL' ><input type='button' value='submit' name='submitUpdatedDowntime' id='submitUpdatedDowntime'></td>
+			<td class='textAlignR'><input type='button' value='cancel' onclick="tb_remove();"></td>
 		</tr>
 	</table>
 </form>
@@ -52,9 +52,9 @@ echo buildTimeForm("endTime");
 		<div>
 			Unable to retrieve Downtime.
 		</div>
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:right'><input type='button' value='cancel' onclick="tb_remove();"></td>
+				<td class='textAlignR'><input type='button' value='cancel' onclick="tb_remove();"></td>
 			</tr>
 		</table>
 <?php
