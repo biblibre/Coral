@@ -23,6 +23,10 @@ class Document extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+    public function getURL() {
+        return Utility::getCORALURL() . "licensing/documents/" . $this->documentURL;
+    }
+
     public function asArray() {
         $aarray = array();
 		foreach (array_keys($this->attributeNames) as $attributeName) {
@@ -32,6 +36,7 @@ class Document extends DatabaseObject {
 		}
         $documentType = new DocumentType(new NamedArguments(array("primaryKey" => $this->documentTypeID)));
         $aarray['documentType'] = $documentType->shortName;
+        $aarray['url'] = $this->getURL();
         return $aarray;
     }
 

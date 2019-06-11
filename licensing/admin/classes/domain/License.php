@@ -23,6 +23,10 @@ class License extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+    public function getURL() {
+        return Utility::getCORALURL() . "licensing/license.php?licenseID=" . $this->licenseID;
+    }
+
     public function asArray() {
 		$larray = array();
 		foreach (array_keys($this->attributeNames) as $attributeName) {
@@ -30,9 +34,10 @@ class License extends DatabaseObject {
 				$larray[$attributeName] = $this->$attributeName;
 			}
 		}
+        $larray['url'] = $this->getURL();
         $doccount = 0;
 		foreach ($this->getDocuments() as $document) {
-            $larray['documents'][$doccount]['content'] = $document->asArray();;
+            $larray['documents'][$doccount]['content'] = $document->asArray();
             $exprcount = 0;
 			foreach ($document->getExpressions() as $expression) {
                 $expressionType = new ExpressionType(new NamedArguments(array('primaryKey' => $expression->expressionTypeID)));

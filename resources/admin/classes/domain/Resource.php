@@ -25,6 +25,10 @@ class Resource extends DatabaseObject {
 
 	protected function overridePrimaryKeyName() {}
 
+    public function getURL() {
+        return Utility::getCORALURL() . "resources/resource.php?resourceID=" . $this->resourceID;
+    }
+
     public function asArray() {
 		$rarray = array();
 		foreach (array_keys($this->attributeNames) as $attributeName) {
@@ -62,6 +66,8 @@ class Resource extends DatabaseObject {
 		foreach ($aliases as $alias) {
 				array_push($rarray['aliases'], $alias->shortName);
 		}
+
+        $rarray['url'] = $this->getURL();
 
 		return $rarray;
 
