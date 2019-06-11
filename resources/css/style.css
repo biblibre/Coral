@@ -3495,6 +3495,10 @@ input.wEighty{
 	 width: 125px;
  }
 
+ .130{
+	width: 130px;
+ }
+
  .135 {
  	width: 135px;
 
@@ -4315,6 +4319,10 @@ text-align:left;
 	float:left
 }
 
+.floatR{
+	float:right;;
+}
+
 .paddingT10{
 	padding-top: 10px;
 }
@@ -4428,4 +4436,8 @@ margin-top: 7px;
 
 .border0{
 	border:0px
+}
+
+.pad4{
+	padding:4px;
 }

@@ -89,10 +89,10 @@
 			<table class='linedFormTable formTable' style='width:<?php echo $tableWidth; ?>px;margin-bottom:5px;'>
 <thead>
 			<tr>
-			<th colspan='<?php echo $numCols; ?>' style='vertical-align:bottom;'>
-			<span style='float:left;vertical-align:bottom;'><?php echo _("Cost History");?></span>
+			<th colspan='<?php echo $numCols; ?>' class='verticalAlignB'>
+			<span class='floatL verticalAlignB' ><?php echo _("Cost History");?></span>
 			<?php if ($user->canEdit()){ ?>
-				<span style='float:right;vertical-align:bottom;'><a href='ajax_forms.php?action=getCostForm&height=400&width=<?php echo $formWidth; ?>&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox' id='editCost'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit cost history");?>'></a></span>
+				<span class='floatR verticalAlignB'><a href='ajax_forms.php?action=getCostForm&height=400&width=<?php echo $formWidth; ?>&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox' id='editCost'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit cost history");?>'></a></span>
 			<?php } ?>
 
 			</th>
@@ -111,7 +111,7 @@
 		<?php } ?>
 			<th><?php echo _("Payment");?></th>
 		<?php if ($enhancedCostFlag && 0){ ?>
-			<th style='text-align: right'>%</th>
+			<th class='textAlignR'>%</th>
 		<?php } ?>
 			<th><?php echo _("Type");?></th>
 		<?php if ($enhancedCostFlag){ ?>
@@ -160,7 +160,7 @@
 			<?php } ?>
 				<td <?php echo $classAdd;?>><?php echo $fundCode; ?></td>
 			<?php if ($enhancedCostFlag && 0){ ?>
-				<td <?php echo $classAdd;?> style='text-align: right'><?php echo $payment['amountChange']; ?></td>
+				<td <?php echo $classAdd;?> class='textAlignR'><?php echo $payment['amountChange']; ?></td>
             <?php } ?>
             <?php if ($enhancedCostFlag){ ?>
 				<td <?php echo $classAdd;?>><?php echo $cost['priceTaxExcluded']; ?></td>
@@ -196,16 +196,16 @@
 			<table class='linedFormTable' style='width:<?php echo $tableWidth; ?>px;padding:0x;margin:0px;height:100%;'>
 			<tr>
 			<th colspan='2'>
-			<span style='float:left;vertical-align:bottom;'><?php echo _("License");?></span>
+			<span class='floatL verticalAlignB'><?php echo _("License");?></span>
 			<?php if ($user->canEdit()){ ?>
-				<span style='float:right;vertical-align:bottom;'><a href='ajax_forms.php?action=getLicenseForm&height=420&width=385&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox' id='editLicense'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit license");?>'></a></span>
+				<span class='floatR verticalAlignB'><a href='ajax_forms.php?action=getLicenseForm&height=420&width=385&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox' id='editLicense'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit license");?>'></a></span>
 			<?php } ?>
 			</th>
 			</tr>
 
 			<tr>
-			<td style='vertical-align:top;width:110px;'><?php echo _("Status:");?></td>
-			<td style='width:350px;'>
+			<td class='verticalAlignT 110'><?php echo _("Status:");?></td>
+			<td class='350'>
 
 			<?php
 			if (count($licenseStatusArray) > 0){
@@ -223,13 +223,13 @@
 			<?php if ($config->settings->licensingModule == "Y"){ ?>
 
 			<tr>
-			<td style='vertical-align:top;width:110px;'><?php echo _("Licenses:");?></td>
-			<td style='width:350px;'>
+			<td class='verticalAlignT 110'><?php echo _("Licenses:");?></td>
+			<td class='350'>
 			<?php
 
 			if (count($licenseArray) > 0){
 				foreach ($licenseArray as $license){
-					echo $license['license'] . "&nbsp;&nbsp;<a href='" . $util->getLicensingURL() . $license['licenseID'] . "' target='_blank'><img src='images/arrow-up-right.gif' alt='"._("View License")."' title='"._("View License")."' style='vertical-align:top;'></a><br />";
+					echo $license['license'] . "&nbsp;&nbsp;<a href='" . $util->getLicensingURL() . $license['licenseID'] . "' target='_blank'><img src='images/arrow-up-right.gif' alt='"._("View License")."' title='"._("View License")."' class='textAlignT'></a><br />";
 				}
 			}else{
 				echo "<i>"._("No associated licenses available.")."</i>";
@@ -304,7 +304,7 @@
 				</tr>
 				<?php foreach ($noteArray as $resourceNote){ ?>
 					<tr>
-					<td style='width:110px;'><?php echo $resourceNote['noteTypeName']; ?>
+					<td class='110'><?php echo $resourceNote['noteTypeName']; ?>
 						<br />
 						<a  href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Acquisitions&entityID=<?php echo $resourceAcquisitionID; ?>&resourceNoteID=<?php echo $resourceNote['resourceNoteID']; ?>&modal=true' class='thickbox'><img src='images/edit.gif'  alt='<?php echo _("edit");?>' title='<?php echo _("edit note");?>'></a>
 						<a href='javascript:void(0);' class='removeNote'   id='<?php echo $resourceNote['resourceNoteID']; ?>' tab='Acquisitions'><img src='images/cross.gif' alt='<?php echo _("remove note");?>' title='<?php echo _("remove note");?>'></a>

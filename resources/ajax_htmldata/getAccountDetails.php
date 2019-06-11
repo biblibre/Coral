@@ -11,7 +11,7 @@
 			foreach ($externalLoginArray as $externalLogin){
 
 				if ($resELFlag == 0 && array_key_exists('organizationName', $externalLogin) && $externalLogin['organizationName'] == ''){
-					echo "<div class='formTitle' style='padding:4px; font-weight:bold; margin-bottom:8px;'>"._("Resource Specific:")."</div>";
+					echo "<div class='formTitle pad4 boldText marginB8'>"._("Resource Specific:")."</div>";
 					$resELFlag = 1;
 				}else if ($orgELFlag == 0 && array_key_exists('organizationName', $externalLogin) && $externalLogin['organizationName'] != ''){
 					if ($resELFlag == 0){
@@ -24,7 +24,7 @@
 					<?php
 					}
 
-					echo "<div class='formTitle' style='padding:4px; font-weight:bold; margin-bottom:8px;'>"._("Inherited:")."</div>";
+					echo "<div class='formTitle pad4 marginB8 boldText'>"._("Inherited:")."</div>";
 					$orgELFlag = 1;
 				}else{
 					echo "<br />";
@@ -33,12 +33,12 @@
 			?>
 				<table class='linedFormTable'>
 				<tr>
-				<th colspan='2' style='background:#f5f8fa;'>
-				<span style='float:left; vertical-align:bottom;'>
+				<th colspan='2' class='lightGrey'>
+				<span class='floatL verticalAlignB'>
 					<?php echo $externalLogin['externalLoginType']; ?>
 				</span>
 
-				<span style='float:right;'>
+				<span class='floatR'>
 				<?php
 					if ($user->canEdit() &&
                        (!array_key_exists('organizationName', $externalLogin) || (array_key_exists('organizationName', $externalLogin) && $externalLogin['organizationName'] == ''))) { ?>
@@ -55,23 +55,23 @@
 
 				<?php if (isset($externalLogin['organizationName'])) { ?>
 				<tr>
-				<td style='vertical-align:top; width:130px;'>Organization:</td>
-				<td><?php echo $externalLogin['organizationName'] . "&nbsp;&nbsp;<a href='" . $util->getCORALURL() . "organizations/orgDetail.php?showTab=accounts&organizationID=" . $externalLogin['organizationID'] . "' target='_blank'><img src='images/arrow-up-right.gif' alt='"._("Visit Account in Organizations Module")."' title='"._("Visit Account in Organizations Module")."' style='vertical-align:top;'></a>"; ?></td>
+				<td class='verticalAlignT 130'>Organization:</td>
+				<td><?php echo $externalLogin['organizationName'] . "&nbsp;&nbsp;<a href='" . $util->getCORALURL() . "organizations/orgDetail.php?showTab=accounts&organizationID=" . $externalLogin['organizationID'] . "' target='_blank'><img src='images/arrow-up-right.gif' alt='"._("Visit Account in Organizations Module")."' title='"._("Visit Account in Organizations Module")."' class='verticalAlignT'></a>"; ?></td>
 				</tr>
 				<?php
 				}
 
 				if ($externalLogin['loginURL']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:130px;'>Login URL:</td>
-				<td><?php echo $externalLogin['loginURL']; ?>&nbsp;&nbsp;<a href='<?php echo $externalLogin['loginURL']; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt='<?php echo _("Visit Login URL");?>' title='<?php echo _("Visit Login URL");?>' style='vertical-align:top;'></a></td>
+				<td class='verticalAlignT 130'>Login URL:</td>
+				<td><?php echo $externalLogin['loginURL']; ?>&nbsp;&nbsp;<a href='<?php echo $externalLogin['loginURL']; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt='<?php echo _("Visit Login URL");?>' title='<?php echo _("Visit Login URL");?>'  class='verticalAlignT'></a></td>
 				</tr>
 				<?php
 				}
 
 				if ($externalLogin['username']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:130px;'><?php echo _("User Name:");?></td>
+				<td class='verticalAlignT 130'><?php echo _("User Name:");?></td>
 				<td><?php echo $externalLogin['username']; ?></td>
 				</tr>
 				<?php
@@ -79,7 +79,7 @@
 
 				if ($externalLogin['password']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:130px;'><?php echo _("Password:");?></td>
+				<td class='verticalAlignT 130'><?php echo _("Password:");?></td>
 				<td><?php echo $externalLogin['password']; ?></td>
 				</tr>
 				<?php
@@ -87,7 +87,7 @@
 
 				if ($externalLogin['updateDate']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:130px;'><?php echo _("Last Updated:");?></td>
+				<td class='verticalAlignT 130'><?php echo _("Last Updated:");?></td>
 				<td><i><?php echo format_date($externalLogin['updateDate']); ?></i></td>
 				</tr>
 				<?php
@@ -95,7 +95,7 @@
 
 				if ($externalLogin['emailAddress']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:130px;'><?php echo _("Registered Email:");?></td>
+				<td class='verticalAlignT 130'><?php echo _("Registered Email:");?></td>
 				<td><?php echo $externalLogin['emailAddress']; ?></td>
 				</tr>
 				<?php
@@ -103,7 +103,7 @@
 
 				if ($externalLogin['noteText']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:130px;'><?php echo _("Notes:");?></td>
+				<td class='verticalAlignT 130'><?php echo _("Notes:");?></td>
 				<td><?php echo nl2br($externalLogin['noteText']); ?></td>
 				</tr>
 				<?php
@@ -124,4 +124,3 @@
 		}
 
 ?>
-
