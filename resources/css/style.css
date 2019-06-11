@@ -3406,6 +3406,11 @@ input.wEighty{
 
  }
 
+ .37 {
+ 	width: 37px;
+
+ }
+
  .40{
 	 width: 40px;
  }
@@ -3453,12 +3458,20 @@ input.wEighty{
  	width: 95px;
  }
 
+ .97{
+ 	width: 97px;
+ }
+
  .98{
  	width: 98px;
  }
 
  .100{
  	width: 100px;
+ }
+
+ .103{
+  width: 103px;
  }
 
  .110{
@@ -3509,6 +3522,11 @@ input.wEighty{
 
  .155 {
  	width: 155px;
+
+ }
+
+ .160{
+ 	width: 160px;
 
  }
 
@@ -3641,6 +3659,11 @@ input.wEighty{
 
 }
 
+.330 {
+	width: 330px;
+
+}
+
 .335 {
 	width: 335px;
 
@@ -3668,6 +3691,11 @@ input.wEighty{
 
 .385 {
 	width: 385px;
+
+}
+
+.380 {
+	width: 380px;
 
 }
 
@@ -3771,6 +3799,10 @@ input.wEighty{
  width: 660px;
 }
 
+.670{
+ width: 670px;
+}
+
 .700{
  width: 700px;
 }
@@ -3781,6 +3813,14 @@ input.wEighty{
 
 .708{
  width: 708px;
+}
+
+.710{
+ width: 710px;
+}
+
+.715{
+ width: 715px;
 }
 
 .745{
@@ -3976,6 +4016,9 @@ input.wEighty{
 	vertical-align: middle;
 }
 
+.verticalAlignC{
+	vertical-align:center
+}
 .padZero{
 	padding:0px;
 }
@@ -4352,7 +4395,7 @@ margin-top: 7px;
 }
 
 .margin020726{
-	margin:0px 20px 7px 26px
+	margin:0px 20px 7px 26px;
 }
 
 .margin0201520{

@@ -69,42 +69,42 @@
 		<form id='resourceForm'>
 		<input type='hidden' name='editResourceID' id='editResourceID' value='<?php echo $resourceID; ?>'>
 
-		<div class='formTitle' style='width:715px; margin-bottom:5px;position:relative;'><span class='headerText'><?php echo _("Edit Resource");?></span></div>
+		<div class='formTitle 715 marginB5 relativeP'><span class='headerText'><?php echo _("Edit Resource");?></span></div>
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
-		<table class='noBorder' style='width:100%;'>
-		<tr style='vertical-align:top;'>
-		<td style='vertical-align:top;position:relative;' colspan='2'>
+		<table class='noBorder wHundred'>
+		<tr class='verticalAlignT'>
+		<td class='verticalAlignT relativeP' colspan='2'>
 
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='resourceFormatID'><b><?php echo _("Product");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:710px;'>
+			<table class='surroundBox 710'>
 			<tr>
 			<td>
-				<table class='noBorder' style='width:670px; margin:15px 20px 10px 20px;'>
+				<table class='noBorder 670 margin15201020'>
 				<tr>
-				<td style='width:360px;'>
+				<td class='360'>
 					<table id="general-resource-info">
 					<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;'><label for='titleText'><?php echo _("Name:");?></label></td>
-					<td><input type='text' id='titleText' name='titleText' value = "<?php echo $resource->titleText; ?>" style='width:260px;' class='changeInput' /><span id='span_error_titleText' class='smallDarkRedText'></span></td>
+					<td class='verticalAlignT textAlignL boldText'><label for='titleText'><?php echo _("Name:");?></label></td>
+					<td><input type='text' id='titleText' name='titleText' value = "<?php echo $resource->titleText; ?>"  class='changeInput 260' /><span id='span_error_titleText' class='smallDarkRedText'></span></td>
 					</tr>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;'><label for='descriptionText'><?php echo _("Description:");?></label></td>
-					<td><textarea rows='4' id='descriptionText' name='descriptionText' style='width:260px' class='changeInput' ><?php echo $resource->descriptionText; ?></textarea></td>
+					<td class='verticalAlignT textAlignL boldText'><label for='descriptionText'><?php echo _("Description:");?></label></td>
+					<td><textarea rows='4' id='descriptionText' name='descriptionText' class='changeInput 260' ><?php echo $resource->descriptionText; ?></textarea></td>
 					</tr>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;'><label for='resourceURL'><?php echo _("URL:");?></label></td>
-					<td><input type='text' id='resourceURL' name='resourceURL' value = '<?php echo $resource->resourceURL; ?>' style='width:260px;' class='changeInput'  /></td>
+					<td class='verticalAlignT textAlignL boldText' ><label for='resourceURL'><?php echo _("URL:");?></label></td>
+					<td><input type='text' id='resourceURL' name='resourceURL' value = '<?php echo $resource->resourceURL; ?>' class='changeInput 260'  /></td>
 					</tr>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;'><label for='resourceAltURL'><?php echo _("Alt URL:");?></label></td>
-					<td><input type='text' id='resourceAltURL' name='resourceAltURL' value = '<?php echo $resource->resourceAltURL; ?>' style='width:260px;' class='changeInput'  /></td>
+					<td class='verticalAlignT textAlignL boldText'><label for='resourceAltURL'><?php echo _("Alt URL:");?></label></td>
+					<td><input type='text' id='resourceAltURL' name='resourceAltURL' value = '<?php echo $resource->resourceAltURL; ?>' class='changeInput 260'  /></td>
 					</tr>
 
 					</table>
@@ -115,12 +115,12 @@
 
 
 					<tr>
-          <td style='vertical-align:top;text-align:left;font-weight:bold;'><label for='titleText'><?php echo _("Parents:");?></label></td>
+          <td class='verticalAlignT textAlignL boldText'><label for='titleText'><?php echo _("Parents:");?></label></td>
 					<td>
 
            <span id="newParent">
            <div class="oneParent">
-           <input type='text' class='parentResource parentResource_new' name='parentResourceName' value='' style='width:140px;' class='changeInput'  /><input type='hidden' class='parentResource parentResource_new' name='parentResourceNewID' value='' /><span id='span_error_parentResourceName' class='smallDarkRedText'></span>
+           <input type='text' class='parentResource parentResource_new' name='parentResourceName' value='' class='changeInput 140'  /><input type='hidden' class='parentResource parentResource_new' name='parentResourceNewID' value='' /><span id='span_error_parentResourceName' class='smallDarkRedText'></span>
            <a href='#'><input class='addParent add-button' title='<?php echo _("add Parent Resource");?>' type='button' value='<?php echo _("Add");?>'/></a><br />
           </div>
            </span>
@@ -132,7 +132,7 @@
 $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $parentResource['relatedResourceID'])));
              ?>
               <div class="oneParent">
-              <input type='text' name='parentResourceName' disabled='disabled' value = '<?php echo $parentResourceObj->titleText; ?>' style='width:180px;' class='changeInput'  />
+              <input type='text' name='parentResourceName' disabled='disabled' value = '<?php echo $parentResourceObj->titleText; ?>' class='changeInput 180'  />
               <input type='hidden' name='parentResourceID' value = '<?php echo $parentResourceObj->resourceID; ?>' />
               <a href='javascript:void();'><img src='images/cross.gif' alt='<?php echo _("remove parent");?>' title='<?php echo _("remove parent");?>' class='removeParent' /></a>
             </div>
@@ -145,11 +145,11 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 					</tr>
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;'><label for='isbnOrISSN'><?php echo _("ISSN / ISBN:");?></label></td>
+					<td class='verticalAlignT textAlignL boldText'><label for='isbnOrISSN'><?php echo _("ISSN / ISBN:");?></label></td>
 <td>
           <span id="newIsbn">
           	<div class="oneIssnIsbn">
-           <input type='text' class='isbnOrISSN isbnOrISSN_new' name='isbnOrISSN' value = "" style='width:97px;' class='changeInput'  /><span id='span_errors_isbnOrISSN' class='smallDarkRedText'></span>
+           <input type='text' class='isbnOrISSN isbnOrISSN_new' name='isbnOrISSN' value = "" class='changeInput 97'  /><span id='span_errors_isbnOrISSN' class='smallDarkRedText'></span>
            <a href='javascript:void(0);'><input class='addIsbn add-button' title='<?php echo _("add Isbn");?>' type='button' value='<?php echo _("Add");?>'/></a><br />
        </div>
            </span>
@@ -160,7 +160,7 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
            foreach ($isbnOrIssns as $isbnOrIssn) {
              ?>
             <div class="oneIssnIsbn">
-             	<input type='text' class='isbnOrISSN' name='isbnOrISSN' value = '<?php echo $isbnOrIssn->isbnOrIssn; ?>' style='width:97px;' class='changeInput'  />
+             	<input type='text' class='isbnOrISSN' name='isbnOrISSN' value = '<?php echo $isbnOrIssn->isbnOrIssn; ?>' class='changeInput 97'  />
 				<a href='javascript:void();'><img src='images/cross.gif' alt='<?php echo _("remove Issn/Isbn");?>' title='<?php echo _("remove Issn/Isbn");?>' class='removeIssnIsbn' /></a>
             </div>
             <?php
@@ -173,9 +173,9 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;'><label for='resourceFormatID'><?php echo _("Format:");?></label></td>
+					<td class='verticalAlignT textAlignL boldText'><label for='resourceFormatID'><?php echo _("Format:");?></label></td>
 					<td>
-					<select name='resourceFormatID' id='resourceFormatID' style='width:100px;' class='changeSelect'>
+					<select name='resourceFormatID' id='resourceFormatID' class='changeSelect wHundred'>
 					<option value=''></option>
 					<?php
 					foreach ($resourceFormatArray as $resourceFormat){
@@ -192,9 +192,9 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 
 
 					<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;'><label for='resourceTypeID'><?php echo _("Type:");?></label></td>
+					<td class='verticalAlignT textAlignL boldText'><label for='resourceTypeID'><?php echo _("Type:");?></label></td>
 					<td>
-					<select name='resourceTypeID' id='resourceTypeID' style='width:100px;' class='changeSelect' >
+					<select name='resourceTypeID' id='resourceTypeID' class='changeSelect wHundred' >
 					<option value=''></option>
 					<?php
 					foreach ($resourceTypeArray as $resourceType){
@@ -211,7 +211,7 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 					</tr>
 
 					<tr>
-					<td style='text-align:left'><label for='archiveInd'><b><?php echo _("Archived:");?></b></label></td>
+					<td class='textAlignL'><label for='archiveInd'><b><?php echo _("Archived:");?></b></label></td>
 					<td>
 					<input type='checkbox' id='archiveInd' name='archiveInd' <?php echo $archiveChecked; ?> />
 					</td>
@@ -225,29 +225,29 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 			</tr>
 			</table>
 
-			<div style='height:10px;'>&nbsp;</div>
+			<div class='h10'>&nbsp;</div>
 
 			</td>
 			</tr>
-			<tr style='vertical-align:top;'>
+			<tr class='verticalAlignT'>
 			<td>
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='resourceFormatID'><b><?php echo _("Organizations"); ?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:380px;'>
+			<table class='surroundBox 380'>
 			<tr>
 			<td>
 
-				<table class='noBorder smallPadding newOrganizationTable' style='width:330px;  margin:15px 20px 0px 20px;'>
+				<table class='noBorder smallPadding newOrganizationTable 330 margin1520020'>
 				<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;width:103px;'><?php echo _("Role:");?></td>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;width:160px;'><?php echo _("Organization:");?></td>
+					<td class='verticalAlignT textAlignL boldText 103'><?php echo _("Role:");?></td>
+					<td class='verticalAlignT textAlignL boldText 160'><?php echo _("Organization:");?></td>
 					<td>&nbsp;</td>
 				</tr>
 
 				<tr class='newOrganizationTR'>
-				<td style='vertical-align:top;text-align:left;'>
-					<select style='width:100px; background:#f5f8fa;' class='changeSelect organizationRoleID'>
+				<td class='verticalAlignT textAlignL'>
+					<select class='changeSelect organizationRoleID 100 lightGrey'>
 					<option value=''></option>
 					<?php
 					foreach ($organizationRoleArray as $organizationRoleID => $organizationRoleShortName){
@@ -257,22 +257,21 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 					</select>
 				</td>
 
-				<td style='vertical-align:top;text-align:left;'>
-				<input type='text' value = '' style='width:160px;background:#f5f8fa;' class='changeAutocomplete organizationName' />
+				<td class='verticalAlignT textAlignL' >
+				<input type='text' value = '' class='changeAutocomplete organizationName 160 lightGrey' />
 				<input type='hidden' class='organizationID' value = '' />
 				</td>
-
-				<td style='vertical-align:top;text-align:left;width:40px;'>
+				<td class='verticalAlignT textAlignL 40'>
 				<a href='javascript:void();'><input class='addOrganization add-button' title='<?php echo _("add organization");?>' type='button' value='<?php echo _("Add");?>'/></a>
 				</td>
 				</tr>
 				</table>
-				<div class='smallDarkRedText' id='div_errorOrganization' style='margin:0px 20px 7px 26px;'></div>
+				<div class='smallDarkRedText margin020726' id='div_errorOrganization'></div>
 
-				<table class='noBorder smallPadding organizationTable' style='width:330px;margin:0px 20px 10px 20px;'>
+				<table class='noBorder smallPadding organizationTable 330 margin0201020'>
 				<tr>
 				<td colspan='3'>
-					<hr style='width:310px;margin:0px 0px 5px 5px;' />
+					<hr class='310 margin0055' />
 				</td>
 				</tr>
 
@@ -282,8 +281,8 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 					foreach ($orgArray as $organization){
 					?>
 						<tr>
-						<td style='vertical-align:top;text-align:left;'>
-						<select style='width:100px;' class='organizationRoleID changeSelect'>
+						<td class='verticalAlignT textAlignL'>
+						<select class='organizationRoleID changeSelect 100'>
 						<option value=''></option>
 						<?php
 						foreach ($organizationRoleArray as $organizationRoleID => $organizationRoleShortName){
@@ -297,12 +296,12 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 						</select>
 						</td>
 
-						<td style='vertical-align:top;text-align:left;'>
-						<input type='text' class='changeInput organizationName' value = '<?php echo $organization['organization']; ?>' style='width:160px;' class='changeInput' />
+						<td class='verticalAlignT textAlignL'>
+						<input type='text' class='changeInput organizationName' value = '<?php echo $organization['organization']; ?>' class='changeInput 160' />
 						<input type='hidden' class='organizationID' value = '<?php echo $organization['organizationID']; ?>' />
 						</td>
 
-						<td style='vertical-align:top;text-align:left;width:40px;'>
+						<td class='verticalAlignT textAlignL 40'>
 							<a href='javascript:void();'><img src='images/cross.gif' alt="<?php echo _("remove organization");?>" title="<?php echo _("remove organization");?>" class='remove' /></a>
 						</td>
 
@@ -327,21 +326,21 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 
 			<span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='resourceFormatID'><b><?php echo _("Aliases");?></b></label>&nbsp;&nbsp;</span>
 
-			<table class='surroundBox' style='width:300px;'>
+			<table class='surroundBox 300'>
 			<tr>
 			<td>
 
-				<table class='noBorder smallPadding newAliasTable' style='width:260px; margin:15px 20px 0px 20px;'>
+				<table class='noBorder smallPadding newAliasTable 260 margin1520020'>
 				<tr>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;width:98px;'><?php echo _("Type:");?></td>
-					<td style='vertical-align:top;text-align:left;font-weight:bold;width:125px;'><?php echo _("Alias:");?></td>
+					<td class='verticalAlignT textAlignL boldText 98'><?php echo _("Type:");?></td>
+					<td class='verticalAlignT textAlignL boldText 125'><?php echo _("Alias:");?></td>
 					<td>&nbsp;</td>
 				</tr>
 
 
 				<tr class='newAliasTR'>
-				<td style='vertical-align:top;text-align:left;'>
-					<select style='width:98px; background:#f5f8fa;' class='changeSelect aliasTypeID'>
+				<td class='verticalAlignT textAlignL'>
+					<select class='changeSelect aliasTypeID 98 lightGrey'>
 					<option value='' selected></option>
 					<?php
 					foreach ($aliasTypeArray as $aliasType){
@@ -351,22 +350,22 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 					</select>
 				</td>
 
-				<td style='vertical-align:top;text-align:left;'>
-				<input type='text' value = '' style='width:125px;' class='changeDefault aliasName' />
+				<td class='verticalAlignT textAlignL'>
+				<input type='text' value = '' class='changeDefault aliasName 125' />
 				</td>
 
-				<td style='vertical-align:center;text-align:left;width:37px;'>
+				<td class='verticalAlignC textAlignL 37'>
 				<a href='javascript:void();'><input class='addAlias add-button' title='<?php echo _("add alias");?>' type='button' value='<?php echo _("Add");?>'/></a>
 				</td>
 				</tr>
 				</table>
-				<div class='smallDarkRedText' id='div_errorAlias' style='margin:0px 20px 7px 26px;'></div>
+				<div class='smallDarkRedText margin020726' id='div_errorAlias'></div>
 
 
-				<table class='noBorder smallPadding aliasTable' style='width:260px; margin:0px 20px 10px 20px;'>
+				<table class='noBorder smallPadding aliasTable 260 margin0201020'>
 				<tr>
 				<td colspan='3'>
-				<hr style='width:240px;margin:0px 0px 5px 5px;' />
+				<hr class='240 margin0055' />
 				</td>
 				</tr>
 
@@ -376,8 +375,8 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 					foreach ($aliasArray as $resourceAlias){
 					?>
 						<tr>
-						<td style='vertical-align:top;text-align:left;'>
-						<select style='width:98px;' class='changeSelect aliasTypeID'>
+						<td class='verticalAlignT textAlignL'>
+						<select class='changeSelect aliasTypeID 98'>
 						<option value=''></option>
 						<?php
 						foreach ($aliasTypeArray as $aliasType){
@@ -391,12 +390,12 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 						</select>
 						</td>
 
-						<td style='vertical-align:top;text-align:left;'>
+						<td class='verticalAlignT textAlignL'>
 
-						<input type='text' value = '<?php echo htmlentities($resourceAlias['shortName'], ENT_QUOTES); ?>' style='width:125px;' class='changeInput aliasName' />
+						<input type='text' value = '<?php echo htmlentities($resourceAlias['shortName'], ENT_QUOTES); ?>'  class='changeInput aliasName 125' />
 						</td>
 
-						<td style='vertical-align:top;text-align:left;width:37px;'>
+						<td class='verticalAlignT textAlignL 37'>
 							<a href='javascript:void();'><img src='images/cross.gif' alt='<?php echo _("remove this alias");?>' title='<?php echo _("remove this alias");?>' class='remove' /></a>
 						</td>
 						</tr>
@@ -422,13 +421,12 @@ $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $pare
 		</table>
 
 
-		<hr style='width:715px;margin:15px 0px 10px 0px;' />
+		<hr class='715 margin150100' />
 
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='<?php echo _("submit");?>' name='submitProductChanges' id ='submitProductChanges' class='submit-button'></td>
-				<td style='text-align:right'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' name='submitProductChanges' id ='submitProductChanges' class='submit-button'></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();" class='cancel-button'></td>
 			</tr>
 		</table>
 		<script type="text/javascript" src="js/forms/resourceUpdateForm.js?random=<?php echo rand(); ?>"></script>
-

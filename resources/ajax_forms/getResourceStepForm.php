@@ -22,25 +22,25 @@ if (!isset($_GET['resourceStepID'])){
             <input type='hidden' name='editRSID' id='editRSID' value='<?php echo $resourceStepID; ?>'>
             <input type='hidden' name='orderNum' id='orderNum' value='<?php echo $orderNum; ?>'>
             <input type='hidden' name='currentGroupID' id='currentGroupID' value='<?php echo $stepGroupID; ?>'>
-            <div class='formTitle' style='width:705px; margin-bottom:5px;position:relative;'><span class='headerText'><?php echo _("Edit Resource Step");?></span></div>
+            <div class='formTitle 705 marginB5 relativeP'><span class='headerText'><?php echo _("Edit Resource Step");?></span></div>
 
             <span class='smallDarkRedText' id='span_errors'></span>
 
-            <table class='noBorder' style='width:100%;'>
-                <tr style='vertical-align:top;'>
-                    <td style='vertical-align:top;position:relative;'>
+            <table class='noBorder wHundred'>
+                <tr class='verticalAlignT'>
+                    <td class='verticalAlignT relativeP'>
                         <span class='surroundBoxTitle'>&nbsp;&nbsp;<label for='rule'><b><?php echo _("Reassign Resource Step");?></b></label>&nbsp;&nbsp;</span>
 
-                        <table class='surroundBox' style='width:700px;'>
+                        <table class='surroundBox 700'>
                             <tr>
                                 <td>
-                                    <table class='noBorder' style='width:660px; margin:15px 20px 10px 20px;'>
+                                    <table class='noBorder 660 margin15201020'>
                                         <tr>
                                             <!--                                                <td>Step name: <pre>--><?php //var_dump($resourceStep); ?><!--</pre></td>-->
                                             <td><?php echo _("Step name: ") . $stepName;?></td>
-                                            <td style='vertical-align:top;text-align:left;'>
+                                            <td class='verticalAlignT textAlignL'>
                                                 <label for='userGroupID'><?php echo _("Group: ");?></label>
-                                                <select name='userGroupID' id='userGroupID' style='width:150px;' class='changeSelect userGroupID'>
+                                                <select name='userGroupID' id='userGroupID' class='changeSelect userGroupID 150'>
                                                     <?php
 
                                                     foreach ($userGroupArray as $userGroup){
@@ -60,10 +60,10 @@ if (!isset($_GET['resourceStepID'])){
             </table>
             <label for="note">Note:</label>
             <textarea name="note" rows="7" cols="50" id="note"><?php echo $resourceStep->note; ?></textarea>
-            <table class='noBorderTable' style='width:125px;'>
+            <table class='noBorderTable 125'>
                 <tr>
-                    <td style='text-align:left'><input type='button' class='submit-button' value='<?php echo _("submit");?>' name='submitResourceStepForm' id ='submitResourceStepForm'></td>
-                    <td style='text-align:right'><input type='button' class='cancel-button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();"></td>
+                    <td class='textAlignL'><input type='button' class='submit-button' value='<?php echo _("submit");?>' name='submitResourceStepForm' id ='submitResourceStepForm'></td>
+                    <td class='textAlignR'><input type='button' class='cancel-button' value='<?php echo _("cancel");?>' onclick="kill(); tb_remove();"></td>
                 </tr>
             </table>
 
