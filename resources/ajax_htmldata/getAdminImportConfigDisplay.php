@@ -14,8 +14,8 @@
 			<table  class='linedDataTable' >
 				<tr>
 				<th><?php echo _("Name");?></th>
-				<th style='width:20px;'>&nbsp;</th>
-				<th style='width:20px;'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
 				</tr>
 				<?php
 

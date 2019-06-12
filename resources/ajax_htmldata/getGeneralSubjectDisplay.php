@@ -13,7 +13,7 @@
 			?>
 			<table class='linedDataTable'>
 				<tr>
-				<th style='width:100%;'><?php echo _("Value");?></th>
+				<th class='wHundred'><?php echo _("Value");?></th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 				</tr>
@@ -38,4 +38,3 @@
 		echo "<a href='ajax_forms.php?action=getAdminUpdateForm&className=" . $className . "&updateID=&height=128&width=260&modal=true' class='thickbox'>"._("add new ") . strtolower(preg_replace("/[A-Z]/", " \\0" , lcfirst($className))) . "</a>";
 
 ?>
-

@@ -11,21 +11,21 @@ $title = $ebscoKb->getTitle($titleId);
 
 ?>
 <?php include_once __DIR__.'/../css/ebscoKbCss.php'; ?>
-<div id="div_ebscoKbTitleDetails" class="ebsco-layout" style="width:745px;">
+<div id="div_ebscoKbTitleDetails" class="ebsco-layout 745">
 
-    <div class="formTitle" style="margin-bottom:5px;position:relative;"><span class="headerText"><?php echo _("EBSCO Kb Title Details");?></span></div>
+    <div class="formTitle marginB5 relativeP"><span class="headerText"><?php echo _("EBSCO Kb Title Details");?></span></div>
 
     <div class="container">
         <div class="row">
-            <div class="col-8"><h1 style="line-height: 1em;"><?php echo $title->titleName; ?></h1></div>
-            <div class="col-4" style="text-align: right;">KbID: <?php echo $title->titleId; ?></div>
+            <div class="col-8"><h1 class='lineH1em'><?php echo $title->titleName; ?></h1></div>
+            <div class="col-4 textAlignR">KbID: <?php echo $title->titleId; ?></div>
         </div>
-        <div class="row" style="margin-top: 1em;">
+        <div class="row marginT1em" >
             <div class="col-12">
-                <p style="font-size: 1rem;"><?php echo $title->description; ?></p>
+                <p class='font1rem'><?php echo $title->description; ?></p>
             </div>
         </div>
-        <div class="row" style="margin-top: 1em;">
+        <div class="row marginT1em">
             <div class="col-12">
                 <h2>Title details</h2>
                 <div class="row">
@@ -59,7 +59,7 @@ $title = $ebscoKb->getTitle($titleId);
 
                             <dt><?php echo _("ISXNs"); ?></dt>
                             <dd>
-                                <ul style="list-style: none; ">
+                                <ul class='noList'>
                                     <?php
                                     foreach($title->isxnList as $identifier){
                                         if(in_array($identifier['type'], [0,1])) {
@@ -88,7 +88,7 @@ $title = $ebscoKb->getTitle($titleId);
                     </div>
                 </div>
             </div>
-            <div class="col-12" style="margin-top: 1em;">
+            <div class="col-12 marginT1em">
                 <h2>Available in the following packages:</h2>
                 <div class="row">
                     <div class="col-4">
@@ -100,20 +100,20 @@ $title = $ebscoKb->getTitle($titleId);
                 <div class="row">
                     <?php foreach($title->customerResourcesList as $resource): ?>
                     <div class="col-12 packageOption <?php echo $resource->isSelected ? 'selectedPackage' : ''; ?>">
-                        <div class="card" style="margin-top: 1em;">
+                        <div class="card marginT1em">
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-8">
-                                        <h3 style="padding-left: 5px;">
+                                        <h3 class="paddingL5">
                                             <?php if($resource->isSelected): ?>
-                                                <i class="fa fa-check-square-o fa-lg text-success" title="<?php echo _("Selected in EBSCO Kb"); ?>" style="margin-left: -15px;"></i>
+                                                <i class="fa fa-check-square-o fa-lg text-success marginLNeg15" title="<?php echo _("Selected in EBSCO Kb"); ?>"></i>
                                             <?php else: ?>
-                                                <i class="fa fa-ban fa-lg text-danger" title="<?php echo _("Not selected in EBSCO Kb"); ?>" style="margin-left: -15px;"></i>
+                                                <i class="fa fa-ban fa-lg text-danger marginLNeg15" title="<?php echo _("Not selected in EBSCO Kb"); ?>"></i>
                                             <?php endif; ?>
                                             <?php echo $resource->packageName; ?>
                                         </h3>
                                     </div>
-                                    <div class="col-4" style="text-align: right">
+                                    <div class="col-4 textAlignR">
                                         <button
                                                 class="setPackage btn btn-primary"
                                                 onclick="tb_remove();"
@@ -149,7 +149,7 @@ $title = $ebscoKb->getTitle($titleId);
             </div>
         </div>
 
-        <div class="row" style="margin-top: 1em;">
+        <div class="row marginT1em">
             <div class="col-12">
                 <a
                     href="ajax_forms.php?action=getEbscoKbTitleImportForm&height=700&width=730&modal=true&titleId=<?php echo $title->titleId; ?>"
@@ -161,4 +161,3 @@ $title = $ebscoKb->getTitle($titleId);
         </div>
     </div>
 </div>
-

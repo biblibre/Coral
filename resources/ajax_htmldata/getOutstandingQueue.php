@@ -14,14 +14,14 @@
 		?>
 
 
-			<table class='dataTable' style='width:646px;padding:0px;margin:0px;height:100%;'>
+			<table class='dataTable 646 padZero marginZero wHundred'>
 			<tr>
-				<th style='width:45px;'><?php echo _("ID");?></th>
-				<th style='width:300px;'><?php echo _("Name");?></th>
-				<th style='width:300px;'><?php echo _("Order");?></th>
-				<th style='width:95px;'><?php echo _("Acquisition Type");?></th>
-				<th style='width:125px;'><?php echo _("Workflow Step");?></th>
-				<th style='width:75px;'><?php echo _("Start Date");?></th>
+				<th class='45'><?php echo _("ID");?></th>
+				<th class='300'><?php echo _("Name");?></th>
+				<th class='300'><?php echo _("Order");?></th>
+				<th class='95'><?php echo _("Acquisition Type");?></th>
+				<th class='125'><?php echo _("Workflow Step");?></th>
+				<th class='75'><?php echo _("Start Date");?></th>
 			</tr>
 
 		<?php
@@ -44,7 +44,7 @@
 				$status = new Status(new NamedArguments(array('primaryKey' => $resource['statusID'])));
 
 		?>
-				<tr id='tr_<?php echo $resource['resourceID']; ?>' style='padding:0px;margin:0px;height:100%;'>
+				<tr id='tr_<?php echo $resource['resourceID']; ?>' class='padZero marginZero wHundred'>
 					<td <?php echo $classAdd; ?>><a href='resource.php?resourceID=<?php echo $resource['resourceID']; ?>&resourceAcquisitionID=<?php echo $resource['resourceAcquisitionID']?>'><?php echo $resource['resourceID']; ?></a></td>
 					<td <?php echo $classAdd; ?>><a href='resource.php?resourceID=<?php echo $resource['resourceID']; ?>&resourceAcquisitionID=<?php echo $resource['resourceAcquisitionID']?>'><?php echo $resource['titleText']; ?></a></td>
 					<td <?php echo $classAdd; ?>><?php echo $resource['subscriptionStartDate']; ?> - <?php echo $resource['subscriptionEndDate']; ?></a></td>
@@ -59,10 +59,10 @@
 								if ($j > 0){
 								?>
 								<tr>
-								<td <?php echo $classAdd; ?> style='border-top-style:none;'>&nbsp;</td>
-								<td <?php echo $classAdd; ?> style='border-top-style:none;'>&nbsp;</td>
-								<td <?php echo $classAdd; ?> style='border-top-style:none;'>&nbsp;</td>
-								<td <?php echo $classAdd; ?> style='border-top-style:none;'>&nbsp;</td>
+								<td <?php echo $classAdd; ?> class='noBorderTopStyle'>&nbsp;</td>
+								<td <?php echo $classAdd; ?> class='noBorderTopStyle'>&nbsp;</td>
+								<td <?php echo $classAdd; ?> class='noBorderTopStyle'>&nbsp;</td>
+								<td <?php echo $classAdd; ?> class='noBorderTopStyle'>&nbsp;</td>
 
 								<?php
 									$styleAdd=" style='border-top-style:none;'";
@@ -91,4 +91,3 @@
 		}
 
 ?>
-

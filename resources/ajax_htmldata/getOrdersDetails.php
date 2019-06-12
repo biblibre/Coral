@@ -23,11 +23,11 @@ if ($resourceAcquisitionID) {
         //$organizationName = $organization->shortName;
 
 ?>
-		<table class='linedFormTable' style='padding:0x;margin:0px;height:100%;'>
+		<table class='linedFormTable padZero marginZero wHundred'>
 			<tr>
-			<th colspan='2' style='vertical-align:bottom;'>
-			<span style='float:left;vertical-align:bottom;'><?php echo _("Order");?></span>
-            <span style='float:right;vertical-align:bottom;'>
+			<th colspan='2' class='verticalAlignB'>
+			<span class='floatR verticalAlignB'><?php echo _("Order");?></span>
+            <span class='floatR verticalAlignB'>
 			<?php if ($user->canEdit()){ ?>
 				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceID; ?>&resourceAcquisitionID=<?php echo $resourceAcquisitionID; ?>' class='thickbox' id='editOrder'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit order information");?>'></a>
 			<?php } ?>
@@ -47,29 +47,29 @@ if ($resourceAcquisitionID) {
 
             <?php if ($resourceAcquisition->organizationID) { ?>
 				<tr>
-				<td style='vertical-align:top;width:110px;'><?php echo _("Organization:");?></td>
-				<td style='width:350px;'><?php echo $organizationName; ?></td>
+				<td class='verticalAlignT 110'><?php echo _("Organization:");?></td>
+				<td class='350'><?php echo $organizationName; ?></td>
 				</tr>
 			<?php } ?>
 
 			<?php if ($resourceAcquisition->acquisitionTypeID) { ?>
 				<tr>
-				<td style='vertical-align:top;width:110px;'><?php echo _("Acquisition Type:");?></td>
-				<td style='width:350px;'><?php echo $acquisitionType->shortName; ?></td>
+				<td class='verticalAlignT 110' ><?php echo _("Acquisition Type:");?></td>
+				<td class='350'><?php echo $acquisitionType->shortName; ?></td>
 				</tr>
 			<?php } ?>
 
 			<?php if ($resourceAcquisition->orderNumber) { ?>
 				<tr>
-				<td style='vertical-align:top;width:110px;'><?php echo _("Order Number:");?></td>
-				<td style='width:350px;'><?php echo $resourceAcquisition->orderNumber; ?></td>
+				<td class='verticalAlignT 110'><?php echo _("Order Number:");?></td>
+				<td class='350'><?php echo $resourceAcquisition->orderNumber; ?></td>
 				</tr>
 			<?php } ?>
 
 			<?php if ($resourceAcquisition->systemNumber) { ?>
 				<tr>
-				<td style='vertical-align:top;width:110px;'><?php echo _("System Number:");?></td>
-				<td style='width:350px;'>
+				<td class='verticalAlignT 110' ><?php echo _("System Number:");?></td>
+				<td class='350'>
 				<?php
 					echo $resourceAcquisition->systemNumber;
 					if ($config->settings->catalogURL != ''){
@@ -82,29 +82,29 @@ if ($resourceAcquisitionID) {
 
             <?php if ($resourceAcquisition->libraryNumber) { ?>
 				<tr>
-				<td style='vertical-align:top;width:110px;'><?php echo _("Library Number:");?></td>
-				<td style='width:350px;'><?php echo $resourceAcquisition->libraryNumber; ?></td>
+				<td class='verticalAlignT 110'><?php echo _("Library Number:");?></td>
+				<td class='350'><?php echo $resourceAcquisition->libraryNumber; ?></td>
 				</tr>
 			<?php } ?>
 
 			<?php if (count($purchaseSiteArray) > 0) { ?>
 				<tr>
-				<td style='vertical-align:top;width:110px;'><?php echo _("Purchasing Sites:");?></td>
-				<td style='width:350px;'><?php echo implode(", ", $purchaseSiteArray); ?></td>
+				<td class='verticalAlignT 110'><?php echo _("Purchasing Sites:");?></td>
+				<td class='350'><?php echo implode(", ", $purchaseSiteArray); ?></td>
 				</tr>
 			<?php } ?>
 
 			<?php if (($resourceAcquisition->subscriptionStartDate) && ($resourceAcquisition->subscriptionStartDate != '0000-00-00')) { ?>
 			<tr>
-			<td style='vertical-align:top;width:110px;'><?php echo _("Sub Start:");?></td>
-			<td style='width:350px;'><?php echo format_date($resourceAcquisition->subscriptionStartDate); ?></td>
+			<td class='verticalAlignT 110'><?php echo _("Sub Start:");?></td>
+			<td class='350'><?php echo format_date($resourceAcquisition->subscriptionStartDate); ?></td>
 			</tr>
 			<?php } ?>
 
 			<?php if (($resourceAcquisition->subscriptionEndDate) && ($resourceAcquisition->subscriptionEndDate != '0000-00-00')) { ?>
 			<tr>
-			<td style='vertical-align:top;width:110px;'>Current Sub End:</td>
-			<td style='width:350px;'><?php echo format_date($resourceAcquisition->subscriptionEndDate); ?>&nbsp;&nbsp;
+			<td class='verticalAlignT 110'>Current Sub End:</td>
+			<td class='350'><?php echo format_date($resourceAcquisition->subscriptionEndDate); ?>&nbsp;&nbsp;
 			<?php if ($resourceAcquisition->subscriptionAlertEnabledInd == "1") { echo "<i>"._("Expiration Alert Enabled")."</i>"; } ?>
 			</td>
 			</tr>
@@ -112,8 +112,8 @@ if ($resourceAcquisitionID) {
 
 			</table>
 			<?php if ($user->canEdit()){ ?>
-				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("create new order");?></a> - 
-				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>&op=clone' class='thickbox'><?php echo _("clone order");?></a> - 
+				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("create new order");?></a> -
+				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>&op=clone' class='thickbox'><?php echo _("clone order");?></a> -
 				<a href='ajax_forms.php?action=getOrderForm&height=400&width=440&modal=true&resourceAcquisitionID=<?php echo $resourceAcquisition->resourceAcquisitionID; ?>&resourceID=<?php echo $resourceAcquisition->resourceID; ?>' class='thickbox'><?php echo _("edit order information");?></a>
 			<?php } ?>
 <?php } else {

@@ -27,14 +27,14 @@
 			<?php
 		if (count($workflowArray) > 0){
 			?>
-			<table class='linedDataTable' style='width:100%'>
+			<table class='linedDataTable wHundred'>
 				<tr>
 				<th><?php echo _("Acquisition Type");?></th>
 				<th><?php echo _("Resource Format");?></th>
 				<th><?php echo _("Resource Type");?></th>
-				<th style='width:20px;'>&nbsp;</th>
-				<th style='width:20px;'>&nbsp;</th>
-				<th style='width:20px;'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
 				</tr>
 				<?php
 
@@ -101,13 +101,13 @@
 			<?php
 		if (count($userGroupArray) > 0){
 			?>
-			<table class='linedDataTable' style='width:100%'>
+			<table class='linedDataTable wHundred'>
 				<tr>
 				<th><?php echo _("Group Name");?></th>
 				<th><?php echo _("Email Address");?></th>
 				<th><?php echo _("Users");?></th>
-				<th style='width:20px;'>&nbsp;</th>
-				<th style='width:20px;'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
 				</tr>
 				<?php
 

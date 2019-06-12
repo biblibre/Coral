@@ -7,7 +7,7 @@
 		?>
 		<div class='adminHeader'>
 			<div><?php echo "<div class='adminRightHeader'>"._("Currency")."</div>";?></div>
-			<div class='addElement' style="margin-right: 3px;"><?php echo "<a href='ajax_forms.php?action=getAdminCurrencyUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'><img id='addCurrency' src='images/plus.gif' title='"._("add Currency")."' /></a>";?></div>
+			<div class='addElement marginR3'><?php echo "<a href='ajax_forms.php?action=getAdminCurrencyUpdateForm&updateID=&height=178&width=260&modal=true' class='thickbox'><img id='addCurrency' src='images/plus.gif' title='"._("add Currency")."' /></a>";?></div>
 		</div>
 
 		<?php
@@ -15,8 +15,8 @@
 			?>
 			<table class='linedDataTable'>
 				<tr>
-				<th style='width:180px;'><?php echo _("Code");?></th>
-				<th style='width:100%;'><?php echo _("Name");?></th>
+				<th class='180'><?php echo _("Code");?></th>
+				<th class='wHundred'><?php echo _("Name");?></th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 				</tr>

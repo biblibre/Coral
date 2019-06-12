@@ -16,7 +16,7 @@
     $query = $dashboard->getQuery($resourceTypeID, $year, $acquisitionTypeID, $orderTypeID, $subjectID, $costDetailsID, $groupBy);
     $results = $dashboard->getResults($query);
     if ($groupBy == "GS.shortName") $groupBy = "generalSubject";
-    echo "<table id='dashboard_table' class='dataTable' style='width:840px;margin-top:0'>";
+    echo "<table id='dashboard_table' class='dataTable 840 marginT0'>";
     echo "<thead><tr>";
     echo "<th>" . _("Name") . "</th>";
     echo "<th>" . _("Resource Type") . "</th>";
@@ -33,8 +33,8 @@
             echo "<tr>";
             echo '<td><a href="resource.php?resourceID=' . $result['resourceID'] . '">' . $result['titleText'] . "</a></td>";
             echo "<td>" . $result['resourceType'] . "</td>";
-            $subject = $result['generalSubject'] && $result['detailedSubject'] ? 
-                $result['generalSubject'] . " / " . $result['detailedSubject'] : 
+            $subject = $result['generalSubject'] && $result['detailedSubject'] ?
+                $result['generalSubject'] . " / " . $result['detailedSubject'] :
                 $result['generalSubject'] . $result['detailedSubject'];
             echo "<td>" . $subject . "</td>";
             echo "<td>" . $result['acquisitionType'] . "</td>";

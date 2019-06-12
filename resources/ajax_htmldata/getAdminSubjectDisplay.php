@@ -8,16 +8,16 @@
 		?>
 		<div class='adminHeader'>
 			<div><?php echo "<div class='adminRightHeader'>" . _("General Subject") . "</div>";?></div>
-			<div class='addElement' style="margin-right: 4px"><?php echo "<a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewGeneralSubject' src='images/plus.gif' title='"._("add new general subject")."'/></a>";?></div>
+			<div class='addElement marginR4'><?php echo "<a href='ajax_forms.php?action=getGeneralSubjectUpdateForm&className=" . "GeneralSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewGeneralSubject' src='images/plus.gif' title='"._("add new general subject")."'/></a>";?></div>
 		</div>
 		<?php
 		if (count($generalSubjectArray) > 0){
 			?>
 			<table class='linedDataTable'>
 				<tr>
-				<th style='width:100%;'><?php echo _("Value");?></th>
-				<th style='width:20px;'>&nbsp;</th>
-				<th style='width:20px;'>&nbsp;</th>
+				<th class='wHundred'><?php echo _("Value");?></th>
+				<th class='20'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
 				</tr>
 				<?php
 
@@ -50,7 +50,7 @@
 		<br /><br />
 		<div class='adminHeader'>
 			<div><?php echo "<div class='adminRightHeader'>" . _("Detailed Subject") . "</div>";?></div>
-			<div class='addElement' style="margin-right: 4px"><?php echo "<a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewDetailedSubject' src='images/plus.gif' title='"._("add new detailed subject")."'/></a>";?>
+			<div class='addElement marginR4'><?php echo "<a href='ajax_forms.php?action=getDetailSubjectUpdateForm&className=" . "DetailedSubject" . "&updateID=&height=145&width=260&modal=true' class='thickbox'><img id='addNewDetailedSubject' src='images/plus.gif' title='"._("add new detailed subject")."'/></a>";?>
 				</div>
 		</div>
 
@@ -59,9 +59,9 @@
 			?>
 			<table class='linedDataTable'>
 				<tr>
-				<th style='width:100%;'><?php echo _("Value");?></th>
-				<th style='width:20px;'>&nbsp;</th>
-				<th style='width:20px;'>&nbsp;</th>
+				<th class='wHundred'><?php echo _("Value");?></th>
+				<th class='20'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
 				</tr>
 				<?php
 
@@ -97,11 +97,11 @@
 
 		if (count($generalSubjectArray) > 0){
 			?>
-			<table class='linedDataTable' style='width:100%'>
+			<table class='linedDataTable wHundred'>
 				<tr>
 				<th><?php echo _("General Subject");?></th>
 				<th><?php echo _("Detailed Subject");?></th>
-				<th style='width:20px;'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
 				</tr>
 				<?php
 

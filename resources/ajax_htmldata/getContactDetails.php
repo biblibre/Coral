@@ -34,7 +34,7 @@
 		if (count($contactArray) > 0){
 			foreach ($contactArray as $contact){
 				if (($resContactFlag == 0) && (!isset($contact['organizationName']))){
-					echo "<div class='formTitle' style='padding:4px; font-weight:bold; margin-bottom:8px;'>"._("Order Specific:")."</div>";
+					echo "<div class='formTitle pad4 boldText marginB8'>"._("Order Specific:")."</div>";
 					$resContactFlag = 1;
 				}else if (($orgContactFlag == 0) && (isset($contact['organizationName']))){
 					if ($resContactFlag == 0){
@@ -47,7 +47,7 @@
 					<?php
 					}
 
-					echo "<div class='formTitle' style='padding:4px; font-weight:bold; margin-bottom:8px;'>"._("Inherited:")."</div>";
+					echo "<div class='formTitle pad4 boldText marginB8'>"._("Inherited:")."</div>";
 					$orgContactFlag = 1;
 				}else{
 					echo "<br />";
@@ -57,14 +57,14 @@
 
 				<table class='linedFormTable'>
 				<tr>
-				<th style='background:#f5f8fa;'>
+				<th class='lightGrey'>
 					<?php echo $contact['contactRoles']; ?>
 				</th>
-				<th style='background:#f5f8fa;'>
-				<span style='float:left;vertical-align:bottom;'>
+				<th class='lightGrey'>
+				<span class='floatL verticalAlignB'>
 					<?php if ($contact['name']) { echo $contact['name']; }else{ echo "&nbsp;"; } ?>
 				</span>
-				<span style='float:right;vertical-align:top;'>
+				<span class='floatR verticalAlignT'>
 				<?php
 					if (($user->canEdit()) && (!isset($contact['organizationName']))){
 						echo "<a href='ajax_forms.php?action=getContactForm&height=389&width=620&modal=true&type=named&resourceID=" . $resourceID . "&contactID=" . $contact['contactID'] . "' class='thickbox'><img src='images/edit.gif' alt='"._("edit")."' title='"._("edit contact")."'></a>";
@@ -82,8 +82,8 @@
 				if (isset($contact['organizationName'])){ ?>
 
 				<tr>
-				<td style='vertical-align:top;width:110px;'><?php echo _("Organization:");?></td>
-				<td><?php echo $contact['organizationName'] . "&nbsp;&nbsp;<a href='" . $util->getCORALURL() . "organizations/orgDetail.php?showTab=contacts&organizationID=" . $contact['organizationID'] . "' target='_blank'><img src='images/arrow-up-right.gif' alt='"._("Visit Contact in Organizations Module")."' title='"._("Visit Contact in Organizations Module")."' style='vertical-align:top;'></a>"; ?></td>
+				<td class='verticalAlignT 110'><?php echo _("Organization:");?></td>
+				<td><?php echo $contact['organizationName'] . "&nbsp;&nbsp;<a href='" . $util->getCORALURL() . "organizations/orgDetail.php?showTab=contacts&organizationID=" . $contact['organizationID'] . "' target='_blank'><img src='images/arrow-up-right.gif' alt='"._("Visit Contact in Organizations Module")."' title='"._("Visit Contact in Organizations Module")."' class='verticalAlignT'></a>"; ?></td>
 				</tr>
 
 				<?php
@@ -91,15 +91,15 @@
 
 				if (($contact['archiveDate'] != '0000-00-00') && ($contact['archiveDate'])) { ?>
 				<tr>
-				<td style='vertical-align:top;background-color:#ebebeb; width:110px;'><?php echo _("No longer valid:");?></td>
-				<td style='background-color:#ebebeb'><i><?php echo format_date($contact['archiveDate']); ?></i></td>
+				<td class='verticalAlignT 110 greyWarm'><?php echo _("No longer valid:");?></td>
+				<td class='greyWarm'><i><?php echo format_date($contact['archiveDate']); ?></i></td>
 				</tr>
 				<?php
 				}
 
 				if ($contact['title']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:110px;'><?php echo _("Title:");?></td>
+				<td class='verticalAlignT 110'><?php echo _("Title:");?></td>
 				<td><?php echo $contact['title']; ?></td>
 				</tr>
 				<?php
@@ -107,7 +107,7 @@
 
 				if ((isset($contact['addressText'])) && ($contact['addressText'] != '')){ ?>
 					<tr>
-					<td style='vertical-align:top; width:110px;'><?php echo _("Address:");?></td>
+					<td class='verticalAlignT 110'><?php echo _("Address:");?></td>
 					<td><?php echo nl2br($contact['addressText']); ?></td>
 					</tr>
 				<?php
@@ -115,7 +115,7 @@
 
 				if ((isset($contact['state']) || (isset($contact['country']))) && (($contact['state'] != '') || ($contact['country'] != ''))){ ?>
 					<tr>
-					<td style='vertical-align:top; width:110px;'><?php echo _("Location:");?></td>
+					<td class='verticalAlignT 110'><?php echo _("Location:");?></td>
 					<td><?php
 						if (!($contact['state'])) {
 							echo $contact['country'];
@@ -132,7 +132,7 @@
 
 				if ($contact['phoneNumber']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:110px;'><?php echo _("Phone:");?></td>
+				<td class='verticalAlignT 110'><?php echo _("Phone:");?></td>
 				<td><?php echo $contact['phoneNumber']; ?></td>
 				</tr>
 				<?php
@@ -140,7 +140,7 @@
 
 				if ($contact['altPhoneNumber']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:110px;'><?php echo _("Alt Phone:");?></td>
+				<td class='verticalAlignT 110'><?php echo _("Alt Phone:");?></td>
 				<td><?php echo $contact['altPhoneNumber']; ?></td>
 				</tr>
 				<?php
@@ -148,7 +148,7 @@
 
 				if ($contact['faxNumber']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:110px;'><?php echo _("Fax:");?></td>
+				<td class='verticalAlignT 110'><?php echo _("Fax:");?></td>
 				<td><?php echo $contact['faxNumber']; ?></td>
 				</tr>
 				<?php
@@ -156,7 +156,7 @@
 
 				if ($contact['emailAddress']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:110px;'><?php echo _("Email:");?></td>
+				<td class='verticalAlignT 110'><?php echo _("Email:");?></td>
 				<td><a href='mailto:<?php echo $contact['emailAddress']; ?>'><?php echo $contact['emailAddress']; ?></a></td>
 				</tr>
 				<?php
@@ -164,7 +164,7 @@
 
 				if ($contact['noteText']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:110px;'><?php echo _("Notes:");?></td>
+				<td class='verticalAlignT 110'><?php echo _("Notes:");?></td>
 				<td><?php echo nl2br($contact['noteText']); ?></td>
 				</tr>
 				<?php
@@ -172,7 +172,7 @@
 
 				if ($contact['lastUpdateDate']) { ?>
 				<tr>
-				<td style='vertical-align:top; width:110px;'><?php echo _("Last Updated:");?></td>
+				<td class='verticalAlignT 110'><?php echo _("Last Updated:");?></td>
 				<td><i><?php echo format_date($contact['lastUpdateDate']); ?></i></td>
 				</tr>
 				<?php
@@ -214,4 +214,3 @@
 		echo "<br /><br />";
 
 ?>
-

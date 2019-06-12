@@ -16,9 +16,9 @@
 			?>
 			<table class='linedDataTable'>
 				<tr>
-				<th style='width:100%;'><?php echo _("Email Address");?></th>
-				<th style='width:20px;'>&nbsp;</th>
-				<th style='width:20px;'>&nbsp;</th>
+				<th class='wHundred'><?php echo _("Email Address");?></th>
+				<th class='20'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
 				</tr>
 				<?php
 
@@ -43,7 +43,7 @@
 		?>
 		<div class="adminHeader">
 			</div>
-			<div class="addElement" style= "padding-bottom: 8px;"><?php echo "<div><span class= 'addIconAlert'> "._("Add a day:")." &nbsp;</span><a href='ajax_forms.php?action=getAdminAlertDaysForm&alertDaysInAdvanceID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertDay' src='images/plus.gif' title='"._("add day")."'/></a></div>";?></div>
+			<div class="addElement paddingB8"><?php echo "<div><span class= 'addIconAlert'> "._("Add a day:")." &nbsp;</span><a href='ajax_forms.php?action=getAdminAlertDaysForm&alertDaysInAdvanceID=&height=128&width=260&modal=true' class='thickbox'><img id='addAlertDay' src='images/plus.gif' title='"._("add day")."'/></a></div>";?></div>
 
 		</div>
 		<?php
@@ -51,9 +51,9 @@
 			?>
 			<table class='linedDataTable'>
 				<tr>
-				<th style='width:100%;'><?php echo _("Days in advance of expiration");?></th>
-				<th style='width:20px;'&nbsp;</th>
-				<th style='width:20px;'>&nbsp;</th>
+				<th class='wHundred'><?php echo _("Days in advance of expiration");?></th>
+				<th class='20'>&nbsp;</th>
+				<th class='20'>&nbsp;</th>
 				</tr>
 				<?php
 
