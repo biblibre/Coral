@@ -38,7 +38,7 @@
 		//get licenses (already returned in array)
 		$licenseArray = $resourceAcquisition->getLicenseArray();
 
-		echo "<div style='background-color:white; width:219px; padding:7px;'>";
+		echo "<div class='whiteBkg 219 padding7'>";
 		echo "<div class='rightPanelLink'><a href='summary.php?resourceID=" . $resource->resourceID . "&resourceAcquisitionID=" . $resourceAcquisitionID . "' target='_blank' class='helpfulLink'>"._("Print View")."</a></div>";
 		if (($resource->systemNumber) && ($config->settings->catalogURL != '')) {
 			echo "<div class='rightPanelLink'><a href='" . $config->settings->catalogURL . $resource->systemNumber . "' target='_blank'>"._("Catalog View")."</a></div>";
@@ -46,7 +46,7 @@
 		echo "</div>";
 
     if ((count($parentResourceArray) > 0) || (count($childResourceArray) > 0)){ ?>
-			<div style='background-color:white; width:219px; padding:7px;'>
+			<div class='whiteBkg 219 padding7'>
 				<?php
         if ((count($parentResourceArray) > 0)){
           echo "<div class='rightPanelHeader'>"._("Parent Record(s)")."</div>";
@@ -66,7 +66,7 @@
 						$initiallyHidden = $i > 20 ? 'helpfulLink__hidden' : '';
 						echo "<div class='rightPanelLink'><a href='resource.php?resourceID=" . $childResourceObj->resourceID . "' target='_BLANK' class='helpfulLink ".$initiallyHidden."'>" . $childResourceObj->titleText . "</a></div>";
 					    if($i === 20) {
-                            echo "<div class='rightPanelLink'><a href='#' class='helpfulLink' id='showAllChildResources' style='padding-left: 10px;'>+ show all resources (" .(count($childResourceArray) - 20)." more)</a></div>";
+                            echo "<div class='rightPanelLink'><a href='#' class='helpfulLink' id='showAllChildResources' class='padding10L'>+ show all resources (" .(count($childResourceArray) - 20)." more)</a></div>";
                         }
 					}
 				}
@@ -81,7 +81,7 @@
 
 		?>
 
-			<div style='background-color:white; width:219px; padding:7px;'>
+			<div class='whiteBkg 219 padding7'>
 				<div class='rightPanelHeader'><?php echo _("Organizations Module");?></div>
 
 				<?php
@@ -97,7 +97,7 @@
 		if ((count($licenseArray) > 0) && ($config->settings->licensingModule == 'Y')){
 
 		?>
-			<div style='background-color:white; width:219px; padding:7px;'>
+			<div class='whiteBkg 219 padding7'>
 				<div class='rightPanelHeader'><?php echo _("Licensing Module");?></div>
 
 				<?php
@@ -115,7 +115,7 @@
 		//echo $resourceType->shortName . " " . $resource->resourceTypeID;
 		if (($resourceType->includeStats ==  1) && ($config->settings->usageModule == 'Y')){
 		?>
-			<div style='background-color:white; width:219px; padding:7px;'>
+			<div class='whiteBkg 219 padding7'>
 				<div class='rightPanelHeader'><?php echo _("Usage Statistics Module");?></div>
 
 				<?php
@@ -132,4 +132,3 @@
 		}
 
 ?>
-

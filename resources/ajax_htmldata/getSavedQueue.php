@@ -12,7 +12,7 @@
 		}else{
 		?>
 
-			<table class='dataTable' style='width:570px;margin-bottom:5px;'>
+			<table class='dataTable 570 marginB5'>
 			<tr>
 				<th><?php echo _("ID");?></th>
 				<th><?php echo _("Name");?></th>
@@ -42,7 +42,7 @@
 					<td <?php echo $classAdd; ?>><a href='ajax_forms.php?action=getNewResourceForm&height=483&width=775&resourceID=<?php echo $resource['resourceID']; ?>&modal=true' class='thickbox'><?php echo $resource['titleText']; ?></a></td>
 					<td <?php echo $classAdd; ?>><?php echo format_date($resource['createDate']); ?></td>
 					<td <?php echo $classAdd; ?>><?php echo $status->shortName; ?></td>
-					<td <?php echo $classAdd; ?> style='text-align:right; width:40px;'>
+					<td <?php echo $classAdd; ?> class='textAlignR 40'>
 					<a href='ajax_forms.php?action=getNewResourceForm&height=483&width=775&resourceID=<?php echo $resource['resourceID']; ?>&modal=true' class='thickbox'><img src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit request");?>'></a>&nbsp;
 					<a href='javascript:void(0);' class='deleteRequest' id='<?php echo $resource['resourceID']; ?>'><img src='images/cross.gif' alt='<?php echo _("remove request");?>' title='<?php echo _("remove request");?>'></a>
 					</td>
@@ -58,4 +58,3 @@
 		}
 
 ?>
-

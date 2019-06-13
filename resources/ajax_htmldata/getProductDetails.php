@@ -57,16 +57,16 @@
 
 
 		?>
-		<table class='linedFormTable' style='word-wrap: break-word; width:460px;'>
+		<table class='linedFormTable breakWord 460'>
 			<tr>
 				<th width="115"></th>
 				<th></th>
 			</tr>
 			<tr>
-				<th colspan='2' style='margin-top: 7px; margin-bottom: 5px;'>
-					<span style='float:left; vertical-align:top; max-width:400px; margin-left:3px;'><span style='font-weight:bold;font-size:120%;margin-right:8px;'><?php echo $resource->titleText; ?></span><span style='font-weight:normal;font-size:100%;'><?php echo $acquisitionType->shortName . " " . $resourceFormat->shortName . " " . $resourceType->shortName; ?></span></span>
+				<th colspan='2' class='marginT7 marginB5'>
+					<span class='floatL verticalAlignT 400 marginL7'><span class='boldText fontSize120 marginR8'><?php echo $resource->titleText; ?></span><span class='fontNormal wHundred'><?php echo $acquisitionType->shortName . " " . $resourceFormat->shortName . " " . $resourceType->shortName; ?></span></span>
 
-					<span style='float:right; vertical-align:top;'>
+					<span class='floatR verticalAlignT'>
 					<?php if ($user->canEdit()) { ?>
 						<a href='ajax_forms.php?action=getUpdateProductForm&height=700&width=730&resourceID=<?php echo $resource->resourceID; ?>&modal=true'
 							class='thickbox'>
@@ -98,8 +98,8 @@
 			</tr>
 
 			<tr>
-			<td style='vertical-align:top;width:115px;'><?php echo _("Status:");?></td>
-			<td style='width:345px;'><?php echo $status->shortName; ?></td>
+			<td class='verticalAlignT 115'><?php echo _("Status:");?></td>
+			<td class='345'><?php echo $status->shortName; ?></td>
 			</tr>
 
 			<?php
@@ -183,15 +183,15 @@
 
       if ((count($parentResourceArray) > 0) || (count($childResourceArray) > 0)){ ?>
 				<tr>
-				<td style='vertical-align:top;width:115px;'><?php echo _("Related Products:");?>
+				<td class='verticalAlignT 115'><?php echo _("Related Products:");?>
 				</td>
-				<td style='width:345px;'>
+				<td class='345'>
 				<?php
 
         if (count($parentResourceArray) > 0) {
            foreach ($parentResourceArray as $parentResource){
               $parentResourceObj = new Resource(new NamedArguments(array('primaryKey' => $parentResource['relatedResourceID'])));
-            echo $parentResourceObj->titleText . "&nbsp;&nbsp;(Parent)&nbsp;&nbsp;<a href='resource.php?resourceID=" . $parentResourceObj->resourceID . "' target='_BLANK'><img src='images/arrow-up-right.gif' alt='"._("view resource")."' title='"._("View ") . $parentResourceObj->titleText . "' style='vertical-align:top;'></a><br />";
+            echo $parentResourceObj->titleText . "&nbsp;&nbsp;(Parent)&nbsp;&nbsp;<a href='resource.php?resourceID=" . $parentResourceObj->resourceID . "' target='_BLANK'><img src='images/arrow-up-right.gif' alt='"._("view resource")."' title='"._("View ") . $parentResourceObj->titleText . "' class='verticalAlignT'></a><br />";
             }
          }
 
@@ -199,7 +199,7 @@
 					<?php
 					foreach ($childResourceArray as $childResource){
 						$childResourceObj = new Resource(new NamedArguments(array('primaryKey' => $childResource['resourceID'])));
-            echo $childResourceObj->titleText . "<a href='resource.php?resourceID=" . $childResourceObj->resourceID . "' target='_BLANK'><img src='images/arrow-up-right.gif' alt='"._("view resource")."' title='"._("View ") . $childResourceObj->titleText . "' style='vertical-align:top;'></a><br />";
+            echo $childResourceObj->titleText . "<a href='resource.php?resourceID=" . $childResourceObj->resourceID . "' target='_BLANK'><img src='images/arrow-up-right.gif' alt='"._("view resource")."' title='"._("View ") . $childResourceObj->titleText . "' class='verticalAlignT'></a><br />";
 
 					}
 
@@ -215,8 +215,8 @@
       if ($isbnOrIssns = $resource->getIsbnOrIssn()) {
 			?>
 			<tr>
-			<td style='vertical-align:top;width:115px;'><?php echo _("ISSN / ISBN:");?></td>
-      <td style='width:345px;'>
+			<td class='verticalAlignT 115'><?php echo _("ISSN / ISBN:");?></td>
+      <td class='345'>
       <?php
         foreach ($isbnOrIssns as $isbnOrIssn) {
           print $isbnOrIssn->isbnOrIssn . "<br />";
@@ -229,11 +229,11 @@
 			if (count($aliasArray) > 0){
 			?>
 			<tr>
-			<td style='vertical-align:top;width:115px;'><?php echo _("Aliases:");?></td>
-			<td style='width:345px;'>
+			<td class='verticalAlignT 115'><?php echo _("Aliases:");?></td>
+			<td class='345'>
 			<?php
 				foreach ($aliasArray as $resourceAlias){
-					echo "\n<span style='float: left; width:95px;'>" . $resourceAlias['aliasTypeShortName'] . ":</span><span style='width:270px;'>" . $resourceAlias['shortName'] . "</span><br />";
+					echo "\n<span class='floatL 95'>" . $resourceAlias['aliasTypeShortName'] . ":</span><span class='270'>" . $resourceAlias['shortName'] . "</span><br />";
 				}
 			?>
 			</td>
@@ -246,16 +246,16 @@
 			?>
 
 			<tr>
-			<td style='vertical-align:top;width:115px;'><?php echo _("Organizations:");?></td>
-			<td style='width:345px;'>
+			<td class='verticalAlignT 115'><?php echo _("Organizations:");?></td>
+			<td class='345'>
 
 				<?php
 				foreach ($orgArray as $organization){
 					//if organizations is installed provide a link
 					if ($config->settings->organizationsModule == 'Y'){
-						echo "<span style='float:left; width:75px;'>" . $organization['organizationRole'] . ":</span><span style='width:270px;'>" . $organization['organization'] . "&nbsp;&nbsp;<a href='" . $util->getOrganizationURL() . $organization['organizationID'] . "' target='_blank'><img src='images/arrow-up-right.gif' alt='"._("View ") . $organization['organization'] . "' title='"._("View ") . $organization['organization'] . "' style='vertical-align:top;'></a></span><br />";
+						echo "<span class='floatL 75'>" . $organization['organizationRole'] . ":</span><span class='270' >" . $organization['organization'] . "&nbsp;&nbsp;<a href='" . $util->getOrganizationURL() . $organization['organizationID'] . "' target='_blank'><img src='images/arrow-up-right.gif' alt='"._("View ") . $organization['organization'] . "' title='"._("View ") . $organization['organization'] . "' class='verticalAlignT'></a></span><br />";
 					}else{
-						echo "<span style='float:left; width:75px;'>" . $organization['organizationRole'] . ":</span><span style='width:270px;'>" . $organization['organization'] . "</span><br />";
+						echo "<span class='floatL 75'>" . $organization['organizationRole'] . ":</span><span class='270'>" . $organization['organization'] . "</span><br />";
 					}
 				}
 				?>
@@ -267,24 +267,24 @@
 
 			if ($resource->resourceURL) { ?>
 				<tr>
-				<td style='vertical-align:top;width:115px;'><?php echo _("Resource URL:");?></td>
-				<td style='max-width:400px;'><?php echo $resource->resourceURL; ?>&nbsp;&nbsp;<a href='<?php echo $resource->resourceURL; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt="<?php echo _("Visit Resource URL");?>" title="<?php echo _("Visit Resource URL");?>" style='vertical-align:top;'></a></td>
+				<td class='verticalAlignT 115'><?php echo _("Resource URL:");?></td>
+				<td class='maxW400'><?php echo $resource->resourceURL; ?>&nbsp;&nbsp;<a href='<?php echo $resource->resourceURL; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt="<?php echo _("Visit Resource URL");?>" title="<?php echo _("Visit Resource URL");?>" class='verticalAlignT'></a></td>
 				</tr>
 			<?php
 			}
 
 			if ($resource->resourceAltURL) { ?>
 				<tr>
-				<td style='vertical-align:top;width:115px;'><?php echo _("Alt URL:");?></td>
-				<td style='width:345px;'><?php echo $resource->resourceAltURL; ?>&nbsp;&nbsp;<a href='<?php echo $resource->resourceAltURL; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt="<?php echo _("Visit Secondary Resource URL");?>" title="<?php echo _("Visit Secondary Resource URL");?>" style='vertical-align:top;'></a></td>
+				<td class='verticalAlignT 115'><?php echo _("Alt URL:");?></td>
+				<td class='345'><?php echo $resource->resourceAltURL; ?>&nbsp;&nbsp;<a href='<?php echo $resource->resourceAltURL; ?>' target='_blank'><img src='images/arrow-up-right.gif' alt="<?php echo _("Visit Secondary Resource URL");?>" title="<?php echo _("Visit Secondary Resource URL");?>" class='verticalAlignT'></a></td>
 				</tr>
 			<?php
 			}
 
 			if ($resource->descriptionText){ ?>
 				<tr>
-				<td style='vertical-align:top;width:115px;'><?php echo _("Description:");?></td>
-				<td style='width:345px;'><?php echo nl2br($resource->descriptionText); ?></td>
+				<td class='verticalAlignT 115''><?php echo _("Description:");?></td>
+				<td class='345'><?php echo nl2br($resource->descriptionText); ?></td>
 				</tr>
 			<?php } ?>
 
@@ -354,11 +354,11 @@
 								<?php echo $detailedSubject->shortName; ?>
 							</td>
 
-							<td style='width:50px;'>
+							<td class='50'>
 							<?php if ($user->canEdit() && $canDelete) { ?>
-								<a style='margin-left:33px' href='javascript:void(0);'
+								<a href='javascript:void(0);'
 									tab='Product'
-									class='removeResourceSubjectRelationship'
+									class='removeResourceSubjectRelationship marginL33'
 									generalDetailSubjectID='<?php echo $generalDetailSubjectID['generalDetailSubjectLinkID']; ?>'
 									resourceID='<?php echo $resourceID; ?>'>
 
@@ -444,7 +444,7 @@
 				</tr>
 				<?php foreach ($noteArray as $resourceNote){ ?>
 					<tr>
-					<td style="vertical-align: auto;"><?php echo $resourceNote['noteTypeName']; ?>
+					<td class='verticalAlignAuto'><?php echo $resourceNote['noteTypeName']; ?>
 						<?php if ($user->canEdit()){ ?>
 						<a href='ajax_forms.php?action=getNoteForm&height=233&width=410&tab=Product&entityID=<?php echo $resourceID; ?>&resourceNoteID=<?php echo $resourceNote['resourceNoteID']; ?>&modal=true' class='thickbox'><img  src='images/edit.gif' alt='<?php echo _("edit");?>' title='<?php echo _("edit note");?>'></a>
 						<a href='javascript:void(0);' class='removeNote' id='<?php echo $resourceNote['resourceNoteID']; ?>' tab='Product'><img src='images/cross.gif' alt='<?php echo _("remove note");?>' title='<?php echo _("remove note");?>'></a>

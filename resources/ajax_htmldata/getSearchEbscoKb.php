@@ -5,14 +5,14 @@ $params = EbscoKbService::getSearch();
 
 // Don't run a empty title query if no package limit is set
 if(empty($params['search']) && $params['type'] == 'titles' && empty($params['packageId'])){
-    echo '<div style="margin: 2em;"><i>' . _('Please enter a search term.') . '</i></div>';
+    echo '<div class="margin2em"><i>' . _('Please enter a search term.') . '</i></div>';
     exit;
 } else {
     $ebscoKb = EbscoKbService::getInstance();
     $ebscoKb->createQuery($params);
     $ebscoKb->execute();
     if(!empty($ebscoKb->error)){
-        echo '<div style="margin-bottom: 2em;"><i>'.$ebscoKb->error.'</i></div>';
+        echo '<div class="marginB2em"><i>'.$ebscoKb->error.'</i></div>';
         exit;
     }
 }
@@ -21,7 +21,7 @@ if(empty($params['search']) && $params['type'] == 'titles' && empty($params['pac
 $totalRecords = $ebscoKb->numResults();
 $items = $ebscoKb->results();
 if(empty($totalRecords) || empty($items)){
-    echo '<div style="margin-bottom: 2em;"><i>' . _('No results found.') . '</i></div>';
+    echo '<div class="marginB2em"><i>' . _('No results found.') . '</i></div>';
     exit;
 }
 
@@ -64,7 +64,7 @@ if(!empty($params['vendorId'])){
     <div>
         <h2>
             <?php echo _('Packages from'); ?> <?php echo $vendor->vendorName; ?>
-            <small style="padding-left: 1px">(<?php echo $vendor->packagesSelected . ' ' .  _('of') . ' ' . $vendor->packagesTotal . ' ' . _('selected)'); ?></small>
+            <small class='paddingL1'>(<?php echo $vendor->packagesSelected . ' ' .  _('of') . ' ' . $vendor->packagesTotal . ' ' . _('selected)'); ?></small>
         </h2>
     </div>
 <?php endif; ?>
@@ -73,17 +73,17 @@ if(!empty($params['vendorId'])){
     <div>
         <h2>
             <?php echo _('Title list from') . ' ' .  $package->packageName; ?><br />
-            <small style="padding-left: 5px;">Vendor: <?php echo $vendor->vendorName; ?></small>
+            <small  class="paddingL5">Vendor: <?php echo $vendor->vendorName; ?></small>
         </h2>
     </div>
 <?php endif; ?>
 
-<span style="float:left; font-weight:bold; width:650px;">
+<span class="floatL boldText 650">
     <?php echo _('Displaying') . ' ' . $fromCalc . ' ' . _('to') . ' ' . $toCalc . ' ' .  _('of') . ' ' . $totalRecords . ' ' . _('results'); ?>
 </span>
 
 <?php if ($totalRecords > $recordsPerPage): ?>
-    <div style="vertical-align:bottom;text-align:left;clear:both;" class="pagination">
+    <div class="verticalAlignB textAlignL clearingBoth pagination">
         <?php if($page == 1): ?>
             <span class="smallerText"><i class="fa fa-backward"></i></span>
         <?php else: ?>
@@ -110,7 +110,7 @@ if(!empty($params['vendorId'])){
         <?php endif; ?>
     </div>
 <?php else: ?>
-    <div style="vertical-align:bottom;text-align:left;clear:both;"></div>
+    <div class="verticalAlignB textAlignL clearingBoth"></div>
 <?php endif; ?>
 
 <?php
