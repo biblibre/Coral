@@ -9,7 +9,7 @@
 		}else{
 		?>
 
-			<table class='dataTable' style='width:570px;margin-bottom:5px;'>
+			<table class='dataTable 570 marginB5'>
 			<tr>
 				<th><?php echo _("ID");?></th>
 				<th><?php echo _("Name");?></th>
@@ -49,4 +49,3 @@
 		}
 
 ?>
-

@@ -49,14 +49,14 @@
 			}
 
 			//div for displaying record count
-			echo "<span style='float:left; font-weight:bold; width:650px;'>";
+			echo "<span class='floatL boldText 650'>";
 				echo sprintf(ngettext('Displaying %d to %d of %d Resource Record', 'Displaying %d to %d of %d Resource Records', $totalRecords), $displayStartingRecNumber, $displayEndingRecNumber, $totalRecords);
-			echo "</span><span style='float:right;width:20px;'><a href='javascript:void(0);'><img src='images/xls.gif' id='export'></a></span>";
+			echo "</span><span class='floatR 20'><a href='javascript:void(0);'><img src='images/xls.gif' id='export'></a></span>";
 
 
 			//print out page selectors as long as there are more records than the number that should be displayed
 			if ($totalRecords > $recordsPerPage){
-				echo "<div style='vertical-align:bottom;text-align:left;clear:both;'>";
+				echo "<div class='verticalAlignB textAlignL clearingBoth'>";
 
 				//print starting <<
 				if ($page == 1){
@@ -104,18 +104,18 @@
 
 
 			}else{
-				echo "<div style='vertical-align:bottom;text-align:left;clear:both;'>&nbsp;</div>";
+				echo "<div class='verticalAlignB textAlignL clearingBoth'>&nbsp;</div>";
 			}
 		?>
 
 			<table id='resource_table' class='dataTable 840'>
 			<thead><tr>
-			<th><table class='noBorderTable wHundred' ><tr><td><?php echo _("Name");?></td><td class='10' ><a href='javascript:setOrder("R.titleText","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td style='width:10px;'><a href='javascript:setOrder("R.titleText","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
-			<th><table class='noBorderTable wHundred' ><tr><td><?php echo _("ID");?></td><td class='10'><a href='javascript:setOrder("R.resourceID + 0","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td style='width:10px;'><a href='javascript:setOrder("R.resourceID + 0","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
-			<th><table class='noBorderTable wHundred' ><tr><td><?php echo _("Creator");?></td><td class='10'><a href='javascript:setOrder("CU.loginID","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td style='width:10px;'><a href='javascript:setOrder("CU.loginID","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
-			<th><table class='noBorderTable wHundred' ><tr><td><?php echo _("Date Created");?></td><td class='10 verticalAlignT'><a href='javascript:setOrder("R.createDate","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td style='width:10px;vertical-align:top;'><a href='javascript:setOrder("R.createDate","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
-			<th><table class='noBorderTable wHundred' ><tr><td><?php echo _("Acquisition Type");?></td><td class='10 verticalAlignT'><a href='javascript:setOrder("acquisitionType","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td style='width:10px;vertical-align:top;'><a href='javascript:setOrder("acquisitionType","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
-			<th><table class='noBorderTable wHundred'><tr><td><?php echo _("Status");?></td><td class='10'><a href='javascript:setOrder("S.shortName","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td style='width:10px;'><a href='javascript:setOrder("S.shortName","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
+			<th><table class='noBorderTable wHundred' ><tr><td><?php echo _("Name");?></td><td class='10' ><a href='javascript:setOrder("R.titleText","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td class='10'><a href='javascript:setOrder("R.titleText","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
+			<th><table class='noBorderTable wHundred' ><tr><td><?php echo _("ID");?></td><td class='10'><a href='javascript:setOrder("R.resourceID + 0","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td class='10'><a href='javascript:setOrder("R.resourceID + 0","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
+			<th><table class='noBorderTable wHundred' ><tr><td><?php echo _("Creator");?></td><td class='10'><a href='javascript:setOrder("CU.loginID","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td class='10'><a href='javascript:setOrder("CU.loginID","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
+			<th><table class='noBorderTable wHundred' ><tr><td><?php echo _("Date Created");?></td><td class='10 verticalAlignT'><a href='javascript:setOrder("R.createDate","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td class='10 verticalAlignT'><a href='javascript:setOrder("R.createDate","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
+			<th><table class='noBorderTable wHundred' ><tr><td><?php echo _("Acquisition Type");?></td><td class='10 verticalAlignT'><a href='javascript:setOrder("acquisitionType","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td class='10 verticalAlignT'><a href='javascript:setOrder("acquisitionType","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
+			<th><table class='noBorderTable wHundred'><tr><td><?php echo _("Status");?></td><td class='10'><a href='javascript:setOrder("S.shortName","asc");'><img src='images/arrowup.png' alt="<?php echo _("Ascending sort"); ?>" border=0></a></td><td class='10'><a href='javascript:setOrder("S.shortName","desc");'><img src='images/arrowdown.png' alt="<?php echo _("Descending sort"); ?>" border=0></a></td></tr></table></th>
 			</tr></thead>
 
 			<tbody>
@@ -158,9 +158,9 @@
 
 			</tbody></table>
 
-			<table style='width:100%;margin-top:4px'>
+			<table class='wHundred marginT4'>
 			<tr>
-			<td style='text-align:left'>
+			<td class='textAlignL'>
 			<?php
 			//print out page selectors
 			if ($totalRecords > $recordsPerPage){
@@ -209,8 +209,8 @@
 			}
 			?>
 			</td>
-			<td style="text-align:right">
-			<select id='numberRecordsPerPage' name='numberRecordsPerPage' style='width:50px;'>
+			<td class="textAlignR">
+			<select id='numberRecordsPerPage' name='numberRecordsPerPage' class='50'>
 				<?php
 				foreach ($recordsPerPageDD as $i){
 					if ($i == $recordsPerPage){

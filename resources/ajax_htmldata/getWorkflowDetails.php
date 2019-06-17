@@ -18,12 +18,12 @@
 			}
 		}else{
 			?>
-			<table class='linedDataTable' style='width:100%;margin-bottom:5px;'>
+			<table class='linedDataTable wHundred marginB5'>
 				<tr>
-				<th style='background-color:#dad8d8;width:350px;'><?php echo _("Step");?></th>
-					<th style='background-color:#dad8d8;'>&nbsp;</th>
-				<th style='background-color:#dad8d8;width:150px;'><?php echo _("Group");?></th>
-				<th style='background-color:#dad8d8;width:120px;'><?php echo _("Start Date");?></th>
+				<th class='middleGrey 350'><?php echo _("Step");?></th>
+					<th class='middleGrey'>&nbsp;</th>
+				<th class='middleGrey 150'><?php echo _("Group");?></th>
+				<th class='middleGrey ' style='background-color:#dad8d8;width:120px;'><?php echo _("Start Date");?></th>
 				<th style='background-color:#dad8d8;width:250px;'><?php echo _("Complete");?></th>
 					<th style='background-color:#dad8d8;'><?php echo _("Delete");?></th>
 				</tr>
@@ -50,13 +50,13 @@
                     $archivingDate = $resourceStep->archivingDate;
                     $stepIndication = $resourceStep->archivingDate ? _("Workflow archived on") . " $archivingDate" : _("Current workflow");
                     if ($resourceStep->archivingDate && $archivedWorkflow == false) {
-                        $archivedWorkflow = true; 
+                        $archivedWorkflow = true;
                         echo "<td colspan='6'><em><strong>Archived Workflows</strong></em></td></tr><tr$stepClass>";
                     }
 
                     echo "<td colspan='6'><em><strong>$stepIndication</strong></em></td></tr><tr$stepClass>";
                 }
-                ?> 
+                ?>
 
 				<td <?php echo $classAdd; ?> ><?php echo $resourceStep->stepName; ?></td>
 				<td <?php echo $classAdd; ?> ><?php if (is_null_date($resourceStep->stepEndDate)){
@@ -125,7 +125,7 @@
                 <div class="restartWorkflowDiv" id="restartWorkflowDiv" style="display:none;padding:20px;">
                     <form name="restartWorkflowForm" id="restartWorkflowForm">
 
-                        <label for="workflowArchivingDate"><?php echo _("Select a workflow to restart"); ?></label>: 
+                        <label for="workflowArchivingDate"><?php echo _("Select a workflow to restart"); ?></label>:
                         <select id="workflowArchivingDate">
                             <option value="<?php echo $resource->getCurrentWorkflowID(); ?>"><?php echo _("Current workflow"); ?></option>
                             <?php
@@ -168,4 +168,3 @@
 		}
 
 ?>
-
