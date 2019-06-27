@@ -39,27 +39,26 @@ include 'templates/header.php';
 
 ?>
 
-<div style='text-align:left;'>
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
-<tr style='vertical-align:top;'>
-<td style="width:155px;padding-right:10px;">
+<div class='textAlignL'>
+<table class="headerTable backgroundTableImage">
+<tr class="verticalAlignT">
+<td class='155 paddingR10'>
 	<form method="get" action="ajax_htmldata.php?action=getSearchResources" id="resourceSearchForm">
 		<?php
 		foreach(array('orderBy','page','recordsPerPage','startWith') as $hidden) {
 			echo (new Html())->hidden_search_field_tag($hidden, isset($search[$hidden]) ? $search[$hidden] : '' );
 		}
 		?>
-
 	<table class='noBorder' id='title-search'>
-	<tr><td style='text-align:left;width:75px;' align='left'>
-	<span style='font-size:130%;font-weight:bold;'><?php echo _("Search");?></span><br />
+	<tr><td class='textAlignL 75' align='left'>
+	<span class='fontLarge'><?php echo _("Search");?></span><br />
 	<a href='javascript:void(0)' class='newSearch' title="<?php echo _("new search");?>"><?php echo _("new search");?></a>
 	</td>
 	<td><div id='div_feedback'>&nbsp;</div>
 	</td></tr>
 	</table>
 
-	<table class='borderedFormTable' style="width:150px">
+	<table class='borderedFormTable 150'>
 
 	<tr>
 	<td class='searchRow'><label for='searchName'><b><?php echo _("Name (contains)");?></b></label>
@@ -117,7 +116,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchFund'><b><?php echo _("Fund");?></b></label>
 	<br />
-		<select name='search[fund]' id='searchFund' style='width:150px' class ='changeInput'>
+		<select name='search[fund]' id='searchFund' class ='changeInput 150'>
 			<option value=''><?php echo _("All");?></option>
 			<?php
 				if (isset($search['fund']) && $search['fund'] == "none"){
@@ -145,7 +144,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchAcquisitionTypeID'><b><?php echo _("Acquisition Type");?></b></label>
 	<br />
-	<select name='search[acquisitionTypeID]' id='searchAcquisitionTypeID' style='width:150px'>
+	<select name='search[acquisitionTypeID]' id='searchAcquisitionTypeID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 
@@ -168,7 +167,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchStatusID'><b><?php echo _("Status");?></b></label>
 	<br />
-	<select name='search[statusID]' id='searchStatusID' style='width:150px'>
+	<select name='search[statusID]' id='searchStatusID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 
@@ -199,7 +198,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchCreatorLoginID'><b><?php echo _("Creator");?></b></label>
 	<br />
-	<select name='search[creatorLoginID]' id='searchCreatorLoginID' style='width:150px'>
+	<select name='search[creatorLoginID]' id='searchCreatorLoginID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 
 	<?php
@@ -231,7 +230,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchResourceFormatID'><b><?php echo _("Resource Format");?></b></label>
 	<br />
-	<select name='search[resourceFormatID]' id='searchResourceFormatID' style='width:150px'>
+	<select name='search[resourceFormatID]' id='searchResourceFormatID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 
@@ -255,7 +254,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchResourceTypeID'><b><?php echo _("Resource Type");?></b></label>
 	<br />
-	<select name='search[resourceTypeID]' id='searchResourceTypeID' style='width:150px'>
+	<select name='search[resourceTypeID]' id='searchResourceTypeID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 
 	<?php
@@ -287,7 +286,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchGeneralSubjectID'><b><?php echo _("General Subject");?></b></label>
 	<br />
-	<select name='search[generalSubjectID]' id='searchGeneralSubjectID' style='width:150px'>
+	<select name='search[generalSubjectID]' id='searchGeneralSubjectID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 
 	<?php
@@ -318,7 +317,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchDetailedSubjectID'><b><?php echo _("Detailed Subject");?></b></label>
 	<br />
-	<select name='search[detailedSubjectID]' id='searchDetailedSubjectID' style='width:150px'>
+	<select name='search[detailedSubjectID]' id='searchDetailedSubjectID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 
 	<?php
@@ -374,13 +373,13 @@ include 'templates/header.php';
 	</table>
 
 	<div id='hideShowOptions'><a href='javascript:void(0);' name='showMoreOptions' id='showMoreOptions' title="<?php echo _("more options...");?>"><?php echo _("more options...");?></a></div>
-	<div id='div_additionalSearch' style='display:none;'>
-	<table class='borderedFormTable' style="width:150px">
+	<div id='div_additionalSearch' class='noDislpaying'>
+	<table class='borderedFormTable 150'>
 
 	<tr>
 	<td class='searchRow'><label for='searchNoteTypeID'><b><?php echo _("Note Type");?></b></label>
 	<br />
-	<select name='search[noteTypeID]' id='searchNoteTypeID' style='width:150px'>
+	<select name='search[noteTypeID]' id='searchNoteTypeID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 
@@ -426,10 +425,10 @@ include 'templates/header.php';
 	</td>
 	</tr>
 	<tr>
-	<td style="border-top:0px;padding-top:0px;">
+	<td class='borderT0 paddingT0'>
 	  <?php echo (new Html())->text_search_field_tag('createDateEnd', isset($search['createDateEnd']) ? $search['createDateEnd'] : '', array('class' => 'date-pick', 'width' => '65px')); ?>
 	<br />
-	<div id='div_searchCreateDate' style='display:none;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' class='searchButton' value='<?php echo _("go!");?>' /></div>
+	<div id='div_searchCreateDate'class='noDislpaying'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' class='searchButton' value='<?php echo _("go!");?>' /></div>
 	</td>
 	</tr>
 
@@ -438,7 +437,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchPurchaseSiteID'><b><?php echo _("Purchase Site");?></b></label>
 	<br />
-	<select name='search[purchaseSiteID]' id='searchPurchaseSiteID' style='width:150px'>
+	<select name='search[purchaseSiteID]' id='searchPurchaseSiteID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 
@@ -470,7 +469,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchAuthorizedSiteID'><b><?php echo _("Authorized Site");?></b></label>
 	<br />
-	<select name='search[authorizedSiteID]' id='searchAuthorizedSiteID' style='width:150px'>
+	<select name='search[authorizedSiteID]' id='searchAuthorizedSiteID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 
@@ -502,7 +501,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchAdministeringSiteID'><b><?php echo _("Administering Site");?></b></label>
 	<br />
-	<select name='search[administeringSiteID]' id='searchAdministeringSiteID' style='width:150px'>
+	<select name='search[administeringSiteID]' id='searchAdministeringSiteID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 
@@ -532,7 +531,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchAuthenticationTypeID'><b><?php echo _("Authentication Type");?></b></label>
 	<br />
-	<select name='search[authenticationTypeID]' id='searchAuthenticationTypeID' style='width:150px'>
+	<select name='search[authenticationTypeID]' id='searchAuthenticationTypeID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 
@@ -562,7 +561,7 @@ include 'templates/header.php';
 	<tr>
 	<td class='searchRow'><label for='searchCatalogingStatusID'><b><?php echo _("Cataloging Status");?></b></label>
 	<br />
-	<select name='search[catalogingStatusID]' id='searchCatalogingStatusID' style='width:150px'>
+	<select name='search[catalogingStatusID]' id='searchCatalogingStatusID' class='150'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 	  if (isset($search['catalogingStatusID']) && $search['catalogingStatusID'] == "none") {
@@ -589,7 +588,7 @@ include 'templates/header.php';
   <tr>
 	<td class='searchRow'><label for='searchStepName'><b><?php echo _("Workflow Step");?></b></label>
 	<br />
-	<select name='search[stepName]' id='searchStepName' style='width:150px'>
+	<select name='search[stepName]' id='searchStepName' class='150'>
 	<option value=''><?php echo _("All");?></option>
 	<?php
 	  $step = new Step();
@@ -610,7 +609,7 @@ include 'templates/header.php';
 	</tr>
 	<tr>
 		<td class='searchRow'><label for='searchParents'><b>Relationship</b></label>
-		<select name='search[parent]' id='searchParents' style='width:150px'>
+		<select name='search[parent]' id='searchParents' class='150'>
 			<option value=''><?php echo _("All");?></option>
 			<option value='RRC'><?php echo _("Parent");?></option>
 			<option value='RRP'><?php echo _("Child");?></option>

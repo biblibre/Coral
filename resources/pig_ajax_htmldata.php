@@ -36,7 +36,7 @@ switch ($_GET['action']) {
             foreach ($_POST['search'] as $key => $value) {
                 $queryString = $queryString . "&" . $key . "=" . urlencode($value);
             }
-        echo "<span style='float:right;'><a href='" . "pig_htmldata.php?action=getPigSearchResources" . $queryString . "'>HTML Feed</a>";
+        echo "<span class='floatR'><a href='" . "pig_htmldata.php?action=getPigSearchResources" . $queryString . "'>HTML Feed</a>";
         echo "&nbsp;";
         echo "<a class='thickbox' href='" . 'javascript:alert("Copy the URL below:\n\nhttp://' . $_SERVER['SERVER_NAME'] . str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['SCRIPT_NAME']) . 'pig_htmldata.php?action=getPigSearchResources' . $queryString . '")' . "'><img title='PIG url' alt='PIG url' src='images/pig_balloon_icon.png'/></a>";
         echo "&nbsp;&nbsp;";
@@ -93,12 +93,12 @@ switch ($_GET['action']) {
                 }
 
                 //div for displaying record count
-                echo "<span style='float:left; font-weight:bold; width:650px;'>Displaying " . $displayStartingRecNumber . " to " . $displayEndingRecNumber . " of " . $totalRecords . " Resource Records</span>";
+                echo "<span class='floatL boldText 650'>Displaying " . $displayStartingRecNumber . " to " . $displayEndingRecNumber . " of " . $totalRecords . " Resource Records</span>";
 
 
                 //print out page selectors as long as there are more records than the number that should be displayed
                 if ($totalRecords > $recordsPerPage){
-                    echo "<div style='vertical-align:bottom;text-align:left;clear:both;'>";
+                    echo "<div class='verticalAlignB textAlignL clearingBoth'>";
 
                     //print starting <<
                     if ($page == 1){
@@ -146,23 +146,23 @@ switch ($_GET['action']) {
 
 
                 }else{
-                    echo "<div style='vertical-align:bottom;text-align:left;clear:both;'>&nbsp;</div>";
+                    echo "<div class='verticalAlignB textAlignL clearingBoth'>&nbsp;</div>";
                 }
 
 
                 ?>
-                <table class='dataTable' style='width:727px'>
+                <table class='dataTable 727'>
                 <tr>
                 <?php if ($_POST['search']['titleTextckbox'] == 'ON') { ?>
-                <th><table class='noBorderTable' style='width:100%'><tr><td>Name</td><td style='width:10px;'><a href='javascript:setOrder("R.titleText","asc");'><img src='images/arrowup.gif' border=0></a></td><td style='width:10px;'><a href='javascript:setOrder("R.titleText","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
+                <th><table class='noBorderTable 10'><tr><td>Name</td><td class='10'><a href='javascript:setOrder("R.titleText","asc");'><img src='images/arrowup.gif' border=0></a></td><td class='10'><a href='javascript:setOrder("R.titleText","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
                 <?php } if ($_POST['search']['providerTextckbox'] == 'ON') { ?>
-                <th><table class='noBorderTable' style='width:100%'><tr><td>Publisher</td><td style='width:10px;'><a href='javascript:setOrder("R.providerText","asc");'><img src='images/arrowup.gif' border=0></a></td><td style='width:10px;'><a href='javascript:setOrder("CU.loginID","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
+                <th><table class='noBorderTable 10'><tr><td>Publisher</td><td class='10'><a href='javascript:setOrder("R.providerText","asc");'><img src='images/arrowup.gif' border=0></a></td><td class='10'><a href='javascript:setOrder("CU.loginID","desc");'><img src='images/arrowdown.gif' border=0></a></td></tr></table></th>
                 <?php } if ($_POST['search']['descriptionTextckbox'] == 'ON') { ?>
-                <th><table class='noBorderTable' style='width:100%'><tr><td>Description</td><td style='width:10px;vertical-align:top;'>&nbsp;</td><td style='width:10px;vertical-align:top;'></td></tr></table></th>
+                <th><table class='noBorderTable 10'><tr><td>Description</td><td class='10 verticalAlignT' class='10 verticalAlignT'>&nbsp;</td><td class='10 verticalAlignT'></td></tr></table></th>
                 <?php } if ($_POST['search']['generalSubjectckbox'] == 'ON') { ?>
-                <th><table class='noBorderTable' style='width:100%'><tr><td>General Subject</td><td style='width:10px;vertical-align:top;'>&nbsp;</td><td style='width:10px;vertical-align:top;'></td></tr></table></th>
+                <th><table class='noBorderTable 10'><tr><td>General Subject</td><td class='10 verticalAlignT'>&nbsp;</td><td class='10 verticalAlignT'></td></tr></table></th>
                 <?php } if ($_POST['search']['resourceTypeckbox'] == 'ON') { ?>
-                <th><table class='noBorderTable' style='width:100%'><tr><td>Resource Type</td><td style='width:10px;vertical-align:top;'>&nbsp;</td><td style='width:10px;vertical-align:top;'></td></tr></table></th>
+                <th><table class='noBorderTable wHundred'><tr><td>Resource Type</td><td class='10 verticalAlignT'>&nbsp;</td><td class='10 verticalAlignT'></td></tr></table></th>
                 <?php } ?>
                 </tr>
 
@@ -235,9 +235,9 @@ switch ($_GET['action']) {
                 ?>
                 </table>
 
-                <table style='width:100%;margin-top:4px'>
+                <table class='whundred marginT4'>
                 <tr>
-                <td style='text-align:left'>
+                <td class='textAlignL'>
                 <?php
                 //print out page selectors
                 if ($totalRecords > $recordsPerPage){
@@ -286,8 +286,8 @@ switch ($_GET['action']) {
                 }
                 ?>
                 </td>
-                <td style="text-align:right">
-                <select id='numberRecordsPerPage' name='numberRecordsPerPage' style='width:50px;'>
+                <td class='textAlignR'>
+                <select id='numberRecordsPerPage' name='numberRecordsPerPage' class='50'>
                     <?php
                     foreach ($recordsPerPageDD as $i){
                         if ($i == $recordsPerPage){

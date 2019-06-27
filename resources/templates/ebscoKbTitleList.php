@@ -1,4 +1,4 @@
-<table id='resource_table' class='dataTable table-striped' style='width:840px'>
+<table id='resource_table' class='dataTable table-striped 840'>
     <thead>
         <tr>
             <th><?php echo _("Title"); ?></th>
@@ -19,7 +19,7 @@
                     <?php echo $item->titleName; ?>
                 </a>
             </td>
-            <td style="text-align: center;">
+            <td class='text-alignC'>
                 <?php if($item->resource): ?>
                     <a href="resource.php?resourceID=<?php echo $item->resource->primaryKey; ?>">
                         <i class="fa fa-check text-success" title="<?php echo _('imported in Coral'); ?>"></i>
@@ -30,7 +30,7 @@
                 <?php echo $item->pubType; ?>
             </td>
             <td>
-                <ul style="list-style: none; font-size: .8em">
+                <ul class="noList font8em">
                     <?php
                     foreach($item->isxnList as $identifier){
                         if(in_array($identifier['type'], [0,1])) {
@@ -44,13 +44,13 @@
                                 default:
                                     $subtype = '';
                             }
-                            echo sprintf('<li style="white-space: nowrap">%s%s</li>', $identifier['id'], $subtype);
+                            echo sprintf('<li class="noWrap">%s%s</li>', $identifier['id'], $subtype);
                         }
                     }
                     ?>
                 </ul>
             </td>
-            <td style="text-align: center;">
+            <td class='text-alignC'>
                 <a
                     href="ajax_forms.php?action=getEbscoKbTitleImportForm&height=700&width=730&modal=true&titleId=<?php echo $item->titleId; ?>"
                     class="thickbox btn btn-primary">

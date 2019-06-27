@@ -46,12 +46,12 @@ if ($resource->titleText){
 	?>
 	<input type='hidden' name='resourceID' id='resourceID' value='<?php echo $resourceID; ?>'>
 
-	<table style="margin:0; padding:0; width:100%;">
+	<table class='padZero marginZero wHundred'>
 	<tr>
-	<td style='margin:0;padding:0;text-align:left;'>
+	<td class='marginZero changeSelect textAlignL'>
 
-		<div style='vertical-align:top; width:100%; height:35px; margin-left:5px;padding:0;'>
-			<span class="headerText" id='span_resourceName' style='vertical-align:text-top;'><?php echo $resource->titleText; ?>&nbsp;</span>
+		<div class='verticalAlignT wHundred h35 marginL5 padZero'>
+			<span class="headerText verticalAlignT" id='span_resourceName'><?php echo $resource->titleText; ?>&nbsp;</span>
             <?php
                 if ($resource->countResourceAcquisitions() > 1) {
             ?>
@@ -91,7 +91,7 @@ if ($resource->titleText){
                     echo '<input type="hidden" id="resourceAcquisitionSelect" value="'.$resourceAcquisitions[0]->resourceAcquisitionID .'" />';
                 }
             ?>
-			<div id='div_new' style='float:left;vertical-align:bottom;font-weight:115%;margin-top:3px;color:#46841A;'>
+			<div id='div_new' class='floatL verticalAlignB fontW115 marginT3 green'>
                 <?php if (isset($_GET['ref']) && $_GET['ref'] == 'new'): ?>
                     &nbsp;&nbsp;<i class="fa fa-check fa-2x"></i>
 				    <span class='boldText'><?php echo _("Success!");?></span>
@@ -104,14 +104,14 @@ if ($resource->titleText){
 	</tr>
 	</table>
 
-	<div style='width:100%;'>
-	<div style='float:left; width:597px;vertical-align:top;margin:0; padding:0;'>
+	<div class='wHundred'>
+	<div class='floatL verticalAlignT marginZero padZero w597px'>
 		<?php if (!isset($_GET['showTab'])){ ?>
-		<div style="width: 597px;" id='div_product' class="resource_tab_content">
+		<div  id='div_product' class="resource_tab_content w597px">
 		<?php } else { ?>
-		<div style="display:none;width: 597px;" id='div_product' class="resource_tab_content">
+		<div id='div_product' class="resource_tab_content w597px noDislpaying">
 		<?php } ?>
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+			<table cellpadding="0" cellspacing="0" class='wHundred'>
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('product')); ?>
@@ -127,11 +127,11 @@ if ($resource->titleText){
 		</div>
 
         <?php if (isset($_GET['showTab']) && $_GET['showTab'] == 'orders'){ ?>
-		<div style="width: 597px;" id='div_orders' class="resource_tab_content">
+		<div id='div_orders' class="resource_tab_content w597px">
 		<?php } else { ?>
-		<div style="display:none;width: 597px;" id='div_orders' class="resource_tab_content">
+		<div id='div_orders' class="resource_tab_content w597px noDislpaying">
 		<?php } ?>
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+			<table cellpadding="0" cellspacing="0" class="w597px">
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('orders')); ?>
@@ -147,11 +147,11 @@ if ($resource->titleText){
 		</div>
 
 		<?php if ((isset($_GET['showTab'])) && ($_GET['showTab'] == 'acquisitions')){ ?>
-		<div style="width: 897px;" id='div_acquisitions' class="resource_tab_content">
+		<div id='div_acquisitions' class="resource_tab_content w897px">
 		<?php } else { ?>
-		<div style="display:none;width: 897px;" id='div_acquisitions' class="resource_tab_content">
+		<div id='div_acquisitions' class="resource_tab_content w897px noDislpaying">
 		<?php } ?>
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+			<table cellpadding="0" cellspacing="0" class="wHundred">
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('acquisitions')); ?>
@@ -171,12 +171,12 @@ if ($resource->titleText){
 
 
 		<?php if ((isset($_GET['showTab'])) && ($_GET['showTab'] == 'access')){ ?>
-		<div style="width: 597px;" id='div_access' class="resource_tab_content">
+		<div id='div_access' class="resource_tab_content w597px">
 		<?php } else { ?>
-		<div style="display:none;width: 597px;" id='div_access' class="resource_tab_content">
+		<div id='div_access' class="resource_tab_content w597px noDislpaying">
 		<?php } ?>
 
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+			<table cellpadding="0" cellspacing="0" class="wHundred">
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('access')); ?>
@@ -193,8 +193,8 @@ if ($resource->titleText){
 
 
 
-		<div style="display:none;width: 597px;" id='div_contacts' class="resource_tab_content">
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+		<div id='div_contacts' class="resource_tab_content w597px">
+			<table cellpadding="0" cellspacing="0" class="wHundred">
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('contacts')); ?>
@@ -210,8 +210,8 @@ if ($resource->titleText){
 
 		</div>
 
-		<div style="display:none;width: 597px;" id='div_accounts' class="resource_tab_content">
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+		<div class="w597px noDislpaying" id='div_accounts' class="resource_tab_content">
+			<table cellpadding="0" cellspacing="0" class="wHundred">
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('accounts')); ?>
@@ -226,8 +226,8 @@ if ($resource->titleText){
 
 		</div>
 
-		<div style="display:none;width: 597px;" id='div_issues' class="resource_tab_content">
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+		<div id='div_issues' class="resource_tab_content noDislpaying w597px">
+			<table cellpadding="0" cellspacing="0" class="wHundred">
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('issues')); ?>
@@ -246,8 +246,8 @@ if ($resource->titleText){
 		<?php if ($user->accountTabIndicator == '1') { ?>
 
 
-		<div style="display:none;width: 597px;" id='div_accounts' class="resource_tab_content">
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+		<div class="w597px noDislpaying" id='div_accounts' class="resource_tab_content">
+			<table cellpadding="0" cellspacing="0" class="wHundred">
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('accounts')); ?>
@@ -265,8 +265,8 @@ if ($resource->titleText){
 
 		<?php } ?>
 
-		<div style="display:none;width: 597px;" id='div_attachments' class="resource_tab_content">
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+		<div class="w597px noDislpaying" id='div_attachments' class="resource_tab_content">
+			<table cellpadding="0" cellspacing="0" class="wHundred">
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('attachments')); ?>
@@ -281,8 +281,8 @@ if ($resource->titleText){
 
 		</div>
 
-		<div style="display:none;width: 897px;" id='div_workflow' class="resource_tab_content">
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+		<div class="w897px noDislpaying" id='div_workflow' class="resource_tab_content">
+			<table cellpadding="0" cellspacing="0" class="wHundred">
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('workflow')); ?>
@@ -298,11 +298,11 @@ if ($resource->titleText){
 		</div>
 
 		<?php if ((isset($_GET['showTab'])) && ($_GET['showTab'] == 'cataloging')){ ?>
-		<div style="width: 597px;" id='div_cataloging' class="resource_tab_content">
+		<div id='div_cataloging' class="resource_tab_content w597px">
 		<?php } else { ?>
-		<div style="display:none;width: 597px;" id='div_cataloging' class="resource_tab_content">
+		<div class="w597px noDislpaying" id='div_cataloging' class="resource_tab_content">
 		<?php } ?>
-			<table cellpadding="0" cellspacing="0" style="width: 100%;">
+			<table cellpadding="0" cellspacing="0" class="wHundred">
 				<tr>
 					<td class="sidemenu">
 						<?php echo resource_sidemenu(watchString('cataloging')); ?>
@@ -317,18 +317,18 @@ if ($resource->titleText){
 
 		</div>
 	</div>
-	<div style='float:right; vertical-align:top; width:303px; text-align:left; padding:0; margin:0; background-color:white;' id='div_fullRightPanel' class='rightPanel'>
-		<div style="width:265px;text-align:left;padding:10px;">
+	<div id='div_fullRightPanel' class='rightPanel floatR verticalAlignT w303px textAlignL padZero marginZero whiteBkg'>
+		<div class="w265px textAlignL padding10">
 			<div id="side-menu-title"><?php echo _("Helpful Links"); ?></div>
-			<div style='margin:10px 8px 0px 8px;' id='div_rightPanel'></div>
+			<div class='marginDivRightPanel' id='div_rightPanel'></div>
 		</div>
 
 		<div>
 
 
 					<?php if ($config->settings->feedbackEmailAddress != '') {?>
-						<div style='margin:0px 8px 10px 8px;'>
-						<div style='width:219px; padding:7px; margin-bottom:5px;'>
+						<div  class='marginDivRightPanel'>
+						<div class='w219px padding7 marginB5'>
 						<a href="mailto: <?php echo $config->settings->feedbackEmailAddress; ?>?subject=<?php echo $resource->titleText . ' (Resource ID: ' . $resource->resourceID . ')'; ?>" class='helpfulLink'><?php echo _("Send feedback on this resource");?></a>
 						</div>
 						</div>

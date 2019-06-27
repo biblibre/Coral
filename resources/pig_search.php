@@ -12,21 +12,21 @@
     <center>
     <table>
         <tr>
-        <td style='vertical-align:top;'>
-        <div style="text-align:left;">
+        <td class='verticalAlignT'>
+        <div class='textAlignL'>
             <center>
-                <table class="titleTable" style="background-image:url('images/resourcestitle.jpg');background-repeat:no-repeat;width:900px;text-align:left;">
-                    <tr style='vertical-align:top;'>
-                        <td style='height:53px;'>
+                <table class="titleTable ressourcesBackg">
+                    <tr class='verticalAlignT'>
+                        <td class='h53'>
                         &nbsp;
                         </td>
                     </tr>
                 </table>
                 <br>
-                <div style='text-align:left;'>
+                <div class='textAlignL'>
                     <table class='borderedFormTable' >
-                        <tr style='vertical-align:top;'>
-                            <td style="padding-right:10px;">
+                        <tr class='verticalAlignT'>
+                            <td class='paddingR10'>
                                 <br>
                                 <form method="get" action="pig.php">
                                     <input type="search" title="Search Coral" size="60" id="name" name="name" />

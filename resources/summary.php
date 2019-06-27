@@ -203,26 +203,26 @@ if ($resource->titleText){
 
 
 	<div class='printContent'>
-	<table class='linedFormTable' style='width:510px;'>
+	<table class='linedFormTable w510px'>
 		<tr>
-		<th colspan='2' style='margin-top: 7px; margin-bottom: 5px;'>
-		<span style='float:left; vertical-align:top; margin-left:3px;'><span style='font-weight:bold;font-size:120%;margin-right:8px;'><?php echo $resource->titleText; ?></span><span style='font-weight:normal;font-size:100%;'><?php echo $resourceFormat->shortName . " " . $resourceType->shortName; ?></span></span>
+		<th colspan='2' class='marginT7 marginB5'>
+		<span class='floatL verticalAlignT marginL3'><span class='boldText fontSize120 marginR8'><?php echo $resource->titleText; ?></span><span class='normalText fontSize100'><?php echo $resourceFormat->shortName . " " . $resourceType->shortName; ?></span></span>
 		</th>
 		</tr>
 
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Record ID:");?></td>
-		<td style='width:335px;'><?php echo $resource->resourceID; ?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Record ID:");?></td>
+		<td class='w335px'><?php echo $resource->resourceID; ?></td>
 		</tr>
 
 
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Status:");?></td>
-		<td style='width:335px;'><?php echo $status->shortName; ?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Status:");?></td>
+		<td class='w335px'><?php echo $status->shortName; ?></td>
 		</tr>
 
 		<tr>
-		<td style='vertical-align:top;width:150px;'>
+		<td class='w150px verticalAlignT'>
 		<?php echo _("Created:");?>
 		</td>
 		<td>
@@ -248,7 +248,7 @@ if ($resource->titleText){
 		?>
 
 			<tr>
-			<td style='vertical-align:top;width:150px;'>
+			<td >
 			<?php echo _("Last Update:");?>
 			</td>
 			<td>
@@ -274,7 +274,7 @@ if ($resource->titleText){
 
 		if ((count($parentResourceArray) > 0) || (count($childResourceArray) > 0)){ ?>
 			<tr>
-			<td style='vertical-align:top;width:150px;'><?php echo _("Related Products:");?></td>
+			<td class='w150px verticalAlignT'><?php echo _("Related Products:");?></td>
 			<td>
 			<?php
 
@@ -285,7 +285,7 @@ if ($resource->titleText){
 
 			foreach ($childResourceArray as $childResource){
 				$childResourceObj = new Resource(new NamedArguments(array('primaryKey' => $childResource['resourceID'])));
-				echo "<span style='float: left;'>" . $childResourceObj->titleText . "&nbsp;&nbsp;(child)</span>";
+				echo "<span class='floatL'>" . $childResourceObj->titleText . "&nbsp;&nbsp;(child)</span>";
 			}
 
 
@@ -297,8 +297,8 @@ if ($resource->titleText){
 		if ($resource->isbnOrISSN){
 		?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("ISSN / ISBN:");?></td>
-		<td style='width:335px;'><?php echo $resource->isbnOrISSN; ?></td>
+		<td class='w150px verticalAlignT'><?php echo _("ISSN / ISBN:");?></td>
+		<td class='w335px'><?php echo $resource->isbnOrISSN; ?></td>
 		</tr>
 		<?php
 		}
@@ -306,11 +306,11 @@ if ($resource->titleText){
 		if (count($aliasArray) > 0){
 		?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Aliases:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Aliases:");?></td>
 		<td>
 		<?php
 			foreach ($aliasArray as $resourceAlias){
-				echo "\n<span style='float: left; width:95px;'>" . $resourceAlias['aliasTypeShortName'] . ":</span><span style='width:270px;'>" . $resourceAlias['shortName'] . "</span><br />";
+				echo "\n<span class='floatL w95px'>" . $resourceAlias['aliasTypeShortName'] . ":</span><span class='w270px'>" . $resourceAlias['shortName'] . "</span><br />";
 			}
 		?>
 		</td>
@@ -323,16 +323,16 @@ if ($resource->titleText){
 		?>
 
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Organizations:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Organizations:");?></td>
 		<td>
 
 			<?php
 			foreach ($orgArray as $organization){
 				//if organizations is installed provide a link
 				if ($config->settings->organizationsModule == 'Y'){
-					echo "<span style='float:left; width:70px;'>" . $organization['organizationRole'] . ":</span><span style='width:270px;'>" . $organization['organization'] . "</span><br />";
+					echo "<span class='floatL w70'>" . $organization['organizationRole'] . ":</span><span class='w270px'>" . $organization['organization'] . "</span><br />";
 				}else{
-					echo "<span style='float:left; width:70px;'>" . $organization['organizationRole'] . ":</span><span style='width:270px;'>" . $organization['organization'] . "</span><br />";
+					echo "<span class='floatL w70'>" . $organization['organizationRole'] . ":</span><span class='w270px'>" . $organization['organization'] . "</span><br />";
 				}
 			}
 			?>
@@ -344,7 +344,7 @@ if ($resource->titleText){
 
 		if ($resource->resourceURL) { ?>
 			<tr>
-			<td style='vertical-align:top;width:150px;'><?php echo _("Resource URL:");?></td>
+			<td class='w150px verticalAlignT'><?php echo _("Resource URL:");?></td>
 			<td><?php echo $resource->resourceURL; ?></td>
 			</tr>
 		<?php
@@ -352,7 +352,7 @@ if ($resource->titleText){
 
 		if ($resource->resourceAltURL) { ?>
 			<tr>
-			<td style='vertical-align:top;width:150px;'><?php echo _("Alt URL:");?></td>
+			<td class='w150px verticalAlignT'><?php echo _("Alt URL:");?></td>
 			<td><?php echo $resource->resourceAltURL; ?></td>
 			</tr>
 		<?php
@@ -360,7 +360,7 @@ if ($resource->titleText){
 
 		if ($resource->descriptionText){ ?>
 			<tr>
-			<td style='vertical-align:top;width:150px;'><?php echo _("Description:");?></td>
+			<td class='w150px verticalAlignT'><?php echo _("Description:");?></td>
 			<td><?php echo nl2br($resource->descriptionText); ?></td>
 			</tr>
 		<?php } ?>
@@ -405,13 +405,13 @@ if ($resource->titleText){
 
 	if (count($noteArray) > 0){
 	?>
-		<table class='linedFormTable' style='width:510px;'>
+		<table class='linedFormTable w510px'>
 			<tr>
 			<th colspan='2'><?php echo _("Additional Product Notes");?></th>
 			</tr>
 			<?php foreach ($noteArray as $resourceNote){ ?>
 				<tr>
-				<td style='width:150px;'><?php echo $resourceNote['noteTypeName']; ?>:</td>
+				<td class='w150px'><?php echo $resourceNote['noteTypeName']; ?>:</td>
 				<td><?php echo nl2br($resourceNote['noteText']); ?><br /><i><?php echo format_date($resourceNote['updateDate']) . _(" by ") . $resourceNote['updateUser']; ?></i></td>
 				</tr>
 			<?php } ?>
@@ -424,45 +424,45 @@ if ($resource->titleText){
 	<br />
 
 
-	<table class='linedFormTable' style='width:510px;'>
+	<table class='linedFormTable w510px'>
 	<tr>
-	<th colspan='2' style='vertical-align:bottom;'>
-	<span style='float:left;vertical-align:bottom;'><?php echo _("Order");?></span>
+	<th colspan='2' class='verticalAlignB'>
+	<span class='verticalAlignB floatL'><?php echo _("Order");?></span>
 
 	</th>
 	</tr>
 
 	<?php if ($resource->acquisitionTypeID) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Acquisition Type:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Acquisition Type:");?></td>
 		<td><?php echo $acquisitionType->shortName; ?></td>
 		</tr>
 	<?php } ?>
 
 	<?php if ($resource->orderNumber) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Order Number:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Order Number:");?></td>
 		<td><?php echo $resource->orderNumber; ?></td>
 		</tr>
 	<?php } ?>
 
 	<?php if ($resource->systemNumber) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("System Number:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("System Number:");?></td>
 		<td><?php echo $resource->systemNumber; ?></td>
 		</tr>
 	<?php } ?>
 
 	<?php if (count($purchaseSiteArray) > 0) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Purchasing Site:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Purchasing Site:");?></td>
 		<td><?php echo implode(", ", $purchaseSiteArray); ?></td>
 		</tr>
 	<?php } ?>
 
 	<?php if (count($authorizedSiteArray) > 0) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Authorized Sites:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Authorized Sites:");?></td>
 		<td><?php echo implode(", ", $authorizedSiteArray); ?></td>
 		</tr>
 	<?php } ?>
@@ -470,14 +470,14 @@ if ($resource->titleText){
 
 	<?php if (!is_null_date($resourceAcquisition->subscriptionStartDate)) { ?>
 	<tr>
-	<td style='vertical-align:top;width:150px;'><?php echo _("Sub Start:");?></td>
+	<td class='w150px verticalAlignT'><?php echo _("Sub Start:");?></td>
 	<td><?php echo format_date($resourceAcquisition->subscriptionStartDate); ?></td>
 	</tr>
 	<?php } ?>
 
 	<?php if (!is_null_date($resourceAcquisition->subscriptionEndDate)) { ?>
 	<tr>
-	<td style='vertical-align:top;width:150px;'><?php echo _("Current Sub End:");?></td>
+	<td class='w150px verticalAlignT'><?php echo _("Current Sub End:");?></td>
 	<td><?php echo format_date($resourceAcquisition->subscriptionEndDate); ?>&nbsp;&nbsp;
 	<?php if ($resourceAcquisition->subscriptionAlertEnabledInd == "1") { echo "<i>"._("Expiration Alert Enabled")."</i>"; } ?>
 	</td>
@@ -487,72 +487,72 @@ if ($resource->titleText){
 	</table>
 	<br />
 
-	<table class='linedFormTable' style='width:510px;'>
+	<table class='linedFormTable w510px'>
 	<tr>
-        <th colspan='2' style='vertical-align:bottom;'>
-	<span style='float:left;vertical-align:bottom;'><?php echo _("Cost History");?></span>
+        <th colspan='2' class='verticalAlignB'>
+	<span class='verticalAlignB floatL'><?php echo _("Cost History");?></span>
 	</th>
 	</tr>
 
 	<?php
 	if (count($paymentArray) > 0){
             foreach ($paymentArray as $payment){ ?>
-              <tr><td style='vertical-align:top;width:150px;' colspan='2'></td></tr>
+              <tr><td class='w150px verticalAlignT' colspan='2'></td></tr>
             <?php if ($enhancedCostFlag){ ?>
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Year:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Year:");?></td>
                     <td><?php echo $payment['year']; ?></td>
                 </tr>
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Sub StartDate:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Sub StartDate:");?></td>
                     <td><?php echo $payment['subscriptionStartDate']; ?></td>
                 </tr>
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Sub EndDate:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Sub EndDate:");?></td>
                     <td><?php echo $payment['subscriptionEndDate']; ?></td>
                 </tr>
              <?php } ?>
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Fund:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Fund:");?></td>
                     <td><?php echo $payment['fundName']; ?></td>
                 </tr>
             <?php if ($enhancedCostFlag){ ?>
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Tax Excl.:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Tax Excl.:");?></td>
                     <td><?php echo $payment['currencyCode'] . " " .integer_to_cost($payment['priceTaxExcluded']); ?></td>
                 </tr>
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Tax Rate:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Tax Rate:");?></td>
                     <td><?php echo $payment['taxRate']/100 ."%"; ?></td>
                 </tr>
 
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Tax Incl.:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Tax Incl.:");?></td>
                     <td><?php echo $payment['currencyCode'] . " " .integer_to_cost($payment['priceTaxIncluded']); ?></td>
                 </tr>
             <?php } ?>
 
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Payment:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Payment:");?></td>
                     <td><?php echo $payment['currencyCode'] . " " . integer_to_cost($payment['paymentAmount']); ?></td>
                 </tr>
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Order Type:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Order Type:");?></td>
                     <td><?php echo $payment['orderType']; ?></td>
                 </tr>
             <?php if ($enhancedCostFlag){ ?>
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Details:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Details:");?></td>
                     <td><?php echo $payment['costDetails']; ?></td>
 		</tr>
              <?php } ?>
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Note:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Note:");?></td>
                     <td><?php echo $payment['costNote']; ?></td>
 		</tr>
             <?php if ($enhancedCostFlag){ ?>
                 <tr>
-                    <td style='vertical-align:top;width:150px;'><?php echo _("Invoice No.:");?></td>
+                    <td class='w150px verticalAlignT'><?php echo _("Invoice No.:");?></td>
                     <td><?php echo $payment['invoiceNum']; ?></td>
                 </tr>
             <?php } ?>
@@ -568,15 +568,15 @@ if ($resource->titleText){
 	</table>
 	<br />
 
-	<table class='linedFormTable' style='width:510px;'>
+	<table class='linedFormTable w510px'>
 	<tr>
 	<th colspan='2'>
-	<span style='float:left;vertical-align:bottom;'><?php echo _("License");?></span>
+	<span class='verticalAlignB floatL'><?php echo _("License");?></span>
 	</th>
 	</tr>
 
 	<tr>
-	<td style='vertical-align:top;width:150px;'><?php echo _("Status:");?></td>
+	<td class='w150px verticalAlignT'><?php echo _("Status:");?></td>
 	<td>
 
 	<?php
@@ -593,7 +593,7 @@ if ($resource->titleText){
 	</tr>
 
 	<tr>
-	<td style='vertical-align:top;width:150px;'><?php echo _("Licenses:");?></td>
+	<td class='w150px verticalAlignT'><?php echo _("Licenses:");?></td>
 	<td>
 	<?php
 
@@ -647,14 +647,14 @@ if ($resource->titleText){
 
 	if (count($noteArray) > 0){
 	?>
-		<table class='linedFormTable' style='width:510px;'>
+		<table class='linedFormTable w510px'>
 			<tr>
 			<th colspan='2'><?php echo _("Additional Acquisitions Notes");?></th>
 			</th>&nbsp;
 			</tr>
 			<?php foreach ($noteArray as $resourceNote){ ?>
 				<tr>
-				<td style='width:150px;'><?php echo $resourceNote['noteTypeName']; ?></td>
+				<td class='w150px"><?php echo $resourceNote['noteTypeName']; ?></td>
 
 				</td>
 				<td><?php echo nl2br($resourceNote['noteText']); ?><br /><i><?php echo format_date($resourceNote['updateDate']) . _(" by ") . $resourceNote['updateUser']; ?></i></td>
@@ -668,10 +668,10 @@ if ($resource->titleText){
 	<br />
 
 
-	<table class='linedFormTable' style='width:510px;'>
+	<table class='linedFormTable w510px'>
 	<tr>
 	<th colspan='2'>
-	<span style='float:left;vertical-align:bottom;'><?php echo _("Access Information");?></span>
+	<span class='verticalAlignB floatL'><?php echo _("Access Information");?></span>
 	</th>
 	</tr>
 
@@ -685,28 +685,28 @@ if ($resource->titleText){
 
 	<?php if (count($administeringSiteArray) > 0) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Administering Sites:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Administering Sites:");?></td>
 		<td><?php echo implode(", ", $administeringSiteArray); ?></td>
 		</tr>
 	<?php } ?>
 
 	<?php if ($authenticationType->shortName) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Authentication Type:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Authentication Type:");?></td>
 		<td><?php echo $authenticationType->shortName; ?></td>
 		</tr>
 	<?php } ?>
 
 	<?php if (($resource->authenticationUserName) || ($resource->authenticationPassword)) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Username / Password:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Username / Password:");?></td>
 		<td><?php echo $resource->authenticationUserName . " / " . $resource->authenticationPassword; ?></td>
 		</tr>
 	<?php } ?>
 
 	<?php if ($userLimit->shortName) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Simultaneous User Limit:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Simultaneous User Limit:");?></td>
 		<td><?php echo $userLimit->shortName; ?></td>
 		</tr>
 	<?php } ?>
@@ -714,22 +714,22 @@ if ($resource->titleText){
 
 	<?php if ($resource->registeredIPAddressException){ ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Registered IP Address:");?></td>
-		<td style='width:310px;'><?php echo $resource->registeredIPAddressException; ?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Registered IP Address:");?></td>
+		<td class='w310px'><?php echo $resource->registeredIPAddressException; ?></td>
 		</tr>
 	<?php } ?>
 
 
 	<?php if ($storageLocation->shortName) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Storage Location:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Storage Location:");?></td>
 		<td><?php echo $storageLocation->shortName; ?></td>
 		</tr>
 	<?php } ?>
 
 	<?php if ($accessMethod->shortName) { ?>
 		<tr>
-		<td style='vertical-align:top;width:150px;'><?php echo _("Access Method:");?></td>
+		<td class='w150px verticalAlignT'><?php echo _("Access Method:");?></td>
 		<td><?php echo $accessMethod->shortName; ?></td>
 		</tr>
 	<?php } ?>
@@ -772,13 +772,13 @@ if ($resource->titleText){
 
 	if (count($noteArray) > 0){
 	?>
-		<table class='linedFormTable' style='width:510px;'>
+		<table class='linedFormTable w510px'>
 			<tr>
 			<th colspan='2'><?php echo _("Additional Access Notes");?></th>
 			</tr>
 			<?php foreach ($noteArray as $resourceNote){ ?>
 				<tr>
-				<td style='width:150px;'><?php echo $resourceNote['noteTypeName']; ?>:</td>
+				<td class='w150px'><?php echo $resourceNote['noteTypeName']; ?>:</td>
 				<td><?php echo nl2br($resourceNote['noteText']); ?><br /><i><?php echo format_date($resourceNote['updateDate']) . _(" by ") . $resourceNote['updateUser']; ?></i></td>
 				</tr>
 			<?php } ?>
@@ -787,22 +787,22 @@ if ($resource->titleText){
 	}
 	?>
 
-  <table class='linedFormTable' style='width:510px;'>
+  <table class='linedFormTable w510px'>
     <tr>
-      <th colspan='2' style='vertical-align:bottom;'>
-        <span style='float:left;vertical-align:bottom;'><?php echo _("Cataloging");?></span>
+      <th colspan='2'class='verticalAlignB'>
+        <span class='floatL verticalAlignB'><?php echo _("Cataloging");?></span>
       </th>
     </tr>
     <?php if ($resourceAcquisition->hasCatalogingInformation()) { ?>
       <?php if ($resourceAcquisition->recordSetIdentifier) { ?>
     		<tr>
-      		<td style='vertical-align:top;width:150px;'><?php echo _("Identifier:");?></td>
+      		<td class='w150px verticalAlignT'><?php echo _("Identifier:");?></td>
       		<td><?php echo $resourceAcquisition->recordSetIdentifier; ?></td>
     		</tr>
     	<?php } ?>
     	<?php if ($resourceAcquisition->bibSourceURL) { ?>
     		<tr>
-      		<td style='vertical-align:top;width:150px;'><?php echo _("URL:");?></td>
+      		<td class='w150px verticalAlignT'><?php echo _("URL:");?></td>
       		<td><?php echo $resourceAcquisition->bibSourceURL; ?></td>
     		</tr>
     	<?php } ?>
@@ -810,7 +810,7 @@ if ($resource->titleText){
     		$catalogingType = new CatalogingType(new NamedArguments(array('primaryKey' => $resourceAcquisition->catalogingTypeID)));
     		?>
     		<tr>
-      		<td style='vertical-align:top;width:150px;'><?php echo _("Cataloging Type:");?></td>
+      		<td class='w150px verticalAlignT'><?php echo _("Cataloging Type:");?></td>
       		<td><?php echo $catalogingType->shortName; ?></td>
     		</tr>
     	<?php } ?>
@@ -818,25 +818,25 @@ if ($resource->titleText){
     		$catalogingStatus = new CatalogingStatus(new NamedArguments(array('primaryKey' => $resourceAcquisition->catalogingStatusID)));
     		?>
     		<tr>
-      		<td style='vertical-align:top;width:150px;'><?php echo _("Cataloging Status:");?></td>
+      		<td class='w150px verticalAlignT'><?php echo _("Cataloging Status:");?></td>
       		<td><?php echo $catalogingStatus->shortName; ?></td>
     		</tr>
     	<?php } ?>
     	<?php if ($resourceAcquisition->numberRecordsAvailable) { ?>
     		<tr>
-      		<td style='vertical-align:top;width:150px;'><?php echo _("# Records Available:");?></td>
+      		<td class='w150px verticalAlignT'><?php echo _("# Records Available:");?></td>
       		<td><?php echo $resourceAcquisition->numberRecordsAvailable; ?></td>
     		</tr>
     	<?php } ?>
     	<?php if ($resourceAcquisition->numberRecordsLoaded) { ?>
     		<tr>
-      		<td style='vertical-align:top;width:150px;'><?php echo _("# Records Loaded:");?></td>
+      		<td class='w150px verticalAlignT'><?php echo _("# Records Loaded:");?></td>
       		<td><?php echo $resourceAcquisition->numberRecordsLoaded; ?></td>
     		</tr>
     	<?php } ?>
     	<?php if ($resourceAcquisition->hasOclcHoldings) { ?>
     		<tr>
-      		<td style='vertical-align:top;width:150px;'><?php echo _("OCLC Holdings:");?></td>
+      		<td class='w150px verticalAlignT'><?php echo _("OCLC Holdings:");?></td>
       		<td><?php echo $resourceAcquisition->hasOclcHoldings ? _('Yes') : _('No'); ?></td>
     		</tr>
     	<?php } ?>
@@ -885,13 +885,13 @@ if ($resource->titleText){
 
 	if (count($noteArray) > 0){
 	?>
-		<table class='linedFormTable' style='width:510px;'>
+		<table class='linedFormTable w510px'>
 			<tr>
 			<th colspan='2'><?php echo _("Additional Cataloging Notes");?></th>
 			</tr>
 			<?php foreach ($noteArray as $resourceNote){ ?>
 				<tr>
-				<td style='width:150px;'><?php echo $resourceNote['noteTypeName']; ?>:</td>
+				<td class='w150px'><?php echo $resourceNote['noteTypeName']; ?>:</td>
 				<td><?php echo nl2br($resourceNote['noteText']); ?><br /><i><?php echo format_date($resourceNote['updateDate']) . _(" by ") . $resourceNote['updateUser']; ?></i></td>
 				</tr>
 			<?php } ?>

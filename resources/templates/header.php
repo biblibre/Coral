@@ -82,24 +82,24 @@ $coralURL = $util->getCORALURL();
 <table id="main-table">
 
 <tr>
-<td style='vertical-align:top;'>
-<div style="text-align:left;">
+<td class="verticalAlignT">
+<div class="verticalAlignT">
 
 <center>
 
-<table class="titleTable" style="width:1024px;text-align:left;">
+<table class="titleTable 1024 textAlignL">
 
-    <tr style='vertical-align:top;'>
-        <td style='height:53px;' colspan='3'>
-                
+    <tr class="verticalAlignT">
+        <td class="53">
+
             <div id="main-title">
                 <img src="images/title-icon-resources.png" />
                 <span id="main-title-text"><?php echo _("Resources"); ?></span>
                 <span id="powered-by-text"><?php echo _("Powered by");?><img src="images/logo-coral.jpg" /></span>
             </div>
 
-            <div id="menu-login" style='margin-top:1px;'>
-                <span class='smallText' style='color:#526972;'>
+            <div id="menu-login" class="marginT1">
+                <span class='smallText blueGrey'>
                 <?php
                     echo _("Hello") . ", ";
                     //user may not have their first name / last name set up
@@ -124,18 +124,18 @@ $coralURL = $util->getCORALURL();
                                 while (($file = readdir($dh)) !== false) {
                                     if (is_dir("$route/$file") && $file!="." && $file!=".."){
                                         $lang[]=$file;
-                                    } 
-                                } 
-                                closedir($dh); 
-                            } 
+                                    }
+                                }
+                                closedir($dh);
+                            }
                         }else {
-                            echo "<br>"._("Invalid translation route!"); 
+                            echo "<br>"._("Invalid translation route!");
                         }
                         // Get language of navigator
                         $defLang = $lang_name->getBrowserLanguage();
-                        
+
                         // Show an ordered list
-                        sort($lang); 
+                        sort($lang);
                         for($i=0; $i<count($lang); $i++){
                             if(isset($_COOKIE["lang"])){
                                 if($_COOKIE["lang"]==$lang[$i]){
@@ -152,7 +152,7 @@ $coralURL = $util->getCORALURL();
                             }
                         }
                         ?>
-                        
+
                     </select>
                 </span>
             </div>
@@ -160,8 +160,8 @@ $coralURL = $util->getCORALURL();
         </td>
     </tr>
 
-<tr style='vertical-align:top'>
-<td style='width:870px;height:19px;' id="main-menu-titles" colspan="2">
+<tr class='verticalAlignT'>
+<td class='870 h19' id="main-menu-titles" colspan="2">
 
     <a href='index.php' title="<?php echo _("Home") ?>">
         <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
@@ -222,7 +222,7 @@ $coralURL = $util->getCORALURL();
 
 </td>
 
-<td style='width:130px;height:19px;' align='right'>
+<td class='130 h19' align='right'>
 <?php
 
 //only show the 'Change Module' if there are other modules installed or if there is an index to the main CORAL page
@@ -231,7 +231,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->li
 
 	?>
 
-	<div style='text-align:left;'>
+	<div class='textAlignR'>
 		<ul class="tabs">
 	        <li id="change-mod-menu"><span><?php echo _("Change Module");?></span><i class="fa fa-chevron-down"></i>
 			<ul class="coraldropdown">
@@ -278,7 +278,7 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->li
             setLanguage($("#lang").val());
             location.reload();
         });
-        
+
         function setLanguage(lang) {
 			var wl = window.location, now = new Date(), time = now.getTime();
             var cookievalid=2592000000; // 30 days (1000*60*60*24*30)
@@ -287,4 +287,4 @@ if ((file_exists($util->getCORALPath() . "index.php")) || ($config->settings->li
 			document.cookie ='lang='+lang+';path=/'+';domain='+wl.hostname+';expires='+now;
 	    }
     </script>
-<span id='span_message' class='darkRedText' style='text-align:left;'><?php if (isset($_POST['message'])) echo $_POST['message']; if (isset($errorMessage)) echo $errorMessage; ?></span>
+<span id='span_message' class='darkRedText textAlignR'><?php if (isset($_POST['message'])) echo $_POST['message']; if (isset($errorMessage)) echo $errorMessage; ?></span>

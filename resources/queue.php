@@ -35,9 +35,9 @@ $tabs = array(array("id"=>"OutstandingTasks","spanClass"=>"OutstandingTasksNumbe
 
 	<table class='headerTable'>
 	<tr>
-	<td style='margin:0;padding:0;text-align:left;'>
-		<table style='width:100%; margin:0;padding:0;'>
-		<tr style='vertical-align:top'>
+	<td class='marginZero padZero textAlignL'>
+		<table class='wHundred marginZero padZero'>
+		<tr class='verticalAlignT'>
 		<td>
 		<span class="headerText"><?php echo _("My Queue");?></span>
 		<br />
@@ -46,10 +46,10 @@ $tabs = array(array("id"=>"OutstandingTasks","spanClass"=>"OutstandingTasksNumbe
 		</table>
 
 
-		<table style='width:890px; text-align:left; vertical-align:top;'>
+		<table class='890 textAlignL verticalAlignT'>
 		<tr>
-		<td style='width:170px;vertical-align:top;'>
-			<table class='queueMenuTable' style='width:170px;'>
+		<td class='170 verticalAlignT'>
+			<table class='queueMenuTable 170'>
 <?php
 foreach ($tabs as $tab) {
 	echo "		<tr>
@@ -64,11 +64,11 @@ foreach ($tabs as $tab) {
 ?>
 			</table>
 		</td>
-		<td class='queueRightPanel' style='width:720px;margin:0;'>
+		<td class='queueRightPanel 720 marginZero'>
 			<div id='div_QueueContent'>
 			<img src = "images/circle.gif" /><?php echo _("Loading...");?>
 			</div>
-			<div style='margin-top:5px;' class='darkRedText' id='div_error'></div>
+			<div class='darkRedText marginT5' id='div_error'></div>
 
 		</td>
 		</tr>
@@ -89,5 +89,3 @@ foreach ($tabs as $tab) {
 <?php
 include 'templates/footer.php';
 ?>
-
-

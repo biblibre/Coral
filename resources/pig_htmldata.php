@@ -108,45 +108,45 @@ switch ($_GET['action']) {
 
 
                 ?>
-                <table class='dataTable' style='width:727px'>
+                <table class='dataTable 727'>
                 <tr>
                 <?php if ($_GET['titleTextckbox'] == 'ON') { ?>
                 <th>
-                    <table class='noBorderTable' style='width:100%'>
+                    <table class='noBorderTable wHundred'>
                         <tr>
-                            <td style='width:100%'>Name</td>
+                            <td class='wHundred'>Name</td>
                         </tr>
                     </table>
                 </th>
                 <?php } if ($_GET['providerTextckbox'] == 'ON') { ?>
                 <th>
-                    <table class='noBorderTable' style='width:100%'>
+                    <table class='noBorderTable wHundred'>
                         <tr>
-                            <td style='width:100%'>Publisher</td>
+                            <td class='wHundred'>Publisher</td>
                         </tr>
                     </table>
                 </th>
                 <?php } if ($_GET['descriptionTextckbox'] == 'ON') { ?>
                 <th>
-                    <table class='noBorderTable' style='width:100%'>
+                    <table class='noBorderTable wHundred'>
                         <tr>
-                            <td style='width:100%'>Description</td>
+                            <td class='wHundred'>Description</td>
                         </tr>
                     </table>
                 </th>
                 <?php } if ($_GET['generalSubjectckbox'] == 'ON') { ?>
                 <th>
-                    <table class='noBorderTable' style='width:100%'>
+                    <table class='noBorderTable wHundred'>
                         <tr>
-                            <td style='width:100%'>General Subject</td>
+                            <td class='wHundred'>General Subject</td>
                         </tr>
                     </table>
                 </th>
                 <?php } if ($_GET['resourceTypeckbox'] == 'ON') { ?>
                 <th>
-                    <table class='noBorderTable' style='width:100%'>
+                    <table class='noBorderTable wHundred'>
                         <tr>
-                            <td style='width:100%'>Resource Type</td>
+                            <td class='wHundred'>Resource Type</td>
                         </tr>
                     </table>
                 </th>

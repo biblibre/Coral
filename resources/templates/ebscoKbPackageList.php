@@ -1,4 +1,4 @@
-<table id='resource_table' class='dataTable table-striped' style='width:840px'>
+<table id='resource_table' class='dataTable table-striped 840'>
     <thead>
         <tr>
             <th><?php echo _("Name"); ?></th>
@@ -18,7 +18,7 @@
                 <br>
                 <small>(<?php echo $item->vendorName; ?>)</small>
             </td>
-            <td style="text-align: center;">
+            <td class="text-alignC">
                 <?php if($item->resource): ?>
                     <a href="resource.php?resourceID=<?php echo $item->resource->primaryKey; ?>">
                         <i class="fa fa-check text-success" title="<?php echo _('imported in Coral'); ?>"></i>
@@ -35,7 +35,7 @@
             <td>
                 <?php echo $item->contentType; ?>
             </td>
-            <td style="text-align: center;">
+            <td class="text-alignC">
                 <button
                         class="setPackage add-button"
                         data-vendor-id="<?php echo $item->vendorId; ?>"
@@ -45,7 +45,7 @@
                     <?php echo _("View Titles"); ?>
                 </button>
             </td>
-            <td style="text-align: center;">
+            <td class="text-alignC">
                 <a
                     href="ajax_forms.php?action=getEbscoKbPackageImportForm&height=700&width=730&modal=true&vendorId=<?php echo $item->vendorId; ?>&packageId=<?php echo $item->packageId; ?>"
                     class="thickbox btn btn-primary">

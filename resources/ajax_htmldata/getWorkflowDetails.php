@@ -23,9 +23,9 @@
 				<th class='middleGrey 350'><?php echo _("Step");?></th>
 					<th class='middleGrey'>&nbsp;</th>
 				<th class='middleGrey 150'><?php echo _("Group");?></th>
-				<th class='middleGrey ' style='background-color:#dad8d8;width:120px;'><?php echo _("Start Date");?></th>
-				<th style='background-color:#dad8d8;width:250px;'><?php echo _("Complete");?></th>
-					<th style='background-color:#dad8d8;'><?php echo _("Delete");?></th>
+				<th class='middleGrey 120'><?php echo _("Start Date");?></th>
+				<th class='middleGrey 250'><?php echo _("Complete");?></th>
+					<th class='middleGrey'><?php echo _("Delete");?></th>
 				</tr>
 			<?php
 			$openStep=0;
@@ -36,7 +36,7 @@
 				$userGroup = new UserGroup(new NamedArguments(array('primaryKey' => $resourceStep->userGroupID)));
 				$eUser = new User(new NamedArguments(array('primaryKey' => $resourceStep->endLoginID)));
 
-				$classAdd = "style='background-color: white;'";
+				$classAdd = "style='background-color: white;";
 				//make the row gray if it is complete or not started
 				if ((($resourceStep->stepEndDate) && ($resourceStep->stepEndDate != "0000-00-00")) || (!$resourceStep->stepStartDate) || ($resource->statusID == $archiveStatusID) || ($resource->statusID == $completeStatusID)){
 					$classAdd = "class='complete'";
@@ -81,7 +81,7 @@
 						$openStep++;
 					}?>
 				</td>
-				<td style="text-align:center;"> <?php
+				<td class='text-alignC'> <?php
 					//add a delete step option, there will be a modal confirmation before delete.
 					if (!$resourceStep->stepEndDate){
 						echo '<a href="javascript:void(0);" class="removeResourceStep" id="'. $resourceStep->resourceStepID .'"><img src="images/cross.gif" alt="delete" title="delete"></a>';
@@ -122,7 +122,7 @@
 		if ($user->canEdit()){
             echo "<img src='images/pencil.gif' />&nbsp;&nbsp;<a href='javascript:void(0);' class='restartWorkflow'>"._("restart workflow")."</a><br />";
         ?>
-                <div class="restartWorkflowDiv" id="restartWorkflowDiv" style="display:none;padding:20px;">
+                <div class="restartWorkflowDiv noDislpaying padding20" id="restartWorkflowDiv">
                     <form name="restartWorkflowForm" id="restartWorkflowForm">
 
                         <label for="workflowArchivingDate"><?php echo _("Select a workflow to restart"); ?></label>:

@@ -105,9 +105,9 @@ function resource_sidemenu($selected_link = '') {
     }
     if ($key != 'accounts' || $user->accountTabIndicator == '1') {
     ?>
-    <div class="<?php echo $class; ?>" style='position: relative; width: 105px'><span class='link'><a href='javascript:void(0)' class='show<?php echo $name; ?>' title="<?php echo $value; ?>"><?php echo $value; ?></a></span>
+    <div class="<?php echo $class; ?> relativeP 105"><span class='link'><a href='javascript:void(0)' class='show<?php echo $name; ?>' title="<?php echo $value; ?>"><?php echo $value; ?></a></span>
       <?php if ($key == 'attachments') { ?>
-        <span class='span_AttachmentNumber smallGreyText' style='clear:right; margin-left:18px;'></span>
+        <span class='span_AttachmentNumber smallGreyText clearingBoth marginL15'></span>
       <?php } ?>
     </div>
     <?php

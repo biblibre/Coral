@@ -57,7 +57,7 @@
 		?>
 			<form enctype="multipart/form-data" action="importFunds.php" method="post" id="importForm">
 				<div id='div_updateForm'>
-					<div class='formTitle' style='width:245px;'><b><?php echo _("Import Funds");?></b></div><br/>
+					<div class='formTitle 245'><b><?php echo _("Import Funds");?></b></div><br/>
 					<label for="uploadFile"><?php echo _("Select File");?></label>
 					<input type="file" name="uploadFile" id="uploadFile"/><br/><br/>
 					<input type="submit" name="submit" value='<?php echo _("import");?>' id="import-fund-button" class='submit-button' />

@@ -77,14 +77,14 @@ $coralURL = $util->getCORALURL();
 <table id="main-table">
 
 <tr>
-<td style='vertical-align:top;'>
-<div style="text-align:left;">
+<td class='verticalAlignT'>
+<div class='textAlignL'>
 
 <center>
-<table class="titleTable" style="width:1024px;text-align:left;">
+<table class="titleTable 1025 textAlignL">
 
-    <tr style='vertical-align:top;'>
-        <td style='height:53px;' colspan='3'>
+    <tr class='verticalAlignT'>
+        <td class='h53' colspan='3'>
 
 
             <div id="main-title">
@@ -93,8 +93,8 @@ $coralURL = $util->getCORALURL();
                 <span id="powered-by-text"><?php echo _("Powered by");?><img src="images/logo-coral.jpg" /></span>
             </div>
 
-            <div id="menu-login" style='margin-top:1px;'>
-                <span class='smallText' style='color:#526972;'>
+            <div id="menu-login" class="marginT1">
+                <span class='smallText blueGrey'>
                 </span><br />
 
                 <span id="setLanguage">
@@ -144,8 +144,8 @@ $coralURL = $util->getCORALURL();
         </td>
     </tr>
 
-    <tr style='vertical-align:top'>
-        <td style='width:870px;height:19px;' id="main-menu-titles" colspan="2">
+    <tr class='verticalAlignT'>
+        <td class="870 h19" id="main-menu-titles" colspan="2">
 
             <a href='index.php' title="<?php echo _("Home") ?>">
                 <div class="main-menu-link <?php if ($currentPage == 'index.php') { echo "active"; } ?>">
@@ -156,7 +156,7 @@ $coralURL = $util->getCORALURL();
 
         </td>
 
-        <td style='width:130px;height:19px;' align='right'>&nbsp;</td>
+        <td class='w130px h19' align='right'>&nbsp;</td>
     </tr>
 </table>
     <script>
@@ -173,4 +173,4 @@ $coralURL = $util->getCORALURL();
             document.cookie ='lang='+lang+';path=/'+';domain='+wl.host+';expires='+now;
         }
     </script>
-<span id='span_message' class='darkRedText' style='text-align:left;'><?php if (isset($_POST['message'])) echo $_POST['message']; if (isset($errorMessage)) echo $errorMessage; ?></span>
+<span id='span_message' class='darkRedText textAlignL'><?php if (isset($_POST['message'])) echo $_POST['message']; if (isset($errorMessage)) echo $errorMessage; ?></span>

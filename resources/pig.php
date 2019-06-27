@@ -65,10 +65,10 @@ $html = new Html();
 
 ?>
 
-<div style='text-align:left;'>
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
-<tr style='vertical-align:top;'>
-<td style="width:155px;padding-right:10px;">
+<div class='textAlignL'>
+<table class="headerTable backgroundTableImage">
+<tr class='verticalAlignT'>
+<td class='155 paddingR10'>
   <form method="get" action="pig_ajax_htmldata.php?action=getPigSearchResources" id="resourcePigSearchForm">
     <?php
     foreach(array('statusID', 'orderBy','page','recordsPerPage','startWith') as $hidden) {
@@ -77,15 +77,15 @@ $html = new Html();
     ?>
 
     <table class='noBorder'>
-    <tr><td style='text-align:left;width:75px;' align='left'>
-    <span style='font-size:130%;font-weight:bold;'>Search</span><br />
+    <tr><td class='textAlignL 75' align='left'>
+    <span class='fontLarge'>Search</span><br />
     <a href='javascript:void(0)' class='newSearch'>new search</a>
     </td>
     <td><div id='div_feedback'>&nbsp;</div>
     </td></tr>
     </table>
 
-    <table class='borderedFormTable' style="width:150px">
+    <table class='borderedFormTable 150'>
 
     <tr>
     <td class='searchRow'><label for='searchName'><b>Name (contains)</b></label>
@@ -119,7 +119,7 @@ $html = new Html();
     <tr>
     <td class='searchRow'><label for='searchGeneralSubjectID'><b>General Subject</b></label>
     <br />
-    <select name='search[generalSubjectID]' id='searchGeneralSubjectID' style='width:150px'>
+    <select name='search[generalSubjectID]' id='searchGeneralSubjectID' class='150'>
     <option value=''>All</option>
 
     <?php
@@ -151,7 +151,7 @@ $html = new Html();
     <tr>
     <td class='searchRow'><label for='searchResourceTypeID'><b>Resource Type</b></label>
     <br />
-    <select name='search[resourceTypeID]' id='searchResourceTypeID' style='width:150px'>
+    <select name='search[resourceTypeID]' id='searchResourceTypeID' class='150'>
     <option value=''>All</option>
 
     <?php

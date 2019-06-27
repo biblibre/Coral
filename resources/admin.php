@@ -34,21 +34,14 @@ if ($user->isAdmin()){
 
 	<table class='headerTable'>
 	<tr>
-	<td style='margin:0;padding:0;text-align:left;'>
-		<table style='width:100%; margin:0;padding:0;'>
-		<tr style='vertical-align:top'>
+	<td class='marginZero padZero textAlignL'>
+		<table class='wHundred marginZero padZero'>
+		<tr class='verticalAlignT'>
 		<td>
-		<span class="headerText"><?php echo _("Administration");?></span>
-		<br />
-		</td>
-		</tr>
-		</table>
-
-
-		<table style='width:700px; text-align:left; vertical-align:top;'>
+		<span class='700 textAlignL verticalAlignT'>
 		<tr>
-		<td style='width:170px;vertical-align:top;'>
-			<table class='adminMenuTable' style='width:170px;'>
+		<td class='170 verticalAlignT'>
+			<table class='adminMenuTable 170'>
 				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='UserAdminLink'><?php echo _("Users");?></a></div></td></tr>
 				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' class='WorkflowAdminLink'><?php echo _("Workflow / User Group");?></div></td></tr>
 				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='AccessMethod' class='AdminLink'><?php echo _("Access Method");?></div></td></tr>
@@ -95,11 +88,11 @@ if ($user->isAdmin()){
 				<tr><td><div class='adminMenuLink'><a href='javascript:void(0);' id='UserLimit' class='AdminLink'><?php echo _("User Limit");?></div></td></tr>
 			</table>
 		</td>
-		<td class='adminRightPanel' style='width:530px;margin:0;'>
-			<div style='margin-top:5px;' id='div_AdminContent'>
+		<td class='adminRightPanel 530 marginZero'>
+			<div class='marginT5' id='div_AdminContent'>
 			<img src = "images/circle.gif" /><?php echo _("Loading...");?>
 			</div>
-			<div style='margin-top:5px;' class='smallDarkRedText' id='div_error'></div>
+			<div  class='smallDarkRedText marginT5' id='div_error'></div>
 
 		</td>
 		</tr>
@@ -125,5 +118,3 @@ if ($user->isAdmin()){
 
 include 'templates/footer.php';
 ?>
-
-
