@@ -7,7 +7,7 @@ include 'templates/header.php';
 
 <table class="headerTable">
 <tr><td>
-<div class="headerText" style='margin-bottom:9px;'><?php echo _("Publisher / Platform Reporting Administrative Update");?></div>
+<div class="headerText marginB9"><?php echo _("Publisher / Platform Reporting Administrative Update");?></div>
 
 <b><?php echo _("Directions:") . "</b> " . _("Mark the checkboxes to add / remove specific Platforms or Publishers to the default report list.") . "<br />" . _("Click 'edit report display name' to change the display name in the reporting system for specific Platforms or Publishers.");?>
 <br /><br />
@@ -24,7 +24,7 @@ if (count($platformArray) > 0){
 
 	echo _("Available") . "<br />" . _("As Default") . "<br />" . _("Report");
 
-	echo "<div style='line-height:130%;margin-top:15px;'>";
+	echo "<div class='lineHeight130 marginT15'>";
 
 	foreach($platformArray as $platform) {
 		if ($platform->reportDropDownInd == '1') { $reportDropDownInd = 'checked';}else{$reportDropDownInd = '';}
@@ -35,12 +35,12 @@ if (count($platformArray) > 0){
 		if ($platform->reportDisplayName)  echo "&nbsp;&nbsp;(<i>" . $platform->reportDisplayName . "</i>)";
 		echo "&nbsp;&nbsp;<a href='ajax_forms.php?action=getReportDisplayForm&height=122&width=248&type=platform&updateID=" . $platform->platformID . "&modal=true' class='thickbox'>" . _("edit report display name") . "</a><br />";
 		echo "</div>";
-		echo "<span id='span_platform_" . $platform->platformID . "_response' style='color:red'></span>";
+		echo "<span id='span_platform_" . $platform->platformID . "_response' class='redText'></span>";
 
 
-		echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:showPublisherList('" . $platform->platformID . "');\"><img src='images/arrowright.gif' style='border:0px' alt='show publisher list' name='image_" . $platform->platformID . "' id='image_" . $platform->platformID . "'></a>&nbsp;<a href=\"javascript:showPublisherList('" . $platform->platformID . "');\" name='link_" . $platform->platformID . "' id='link_" . $platform->platformID . "'>" . _("show publisher list") . "</a><br />";
+		echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:showPublisherList('" . $platform->platformID . "');\"><img src='images/arrowright.gif' class='border0' alt='show publisher list' name='image_" . $platform->platformID . "' id='image_" . $platform->platformID . "'></a>&nbsp;<a href=\"javascript:showPublisherList('" . $platform->platformID . "');\" name='link_" . $platform->platformID . "' id='link_" . $platform->platformID . "'>" . _("show publisher list") . "</a><br />";
 
-		echo "\n<div id='div_" . $platform->platformID . "' style='display:none;max-width:600px;margin-left:50px;'>";
+		echo "\n<div id='div_" . $platform->platformID . "' class='noDisplaying maxW600px marginL50'>";
 
 		//$Publisher_result = mysqli_query($platformObj->getDatabase(), "select Publisher.name Publisher, publisherPlatformID, Publisher.publisherID, pp.reportDisplayName reportPublisher, pp.reportDropDownInd reportPublisherDropDownInd from Publisher_Platform pp, Publisher where pp.publisherID = Publisher.publisherID and platformID = '" . $row['platformID'] . "' order by 1,2;");
 
@@ -58,7 +58,7 @@ if (count($platformArray) > 0){
 			if ($publisherPlatform->reportDisplayName)  echo "&nbsp;&nbsp;(<i>" . $publisherPlatform->reportDisplayName . "</i>)";
 			echo "&nbsp;&nbsp;<a href='ajax_forms.php?action=getReportDisplayForm&height=122&width=248&type=publisher&updateID=" . $publisherPlatform->publisherPlatformID . "&modal=true' class='thickbox'>" . _("edit report display name") . "</a></td></tr></table>";
 			echo "</div>";
-			echo "<span id='span_publisher_" . $publisherPlatform->publisherPlatformID . "_response' style='color:red'></span>";
+			echo "<span id='span_publisher_" . $publisherPlatform->publisherPlatformID . "_response' class='redText'></span>";
 		}
 
 		echo "</div>";

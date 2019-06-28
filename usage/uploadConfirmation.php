@@ -177,7 +177,7 @@ include 'templates/header.php';
 			if ((isset($uploadConfirm)) and (!empty($uploadConfirm))) {
 				echo $uploadConfirm;
 			}
-			echo "<table class='dataTable' style='width:895px;'>";
+			echo "<table class='dataTable w895px'>";
 
 			//print out headers automaticall if this was from sushi
 			if ($importLog->loginID == "sushi"){

@@ -39,26 +39,26 @@ $_SESSION['ref_script']=$currentPage;
 
 ?>
 
-<div style='text-align:left;'>
-<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
-<tr style='vertical-align:top;'>
-<td style="width:155px;padding-right:10px;">
+<div class='textAlignL'>
+<table class="headerTable backgroundTableImage">
+<tr class="verticalAlignT">
+<td class='w155px paddingR10'>
 
 	<table class='noBorder'>
-	<tr><td style='text-align:left;width:75px;' align='left'>
-	<span style='font-size:130%;font-weight:bold;'><?php echo _("Search");?></span><br />
+	<tr><td class='textAlignL w75px' align='left'>
+	<span class='fontLarge'><?php echo _("Search");?></span><br />
 	<a href='javascript:void(0)' class='newSearch'><?php echo _("new search");?></a>
 	</td>
 	<td><div id='div_feedback'>&nbsp;</div>
 	</td></tr>
 	</table>
 
-	<table class='borderedFormTable' style="width:150px">
+	<table class='borderedFormTable w150px'>
 
 	<tr>
 	<td class='searchRow'><label for='searchName'><b><?php echo _("Name (contains)");?></b></label>
 	<br />
-	<input type='text' name='searchName' id='searchName' style='width:145px' value="<?php if ($reset != 'Y') echo $_SESSION['plat_searchName']; ?>" /><br />
+	<input type='text' name='searchName' id='searchName' class='w145px' value="<?php if ($reset != 'Y') echo $_SESSION['plat_searchName']; ?>" /><br />
 	<div id='div_searchName' style='<?php if ((!$_SESSION['plat_searchName']) || ($reset == 'Y')) echo "display:none;"; ?>margin-left:118px;margin-top:5px'><input type='button' name='btn_searchName' value='<?php echo _("go!");?>' class='searchButton' /></div>
 	<br />
 	</td>

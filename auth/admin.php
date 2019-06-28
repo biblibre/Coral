@@ -76,17 +76,17 @@ if (isset($user) && ($user->isAdmin) && ($user->getOpenSession())){
         <div class="clear"></div>
     </div>
 
-	<div class='bordered' style='width:416px;'>
+	<div class='bordered W416px'>
 
 		<br />
-		<div class='headerText' style='text-align: left;margin:0 0 3px 60px;'><?php echo _("Users")?></div>
-		<div class='smallDarkRedText' style='margin-bottom:5px;'>* <?php echo _("Login ID must match the login ID set up in the modules")?></div>
+		<div class='headerText textAlignL margin00360'><?php echo _("Users")?></div>
+		<div class='smallDarkRedText marginB5'>* <?php echo _("Login ID must match the login ID set up in the modules")?></div>
 
 
-		<div style='text-align:left;margin:0px 60px 60px 38px;' id='div_users'>
+		<div class='textAlignL margin0606038' id='div_users'>
 		<br />
 		<br />
-		<img src='images/circle.gif'>  <span style='font-size:90%'><?php echo _("Processing...")?></span>
+		<img src='images/circle.gif'>  <span class='fontSize90'><?php echo _("Processing...")?></span>
 		</div>
 	</div>
     <div class='boxRight'>
@@ -96,23 +96,23 @@ if (isset($user) && ($user->isAdmin) && ($user->getOpenSession())){
 			// Get all translations on the 'locale' folder
             $route='locale';
             $lang[]="en_US"; // add default language
-            if (is_dir($route)) { 
-                if ($dh = opendir($route)) { 
+            if (is_dir($route)) {
+                if ($dh = opendir($route)) {
                     while (($file = readdir($dh)) !== false) {
                         if (is_dir("$route/$file") && $file!="." && $file!=".."){
                             $lang[]=$file;
-                        } 
-                    } 
-                    closedir($dh); 
-                } 
+                        }
+                    }
+                    closedir($dh);
+                }
             }else {
-                echo "<br>"._("Invalid translation route!"); 
+                echo "<br>"._("Invalid translation route!");
             }
             // Get language of navigator
             $defLang = $lang_name->getBrowserLanguage();
-            
+
             // Show an ordered list
-            sort($lang); 
+            sort($lang);
             for($i=0; $i<count($lang); $i++){
                 if(isset($_COOKIE["lang"])){
                     if($_COOKIE["lang"]==$lang[$i]){
@@ -131,7 +131,7 @@ if (isset($user) && ($user->isAdmin) && ($user->getOpenSession())){
 			?>
 		</select>
 	</div>
-	<div class='smallerText' style='text-align:center; margin-top:13px;'><a href='index.php' id='login-link'><?php echo _("Login page")?></a></div>
+	<div class='smallerText text-alignC marginT13'><a href='index.php' id='login-link'><?php echo _("Login page")?></a></div>
     <?php include '../templates/footer.php'; ?>
 
 </form>

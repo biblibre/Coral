@@ -49,12 +49,12 @@ if ((isset($_POST['sushiServiceID'])) and ($_POST['sushiServiceID'] > 0)) {
 
 	<script type="text/javascript" src="js/sushi.js"></script>
 
-	<table class="headerTable" style="background-image:url('images/header.gif');background-repeat:no-repeat;">
+	<table class="headerTable backgroundTableImage">
 		<tr><td>
-			<table style='width:897px;'>
-			<tr style='vertical-align:top'>
+			<table class="w897px">
+			<tr class='verticalAlignT'>
 			<td><span class="headerText"><?php echo _("SUSHI Administration");?></span><br /></td>
-			<td style='text-align:right;'>&nbsp;</td>
+			<td class='textAlignR'>&nbsp;</td>
 			</tr>
 			</table>
 
@@ -68,15 +68,15 @@ if (isset($logText)) {
 }
 
 ?></div><br />
-			<div class="headerText" style='margin-bottom:9px;'><?php echo _("Outstanding Import Queue");?>&nbsp;&nbsp;&nbsp;<span id='span_outstanding_feedback'></span></div>
+			<div class="headerText marginB9"><?php echo _("Outstanding Import Queue");?>&nbsp;&nbsp;&nbsp;<span id='span_outstanding_feedback'></span></div>
 			<div id="div_OutstandingSushiImports"></div>
 
 			<br /><br /><br />
-			<div class="headerText" style='margin-bottom:9px;'><?php echo _("Last Failed SUSHI Imports");?>&nbsp;&nbsp;&nbsp;<span id='span_failed_feedback'></span></div>
+			<div class="headerText marginB9"><?php echo _("Last Failed SUSHI Imports");?>&nbsp;&nbsp;&nbsp;<span id='span_failed_feedback'></span></div>
 			<div id="div_FailedSushiImports"></div>
 
 			<br /><br /><br />
-			<div class="headerText" style='margin-bottom:9px;'><?php echo _("All SUSHI Services");?>&nbsp;&nbsp;&nbsp;<span id='span_upcoming_feedback'></span></div>
+			<div class="headerText marginB9"><?php echo _("All SUSHI Services");?>&nbsp;&nbsp;&nbsp;<span id='span_upcoming_feedback'></span></div>
 			<div id="div_AllSushiServices"></div>
 
 

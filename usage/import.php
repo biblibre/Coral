@@ -8,10 +8,10 @@ include 'templates/header.php';
 
 <table class="headerTable">
 
-<tr style='vertical-align:top;'>
-<td style="padding-right:10px;" id="import-file">
+<tr class='verticalAlignT'>
+<td class='paddingR10' id="import-file">
 
-<div class="headerText" style='margin:5px 5px 9px 3px;'><?php echo _("Usage Statistics Import");?></div>
+<div class="headerText margin5593"><?php echo _("Usage Statistics Import");?></div>
 
 
   <?php
@@ -35,12 +35,12 @@ include 'templates/header.php';
 
 
   ?>
-<div style='margin:7px;'>
+<div class='margin7px'>
     <form id="form1" name="form1" enctype="multipart/form-data" onsubmit="return validateForm()" method="post" action="uploadConfirmation.php">
 
     	<br />
 
-        <b><?php echo _("File:");?></b><span id='span_error' style='color:red'></span><br /><input type="file" name="usageFile" id="usageFile" class='bigger' /><br /><br />
+        <b><?php echo _("File:");?></b><span id='span_error' class='redText'></span><br /><input type="file" name="usageFile" id="usageFile" class='bigger' /><br /><br />
 
 		<?php
 
@@ -79,7 +79,7 @@ include 'templates/header.php';
 </td>
 <td>
 
-<div class="headerText" style='margin-bottom:9px;'><?php echo _("Recent Imports");?>&nbsp;&nbsp;&nbsp;<span id='span_feedback'></span></div>
+<div class="headerText marginB9"><?php echo _("Recent Imports");?>&nbsp;&nbsp;&nbsp;<span id='span_feedback'></span></div>
 <div id='div_recentImports'>
 </div>
 

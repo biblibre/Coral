@@ -50,13 +50,13 @@ switch ($action) {
 		?>
 		<div id='div_updateForm'>
 		<input type='hidden' id='updateLogEmailAddressID' name='updateLogEmailAddressID' value='<?php echo $logEmailAddressID; ?>'>
-		<table class="thickboxTable" style="width:230px;">
+		<table class="thickboxTable 230">
 		<tr>
-		<td colspan='3'><span class='headerText'><?php echo $addUpdate; ?> <?php echo _("Email Address");?></span><br /><span id='span_errors' style='color:red;'></span></td>
+		<td colspan='3'><span class='headerText'><?php echo $addUpdate; ?> <?php echo _("Email Address");?></span><br /><span id='span_errors' class='redText'></span></td>
 		</tr>
 		<tr>
 		<td>
-		<input type='text' id='emailAddress' name='emailAddress' value='<?php if (isset($_GET['logEmailAddressID']) && ($_GET['logEmailAddressID'] != '')) echo $logEmailAddress->emailAddress; ?>' style='width:190px;'/>
+		<input type='text' id='emailAddress' name='emailAddress' value='<?php if (isset($_GET['logEmailAddressID']) && ($_GET['logEmailAddressID'] != '')) echo $logEmailAddress->emailAddress; ?>' class='190'/>
 		</td>
 		<td>
 		<a href='javascript:doSubmitLogEmailAddress();' id='addButton' class='submit-button'><?php echo ($addUpdate); ?></a>
@@ -99,32 +99,31 @@ switch ($action) {
 			?>
 			<div id='div_sushiRunForm'>
 			<form name="input" action="sushi.php" method="post">
-			<input type='hidden' id='sushiServiceID' name='sushiServiceID' value='<?php echo $sushiServiceID; ?>'>
-			<table class="thickboxTable" style="width:300px;padding:2px;">
+			<input type='hidden' id='sushiSer00 padding2">
 				<tr>
-					<td colspan='2'><span class='headerText'><?php echo _("SUSHI Service for");?> <?php echo $sushiService->getServiceProvider; ?></span><br /> <?php echo _("Optional Parameters");?><span id='span_errors' style='color:red;'><br /></span><br /></td>
+					<td colspan='2'><span class='headerText'><?php echo _("SUSHI Service for");?> <?php echo $sushiService->getServiceProvider; ?></span><br /> <?php echo _("Optional Parameters");?><span id='span_errors' class='redText'><br /></span><br /></td>
 				</tr>
 				<tr>
-					<td style='vertical-align:top;text-align:right;width:85px;'><label for='startDate'><b><?php echo _("Start Date:");?></b></label></td>
-					<td><input type='text' id='startDate' name='startDate' value="<?php echo $sushiService->startDate; ?>" style='width:90px;' /> (yyyy-mm-dd)<span id='span_error_startDate' style='color:red'></span></td>
+					<td class='verticalAlignT textAlignR 85'><label for='startDate'><b><?php echo _("Start Date:");?></b></label></td>
+					<td><input type='text' id='startDate' name='startDate' value="<?php echo $sushiService->startDate; ?>" class='90'/> (yyyy-mm-dd)<span id='span_error_startDate' class='redText'></span></td>
 				</tr>
 				<tr>
-					<td style='vertical-align:top;text-align:right;'><label for='endDate'><b><?php echo _("End Date:");?></b></label></td>
-					<td><input type='text' id='endDate' name='endDate' value="<?php echo $sushiService->endDate; ?>" style='width:90px;' /> <?php echo _("(yyyy-mm-dd)");?><span id='span_error_endDate' style='color:red'></span></td>
+					<td class='verticalAlignT textAlignR'><label for='endDate'><b><?php echo _("End Date:");?></b></label></td>
+					<td><input type='text' id='endDate' name='endDate' value="<?php echo $sushiService->endDate; ?>" class='90'/> <?php echo _("(yyyy-mm-dd)");?><span id='span_error_endDate' class='redText'></span></td>
 				</tr>
 				<tr>
-					<td style='vertical-align:top;text-align:right;'><input type='checkbox' id='overwritePlatform' name='overwritePlatform' value='1' checked /></td>
+					<td class='verticalAlignT textAlignR'><input type='checkbox' id='overwritePlatform' name='overwritePlatform' value='1' checked /></td>
 					<td>
 					&nbsp;<?php echo _("Ensure platform name stays CORAL's Platform Name: ") . $sushiService->getServiceProvider;?>"
 					</td>
 				</tr>
 
-				<tr style="vertical-align:middle;">
-					<td style="padding-top:8px;text-align:right;">&nbsp;</td>
-					<td style="padding-top:8px;padding-right:8px;">
-						<table class='noBorderTable' style='width:100%;'>
+				<tr class='verticalAlignM'>
+					<td class='paddingT8 textAlignR'>&nbsp;</td>
+					<td class='paddingT8 paddingR8'>
+						<table class='noBorderTable whundred'>
 							<tr>
-								<td style='width:60px;'><input type='submit' value='<?php echo _("submit for processing");?>' name='submitSushiRun' id ='submitSushiRun' class='submit-button'></td>
+								<td class='60'><input type='submit' value='<?php echo _("submit for processing");?>' name='submitSushiRun' id ='submitSushiRun' class='submit-button'></td>
 								<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
 							</tr>
 						</table>
@@ -158,13 +157,13 @@ switch ($action) {
 		?>
 		<div id='div_updateForm'>
 		<input type='hidden' id='updateOutlierID' name='updateOutlierID' value='<?php echo $outlierID; ?>'>
-		<table class="thickboxTable" style="width:300px;padding:2px;">
+		<table class="thickboxTable 300 padding2">
 		<tr><td colspan='2'><span class='headerText'><?php echo _("Edit Outlier");?> - <b><?php echo _("Level");?> <?php echo $outlier->outlierLevel; ?></b></span><br /><br /></td></tr>
-		<tr><td style='vertical-align:top;text-align:right;'><label for='overageCount'><b><?php echo _("Count Over");?></b></label></td><td><input type='text' id='overageCount' name='overageCount' value="<?php echo $outlier->overageCount; ?>" style='width:140px;' /><span id='span_error_overageCount' style='color:red'></span></td></tr>
-		<tr><td style='vertical-align:top;text-align:right;'><label for='overagePercent'><b><?php echo _("% Over prior 12 months");?></b></label></td><td><input type='text' id='overagePercent' name='overagePercent' value="<?php echo $outlier->overagePercent; ?>" style='width:140px;' /><span id='span_error_overagePercent' style='color:red'></span></td></tr>
+		<tr><td class='verticalAlignT textAlignR'><label for='overageCount'><b><?php echo _("Count Over");?></b></label></td><td><input type='text' id='overageCount' name='overageCount' value="<?php echo $outlier->overageCount; ?>" class='140' /><span id='span_error_overageCount' class='redText'></span></td></tr>
+		<tr><td class='verticalAlignT textAlignR'><label for='overagePercent'><b><?php echo _("% Over prior 12 months");?></b></label></td><td><input type='text' id='overagePercent' name='overagePercent' value="<?php echo $outlier->overagePercent; ?>" class='140' /><span id='span_error_overagePercent' class='redText'></span></td></tr>
 
-		<tr style="vertical-align:middle;">
-		<td style="width:60px;"><input type='button' value='<?php echo _("Edit");?>' onclick='javascript:window.parent.updateOutlier();' class='submit-button'></td>
+		<tr class='verticalAlignM'>
+		<td class='60'><input type='button' value='<?php echo _("Edit");?>' onclick='javascript:window.parent.updateOutlier();' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false" class='cancel-button'></td>
 		</tr>
 
@@ -212,14 +211,14 @@ switch ($action) {
 		<div id='div_updateForm'>
 		<input type='hidden' id='updateID' name='updateID' value='<?php echo $updateID; ?>'>
 		<input type='hidden' id='type' name='type' value='<?php echo $_GET['type']; ?>'>
-		<table class="thickboxTable" style="width:230px;">
+		<table class="thickboxTable 230">
 		<tr>
-		<td colspan='3'><span class='headerText'><?php echo _("Edit Report Display Name");?></span><br /><span id='span_errors' style='color:red;'></span></td>
+		<td colspan='3'><span class='headerText'><?php echo _("Edit Report Display Name");?></span><br /><span id='span_errors' class='redText'></span></td>
 		</tr>
 		<tr>
 		<td>
 		<?php
-		echo "<input type='text' id='reportDisplayName' name='reportDisplayName' value='" . $obj->reportDisplayName . "' style='width:190px;'/></td><td><a href='javascript:updateReportDisplayName();' class='submit-button'>" . _("Edit") . "</a>";
+		echo "<input type='text' id='reportDisplayName' name='reportDisplayName' value='" . $obj->reportDisplayName . "' class='190'/></td><td><a href='javascript:updateReportDisplayName();' class='submit-button'>" . _("Edit") . "</a>";
 		?>
 
 
@@ -290,20 +289,20 @@ switch ($action) {
 		<div id='div_updateForm'>
 		<input type='hidden' id='editPlatformNoteID' name='editPlatformNoteID' value='<?php echo $platformNoteID; ?>'>
 		<input type='hidden' id='platformID' name='platformID' value='<?php echo $platformID; ?>'>
-		<table class="thickboxTable" style="width:400px;padding:2px;">
+		<table class="thickboxTable 400 padding2">
 			<tr>
-				<td colspan='2'><span class='headerText'><?php echo $addUpdate . ' ' . _("Interface Notes");?></span><span id='span_errors' style='color:red;'><br /></span><br /></td>
+				<td colspan='2'><span class='headerText'><?php echo $addUpdate . ' ' . _("Interface Notes");?></span><span id='span_errors' class='redText'><br /></span><br /></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;width:135px;'><label for='startYear'><b><?php echo _("Start Year:");?></b></label></td>
-				<td><input type='text' id='startYear' name='startYear' value="<?php echo $platformNote->startYear; ?>" style='width:90px;' /><span id='span_error_startYear' style='color:red'></span></td>
+				<td class='verticalAlignT textAlignR 135'><label for='startYear'><b><?php echo _("Start Year:");?></b></label></td>
+				<td><input type='text' id='startYear' name='startYear' value="<?php echo $platformNote->startYear; ?>" class='90'/><span id='span_error_startYear' class='redText'></span></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;'><label for='endYear'><b><?php echo _("End Year:");?></b></label></td>
-				<td><input type='text' id='endYear' name='endYear' value="<?php echo $endYear; ?>" style='width:90px;' /><span id='span_error_endYear' style='color:red'></span></td>
+				<td class='verticalAlignT textAlignR'><label for='endYear'><b><?php echo _("End Year:");?></b></label></td>
+				<td><input type='text' id='endYear' name='endYear' value="<?php echo $endYear; ?>" class='90'/><span id='span_error_endYear' class='redText'></span></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;'><label for='counterCompliantInd'><b><?php echo _("Counter Compliant?");?></b></label></td>
+				<td class='verticalAlignT textAlignR'><label for='counterCompliantInd'><b><?php echo _("Counter Compliant?");?></b></label></td>
 				<td>
 				<input type='radio' id='counterCompliantInd' name='counterCompliantInd' value='1' <?php echo $counterCompliant; ?> />&nbsp;<?php echo _("Yes");?>&nbsp;&nbsp;
 				<input type='radio' id='counterCompliantInd' name='counterCompliantInd' value='0' <?php echo $notCounterCompliant; ?> />&nbsp;<?php echo _("No");?>
@@ -312,16 +311,16 @@ switch ($action) {
 			</tr>
 
 			<tr>
-				<td style='vertical-align:top;text-align:right;'><label for='noteText'><b><?php echo _("Interface Notes:");?></b></label></td>
-				<td><textarea cols='36' rows='4' id='noteText' name='noteText' style='width:250px;'><?php echo $noteText; ?></textarea></td>
+				<td class='verticalAlignT textAlignR'><label for='noteText'><b><?php echo _("Interface Notes:");?></b></label></td>
+				<td><textarea cols='36' rows='4' id='noteText' name='noteText' class='250'><?php echo $noteText; ?></textarea></td>
 			</tr>
 
-			<tr style="vertical-align:middle;">
-				<td style="padding-top:8px;text-align:right;">&nbsp;</td>
-				<td style="padding-top:8px;padding-right:8px;">
-					<table class='noBorderTable' style='width:100%;'>
+			<tr class='verticalAlignM'>
+				<td class='paddingT8 textAlignR'>&nbsp;</td>
+				<td class='paddingT8 paddingR8'>
+					<table class='noBorderTable wHundred'>
 						<tr>
-							<td style='width:60px;'><input type='button' value='<?php echo _("submit");?>' name='submitPlatformNoteForm' id ='submitPlatformNoteForm' class='submit-button'></td>
+							<td class='60'><input type='button' value='<?php echo _("submit");?>' name='submitPlatformNoteForm' id ='submitPlatformNoteForm' class='submit-button'></td>
 							<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" id='interface-cancel' class='cancel-button'></td>
 						</tr>
 					</table>
@@ -368,29 +367,29 @@ switch ($action) {
 		<div id='div_updateForm'>
 		<input type='hidden' id='editPublisherPlatformNoteID' name='editPublisherPlatformNoteID' value='<?php echo $publisherPlatformNoteID; ?>'>
 		<input type='hidden' id='publisherPlatformID' name='publisherPlatformID' value='<?php echo $publisherPlatformID; ?>'>
-		<table class="thickboxTable" style="width:310px;padding:2px;">
+		<table class="thickboxTable 310 padding2">
 			<tr>
-				<td colspan='2'><span class='headerText'><?php echo $addUpdate . ' ' . _("Publisher Notes");?></span><span id='span_errors' style='color:red;'><br /></span><br /></td>
+				<td colspan='2'><span class='headerText'><?php echo $addUpdate . ' ' . _("Publisher Notes");?></span><span id='span_errors' class='redText'><br /></span><br /></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;width:135px;'><label for='startYear'><b><?php echo _("Start Year:");?></b></label></td>
-				<td><input type='text' id='startYear' name='startYear' value="<?php echo $publisherPlatformNote->startYear; ?>" style='width:90px;' /><span id='span_error_startYear' style='color:red'></span></td>
+				<td class='verticalAlignT textAlignR 135'><label for='startYear'><b><?php echo _("Start Year:");?></b></label></td>
+				<td><input type='text' id='startYear' name='startYear' value="<?php echo $publisherPlatformNote->startYear; ?>" class='90'/><span id='span_error_startYear' class='redText'></span></td>
 			</tr>
 			<tr>
-								<td style='vertical-align:top;text-align:right;'><label for='endYear'><b><?php echo _("End Year:");?></b></label></td>
-				<td><input type='text' id='endYear' name='endYear' value="<?php echo $endYear; ?>" style='width:90px;' /><span id='span_error_endYear' style='color:red'></span></td>
+								<td class='verticalAlignT textAlignR'><label for='endYear'><b><?php echo _("End Year:");?></b></label></td>
+				<td><input type='text' id='endYear' name='endYear' value="<?php echo $endYear; ?>" class='90'/><span id='span_error_endYear' class='redText'></span></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;'><label for='noteText'><b><?php echo _("Publisher Notes:");?></b></label></td>
-				<td><textarea cols='36' rows='4' id='noteText' name='noteText' style='width:200px;'><?php echo $publisherPlatformNote->noteText; ?></textarea></td>
+				<td class='verticalAlignT textAlignR'><label for='noteText'><b><?php echo _("Publisher Notes:");?></b></label></td>
+				<td><textarea cols='36' rows='4' id='noteText' name='noteText' class='200'><?php echo $publisherPlatformNote->noteText; ?></textarea></td>
 			</tr>
 
-			<tr style="vertical-align:middle;">
-				<td style="padding-top:8px;text-align:right;">&nbsp;</td>
-				<td style="padding-top:8px;padding-right:8px;">
-					<table class='noBorderTable' style='width:100%;'>
+			<tr class='verticalAlignM'>
+				<td class='paddingT8 textAlignR'>&nbsp;</td>
+				<td class='paddingT8 paddingR8'>
+					<table class='noBorderTable wHundred'>
 						<tr>
-							<td style='width:60px;'><input type='button' value='<?php echo _("submit");?>' name='submitPublisherNoteForm' id ='submitPublisherNoteForm' class='submit-button'></td>
+							<td class='60'><input type='button' value='<?php echo _("submit");?>' name='submitPublisherNoteForm' id ='submitPublisherNoteForm' class='submit-button'></td>
 							<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
 						</tr>
 					</table>
@@ -432,32 +431,32 @@ switch ($action) {
 		<input type='hidden' id='editExternalLoginID' name='editExternalLoginID' value='<?php echo $externalLoginID; ?>'>
 		<input type='hidden' id='platformID' name='platformID' value='<?php echo $platformID; ?>'>
 		<input type='hidden' id='publisherPlatformID' name='publisherPlatformID' value='<?php echo $publisherPlatformID; ?>'>
-		<table class="thickboxTable" style="width:320px;padding:2px;">
+		<table class='thickboxTable 320 padding2'>
 			<tr>
-				<td colspan='2'><span class='headerText'><?php echo $addUpdate . ' ' . _("Login");?></span><span id='span_errors' style='color:red;'><br /></span><br /></td>
+				<td colspan='2'><span class='headerText'><?php echo $addUpdate . ' ' . _("Login");?></span><span id='span_errors' class='redText'><br /></span><br /></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;width:135px;'><label for='username'><b><?php echo _("Username:");?></b></label></td>
-				<td><input type='text' id='username' name='username' value="<?php if ($externalLoginID) echo $externalLogin->username; ?>" style='width:200px;' /><span id='span_error_loginID' style='color:red'></span></td>
+				<td class='verticalAlignT textAlignR 135'><label for='username'><b><?php echo _("Username:");?></b></label></td>
+				<td><input type='text' id='username' name='username' value="<?php if ($externalLoginID) echo $externalLogin->username; ?>" class='200'/><span id='span_error_loginID' class='redText'></span></td>
 			</tr>
 			<tr>
-								<td style='vertical-align:top;text-align:right;'><label for='password'><b><?php echo _("Password:");?></b></label></td>
-				<td><input type='text' id='password' name='password' value="<?php if ($externalLoginID) echo $externalLogin->password; ?>" style='width:200px;' /><span id='span_error_password' style='color:red'></span></td>			</tr>
+								<td class='verticalAlignT textAlignR'><label for='password'><b><?php echo _("Password:");?></b></label></td>
+				<td><input type='text' id='password' name='password' value="<?php if ($externalLoginID) echo $externalLogin->password; ?>" class='200'/><span id='span_error_password' class='redText'></span></td>			</tr>
 			<tr>
-								<td style='vertical-align:top;text-align:right;'><label for='loginURL'><b><?php echo _("URL:");?></b></label></td>
-				<td><input type='text' id='loginURL' name='loginURL' value="<?php if ($externalLoginID) echo $externalLogin->loginURL; ?>" style='width:200px;' /><span id='span_error_url' style='color:red'></span></td>
+								<td class='verticalAlignT textAlignR'><label for='loginURL'><b><?php echo _("URL:");?></b></label></td>
+				<td><input type='text' id='loginURL' name='loginURL' value="<?php if ($externalLoginID) echo $externalLogin->loginURL; ?>" class='200'/><span id='span_error_url' class='redText'></span></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;'><label for='noteText'><b><?php echo _("Login Notes:");?></b></label></td>
-				<td><textarea cols='36' rows='4' id='noteText' name='noteText' style='width:200px;'><?php if ($externalLoginID) echo $externalLogin->noteText; ?></textarea></td>
+				<td class='verticalAlignT textAlignR'><label for='noteText'><b><?php echo _("Login Notes:");?></b></label></td>
+				<td><textarea cols='36' rows='4' id='noteText' name='noteText' class='200'><?php if ($externalLoginID) echo $externalLogin->noteText; ?></textarea></td>
 			</tr>
 
-			<tr style="vertical-align:middle;">
-				<td style="padding-top:8px;text-align:right;">&nbsp;</td>
-				<td style="padding-top:8px;padding-right:8px;">
-					<table class='noBorderTable' style='width:100%;'>
+			<tr class='verticalAlignM'>
+				<td class='paddingT8 textAlignR'>&nbsp;</td>
+				<td class='paddingT8 paddingR8'>
+					<table class='noBorderTable wHundred'>
 						<tr>
-							<td style='width:60px;'><input type='button' value='<?php echo _("submit");?>' name='submitExternalLoginForm' id ='submitExternalLoginForm' class='submit-button'></td>
+							<td class='60'><input type='button' value='<?php echo _("submit");?>' name='submitExternalLoginForm' id ='submitExternalLoginForm' class='submit-button'></td>
 							<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
 						</tr>
 					</table>
@@ -494,82 +493,82 @@ switch ($action) {
 		<div id='div_updateForm'>
 		<input type='hidden' id='editSushiServiceID' name='editSushiServiceID' value='<?php echo $sushiServiceID; ?>'>
 		<input type='hidden' id='platformID' name='platformID' value='<?php echo $platformID; ?>'>
-		<table class="thickboxTable" style="width:500px;padding:2px;">
+		<table class="thickboxTable 500 padding2">
 			<tr>
-				<td colspan='2'><span class='headerText'><?php echo $addUpdate . ' ' . _("SUSHI Connection");?></span><span id='span_errors' style='color:red;'><br /></span><br /></td>
+				<td colspan='2'><span class='headerText'><?php echo $addUpdate . ' ' . _("SUSHI Connection");?></span><span id='span_errors' class='redText'><br /></span><br /></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;width:135px;'><label for='serviceURL'><b><?php echo _("Service/Endpoint URL:");?></b></label></td>
-				<td><input type='text' id='serviceURL' name='serviceURL' value="<?php if ($sushiServiceID) echo $sushiService->serviceURL; ?>" style='width:330px;' />
+				<td class='verticalAlignT textAlignR 135' class='verticalAlignT textAlignR 135'><label for='serviceURL'><b><?php echo _("Service/Endpoint URL:");?></b></label></td>
+				<td><input type='text' id='serviceURL' name='serviceURL' value="<?php if ($sushiServiceID) echo $sushiService->serviceURL; ?>" class='330'/>
 					<br /><span class="smallDarkRedText"> - <?php echo _("if using COUNTER's WSDL");?></span>
-					<span id='span_error_serviceURL' style='color:red'></span></td>
+					<span id='span_error_serviceURL' class='redText'></span></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;width:135px;'><label for='wsdlURL'><b> - <?php echo _("or - WSDL URL:");?></b></label></td>
-				<td><input type='text' id='wsdlURL' name='wsdlURL' value="<?php if ($sushiServiceID) echo $sushiService->wsdlURL; ?>" style='width:330px;' />
+				<td class='verticalAlignT textAlignR 135'><label for='wsdlURL'><b> - <?php echo _("or - WSDL URL:");?></b></label></td>
+				<td><input type='text' id='wsdlURL' name='wsdlURL' value="<?php if ($sushiServiceID) echo $sushiService->wsdlURL; ?>" class='330'/>
 					<br /><span class="smallDarkRedText"> - <?php echo _("if not using COUNTER's WSDL");?></span></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;width:135px;'><label for='reportLayouts'><b><?php echo _("Report Type(s):");?></b></label></td>
-				<td><input type='text' id='reportLayouts' name='reportLayouts' value="<?php if ($sushiServiceID) echo $sushiService->reportLayouts; ?>" style='width:150px;' />
+				<td class='verticalAlignT textAlignR 135'><label for='reportLayouts'><b><?php echo _("Report Type(s):");?></b></label></td>
+				<td><input type='text' id='reportLayouts' name='reportLayouts' value="<?php if ($sushiServiceID) echo $sushiService->reportLayouts; ?>" class='150' />
 					<br /><span class="smallDarkRedText"><?php echo _("separate report types with semi-colon, e.g. JR1;BR1");?></span>
-					<span id='span_error_reportLayouts' style='color:red'></span></td>
+					<span id='span_error_reportLayouts' class='redText'></span></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;width:135px;'><label for='releaseNumber'><b><?php echo _("COUNTER Release:");?></b></label></td>
+				<td class='verticalAlignT textAlignR 135'><label for='releaseNumber'><b><?php echo _("COUNTER Release:");?></b></label></td>
 				<td>
-					<select id='releaseNumber' name='releaseNumber' style='width:50px;'>
+					<select id='releaseNumber' name='releaseNumber' class='50'>
 					<option value='3' <?php if (!$sushiServiceID){ echo "selected"; } else if ($sushiService->releaseNumber == "3"){ echo "selected"; } ?>>3</option>
 					<option value='4' <?php if ($sushiService->releaseNumber == "4"){ echo "selected"; } ?>>4</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;width:135px;'><label for='requestorID'><b><?php echo _("Requestor ID:");?></b></label></td>
-				<td><input type='text' id='requestorID' name='requestorID' value="<?php if ($sushiServiceID) echo $sushiService->requestorID; ?>" style='width:150px;' /></td>
+				<td class='verticalAlignT textAlignR 135'><label for='requestorID'><b><?php echo _("Requestor ID:");?></b></label></td>
+				<td><input type='text' id='requestorID' name='requestorID' value="<?php if ($sushiServiceID) echo $sushiService->requestorID; ?>" class='150' /></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;width:135px;'><label for='customerID'><b><?php echo _("Customer ID:");?></b></label></td>
-				<td><input type='text' id='customerID' name='customerID' value="<?php if ($sushiServiceID) echo $sushiService->customerID; ?>" style='width:150px;' /></td>
+				<td class='verticalAlignT textAlignR 135'><label for='customerID'><b><?php echo _("Customer ID:");?></b></label></td>
+				<td><input type='text' id='customerID' name='customerID' value="<?php if ($sushiServiceID) echo $sushiService->customerID; ?>" class='150' /></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;width:135px;'><label for='security'><b><?php echo _("Security Type:");?></b></label></td>
-				<td><input type='text' id='security' name='security' value="<?php if ($sushiServiceID) echo $sushiService->security; ?>" style='width:150px;' />
+				<td class='verticalAlignT textAlignR 135'><label for='security'><b><?php echo _("Security Type:");?></b></label></td>
+				<td><input type='text' id='security' name='security' value="<?php if ($sushiServiceID) echo $sushiService->security; ?>" class='150' />
 					<span class="smallDarkRedText"><?php echo _("(optional)");?><br /><?php echo _("can be: HTTP Basic, WSSE Authentication");?></span>
-					<span id='span_error_security' style='color:red'></span></td>
+					<span id='span_error_security' class='redText'></span></td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;'><label for='login'><b><?php echo _("Login:");?></b></label></td>
-				<td><input type='text' id='login' name='login' value="<?php if ($sushiServiceID) echo $sushiService->login; ?>" style='width:150px;' />
+				<td class='verticalAlignT textAlignR'><label for='login'><b><?php echo _("Login:");?></b></label></td>
+				<td><input type='text' id='login' name='login' value="<?php if ($sushiServiceID) echo $sushiService->login; ?>" class='150' />
 					<span class="smallDarkRedText"><?php echo _("(optional)") . "<br /> - " . _("only needed for HTTP or WSSE Authentication");?></span>
-					<span id='span_error_login' style='color:red'></span>
+					<span id='span_error_login' class='redText'></span>
 				</td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;'><label for='password'><b><?php echo _("Password:");?></b></label></td>
-				<td><input type='text' id='password' name='password' value="<?php if ($sushiServiceID) echo $sushiService->password; ?>" style='width:150px;' />
+				<td class='verticalAlignT textAlignR'><label for='password'><b><?php echo _("Password:");?></b></label></td>
+				<td><input type='text' id='password' name='password' value="<?php if ($sushiServiceID) echo $sushiService->password; ?>" class='150' />
 					<span class="smallDarkRedText"><?php echo _("(optional)") . "<br /> - " . _("only needed for HTTP or WSSE Authentication");?></span>
-					<span id='span_error_password' style='color:red'></span>
+					<span id='span_error_password' class='redText'></span>
 				</td>
 			</tr>
 
 			<tr>
-				<td style='vertical-align:top;text-align:right;'><label for='serviceDayOfMonth'><b><?php echo _("Service Day:");?></b></label></td>
-				<td><input type='text' id='serviceDayOfMonth' name='serviceDayOfMonth' value="<?php if ($sushiServiceID) echo $sushiService->serviceDayOfMonth; ?>" style='width:50px;' />
-					<span class="smallDarkRedText"><?php echo _("(optional)") . "<br /> - " . _("number indicating the day of month the service should run") . "<br />" . _("(e.g. 27 will run 27th of every month)");?></span><span id='span_error_serviceDay' style='color:red'></span>
+				<td class='verticalAlignT textAlignR'><label for='serviceDayOfMonth'><b><?php echo _("Service Day:");?></b></label></td>
+				<td><input type='text' id='serviceDayOfMonth' name='serviceDayOfMonth' value="<?php if ($sushiServiceID) echo $sushiService->serviceDayOfMonth; ?>" class='50' />
+					<span class="smallDarkRedText"><?php echo _("(optional)") . "<br /> - " . _("number indicating the day of month the service should run") . "<br />" . _("(e.g. 27 will run 27th of every month)");?></span><span id='span_error_serviceDay' class='redText'></span>
 				</td>
 			</tr>
 			<tr>
-				<td style='vertical-align:top;text-align:right;'><label for='noteText'><b><?php echo _("Sushi Notes:");?></b></label></td>
-				<td><textarea cols='46' rows='4' id='noteText' name='noteText' style='width:330px;'><?php if ($sushiServiceID) echo $sushiService->noteText; ?></textarea></td>
+				<td class='verticalAlignT textAlignR'><label for='noteText'><b><?php echo _("Sushi Notes:");?></b></label></td>
+				<td><textarea cols='46' rows='4' id='noteText' name='noteText' class='330'><?php if ($sushiServiceID) echo $sushiService->noteText; ?></textarea></td>
 			</tr>
 
-			<tr style="vertical-align:middle;">
-				<td style="padding-top:8px;text-align:right;">&nbsp;</td>
-				<td style="padding-top:8px;padding-right:8px;">
-					<table class='noBorderTable' style='width:100%;'>
+			<tr class='verticalAlignM'>
+				<td class='paddingT8 textAlignR'>&nbsp;</td>
+				<td class='paddingT8 paddingR8'>
+					<table class='noBorderTable wHundred'>
 						<tr>
-							<td style='width:60px;'><input type='button' value='submit' name='submitSushiForm' id ='submitSushiForm' class='submit-button'></td>
+							<td class='60'><input type='button' value='submit' name='submitSushiForm' id ='submitSushiForm' class='submit-button'></td>
 							<td><input type='button' value='cancel' onclick="tb_remove()" class='cancel-button'></td>
 						</tr>
 					</table>
@@ -606,14 +605,14 @@ switch ($action) {
 		<form id='organizationsForm'>
 		<input type='hidden' id='publisherPlatformID' name='publisherPlatformID' value='<?php echo $publisherPlatformID; ?>'>
 		<input type='hidden' id='platformID' name='platformID' value='<?php echo $platformID; ?>'>
-		<table class="thickboxTable" style="width:260px;">
+		<table class="thickboxTable 260">
 		<tr>
 		<td colspan='2'><span class='headerText'><?php echo _("Link Associated Organization");?></span><br /><br /></td>
 		</tr>
 
 		<tr>
 		<td colspan='2'><label for="organizationID" class="formText"><?php echo _("Organization:");?></label>  <span id='span_error_organizationName' class='errorText'></span><br />
-		<input type='textbox' id='organizationName' name='organizationName' value="<?php echo $organizationName; ?>" style='width:232px;' />
+		<input type='textbox' id='organizationName' name='organizationName' value="<?php echo $organizationName; ?>" class='232'/>
 		<input type='hidden' id='organizationID' name='organizationID' value='<?php echo $obj->organizationID; ?>'>
 		<span id='span_error_organizationNameResult' class='errorText'></span>
 		<br />
@@ -622,8 +621,8 @@ switch ($action) {
 
 
 
-		<tr style="vertical-align:middle;">
-		<td style="width:60px;"><input type='button' value='<?php echo _("submit");?>' name='submitOrganization' id ='submitOrganization' class='submit-button'></td>
+		<tr class='verticalAlignM'>
+		<td class='60'><input type='button' value='<?php echo _("submit");?>' name='submitOrganization' id ='submitOrganization' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
 		</tr>
 		</table>
@@ -672,13 +671,13 @@ switch ($action) {
 		?>
 
 		<div id='div_outlierForm'>
-		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:410px;">
+		<table class="thickboxTable thickboxTitleImgUsage">
 		<tr>
 		<td><span class='headerText'><?php echo $nameDisplay; ?></span><br /></td>
 		</tr>
 		<tr>
 
-		<table class='dataTable' style='width:408px;margin-left:2px;'>
+		<table class='dataTable 408 marginL2'>
 
 		<?php
 
@@ -687,10 +686,10 @@ switch ($action) {
 			}else{
 				foreach($statsArray as $monthlyStat){
 					echo "<tr>";
-					echo "<td style='width:170px;'>" . $monthlyStat['Title']. "<span id='span_error_overrideUsageCount_" . $monthlyStat['monthlyUsageSummaryID'] . "' style='color:red;'></span></td>";
+					echo "<td class='170'>" . $monthlyStat['Title']. "<span id='span_error_overrideUsageCount_" . $monthlyStat['monthlyUsageSummaryID'] . "' class='redText'></span></td>";
 					echo "<td style='width:50px;text-align:center;background-color:" . $monthlyStat['color'] . "'>" . $monthlyStat['usageCount'] . "</td>";
-					echo "<td style='width:55px;'><input type='text' name = 'overrideUsageCount_" . $monthlyStat['monthlyUsageSummaryID'] . "' id = 'overrideUsageCount_" . $monthlyStat['monthlyUsageSummaryID'] . "' value='" . $monthlyStat['overrideUsageCount'] . "' style='width:50px'></td>";
-					echo "<td style='width:80px;'><a href=\"javascript:updateOverride('" . $monthlyStat['monthlyUsageSummaryID'] . "');\" style='font-size:100%;'>" . _("edit override") . "</a><br /><a href=\"javascript:ignoreOutlier('" . $monthlyStat['monthlyUsageSummaryID'] . "');\" style='font-size:100%;'>" . _("ignore outlier") . "</a></td>";
+					echo "<td class='55'><input type='text' name = 'overrideUsageCount_" . $monthlyStat['monthlyUsageSummaryID'] . "' id = 'overrideUsageCount_" . $monthlyStat['monthlyUsageSummaryID'] . "' value='" . $monthlyStat['overrideUsageCount'] . "' style='width:50px'></td>";
+					echo "<td class='80'><a href=\"javascript:updateOverride('" . $monthlyStat['monthlyUsageSummaryID'] . "');\" style='font-size:100%;'>" . _("edit override") . "</a><br /><a href=\"javascript:ignoreOutlier('" . $monthlyStat['monthlyUsageSummaryID'] . "');\" git statu'font-size:100%;'>" . _("ignore outlier") . "</a></td>";
 					echo "</tr>";
 				}
 			}
@@ -699,7 +698,7 @@ switch ($action) {
 
 		</table>
 		</tr>
-		<tr><td style='text-align:center;width:100%;'><br /><br /><a href='#' onclick='window.parent.updateFullStatsDetails(); window.parent.tb_remove(); return false'><?php echo _("Close");?></a></td></tr>
+		<tr><td class='text-alignC wHundred'><br /><br /><a href='#' onclick='window.parent.updateFullStatsDetails(); window.parent.tb_remove(); return false'><?php echo _("Close");?></a></td></tr>
 		</table>
 		<input type="hidden" id='platformID' name='platformID' value='<?php echo $platformID; ?>'>
 		<input type="hidden" id='publisherPlatformID' name='publisherPlatformID' value='<?php echo $publisherPlatformID; ?>'>
@@ -748,13 +747,13 @@ switch ($action) {
 		?>
 
 		<div id='div_overrideForm'>
-		<table class="thickboxTable" style="background-image:url('images/tbtitle.gif');width:410px;">
+		<table class="thickboxTable thickboxTitleImgUsage">
 		<tr>
 			<td><span class='headerText'><?php echo $nameDisplay; ?></span><br /><?php echo _("(showing only titles for which there were outliers during the year)");?></td>
 		</tr>
 		<tr>
 
-		<table class='dataTable' style='width:408px;margin-left:2px;'>
+		<table class='dataTable 408 marginL2'>
 
 		<?php
 
@@ -771,7 +770,7 @@ switch ($action) {
 					<td width="40" class='alt'><a href="javascript:updateYTDOverride('<?php echo $yearlyStat['yearlyUsageSummaryID']; ?>', 'overrideTotalCount')"><?php echo _("edit");?></a></td>
 					</tr>
 					<tr>
-					<td width="149"><span id="span_error_<?php echo $yearlyStat['yearlyUsageSummaryID']; ?>_response" style='color:red;'></span></td>
+					<td width="149"><span id="span_error_<?php echo $yearlyStat['yearlyUsageSummaryID']; ?>_response" class='redText'></span></td>
 					<td width="40"><?php echo _("PDF");?></td>
 					<td width="40"><?php echo $yearlyStat['ytdPDFCount']; ?></td>
 					<td width="40"><input name="overridePDFCount_<?php echo $yearlyStat['yearlyUsageSummaryID']; ?>" id="overridePDFCount_<?php echo $yearlyStat['yearlyUsageSummaryID']; ?>" type="text"value="<?php echo $yearlyStat['overridePDFCount']; ?>" size="6" maxlength="6"/></td>
@@ -793,7 +792,7 @@ switch ($action) {
 
 		</table>
 		</tr>
-		<tr><td style='text-align:center;width:100%;'><br /><br /><a href='#' onclick='window.parent.tb_remove(); return false'><?php echo _("Close");?></a></td></tr>
+		<tr><td class='text-alignC wHundred'><br /><br /><a href='#' onclick='window.parent.tb_remove(); return false'><?php echo _("Close");?></a></td></tr>
 		</table>
 		<input type="hidden" id='platformID' name='platformID' value='<?php echo $platformID; ?>'>
 		<input type="hidden" id='publisherPlatformID' name='publisherPlatformID' value='<?php echo $publisherPlatformID; ?>'>
@@ -817,17 +816,17 @@ switch ($action) {
 
 		?>
 		<div id='div_addPlatformForm'>
-		<table class="thickboxTable" style="width:300px;padding:2px;">
+		<table class="thickboxTable 300 padding2">
 		<tr><td colspan='2'><span class='headerText'><?php echo _("Add New Platform for SUSHI Connection");?></span><br /><br /></td></tr>
-		<tr><td style='vertical-align:top;text-align:right;'><label for='platformName'><b><?php echo _("Platform Name");?></b></label></td><td><input type='text' id='platformName' name='platformName' value="" style='width:200px;' /><span id='span_error_Platform' style='color:red'></span></td></tr>
+		<tr><td class='verticalAlignT textAlignR'><label for='platformName'><b><?php echo _("Platform Name");?></b></label></td><td><input type='text' id='platformName' name='platformName' value="" class='200'/><span id='span_error_Platform' class='redText'></span></td></tr>
 
 
-		<tr style="vertical-align:middle;">
-			<td style="padding-top:8px;">&nbsp;</td>
-			<td style="padding-top:8px;padding-right:8px;">
-				<table class='noBorderTable' style='width:100%;'>
+		<tr class='verticalAlignM'>
+			<td class='paddingT8'>&nbsp;</td>
+			<td class='paddingT8 paddingR8'>
+				<table class='noBorderTable wHundred'>
 					<tr>
-						<td style="width:60px;"><input type='button' value='<?php echo _("submit");?>' name='submitPlatformForm' id ='submitPlatformForm' class='submit-button'></td>
+						<td class='60'><input type='button' value='<?php echo _("submit");?>' name='submitPlatformForm' id ='submitPlatformForm' class='submit-button'></td>
 						<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" id='cancel-button' class='cancel-button'></td>
 					</tr>
 				</table>
@@ -859,11 +858,11 @@ switch ($action) {
 
 		?>
 		<div id='div_addIdentifierForm'>
-		<table class="thickboxTable" style="width:200px;padding:2px;">
+		<table class="thickboxTable 200 padding2">
 		<tr><td colspan='2'><span class='headerText'><?php echo _("Add Identifier");?></span><br /><br /></td></tr>
-		<tr><td style='vertical-align:top;text-align:right;'><label for='identifierType'><b><?php echo _("Identifier Type");?></b></label></td>
+		<tr><td class='verticalAlignT textAlignR'><label for='identifierType'><b><?php echo _("Identifier Type");?></b></label></td>
 			<td>
-			<select id='identifierType' name='identifierType' style='width:90px;'>
+			<select id='identifierType' name='identifierType' class='90'>
 			<option value='ISSN'><?php echo _("ISSN");?></option>
 			<option value='eISSN'><?php echo _("eISSN");?></option>
 			<option value='ISBN'><?php echo _("ISBN");?></option>
@@ -873,13 +872,13 @@ switch ($action) {
 			</select>
 			</td>
 		</tr>
-		<tr><td style='vertical-align:top;text-align:right;'><label for='identifier'><b><?php echo _("Identifier");?></b></label></td><td><input type='text' id='identifier' name='identifier' value="" style='width:90px;' /><span id='span_error_Identifier' style='color:red'></span></td></tr>
+		<tr><td class='verticalAlignT textAlignR'><label for='identifier'><b><?php echo _("Identifier");?></b></label></td><td><input type='text' id='identifier' name='identifier' value="" class='90' /><span id='span_error_Identifier' class='redText'></span></td></tr>
 
 
-		<tr style="vertical-align:middle;">
-			<td style="padding-top:8px;text-align:right;">&nbsp;</td>
-			<td style="padding-top:8px;padding-right:8px;">
-				<table class='noBorderTable' style='width:100%;'>
+		<tr class='verticalAlignM'>
+			<td class='paddingT8 textAlignR'>&nbsp;</td>
+			<td class='paddingT8 paddingR8'>
+				<table class='noBorderTable whundred'>
 					<tr>
 						<td><input type='button' value='<?php echo _("submit");?>' name='submitIdentifierForm' id ='submitIdentifierForm' class='submit-button'></td>
 						<td><input type='button' value='<?php echo _("cancel");?>' onclick="tb_remove()" class='cancel-button'></td>
@@ -914,12 +913,12 @@ switch ($action) {
 
 		?>
 		<div id='div_relatedTitles'>
-		<table class="thickboxTable" style="width:250px;padding:2px;">
+		<table class="thickboxTable 250 padding2">
 		<tr><td><span class='headerText'><?php echo _("Associated Titles and Identifiers");?></span><br /></td></tr>
 		<tr>
 		<td>
 
-		<table border="0" style="width:246px">
+		<table border="0" class='246'>
 		<?php
 
 
@@ -928,15 +927,15 @@ switch ($action) {
 			foreach($title->getRelatedTitles as $relatedTitle) {
 
 				echo "<tr>";
-				echo "<td colspan = '2' style='width:250px'><b>" . $relatedTitle->title . "</b></td>";
+				echo "<td colspan = '2' class='250'><b>" . $relatedTitle->title . "</b></td>";
 				echo "</tr>";
 
 				foreach($relatedTitle->getIdentifiers as $relatedTitleIdentifier) {
 					$displayIdentifier = substr($relatedTitleIdentifier->identifier,0,4) . "-" . substr($relatedTitleIdentifier->identifier,4,4);
 
 					echo "<tr>";
-					echo "<td style='width:40px'>" . $relatedTitleIdentifier->identifierType . "</td>";
-					echo "<td style='width:210px'>" . $displayIdentifier . "</td>";
+					echo "<td class='40'>" . $relatedTitleIdentifier->identifierType . "</td>";
+					echo "<td class='210'>" . $displayIdentifier . "</td>";
 					echo "</tr>";
 
 				}
@@ -950,7 +949,7 @@ switch ($action) {
 		</tr>
 
 		<tr>
-		<td style='text-align:center;width:100%;'><br /><br /><a href='#' onclick='window.parent.tb_remove(); return false' class='cancel-button'><?php echo _("Close");?></a>
+		<td class='text-alignC wHundred'><br /><br /><a href='#' onclick='window.parent.tb_remove(); return false' class='cancel-button'><?php echo _("Close");?></a>
 		</td>
 		</tr>
 
@@ -984,21 +983,21 @@ switch ($action) {
 
 		?>
 		<div id='div_updateForm'>
-		<table class="thickboxTable" style="width:245px;padding:2px;">
+		<table class="thickboxTable 245 padding2">
 		<tr><td colspan='3'><span class='headerText'><?php echo $update . ' ' . _(" User");?></span><br /><br /></td></tr>
-		<tr><td colspan='2' style='width:135px;'><label for='loginID'><b><?php echo _("Login ID");?></b></label></td><td><input type='text' id='loginID' name='loginID' value='<?php echo $loginID; ?>' style='width:140px;' /></td></tr>
-		<tr><td colspan='2'><label for='firstName'><b><?php echo _("First Name");?></b></label></td><td><input type='text' id='firstName' name='firstName' value="<?php if (isset($updateUser)) echo $updateUser->firstName; ?>" style='width:140px;' /></td></tr>
-		<tr><td colspan='2'><label for='lastName'><b><?php echo _("Last Name");?></b></label></td><td><input type='text' id='lastName' name='lastName' value="<?php if (isset($updateUser)) echo $updateUser->lastName; ?>" style='width:140px;' /></td></tr>
+		<tr><td colspan='2' class='135'><label for='loginID'><b><?php echo _("Login ID");?></b></label></td><td><input type='text' id='loginID' name='loginID' value='<?php echo $loginID; ?>' class='140' /></td></tr>
+		<tr><td colspan='2'><label for='firstName'><b><?php echo _("First Name");?></b></label></td><td><input type='text' id='firstName' name='firstName' value="<?php if (isset($updateUser)) echo $updateUser->firstName; ?>" class='140' /></td></tr>
+		<tr><td colspan='2'><label for='lastName'><b><?php echo _("Last Name");?></b></label></td><td><input type='text' id='lastName' name='lastName' value="<?php if (isset($updateUser)) echo $updateUser->lastName; ?>" class='140' /></td></tr>
 		<tr><td><label for='privilegeID'><b><?php echo _("Privilege");?></b></label></td>
 		<td>
 				<fieldset id="foottip">
 				<a href="#footnote_priv"><img src='images/help.gif'></a>
-				<div id="footnote_priv" style='display:none;'><?php echo _("Add/Edit users have access to everything") . "<br />" . _("except the Admin tab and admin users") . "<br />" . _("have access to everything");?></div>
+				<div id="footnote_priv" class='noDislpaying' ><?php echo _("Add/Edit users have access to everything") . "<br />" . _("except the Admin tab and admin users") . "<br />" . _("have access to everything");?></div>
 				</fieldset>
 
 		</td>
 		<td>
-		<select name='privilegeID' id='privilegeID' style='width:145px'>
+		<select name='privilegeID' id='privilegeID' class='145'>
 		<?php
 
 
@@ -1018,8 +1017,8 @@ switch ($action) {
 		</select>
 		</td>
 		</tr>
-		<tr style="vertical-align:middle;">
-		<td style="width:60px;"><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitUserData("<?php echo $loginID; ?>");' class='submit-button'></td>
+		<tr class='verticalAlignM'>
+		<td class='60'><input type='button' value='<?php echo $update; ?>' onclick='javascript:window.parent.submitUserData("<?php echo $loginID; ?>");' class='submit-button'></td>
 		<td><input type='button' value='<?php echo _("Close");?>' onclick="window.parent.tb_remove(); return false" id='update-user-cancel' class='cancel-button'></td>
 		</tr>
 

@@ -47,7 +47,7 @@ function usage_sidemenu($selected_link = '') {
     }
     if ($key != 'accounts' || $user->accountTabIndicator == '1') {
     ?>
-    <div class="<?php echo $class; ?>" style='position: relative; width: 105px'>
+    <div class="<?php echo $class; ?>" class='relativeP w105px'>
        <span class='link'><a href='javascript:void(0)' class='show<?php echo $name; ?>' title='<?php echo $value; ?>'><?php echo $value; ?></a></span>
     </div>
     <?php

@@ -40,27 +40,27 @@ switch ($_GET['action']) {
 		<div id='div_updateForm'>
 
 
-		<div class='formTitle' style='width:295px;'><span class='headerText' style='margin-left:7px;'><?php if ($loginID){ echo _("Edit User"); } else { echo _("Add New User"); } ?></span></div>
+		<div class='formTitle w295px'><span class='headerText marginL7'><?php if ($loginID){ echo _("Edit User"); } else { echo _("Add New User"); } ?></span></div>
 
 
 		<span class='smallDarkRedText' id='span_errors'></span>
 
 		<input type='hidden' id='editLoginID' value='<?php echo $loginID; ?>' />
 
-		<table class="surroundBox" style="width:300px;">
+		<table class="surroundBox w300px">
 		<tr>
 		<td>
 
-			<div style='width:260px; margin:10px;'>
+			<div class='w260 margin10'>
 
 				<label for='submitLoginID' class='formLabel' <?php if ($loginID) { ?>style='margin-bottom:8px;'<?php } ?>><b><?php echo _("Login ID");?></b></label>&nbsp;
-				<?php if (!$loginID) { ?><input type='text' id='textLoginID' value='' style='width:110px;'/> <?php } else { echo $loginID; } ?>
-				<?php if ($loginID) { ?><div class='smallDarkRedText' style="clear:left;margin-left:5px;margin-bottom:3px;"><?php echo _("Enter password for changes only")?></div> <?php }else{ echo "<br />"; } ?>
+				<?php if (!$loginID) { ?><input type='text' id='textLoginID' value='' class='w110px'/> <?php } else { echo $loginID; } ?>
+				<?php if ($loginID) { ?><div class='smallDarkRedText marginL5 marginB3'><?php echo _("Enter password for changes only")?></div> <?php }else{ echo "<br />"; } ?>
 				<label for='password' class='formLabel'><b><?php if ($loginID) { echo _("New "); } echo _("Password");?></b></label>&nbsp;
-				<input type='password' id='password' value="" style='width:110px;' />
+				<input type='password' id='password' value="" class='w110px' />
 				<br />
 				<label for='passwordReenter' class='formLabel'><b><?php echo _("Reenter Password");?></b></label>&nbsp;
-				<input type='password' id='passwordReenter' value="" style='width:110px;'/>
+				<input type='password' id='passwordReenter' value="" class='w110px'/>
 				<br />
 				<label for='adminInd' class='formLabel'><b><?php echo _("Admin?");?></b></label>&nbsp;
 				<input type='checkbox' id='adminInd' value='Y' <?php echo $adminInd; ?> />
@@ -72,10 +72,10 @@ switch ($_GET['action']) {
 		</table>
 
 		<br />
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable 125'>
 			<tr>
-				<td style='text-align:left;'><input type='button' value='<?php echo _("submit");?>' id ='submitUser' class='submitButton' /></td>
-				<td style='text-align:right;'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='submitButton' /></td>
+				<td class='textAlignL'><input type='button' value='<?php echo _("submit");?>' id ='submitUser' class='submitButton' /></td>
+				<td class='textAlignR'><input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='submitButton' /></td>
 			</tr>
 		</table>
 
@@ -119,5 +119,3 @@ switch ($_GET['action']) {
 
 
 ?>
-
-

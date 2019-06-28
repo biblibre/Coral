@@ -199,7 +199,7 @@ if(array_key_exists('admin', $_GET)){
 
 	<br />
 
-	<div style="width:418px;" id="login-form">
+	<div class='w418px' id="login-form">
 		<div id="title-div">
 	        <div id="img-title"><img src="images/authtitle.png" /></div>
 	        <div id="text-title"><?php echo _("eRM Authentication"); ?></div>
@@ -207,7 +207,7 @@ if(array_key_exists('admin', $_GET)){
     	</div>
 
 		<div id="login-content">
-			<label style='width:100%;font-weight:normal;'><span class='smallerText'><?php echo $message; ?></span><span class='smallDarkRedText'><?php echo $errorMessage; ?></span></label><br />
+			<label class='wHundred fontNormal'><span class='smallerText'><?php echo $message; ?></span><span class='smallDarkRedText'><?php echo $errorMessage; ?></span></label><br />
 			<label for='loginID'><?php echo _("Login ID:")?></label>
 			<input type='text' id='loginID' name='loginID' value="<?php echo $inputLoginID; ?>" />
 			<br />
@@ -215,10 +215,10 @@ if(array_key_exists('admin', $_GET)){
 			<input type='password' id='password' name='password' value='' />
 			<br />
 	<!-- 		<label for='remember'>&nbsp;</label> -->
-			<input type='checkbox' id='remember' name='remember' value='Y' style='margin:1px 5px 0px 0px; padding:0px;' <?php echo $rememberChecked; ?> /><span class='smallText'><?php echo _("Remember my login ID")?></span>
+			<input type='checkbox' id='remember' name='remember' value='Y' class='margin1500 padding0' <?php echo $rememberChecked; ?> /><span class='smallText'><?php echo _("Remember my login ID")?></span>
 
 			<br />
-			<input type="submit" value="<?php echo _('Login')?>" id="loginbutton" class="loginButton" style='margin-top:17px;' />
+			<input type="submit" value="<?php echo _('Login')?>" id="loginbutton" class="loginButton marginT17" />
 		</div>
 
 	</div>
@@ -229,23 +229,23 @@ if(array_key_exists('admin', $_GET)){
             // Get all translations on the 'locale' folder
             $route='locale';
             $lang[]="en_US"; // add default language
-            if (is_dir($route)) { 
-                if ($dh = opendir($route)) { 
+            if (is_dir($route)) {
+                if ($dh = opendir($route)) {
                     while (($file = readdir($dh)) !== false) {
                         if (is_dir("$route/$file") && $file!="." && $file!=".."){
                             $lang[]=$file;
-                        } 
-                    } 
-                    closedir($dh); 
-                } 
+                        }
+                    }
+                    closedir($dh);
+                }
             }else {
-                echo "<br>"._("Invalid translation route!"); 
+                echo "<br>"._("Invalid translation route!");
             }
             // Get language of navigator
             $defLang = $lang_name->getBrowserLanguage();
-            
+
             // Show an ordered list
-            sort($lang); 
+            sort($lang);
             for($i=0; $i<count($lang); $i++){
                 if(isset($_COOKIE["lang"])){
                     if($_COOKIE["lang"]==$lang[$i]){
@@ -264,7 +264,7 @@ if(array_key_exists('admin', $_GET)){
 			?>
 		</select>
 	</div>
-	<div class='smallerText' style='text-align:center; margin-top:13px;'><a href='admin.php' title="<?php echo _("Admin page")?>"><?php echo _("Admin page")?></a></div>
+	<div class='smallerText text-alignC marginT13'><a href='admin.php' title="<?php echo _("Admin page")?>"><?php echo _("Admin page")?></a></div>
 
 </form>
 

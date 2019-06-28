@@ -31,12 +31,12 @@ switch ($_GET['action']) {
 
 		if (count($usersArray) > 0){
 			?>
-			<table class='linedDataTable' style='width:340px;'>
+			<table class='linedDataTable w340px'>
 				<tr>
 				<th>Login ID</th>
 				<th>Admin?</th>
-				<th style='width:20px;'>&nbsp;</th>
-				<th style='width:20px;'>&nbsp;</th>
+				<th class='w20px'>&nbsp;</th>
+				<th class='w20px'>&nbsp;</th>
 				</tr>
 				<?php
 
@@ -80,4 +80,3 @@ switch ($_GET['action']) {
 
 
 ?>
-
