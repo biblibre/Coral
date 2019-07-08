@@ -563,7 +563,7 @@ function submitEbscoKbData(){
     });
 }
 
-// Validate fund form
+// Validate pricing formula form
 function submitPricingFormula(){
     var form = $('#pricingFormulaConfig');
     $.ajax({

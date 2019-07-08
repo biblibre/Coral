@@ -28,5 +28,12 @@ for ($i = 1; $i <= 10; $i++) {
 <tr><td><label for="formula"><b><?php echo _("Formula"); ?>:</b></label></td>
 <td><textarea name="formula" id="formula"><?php echo $instance->formula; ?></textarea></td></tr>
 </table><br />
-<button class="btn btn-primary" type="submit" ><?php echo _("Save"); ?></button>
+<input type='button' value='<?php echo _("submit");?>' id ='submitAddUpdate' class='submit-button'>
+<input type='button' value='<?php echo _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='cancel-button'>
 </form>
+
+<script type="text/javascript">
+    $('#submitAddUpdate').click(function () {
+        window.parent.submitPricingFormula();
+    });
+</script>
