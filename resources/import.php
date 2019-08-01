@@ -589,13 +589,14 @@
                                     if ($proceed) {
                                         $subjectObj = new GeneralSubject();
                                         $subjectObj->shortName = $currentSubject;
-                                        $subjectID = $subjectObj->save();
-                                        $subjectArray = $subjectObj->allAsArray();
+                                        $subjectObj->save();
+                                        $subjectID = $subjectObj->primaryKey;
+                                        $subjectArray['general'] = $subjectObj->allAsArray();
                                     }
                                     $generalSubjectInserted++;
                                 }
                                 # But we link both general and detailed subjects to the resource
-								if($subjectID !== null) //Find the generalDetailSubjectLinkID
+								if($subjectID !== null || !$proceed) //Find the generalDetailSubjectLinkID
 								{
 									$generalDetailSubjectLinkObj = new GeneralDetailSubjectLink();
                                     if ($subject['type'] == "general") {
