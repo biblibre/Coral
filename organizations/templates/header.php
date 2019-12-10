@@ -48,8 +48,7 @@ $coralURL = $util->getCORALURL();
 <link rel="SHORTCUT ICON" href="images/favicon.ico" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="../js/plugins/jquery-1.4.4.js"></script>
-<script type="text/javascript" src="../js/plugins/ajaxupload.3.5.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery-1.8.0.js"></script>
 <script type="text/javascript" src="js/plugins/thickbox.js"></script>
 <script type="text/javascript" src="../js/plugins/jquery.datePicker-patched-for-i18n.js"></script>
 <script type="text/javascript" src="../js/plugins/jquery.autocomplete.js"></script>
@@ -72,7 +71,12 @@ $coralURL = $util->getCORALURL();
 <script type="text/javascript" src="../js/plugins/translate.js"></script>
 <script type="text/javascript" src="../js/plugins/datejs-patched-for-i18n.js"></script>
 <script type="text/javascript" src="../js/plugins/jquery.datePicker-patched-for-i18n.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+const CORAL_ILS_LINK=<?php echo $config->ils->ilsConnector ? 1 : 0; ?>;
+Date.format = '<?php echo return_datepicker_date_format(); ?>';
+</script>
 </head>
 <body>
 <noscript><font face='arial'><?php echo _("JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then ");?><a href=""><?php echo _("try again");?></a>. </font></noscript>
@@ -87,12 +91,12 @@ $coralURL = $util->getCORALURL();
 <div style="text-align:left;">
 
 <center>
-    
+
 <table class="titleTable" style="width:1024px;text-align:left;">
 
     <tr style='vertical-align:top;'>
         <td style='height:53px;' colspan='3'>
-                
+
             <div id="main-title">
                 <img src="images/title-icon-organizations.png" />
                 <span id="main-title-text"><?php echo _("Organizations"); ?></span>
@@ -125,18 +129,18 @@ $coralURL = $util->getCORALURL();
                                 while (($file = readdir($dh)) !== false) {
                                     if (is_dir("$route/$file") && $file!="." && $file!=".."){
                                         $lang[]=$file;
-                                    } 
-                                } 
-                                closedir($dh); 
-                            } 
+                                    }
+                                }
+                                closedir($dh);
+                            }
                         }else {
-                            echo "<br>"._("Invalid translation route!"); 
+                            echo "<br>"._("Invalid translation route!");
                         }
                         // Get language of navigator
                         $defLang = $lang_name->getBrowserLanguage();
-                        
+
                         // Show an ordered list
-                        sort($lang); 
+                        sort($lang);
                         for($i=0; $i<count($lang); $i++){
                             if(isset($_COOKIE["lang"])){
                                 if($_COOKIE["lang"]==$lang[$i]){
@@ -153,7 +157,7 @@ $coralURL = $util->getCORALURL();
                             }
                         }
                         ?>
-                        
+
                     </select>
                 </span>
             </div>
@@ -186,7 +190,7 @@ $coralURL = $util->getCORALURL();
             <img src="images/menu/icon-admin.png" />
             <span><?php echo _("Admin"); ?></span>
         </div>
-    </a>   
+    </a>
 
 <?php }else if ($user->canEdit()){?>
 
@@ -226,7 +230,7 @@ $coralURL = $util->getCORALURL();
             <img src="images/menu/icon-admin.png" />
             <span><?php echo _("Admin"); ?></span>
         </div>
-    </a>  
+    </a>
 
 <?php } ?>
 </td>
